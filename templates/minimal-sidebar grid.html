@@ -1,0 +1,98 @@
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Heebo' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
+
+</head>
+
+<div class="container">
+
+    <div class="icon"><img src="https://i.pinimg.com/564x/6a/d1/31/6ad131474eb4478c52e4afe9b5cd92e4.jpg"></div>
+
+    <div class="text-area">
+        Pastrami sausage frankfurter biltong burgdoggen, pig bresaola chicken flank boudin rump prosciutto capicola. <b>"Spare ribs short ribs tenderloin, doner picanha pig hamburger tri-tip pork belly shank fatback salami ground round burgdoggen brisket."</b> Shankle t-bone picanha, cupim jowl bresaola salami buffalo pork belly meatball fatback jerky flank cow. Sirloin cow pork tongue beef ribs fatback. Rump drumstick short loin cupim brisket ham spare ribs picanha corned beef sausage beef ribs burgdoggen.
+        <br><br> <i>Burgdoggen prosciutto chuck drumstick, porchetta salami hamburger short loin shankle.</i> Doner salami burgdoggen frankfurter chicken, capicola pig. Frankfurter corned beef flank cow tenderloin buffalo pastrami ribeye beef ribs fatback salami spare ribs porchetta pig meatloaf. Landjaeger hamburger beef, capicola shank jowl tri-tip tenderloin tongue burgdoggen swine rump kevin. Hamburger short ribs t-bone, spare ribs bresaola shank chuck fatback pork belly shankle. Flank tail buffalo pig.
+        <br><br> <u>"Jowl cupim ground round venison."</u> Ham hock ground round prosciutto, leberkas tri-tip kevin tail bresaola swine t-bone short ribs turducken bacon. Meatloaf cupim brisket t-bone doner prosciutto. Flank short ribs shankle filet mignon brisket pastrami kevin.
+    </div>
+
+    <div class="ooc-area">
+        a little note here — <a href="URL">renzo takamori</a>, <a href="URL">kenji yakedou</a>
+    </div>
+
+</div>
+
+
+<style>
+    body {
+        background: antiquewhite;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-areas: 'icon text' 'ooc text';
+        grid-column-gap: 16px;
+        margin: 20px auto;
+        width: 420px;
+        border: 0px solid black;
+        font: 400 12px/16px 'Fira Sans', arial;
+    }
+
+
+    .icon {
+        width: 100px;
+        grid-area: icon;
+    }
+
+    .icon img {
+        width: 100%;
+        filter: brightness(100%) contrast(100%);
+        transition: filter 0.3s;
+        -webkit-transition: filter 0.3s, -webkit-filter 0.3s;
+    }
+
+    .icon img:hover {
+        filter: brightness(110%) contrast(110%);
+        transition: filter 0.3s;
+        -webkit-transition: filter 0.3s, -webkit-filter 0.3s;
+    }
+
+    .text-area {
+        text-align: justify;
+        grid-area: text;
+    }
+
+    .text-area b {
+        font-weight: 500;
+    }
+
+    .text-area u {
+        font-weight: 500;
+        color: #195fde;
+        text-decoration: none;
+    }
+
+    .ooc-area {
+        padding: 8px 0;
+        border: 1px dotted #195FDE;
+        border-left: 0;
+        border-right: 0;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 14px;
+        grid-area: ooc;
+        align-self: flex-end
+    }
+
+    .ooc-area a {
+        font-size: 10px;
+        letter-spacing: .6px;
+        font-weight: 500;
+        text-decoration: none;
+        color: #195fde;
+        text-transform: uppercase;
+    }
+
+</style>
