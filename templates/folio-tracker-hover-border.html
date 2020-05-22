@@ -18,7 +18,7 @@
     <div class="folio">
         <div class="folio-inner">
 
-            <input type="radio" id="folio-tab1" class="tab" checked>
+            <input type="radio" id="folio-tab1" class="tab" name="folio-tabs" checked>
             <label for="folio-tab1" class="tab-label tab1" title="QUESTS">    
 <div class="tab-box">
 <div class="tab-header">
@@ -27,7 +27,7 @@
 </div>
 </label>
 
-            <input type="radio" id="folio-tab2" class="tab">
+            <input type="radio" id="folio-tab2" class="tab" name="folio-tabs">
             <label for="folio-tab2" class="tab-label tab2" title="SOCIALS">
 <div class="tab-box">
 <div class="tab-header">
@@ -35,7 +35,7 @@
 <h1>Avatar Aang</h1>
 </div></label>
 
-            <input type="radio" id="folio-tab3" class="tab">
+            <input type="radio" id="folio-tab3" class="tab" name="folio-tabs">
             <label for="folio-tab3" class="tab-label tab3" title="DRAGONS">
 <div class="tab-box">
 <div class="tab-header">
@@ -43,7 +43,7 @@
 <h1>Toph Beifong</h1>
 </div></label>
 
-            <input type="radio" id="folio-tab4" class="tab">
+            <input type="radio" id="folio-tab4" class="tab" name="folio-tabs">
             <label for="folio-tab4" class="tab-label tab4" title="DRAGONS">
 <div class="tab-box">
 <div class="tab-header">
@@ -51,7 +51,7 @@
 <h1>Sapphire Fire</h1>
 </div></label>
 
-            <input type="radio" id="folio-tab5" class="tab">
+            <input type="radio" id="folio-tab5" class="tab" name="folio-tabs">
             <label for="folio-tab5" class="tab-label tab5" title="DRAGONS">
 <div class="tab-box">
 <div class="tab-header">
@@ -533,6 +533,10 @@
 
     ::-webkit-scrollbar-track {
         background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        display: none;
     }
 
 </style>
