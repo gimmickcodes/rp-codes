@@ -18,7 +18,7 @@
     <div class="folio">
         <div class="folio-inner">
 
-            <input type="radio" id="folio-tab1" class="tab" name="svnth-shap-tab" checked>
+            <input type="radio" id="folio-tab1" class="tab" checked>
             <label for="folio-tab1" class="tab-label tab1" title="QUESTS">    
 <div class="tab-box">
 <div class="tab-header">
@@ -27,7 +27,7 @@
 </div>
 </label>
 
-            <input type="radio" id="folio-tab2" class="tab" name="svnth-shap-tab">
+            <input type="radio" id="folio-tab2" class="tab">
             <label for="folio-tab2" class="tab-label tab2" title="SOCIALS">
 <div class="tab-box">
 <div class="tab-header">
@@ -35,7 +35,7 @@
 <h1>Avatar Aang</h1>
 </div></label>
 
-            <input type="radio" id="folio-tab3" class="tab" name="svnth-shap-tab">
+            <input type="radio" id="folio-tab3" class="tab">
             <label for="folio-tab3" class="tab-label tab3" title="DRAGONS">
 <div class="tab-box">
 <div class="tab-header">
@@ -43,7 +43,7 @@
 <h1>Toph Beifong</h1>
 </div></label>
 
-            <input type="radio" id="folio-tab4" class="tab" name="svnth-shap-tab">
+            <input type="radio" id="folio-tab4" class="tab">
             <label for="folio-tab4" class="tab-label tab4" title="DRAGONS">
 <div class="tab-box">
 <div class="tab-header">
@@ -51,7 +51,7 @@
 <h1>Sapphire Fire</h1>
 </div></label>
 
-            <input type="radio" id="folio-tab5" class="tab" name="svnth-shap-tab">
+            <input type="radio" id="folio-tab5" class="tab">
             <label for="folio-tab5" class="tab-label tab5" title="DRAGONS">
 <div class="tab-box">
 <div class="tab-header">
@@ -426,7 +426,7 @@
 
     .page-inner {
         position: absolute;
-        top: 200px;
+        top: 400px;
         cursor: text;
         width: 373px;
         height: 473px;
@@ -436,9 +436,9 @@
         z-index: 50;
         overflow: hidden;
         filter: none;
-        -webkit-transition: all .5s ease;
-        -moz-transition: all .5s ease;
-        -o-transition: all .5s ease;
+        -webkit-transition: all .5s 0s ease;
+        -moz-transition: all .5s 0s ease;
+        -o-transition: all .5s 0s ease;
         border: 1px solid #eee;
         padding: 15px 5px 15px 15px;
         width: 358px;
@@ -446,7 +446,7 @@
         background: #f5f5f5;
     }
 
-    input.pageFlip:hover+label .page-inner {
+    input.pageFlip:checked+label .page-inner {
         top: 0;
         opacity: 1;
         display: block;
