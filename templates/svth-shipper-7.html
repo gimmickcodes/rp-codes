@@ -1,0 +1,350 @@
+<link href="https://fonts.googleapis.com/css?family=Hind:400,500,600,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+<style>
+    html {
+        background: pink;
+    }
+
+    body {
+        --seventhAccent2: #e3c65d;
+        --seventhGroup1: #d171a3;
+        --seventhGroup2: #cc6358;
+        --seventhGroup3: #78bacc;
+        --seventhGroup4: #73bf82;
+        --seventhGroup5: #9a8ac2;
+        --seventhGroup6: #8186c7;
+        --seventhRGBAccent1: 212, 114, 116;
+        --seventhRGBAccent2: 227, 198, 93;
+        --seventhRGBGroup1: 209, 113, 163;
+        --seventhRGBGroup2: 204, 99, 88;
+        --seventhRGBGroup3: 120, 186, 204;
+        --seventhRGBGroup4: 115, 191, 130;
+        --seventhRGBGroup5: 154, 138, 194;
+        --seventhRGBGroup6: 129, 134, 199;
+        --syncRGBcolor: var(--seventhRGBGroup6);
+        --synccolor: var(--seventhGroup6);
+    }
+
+</style>
+
+
+
+
+<div id="sync-ship-7">
+    <div class="leftcol" title="NAME">
+        <div class="lyricbox">
+            <div>Meet me where the sunlight ends Meet me where the truth never bends Bring all that you're scared to defend And lay it down when you walk through my door
+            </div>
+        </div>
+        <img src="https://i.ibb.co/RgMVnqg/image.png">
+
+        <div class="colorfield-1"> </div>
+        <div class="colorfield-2"> </div>
+        <div class="colorfield-3"> </div>
+
+    </div>
+
+    <div class="rightcol">
+        <div class="inset">
+            <div class="scrollarea">
+
+                <h1><b>about</b> name</h1>
+                Bacon ipsum dolor amet ribeye kevin porchetta, tenderloin prosciutto flank turkey capicola pork loin turducken beef alcatra short ribs. Short ribs chislic frankfurter sirloin alcatra meatball kielbasa chicken. Filet mignon jerky sirloin, ham hock short loin chuck pig capicola pork belly cow pork swine andouille boudin. Turkey turducken chicken tri-tip landjaeger.
+
+                <br><br><b>This is bolded</b>. <i>This is italic.</i> <u>This is underlined</u>. <a href="#">This a link</a>.
+
+                <hr>
+
+                <h2>section</h2>
+                <ul>
+                    <li>line item one</li>
+                    <li>line item two</li>
+                    <li>line item three</li>
+                    <li>line item three</li>
+
+                </ul>
+
+                <h2>section</h2>
+                Ham hamburger kevin, corned beef pancetta kielbasa pig brisket. Pork shoulder prosciutto boudin brisket tongue ham hock meatloaf jowl fatback hamburger capicola t-bone chislic.
+
+                <h5><b>seeking</b> thing, thing, thing thing, thing, thing thing, thing, thing thing, thing, thing thing, thing, thing </h5>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<style>
+    #sync-ship-7 {
+        margin: auto;
+        position: relative;
+        width: min-content;
+        height: 600px;
+        background: var(--synccolor, var(--seventhAccent1));
+        display: flex;
+        grid-template-columns: 200px 1fr;
+        font: 13px/17px 'Hind';
+        color: #333;
+        border-radius: 0 15px 15px 0;
+        overflow: hidden;
+
+    }
+
+    #sync-ship-7:after {
+        background: url(https://i.ibb.co/qmQk1h7/Flower-Power-Tower.png) left center / cover;
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: .15;
+    }
+
+    #sync-ship-7 .leftcol {
+        width: 200px;
+        border-right: 5px solid #ccc;
+        overflow: hidden;
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #sync-ship-7 .leftcol img {
+        filter: brightness(.65) grayscale(.75) contrast(.85) saturate(1.25);
+        width: 200px;
+        z-index: 0;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+    }
+
+    #sync-ship-7 .leftcol:hover img {
+        filter: brightness(.85) grayscale(0) contrast(.75) saturate(1.5);
+    }
+
+
+    #sync-ship-7 .colorfield-1 {
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 600px;
+        background: linear-gradient(150deg, rgba(var(--syncRGBcolor), 0), rgba(var(--syncRGBcolor), .65) 85%);
+        z-index: 100;
+        opacity: 1;
+    }
+
+    #sync-ship-7 .colorfield-2 {
+        position: absolute;
+        width: 200px;
+        height: 600px;
+        top: 0;
+        z-index: 90;
+        background: var(--synccolor, var(--seventhAccent1));
+        mix-blend-mode: color;
+        opacity: .1;
+    }
+
+    #sync-ship-7 .colorfield-3 {
+        width: 400px;
+        height: 400px;
+        background: var(--synccolor, var(--seventhAccent1));
+        border-radius: 100%;
+        position: absolute;
+        right: -220px;
+        top: calc(50% - 150px);
+        z-index: 0;
+        opacity: .5;
+        mix-blend-mode: hard-light;
+        transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+    }
+
+    #sync-ship-7 .leftcol:hover .colorfield-3 {
+        opacity: 1;
+    }
+
+    #sync-ship-7 .lyricbox {
+        width: 70%;
+        height: 100%;
+        z-index: 150;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #sync-ship-7 .lyricbox>div {
+        max-height: 190px;
+        overflow: hidden;
+        margin-bottom: 0px;
+        color: #fff;
+        text-align: justify;
+        text-transform: uppercase;
+        font-size: 9px;
+        line-height: 15px;
+        font-family: 'Poppins';
+        letter-spacing: .9px;
+        font-weight: 300;
+        opacity: 0;
+        transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+    }
+
+    #sync-ship-7 .lyricbox:hover>div {
+        opacity: 1;
+        margin-bottom: 30px;
+    }
+
+    #sync-ship-7 .rightcol {
+        padding: 15px;
+        position: relative;
+        z-index: 5;
+    }
+
+    #sync-ship-7 .inset {
+        background: #dedede;
+        padding: 18px 0px 18px 20px;
+        width: 350px;
+        border-radius: 0 10px 10px 0;
+    }
+
+
+    #sync-ship-7 .scrollarea {
+        padding-right: 25px;
+        height: 534px;
+        overflow: auto;
+
+    }
+
+    #sync-ship-7 h1 {
+        font-family: 'Poppins';
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 32px;
+        color: var(--synccolor, var(--seventhAccent1));
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0 0 3px;
+    }
+
+    #sync-ship-7 h1 b {
+        font-weight: bold;
+    }
+
+    #sync-ship-7 h2 {
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--synccolor, var(--seventhAccent1));
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        margin: 24px 0 0px;
+    }
+
+    #sync-ship-7 h2:after {
+        content: ' ';
+        margin: 9px 0 9px;
+        border: 0;
+        height: 4px;
+        background: #ccc;
+        width: 18px;
+        display: block;
+    }
+
+    #sync-ship-7 h5 {
+        margin: 10px 0;
+        font: inherit;
+    }
+
+    #sync-ship-7 h5 b {
+        background: white;
+        border-radius: 2px;
+        padding: 2px 3px 0px 5px;
+        background: var(--synccolor, var(--seventhAccent1));
+        color: #eee;
+        font-size: 9.5px;
+        line-height: 18px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1.7px;
+        margin: 0 2px 0 0;
+    }
+
+    #sync-ship-7 b {
+        font-weight: 600;
+    }
+
+    #sync-ship-7 ul {
+        margin: 0px 0;
+    }
+
+    #sync-ship-7 li {
+        list-style: none;
+        margin-left: 0;
+        margin-left: -40px;
+    }
+
+    #sync-ship-7 li:before {
+        content: '\2022';
+        margin-right: 6px;
+        line-height: 0;
+        color: var(--synccolor, var(--seventhAccent1));
+    }
+
+    #sync-ship-7 hr {
+        margin: 18px 0 -5px;
+        border: 0;
+        height: 4px;
+        background: #ccc;
+        width: 100%;
+    }
+
+    #sync-ship-7 br {
+        display: block;
+        content: ' ';
+        margin: 0 0 12px;
+    }
+
+    #sync-ship-7 a {
+        color: var(--synccolor, var(--seventhAccent1));
+        font-weight: 500;
+    }
+
+    #sync-ship-7 a:hover {
+        text-decoration: none;
+    }
+
+    #sync-ship-7 ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    #sync-ship-7 ::-webkit-scrollbar-track {
+        background: #bbb;
+        border-radius: 1px%;
+    }
+
+    #sync-ship-7 ::-webkit-scrollbar-thumb {
+        background: var(--synccolor, var(--seventhAccent1));
+        border-radius: 1px;
+    }
+
+</style>
