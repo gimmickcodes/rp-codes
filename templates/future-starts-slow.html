@@ -1,0 +1,254 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,500,600,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+</head>
+
+
+
+
+
+<div class="fss-outerbox">
+    <div class="header">
+        <div class="header-text">
+            <h1>I'LL NEVER GIVE YOU UP</h1>
+            <h2>IF I EVER GIVE YOU UP, MY HEART WILL SURELY FAIL</h2>
+        </div>
+
+        <div class="header-img"> </div>
+    </div>
+
+    <div class="body-outer">
+        <div class="body">
+            <b>Buying the right telescope</b> to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.
+            <br><br> <a href="#">Buying the right</a> telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.
+            <br><br> <u>Buying the right</u> telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.
+
+            <h3>
+                hi there
+                <A href="#">name</A>
+            </h3>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="header-img" style="--imglink: url(x);"> </div>
+        <div class="header-bg" style="display:none"> </div>
+    </div>
+</div>
+
+<style>
+    html {
+        background: antiquewhite;
+    }
+
+    body {
+        --seventhAccent2: #e3c65d;
+        --seventhGroup1: #d171a3;
+        --seventhGroup2: #cc6358;
+        --seventhGroup3: #78bacc;
+        --seventhGroup4: #73bf82;
+        --seventhGroup5: #9a8ac2;
+        --seventhGroup6: #8186c7;
+        --seventhRGBAccent1: 212, 114, 116;
+        --seventhRGBAccent2: 227, 198, 93;
+        --seventhRGBGroup1: 209, 113, 163;
+        --seventhRGBGroup2: 204, 99, 88;
+        --seventhRGBGroup3: 120, 186, 204;
+        --seventhRGBGroup4: 115, 191, 130;
+        --seventhRGBGroup5: 154, 138, 194;
+        --seventhRGBGroup6: 129, 134, 199;
+        --syncRGBcolor: var(--seventhRGBGroup6);
+        --synccolor: var(--seventhGroup6);
+    }
+
+    .fss-outerbox {
+        background: #f3f3f3;
+        width: 450px;
+        margin: auto;
+        position: relative;
+        --accent: var(--synccolor, var(--seventhAccent1))
+    }
+
+    .fss-outerbox .header {
+        width: 450px;
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+        background: var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-text {
+        position: relative;
+        z-index: 10;
+    }
+
+    .fss-outerbox h1 {
+        margin: 10px 0 2px;
+        font: 700 18px/21px Poppins;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--accent);
+    }
+
+
+    .fss-outerbox h2 {
+        margin: 0;
+        font: 400 9px/12px Poppins;
+        letter-spacing: 2px;
+        max-width: 360px;
+        text-transform: uppercase;
+        color: #f0f0f0
+    }
+
+
+    .fss-outerbox .header-img {
+        width: 450px;
+        height: 150px;
+        overflow: hidden;
+        position: absolute;
+        /*        background: url(x) bottom right;*/
+        filter: brightness(.24);
+        mix-blend-mode: multiply;
+
+        z-index: 0;
+        background: url('https://cdn.discordapp.com/attachments/683720444796338317/738820985305825420/750x280-dazai-01.jpg') center center / cover;
+        filter: grayscale(100%) contrast(150%) brightness(.5);
+        mix-blend-mode: multiply;
+
+    }
+
+    .fss-outerbox .header-img:after,
+    .fss-outerbox .footer-img:after {
+        width: 450px;
+        height: 150px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(0, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+        background: radial-gradient(circle, rgba(0, 0, 0, .6) 20%, rgba(255, 255, 255, .1) 120%);
+        content: ' ';
+        opacity: .5;
+    }
+
+    .fss-outerbox .header-img:before {
+        content: ' ';
+        background: radial-gradient(circle, rgba(0, 0, 0, .6) 20%, rgba(255, 255, 255, .1) 120%);
+        width: 450px;
+        height: 150px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: .35;
+    }
+
+
+    .fss-outerbox .footer-img:after {
+        background: linear-gradient(0, rgba(0, 0, 0, .6), rgba(0, 0, 0, .4));
+    }
+
+    .fss-outerbox .footer {
+        width: 100%;
+        height: 25px;
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(180deg, var(--synccolor, var(--seventhAccent1)), rgba(var(--syncRGBcolor, var(--seventhRGBAccent1)), .5))
+    }
+
+
+
+    .fss-outerbox .body-outer {
+        padding: 15px
+    }
+
+    .fss-outerbox .body {
+        padding: 20px 30px 10px;
+        font: 13px/18px arial, sans-serif;
+        color: #333;
+        background: #fff;
+        position: relative;
+        z-index: 1;
+    }
+
+    .fss-outerbox a {
+        color: var(--accent);
+        letter-spacing: .2;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent)
+    }
+
+    .fss-outerbox a:hover {
+        color: var(--accent);
+        border: 0
+    }
+
+    .fss-outerbox b {
+        color: var(--accent);
+        letter-spacing: .2;
+        font-weight: 600
+    }
+
+    .fss-outerbox h3 {
+        border-top: 1px solid #e2e2e2;
+        margin-top: 27px;
+        padding-top: 9px;
+        font: 700 10px/12px Poppins;
+        letter-spacing: .25px
+    }
+
+    .fss-outerbox h3 a:not(:last-child):after {
+        content: "·";
+        color: rgba(22, 22, 22, .5);
+        margin: 0 0 0 3px
+    }
+
+    .fss-outerbox h3 a {
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: .75px;
+        border: 0
+    }
+
+    .fss-outerbox a.user-tagged.mgroup-4 {
+        --synccolor: var(--seventhGroup6)
+    }
+
+    .fss-outerbox a.user-tagged.mgroup-6 {
+        --synccolor: var(--seventhGroup5)
+    }
+
+    .fss-outerbox a.user-tagged.mgroup-7 {
+        --synccolor: var(--seventhGroup1)
+    }
+
+    .fss-outerbox a.user-tagged.mgroup-8 {
+        --synccolor: var(--seventhGroup2)
+    }
+
+    .fss-outerbox a.user-tagged.mgroup-9 {
+        --synccolor: var(--seventhGroup3)
+    }
+
+    .fss-outerbox a.user-tagged.mgroup-10 {
+        --synccolor: var(--seventhGroup4)
+    }
+
+    .fss-outerbox br {
+        content: '';
+        padding: 0 0 6px;
+        line-height: 0;
+        display: block
+    }
+
+    .fss-outerbox .footer-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%) contrast(150%) brightness(.8);
+        mix-blend-mode: multiply;
+    }
+
+</style>
