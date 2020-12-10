@@ -18,7 +18,7 @@
 
             Spicy jalapeno bacon ipsum dolor amet jowl kielbasa tongue, biltong ham tenderloin fatback turducken pork cupim bresaola porchetta shoulder. Chuck bresaola tongue, swine ball tip ham hock rump ribeye.
 
-            <h3>Cow doner pork loin picanha, pork belly sirloin buffalo hamburger boudin beef </h3>tail frankfurter jowl rump salami. Capicola shank beef, hamburger doner pig burgdoggen ball tip chuck corned beef bacon ham hock pastrami.
+            Cow tail frankfurter jowl rump salami. Capicola shank beef, hamburger doner pig burgdoggen ball tip chuck corned beef bacon ham hock pastrami.
             <b>Swine tenderloin pork meatloaf ribeye bacon.</b> Ribeye fatback doner burgdoggen prosciutto pork, salami pork belly pig kielbasa turducken.
             <br><br> <i>Cow pork chop meatloaf shankle, t-bone short ribs strip steak. </i>Pastrami short loin shank pork pancetta, fatback corned beef bacon spare ribs sirloin short ribs. Tenderloin capicola beef ribeye kevin. <u>Jowl salami short ribs turducken. Landjaeger pastrami sausage ribeye pork.</u>
             <br><br> Strip steak venison meatloaf tongue pork belly, cow pork loin kevin porchetta chislic spare ribs andouille. Swine cupim chicken shankle, short loin buffalo salami corned beef capicola burgdoggen drumstick leberkas chislic picanha filet mignon. Alcatra doner chislic, salami tri-tip cow frankfurter. Pork belly shankle ribeye biltong alcatra cupim. Brisket burgdoggen rump, cow pastrami andouille cupim tri-tip doner tenderloin ham turkey. Venison prosciutto porchetta kevin chuck spare ribs. Corned beef brisket jowl short loin hamburger pork belly capicola sausage jerky ham tenderloin pork chop. <br><br> Strip steak venison meatloaf tongue pork belly, cow pork loin kevin porchetta chislic spare ribs andouille. Swine cupim chicken shankle, short loin buffalo salami corned beef capicola burgdoggen drumstick leberkas chislic picanha filet mignon. Alcatra doner chislic, salami tri-tip cow frankfurter. Pork belly shankle ribeye biltong alcatra cupim. Brisket burgdoggen rump, cow pastrami andouille cupim tri-tip doner tenderloin ham turkey. Venison prosciutto porchetta kevin chuck spare ribs. Corned beef brisket jowl short loin hamburger pork belly capicola sausage jerky ham tenderloin pork chop.
@@ -32,13 +32,13 @@
     </div>
 
 </div>
-
+<div style="text-align:right;width:620px;margin: auto;"><a style="font:700 7px/10px sans-serif;letter-spacing:.8px;text-decoration:none;text-transform:uppercase;" href="http://pixel-perfect.boards.net/user/2465 ">made by gimmick</a></div>
 
 
 
 <style>
     body {
-        background: #eee;
+        background: lightgray;
         --seventhAccent2: #e3c65d;
         --seventhGroup1: #d171a3;
         --seventhGroup2: #cc6358;
@@ -60,7 +60,7 @@
 
     .sidelong {
         width: 620px;
-        margin: 20px auto;
+        margin: 20px auto 4px;
         position: relative;
         display: grid;
         grid-template-areas: ' bodybox headerbox';
@@ -156,13 +156,13 @@
         overflow: auto;
         padding-right: 40px;
         margin-top: 8px;
-        text-align: justify;
+        text-align: left;
         font: 13px/17px 'Hind'
     }
 
-    img {
+    .sidelong img {
         padding: 10px;
-        border: 1px solid rgba(var(--accentRGB), .5);
+        border: 1px solid #dcdcdc;
         float: left;
         margin: 0 20px 10px 0;
         width: 100px;
@@ -176,8 +176,8 @@
     }
 
     .sidelong i {
-        font-weight: 600;
-        color: var(--accent);
+        font-weight: 400;
+        /*        color: var(--accent);*/
     }
 
     .sidelong u {
@@ -192,13 +192,11 @@
     }
 
     .sidelong h1 {
-
         font: 700 12px/12px 'Poppins';
         text-transform: uppercase;
         letter-spacing: 1.8px;
         color: white;
         writing-mode: vertical-rl;
-        /* transform: rotate(180deg);*/
         font-size: 15px;
     }
 
@@ -217,21 +215,26 @@
         font: inherit
     }
 
-    .sidelong::-webkit-scrollbar {
-        -webkit-appearance: none;
-        width: 4px;
+    .sidelong ::-webkit-scrollbar {
+        -webkit-appearance: none !important;
+        background: transparent;
+        width: 4px !important;
+        border: 0 !important;
     }
 
-    .sidelong::-webkit-scrollbar-horizontal {
+
+    .sidelong ::-webkit-scrollbar-horizontal {
         width: 4px;
     }
 
     .sidelong ::-webkit-scrollbar-thumb {
-        background: rgba(var(--accentRGB), .5)
+        background: rgba(var(--accentRGB), .5) !important;
+        border: 0 !important;
     }
 
     .sidelong ::-webkit-scrollbar-track {
-        background: #f9f9f9;
+        background: #f9f9f9 !important;
+        border: 0 !important
     }
 
 </style>
