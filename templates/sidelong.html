@@ -1,4 +1,19 @@
-<link href="https://fonts.googleapis.com/css?family=Hind:400,500,600,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gimmick's Codes: Retro</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,500,600,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
 
 <!--LARGE IMAGE VERSION-->
 
@@ -40,7 +55,7 @@
 
 <div class="sidelong">
     <div class="bodybox">
-        <div class="text-space" style="height: auto; overflow: hidden">
+        <div class="text-space icon">
 
             <img src="https://cdn.discordapp.com/attachments/683720444796338317/738818636260573194/300x300-dazai-03.jpg">
 
@@ -123,16 +138,13 @@
         overflow: hidden;
         background: url(https://i.imgur.com/rfikBaL.png) center center / cover;
         filter: brightness(1.45) contrast(.65) saturate(2);
-        -webkit-transition: all .3s ease;
-        -moz-transition: all .3s ease;
-        -o-transition: all .3s ease;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
     }
 
     .sidelong .image-space:hover {
-        filter: brightness(1.45) contrast(.75) saturate(3);
-        -webkit-transition: all .3s ease;
-        -moz-transition: all .3s ease;
-        -o-transition: all .3s ease;
+        filter: brightness(1.45) contrast(.75) saturate(2);
     }
 
     .sidelong .image-space::after {
@@ -146,43 +158,19 @@
         height: 525px;
     }
 
-
-    /*  TEXT OVER IMAGE
-    h3 {
-        writing-mode: vertical-lr;
-        text-orientation: upright;
-        font: 700 17px/22px 'Poppins';
-        color: white;
-        position: absolute;
-        left: 40px;
-        width: 175px;
-        height: 524px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        top: 88px;
-        margin: 0;
-        font-variant: small-caps;
-        background: rgba(6, 6, 6, .5);
-        opacity: 1;
-        -webkit-transition: all .3s ease;
-        -moz-transition: all .3s ease;
-        -o-transition: all .3s ease;
-    }
-
-    h3:hover {
-        opacity: 0;
-        background: rgba(var(--syncRGBcolor), .5)
-    }
-*/
-
     .sidelong .text-space {
         height: 525px;
         overflow: auto;
         padding-right: 40px;
         margin-top: 8px;
         text-align: left;
-        font: 13px/17px 'Hind'
+        font: 13px/18px 'Hind', 'Maven Pro'
+    }
+
+    .sidelong .text-space.icon {
+        height: auto;
+        overflow: hidden;
+        padding-right: 0;
     }
 
     .sidelong img {
@@ -190,7 +178,7 @@
         border: 1px solid #dcdcdc;
         float: left;
         margin: 0 20px 10px 0;
-        max-width: 150px;
+        max-width: 100px;
         /* background: rgba(var(--syncRGBcolor), .5);*/
     }
 
@@ -261,6 +249,37 @@
         background: #f9f9f9 !important;
         border: 0 !important
     }
+
+
+
+    /*  TEXT OVER IMAGE
+    h3 {
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        font: 700 17px/22px 'Poppins';
+        color: white;
+        position: absolute;
+        left: 40px;
+        width: 175px;
+        height: 524px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 88px;
+        margin: 0;
+        font-variant: small-caps;
+        background: rgba(6, 6, 6, .5);
+        opacity: 1;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+    }
+
+    h3:hover {
+        opacity: 0;
+        background: rgba(var(--syncRGBcolor), .5)
+    }
+*/
 
 </style>
 
