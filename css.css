@@ -1,14 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+
+
 html {
     height: 100vh;
 }
 
 body {
     margin: 0;
-    background: lightgray;
+    padding: 0;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 100%;
-    height: 100%;
+    grid-template-areas: "demo demo demo info";
+    height: calc(100% - 10px);
+    border: 10px solid white;
+    border-bottom: 0;
+    grid-column-gap: 10px;
 }
 
 h1,
@@ -21,41 +29,54 @@ h6 {
 }
 
 h1 {
+    font-weight: 500;
     font-size: 20px;
+    margin: 0 0 20px;
+}
+
+h5 {
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
 }
 
 .info_col {
-    width: calc(100% - 60px);
+    grid-area: info;
     min-width: 250px;
-    max-width: 350px;
-    height: min-content;
-    border-right: 0px solid black;
-    background: #f4f4f4;
-    padding: 20px;
+    max-width: 300px;
+    height: calc(100% - 30px);
+    /*    background: #f4f4f4;*/
+    margin: 0 10px;
+    font: 15px 'DM Mono', sans-serif;
+}
+
+.info_col > div {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: stretch;
-    font: 15px sans-serif;
-    margin: 20px;
+    padding: 10px 0 0;
+    border-top: 1px solid black;
 }
-
 
 textarea {
     font: 12px monospace;
     height: 200px;
     background: #121212;
-    border-radius: 5px;
+    border-radius: 3px;
     background: #efefef;
-    border: 1px solid darkgray;
-    margin: 10px 0;
+    border: 1px solid #e2e2e2;
+    padding: 5px;
 }
 
 button {
     font: bold 12px sans-serif;
     letter-spacing: .5px;
     padding: 8px 10px;
-    background: #333;
-    margin: 0;
+    background: #1c4bc1;
+    margin: 10px 0 0;
     border: 0;
     color: white;
     border-radius: 3px;
@@ -66,14 +87,55 @@ button {
 
 button:hover,
 button:active {
-    background: #121212;
+    background: #333;
 }
 
 .demo_col {
     text-align: right;
-    grid-column: 2;
+    grid-area: demo;
 }
 
 iframe {
-    border: 0;
+    height: calc(100% - 20px);
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width: 740px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 75% auto;
+        grid-template-areas:
+            "demo"
+            "info";
+        grid-column-gap: 0;
+    }
+
+    .info_col {
+        max-width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .info_col > div {
+        border: 0;
+        align-content: center;
+        width: 75%;
+        margin: auto;
+        padding: 10px 0 20px;
+    }
+
+    h1 {
+        margin: 0;
+        display: none;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    iframe {
+        height: 100%;
+    }
+
 }
