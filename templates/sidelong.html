@@ -4,6 +4,28 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:400,500,600,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    html {
+        background: lightgray;
+    }
+
+    ::-webkit-scrollbar {
+        -webkit-appearance: none !important;
+        width: 10px !important;
+        border: 0 !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: darkgray;
+        border-left: 2px solid white !important;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #e2e2e2 !important;
+        border-left: 2px solid white !important
+    }
+
+</style>
 
 <!--LARGE IMAGE VERSION-->
 
@@ -12,8 +34,7 @@
         <div class="bodybox">
 
             <div class="border-box">
-                <div class="image-space" style="background: url(https://cdn.discordapp.com/attachments/683720444796338317/708806012077080613/200x400-ryuuji-01.jpg) center center / cover">
-                </div>
+                <div class="image-space" style="background: url(../assets/200x600-makima-01.jpg) center center / cover;"></div>
             </div>
 
             <div class="text-space">
@@ -31,7 +52,7 @@
         </div>
 
         <div class="headerbox">
-            <h1><a href="URLHERE">ginseng</a> + <a href="URLHERE">system</a></h1>
+            <h1>name + <a href="URLHERE">name</a></h1>
         </div>
 
     </div>
@@ -39,7 +60,7 @@
 </div>
 
 
-<br><br>
+<br>
 
 
 
@@ -50,7 +71,7 @@
         <div class="bodybox">
             <div class="text-space icon">
 
-                <img src="https://cdn.discordapp.com/attachments/683720444796338317/738818636260573194/300x300-dazai-03.jpg">
+                <img src="../assets/200x200-hawks-388.jpg">
 
 
                 Spicy jalapeno bacon ipsum dolor amet jowl kielbasa tongue, biltong ham tenderloin fatback turducken pork cupim bresaola porchetta shoulder. Chuck bresaola tongue, swine ball tip ham hock rump ribeye. Cow tail frankfurter jowl rump salami. Capicola shank beef, hamburger doner pig burgdoggen ball tip chuck corned beef bacon ham hock pastrami. Pastrami short loin shank pork pancetta, fatback corned beef bacon spare ribs sirloin.
@@ -61,7 +82,7 @@
         </div>
 
         <div class="headerbox">
-            <h1><a href="URLHERE">ginseng</a> <a href="URLHERE">system</a></h1>
+            <h1>name + <a href="URLHERE">name</a></h1>
         </div>
 
     </div>
@@ -72,7 +93,6 @@
 
 <style>
     body {
-        background: lightgray;
         --seventhAccent2: #e3c65d;
         --seventhGroup1: #d171a3;
         --seventhGroup2: #cc6358;
@@ -92,8 +112,10 @@
         --synccolor: var(--seventhGroup4);
     }
 
+    @import url("https://fonts.googleapis.com/css?family=Hind:400,500,600,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
     .sidelongcredits {
-        margin: 30px auto;
+        margin: 20px auto;
         width: min-content;
     }
 
@@ -144,15 +166,15 @@
         width: 175px;
         height: 525px;
         overflow: hidden;
-        background: url(https://i.imgur.com/rfikBaL.png) center center / cover;
-        filter: brightness(1.45) contrast(.65) saturate(2);
-        -webkit-transition: all 1s ease;
-        -moz-transition: all 1s ease;
-        -o-transition: all 1s ease;
+        background: lightgray;
+        filter: brightness(1.25) contrast(.65) saturate(2);
+        -webkit-transition: all 1s linear;
+        -moz-transition: all 1s linear;
+        -o-transition: all 1s linear;
     }
 
     .sidelong .image-space:hover {
-        filter: brightness(1.45) contrast(.75) saturate(2);
+        filter: brightness(1.35) contrast(.75) saturate(2);
     }
 
     .sidelong .image-space::after {
@@ -186,8 +208,16 @@
         border: 1px solid #dcdcdc;
         float: left;
         margin: 0 20px 10px 0;
-        max-width: 100px;
+        max-width: 150px;
+        filter: brightness(1) contrast(.75) saturate(.8);
+        -webkit-transition: all 1s linear;
+        -moz-transition: all 1s linear;
+        -o-transition: all 1s linear;
         /* background: rgba(var(--syncRGBcolor), .5);*/
+    }
+
+    .sidelong img:hover {
+        filter: brightness(1.1) contrast(.8) saturate(1);
     }
 
     .sidelong b {
@@ -279,9 +309,9 @@
         font-variant: small-caps;
         background: rgba(6, 6, 6, .5);
         opacity: 1;
-        -webkit-transition: all .3s ease;
-        -moz-transition: all .3s ease;
-        -o-transition: all .3s ease;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
     }
 
     h3:hover {
