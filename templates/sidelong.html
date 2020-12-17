@@ -10,7 +10,7 @@
     }
 
     ::-webkit-scrollbar {
-        -webkit-appearance: none !important;
+        -webkit-appearance: none ;
         width: 10px !important;
         height: 10px;
         border: 0 !important;
@@ -18,12 +18,22 @@
 
     ::-webkit-scrollbar-thumb {
         background: darkgray;
-        border-left: 2px solid white !important;
+        border-left: 2px solid white ;
     }
 
     ::-webkit-scrollbar-track {
-        background: #e2e2e2 !important;
-        border-left: 2px solid white !important
+        background: #e2e2e2;
+        border-left: 2px solid white 
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        border-top: 2px solid white ;
+        border-left: 0;
+    }
+
+    ::-webkit-scrollbar-track:horizontal {
+        border-top: 2px solid white ;
+        border-left: 0;
     }
 
 </style>
@@ -136,8 +146,8 @@
         display: grid;
         grid-template-areas: 'bodybox headerbox';
         background: #f9f9f9;
-        -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+        -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
         --accentRGB: 203, 133, 0;
         --accent: #cb8500
     }
