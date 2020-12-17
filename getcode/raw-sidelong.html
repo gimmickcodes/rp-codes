@@ -34,8 +34,8 @@
 
     <div class="info_col">
         <div class="contentbox">
-            <h5>Post</h5>
-            <h1>Sidelong</h1>
+            <h5>Threading</h5>
+            <h1>Sidelong, 200x600 image</h1>
 
             <!--            START RAW HTML              -->
             <textarea readonly>
@@ -44,14 +44,12 @@
 <div class="sidelong">
 <div class="bodybox">
 
-<!-- Delete border-box div if not using -->
 <div class="border-box">
-<div class="image-space" style="background: url(TALL IMAGE) center center / cover;
+<div class="image-space" style="background: url(IMGURL) center center / cover;
 "> </div></div>
 
+    
 <div class="text-space">
-
-<img src="INLINE IMAGE">
 
 YOUR POST HERE
 
@@ -250,6 +248,223 @@ border: 0 !important
 
             <button>Copy code</button>
         </div>
+    
+    
+    
+    
+         <div class="contentbox">
+            <h1>Optional image</h1>
+
+            <!--            START RAW HTML              -->
+            <textarea readonly>
+[dohtml]
+<div class="sidelongcredits">
+<div class="sidelong">
+<div class="bodybox">
+    
+<div class="text-space icon">
+
+<img src="IMGURL">
+
+YOUR POST HERE
+
+</div>
+</div>
+
+<div class="headerbox">
+<h1>Name + @[NAME]</h1>
+</div>
+
+</div>
+<a href="http://pixel-perfect.boards.net/user/2465">made by gimmick</a>
+</div>
+  
+                
+                
+<style>
+@import url("https://fonts.googleapis.com/css?family=Hind:400,500,600,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+.sidelongcredits {
+margin: 20px auto;
+width: min-content;
+}
+
+.sidelongcredits>a {
+display: block;
+text-align: right;
+margin-top: 4px;
+font: 700 7px/10px sans-serif;
+letter-spacing: .8px;
+text-decoration: none;
+text-transform: uppercase;
+}
+
+.sidelong {
+width: 620px;
+position: relative;
+display: grid;
+grid-template-areas: 'bodybox headerbox';
+background: #f9f9f9;
+--accentRGB: 203, 133, 0;
+--accent: #cb8500
+}
+
+.sidelong .headerbox {
+background: linear-gradient(-180deg, rgba(var(--accentRGB), 1), rgba(var(--accentRGB), .45));
+grid-area: headerbox;
+width: 50px;
+display: flex;
+justify-content: center;
+padding-top: 40px;
+}
+
+.sidelong .bodybox {
+padding: 30px 0px 30px 30px;
+background: #f9f9f9;
+grid-area: bodybox;
+display: grid;
+grid-column-gap: 30px;
+grid-template-columns: auto 1fr;
+}
+
+.sidelong .border-box {
+padding: 8px;
+border: 1px solid #dcdcdc;
+}
+
+.sidelong .image-space {
+width: 175px;
+height: 525px;
+overflow: hidden;
+background: lightgray;
+filter: brightness(1.25) contrast(.65) saturate(2);
+-webkit-transition: all 1s linear;
+-moz-transition: all 1s linear;
+-o-transition: all 1s linear;
+}
+
+.sidelong .image-space:hover {
+filter: brightness(1.35) contrast(.75) saturate(2);
+}
+
+.sidelong .image-space::after {
+content: ' ';
+background: #666;
+opacity: .25;
+position: absolute;
+width: 175px;
+height: 525px;
+z-index: 10;
+}
+
+.sidelong .text-space {
+height: 525px;
+overflow: auto;
+padding-right: 40px;
+margin-top: 8px;
+text-align: left;
+font: 13px/18px 'Hind', sans-serif;
+}
+
+.sidelong .text-space.icon {
+height: auto;
+overflow: hidden;
+padding-right: 0;
+margin: 0;
+}
+
+.sidelong img {
+padding: 10px;
+border: 1px solid #dcdcdc;
+float: left;
+margin: 0 20px 10px 0;
+max-width: 150px;
+filter: brightness(1) contrast(.75) saturate(.8);
+-webkit-transition: all 1s linear;
+-moz-transition: all 1s linear;
+-o-transition: all 1s linear;
+}
+
+.sidelong img:hover {
+filter: brightness(1.1) contrast(.8) saturate(1);
+}
+
+.sidelong b {
+font-weight: bold;
+font-size: 14px;
+color: var(--accent);
+}
+
+.sidelong i {
+font-weight: 400;
+}
+
+.sidelong u {
+text-decoration-style: dotted;
+text-decoration-color: var(--accent);
+}
+
+.sidelong .text-space br {
+content: '';
+padding: 0 0 6px;
+display: block;
+}
+
+.sidelong h1 {
+font: 700 12px/12px 'Poppins';
+text-transform: uppercase;
+letter-spacing: 1.8px;
+color: white;
+writing-mode: vertical-rl;
+font-size: 15px;
+}
+
+.sidelong h1 a {
+font: inherit;
+text-decoration: none;
+color: inherit;
+}
+
+.sidelong h2,
+.sidelong h3 {
+margin: 0;
+font: inherit
+}
+
+.sidelong ::-webkit-scrollbar {
+-webkit-appearance: none !important;
+background: transparent;
+width: 4px !important;
+border: 0 !important;
+}
+
+.sidelong ::-webkit-scrollbar-horizontal {
+width: 4px;
+}
+
+.sidelong ::-webkit-scrollbar-thumb {
+background: rgba(var(--accentRGB), .5) !important;
+border: 0 !important;
+}
+
+.sidelong ::-webkit-scrollbar-track {
+background: #f9f9f9 !important;
+border: 0 !important
+}
+</style>
+[/dohtml]
+                   
+        </textarea> <!--            END RAW HTML              -->
+
+
+
+
+
+
+            <button>Copy code</button>
+        </div>
+    
+    
     </div>
 
 
