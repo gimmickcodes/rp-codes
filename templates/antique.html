@@ -332,7 +332,7 @@
         position: relative;
     }
 
-    .img-bg {
+    .antique .img-bg {
         position: absolute;
         top: 0;
         left: 0;
@@ -357,7 +357,7 @@
         }
     }
 
-    .img-tint {
+    .antique .img-tint {
         content: '';
         width: 540px;
         height: 100%;
@@ -371,7 +371,7 @@
         opacity: .4;
     }
 
-    .antiquegrid {
+    .antique .antiquegrid {
         display: grid;
         height: 400px;
         width: 100%;
@@ -379,14 +379,14 @@
         grid-template-columns: 9fr 1fr;
     }
 
-    .mainbox {
+    .antique .mainbox {
         min-width: 120px;
         grid-area: main;
         overflow: hidden;
         position: relative;
     }
 
-    .sidenav {
+    .antique .sidenav {
         grid-area: sidenav;
         background: #332F2B;
         padding: 30px 15px 24px;
@@ -397,7 +397,7 @@
         z-index: 1000;
     }
 
-    .tab {
+    .antique .tab {
         -webkit-transition: all .25s ease-in;
         opacity: 0;
         -webkit-animation: fadein_opacity .75s .5s ease-in-out;
@@ -405,13 +405,13 @@
         cursor: pointer;
     }
 
-    .nav_box {
+    .antique .nav_box {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .nav_dot {
+    .antique .nav_dot {
         display: block;
         padding: 0px;
         border: 3px solid transparent;
@@ -421,7 +421,7 @@
         -webkit-transform: rotate(45deg);
     }
 
-    .nav_dot>div {
+    .antique .nav_dot>div {
         width: 7px;
         height: 7px;
         background: var(--primary);
@@ -429,7 +429,7 @@
     }
 
 
-    .tab i {
+    .antique .tab i {
         font-size: 24px;
         line-height: 24px;
         color: var(--primary);
@@ -437,28 +437,28 @@
         -webkit-transition: all .25s ease-in;
     }
 
-    .tab:hover i {
+    .antique .tab:hover i {
         color: var(--secondary);
     }
 
-    .tab.antique_active i {
+    .antique .tab.antique_active i {
         animation-fill-mode: forwards;
         opacity: 1;
         color: var(--secondary);
     }
 
-    .tab.antique_active.nav_dot {
+    .antique .tab.antique_active.nav_dot {
         border-width: 1px;
         border-color: var(--primary);
         padding: 2px;
     }
 
-    .tooltip:last-child .nav_dot {
+    .antique .tooltip:last-child .nav_dot {
         margin: 4px 0 0;
     }
 
-    .tab.antique_active.nav_dot>div,
-    .tab:hover>div {
+    .antique .tab.antique_active.nav_dot>div,
+    .antique .tab:hover>div {
         background: var(--secondary);
     }
 
@@ -473,7 +473,7 @@
         }
     }
 
-    .tooltip span {
+    .antique .tooltip span {
         visibility: hidden;
         opacity: 0;
         position: absolute;
@@ -490,13 +490,13 @@
         z-index: 900;
     }
 
-    .tooltip:hover span {
+    .antique .tooltip:hover span {
         visibility: visible;
         opacity: .8;
         -webkit-transition: all 0s .75s ease-in;
     }
 
-    .covertext {
+    .antique .covertext {
         -webkit-animation: fadein_text 1.25s 0s ease-in-out;
         animation-fill-mode: forwards;
         opacity: 0;
@@ -504,7 +504,7 @@
         z-index: 50;
     }
 
-    .img-glare {
+    .antique .img-glare {
         position: absolute;
         left: 0;
         top: 0;
@@ -540,7 +540,7 @@
         }
     }
 
-    .pagebox {
+    .antique .pagebox {
         z-index: 200;
         position: absolute;
         top: 0;
@@ -551,13 +551,13 @@
         -webkit-transition: all .75s ease;
     }
 
-    .pagebox.antique_active {
+    .antique .pagebox.antique_active {
         display: grid;
         opacity: 1;
         transform: translateY(0);
     }
 
-    .cover {
+    .antique .cover {
         display: grid;
         padding: 27px 30px;
         align-items: flex-end;
@@ -565,30 +565,30 @@
         -webkit-transition: all .75s 0 ease;
     }
 
-    .pagebox.antique_active.cover {
+    .antique .pagebox.antique_active.cover {
         -webkit-transition: all .75s .25s ease;
     }
 
-    .pagebox.antique_active.page {
+    .antique .pagebox.antique_active.page {
         transform: translateY(-150px);
         z-index: 200;
         display: block;
     }
 
-    .pagecontentfade {
+    .antique .pagecontentfade {
         width: 100%;
         height: 150px;
         background: linear-gradient(to top, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, 0) 100%);
         z-index: -1;
     }
 
-    .pagecontent {
+    .antique .pagecontent {
         align-content: flex-start;
         background: rgba(0, 0, 0, .75);
         align-items: flex-start;
     }
 
-    .pageinset {
+    .antique .pageinset {
         display: grid;
         align-content: flex-start;
         padding: 30px;
@@ -605,7 +605,7 @@
     }
 
 
-    h1 {
+    .antique h1 {
         font-family: 'Baskerville'; /* eh when big */
         font-family: 'Lancelot'; /* too fairy medieval */
         font-family: 'Antic Didone'; /* too perfume brand */
@@ -621,7 +621,7 @@
         text-shadow: 0 0 1px rgba(255, 255, 255, .5);
     }
 
-    h5 {
+    .antique h5 {
         font: 400 14px/18px 'Mate SC';
         text-transform: lowercase;
         max-width: 300px;
@@ -637,7 +637,7 @@
         /*        font: 400 13px/17px 'Alegreya SC';*/
     }
 
-    h2 {
+    .antique h2 {
         width: fit-content;
         font: 700 normal 20px/30px 'Mate';
         opacity: .9;
@@ -649,14 +649,14 @@
         padding-bottom: 12px;
     }
 
-    .thread {
+    .antique .thread {
         padding: 0;
         color: var(--tertiary);
     }
 
-    .threadname,
-    .thread a,
-    .thread a:hover {
+    .antique .threadname,
+    .antique .thread a,
+    .antique .thread a:hover {
         color: var(--secondary);
         text-decoration: none;
         font: 400 15px/18px 'Mate SC';
@@ -671,7 +671,7 @@
 /*        font: 400 14px/17px 'Alegreya SC';*/
     }
 
-    .threadname::after {
+    .antique .threadname::after {
         content: ' ';
         margin: 0 4px -2px 8px;
         background: var(--tertiary);
@@ -682,9 +682,9 @@
         height: 14px;
     }
 
-    .threadinfo,
-    .threadinfo a,
-    .threadinfo a:hover {
+    .antique .threadinfo,
+    .antique .threadinfo a,
+    .antique .threadinfo a:hover {
 /*        font: 14px/16px 'Mate';*/
         display: inline;
         margin-left: 0;
@@ -694,7 +694,7 @@
         font: 500 11px/15px 'Nanum Gothic';
     }
 
-    .threadinfo::before {
+    .antique .threadinfo::before {
         content: 'ft. ';
     }
 

@@ -44,13 +44,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Mate&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
 
-<div class="darkgoldcredits">
-<div class="darkgold">
-<div class="darkgoldgrid">
+<div class="antiquecredits">
+<div class="antique">
+<div class="antiquegrid">
 
 <div class="sidenav">
     
-<div class="tab darkgold_active"><i class="fas fa-pen-nib"></i></div>
+<div class="tab antique_active"><i class="fas fa-pen-nib"></i></div>
 
 <div class="nav_box">
 
@@ -69,7 +69,7 @@
 
 <div class="mainbox">
 
-<div class="pagebox cover darkgold_active">
+<div class="pagebox cover antique_active">
 <div class="covertext">
 <h1>Name Here</h1>
 <h5>Lorem ipsum dolor sit amet, adipiscing elit. Maecenas turpis consectetur neque</h5>
@@ -124,57 +124,57 @@
 
 
 <style>
-.darkgoldcredits { max-width: 600px; width: 95%; margin: 30px auto; --primary: #736342; --secondary: #BFAA80; --tertiary: #8A8478; }
+.antiquecredits { max-width: 600px; width: 95%; margin: 30px auto; --primary: #736342; --secondary: #BFAA80; --tertiary: #8A8478; }
 
-.darkgoldcredits>a { display: block; text-align: right; margin-top: 4px; font: 700 7px/10px sans-serif; letter-spacing: .8px; text-decoration: none; text-transform: uppercase; }
+.antiquecredits>a { display: block; text-align: right; margin-top: 4px; font: 700 7px/10px sans-serif; letter-spacing: .8px; text-decoration: none; text-transform: uppercase; }
 
-.darkgold { background: black; position: relative; }
+.antique { background: black; position: relative; }
 
-.img-bg { position: absolute; top: 0; left: 0; z-index: 1; width: calc(100%); height: 100%; background: url(540x400 IMAGE) center center / cover; filter: contrast(.5) sepia(.0) brightness(.5) saturate(1) opacity(1); -webkit-animation: fadein_filter 1s .5s ease-in-out; animation-fill-mode: forwards; }
+.antique .img-bg { position: absolute; top: 0; left: 0; z-index: 1; width: calc(100%); height: 100%; background: url(540x400 IMAGE) center center / cover; filter: contrast(.5) sepia(.0) brightness(.5) saturate(1) opacity(1); -webkit-animation: fadein_filter 1s .5s ease-in-out; animation-fill-mode: forwards; }
 
 @keyframes fadein_filter { 0% { filter: contrast(.5) sepia(.0) brightness(.5) saturate(1) opacity(1); }
 
 100% { filter: contrast(.6) sepia(.5) brightness(.7) saturate(2.5) opacity(.8); } }
 
-.img-tint { content: ''; width: 540px; height: 100%; position: absolute; top: 0; left: 0; background: #9e922a; background: var(--primary); z-index: 2; mix-blend-mode: overlay; opacity: .4; }
+.antique .img-tint { content: ''; width: 540px; height: 100%; position: absolute; top: 0; left: 0; background: var(--primary); z-index: 2; mix-blend-mode: overlay; opacity: .4; }
 
-.darkgoldgrid { display: grid; height: 400px; width: 100%; grid-template-areas: "main sidenav"; grid-template-columns: 9fr 1fr; }
+.antique .antiquegrid { display: grid; height: 400px; width: 100%; grid-template-areas: "main sidenav"; grid-template-columns: 9fr 1fr; }
 
-.mainbox { min-width: 120px; grid-area: main; overflow: hidden; position: relative; }
+.antique .mainbox { min-width: 120px; grid-area: main; overflow: hidden; position: relative; }
 
-.sidenav { grid-area: sidenav; background: #332F2B; padding: 30px 15px 24px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; z-index: 1000; }
+.antique .sidenav { grid-area: sidenav; background: #332F2B; padding: 30px 15px 24px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; z-index: 1000; }
 
-.tab { -webkit-transition: all .25s ease-in; opacity: 0; -webkit-animation: fadein_opacity .75s .5s ease-in-out; animation-fill-mode: forwards; cursor: pointer; }
+.antique .tab { -webkit-transition: all .25s ease-in; opacity: 0; -webkit-animation: fadein_opacity .75s .5s ease-in-out; animation-fill-mode: forwards; cursor: pointer; }
 
-.nav_box { display: flex; flex-direction: column; align-items: center; }
+.antique .nav_box { display: flex; flex-direction: column; align-items: center; }
 
-.nav_dot { display: block; padding: 0px; border: 3px solid transparent; background: #332F2B; margin: 4px 0; transform: rotate(45deg); -webkit-transform: rotate(45deg); }
+.antique .nav_dot { display: block; padding: 0px; border: 3px solid transparent; background: #332F2B; margin: 4px 0; transform: rotate(45deg); -webkit-transform: rotate(45deg); }
 
-.nav_dot>div { width: 7px; height: 7px; background: var(--primary); -webkit-transition: all .25s ease-in; } 
+.antique .nav_dot>div { width: 7px; height: 7px; background: var(--primary); -webkit-transition: all .25s ease-in; } 
 
-.tab i { font-size: 24px; line-height: 24px; color: var(--primary); display: block; -webkit-transition: all .25s ease-in; }
+.antique .tab i { font-size: 24px; line-height: 24px; color: var(--primary); display: block; -webkit-transition: all .25s ease-in; }
 
-.tab:hover i { color: var(--secondary); }
+.antique .tab:hover i { color: var(--secondary); }
 
-.tab.darkgold_active i { animation-fill-mode: forwards; opacity: 1; color: var(--secondary); }
+.antique .tab.antique_active i { animation-fill-mode: forwards; opacity: 1; color: var(--secondary); }
 
-.tab.darkgold_active.nav_dot { border-width: 1px; border-color: var(--primary); padding: 2px; }
+.antique .tab.antique_active.nav_dot { border-width: 1px; border-color: var(--primary); padding: 2px; }
 
-.tooltip:last-child .nav_dot { margin: 4px 0 0; }
+.antique .tooltip:last-child .nav_dot { margin: 4px 0 0; }
 
-.tab.darkgold_active.nav_dot>div, .tab:hover>div { background: var(--secondary); } 
+.antique .tab.antique_active.nav_dot>div, .antique .tab:hover>div { background: var(--secondary); } 
 
 @keyframes fadein_opacity { 0% { opacity: 0; }
 
 100% { opacity: 1; } }
 
-.tooltip span { visibility: hidden; opacity: 0; position: absolute; background: black; color: rgba(255, 255, 255, .85); margin-top: -25px; margin-left: 30px; padding: 4px 10px 5px; width: fit-content; border-radius: 2px; -webkit-transition: all 0; font: 14px 'Mate SC'; letter-spacing: .4px; z-index: 900; }
+.antique .tooltip span { visibility: hidden; opacity: 0; position: absolute; background: black; color: rgba(255, 255, 255, .85); margin-top: -25px; margin-left: 30px; padding: 4px 10px 5px; width: fit-content; border-radius: 2px; -webkit-transition: all 0; font: 14px 'Mate SC'; letter-spacing: .4px; z-index: 900; }
 
-.tooltip:hover span { visibility: visible; opacity: .8; -webkit-transition: all 0s .75s ease-in; }
+.antique .tooltip:hover span { visibility: visible; opacity: .8; -webkit-transition: all 0s .75s ease-in; }
 
-.covertext { -webkit-animation: fadein_text 1.25s 0s ease-in-out; animation-fill-mode: forwards; opacity: 0; transform: translateY(200px); z-index: 50; }
+.antique .covertext { -webkit-animation: fadein_text 1.25s 0s ease-in-out; animation-fill-mode: forwards; opacity: 0; transform: translateY(200px); z-index: 50; }
 
-.img-glare { position: absolute; left: 0; top: 0; -webkit-animation: fadein_glare 1s .5s ease-in-out; animation-fill-mode: forwards; opacity: 0; z-index: 25; }
+.antique .img-glare { position: absolute; left: 0; top: 0; -webkit-animation: fadein_glare 1s .5s ease-in-out; animation-fill-mode: forwards; opacity: 0; z-index: 25; }
 
 @keyframes fadein_text { 0% { opacity: 0; transform: translateY(200px) }
 
@@ -186,51 +186,49 @@
 
 100% { opacity: .4; } }
 
-.pagebox { z-index: 200; position: absolute; top: 0; width: 100%; height: calc(100% - 54px); opacity: 0; transform: translateY(600px); -webkit-transition: all .75s ease; }
+.antique .pagebox { z-index: 200; position: absolute; top: 0; width: 100%; height: calc(100% - 54px); opacity: 0; transform: translateY(600px); -webkit-transition: all .75s ease; }
 
-.pagebox.darkgold_active { display: grid; opacity: 1; transform: translateY(0); }
+.antique .pagebox.antique_active { display: grid; opacity: 1; transform: translateY(0); }
 
-.cover { display: grid; padding: 27px 30px; align-items: flex-end; transform: translateY(0); -webkit-transition: all .75s 0 ease; }
+.antique .cover { display: grid; padding: 27px 30px; align-items: flex-end; transform: translateY(0); -webkit-transition: all .75s 0 ease; }
 
-.pagebox.darkgold_active.cover { -webkit-transition: all .75s .25s ease; }
+.antique .pagebox.antique_active.cover { -webkit-transition: all .75s .25s ease; }
 
-.pagebox.darkgold_active.page { transform: translateY(-150px); z-index: 200; display: block; }
+.antique .pagebox.antique_active.page { transform: translateY(-150px); z-index: 200; display: block; }
 
-.pagecontentfade { width: 100%; height: 150px; background: linear-gradient(to top, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, 0) 100%); z-index: -1; }
+.antique .pagecontentfade { width: 100%; height: 150px; background: linear-gradient(to top, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, 0) 100%); z-index: -1; }
 
-.pagecontent { align-content: flex-start; background: rgba(0, 0, 0, .75); align-items: flex-start; }
+.antique .pagecontent { align-content: flex-start; background: rgba(0, 0, 0, .75); align-items: flex-start; }
 
-.pageinset { display: grid; align-content: flex-start; padding: 30px; height: 340px; overflow-y: auto; grid-row-gap: 8px; }
+.antique .pageinset { display: grid; align-content: flex-start; padding: 30px; height: 340px; overflow-y: auto; grid-row-gap: 8px; }
 
-h1, h2, h5, div { margin: 0; } 
+.antique h1 { margin: 0; font: 400 normal 40px/36px 'Mate'; color: rgba(255, 255, 255, .4); text-shadow: 0 0 1px rgba(255, 255, 255, .5); }
 
-h1 { font: 400 normal 40px/36px 'Mate'; color: rgba(255, 255, 255, .4); text-shadow: 0 0 1px rgba(255, 255, 255, .5); }
+.antique h5 { font: 400 14px/18px 'Mate SC'; text-transform: lowercase; max-width: 300px; letter-spacing: 1px; margin: 6px 0 0; color: rgba(255, 255, 255, .85); }
 
-h5 { font: 400 14px/18px 'Mate SC'; text-transform: lowercase; max-width: 300px; letter-spacing: 1px; margin-top: 6px; color: rgba(255, 255, 255, .85); }
+.antique h2 { width: fit-content; font: 700 normal 20px/30px 'Mate'; opacity: .9; color: var(--secondary); margin: 0 0 8px; white-space: nowrap; width: 30px; border-bottom: 1px solid var(--primary); padding-bottom: 12px; }
 
-h2 { width: fit-content; font: 700 normal 20px/30px 'Mate'; opacity: .9; color: var(--secondary); margin-bottom: 8px; white-space: nowrap; width: 30px; border-bottom: 1px solid var(--primary); padding-bottom: 12px; }
+.antique .thread { padding: 0; color: var(--tertiary); }
 
-.thread { padding: 0; color: var(--tertiary); }
+.antique .threadname, .antique .thread a, .antique .thread a:hover { color: var(--secondary); text-decoration: none; font: 400 15px/18px 'Mate SC'; text-transform: lowercase; letter-spacing: 1px; text-decoration: none; }
 
-.threadname, .thread a, .thread a:hover { color: var(--secondary); text-decoration: none; font: 400 15px/18px 'Mate SC'; text-transform: lowercase; letter-spacing: 1px; text-decoration: none; }
+.antique .threadname::after { content: ' '; margin: 0 4px -2px 8px; background: var(--tertiary); font-family: sans-serif; opacity: .5; display: inline-block; width: 2px; height: 14px; }
 
-.threadname::after { content: ' '; margin: 0 4px -2px 8px; background: var(--tertiary); font-family: sans-serif; opacity: .5; display: inline-block; width: 2px; height: 14px; }
+.antique .threadinfo, .antique .threadinfo a, .antique .threadinfo a:hover { display: inline; margin-left: 0; text-transform: lowercase; letter-spacing: .6px; text-decoration: none; font: 500 11px/15px 'Nanum Gothic'; }
 
-.threadinfo, .threadinfo a, .threadinfo a:hover { display: inline; margin-left: 0; text-transform: lowercase; letter-spacing: .6px; text-decoration: none; font: 500 11px/15px 'Nanum Gothic'; }
+.antique .threadinfo::before { content: 'ft. '; }
 
-.threadinfo::before { content: 'ft. '; }
+.antique ::-webkit-scrollbar { -webkit-appearance: none; width: 4px !important; border: 0 !important; }
 
-.darkgold ::-webkit-scrollbar { -webkit-appearance: none; width: 4px !important; border: 0 !important; }
+.antique ::-webkit-scrollbar-thumb { background: var(--primary); border: 0; }
 
-.darkgold ::-webkit-scrollbar-thumb { background: var(--primary); border: 0; }
-
-.darkgold ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0); border: 0; }
+.antique ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0); border: 0; }
 </style>
 
 
 <script src="https://codepen.io/breezescodes/pen/XWdymYM.js"></script>
 <script>
-localT4({ outerName: '.darkgold', tabClassName: '.tab', contClassName: '.pagebox', });
+localT4({ outerName: '.antique', tabClassName: '.tab', contClassName: '.pagebox', });
 </script>[/dohtml]
                    
         </textarea> <!--            END RAW HTML              -->
