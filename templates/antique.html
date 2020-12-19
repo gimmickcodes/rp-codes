@@ -343,7 +343,10 @@
 /*        filter: contrast(.5) sepia(.2) brightness(.5) saturate(1) opacity(.8);*/
 
         filter: contrast(.5) sepia(.0) brightness(.5) saturate(1) opacity(1);
+        animation: fadein_filter 1s .5s ease-in-out;
         -webkit-animation: fadein_filter 1s .5s ease-in-out;
+        -moz-animation: fadein_filter 1s .5s ease-in-out;
+        -o-animation: fadein_filter 1s .5s ease-in-out;
         animation-fill-mode: forwards;
     }
 
@@ -398,9 +401,15 @@
     }
 
     .antique .tab {
-        -webkit-transition: all .25s ease-in;
         opacity: 0;
+        transition: all .25s ease-in;
+        -webkit-transition: all .25s ease-in;
+        -moz-transition: all .25s ease-in;
+        -o-transition: all .25s ease-in;
+        animation: fadein_opacity .75s .5s ease-in-out;
         -webkit-animation: fadein_opacity .75s .5s ease-in-out;
+        -moz-animation: fadein_opacity .75s .5s ease-in-out;
+        -o-animation: fadein_opacity .75s .5s ease-in-out;
         animation-fill-mode: forwards;
         cursor: pointer;
     }
@@ -419,13 +428,21 @@
         margin: 4px 0;
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
     }
 
     .antique .nav_dot>div {
         width: 7px;
         height: 7px;
         background: var(--primary);
+        transition: all .25s ease-in;
         -webkit-transition: all .25s ease-in;
+        -moz-transition: all .25s ease-in;
+        -o-transition: all .25s ease-in;
     }
 
 
@@ -434,7 +451,10 @@
         line-height: 24px;
         color: var(--primary);
         display: block;
+        transition: all .25s ease-in;
         -webkit-transition: all .25s ease-in;
+        -moz-transition: all .25s ease-in;
+        -o-transition: all .25s ease-in;
     }
 
     .antique .tab:hover i {
@@ -484,23 +504,35 @@
         padding: 4px 10px 5px;
         width: fit-content;
         border-radius: 2px;
-        -webkit-transition: all 0;
         font: 14px 'Mate SC';
         letter-spacing: .4px;
         z-index: 900;
+        transition: all 0;
+        -webkit-transition: all 0;
+        -moz-transition: all 0;
+        -o-transition: all 0;
     }
 
     .antique .tooltip:hover span {
         visibility: visible;
         opacity: .8;
+        transition: all 0s .75s ease-in;
         -webkit-transition: all 0s .75s ease-in;
+        -moz-transition: all 0s .75s ease-in;
+        -o-transition: all 0s .75s ease-in;
     }
 
     .antique .covertext {
+        animation: fadein_text 1.25s 0s ease-in-out;
         -webkit-animation: fadein_text 1.25s 0s ease-in-out;
+        -moz-animation: fadein_text 1.25s 0s ease-in-out;
+        -o-animation: fadein_text 1.25s 0s ease-in-out;
         animation-fill-mode: forwards;
         opacity: 0;
         transform: translateY(200px);
+        -webkit-transform: translateY(200px);
+        -moz-transform: translateY(200px);
+        -o-transform: translateY(200px);
         z-index: 50;
     }
 
@@ -508,7 +540,10 @@
         position: absolute;
         left: 0;
         top: 0;
+        animation: fadein_glare 1s .5s ease-in-out;
         -webkit-animation: fadein_glare 1s .5s ease-in-out;
+        -moz-animation: fadein_glare 1s .5s ease-in-out;
+        -o-animation: fadein_glare 1s .5s ease-in-out;
         animation-fill-mode: forwards;
         opacity: 0;
         z-index: 25;
@@ -517,7 +552,10 @@
     @keyframes fadein_text {
         0% {
             opacity: 0;
-            transform: translateY(200px)
+            transform: translateY(200px);
+            -webkit-transform: translateY(200px);
+            -moz-transform: translateY(200px);
+            -o-transform: translateY(200px);
         }
 
         50% {
@@ -526,7 +564,10 @@
 
         100% {
             opacity: 1;
-            transform: translateY(0)
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -o-transform: translateY(0);
         }
     }
 
@@ -548,13 +589,22 @@
         height: calc(100% - 54px);
         opacity: 0;
         transform: translateY(600px);
+        -webkit-transform: translateY(600px);
+        -moz-transform: translateY(600px);
+        -o-transform: translateY(600px);
+        transition: all .75s ease;
         -webkit-transition: all .75s ease;
+        -moz-transition: all .75s ease;
+        -o-transition: all .75s ease;
     }
 
     .antique .pagebox.antique_active {
         display: grid;
         opacity: 1;
         transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
     }
 
     .antique .cover {
@@ -562,15 +612,27 @@
         padding: 27px 30px;
         align-items: flex-end;
         transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        transition: all .75s 0 ease;
         -webkit-transition: all .75s 0 ease;
+        -moz-transition: all .75s 0 ease;
+        -o-transition: all .75s 0 ease;
     }
 
     .antique .pagebox.antique_active.cover {
+        transition: all .75s .25s ease;
         -webkit-transition: all .75s .25s ease;
+        -moz-transition: all .75s .25s ease;
+        -o-transition: all .75s .25s ease;
     }
 
     .antique .pagebox.antique_active.page {
         transform: translateY(-150px);
+        -webkit-transform: translateY(-150px);
+        -moz-transform: translateY(-150px);
+        -o-transform: translateY(-150px);
         z-index: 200;
         display: block;
     }
@@ -597,15 +659,8 @@
         grid-row-gap: 8px;
     }
 
-    h1,
-    h2,
-    h5,
-    div {
-        margin: 0;
-    }
-
-
     .antique h1 {
+        margin: 0;
         font-family: 'Baskerville'; /* eh when big */
         font-family: 'Lancelot'; /* too fairy medieval */
         font-family: 'Antic Didone'; /* too perfume brand */
@@ -626,7 +681,7 @@
         text-transform: lowercase;
         max-width: 300px;
         letter-spacing: 1px;
-        margin-top: 6px;
+        margin: 6px 0 0;
         color: rgba(255, 255, 255, .85);
 /*
         font: 400 10px/18px 'Lustria';
@@ -642,7 +697,7 @@
         font: 700 normal 20px/30px 'Mate';
         opacity: .9;
         color: var(--secondary);
-        margin-bottom: 8px;
+        margin: 0 0 8px;
         white-space: nowrap;
         width: 30px;
         border-bottom: 1px solid var(--primary);
