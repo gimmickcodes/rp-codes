@@ -2,6 +2,11 @@
 
 <head>
     <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mate&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+
+
 
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.css">-->
 
@@ -54,13 +59,13 @@
 
 
 
-<div class="darkgoldcredits">
-    <div class="darkgold">
+<div class="antiquecredits">
+    <div class="antique">
 
-        <div class="darkgoldgrid">
+        <div class="antiquegrid">
 
             <div class="sidenav">
-                <div class="tab darkgold_active"><i class="fas fa-pen-nib"></i></div>
+                <div class="tab antique_active"><i class="fas fa-pen-nib"></i></div>
 
                 <div class="nav_box">
 
@@ -85,7 +90,7 @@
                         <span>completed</span>
                     </span>
 
-                    <span class="tooltip">
+                    <span class="tooltip hide">
                         <div class="tab nav_dot">
                             <div> </div>
                         </div>
@@ -99,7 +104,7 @@
 
             <div class="mainbox">
 
-                <div class="pagebox cover darkgold_active">
+                <div class="pagebox cover antique_active">
 
                     <div class="covertext">
                         <h1>Name Here</h1>
@@ -220,17 +225,18 @@
                     </div>
                 </div>
 
-                <div class="pagebox page">
+                <div class="pagebox page hide">
                     <div class="pagecontentfade"> </div>
                     <div class="pagecontent">
                         <div class="pageinset">
                             <h2>Plots</h2>
 
                             <div class="longtext">
-                                Bacon ipsum dolor amet ball tip shank shankle sirloin ribeye ham. Chicken fatback swine drumstick pig frankfurter prosciutto kevin kielbasa biltong turducken flank. Venison picanha tri-tip, drumstick beef ribs tongue ball tip burgdoggen landjaeger buffalo cow biltong pork shoulder. Pastrami spare ribs cupim tri-tip beef ribs.
+                                Bacon ipsum dolor amet ball tip shank shankle sirloin ribeye ham. Chicken fatback swine drumstick pig frankfurter prosciutto kevin kielbasa biltong turducken flank. Venison picanha tri-tip, drumstick beef ribs tongue ball tip burgdoggen landjaeger buffalo cow biltong pork shoulder. Pastrami spare ribs cupim tri-tip beef ribs. <br><br>
 
                                 Alcatra salami chislic, pork belly frankfurter t-bone ribeye tri-tip fatback short loin short ribs meatloaf landjaeger porchetta. Filet mignon pork loin doner, boudin meatball ball tip leberkas kielbasa cupim. Kielbasa pork turkey, beef sausage prosciutto chicken ball tip drumstick brisket pig picanha turducken. Cow chislic bacon drumstick ham hock rump. Tenderloin swine ham boudin, sirloin spare ribs pork chuck corned beef fatback chicken beef ribs. Shoulder chuck chislic, corned beef alcatra short loin fatback jerky ham hock hamburger turducken. Ribeye ham spare ribs, picanha jowl burgdoggen frankfurter hamburger biltong cow rump jerky.
-
+                                <br><br>
+                                
                                 Tri-tip tenderloin drumstick, ham hock shankle bresaola boudin. Chuck prosciutto buffalo spare ribs chislic, salami frankfurter pork belly. Pork loin sirloin picanha jowl frankfurter ribeye shankle. Leberkas meatball jowl shank pork chop. Prosciutto flank pork loin ground round picanha, chuck turducken chicken. Prosciutto strip steak pork venison ham hock brisket shoulder, jowl frankfurter porchetta fatback meatloaf turducken filet mignon alcatra. Turducken brisket tail ground round, turkey t-bone pastrami filet mignon fatback jowl frankfurter pork alcatra bresaola.
                             </div>
 
@@ -257,6 +263,7 @@
 <style>
     /*    Serifs   */
 
+/*
     @import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
 
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
@@ -269,9 +276,6 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
-
-    @import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Mate&display=swap');
 
     @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
 
@@ -286,17 +290,25 @@
     @import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;500;700&family=Nanum+Gothic:wght@400;700&display=swap');
 
     @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+*/
+    
+
+    @import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Mate&display=swap');
+
 
     /*    Sans serifs  */
 
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
 
+/*
     @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+*/
 
 
-    .darkgoldcredits {
+    .antiquecredits {
         max-width: 600px;
         width: 95%;
         margin: 30px auto;
@@ -305,7 +317,7 @@
         --tertiary: #8A8478;
     }
 
-    .darkgoldcredits>a {
+    .antiquecredits>a {
         display: block;
         text-align: right;
         margin-top: 4px;
@@ -315,7 +327,7 @@
         text-transform: uppercase;
     }
 
-    .darkgold {
+    .antique {
         background: black;
         position: relative;
     }
@@ -328,7 +340,7 @@
         width: calc(100%);
         height: 100%;
         background: url(https://i.pinimg.com/564x/f8/04/ae/f804ae932cf0b67eee142968a700c5eb.jpg) center center / cover;
-        filter: contrast(.5) sepia(.2) brightness(.5) saturate(1) opacity(.8);
+/*        filter: contrast(.5) sepia(.2) brightness(.5) saturate(1) opacity(.8);*/
 
         filter: contrast(.5) sepia(.0) brightness(.5) saturate(1) opacity(1);
         -webkit-animation: fadein_filter 1s .5s ease-in-out;
@@ -359,7 +371,7 @@
         opacity: .4;
     }
 
-    .darkgoldgrid {
+    .antiquegrid {
         display: grid;
         height: 400px;
         width: 100%;
@@ -384,7 +396,6 @@
         align-items: center;
         z-index: 1000;
     }
-
 
     .tab {
         -webkit-transition: all .25s ease-in;
@@ -430,24 +441,23 @@
         color: var(--secondary);
     }
 
-    .tab.darkgold_active i {
-        /*        -webkit-animation: fadein_tabcolor .75s .5s ease-in-out;*/
+    .tab.antique_active i {
         animation-fill-mode: forwards;
         opacity: 1;
         color: var(--secondary);
     }
 
-    .tab.darkgold_active.nav_dot {
+    .tab.antique_active.nav_dot {
         border-width: 1px;
         border-color: var(--primary);
         padding: 2px;
     }
 
-    .tab.nav_dot:last-child {
-        margin: 4px 0 -4px;
+    .tooltip:last-child .nav_dot {
+        margin: 4px 0 0;
     }
 
-    .tab.darkgold_active.nav_dot>div,
+    .tab.antique_active.nav_dot>div,
     .tab:hover>div {
         background: var(--secondary);
     }
@@ -463,17 +473,6 @@
         }
     }
 
-    @keyframes fadein_tabcolor {
-        0% {
-            color: var(--primary);
-            ;
-        }
-
-        100% {
-            color: var(--secondary);
-        }
-    }
-
     .tooltip span {
         visibility: hidden;
         opacity: 0;
@@ -486,7 +485,7 @@
         width: fit-content;
         border-radius: 2px;
         -webkit-transition: all 0;
-        font: 16px 'Mate SC';
+        font: 14px 'Mate SC';
         letter-spacing: .4px;
         z-index: 900;
     }
@@ -552,7 +551,7 @@
         -webkit-transition: all .75s ease;
     }
 
-    .pagebox.darkgold_active {
+    .pagebox.antique_active {
         display: grid;
         opacity: 1;
         transform: translateY(0);
@@ -566,11 +565,11 @@
         -webkit-transition: all .75s 0 ease;
     }
 
-    .pagebox.darkgold_active.cover {
+    .pagebox.antique_active.cover {
         -webkit-transition: all .75s .25s ease;
     }
 
-    .pagebox.darkgold_active.page {
+    .pagebox.antique_active.page {
         transform: translateY(-150px);
         z-index: 200;
         display: block;
@@ -598,7 +597,6 @@
         grid-row-gap: 8px;
     }
 
-
     h1,
     h2,
     h5,
@@ -624,18 +622,17 @@
     }
 
     h5 {
-        font: normal 14px/16px 'Mate SC';
+        font: 400 14px/18px 'Mate SC';
         text-transform: lowercase;
         max-width: 300px;
         letter-spacing: 1px;
-        margin-top: 8px;
+        margin-top: 6px;
         color: rgba(255, 255, 255, .85);
-
-
+/*
         font: 400 10px/18px 'Lustria';
         text-transform: uppercase;
         letter-spacing: .9px;
-
+*/
         /*        font: 500 9px/17px 'Nanum Gothic';*/
         /*        font: 400 13px/17px 'Alegreya SC';*/
     }
@@ -645,25 +642,11 @@
         font: 700 normal 20px/30px 'Mate';
         opacity: .9;
         color: var(--secondary);
-        position: sticky;
         margin-bottom: 8px;
         white-space: nowrap;
         width: 30px;
         border-bottom: 1px solid var(--primary);
         padding-bottom: 12px;
-    }
-
-    .longtext {
-        column-count: 1;
-        column-fill: balance;
-        column-gap: 30px;
-        width: calc(100% - 30px);
-        font: 400 13.5px/21px 'Noto Sans TC';
-        /*        font: 400 13px/18px 'Work Sans'; too squat*/
-        font: 400 13px/21px 'Nanum Gothic';
-        color: var(--tertiary);
-        color: rgba(255, 255, 255, .6);
-        letter-spacing: .3px;
     }
 
     .thread {
@@ -676,16 +659,16 @@
     .thread a:hover {
         color: var(--secondary);
         text-decoration: none;
-        font: 400 15px/21px 'Mate SC';
+        font: 400 15px/18px 'Mate SC';
         text-transform: lowercase;
-        letter-spacing: .4px;
+        letter-spacing: 1px;
         text-decoration: none;
 
 /*
         font: 400 12.5px/15px 'Lustria';
         letter-spacing: .9px;
 */
-        /*        font: 400 14px/17px 'Alegreya SC';*/
+/*        font: 400 14px/17px 'Alegreya SC';*/
     }
 
     .threadname::after {
@@ -702,13 +685,12 @@
     .threadinfo,
     .threadinfo a,
     .threadinfo a:hover {
-        font: 14px/16px 'Mate';
+/*        font: 14px/16px 'Mate';*/
         display: inline;
         margin-left: 0;
         text-transform: lowercase;
-        letter-spacing: .4px;
+        letter-spacing: .6px;
         text-decoration: none;
-
         font: 500 11px/15px 'Nanum Gothic';
     }
 
@@ -716,31 +698,55 @@
         content: 'ft. ';
     }
 
-    .darkgold ::-webkit-scrollbar {
+    .antique ::-webkit-scrollbar {
         -webkit-appearance: none;
         width: 4px !important;
         border: 0 !important;
     }
 
-    .darkgold ::-webkit-scrollbar-thumb {
+    .antique ::-webkit-scrollbar-thumb {
         background: var(--primary);
         border: 0;
     }
 
-    .darkgold ::-webkit-scrollbar-track {
+    .antique ::-webkit-scrollbar-track {
         background: rgba(0, 0, 0, 0);
         border: 0;
     }
 
+    
+    /* NOT PUBLIC */
+    
+    .hide {
+        display: none;
+    }
+     .longtext {
+        column-count: 1;
+        column-fill: balance;
+        column-gap: 30px;
+        width: calc(100% - 30px);
+/*        font: 400 13.5px/21px 'Noto Sans TC';*/
+        font: 400 13px/21px 'Nanum Gothic';
+        color: var(--tertiary);
+        color: rgba(255, 255, 255, .6);
+        letter-spacing: .4px;
+    }
+    
+    .longtext br {
+        content: ' ';
+        display: block;
+        margin: 0 0 10px;
+    }
+
 </style>
+
 
 <script src="https://codepen.io/breezescodes/pen/XWdymYM.js"></script>
 
 <script>
     localT4({
-        outerName: '.darkgold',
+        outerName: '.antique',
         tabClassName: '.tab',
         contClassName: '.pagebox',
     });
-
 </script>
