@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gimmick's Codes: </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="../css.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167415539-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-167415539-1');
+
+    </script>
+</head>
+
+
+<body oncontextmenu="return false;">
+
+    <div class="demo_col"><iframe src="../templates/" width="100%" height="100%" oncontextmenu="return false;"></iframe></div>
+
+
+
+    <div class="info_col">
+        <div class="contentbox">
+            <h5>Type</h5>
+            <h1>Name</h1>
+
+            <!--            START RAW HTML              -->
+            <textarea readonly>
+[dohtml][/dohtml]
+                   
+        </textarea> <!--            END RAW HTML              -->
+
+
+
+
+
+
+            <button>Copy code</button>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+<script>
+    //Copy code
+    document.querySelector("button").onclick = function() {
+        document.querySelector("textarea").select();
+        document.execCommand('copy');
+    }
+
+</script>
