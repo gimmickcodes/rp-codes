@@ -1,3 +1,6 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,600,700|Roboto:100,300,400,500,700&display=swap" rel="stylesheet">
+
+
 <style>
     html {
         background: white;
@@ -10,12 +13,12 @@
 
 
 
-<div style="margin: auto; width: fit-content; text-align: right">
+<div class="folio-hover-l">
     <div class="folio">
         <div class="folio-inner">
 
             <input type="radio" id="folio-tab1" class="tab" name="folio-tabs" checked>
-            <label for="folio-tab1" class="tab-label tab1" title="QUESTS">
+            <label for="folio-tab1" class="tab-label tab1">
                 <div class="tab-box">
                     <div class="tab-header">
                         <span>16</span> <span> </span> <span>fire</span>
@@ -25,7 +28,7 @@
             </label>
 
             <input type="radio" id="folio-tab2" class="tab" name="folio-tabs">
-            <label for="folio-tab2" class="tab-label tab2" title="SOCIALS">
+            <label for="folio-tab2" class="tab-label tab2">
                 <div class="tab-box">
                     <div class="tab-header">
                         <span>12</span> <span> </span> <span>air</span>
@@ -35,7 +38,7 @@
             </label>
 
             <input type="radio" id="folio-tab3" class="tab" name="folio-tabs">
-            <label for="folio-tab3" class="tab-label tab3" title="DRAGONS">
+            <label for="folio-tab3" class="tab-label tab3">
                 <div class="tab-box">
                     <div class="tab-header">
                         <span>12</span> <span> </span> <span>earth</span>
@@ -45,7 +48,7 @@
             </label>
 
             <input type="radio" id="folio-tab4" class="tab" name="folio-tabs">
-            <label for="folio-tab4" class="tab-label tab4" title="DRAGONS">
+            <label for="folio-tab4" class="tab-label tab4">
                 <div class="tab-box">
                     <div class="tab-header">
                         <span>14</span> <span> </span> <span>water</span>
@@ -55,7 +58,7 @@
             </label>
 
             <input type="radio" id="folio-tab5" class="tab" name="folio-tabs">
-            <label for="folio-tab5" class="tab-label tab5" title="DRAGONS">
+            <label for="folio-tab5" class="tab-label tab5">
                 <div class="tab-box">
                     <div class="tab-header">
                         <span>15</span> <span> </span> <span>sword</span>
@@ -226,27 +229,38 @@
         </div>
     </div>
 
-    <a style="font:normal 8px/10px arial;letter-spacing:.8px;text-decoration:none;text-transform:uppercase; margin: 2px auto" rel="norewrite" href="http://pixel-perfect.boards.net/user/2465" target="_blank">made by gimmick</a>
+    <a rel="norewrite" href="http://pixel-perfect.boards.net/user/2465" target="_blank">made by gimmick</a>
 </div>
 
 
 <style>
-    @import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,600,700|Roboto:100,300,400,500,700&display=swap");
 
-    .folio {
+    .folio-hover-l {
+        margin: auto;
+        width: fit-content;
+        text-align: right
+    }
+
+    .folio-hover-l>a {
+        font: normal 8px/10px arial;
+        letter-spacing: .8px;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin: 2px auto
+    }
+
+    .folio-hover-l .folio {
         background: #e9e9e9;
         width: 595px;
         height: 475px;
         padding: 25px;
         margin: 30px auto 3px;
         position: relative;
-        padding-bottom: 0;
-        border-bottom: 25px solid #e9e9e9;
         color: #333;
         text-align: left;
     }
 
-    .folio-inner {
+    .folio-hover-l .folio-inner {
         width: 220px;
         background: transparent;
         overflow: auto;
@@ -254,36 +268,36 @@
     }
 
 
-    .tab1,
-    .tab1-content {
+    .folio-hover-l .tab1,
+    .folio-hover-l .tab1-content {
         --accent: firebrick;
     }
 
-    .tab2,
-    .tab2-content {
+    .folio-hover-l .tab2,
+    .folio-hover-l .tab2-content {
         --accent: goldenrod;
     }
 
-    .tab3,
-    .tab3-content {
+    .folio-hover-l .tab3,
+    .folio-hover-l .tab3-content {
         --accent: seagreen;
     }
 
-    .tab4,
-    .tab4-content {
+    .folio-hover-l .tab4,
+    .folio-hover-l .tab4-content {
         --accent: cornflowerblue;
     }
 
-    .tab5,
-    .tab5-content {
+    .folio-hover-l .tab5,
+    .folio-hover-l .tab5-content {
         --accent: slateblue;
     }
 
-    .folio input {
+    .folio-hover-l input {
         display: none;
     }
 
-    .folio .tab-label {
+    .folio-hover-l .tab-label {
         z-index: 20;
         cursor: pointer;
         -webkit-transition: all .3s ease;
@@ -296,7 +310,7 @@
         border-color: var(--accent);
     }
 
-    .tab-box h1 {
+    .folio-hover-l .tab-box h1 {
         font: 700 20px/1.2em 'Roboto';
         margin: 0;
         -webkit-transition: font .3s 0s ease;
@@ -304,7 +318,7 @@
         -o-transition: font .3s 0s ease;
     }
 
-    .tab-header {
+    .folio-hover-l .tab-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -317,50 +331,50 @@
         text-transform: uppercase;
     }
 
-    .tab-header span:nth-child(2) {
+    .folio-hover-l .tab-header span:nth-child(2) {
         width: 45px;
         height: 1px;
         border-top: 1px solid;
     }
 
-    .folio input.tab:checked+label {
+    .folio-hover-l input.tab:checked+label {
         color: var(--accent);
         border-color: var(--accent);
         opacity: 1;
     }
 
-    .folio input.tab:checked+label h1 {
+    .folio-hover-l input.tab:checked+label h1 {
         font-size: 30px;
         line-height: 32px;
     }
 
-    .folio input.tab:hover+label {
+    .folio-hover-l input.tab:hover+label {
         color: var(--accent);
     }
 
 
-    .mainbar {
+    .folio-hover-l .mainbar {
         grid-area: contentarea;
         display: block;
     }
 
-    .folio .tab1-content,
-    .folio .tab2-content,
-    .folio .tab3-content,
-    .folio .tab4-content,
-    .folio .tab5-content {
+    .folio-hover-l .tab1-content,
+    .folio-hover-l .tab2-content,
+    .folio-hover-l .tab3-content,
+    .folio-hover-l .tab4-content,
+    .folio-hover-l .tab5-content {
         display: none;
     }
 
-    #folio-tab1:checked~.tab1-content,
-    #folio-tab2:checked~.tab2-content,
-    #folio-tab3:checked~.tab3-content,
-    #folio-tab4:checked~.tab4-content,
-    #folio-tab5:checked~.tab5-content {
+    .folio-hover-l #folio-tab1:checked~.tab1-content,
+    .folio-hover-l #folio-tab2:checked~.tab2-content,
+    .folio-hover-l #folio-tab3:checked~.tab3-content,
+    .folio-hover-l #folio-tab4:checked~.tab4-content,
+    .folio-hover-l #folio-tab5:checked~.tab5-content {
         display: block;
     }
 
-    .page {
+    .folio-hover-l .page {
         pointer-events: auto;
         z-index: 100;
         position: relative;
@@ -373,7 +387,7 @@
         overflow: hidden;
     }
 
-    .page-cover {
+    .folio-hover-l .page-cover {
         position: relative;
         z-index: -10;
         overflow: hidden;
@@ -381,7 +395,7 @@
         height: 100%;
     }
 
-    .page-cover:before {
+    .folio-hover-l .page-cover:after {
         content: ' ';
         position: absolute;
         width: 375px;
@@ -394,13 +408,13 @@
         -o-transition: all 1s 0s ease;
     }
 
-    .page-cover:hover:before {
+    .folio-hover-l .page-cover:hover:after {
         background: #fff;
         opacity: .6;
     }
 
 
-    .page-inner {
+    .folio-hover-l .page-inner {
         position: absolute;
         top: 400px;
         cursor: text;
@@ -421,13 +435,13 @@
         background: #f5f5f5;
     }
 
-    .page-cover:hover .page-inner {
+    .folio-hover-l .page-cover:hover .page-inner {
         top: 0;
         opacity: 1;
         display: block;
     }
 
-    .innerbox {
+    .folio-hover-l .innerbox {
         padding: 0px 13px 0 0;
         height: calc(100% - 0px);
         overflow: auto;
@@ -435,7 +449,7 @@
         text-align: justify;
     }
 
-    .songarea {
+    .folio-hover-l .songarea {
         border-bottom: 2px solid var(--accent);
         color: var(--accent);
         font-size: 9px;
@@ -450,17 +464,17 @@
         padding: 8px 12px 6px;
     }
 
-    h2 {
+    .folio-hover-l h2 {
         font-weight: 300;
         margin: 20px 0 10px;
     }
 
-    h3 {
+    .folio-hover-l h3 {
         font-weight: 700;
         margin: 20px 0 5px;
     }
 
-    h4 {
+    .folio-hover-l h4 {
         margin: 15px 0 3px;
         font: 500 12px/15px 'Roboto Mono';
         text-transform: uppercase;
@@ -468,81 +482,81 @@
         color: var(--accent);
     }
 
-    ul {
+    .folio-hover-l ul {
         padding-left: 15px;
         margin: 4px 0;
         list-style-type: square;
     }
 
-    li {
+    .folio-hover-l li {
         margin: 2px 0;
     }
 
-    hr {
+    .folio-hover-l hr {
         margin: 15px 0;
         background: var(--accent);
         height: 1px;
         border: 0;
     }
 
-    br+br {
+    .folio-hover-l br+br {
         content: ' ';
         margin: 8px 0;
         display: block;
     }
 
 
-    div.relation {
+    .folio-hover-l div.relation {
         margin: 2px 0;
     }
 
-    a {
+    .folio-hover-l a {
         color: var(--accent);
         border-bottom: 1px dotted var(--accent);
         text-decoration: none;
         font-weight: 500;
     }
 
-    a:hover {
+    .folio-hover-l a:hover {
         border: 0;
     }
 
-    u {
+    .folio-hover-l u {
         text-decoration: none;
         border-bottom: 1px dotted var(--accent);
     }
 
-    b {
+    .folio-hover-l b {
         font: 600 11px/15px 'Roboto Mono';
         text-transform: uppercase;
         letter-spacing: .5px;
         color: var(--accent);
     }
 
-    div.relation b:after {
+    .folio-hover-l div.relation b:after {
         content: ' – ';
         color: #000
     }
 
 
-    ::-webkit-scrollbar {
+    .folio-hover-l ::-webkit-scrollbar {
         -webkit-appearance: none;
         width: 3px;
     }
 
-    ::-webkit-scrollbar-vertical {
+    .folio-hover-l ::-webkit-scrollbar-vertical {
         width: 3px;
     }
 
-    ::-webkit-scrollbar-thumb {
+    .folio-hover-l ::-webkit-scrollbar-thumb {
         background: var(--accent);
     }
 
-    ::-webkit-scrollbar-track {
+    .folio-hover-l ::-webkit-scrollbar-track {
         background: transparent;
     }
 
-    ::-webkit-scrollbar-thumb:horizontal {
+    .folio-hover-l ::-webkit-scrollbar-thumb:horizontal {
         display: none;
     }
 
