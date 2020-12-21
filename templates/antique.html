@@ -6,8 +6,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Mate&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
 
-
-
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.css">-->
 
     <!--    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">-->
@@ -646,18 +644,21 @@
     }
 
     .antique .pagecontent {
-        align-content: flex-start;
         background: rgba(0, 0, 0, .75);
-        align-items: flex-start;
+        height: 340px;
+        padding: 30px; 
+        overflow-y: auto; 
     }
 
     .antique .pageinset {
+/*
         display: grid;
         align-content: flex-start;
-        padding: 30px;
         height: 340px;
+        padding: 30px;
         overflow-y: auto;
         grid-row-gap: 8px;
+*/
     }
 
     .antique h1 {
@@ -698,7 +699,7 @@
         font: 700 normal 20px/30px 'Mate';
         opacity: .9;
         color: var(--secondary);
-        margin: 0 0 8px;
+        margin: 0 0 16px;
         white-space: nowrap;
         width: 30px;
         border-bottom: 1px solid var(--primary);
@@ -706,8 +707,12 @@
     }
 
     .antique .thread {
-        padding: 0;
+        padding: 0 0 8px;
         color: var(--tertiary);
+    }
+    
+    .antique .thread:last-child {
+        padding: 0;
     }
 
     .antique .threadname,
