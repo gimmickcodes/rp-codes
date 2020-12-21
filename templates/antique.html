@@ -699,7 +699,7 @@
         font: 700 normal 20px/30px 'Mate';
         opacity: .9;
         color: var(--secondary);
-        margin: 0 0 16px;
+        margin: 0 0 8px;
         white-space: nowrap;
         width: 30px;
         border-bottom: 1px solid var(--primary);
@@ -707,12 +707,8 @@
     }
 
     .antique .thread {
-        padding: 0 0 8px;
+        padding: 8px 0 0;
         color: var(--tertiary);
-    }
-    
-    .antique .thread:last-child {
-        padding: 0;
     }
 
     .antique .threadname,
@@ -725,22 +721,6 @@
         letter-spacing: 1px;
         text-decoration: none;
 
-/*
-        font: 400 12.5px/15px 'Lustria';
-        letter-spacing: .9px;
-*/
-/*        font: 400 14px/17px 'Alegreya SC';*/
-    }
-
-    .antique .threadname::after {
-        content: ' ';
-        margin: 0 4px -2px 8px;
-        background: var(--tertiary);
-        font-family: sans-serif;
-        opacity: .5;
-        display: inline-block;
-        width: 2px;
-        height: 14px;
     }
 
     .antique .threadinfo,
@@ -755,8 +735,13 @@
         font: 500 11px/15px 'Nanum Gothic';
     }
 
-    .antique .threadinfo::before {
-        content: 'ft. ';
+    .antique .threadinfo:before {
+        content: 'ft.\00a0';
+        line-height: 11px;
+        border-left: .5px solid rgba(138, 132, 120, 0.75);
+        margin-left: 4px;
+        padding-left: 8px;
+        display: inline-block;
     }
 
     .antique ::-webkit-scrollbar {
@@ -799,6 +784,7 @@
         margin: 0 0 10px;
     }
 
+  
 </style>
 
 

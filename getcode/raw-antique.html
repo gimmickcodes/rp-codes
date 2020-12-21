@@ -204,19 +204,15 @@
 
 .antique h5 { font: 400 14px/18px 'Mate SC'; text-transform: lowercase; max-width: 300px; letter-spacing: 1px; margin: 6px 0 0; color: rgba(255, 255, 255, .85); }
 
-.antique h2 { width: fit-content; font: 700 normal 20px/30px 'Mate'; opacity: .9; color: var(--secondary); margin: 0 0 16px; white-space: nowrap; width: 30px; border-bottom: 1px solid var(--primary); padding-bottom: 12px; }
+.antique h2 { width: fit-content; font: 700 normal 20px/30px 'Mate'; opacity: .9; color: var(--secondary); margin: 0 0 8px; white-space: nowrap; width: 30px; border-bottom: 1px solid var(--primary); padding-bottom: 12px; }
 
-.antique .thread { padding: 0 0 8px; color: var(--tertiary); }
+.antique .thread { padding: 8px 0 0; color: var(--tertiary); }
     
-.antique .thread:last-child { padding: 0 }
-
 .antique .threadname, .antique .thread a, .antique .thread a:hover { color: var(--secondary); text-decoration: none; font: 400 15px/18px 'Mate SC'; text-transform: lowercase; letter-spacing: 1px; text-decoration: none; }
-
-.antique .threadname::after { content: ' '; margin: 0 4px -2px 8px; background: var(--tertiary); font-family: sans-serif; opacity: .5; display: inline-block; width: 2px; height: 14px; }
 
 .antique .threadinfo, .antique .threadinfo a, .antique .threadinfo a:hover { display: inline; margin-left: 0; text-transform: lowercase; letter-spacing: .6px; text-decoration: none; font: 500 11px/15px 'Nanum Gothic'; }
 
-.antique .threadinfo::before { content: 'ft. '; }
+.antique .threadinfo::before { content: 'ft.\00a0'; line-height: 11px; border-left: .5px solid rgba(138, 132, 120, 0.75); margin-left: 4px; padding-left: 8px; display: inline-block;}
 
 .antique ::-webkit-scrollbar { -webkit-appearance: none; width: 4px !important; border: 0 !important; }
 
