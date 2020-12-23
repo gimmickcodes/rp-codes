@@ -80,10 +80,10 @@
                     </div>
 
                     <div class="personbox">
-                        <i class="fas fa-grin-stars"></i>
+                        <div class="initial">YN</div>
                         <div>
                             <div class="personname">
-                                Font Awesome
+                                Iconless Name
                                 <span>relation</span>
                             </div>
                             <div class="meter">
@@ -96,7 +96,7 @@
                         <span class="th th-pirate-ship"></span>
                         <div>
                             <div class="personname">
-                                Honeybee
+                                Name
                                 <span>relation</span>
                             </div>
                             <div class="meter">
@@ -183,40 +183,41 @@
             <div class="bannertint"> </div>
             <div class="contentbox">
                 <div class="content">
-                    <div class="iconbox"> <a href="#"><img src="https://via.placeholder.com/150x150/999/fff"> </a></div>
+                    <div class="iconbox"><a href="#">
+                            <img src="https://via.placeholder.com/150x150/999/fff">
+                            <i class="fas fa-link"></i>
+                        </a></div>
 
                     <h1>
                         Caravaggio
                     </h1>
 
-                    <i class="fas fa-birthday-cake"></i> 28-years old <br><br>
+                    <b>Age</b> | 28-years old <br>
 
-                    <i class="fas fa-briefcase"></i> Painted <br><br>
+                    <b>Occupation</b> | Painter <br>
 
-                    <i class="fas fa-flag"></i> Baroque <br><br>
+                    <b>Group</b> | Baroque <br>
 
-                    <i class="fas fa-link"></i> <a href="#">Link</a> <br><br>
+                    <b>Field</b> | <a href="#">Link</a> <br><br>
 
 
                     Spicy jalapeno bacon ipsum dolor amet" qui pastrami swine ipsum, dolor kielbasa mollit. Nisi short loin rump aute shoulder cow cillum incididunt biltong tri-tip sint tempor andouille. Kielbasa pork loin ham hock, ball tip non filet mignon sunt proident. Ea chuck commodo sunt, hamburger irure ut tempor ullamco andouille. Pork belly magna fatback leberkas occaecat veniam pariatur ball tip excepteur.
 
 
                     <hr>
-                    <h2>Section </h2>
+                    <h3>Section </h3>
 
-                    <b>Likes / </b>
-                    Non ex veniam nisi tail mollit. Pork loin nostrud fatback, pancetta ut chuck ut t-bone doner burgdoggen commodo turducken in veniam. Alcatra anim tempor esse ut jerky venison. Dolor elit cupidatat anim ground round pancetta sausage minim. Consectetur minim ut in sirloin id qui beef.
+                    <b>Likes</b> | Non ex veniam nisi tail mollit. Pork loin nostrud fatback, pancetta ut chuck ut t-bone doner burgdoggen commodo turducken in veniam. Alcatra anim tempor esse ut jerky venison. Dolor elit cupidatat anim ground round pancetta sausage minim. Consectetur minim ut in sirloin id qui beef.
                     <br><br>
-                    <b>Disikes / </b>
-                    Excepteur bresaola sed leberkas, t-bone brisket irure. Enim buffalo picanha pork, ullamco quis in magna labore fatback officia. Magna chicken do t-bone in cupim prosciutto et leberkas nulla beef ribs. Tail tempor boudin, sed leberkas andouille bacon reprehenderit id ea brisket qui meatball ad fugiat.
+                    <b>Disikes</b> | Excepteur bresaola sed leberkas, t-bone brisket irure. Enim buffalo picanha pork, ullamco quis in magna labore fatback officia. Magna chicken do t-bone in cupim prosciutto et leberkas nulla beef ribs. Tail tempor boudin, sed leberkas andouille bacon reprehenderit id ea brisket qui meatball ad fugiat.
                     <br><br>
-                    <b>Loves / </b>Tenderloin pariatur meatloaf fatback quis ham hock. Laboris labore minim bresaola sunt ut. Tail eu consequat, jowl sunt adipisicing dolor pork loin capicola buffalo. Bresaola ex aliquip tenderloin frankfurter, officia ut boudin ham hock. Pork belly nulla sint, spare ribs laboris ut dolore. Elit enim veniam doner voluptate ut aliquip cupim chicken in dolore aliqua meatloaf turducken tempor.
+                    <b>Loves</b> | Tenderloin pariatur meatloaf fatback quis ham hock. Laboris labore minim bresaola sunt ut. Tail eu consequat, jowl sunt adipisicing dolor pork loin capicola buffalo. Bresaola ex aliquip tenderloin frankfurter, officia ut boudin ham hock. Pork belly nulla sint, spare ribs laboris ut dolore. Elit enim veniam doner voluptate ut aliquip cupim chicken in dolore aliqua meatloaf turducken tempor.
 
                     <hr>
 
                     <div class="insettext">
-                        <h2>Seeking </h2>
-                        <b>Thing / </b>Tenderloin pariatur meatloaf fatback quis ham hock. Laboris labore minim bresaola sunt ut.<br>
+                        <h4>Seeking </h4>
+                        <b>Thing</b> | Tenderloin pariatur meatloaf fatback quis ham hock. Laboris labore minim bresaola sunt ut.<br>
                     </div>
                 </div>
             </div>
@@ -453,6 +454,14 @@
         }
     }
 
+    .plotspage i {
+        margin-right: 4px;
+        opacity: .4;
+        font-size: 16px;
+        color: var(--accent);
+    }
+
+
     .iconbox {
         width: 125px;
         height: 125px;
@@ -477,12 +486,10 @@
         filter: contrast(.75) grayscale(1);
     }
 
-    .iconbox:before {
-        content: '\f0c1';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 400;
+    .iconbox i {
         display: flex;
         position: absolute;
+        top: 0;
         z-index: 3;
         width: 100%;
         height: 100%;
@@ -491,12 +498,12 @@
         background: rgba(var(--accentRGB), 0);
         opacity: 0;
         color: white;
-        font: 24px/24px 'Font Awesome 5 Free';
+        font-size: 24px;
         -webkit-transition: all .5s ease;
         border-radius: 100%;
     }
 
-    .iconbox:hover:before {
+    .iconbox:hover i {
         opacity: 1;
         background: rgba(var(--accentRGB), .3);
     }
@@ -507,12 +514,25 @@
         color: #121212;
     }
 
-    h2 {
+
+    h3 {
         margin: 0 0 10px;
-        font-size: 16px;
-        font-weight: 700;
+        font: 700 16px/20px 'Nunito Sans';
         color: #121212;
     }
+
+    h4 {
+        margin: 0 0 10px;
+        font: 700 14px/20px 'Nunito Sans';
+        color: var(--accent);
+    }
+
+    .insettext {
+        margin-top: 16px;
+        padding: 12px 16px;
+        background: rgba(var(--accentRGB), .1);
+    }
+
 
     .plotspage a {
         text-decoration: underline;
@@ -524,28 +544,7 @@
         font-weight: 700;
     }
 
-    .plotspage i {
-        margin-right: 4px;
-        opacity: .4;
-        font-size: 16px;
-        color: var(--accent);
-    }
-
-    h3 {
-        margin: 0 0 12px;
-        font: 700 16px/20px 'Nunito Sans';
-        color: #000;
-    }
-
-    .insettext {
-        margin-top: 16px;
-        padding: 16px 20px;
-        background: rgba(var(--accentRGB), .1);
-    }
-
-
-
-    br {
+    br+br {
         content: ' ';
         display: block;
         margin: .75em 0 0;
@@ -629,7 +628,8 @@
 
     .personbox img,
     .personbox i,
-    .personbox .th {
+    .personbox .th,
+    .personbox .initial {
         grid-area: cardtop;
         width: 40px;
         height: 40px;
@@ -641,11 +641,12 @@
         align-items: center;
         border-radius: 100%;
         margin-right: 12px;
+        cursor: default;
     }
 
-    .personbox i,
-    .personbox .th {
-        border-radius: 4px;
+    .personbox .initial {
+        font-size: 16px;
+        font-weight: 800;
     }
 
     .personname {
