@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link href="site-css.css" rel="stylesheet">
+
+</head>
+
+
+
+<div id="navbar">
+    <div class="nav_wrapper">
+        <div class="nav_links">
+            <a href="#">Home</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Home</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </div>
+
+        <div class="login">Welcome, Admin</div>
+    </div>
+
+</div>
+
+
+<div id="sitewrapper">
+
+    <div id="header" class="minimalheader">
+        <h1>Gotta Have a <br>Gimmick</h1>
+
+        <div id="navigation-tree">
+            <span>Site Name</span>
+            <span>Current Page</span>
+        </div>
+    </div>
+
+    <div class="halfrule"> </div>
+
+    <div id="thread_grid" class="">
+
+        <div class="thread_header">
+            <h3 class="thread_title">Thread title</h3>
+
+            <h5 class="thread_desc">Thread description</h5>
+        </div>
+
+        <div class="thread_nav">
+            <div class="pagination">
+                <div class="button btn_s">Prev</div>
+                <div class="button btn_s">1</div>
+                <div class="button btn_s">Next</div>
+            </div>
+
+            <div class="thread_ui">
+                <input class="search-input ui-autosearch" type="text" width="90px" maxlength="50" placeholder="Search..." role="search" accesskey="w">
+
+                <div class="button btn_s">Actions</div>
+                <div class="button btn_s">Reply</div>
+            </div>
+        </div>
+
+
+        <!--
+        <div class="thread_contents">
+
+            <div class="postwrapper">
+                <div class="post_header">
+                    <div class="post_dates">
+                        <span class="post_date">Dec 24, 2020</span>
+                        <span class="post_edited">Last edited Dec 25, 2020</span>
+                    </div>
+
+                    <div class="post_ui">
+                        <button class="button btn_s filled">Quote</button>
+                        <button class="button btn_s filled">Edit</button>
+                    </div>
+                </div>
+
+                <div class="post_content">
+                    Bacon ipsum dolor amet jerky hamburger salami fatback chislic, tail prosciutto buffalo boudin chuck capicola swine. Meatloaf rump ball tip frankfurter pork loin biltong porchetta ground round, salami tongue ribeye landjaeger bacon. Doner bresaola andouille short ribs alcatra tenderloin short loin swine, meatball pancetta shank jerky tongue. Shank picanha cupim, shoulder ribeye ball tip biltong.
+                    <br><br>Pancetta picanha filet mignon venison ball tip corned beef ham hock leberkas ground round. Flank pastrami chislic, porchetta pig ball tip cow sirloin alcatra short ribs frankfurter picanha tongue pork chop tenderloin. Jerky spare ribs tenderloin landjaeger. Kielbasa bacon sausage pork chop.
+                </div>
+
+            </div>
+
+            <div class="postwrapper">
+                <div class="post_header">
+                    <div class="post_dates">
+                        <span class="post_date">Dec 24, 2020</span>
+                        <span class="post_edited">Last edited Dec 25, 2020</span>
+                    </div>
+
+                    <div class="post_actions">
+                        <button class="post_action">Quote</button>
+                        <button class="post_action">Edit</button>
+                    </div>
+                </div>
+
+                <div class="post_content">
+                    Bacon ipsum dolor amet jerky hamburger salami fatback chislic, tail prosciutto buffalo boudin chuck capicola swine. Meatloaf rump ball tip frankfurter pork loin biltong porchetta ground round, salami tongue ribeye landjaeger bacon. Doner bresaola andouille short ribs alcatra tenderloin short loin swine, meatball pancetta shank jerky tongue. Shank picanha cupim, shoulder ribeye ball tip biltong.
+                    <br><br>Pancetta picanha filet mignon venison ball tip corned beef ham hock leberkas ground round. Flank pastrami chislic, porchetta pig ball tip cow sirloin alcatra short ribs frankfurter picanha tongue pork chop tenderloin. Jerky spare ribs tenderloin landjaeger. Kielbasa bacon sausage pork chop.
+                </div>
+
+            </div>
+
+            <div class="postwrapper">
+                <div class="post_header">
+                    <div class="post_dates">
+                        <span class="post_date">Dec 24, 2020</span>
+                        <span class="post_edited">Last edited Dec 25, 2020</span>
+                    </div>
+
+                    <div class="post_actions">
+                        <button class="post_action">Quote</button>
+                        <button class="post_action">Edit</button>
+                    </div>
+                </div>
+
+                <div class="post_content">
+                    Bacon ipsum dolor amet jerky hamburger salami fatback chislic, tail prosciutto buffalo boudin chuck capicola swine. Meatloaf rump ball tip frankfurter pork loin biltong porchetta ground round, salami tongue ribeye landjaeger bacon. Doner bresaola andouille short ribs alcatra tenderloin short loin swine, meatball pancetta shank jerky tongue. Shank picanha cupim, shoulder ribeye ball tip biltong.
+                    <br><br>Pancetta picanha filet mignon venison ball tip corned beef ham hock leberkas ground round. Flank pastrami chislic, porchetta pig ball tip cow sirloin alcatra short ribs frankfurter picanha tongue pork chop tenderloin. Jerky spare ribs tenderloin landjaeger. Kielbasa bacon sausage pork chop.
+                </div>
+
+            </div>
+
+            <div class="quickreply">
+                <div class="quickreply_header">
+                    Quick Reply
+
+                </div>
+
+                <textarea class="quickreplybox" placeholder="Type..."> </textarea>
+                <button class="button btn_l">Post</button>
+                <button class="button btn_l">Full Reply</button>
+            </div>
+        </div>
+
+
+
+-->
+
+
+        <table class="thread_contents" cellspacing="0">
+            <tbody>
+
+                <tr class="thread_content">
+                    <td class="content">
+
+                        <div class="post_header">
+                            <div class="post_dates">
+                                <span class="post_date">Dec 24, 2020</span>
+                                <span class="post_edited">Last edited Dec 25, 2020</span>
+                            </div>
+
+                            <div class="post_ui">
+                                <button class="button btn_s filled">Quote</button>
+                                <button class="button btn_s filled">Edit</button>
+                            </div>
+                        </div>
+                        <div class="message">
+                            Bacon ipsum dolor amet jerky hamburger salami fatback chislic, tail prosciutto buffalo boudin chuck capicola swine. Meatloaf rump ball tip frankfurter pork loin biltong porchetta ground round, salami tongue ribeye landjaeger bacon. Doner bresaola andouille short ribs alcatra tenderloin short loin swine, meatball pancetta shank jerky tongue. Shank picanha cupim, shoulder ribeye ball tip biltong.
+                            <br><br>Pancetta picanha filet mignon venison ball tip corned beef ham hock leberkas ground round. Flank pastrami chislic, porchetta pig ball tip cow sirloin alcatra short ribs frankfurter picanha tongue pork chop tenderloin. Jerky spare ribs tenderloin landjaeger. Kielbasa bacon sausage pork chop.
+                        </div>
+
+                    </td>
+                </tr>
+
+                <tr class="thread_content">
+                    <td class="postwrapper content">
+
+                        <div class="post_header">
+                            <div class="post_dates">
+                                <span class="post_date">Dec 24, 2020</span>
+                                <span class="post_edited">Last edited Dec 25, 2020</span>
+                            </div>
+
+                            <div class="post_ui">
+                                <button class="button btn_s filled">Quote</button>
+                                <button class="button btn_s filled">Edit</button>
+                            </div>
+                        </div>
+                        <div class="message">
+                            Bacon ipsum dolor amet jerky hamburger salami fatback chislic, tail prosciutto buffalo boudin chuck capicola swine. Meatloaf rump ball tip frankfurter pork loin biltong porchetta ground round, salami tongue ribeye landjaeger bacon. Doner bresaola andouille short ribs alcatra tenderloin short loin swine, meatball pancetta shank jerky tongue. Shank picanha cupim, shoulder ribeye ball tip biltong.
+                            <br><br>Pancetta picanha filet mignon venison ball tip corned beef ham hock leberkas ground round. Flank pastrami chislic, porchetta pig ball tip cow sirloin alcatra short ribs frankfurter picanha tongue pork chop tenderloin. Jerky spare ribs tenderloin landjaeger. Kielbasa bacon sausage pork chop.
+                        </div>
+
+                    </td>
+                </tr>
+
+                <tr class="thread_content">
+                    <td class="postwrapper content">
+
+                        <div class="post_header">
+                            <div class="post_dates">
+                                <span class="post_date">Dec 24, 2020</span>
+                                <span class="post_edited">Last edited Dec 25, 2020</span>
+                            </div>
+
+                            <div class="post_ui">
+                                <button class="button btn_s filled">Quote</button>
+                                <button class="button btn_s filled">Edit</button>
+                            </div>
+                        </div>
+                        <div class="message">
+                            Bacon ipsum dolor amet jerky hamburger salami fatback chislic, tail prosciutto buffalo boudin chuck capicola swine. Meatloaf rump ball tip frankfurter pork loin biltong porchetta ground round, salami tongue ribeye landjaeger bacon. Doner bresaola andouille short ribs alcatra tenderloin short loin swine, meatball pancetta shank jerky tongue. Shank picanha cupim, shoulder ribeye ball tip biltong.
+                            <br><br>Pancetta picanha filet mignon venison ball tip corned beef ham hock leberkas ground round. Flank pastrami chislic, porchetta pig ball tip cow sirloin alcatra short ribs frankfurter picanha tongue pork chop tenderloin. Jerky spare ribs tenderloin landjaeger. Kielbasa bacon sausage pork chop.
+                        </div>
+
+                    </td>
+                </tr>
+
+                <tr class="thread_content">
+                    <td class="postwrapper content">
+
+                        <div class="post_header">
+                            <div class="post_dates">
+                                <span class="post_date">Dec 24, 2020</span>
+                                <span class="post_edited">Last edited Dec 25, 2020</span>
+                            </div>
+
+                            <div class="post_ui">
+                                <button class="button btn_s filled">Quote</button>
+                                <button class="button btn_s filled">Edit</button>
+                            </div>
+                        </div>
+                        <div class="message">
+                            Bacon ipsum dolor amet jerky hamburger salami fatback chislic, tail prosciutto buffalo boudin chuck capicola swine. Meatloaf rump ball tip frankfurter pork loin biltong porchetta ground round, salami tongue ribeye landjaeger bacon. Doner bresaola andouille short ribs alcatra tenderloin short loin swine, meatball pancetta shank jerky tongue. Shank picanha cupim, shoulder ribeye ball tip biltong.
+                            <br><br>Pancetta picanha filet mignon venison ball tip corned beef ham hock leberkas ground round. Flank pastrami chislic, porchetta pig ball tip cow sirloin alcatra short ribs frankfurter picanha tongue pork chop tenderloin. Jerky spare ribs tenderloin landjaeger. Kielbasa bacon sausage pork chop.
+                        </div>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+        <div class="quick-reply right">
+            <div class="quickreply_header inverse">
+                <div class="guest_name">
+                    <label>Guest Name:</label>
+                </div>
+            </div>
+
+            <div class="quickreplybox">
+                <textarea> </textarea>
+            </div>
+            <button class="button btn_l filled">Post</button>
+            <button class="button btn_l filled">Full Reply</button>
+        </div>
+
+    </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link href="site-css.css" rel="stylesheet">
+
+</head>
+
+
+
+<div id="navbar">
+    <div class="nav_wrapper">
+        <div class="nav_links">
+            <a href="#">Home</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Home</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </div>
+
+        <div class="login">Welcome, Admin</div>
+    </div>
+
+</div>
+
+
+<div id="sitewrapper">
+
+    <div id="header" class="minimalheader">
+        <h1>Gotta Have a <br>Gimmick</h1>
+
+        <div id="navigation-tree" class>
+            <span>Site Name</span>
+            <span>Current Page</span>
+        </div>
+    </div>
+
+    <!--Thread list-->
+    <div id="boardinner_grid" class="">
+
+        <div class="boardinner_header">
+            <h3 class="boardinner_name">Board name</h3>
+
+            <h5 class="boardinner_desc">Board description</h5>
+
+            <div class="button btn_xl filled">Create thread</div>
+        </div>
+
+        <div class="boardinner_content">
+
+            <!--           if subboards -->
+            <div class="boards_grid subboards">
+
+                <div class="board">
+                    <div class="board_info">
+                        <div class="board_header"><span class="board_name">Templates</span>
+                            <span class="subboardname">Archive</span>
+                        </div>
+                        <div class="board_desc">Templates and things are stored here</div>
+                    </div>
+
+                    <div class="board_stats"><a href="URL" class="lastthread">Latest thread With a super long title</a> on Dec 26, 2020 at 3:00 pm</div>
+                </div>
+
+                <div class="board">
+                    <div class="board_info">
+                        <div class="board_header"><span class="board_name">Templates</span>
+                            <span class="subboardname">Archive</span>
+                        </div>
+                        <div class="board_desc">Templates and things are stored here</div>
+                    </div>
+
+                    <div class="board_stats"><a href="URL" class="lastthread">Latest thread With a super long title</a> on Dec 26, 2020 at 3:00 pm</div>
+                </div>
+
+            </div>
+            <!--   end if subboards         -->
+
+
+            <div class="threadlistbox">
+
+                <div class="threadlist_nav">
+                    <div class="pagination">
+                        <div class="button btn_s">Prev</div>
+                        <div class="button btn_s">1</div>
+                        <div class="button btn_s">Next</div>
+                    </div>
+
+                    <div class="thread_ui">
+                        <input class="search-input ui-autosearch" type="text" width="90px" maxlength="50" placeholder="Search..." role="search" accesskey="w">
+
+                        <div class="button btn_s">Select</div>
+                        <div class="button btn_s">Actions</div>
+                    </div>
+                </div>
+
+                <table class="threadlist" cellspacing="0">
+                    <tbody>
+
+
+                        <tr class="threadlisting $[thread.content_class] link target">
+                            <td class="icon clickable">Icon</td>
+                            <td class="main clickable" title="$[thread.short_content]">
+                                <div class="title">Thread name</div>
+                                <div class="micro-pagination">Pages: <ul>
+                                        <li>1</li>
+                                        <li>2</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="threadinfo">
+                                <div class="desc clickable">Description</div>
+                                <div class="latest clickable">Updated: Dec 25, 2020 at 3:00 pm</div>
+                                <div class="replies clickable">Replies: 3</div>
+                                <div class="views clickable">Views: 3</div>
+                            </td>
+
+                            <td class="checkbox clickable"><input type="checkbox"></td>
+                        </tr>
+
+
+                        <tr class="threadlisting $[thread.content_class] link target">
+                            <td class="icon clickable">Icon</td>
+                            <td class="main clickable" title="$[thread.short_content]">
+                                <div class="title">Thread name</div>
+                                <div class="micro-pagination">Pages: <ul>
+                                        <li>1</li>
+                                        <li>2</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="threadinfo">
+                                <div class="desc clickable">Description</div>
+                                <div class="latest clickable">Updated: Dec 25, 2020 at 3:00 pm</div>
+                                <div class="replies clickable">Replies: 3</div>
+                                <div class="views clickable">Views: 3</div>
+                            </td>
+
+                            <td class="checkbox clickable"><input type="checkbox"></td>
+                        </tr>
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+    <!--    end thread lists-->
+
+
+</div>
