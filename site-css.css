@@ -1370,6 +1370,15 @@ button,
     color: white;
 }
 
+li.state-selected {
+    background: rgba(0, 0, 0, .7);
+    color: white;
+}
+
+li.state-selected:hover {
+    background: rgba(0, 0, 0, 1);
+    color: white;
+}
 
 .filled {
     border: 1px solid black;
