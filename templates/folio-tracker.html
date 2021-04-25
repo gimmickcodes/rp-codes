@@ -8,8 +8,8 @@
 
 
 <style>
-    html {
-    }
+    html {}
+
 </style>
 
 
@@ -586,25 +586,27 @@
     }
 
 
-    ::-webkit-scrollbar {
+    .folio-outer ::-webkit-scrollbar {
         -webkit-appearance: none;
-        width: 3px;
+        width: 3px !important;
+        background: rgba(0, 0, 0, 0);
     }
 
-    ::-webkit-scrollbar-vertical {
-        width: 3px;
+    .folio-outer ::-webkit-scrollbar-vertical {
+        border: 0;
     }
 
-    ::-webkit-scrollbar-thumb {
+    .folio-outer ::-webkit-scrollbar-thumb {
         background: var(--accent);
-        /* background: #e9e9e9;*/
+        border: 0;
     }
 
-    ::-webkit-scrollbar-track {
-        background: transparent;
+    .folio-outer ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0);
+        border: 0;
     }
 
-    ::-webkit-scrollbar-thumb:horizontal {
+    .folio-outer ::-webkit-scrollbar-thumb:horizontal {
         display: none;
     }
 

@@ -177,25 +177,36 @@
         width: 2px
     }
 
+   .metbox-image .scrollbox::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 2px !important;
+        background: rgba(0,0,0,0);
+    }
+
     .metbox-image .scrollbox::-webkit-scrollbar-horizontal {
         width: 2px;
+        border: 0;
     }
 
     .metbox-image .scrollbox::-webkit-scrollbar-vertical {
         height: 2px;
+        border: 0;
     }
 
     .metbox-image .scrollbox:hover::-webkit-scrollbar-thumb {
         background: var(--accentcolor);
         border-radius: 2px;
+        border: 0;
     }
 
     .metbox-image .scrollbox::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0)
+        background: rgba(0, 0, 0, 0);
+        border: 0;
     }
 
-    .metbox-image .scrollbox::-webkit-scrollbar-track {
-        background: var(--bgblank)
+    .metbox-text .scrollbox::-webkit-scrollbar-track {
+        background: var(--bgblank);
+        border: 0;
     }
 
     .metbox-image .credits {

@@ -8,8 +8,7 @@
 
 
 <style>
-    html {
-    }
+    html {}
 
 </style>
 
@@ -584,19 +583,22 @@
 
     .folio-l ::-webkit-scrollbar {
         -webkit-appearance: none;
-        width: 3px;
+        width: 3px !important;
+        background: rgba(0, 0, 0, 0);
     }
 
     .folio-l ::-webkit-scrollbar-vertical {
-        width: 3px;
+        border: 0;
     }
 
     .folio-l ::-webkit-scrollbar-thumb {
         background: var(--accent);
+        border: 0;
     }
 
     .folio-l ::-webkit-scrollbar-track {
-        background: transparent;
+        background: rgba(0, 0, 0, 0);
+        border: 0;
     }
 
     .folio-l ::-webkit-scrollbar-thumb:horizontal {
