@@ -16,7 +16,7 @@
 
 <style>
     html {
-        background: black;
+        background: #111;
     }
 
     ::-webkit-scrollbar {
@@ -75,7 +75,7 @@
                 We have almost lost hold; we can no longer describe a happy man, nor make any celebration of joy. How can I tell you about the people of Omelas? They were not naive and happy children— though their children were, in fact, happy. They were mature, intelligent, passionate adults whose lives were not wretched. <br><br>
                 O miracle! but I wish I could describe it better. I wish I could convince you. Omelas sounds in my words like a city in a fairy tale, long ago and far away, once upon a time. Perhaps it would be best if you imagined it as your own fancy bids, assuming it will rise to the occasion, for certainly I cannot suit you all. <br><br>
                 <hr>
-                <span class="h3">notes</span> – tip andouille pork loin proident ut. Pancetta meatball elit adipi
+                <span class="h3">notes</span> – exerpt from <i>The Ones Who Walk Away From Omelas</i>, Ursula Le Guin
             </div>
 
             <div class="emberlit_footer">
@@ -158,7 +158,7 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        background: linear-gradient(to bottom, #0D0E0F 70%, rgba(13, 14, 15, 0) 90%);
+        background: linear-gradient(to bottom, rgb(11, 15, 21) 70%, rgba(7, 16, 31, 0) 90%);
         top: 0;
         z-index: 20;
     }
@@ -173,6 +173,7 @@
 
     .emberlit_inner {
         background: #0D0E0F;
+        background: rgb(13, 19, 29);
         position: relative;
         overflow: hidden;
         border: 1px solid rgba(var(--textaccentRGB), .3);
@@ -194,10 +195,14 @@
         display: block;
     }
 
-    .top-ember svg, .top-ember img {
+    .top-ember svg,
+    .top-ember img {
         animation: flicker3 9s 0 linear;
         animation-iteration-count: infinite;
-        filter: brightness(2)
+        filter: brightness(2);
+        -webkit-animation: flicker3 9s 0 linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-filter: brightness(2);
     }
 
     @keyframes flicker3 {
@@ -308,12 +313,16 @@
     .bottom-ember img {
         height: 240px;
         filter: brightness(1.3) blur(1);
+        -webkit-filter: brightness(1.3) blur(1);
     }
 
     .seamlessembers:first-child {
         animation: flicker1 60s 0 linear;
         animation-iteration-count: infinite;
         transform: translate(0, 0) scale(1);
+        -webkit-animation: flicker1 60s 0 linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-transform: translate(0, 0) scale(1);
         opacity: .75;
     }
 
@@ -321,6 +330,9 @@
         animation: flicker2 60s 0 linear;
         animation-iteration-count: infinite;
         transform: translate(0, 480px) scale(1.25);
+        -webkit-animation: flicker2 60s 0 linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-transform: translate(0, 480px) scale(1.25);
     }
 
     @keyframes flicker1 {
@@ -328,20 +340,28 @@
         0%,
         100% {
             transform: translate(0, 0) scale(1);
+            -webkit-transform: translate(0, 0) scale(1);
         }
 
         49% {
             transform: translate(0, -480px) scale(1);
+            -webkit-transform: translate(0, -480px) scale(1);
             opacity: 1;
         }
 
         50% {
             transform: translate(0, 480px) scale(1);
-            opacity: 1
+            -webkit-transform: translate(0, 480px) scale(1);
+            opacity: 0
+        }
+        
+        51% {
+            opacity: 1;
         }
 
         99% {
             transform: translate(0px, 0) scale(1);
+            -webkit-transform: translate(0px, 0) scale(1);
             opacity: .75;
         }
     }
@@ -352,16 +372,19 @@
         0%,
         100% {
             transform: translate(0, 480px) scale(1.25);
+            -webkit-transform: translate(0, 480px) scale(1.25);
         }
 
 
         50% {
             transform: translate(0, 0) scale(1);
+            -webkit-transform: translate(0, 0) scale(1);
             opacity: .5
         }
 
         99% {
             transform: translate(0, -480px) scale(1.25);
+            -webkit-transform: translate(0, -480px) scale(1.25);
             opacity: 1;
         }
     }

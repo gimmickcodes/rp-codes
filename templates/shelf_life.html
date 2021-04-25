@@ -398,7 +398,7 @@
         color: #555
     }
 
-    b {
+    .gim-books b {
         color: var(--charAccent);
         /*
         font-family: var(--fontserif);
@@ -408,12 +408,12 @@
 */
     }
 
-    a {
+    .gim-books a {
         color: var(--charAccent);
         text-decoration-style: dotted;
     }
 
-    br+br {
+    .gim-books br+br {
         content: ' ';
         display: block;
         margin: 8px 0;
@@ -428,25 +428,25 @@
 
     /*    ACCORDION POSITIONING */
 
-    .charOne {
+    .gim-books .charOne {
         transform: translate(309px);
         -webkit-transform: translate(309px);
         z-index: 10;
     }
 
-    .charTwo {
+    .gim-books .charTwo {
         transform: translate(6px);
         -webkit-transform: translate(6px);
         z-index: 20;
     }
 
-    .charThree {
+    .gim-books .charThree {
         transform: translate(-297px);
         -webkit-transform: translate(-297px);
         z-index: 30
     }
 
-    .charFour {
+    .gim-books .charFour {
         transform: translate(-600px);
         -webkit-transform: translate(-600px);
         z-index: 40;
@@ -454,29 +454,29 @@
 
     /*    SLIDE OVER */
 
-    .charOne:hover,
-    .charTwo:hover~.charOne,
-    .charThree:hover~.charOne,
-    .charFour:hover~.charOne {
+    .gim-books .charOne:hover,
+    .gim-books .charTwo:hover~.charOne,
+    .gim-books .charThree:hover~.charOne,
+    .gim-books .charFour:hover~.charOne {
         transform: translate(0);
         -webkit-transform: translate(0);
         margin-left: 0;
     }
 
-    .charTwo:hover,
-    .charThree:hover~.charTwo,
-    .charFour:hover~.charTwo {
+    .gim-books .charTwo:hover,
+    .gim-books .charThree:hover~.charTwo,
+    .gim-books .charFour:hover~.charTwo {
         transform: translate(-303px);
         -webkit-transform: translate(-303px);
     }
 
-    .charThree:hover,
-    .charFour:hover~.charThree {
+    .gim-books .charThree:hover,
+    .gim-books .charFour:hover~.charThree {
         transform: translate(-606px);
         -webkit-transform: translate(-606px);
     }
 
-    .charFour:hover {
+    .gim-books .charFour:hover {
         transform: translate(-909px);
         -webkit-transform: translate(-909px);
     }
@@ -487,12 +487,12 @@
         opacity: .75;
     }
 
-    .gim-book:hover~.charOne .spine_overlay {
+    .gim-book:hover~.gim-books .charOne .spine_overlay {
         opacity: .9;
     }
 
     .gim-book .gim-page_content,
-    .gim-book:hover~.charOne .gim-page_content {
+    .gim-book:hover~.gim-books .charOne .gim-page_content {
         opacity: 0;
     }
 
@@ -500,18 +500,18 @@
         opacity: 1;
     }
 
-    ::-webkit-scrollbar {
+    .gim-bookshelf ::-webkit-scrollbar {
         -webkit-appearance: none;
         width: 4px !important;
         border: 0 !important;
     }
 
-    ::-webkit-scrollbar-thumb {
+    .gim-bookshelf ::-webkit-scrollbar-thumb {
         background: #dedede;
         border: 0;
     }
 
-    ::-webkit-scrollbar-track {
+    .gim-bookshelf ::-webkit-scrollbar-track {
         background: transparent;
         border: 0;
     }
