@@ -1207,6 +1207,13 @@ td.threadinfo > div {
       height: 100%;
   }
 
+/* ENABLE FOR PB
+.editorbox textarea {
+    width: 97% !important;
+    height: 330px !important;
+}
+*/
+
   .thread_addons {
       margin-left: 9px;
   }

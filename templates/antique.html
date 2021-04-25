@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <head>
+    <link href="../css-templates.css" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mate&display=swap" rel="stylesheet">
@@ -12,39 +14,6 @@
 
 </head>
 
-<style>
-    html {
-        background: lightgray;
-    }
-
-    ::-webkit-scrollbar {
-        -webkit-appearance: none;
-        width: 10px !important;
-        height: 10px;
-        border: 0 !important;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: darkgray;
-        border-left: 2px solid white;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #e2e2e2;
-        border-left: 2px solid white
-    }
-
-    ::-webkit-scrollbar-thumb:horizontal {
-        border-top: 2px solid white;
-        border-left: 0;
-    }
-
-    ::-webkit-scrollbar-track:horizontal {
-        border-top: 2px solid white;
-        border-left: 0;
-    }
-
-</style>
 
 <!--
 <a class="tooltip" tooltip="completed" href="#">
@@ -234,7 +203,7 @@
 
                                 Alcatra salami chislic, pork belly frankfurter t-bone ribeye tri-tip fatback short loin short ribs meatloaf landjaeger porchetta. Filet mignon pork loin doner, boudin meatball ball tip leberkas kielbasa cupim. Kielbasa pork turkey, beef sausage prosciutto chicken ball tip drumstick brisket pig picanha turducken. Cow chislic bacon drumstick ham hock rump. Tenderloin swine ham boudin, sirloin spare ribs pork chuck corned beef fatback chicken beef ribs. Shoulder chuck chislic, corned beef alcatra short loin fatback jerky ham hock hamburger turducken. Ribeye ham spare ribs, picanha jowl burgdoggen frankfurter hamburger biltong cow rump jerky.
                                 <br><br>
-                                
+
                                 Tri-tip tenderloin drumstick, ham hock shankle bresaola boudin. Chuck prosciutto buffalo spare ribs chislic, salami frankfurter pork belly. Pork loin sirloin picanha jowl frankfurter ribeye shankle. Leberkas meatball jowl shank pork chop. Prosciutto flank pork loin ground round picanha, chuck turducken chicken. Prosciutto strip steak pork venison ham hock brisket shoulder, jowl frankfurter porchetta fatback meatloaf turducken filet mignon alcatra. Turducken brisket tail ground round, turkey t-bone pastrami filet mignon fatback jowl frankfurter pork alcatra bresaola.
                             </div>
 
@@ -261,7 +230,7 @@
 <style>
     /*    Serifs   */
 
-/*
+    /*
     @import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
 
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
@@ -289,7 +258,7 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 */
-    
+
 
     @import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Mate&display=swap');
@@ -299,7 +268,7 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
 
-/*
+    /*
     @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
@@ -338,7 +307,7 @@
         width: calc(100%);
         height: 100%;
         background: url(https://i.pinimg.com/564x/f8/04/ae/f804ae932cf0b67eee142968a700c5eb.jpg) center center / cover;
-/*        filter: contrast(.5) sepia(.2) brightness(.5) saturate(1) opacity(.8);*/
+        /*        filter: contrast(.5) sepia(.2) brightness(.5) saturate(1) opacity(.8);*/
 
         filter: contrast(.5) sepia(.0) brightness(.5) saturate(1) opacity(1);
         animation: fadein_filter 1s .5s ease-in-out;
@@ -646,12 +615,12 @@
     .antique .pagecontent {
         background: rgba(0, 0, 0, .75);
         height: 340px;
-        padding: 30px; 
-        overflow-y: auto; 
+        padding: 30px;
+        overflow-y: auto;
     }
 
     .antique .pageinset {
-/*
+        /*
         display: grid;
         align-content: flex-start;
         height: 340px;
@@ -663,17 +632,25 @@
 
     .antique h1 {
         margin: 0;
-        font-family: 'Baskerville'; /* eh when big */
-        font-family: 'Lancelot'; /* too fairy medieval */
-        font-family: 'Antic Didone'; /* too perfume brand */
-        font-family: 'Libre Caslon Text', serif;  /* too rigid caps */
-        font-family: 'Bellota Text'; /* weird lowercase g */
-        
+        font-family: 'Baskerville';
+        /* eh when big */
+        font-family: 'Lancelot';
+        /* too fairy medieval */
+        font-family: 'Antic Didone';
+        /* too perfume brand */
+        font-family: 'Libre Caslon Text', serif;
+        /* too rigid caps */
+        font-family: 'Bellota Text';
+        /* weird lowercase g */
+
         font: 400 normal 40px/36px 'Mate';
-    font-family: 'Cormorant Garamond'; /* contender when semibold */
-    font-family: 'Vollkorn'; /* contender */
-    font-family: 'Lustria';
-    font-family: 'Mate'; /* contender */
+        font-family: 'Cormorant Garamond';
+        /* contender when semibold */
+        font-family: 'Vollkorn';
+        /* contender */
+        font-family: 'Lustria';
+        font-family: 'Mate';
+        /* contender */
         color: rgba(255, 255, 255, .4);
         text-shadow: 0 0 1px rgba(255, 255, 255, .5);
     }
@@ -685,7 +662,7 @@
         letter-spacing: 1px;
         margin: 6px 0 0;
         color: rgba(255, 255, 255, .85);
-/*
+        /*
         font: 400 10px/18px 'Lustria';
         text-transform: uppercase;
         letter-spacing: .9px;
@@ -726,7 +703,7 @@
     .antique .threadinfo,
     .antique .threadinfo a,
     .antique .threadinfo a:hover {
-/*        font: 14px/16px 'Mate';*/
+        /*        font: 14px/16px 'Mate';*/
         display: inline;
         margin-left: 0;
         text-transform: lowercase;
@@ -760,31 +737,31 @@
         border: 0;
     }
 
-    
+
     /* NOT PUBLIC */
-    
+
     .hide {
         display: none;
     }
-     .longtext {
+
+    .longtext {
         column-count: 1;
         column-fill: balance;
         column-gap: 30px;
         width: calc(100% - 30px);
-/*        font: 400 13.5px/21px 'Noto Sans TC';*/
+        /*        font: 400 13.5px/21px 'Noto Sans TC';*/
         font: 400 13px/21px 'Nanum Gothic';
         color: var(--tertiary);
         color: rgba(255, 255, 255, .6);
         letter-spacing: .4px;
     }
-    
+
     .longtext br {
         content: ' ';
         display: block;
         margin: 0 0 10px;
     }
 
-  
 </style>
 
 
@@ -796,4 +773,5 @@
         tabClassName: '.tab',
         contClassName: '.pagebox',
     });
+
 </script>
