@@ -213,10 +213,10 @@ ul.quartzplotter-hooks {
    padding: 30px 34px 10px 30px;
    margin: auto;
    background: var(--light-blue);
-   border: 2px solid var(--blavy);
-   background-image: radial-gradient(circle, var(--border-grey) 8%, transparent 8%), radial-gradient(circle, var(--border-grey) 8%, transparent 8%);
+   border: 1px solid var(--blavy);
+   /* background-image: radial-gradient(circle, var(--border-grey) 8%, transparent 8%), radial-gradient(circle, var(--border-grey) 8%, transparent 8%);
    background-size: 20px 20px;
-   background-position: 0 0, 0 0;
+   background-position: 0 0, 0 0; */
 }
 
 .badgebox {
@@ -272,7 +272,8 @@ ul.quartzplotter-hooks {
    border-radius: 3px;
    box-shadow: 6px 6px 0px 0px var(--blavy);
    transition: all 200ms ease;
-   color: var(--darkgrey)
+   color: var(--darkgrey);
+   border: 2px solid var(--blavy);
 }
 
 .badgecolor {
