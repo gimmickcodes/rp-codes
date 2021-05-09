@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<head>
+   <link href="../css-templates.css" rel="stylesheet">
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet">
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet">
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet">
+</head>
+
+
+<center>
+   <div class="asf-phone-wrapper quartzphone">
+      <div class="asf-phone-background"></div>
+      <div class="asf-phone-box">
+         <div class="asf-phone-title"> incoming text from carsyn valentia</div>
+
+         <img src="https://files.jcink.net/uploads2/xxaswefall//av-31.jpg?1619981576" class="asf-text-img">
+
+         <div class="asf-scroll">
+            <div class="asf-phone-text-wrap">
+               <div class="asf-phone-text one-text">
+                  ...Thanks
+               </div>
+
+               <div class="asf-phone-text two-text">
+                  I think
+               </div>
+
+               <div class="asf-phone-text three-text">
+                  How old are their targets? I don't think a dress will make me look much younger
+               </div>
+
+               <div class="asf-phone-text four-text">
+                  I don't own any either
+               </div>
+
+            </div>
+         </div>
+         <div class="asf-phone-dock">
+            <div class="asf-phone-input">
+               <div class="phone-input-text one-text"> </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</center>
+
+
+<style>
+   .quartzphone .asf-phone-text-wrap {
+      height: 289px;
+   }
+
+   .asf-phone-dock {
+      padding: 8px 14px;
+      border-top: 2px solid var(--blavy);
+   }
+
+   .asf-phone-input {
+      border: 2px solid var(--blavy);
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 155%;
+      text-align: left;
+      height: 17px;
+   }
+
+   .phone-input-text {
+      animation: typing 4s steps(30, end);
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      width: 0;
+      max-width: 235px;
+   }
+
+
+   .showtyping {
+      animation: sent 1s steps(2, end);
+      animation-fill-mode: forwards;
+      opacity: 0;
+   }
+
+
+   @keyframes typing {
+
+      0%,
+      100% {
+         width: 0%
+      }
+
+      66% {
+         width: 100%
+      }
+   }
+
+   @keyframes sending {
+      0% {
+         width: 0%
+      }
+
+      66%,
+      99.9% {
+         width: 100%;
+         opacity: 1;
+      }
+
+      100% {
+         opacity: 0;
+      }
+   }
+
+   @keyframes sent {
+      0% {
+         opacity: 0;
+      }
+
+      1%,
+      100% {
+         opacity: 1;
+      }
+   }
+
+
+   .one-text {
+      animation-delay: 1s;
+   }
+
+   .two-text {
+      animation-delay: 5s;
+      animation-duration: 1.5s;
+   }
+
+   .three-text {
+      animation-delay: 6.5s;
+   }
+
+   .four-text {
+      animation-delay: 10s
+   }
+
+   .five-text {
+      animation-delay: 13s;
+   }
+
+
+
+   html {
+      background: var(--off-white);
+      --white: #ffffff;
+      --off-white: #fafafa;
+      --blavy: #232227;
+      --purple: #827ed7;
+      --teal: #a2e4d3;
+      --medium-grey: #8b7e88;
+      --dark-grey: #444245;
+      --text-grey: #6b666a;
+      --border-grey: #b7b3b9;
+      --light-blue: #eaefee;
+      --white-blue: #F4F8F7;
+      --teal-blue: #bce1e2;
+      --justice: #c0b072;
+      --empress: #a374b0;
+      --chariot: #74a3b0;
+      --devil: #c06868;
+      --moon: #7b74b0;
+      --emperor: #c8865f;
+      --fool: #789e78;
+      --tower: #c86f8e;
+      --temperance: #74b09e;
+
+      --groupcolor: lightgray;
+
+
+      font-family: 'Work Sans', Arial, sans-serif;
+      font-size: 12px;
+      line-height: 160%;
+      color: var(--text-grey);
+   }
+
+   /*phone*/
+   .asf-phone-wrapper {
+      width: 325px;
+      height: 500px;
+      margin: auto;
+      position: relative;
+   }
+
+   .asf-phone-background {
+      background-image: radial-gradient(var(--blavy) 20%, transparent 20%);
+      background-position: 0 0;
+      background-size: 15px 15px;
+      height: 470px;
+      width: 280px;
+      position: absolute;
+      z-index: 1;
+      left: 54px;
+      bottom: -14px;
+   }
+
+   /*justice*/
+   #group-6 .asf-phone-background {
+      background-image: radial-gradient(var(--justice) 20%, transparent 20%);
+   }
+
+   /*empress*/
+   #group-7 .asf-phone-background {
+      background-image: radial-gradient(var(--empress) 20%, transparent 20%);
+   }
+
+   /*chariot*/
+   #group-8 .asf-phone-background {
+      background-image: radial-gradient(var(--chariot) 20%, transparent 20%);
+   }
+
+
+   /*devil*/
+   #group-9 .asf-phone-background {
+      background-image: radial-gradient(var(--devil) 20%, transparent 20%);
+   }
+
+   /*moon*/
+   #group-10 .asf-phone-background {
+      background-image: radial-gradient(var(--moon) 20%, transparent 20%);
+   }
+
+   /*emperor*/
+   #group-11 .asf-phone-background {
+      background-image: radial-gradient(var(--emperor) 20%, transparent 20%);
+   }
+
+
+   /*fool*/
+   #group-12 .asf-phone-background {
+      background-image: radial-gradient(var(--fool) 20%, transparent 20%);
+   }
+
+
+   /*tower*/
+   #group-13 .asf-phone-background {
+      background-image: radial-gradient(var(--tower) 20%, transparent 20%);
+   }
+
+   /*temperance*/
+   #group-14 .asf-phone-background {
+      background-image: radial-gradient(var(--temperance) 20%, transparent 20%);
+   }
+
+   /*null*/
+   #group-3 .asf-phone-background {
+      background-image: radial-gradient(var(--blavy) 20%, transparent 20%) !important;
+   }
+
+   .asf-phone-box {
+      background: var(--white);
+      border: 2px solid var(--blavy);
+      width: 280px;
+      height: 470px;
+      position: relative;
+      z-index: 2;
+      border-radius: 2px;
+   }
+
+   /*justice*/
+   #group-6 .asf-phone-box,
+   #group-6 .asf-text-img {
+      border: 2px solid var(--justice);
+   }
+
+
+   /*empress*/
+   #group-7 .asf-phone-box,
+   #group-7 .asf-text-img {
+      border: 2px solid var(--empress);
+   }
+
+
+   /*chariot*/
+   #group-8 .asf-phone-box,
+   #group-8 .asf-text-img {
+      border: 2px solid var(--chariot);
+   }
+
+
+   /*devil*/
+   #group-9 .asf-phone-box,
+   #group-9 .asf-text-img {
+      border: 2px solid var(--devil);
+   }
+
+
+   /*moon*/
+   #group-10 .asf-phone-box,
+   #group-10 .asf-text-img {
+      border: 2px solid var(--moon);
+   }
+
+   /*emperor*/
+   #group-11 .asf-phone-box,
+   #group-11 .asf-text-img {
+      border: 2px solid var(--emperor);
+   }
+
+
+   /*fool*/
+   #group-12 .asf-phone-box,
+   #group-12 .asf-text-img {
+      border: 2px solid var(--fool);
+   }
+
+
+   /*tower*/
+   #group-13 .asf-phone-box,
+   #group-13 .asf-text-img {
+      border: 2px solid var(--tower);
+   }
+
+
+   /*temperance*/
+   #group-14 .asf-phone-box,
+   #group-14 .asf-text-img {
+      border: 2px solid var(--temperance);
+   }
+
+   /*null*/
+   #group-3 .asf-phone-box,
+   #group-3 .asf-text-img {
+      border: 2px solid var(--blavy) !important;
+   }
+
+   .asf-phone-title {
+      height: 35px;
+      width: 100%;
+      border-bottom: 2px solid var(--blavy);
+      line-height: 35px;
+      font-family: 'Work Sans', Sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--blavy);
+      text-align: center;
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+   }
+
+
+   /*justice*/
+   #group-6 .asf-phone-title {
+      border-bottom: 2px solid var(--justice);
+      color: var(--justice);
+   }
+
+
+   /*empress*/
+   #group-7 .asf-phone-title {
+      border-bottom: 2px solid var(--empress);
+      color: var(--empress);
+   }
+
+
+   /*chariot*/
+   #group-8 .asf-phone-title {
+      border-bottom: 2px solid var(--chariot);
+      color: var(--chariot);
+   }
+
+
+   /*devil*/
+   #group-9 .asf-phone-title {
+      border-bottom: 2px solid var(--devil);
+      color: var(--devil);
+   }
+
+
+   /*moon*/
+   #group-10 .asf-phone-title {
+      border-bottom: 2px solid var(--moon);
+      color: var(--moon);
+   }
+
+   /*emperor*/
+   #group-11 .asf-phone-title {
+      border-bottom: 2px solid var(--emperor);
+      color: var(--emperor);
+   }
+
+
+   /*fool*/
+   #group-12 .asf-phone-title {
+      border-bottom: 2px solid var(--fool);
+      color: var(--fool);
+   }
+
+
+   /*tower*/
+   #group-13 .asf-phone-title {
+      border-bottom: 2px solid var(--tower);
+      color: var(--tower);
+   }
+
+
+   /*temperance*/
+   #group-14 .asf-phone-title {
+      border-bottom: 2px solid var(--temperance);
+      color: var(--temperance);
+   }
+
+
+   /*null*/
+   #group-3 .asf-phone-title {
+      border-bottom: 2px solid var(--blavy) !important;
+      color: var(--blavy) !important;
+   }
+
+   .asf-scroll {
+      padding-right: 5px;
+   }
+
+   /*text*/
+
+   .asf-text-img {
+      border: 2px solid var(--blavy);
+      padding: 5px;
+      border-radius: 100%;
+      height: 40px;
+      width: 40px;
+      align: center;
+      margin: auto;
+   }
+
+   .asf-phone-text-wrap {
+      height: 326px;
+      overflow: auto;
+      margin-top: 15px;
+   }
+
+   /*justice*/
+   #group-6 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--justice) !important;
+   }
+
+   /*empress*/
+   #group-7 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--empress) !important;
+   }
+
+   /*chariot*/
+   #group-8 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--chariot) !important;
+   }
+
+   /*devil*/
+   #group-9 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--devil) !important;
+   }
+
+   /*moon*/
+   #group-10 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--moon) !important;
+   }
+
+   /*emperor*/
+   #group-11 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--emperor) !important;
+   }
+
+   /*fool*/
+   #group-12 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--fool) !important;
+   }
+
+   /*tower*/
+   #group-13 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--tower) !important;
+   }
+
+   /*temperance*/
+   #group-14 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--temperance) !important;
+   }
+
+   /*null*/
+   #group-3 .asf-phone-text-wrap::-webkit-scrollbar-thumb {
+      background: var(--blavy) !important;
+   }
+
+
+   .asf-phone-text {
+      margin: 15px;
+      margin-right: 10px;
+      margin-top: 0px;
+      background: var(--blavy);
+      color: var(--white);
+      border-radius: 2px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px;
+      line-height: 155%;
+      padding: 15px;
+      text-align: justify;
+   }
+
+   .asf-phone-text img {
+      width: 100%;
+   }
+
+   /*justice*/
+   #group-6 .asf-phone-text {
+      background: var(--justice);
+   }
+
+   /*justice*/
+   #group-6 .asf-phone-text {
+      background: var(--justice);
+   }
+
+   /*empress*/
+   #group-7 .asf-phone-text {
+      background: var(--empress);
+   }
+
+   /*chariot*/
+   #group-8 .asf-phone-text {
+      background: var(--chariot);
+   }
+
+   /*devil*/
+   #group-9 .asf-phone-text {
+      background: var(--devil);
+   }
+
+   /*moon*/
+   #group-10 .asf-phone-text {
+      background: var(--moon);
+   }
+
+   /*emperor*/
+   #group-11 .asf-phone-text {
+      background: var(--emperor);
+   }
+
+   /*fool*/
+   #group-12 .asf-phone-text {
+      background: var(--fool);
+   }
+
+   /*tower*/
+   #group-13 .asf-phone-text {
+      background: var(--tower);
+   }
+
+   /*temperance*/
+   #group-14 .asf-phone-text {
+      background: var(--temperance);
+   }
+
+   /*null*/
+   #group-3 .asf-phone-text {
+      background: var(--blavy) !important;
+   }
+</style>
