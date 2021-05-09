@@ -210,10 +210,10 @@ ul.quartzplotter-hooks {
 
 .badgebox-outer {
    width: 640px;
-   padding: 30px 40px;
+   padding: 30px 34px 10px 30px;
    margin: auto;
    background: var(--light-blue);
-   border: 1px solid var(--border-grey);
+   border: 2px solid var(--blavy);
    background-image: radial-gradient(circle, var(--border-grey) 8%, transparent 8%), radial-gradient(circle, var(--border-grey) 8%, transparent 8%);
    background-size: 20px 20px;
    background-position: 0 0, 0 0;
@@ -245,7 +245,7 @@ ul.quartzplotter-hooks {
    letter-spacing: 1.6px;
    text-transform: uppercase;
    text-align: center;
-   background: var(--dark-grey);
+   background: var(--blavy);
    color: var(--off-white);
    padding: 9px 0 8px;
 }
