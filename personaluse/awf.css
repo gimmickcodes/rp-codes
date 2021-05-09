@@ -363,7 +363,7 @@ ul.quartzplotter-hooks {
 
 
 .badge:hover {
-   transform: translateY(-5px) rotate(0deg);
+   transform: translateY(-5px);
    box-shadow: 6px 11px 0px 0px var(--blavy);
 }
 
@@ -386,4 +386,93 @@ ul.quartzplotter-hooks {
 .badge ::-webkit-scrollbar-track {
    background: rgba(0, 0, 0, 0);
    border: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* PHONE TYPING */
+
+
+.quartzphone .asf-phone-text-wrap {
+   height: 289px;
+}
+
+.asf-phone-dock {
+   padding: 8px 14px;
+   border-top: 2px solid var(--blavy);
+}
+
+.asf-phone-input {
+   border: 2px solid var(--blavy);
+   border-radius: 5px;
+   padding: 5px 10px;
+   font-family: 'Roboto Mono', monospace;
+   font-size: 11px;
+   font-weight: 500;
+   line-height: 155%;
+   text-align: left;
+   height: 17px;
+}
+
+.phone-input-text {
+   animation: typing 4s steps(30, end);
+   white-space: nowrap;
+   overflow: hidden;
+   position: absolute;
+   width: 0;
+   max-width: 235px;
+}
+
+
+.showtyping {
+   animation: sent 1s steps(2, end);
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+
+
+@keyframes typing {
+
+   0%,
+   100% {
+      width: 0%
+   }
+
+   66% {
+      width: 100%
+   }
+}
+
+@keyframes sending {
+   0% {
+      width: 0%
+   }
+
+   66%,
+   99.9% {
+      width: 100%;
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+   }
+}
+
+@keyframes sent {
+   0% {
+      opacity: 0;
+   }
+
+   1%,
+   100% {
+      opacity: 1;
+   }
 }

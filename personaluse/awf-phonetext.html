@@ -8,25 +8,22 @@
 
 
    <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
 
 
    <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
-      rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
    <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap"
-      rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
 
    <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+
+   <link rel="stylesheet" href="awf.css" type="text/css">
+
 </head>
 
 
@@ -70,84 +67,6 @@
 
 
 <style>
-   .quartzphone .asf-phone-text-wrap {
-      height: 289px;
-   }
-
-   .asf-phone-dock {
-      padding: 8px 14px;
-      border-top: 2px solid var(--blavy);
-   }
-
-   .asf-phone-input {
-      border: 2px solid var(--blavy);
-      border-radius: 5px;
-      padding: 5px 10px;
-      font-family: 'Roboto Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      line-height: 155%;
-      text-align: left;
-      height: 17px;
-   }
-
-   .phone-input-text {
-      animation: typing 4s steps(30, end);
-      white-space: nowrap;
-      overflow: hidden;
-      position: absolute;
-      width: 0;
-      max-width: 235px;
-   }
-
-
-   .showtyping {
-      animation: sent 1s steps(2, end);
-      animation-fill-mode: forwards;
-      opacity: 0;
-   }
-
-
-   @keyframes typing {
-
-      0%,
-      100% {
-         width: 0%
-      }
-
-      66% {
-         width: 100%
-      }
-   }
-
-   @keyframes sending {
-      0% {
-         width: 0%
-      }
-
-      66%,
-      99.9% {
-         width: 100%;
-         opacity: 1;
-      }
-
-      100% {
-         opacity: 0;
-      }
-   }
-
-   @keyframes sent {
-      0% {
-         opacity: 0;
-      }
-
-      1%,
-      100% {
-         opacity: 1;
-      }
-   }
-
-
    .one-text {
       animation-delay: 1s;
    }
@@ -171,38 +90,10 @@
 
 
 
-   html {
-      background: var(--off-white);
-      --white: #ffffff;
-      --off-white: #fafafa;
-      --blavy: #232227;
-      --purple: #827ed7;
-      --teal: #a2e4d3;
-      --medium-grey: #8b7e88;
-      --dark-grey: #444245;
-      --text-grey: #6b666a;
-      --border-grey: #b7b3b9;
-      --light-blue: #eaefee;
-      --white-blue: #F4F8F7;
-      --teal-blue: #bce1e2;
-      --justice: #c0b072;
-      --empress: #a374b0;
-      --chariot: #74a3b0;
-      --devil: #c06868;
-      --moon: #7b74b0;
-      --emperor: #c8865f;
-      --fool: #789e78;
-      --tower: #c86f8e;
-      --temperance: #74b09e;
-
-      --groupcolor: lightgray;
 
 
-      font-family: 'Work Sans', Arial, sans-serif;
-      font-size: 12px;
-      line-height: 160%;
-      color: var(--text-grey);
-   }
+
+
 
    /*phone*/
    .asf-phone-wrapper {
