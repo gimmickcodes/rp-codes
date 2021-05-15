@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<head>
+   <link href="../css-templates.css" rel="stylesheet">
+
+   <script src="//pull.cappuccicons.com/cpf.js"></script>
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+   <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+
+</head>
+
+<div class="gardenwrap">
+   <div class="gardenbox">
+      <div class="gardentopper"> <i class="cp cp-sun"></i> </div>
+
+      <div class="gardentext">
+         Enim, ultricies platea ullamcorper aliquet habitant odio amet. Duis commodo, leo vitae egestas enim. Vitae ut placerat at mauris eget augue velit porttitor. Porttitor sed arcu mauris morbi quis. Ut in enim aliquet natoque erat turpis porttitor adipiscing. Dui diam dignissim aliquam nulla id. Viverra viverra facilisis nullam mattis viverra. Porttitor eget fringilla mauris sed magna consequat. Tellus morbi ut consectetur faucibus purus a, urna nulla. Aliquam dui lobortis duis venenatis eget sed quam sapien nec. Habitant pellentesque vulputate facilisi ultrices nibh. Placerat integer elit tristique in et, interdum porttitor. Aliquam at amet volutpat, velit amet, nunc mattis faucibus. <br><br>
+
+         Viverra a ipsum tortor senectus. Quisque ut urna aliquam amet, placerat lorem amet. Eu sagittis, pharetra, pellentesque proin. Tortor sed interdum amet, vehicula mattis auctor risus cursus. Vel elit in nunc viverra mauris malesuada orci lobortis porttitor. Consectetur ipsum sit viverra ut. Nam orci et dictum sed. Praesent dignissim imperdiet tristique dignissim ut pellentesque accumsan et.
+         Venenatis risus tincidunt nibh pellentesque in morbi. Egestas quisque amet, sed aliquet eu</div>
+
+      <div class="gardenflowerbox">
+         <div class="gardenflowers">
+            <i class="cp cp-tulip-o"></i>
+            <i class="cp cp-flower-alt-o"></i>
+         </div>
+      </div>
+      <div class="gardenfooter1"> </div>
+      <div class="gardenfooter2"> </div>
+      <div class="gardenfooter3"> </div>
+      <div class="gardenscallop"></div>
+
+   </div>
+
+
+   <a href="http://pixel-perfect.boards.net/user/2465" class="gimcredits">made by gimmick</a>
+</div>
+
+
+
+
+<style>
+   .gardenwrap {
+      width: max-content;
+      margin: 30px auto;
+      position: relative;
+      --accent: rgb(210, 80, 108);
+      --accentRGB: 210, 80, 108;
+      --bgcolor: #1E2137;
+      /* --bgcolor: #fff6e3; */
+      --clear: rgba(0, 0, 0, 0)
+   }
+
+   .gardenwrap a.gimcredits {
+      display: block;
+      text-align: right;
+      margin-top: 4px;
+      font: 700 7px/10px sans-serif;
+      letter-spacing: .8px;
+      text-decoration: none;
+      text-transform: uppercase;
+   }
+
+   .gardenbox {
+      width: 400px;
+      border-top-right-radius: 30px;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+      background: var(--bgcolor);
+   }
+
+   .gardentopper {
+      padding: 30px 45px 5px;
+      font-size: 25px;
+      display: block;
+      color: rgb(var(--accentRGB), .75);
+   }
+
+   .gardentext {
+      padding: 15px 40px 30px 45px;
+      font: 400 13px/19px 'Nunito', sans-serif;
+      color: #a79498;
+   }
+
+   .gardenflowerbox {
+      padding: 0px 40px;
+      display: flex;
+      justify-content: flex-end;
+      z-index: 10;
+      position: relative;
+      border-bottom: 0px solid var(--accent);
+      border-color: #5A3C47;
+      font: 10px/1em 'Inter';
+      text-transform: uppercase;
+      color: var(--accent);
+      border-color: #783952;
+      color: #783952;
+   }
+
+   .gardenflowers {
+      display: flex;
+      padding-top: 0px;
+   }
+
+   .gardenflowerbox i {
+      font-size: 30px;
+      display: inline-block;
+      line-height: 26px;
+   }
+
+   .gardenfooter1 {
+      height: 10px;
+      background: rgb(var(--accentRGB), .5);
+   }
+
+   .gardenfooter2 {
+      width: 100%;
+      height: 15px;
+      display: block;
+      background: rgb(var(--accentRGB), .75);
+   }
+
+   .gardenfooter3 {
+      width: 100%;
+      height: 20px;
+      display: block;
+      background: rgb(var(--accentRGB), 1);
+   }
+
+   .gardenscallop {
+      position: relative;
+      width: 100%;
+      background:
+         radial-gradient(circle at 50% -15px, var(--accent) 25%, var(--clear) 26%, var(--clear) 40%);
+      background-color: var(--clear);
+      background-size: 30px 100px;
+      height: 16px;
+      background-repeat: repeat-x;
+      transform: rotate(180deg);
+      z-index: 0;
+      display: none;
+   }
+</style>
