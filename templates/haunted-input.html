@@ -23,27 +23,27 @@
 
    <div class="hauntedbox">
 
-      <input type="radio" id="haunted-tab0" class="tabinput" name="haunted-tab" checked> <label for="haunted-tab0" class="tab-label tab0" title="Cover">
-         <div class="tab">Nicolas Flamel</div>
+      <input type="radio" id="hauntedtab-0" name="hauntedtab" checked> <label for="hauntedtab-0" class="haunted-tab0" title="Cover">
+         <div class="haunted-tab">Nicolas Flamel</div>
       </label>
 
-      <input type="radio" id="haunted-tab1" class="tab" name="haunted-tab"> <label for="haunted-tab1" class="tab-label tab1" title="I">
-         <div class="tab">I</div>
+      <input type="radio" id="hauntedtab-1" name="hauntedtab"> <label for="hauntedtab-1" class="haunted-tab1" title="I">
+         <div class="haunted-tab">I</div>
       </label>
 
-      <input type="radio" id="haunted-tab2" class="tab" name="haunted-tab"> <label for="haunted-tab2" class="tab-label tab2" title="II">
-         <div class="tab">II</div>
+      <input type="radio" id="hauntedtab-2" name="hauntedtab"> <label for="hauntedtab-2" class="haunted-tab2" title="II">
+         <div class="haunted-tab">II</div>
       </label>
 
-      <input type="radio" id="haunted-tab3" class="tab" name="haunted-tab"> <label for="haunted-tab3" class="tab-label tab3" title="III">
-         <div class="tab">III</div>
+      <input type="radio" id="hauntedtab-3" name="hauntedtab"> <label for="hauntedtab-3" class="haunted-tab3" title="III">
+         <div class="haunted-tab">III</div>
       </label>
 
-      <input type="radio" id="haunted-tab4" class="tab" name="haunted-tab"> <label for="haunted-tab4" class="tab-label tab4" title="IV">
-         <div class="tab">IV</div>
+      <input type="radio" id="hauntedtab-4" name="hauntedtab"> <label for="hauntedtab-4" class="haunted-tab4" title="IV">
+         <div class="haunted-tab">IV</div>
       </label>
 
-      <div class="hauntedtabs"> </div>
+      <div class="hauntedtabbox"> </div>
 
       <div class="hauntedbody">
 
@@ -144,7 +144,7 @@
       overflow: hidden;
    }
 
-   .hauntedtabs {
+   .hauntedtabbox {
       height: 60px;
    }
 
@@ -152,7 +152,7 @@
       display: none;
    }
 
-   .tab {
+   .haunted-tab {
       opacity: .5;
       font: 200 20px/1em 'Barlow Condensed', sans-serif;
       letter-spacing: 0.11em;
@@ -162,27 +162,27 @@
       transition: .5s ease;
    }
 
-   input:checked+label .tab {
+   input:checked+label .haunted-tab {
       opacity: 1;
    }
 
-   .tab0 .tab {
+   .haunted-tab0 .haunted-tab {
       opacity: 1;
    }
 
-   .tab1 .tab {
+   .haunted-tab1 .haunted-tab {
       right: 110px;
    }
 
-   .tab2 .tab {
+   .haunted-tab2 .haunted-tab {
       right: 80px;
    }
 
-   .tab3 .tab {
+   .haunted-tab3 .haunted-tab {
       right: 50px;
    }
 
-   .tab4 .tab {
+   .haunted-tab4 .haunted-tab {
       right: 20px;
    }
 
@@ -229,11 +229,11 @@
       left: -300px;
       width: 600px;
       height: 600px;
-      background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 20%, rgba(0, 0, 0, 0) 80%);
+      background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(0, 0, 0, 0) 80%);
       animation: ghostlight 50s 1s ease-in-out infinite;
       opacity: .25;
       z-index: 5;
-      transform: translate(100px, 400px);
+      transform: translate(0px, 400px);
    }
 
    .hauntedspotlight.dark {
@@ -242,6 +242,8 @@
       animation-direction: reverse;
       top: 100px;
       left: -100px;
+      width: 500px;
+      height: 500px;
       z-index: 0;
    }
 
@@ -249,17 +251,17 @@
 
       0%,
       100% {
-         transform: translate(100px, 400px);
+         transform: translate(0px, 400px);
       }
 
       12%,
       15% {
-         transform: translate(0, -150px);
+         transform: translate(100px, -150px);
       }
 
       27%,
       30% {
-         transform: translate(400px, 0);
+         transform: translate(400px, -50px);
 
       }
 
@@ -275,7 +277,7 @@
 
       72%,
       75% {
-         transform: translate(100px, 100px);
+         transform: translate(200px, 200px);
       }
 
       87%,
@@ -323,28 +325,28 @@
       letter-spacing: -2px;
       z-index: 0;
       transition: 1s ease-in-out;
-      /* animation: glowtext 5s ease infinite; */
+      animation: glowtext 10s ease infinite;
    }
 
    .hauntedcover:hover .haunted_h1 {
       /* color: rgba(0, 0, 0, .75); */
       /* color: rgba(255, 255, 255, .2); */
-      -webkit-text-stroke-color: rgba(0, 0, 0, 1);
       -webkit-text-stroke-color: rgba(255, 255, 255, .5);
+      /* -webkit-text-stroke-color: rgba(0, 0, 0, 1); */
+      animation-play-state: paused;
    }
 
    @keyframes glowtext {
 
       0%,
       100% {
-         color: rgba(0, 0, 0, 0);
-         -webkit-text-stroke-color: rgba(255, 255, 255, .5);
+         -webkit-text-stroke-color: rgba(255, 255, 255, .25);
+
       }
 
       50%,
       75% {
-         color: rgba(0, 0, 0, 0.25);
-         -webkit-text-stroke-color: rgba(0, 0, 0, 0);
+         -webkit-text-stroke-color: rgba(255, 255, 255, .5);
       }
    }
 
@@ -398,26 +400,26 @@
       padding-right: 20px;
    }
 
-   #haunted-tab1:checked~.hauntedbody .hauntedpage,
-   #haunted-tab2:checked~.hauntedbody .hauntedpage,
-   #haunted-tab3:checked~.hauntedbody .hauntedpage,
-   #haunted-tab4:checked~.hauntedbody .hauntedpage {
+   #hauntedtab-1:checked~.hauntedbody .hauntedpage,
+   #hauntedtab-2:checked~.hauntedbody .hauntedpage,
+   #hauntedtab-3:checked~.hauntedbody .hauntedpage,
+   #hauntedtab-4:checked~.hauntedbody .hauntedpage {
       opacity: 1;
    }
 
-   #haunted-tab1:checked~.hauntedbody {
+   #hauntedtab-1:checked~.hauntedbody {
       transform: translateX(-450px);
    }
 
-   #haunted-tab2:checked~.hauntedbody {
+   #hauntedtab-2:checked~.hauntedbody {
       transform: translateX(-900px);
    }
 
-   #haunted-tab3:checked~.hauntedbody {
+   #hauntedtab-3:checked~.hauntedbody {
       transform: translateX(-1350px);
    }
 
-   #haunted-tab4:checked~.hauntedbody {
+   #hauntedtab-4:checked~.hauntedbody {
       transform: translateX(-1800px);
    }
 
@@ -446,10 +448,4 @@
       tabClassName: '.PTab',
       contClassName: '.tab1_content'
    });
-
-
-   $(".hauntedwrap_container-2.hauntedwrap_active").parents(".hauntedbody").css("margin-left", "-100px");
-
-   $('.hauntedbody:has(.hauntedwrap_container-2.hauntedwrap_active)').addClass('test');
-
 </script>
