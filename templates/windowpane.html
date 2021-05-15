@@ -131,7 +131,8 @@
       -webkit-transition: all 1s ease;
    }
 
-   #windowpane .leftcol:hover img {
+   /* #windowpane .leftcol:hover img, */
+   #windowpane:hover .leftcol img {
       filter: brightness(.85) grayscale(0) contrast(.75) saturate(1.5);
    }
 
@@ -173,7 +174,8 @@
       -webkit-transition: all 1s ease;
    }
 
-   #windowpane .leftcol:hover .colorfield-3 {
+   /* #windowpane .leftcol:hover .colorfield-3,  */
+   #windowpane:hover .colorfield-3 {
       opacity: 1;
    }
 
@@ -206,7 +208,8 @@
       -webkit-transition: all 1s ease;
    }
 
-   #windowpane .lyricbox:hover>div {
+   /* #windowpane .lyricbox:hover>div, */
+   #windowpane:hover .lyricbox>div {
       opacity: 1;
       margin-bottom: 30px;
    }
@@ -219,7 +222,7 @@
 
    #windowpane .inset {
       background: #f0f0f0;
-      padding: 18px 5px 18px 20px;
+      padding: 18px 0px 18px 20px;
       width: 345px;
       border-radius: 0 10px 10px 0;
    }
@@ -285,10 +288,12 @@
    #windowpane a {
       color: var(--accent, var(--seventhAccent1));
       font-weight: 500;
+      text-decoration-color: rgba(var(--accentRGB), 1);
+      transition: .25s ease;
    }
 
    #windowpane a:hover {
-      text-decoration: none;
+      text-decoration-color: rgba(var(--accentRGB), 0);
    }
 
    #windowpane ::-webkit-scrollbar {
