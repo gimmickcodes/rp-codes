@@ -51,12 +51,12 @@
             <div class="haunted_h1">time <br>to give up the ghost</div>
          </div>
 
-         <div class="hauntedcontent">
+         <div class="hauntedpage">
             <div class="hauntedtextbox">
                <div class="hauntedtextscroll">
                   <div class="haunted_h2">
                      <span class="haunted_num">I</span>
-                     <span class="haunted_name">About</span>
+                     <span class="haunted_sect">About</span>
                   </div>
                   Bacon ipsum dolor amet meatloaf salami fatback, brisket tenderloin leberkas chislic. Chuck ham strip steak, filet mignon frankfurter short loin cupim pastrami pork loin ham hock short ribs brisket jerky. Boudin brisket landjaeger short ribs cow, kielbasa jowl. Drumstick cow swine salami pork belly bresaola frankfurter venison kielbasa ball tip pork chop filet mignon leberkas chislic strip steak.
                   <br><br>
@@ -66,12 +66,12 @@
             </div>
          </div>
 
-         <div class="hauntedcontent">
+         <div class="hauntedpage">
             <div class="hauntedtextbox">
                <div class="hauntedtextscroll">
                   <div class="haunted_h2">
                      <span class="haunted_num">II</span>
-                     <span class="haunted_name">Section</span>
+                     <span class="haunted_sect">Section</span>
                   </div>
                   Chuck excepteur cupim, filet mignon nostrud bresaola salami consequat. Pork chop alcatra laborum in pork biltong, pancetta cupidatat labore ullamco sint aute prosciutto tenderloin ground round. Meatloaf occaecat aliquip buffalo ball tip incididunt ea voluptate pork chop adipisicing in strip steak nostrud consequat. Brisket cow ham hock adipisicing ipsum pig pork loin chuck bacon est ut leberkas aute fatback ea. In short loin filet mignon aliquip, porchetta tongue sausage ea strip steak sint jowl. <br><br>
 
@@ -79,12 +79,12 @@
             </div>
          </div>
 
-         <div class="hauntedcontent">
+         <div class="hauntedpage">
             <div class="hauntedtextbox">
                <div class="hauntedtextscroll">
                   <div class="haunted_h2">
                      <span class="haunted_num">III</span>
-                     <span class="haunted_name">Section</span>
+                     <span class="haunted_sect">Section</span>
                   </div>
                   Bacon ipsum dolor amet meatloaf salami fatback, brisket tenderloin leberkas chislic. Chuck ham strip steak, filet mignon frankfurter short loin cupim pastrami pork loin ham hock short ribs brisket jerky. Boudin brisket landjaeger short ribs cow, kielbasa jowl. Drumstick cow swine salami pork belly bresaola frankfurter venison kielbasa ball tip pork chop filet mignon leberkas chislic strip steak.
                   <br><br>
@@ -93,12 +93,12 @@
             </div>
          </div>
 
-         <div class="hauntedcontent">
+         <div class="hauntedpage">
             <div class="hauntedtextbox">
                <div class="hauntedtextscroll">
                   <div class="haunted_h2">
                      <span class="haunted_num">IV</span>
-                     <span class="haunted_name">Section</span>
+                     <span class="haunted_sect">Section</span>
                   </div>
                   T-bone kevin drumstick meatball, tri-tip salami jerky. Kielbasa prosciutto chuck venison, tongue swine andouille shank corned beef doner beef ribs. Strip steak doner chuck, boudin burgdoggen sirloin pork sausage corned beef bresaola bacon porchetta pork chop picanha turkey. Hamburger porchetta alcatra pastrami chuck, pork chop kielbasa. <br><br>
 
@@ -205,6 +205,12 @@
       filter: brightness(1.2) contrast(1) blur(2px) saturate(1.2);
       z-index: 20;
       opacity: .9;
+      transition: 1s ease;
+   }
+
+   .hauntedbox:hover .hauntedspotlight_img {
+      filter: brightness(1.2) contrast(1) blur(1px) saturate(1.2);
+
    }
 
    .hauntedspotlight_color {
@@ -224,10 +230,10 @@
       width: 600px;
       height: 600px;
       background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 20%, rgba(0, 0, 0, 0) 80%);
-      /* background: linear-gradient(#fff 0%, rgba(255, 255, 255, 0) 10%, #fff 20%, rgba(255, 255, 255, 0) 30%, #fff 40%, rgba(255, 255, 255, 0) 50%, #fff 60%, rgba(255, 255, 255, 0) 70%); */
-      animation: ghostlight 30s ease-in-out infinite;
+      animation: ghostlight 50s 1s ease-in-out infinite;
       opacity: .25;
       z-index: 5;
+      transform: translate(100px, 400px);
    }
 
    .hauntedspotlight.dark {
@@ -239,41 +245,56 @@
       z-index: 0;
    }
 
-
    @keyframes ghostlight {
 
       0%,
       100% {
-         transform: translate(0, 0);
-      }
-
-      15% {
          transform: translate(100px, 400px);
+         border: 0px solid red;
       }
 
+      12%,
+      15% {
+         transform: translate(0, -150px);
+         border-color: orange;
+      }
+
+      27%,
       30% {
-         transform: translate(380px, 300px);
+         transform: translate(400px, 0);
+         border-color: yellow;
+
       }
 
+      42%,
       45% {
-         transform: translate(500px, -300px);
+         transform: translate(380px, 300px);
+         border-color: green;
+
       }
 
+      57%,
       60% {
-         transform: translate(0, -100px);
+         transform: translate(150px, 50px);
+         border-color: blue;
+
       }
 
+      72%,
       75% {
          transform: translate(100px, 100px);
+         border-color: indigo;
+
       }
 
+      87%,
       90% {
          transform: translate(380px, 10px);
+         border-color: violet;
       }
    }
 
    .hauntedbody {
-      grid-area: bodyrow;
       position: relative;
       width: 450px;
       height: 600px;
@@ -281,14 +302,6 @@
       grid-auto-flow: column;
       transition: .75s ease;
       z-index: 20;
-   }
-
-   .hauntedcontent {
-      position: relative;
-      width: calc(450px - 40px);
-      height: calc(100% - 40px);
-      padding: 20px;
-      z-index: 100;
    }
 
    .hauntedcover {
@@ -345,9 +358,15 @@
       }
    }
 
-   .hauntedcontent {
-      background: rgba(0, 0, 0, 0);
+   .hauntedpage {
+      position: relative;
+      width: calc(450px - 40px);
+      height: calc(100% - 40px);
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.25);
       z-index: 20;
+      opacity: 0;
+      transition: .75s ease;
    }
 
    .hauntedtextbox {
@@ -370,7 +389,7 @@
       color: #e6dffd;
    }
 
-   .haunted_name {
+   .haunted_sect {
       font-weight: 200;
    }
 
@@ -389,6 +408,13 @@
       padding-right: 20px;
    }
 
+   #haunted-tab1:checked~.hauntedbody .hauntedpage,
+   #haunted-tab2:checked~.hauntedbody .hauntedpage,
+   #haunted-tab3:checked~.hauntedbody .hauntedpage,
+   #haunted-tab4:checked~.hauntedbody .hauntedpage {
+      opacity: 1;
+   }
+
    #haunted-tab1:checked~.hauntedbody {
       transform: translateX(-450px);
    }
@@ -404,7 +430,6 @@
    #haunted-tab4:checked~.hauntedbody {
       transform: translateX(-1800px);
    }
-
 
    .hauntedwrap ::-webkit-scrollbar {
       -webkit-appearance: none;
