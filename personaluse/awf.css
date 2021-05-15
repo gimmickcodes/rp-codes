@@ -59,7 +59,7 @@
    --groupcolor: var(--temperance)
 }
 
-.post-area {
+.post {
    font-family: 'Work Sans', Arial, sans-serif;
    font-size: 12px;
    line-height: 160%;
