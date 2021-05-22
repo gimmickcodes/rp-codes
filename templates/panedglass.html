@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<head>
+   <link href="../css-templates.css" rel="stylesheet">
+
+   <link href="https://fonts.googleapis.com/css?family=Hind:400,500,600,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+</head>
+
+
+<style>
+   body {
+      --seventhAccent2: #e3c65d;
+      --seventhGroup1: #d171a3;
+      --seventhGroup2: #cc6358;
+      --seventhGroup3: #78bacc;
+      --seventhGroup4: #73bf82;
+      --seventhGroup5: #9a8ac2;
+      --seventhGroup6: #8186c7;
+      --seventhRGBAccent1: 212, 114, 116;
+      --seventhRGBAccent2: 227, 198, 93;
+      --seventhRGBGroup1: 209, 113, 163;
+      --seventhRGBGroup2: 204, 99, 88;
+      --seventhRGBGroup3: 120, 186, 204;
+      --seventhRGBGroup4: 115, 191, 130;
+      --seventhRGBGroup5: 154, 138, 194;
+      --seventhRGBGroup6: 129, 134, 199;
+   }
+</style>
+
+
+<!-- ADAPTED FROM SVNTH SHIPPER 7 -->
+<!-- LIGHT -->
+<div id="panedglass">
+   <div class="panedglass-main">
+      <div class="glassleft" title="NAME">
+         <div class="glasslyrics">
+            <div>
+               honey don't you cry <br>
+               The absence of the light.
+               Even the Sun must rest his weary eyes
+               So let the night wrap stars around you
+               Weigh the anchor
+               And sail into the night's joy
+            </div>
+         </div>
+         <img src="../assets/200x600-custom-02.jpg">
+
+         <div class="colorfield-1"> </div>
+         <div class="colorfield-2"> </div>
+         <div class="colorfield-3"> </div>
+
+      </div>
+
+      <div class="glassright">
+         <div class="glassscroll">
+
+            <!-- <div class="glass-h2">big heading</div> -->
+            Bacon ipsum dolor amet meatloaf salami fatback, brisket tenderloin leberkas chislic. Chuck ham strip steak, filet mignon frankfurter short loin cupim pastrami pork loin ham hock short ribs brisket jerky. Boudin brisket landjaeger short ribs cow, kielbasa jowl. Drumstick cow swine salami pork belly bresaola frankfurter venison kielbasa. Ball tip pork chop filet mignon leberkas chislic strip steak.<br><br>
+            <br><br><b>This is bolded.</b><br>
+            <i>This is italic.</i> <br>
+            <u>This is underlined.</u><br>
+            <a href="#">This is a link.</a>
+
+            <br><br>
+            Turkey leberkas short ribs kielbasa shankle salami. Turkey prosciutto pork chop fatback tri-tip t-bone meatball porchetta short ribs pancetta capicola ham flank. T-bone meatball pork loin shoulder, drumstick short ribs boudin shank. Shank tongue strip steak turkey landjaeger sirloin hamburger flank shoulder.Cupidatat ex jowl pork loin tri-tip officia, sint ribeye alcatra dolore irure. Chuck excepteur cupim, filet mignon nostrud bresaola salami consequat. <br><br>
+            Bacon ipsum dolor amet ribeye kevin porchetta, tenderloin prosciutto flank turkey capicola pork loin turducken beef alcatra short ribs. Short ribs chislic frankfurter sirloin alcatra meatball kielbasa chicken. Filet mignon jerky. Tongue shoulder jerky spare ribs pork chop corned beef ribeye shank strip steak. Shankle bacon ham hock pork loin picanha. Porchetta leberkas landjaeger ball tip alcatra brisket spare ribs ribeye kielbasa picanha ham hock biltong. Prosciutto pork loin strip steak hamburger chicken, meatloaf buffalo filet mignon jowl boudin. Alcatra pancetta picanha cupim chicken meatloaf swine ham hock tongue boudin strip steak chislic buffalo tri-tip.
+            <hr>
+            <a href="#">tagged</a> – A note here
+
+         </div>
+      </div>
+   </div>
+
+   <a href="http://pixel-perfect.boards.net/user/2465" class="credits">made by gimmick</a>
+</div>
+
+
+
+<style>
+   #panedglass {
+      margin: 20px auto;
+      position: relative;
+      width: min-content;
+      --accentRGB: 129, 134, 199;
+      --accent: rgb(129, 134, 199);
+   }
+
+   #panedglass .panedglass-main {
+      height: 600px;
+      display: flex;
+      background: var(--accent, var(--seventhAccent1));
+      font: 13px/18px 'Hind';
+      color: #333;
+      border-radius: 0 9px 9px 0;
+      overflow: hidden;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+   }
+
+   #panedglass a.credits {
+      display: block;
+      text-align: right;
+      margin-top: 4px;
+      margin-right: 25px;
+      font: 700 7px/10px sans-serif;
+      letter-spacing: .8px;
+      text-decoration: none;
+      text-transform: uppercase;
+   }
+
+   /* .panedglass-main:before {
+background: url(https://i.ibb.co/qmQk1h7/Flower-Power-Tower.png) left center / cover;
+content: '';
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+opacity: .15;
+} */
+
+   #panedglass .glassleft {
+      width: 200px;
+      border-right: 5px solid #ddd;
+      overflow: hidden;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+
+   #panedglass .glassleft img {
+      filter: brightness(.65) grayscale(.75) contrast(.85) saturate(1.25);
+      width: 200px;
+      z-index: 0;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+   }
+
+   #panedglass:hover .glassleft img {
+      filter: brightness(.85) grayscale(0) contrast(.75) saturate(1.5);
+   }
+
+
+   #panedglass .colorfield-1 {
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 600px;
+      background: linear-gradient(150deg, rgba(var(--accentRGB), 0), rgba(var(--accentRGB), .65) 85%);
+      z-index: 100;
+      opacity: 1;
+   }
+
+   #panedglass .colorfield-2 {
+      position: absolute;
+      width: 200px;
+      height: 600px;
+      top: 0;
+      z-index: 90;
+      background: var(--accent, var(--seventhAccent1));
+      mix-blend-mode: color;
+      opacity: .1;
+   }
+
+   #panedglass .colorfield-3 {
+      width: 400px;
+      height: 400px;
+      background: var(--accent, var(--seventhAccent1));
+      border-radius: 100%;
+      position: absolute;
+      right: -220px;
+      top: calc(50% - 150px);
+      z-index: 0;
+      opacity: .5;
+      mix-blend-mode: hard-light;
+      transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+   }
+
+   #panedglass:hover .colorfield-3 {
+      opacity: 1;
+   }
+
+   #panedglass .glasslyrics {
+      width: 75%;
+      height: 100%;
+      z-index: 150;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+   }
+
+   #panedglass .glasslyrics>div {
+      max-height: 190px;
+      overflow: hidden;
+      margin-bottom: 0px;
+      color: #fff;
+      font: 300 9px/15px 'Poppins', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      opacity: 0;
+      transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+   }
+
+   #panedglass:hover .glasslyrics>div {
+      opacity: 1;
+      margin-bottom: 30px;
+   }
+
+   #panedglass .glassright {
+      padding: 0;
+      position: relative;
+      z-index: 5;
+      background: #f0f0f0;
+      padding: 20px 0 0 20px;
+      width: 345px;
+      border-radius: 0 9px 9px 0;
+   }
+
+   #panedglass .glassscroll {
+      padding-right: 20px;
+      height: calc(600px - 36px);
+      overflow: auto;
+   }
+
+   #panedglass .glass-h1 {
+      font: 300 24px/32px 'Poppins';
+      color: var(--accent, var(--seventhAccent1));
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0 0 3px;
+   }
+
+   #panedglass .glass-h1 b {
+      font-weight: bold;
+   }
+
+   #panedglass .glass-h2 {
+      font: 500 14px/18px 'Poppins';
+      font: 500 24px/18px 'Poppins';
+      color: var(--accent, var(--seventhAccent1));
+      letter-spacing: 0px;
+      text-transform: uppercase;
+      margin: 24px 0 0px;
+      margin: 10px 0 15px;
+   }
+
+   #panedglass .glass-h2:after {
+      content: ' ';
+      margin: 15px 0 9px;
+      border: 0;
+      height: 4px;
+      background: #ddd;
+      width: 18px;
+      display: block;
+   }
+
+   #panedglass b {
+      font-weight: 600;
+   }
+
+   #panedglass hr {
+      margin: 15px 0;
+      border: 0;
+      height: 2px;
+      background: #ddd;
+      width: 100%;
+   }
+
+   #panedglass br+br {
+      display: block;
+      content: ' ';
+      margin: 0 0 12px;
+   }
+
+   #panedglass a {
+      color: var(--accent, var(--seventhAccent1));
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: rgba(var(--accentRGB), 1);
+      transition: .25s ease;
+   }
+
+   #panedglass a:hover {
+      text-decoration-color: rgba(var(--accentRGB), 0);
+   }
+
+   #panedglass ::-webkit-scrollbar {
+      width: 4px !important;
+      border: 0 !important
+   }
+
+   #panedglass ::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 1px;
+      border: 0 !important;
+   }
+
+   #panedglass ::-webkit-scrollbar-thumb {
+      background: var(--accent, var(--seventhAccent1));
+      background: rgba(var(--accentRGB), .25);
+      background: #ddd;
+      border-radius: 2px;
+      border: 0 !important
+   }
+</style>
+
+
+
+
+
+
+
+<!-- DARK -->
+<div id="panedglass-d">
+   <div class="panedglass-main">
+      <div class="glassleft" title="NAME">
+         <div class="glasslyrics">
+            <div>
+               honey don't you cry <br>
+               The absence of the light.
+               Even the Sun must rest his weary eyes
+               So let the night wrap stars around you
+               Weigh the anchor
+               And sail into the night's joy
+            </div>
+         </div>
+         <img src="../assets/200x600-custom-02.jpg">
+
+         <div class="colorfield-1"> </div>
+         <div class="colorfield-2"> </div>
+         <div class="colorfield-3"> </div>
+
+      </div>
+
+      <div class="glassright">
+         <div class="glassscroll">
+
+            <!-- <div class="glass-h2">big heading</div> -->
+            Bacon ipsum dolor amet meatloaf salami fatback, brisket tenderloin leberkas chislic. Chuck ham strip steak, filet mignon frankfurter short loin cupim pastrami pork loin ham hock short ribs brisket jerky. Boudin brisket landjaeger short ribs cow, kielbasa jowl. Drumstick cow swine salami pork belly bresaola frankfurter venison kielbasa. Ball tip pork chop filet mignon leberkas chislic strip steak.<br><br>
+            <br><br><b>This is bolded.</b><br>
+            <i>This is italic.</i> <br>
+            <u>This is underlined.</u><br>
+            <a href="#">This is a link.</a>
+
+            <br><br>
+            Turkey leberkas short ribs kielbasa shankle salami. Turkey prosciutto pork chop fatback tri-tip t-bone meatball porchetta short ribs pancetta capicola ham flank. T-bone meatball pork loin shoulder, drumstick short ribs boudin shank. Shank tongue strip steak turkey landjaeger sirloin hamburger flank shoulder.Cupidatat ex jowl pork loin tri-tip officia, sint ribeye alcatra dolore irure. Chuck excepteur cupim, filet mignon nostrud bresaola salami consequat. <br><br>
+            Bacon ipsum dolor amet ribeye kevin porchetta, tenderloin prosciutto flank turkey capicola pork loin turducken beef alcatra short ribs. Short ribs chislic frankfurter sirloin alcatra meatball kielbasa chicken. Filet mignon jerky. Tongue shoulder jerky spare ribs pork chop corned beef ribeye shank strip steak. Shankle bacon ham hock pork loin picanha. Porchetta leberkas landjaeger ball tip alcatra brisket spare ribs ribeye kielbasa picanha ham hock biltong. Prosciutto pork loin strip steak hamburger chicken, meatloaf buffalo filet mignon jowl boudin. Alcatra pancetta picanha cupim chicken meatloaf swine ham hock tongue boudin strip steak chislic buffalo tri-tip.
+            <hr>
+            <a href="#">tagged</a> – A note here
+
+         </div>
+      </div>
+   </div>
+
+   <a href="http://pixel-perfect.boards.net/user/2465" class="credits">made by gimmick</a>
+</div>
+
+
+
+<style>
+   #panedglass-d {
+      margin: 20px auto;
+      position: relative;
+      width: min-content;
+      --accentRGB: 129, 134, 199;
+      --accent: rgb(129, 134, 199);
+   }
+
+   #panedglass-d .panedglass-main {
+      height: 600px;
+      display: flex;
+      background: var(--accent, var(--seventhAccent1));
+      font: 13px/19px 'Hind';
+      letter-spacing: .1px;
+      color: #898989;
+      border-radius: 0 9px 9px 0;
+      overflow: hidden;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+   }
+
+   #panedglass-d a.credits {
+      display: block;
+      text-align: right;
+      margin-top: 4px;
+      margin-right: 25px;
+      font: 700 7px/10px sans-serif;
+      letter-spacing: .8px;
+      text-decoration: none;
+      text-transform: uppercase;
+   }
+
+   /* .panedglass-main:before {
+background: url(https://i.ibb.co/qmQk1h7/Flower-Power-Tower.png) left center / cover;
+content: '';
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+opacity: .15;
+} */
+
+   #panedglass-d .glassleft {
+      width: 200px;
+      border-right: 5px solid #121212;
+      overflow: hidden;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+
+   #panedglass-d .glassleft img {
+      filter: brightness(.65) grayscale(.75) contrast(.85) saturate(1.25);
+      width: 200px;
+      z-index: 0;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+   }
+
+   #panedglass-d:hover .glassleft img {
+      filter: brightness(.85) grayscale(0) contrast(.75) saturate(1.5);
+   }
+
+
+   #panedglass-d .colorfield-1 {
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 600px;
+      background: linear-gradient(150deg, rgba(var(--accentRGB), 0), rgba(var(--accentRGB), .65) 85%);
+      z-index: 100;
+      opacity: 1;
+   }
+
+   #panedglass-d .colorfield-2 {
+      position: absolute;
+      width: 200px;
+      height: 600px;
+      top: 0;
+      z-index: 90;
+      background: var(--accent, var(--seventhAccent1));
+      mix-blend-mode: color;
+      opacity: .1;
+   }
+
+   #panedglass-d .colorfield-3 {
+      width: 400px;
+      height: 400px;
+      background: var(--accent, var(--seventhAccent1));
+      border-radius: 100%;
+      position: absolute;
+      right: -220px;
+      top: calc(50% - 150px);
+      z-index: 0;
+      opacity: .5;
+      mix-blend-mode: hard-light;
+      transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+   }
+
+   #panedglass-d:hover .colorfield-3 {
+      opacity: .85;
+   }
+
+   #panedglass-d .glasslyrics {
+      width: 75%;
+      height: 100%;
+      z-index: 150;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+   }
+
+   #panedglass-d .glasslyrics>div {
+      max-height: 190px;
+      overflow: hidden;
+      margin-bottom: 0px;
+      color: #fff;
+      font: 300 9px/15px 'Poppins', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      opacity: 0;
+      transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -webkit-transition: all 1s ease;
+   }
+
+   #panedglass-d:hover .glasslyrics>div {
+      opacity: 1;
+      margin-bottom: 30px;
+   }
+
+   #panedglass-d .glassright {
+      padding: 0;
+      position: relative;
+      z-index: 5;
+      background: #222;
+      padding: 20px 0 0 20px;
+      width: 345px;
+      border-radius: 0 9px 9px 0;
+   }
+
+   #panedglass-d .glassscroll {
+      padding-right: 20px;
+      height: calc(600px - 36px);
+      overflow: auto;
+   }
+
+   #panedglass-d .glass-h1 {
+      font: 300 24px/32px 'Poppins';
+      color: var(--accent, var(--seventhAccent1));
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0 0 3px;
+   }
+
+   #panedglass-d .glass-h1 b {
+      font-weight: bold;
+   }
+
+   #panedglass-d .glass-h2 {
+      font: 500 14px/18px 'Poppins';
+      font: 500 24px/18px 'Poppins';
+      color: var(--accent, var(--seventhAccent1));
+      letter-spacing: 0px;
+      text-transform: uppercase;
+      margin: 24px 0 0px;
+      margin: 10px 0 15px;
+   }
+
+   #panedglass-d .glass-h2:after {
+      content: ' ';
+      margin: 15px 0 9px;
+      border: 0;
+      height: 4px;
+      background: #121212;
+      width: 18px;
+      display: block;
+   }
+
+   #panedglass-d b {
+      font-weight: 700;
+      letter-spacing: .2px;
+   }
+
+   #panedglass-d hr {
+      margin: 15px 0;
+      border: 0;
+      height: 1px;
+      background: #444;
+      width: 100%;
+   }
+
+   #panedglass-d br+br {
+      display: block;
+      content: ' ';
+      margin: 0 0 12px;
+   }
+
+   #panedglass-d a {
+      color: var(--accent, var(--seventhAccent1));
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: rgba(var(--accentRGB), .65);
+      transition: .25s ease;
+   }
+
+   #panedglass-d a:hover {
+      text-decoration-color: rgba(var(--accentRGB), 0);
+   }
+
+   #panedglass-d ::-webkit-scrollbar {
+      width: 4px !important;
+      border: 0 !important
+   }
+
+   #panedglass-d ::-webkit-scrollbar-track {
+      background: #222;
+      border-radius: 1px;
+      border: 0 !important;
+   }
+
+   #panedglass-d ::-webkit-scrollbar-thumb {
+      background: var(--accent, var(--seventhAccent1));
+      background: rgba(var(--accentRGB), .65);
+      border-radius: 2px;
+      border: 0 !important
+   }
+</style>
