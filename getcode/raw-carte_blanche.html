@@ -26,18 +26,19 @@
 
 
 <body oncontextmenu="return false;">
-    
-    <div class="demo_col"><iframe src="../templates/carte_blanche.html" width="100%"  oncontextmenu="return false;"></iframe></div>
 
-    
-    
-    
-    <div class="info_col"><div class="contentbox">
-        <h5>Plotter</h5>
-        <h1>Carte Blanche</h1>
+    <div class="demo_col"><iframe src="../templates/carte_blanche.html" width="100%" oncontextmenu="return false;"></iframe></div>
 
-        <!--            START RAW HTML              -->
-        <textarea readonly>
+
+
+
+    <div class="info_col">
+        <div class="contentbox">
+            <h5>Plotter</h5>
+            <h1>Carte Blanche</h1>
+
+            <!--            START RAW HTML              -->
+            <textarea readonly>
 [dohtml]<div id="cb_plotterbox">
 <div class="tabs_holder">
 <div class="tab cb_plotterbox_active" title="Cyril" style="color: var(--charOne)">
@@ -179,6 +180,7 @@ Separated with line breaks.
 margin: 20px auto 0;
 width: min-content;
 position: relative;
+background: #eee;
 background-image: linear-gradient(135deg, rgba(0, 0, 0, .1) 12.50%, #eee 12.50%, #eee 50%, rgba(0, 0, 0, .1) 50%, rgba(0, 0, 0, .1) 62.50%, #eee 62.50%, #eee 100%);
 background-size: 5.66px 5.66px;
 padding: 8px;
@@ -369,7 +371,7 @@ border: 0 !important
 
 <script src='https://codepen.io/breezescodes/pen/NWPyXNv.js'></script>
 <script>
-LOCALT3('cb_plotterbox', 'tab', 'characterbox');
+    LOCALT3('cb_plotterbox', 'tab', 'characterbox');
 
 </script>[/dohtml]
                    
@@ -380,8 +382,9 @@ LOCALT3('cb_plotterbox', 'tab', 'characterbox');
 
 
 
-        <button>Copy</button>
-    </div></div>
+            <button>Copy</button>
+        </div>
+    </div>
 
 
 
@@ -391,7 +394,7 @@ LOCALT3('cb_plotterbox', 'tab', 'characterbox');
 
 <script>
     //Copy code
-    document.querySelector("button").onclick = function() {
+    document.querySelector("button").onclick = function () {
         document.querySelector("textarea").select();
         document.execCommand('copy');
     }
