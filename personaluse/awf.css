@@ -292,9 +292,8 @@
 }
 
 .deletedbox_text {
-   font: 300 16px/24px 'Roboto Mono';
+   font: 400 16px/24px 'Roboto Mono';
    text-align: left;
-   letter-spacing: 1px;
 }
 
 .alerticon {
