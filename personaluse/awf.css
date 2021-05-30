@@ -71,22 +71,24 @@
 
 /* ORION APP */
 
+
 :root {
    --transparent: rgba(0, 0, 0, 0);
    --blavy-light: rgb(35, 34, 39, .25);
+   --cisseis: #1b1bdc;
 }
 
 .load-ring {
    position: relative;
-   width: 100px;
-   height: 100px;
-   margin: 0 auto 65px;
+   width: 95px;
+   height: 95px;
+   margin: 10px auto 65px;
    display: flex;
    align-items: center;
    justify-content: center;
    box-sizing: border-box;
    white-space: nowrap;
-   font: 400 18px/24px 'Roboto Mono';
+   font: 400 16px/24px 'Roboto Mono';
    padding-top: 5px;
 }
 
@@ -107,10 +109,9 @@
    border-radius: 100%;
    border: 2px solid var(--blavy-light);
    opacity: .5;
-   clip-path: polygon(0 10%, 100% 10%, 100% 90%, 0 90%);
+   /* clip-path: polygon(0 10%, 100% 10%, 100% 90%, 0 90%);
    animation: loadspin 6s linear infinite;
-   -webkit-animation: loadspin 6s linear infinite;
-   display: none;
+   -webkit-animation: loadspin 6s linear infinite; */
 }
 
 @keyframes loadspin {
@@ -130,8 +131,8 @@
    flex-direction: column;
    align-items: center;
    position: relative;
-   padding: 50px 0 0;
-   margin-top: -60px;
+   padding: 60px 0 0;
+   margin-top: -75px;
 }
 
 .records:after {
@@ -144,6 +145,7 @@
    z-index: 5;
 }
 
+.log-small,
 .log-entry,
 .excerptbox,
 .log-timelapse,
@@ -154,7 +156,6 @@
    background: var(--off-white);
    z-index: 200;
 }
-
 
 .records>div:last-child {
    margin-bottom: 0;
@@ -184,46 +185,41 @@
 }
 
 .highlight {
-   /* background: rgb(255, 255, 0, .5); */
    padding: 0 3px;
 }
 
 .blurred {
    filter: blur(3.5px);
-   /* color: rgba(0, 0, 0, 0); */
 }
 
-.log-entry.small {
-   border: 1px solid var(--blavy-light);
+.log-small {
+   border: 0px solid var(--blavy-light);
    padding: 16px 10px 20px;
-   /* font-family: 'Roboto Mono'; */
-   width: 40%;
+   width: 100%;
    text-align: center;
 }
 
+.log-small span {
+   font: 500 9px/12px 'Roboto Mono';
+   text-transform: uppercase;
+   letter-spacing: 1px;
+}
 
 .log-approval {
-   display: block;
+   display: inline;
    text-align: center;
-   margin: 10px auto 0;
-   width: max-content;
-   background: var(--blavy);
-   color: #fff;
-   font: 500 9px/12px 'Roboto Mono';
-   padding: 4px 8px 3px;
-   text-transform: uppercase;
-   letter-spacing: 1.5px;
+   color: var(--cisseis);
 }
 
 
 .log_num {
    width: 21px;
    white-space: nowrap;
-   color: blue;
-   border-bottom: 1px dotted blue;
-   padding: 0 0 10px 0;
-   margin-bottom: 7px;
-   font: 500 10px/10px 'Roboto Mono';
+   color: var(--cisseis);
+   border-bottom: 1px dotted var(--cisseis);
+   padding: 0 0 12px 0;
+   margin-bottom: 9px;
+   font: 500 9px/10px 'Roboto Mono';
    text-transform: uppercase;
    letter-spacing: 1.5px;
 }
@@ -233,7 +229,7 @@
    padding: 20px;
    border: 1px solid var(--blavy);
    text-align: left;
-   font: 500 13px/19px 'Work Sans';
+   font: 400 12px/18px 'Roboto Mono';
 }
 
 .log-entry.private {
@@ -259,10 +255,13 @@
    margin: 20px 0;
 }
 
+.warrant {
+   margin: 50px 0 20px;
+}
+
 .papernote {
    width: calc(100% - 50px);
-
-   margin-top: 30px;
+   margin-top: 100px;
    background-color: #F1F2EB;
    border-width: 0px;
    padding: 46px 80px 56px;
@@ -277,20 +276,38 @@
 
 
 .deletedbox {
+   /* margin-top: 0;
+   margin-left: -55px;
+   margin-bottom: -55px;
+   width: calc(100% + 110px);
+   padding: 75px 0 110px; */
    margin-top: 50px;
-   width: 100%;
+   padding-top: 30px;
+   padding-bottom: 15px;
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
+   background: var(--off-white);
 }
 
 .deletedbox_text {
-   font: 400 18px/24px 'Roboto Mono';
-   padding-top: 40px;
-   text-align: center;
+   font: 300 16px/24px 'Roboto Mono';
+   text-align: left;
+   letter-spacing: 1px;
 }
 
-
+.alerticon {
+   width: 30px;
+   height: 30px;
+   margin: 0 0 15px 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: var(--blavy-light);
+   font-size: 25px;
+}
 
 
 
