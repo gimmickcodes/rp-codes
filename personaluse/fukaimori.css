@@ -168,14 +168,16 @@ quo span {display:block; font:400 15px Rubik; margin:20px 0 0; color:#333;}
 
 
 /* TENNIN APP */
-.prt.prt-4 {
-   background: #151515;
+.prt {
    --ddd: #ddd;
    --black: #151515;
    --linecolor: var(--main);
    --linecolor: var(--black);
 }
 
+#pr-button4:checked~label~.prt-content .prt-4 {
+   background: #151515;
+}
 
 .historytab {
    margin: 0 auto;
