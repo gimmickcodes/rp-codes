@@ -23,7 +23,7 @@
    }
 
 
-   .quetz_history {
+   .historytab {
       margin: 0 auto;
       padding: 60px 100px;
       width: calc(100% - 200px);
@@ -33,7 +33,7 @@
       text-align: left;
    }
 
-   .quetz_history br {
+   .historytab br {
       display: none;
    }
 
@@ -48,14 +48,7 @@
       margin: 0 auto;
    }
 
-   /* 
-   .year_border {
-      border: 1px solid var(--black);
-      padding: 20px 50px;
-      background: var(--human);
-   } */
-
-   .quetz-h2 {
+   .h2 {
       font: normal 30px/1em Kouzan;
       letter-spacing: 0px;
       text-align: center;
@@ -68,7 +61,7 @@
       align-items: center;
    }
 
-   .quetz-h3 {
+   .h3 {
       writing-mode: horizontal-tb;
       font: 12px/1em Vidaloka;
       letter-spacing: 1.5px;
@@ -77,20 +70,20 @@
       color: var(--offwhite);
    }
 
-   .quetz-body {
+   .historytext {
       font: italic 16px/21px Vidaloka;
       color: rgba(255, 255, 255, .75);
       margin: 0 0 30px;
    }
 
-   .quetz-plothooks {
+   .plothookstab {
       margin: 0 auto 0;
       padding: 80px 100px;
       width: calc(100% - 200px);
       background: var(--human);
    }
 
-   .quetz-h4 {
+   .h4 {
       font: bold 15px/1.4em Rubik;
       letter-spacing: 1px;
    }
@@ -102,13 +95,13 @@
       margin-bottom: 20px;
    }
 
-   .quetz-nav {
+   .tabbednav {
       color: var(--offwhite);
       display: flex;
       justify-content: flex-start;
    }
 
-   .quetz_tab {
+   .freeformtab {
       text-transform: uppercase;
       text-decoration: none;
       font: 700 12px/21px Rubik;
@@ -122,7 +115,7 @@
       -webkit-transition: .5s ease;
    }
 
-   .quetz_tab.quetztabbed_active {
+   .freeformtab.freeformtabbox_active {
       color: var(--offwhite);
       border-color: var(--offwhite);
    }
@@ -132,7 +125,7 @@
       display: none;
    }
 
-   .tabcontent.quetztabbed_active {
+   .tabcontent.freeformtabbox_active {
       display: block;
    }
 </style>
@@ -143,24 +136,24 @@
    <div class="prt">
       <div class="prt-contain" style="height: 100%; position: relative; left:0; opacity: 1;">
 
-         <div id="quetztabbed">
+         <div id="freeformtabbox">
 
-            <div class="quetz-nav">
-               <div class="quetz_tab quetztabbed_active">History</div>
-               <div class="quetz_tab">Plot Hooks</div>
+            <div class="tabbednav">
+               <div class="freeformtab freeformtabbox_active">History</div>
+               <div class="freeformtab">Plot Hooks</div>
             </div>
 
-            <div class="tabcontent quetztabbed_active quetz_history">
+            <div class="tabcontent freeformtabbox_active historytab">
 
                <div class="year">
                   <div class="year_border">
                      <div class="year_header">
-                        <div class="quetz-h2">
+                        <div class="h2">
                            第一幕
-                           <div class="quetz-h3">act one</div>
+                           <div class="h3">act one</div>
                         </div>
                      </div>
-                     <div class="quetz-body">
+                     <div class="historytext">
                         A woman stands at the castle gates. Dust-cloaked, sandals worn, clothing patched from travel, she knocks, and when the doors open, she presents the babe in her arms, insists he has the lord's eyes. The father comes on a whim, sees it is for true, and turns her away all the same.
                      </div>
                   </div>
@@ -169,11 +162,11 @@
                <div class="year">
                   <div class="year_border">
                      <div class="year_header">
-                        <div class="quetz-h2">第二幕
-                           <div class="quetz-h3">act two</div>
+                        <div class="h2">第二幕
+                           <div class="h3">act two</div>
                         </div>
                      </div>
-                     <div class="quetz-body">
+                     <div class="historytext">
                         Discarded dalliance, she has no one in Oihama and nowhere to return, only that distant border town from whence she'd come and the hatred of a jilted partner. And so she starts anew: a new hole, dug deeper every year as debts pile high.
                      </div>
                   </div>
@@ -182,11 +175,11 @@
                <div class="year">
                   <div class="year_border">
                      <div class="year_header">
-                        <div class="quetz-h2">第三幕
-                           <div class="quetz-h3">act three</div>
+                        <div class="h2">第三幕
+                           <div class="h3">act three</div>
                         </div>
                      </div>
-                     <div class="quetz-body">
+                     <div class="historytext">
                         She writes him, your mother. Because a courtesan's wages aren't enough, because health fades, and even dreams can be filling when you have little else. Frequently, sporadically, pleadingly, she writes — of your resemblance, of your magic, of old promises and other things you've stopped keeping track of, all in hopes he'll claim you son and provide everything she can't. No reply will ever come, only the odd gift like a bone for dog, and somehow that is worse.
                      </div>
                   </div>
@@ -195,11 +188,11 @@
                <div class="year">
                   <div class="year_border">
                      <div class="year_header">
-                        <div class="quetz-h2">第四幕
-                           <div class="quetz-h3">act four</div>
+                        <div class="h2">第四幕
+                           <div class="h3">act four</div>
                         </div>
                      </div>
-                     <div class="quetz-body">
+                     <div class="historytext">
                         You wait and wait and wait for her daydream of a better life, A boy has to learn to fend for himself. The backstreets form its own kind of school, teach you to steal, to run, to make ends meet while mother fights battles of a different kind in bedrooms and in soiled sheets. You grow to doubt
                      </div>
                   </div>
@@ -208,11 +201,11 @@
                <div class="year">
                   <div class="year_border">
                      <div class="year_header">
-                        <div class="quetz-h2">第五幕
-                           <div class="quetz-h3">act five</div>
+                        <div class="h2">第五幕
+                           <div class="h3">act five</div>
                         </div>
                      </div>
-                     <div class="quetz-body">
+                     <div class="historytext">
                         At nine, you glimpse your father in the flesh. Mother points him out from the retinue, but where she sees hope, you see privilege, you see eyes that go right through you. Here's the man who left her, and no different than the rest.
                      </div>
                   </div>
@@ -221,11 +214,11 @@
                <div class="year">
                   <div class="year_border">
                      <div class="year_header">
-                        <div class="quetz-h2">第六幕
-                           <div class="quetz-h3">act six</div>
+                        <div class="h2">第六幕
+                           <div class="h3">act six</div>
                         </div>
                      </div>
-                     <div class="quetz-body">
+                     <div class="historytext">
                         You're on your own, but you're ok. You've a knack for magic, always have — for getting into places, for winning over marks. You know the myths, the legends, and when friends whisper <b>tennin</b> you don't trouble to correct them, only ask they keep it quiet if they want to get ahead. Yokai are a distant threat when hunger's around the corner, so all the doors you open are ones that lead to jewels.
                      </div>
                   </div>
@@ -234,11 +227,11 @@
                <div class="year">
                   <div class="year_border">
                      <div class="year_header">
-                        <div class="quetz-h2">第七幕
-                           <div class="quetz-h3">act seven</div>
+                        <div class="h2">第七幕
+                           <div class="h3">act seven</div>
                         </div>
                      </div>
-                     <div class="quetz-body">
+                     <div class="historytext">
                         It must be fate that brings you to Oihama. Fate, that this is where you're caught. This time, <b>this</b> time when he sees you, you see recognition come two-fold: a feather on his bloodline, another weapon in their arsenal. Your mother is less than a footnote in the story they put out, that of a long lost son come home at last. No matter; none are fit to speak her name.
                      </div>
                   </div>
@@ -247,11 +240,11 @@
                <div class="year">
                   <div class="year_border">
                      <div class="year_header">
-                        <div class="quetz-h2">第八幕
-                           <div class="quetz-h3">act eight</div>
+                        <div class="h2">第八幕
+                           <div class="h3">act eight</div>
                         </div>
                      </div>
-                     <div class="quetz-body">
+                     <div class="historytext">
                         You still marvel at how swift people are to change their tune. A name appended, a dash of divinity, and everyone takes note, is eager for your favor. They bribe you with respect, with their hopes and expectations; they give it all so freely it should come as no surprise when you give nothing in return. After all, you're not here to serve.
                      </div>
                   </div>
@@ -261,16 +254,16 @@
 
 
 
-            <div class="tabcontent quetz-plothooks">
+            <div class="tabcontent plothookstab">
 
 
                <div class="hook">
-                  <div class="quetz-h4">Hook One</div>
+                  <div class="h4">Hook One</div>
                   Hello
                </div>
 
                <div class="hook">
-                  <div class="quetz-h4">Hook One</div>
+                  <div class="h4">Hook One</div>
                   Hello
                </div>
 
@@ -289,5 +282,5 @@
 
 <script src='https://codepen.io/breezescodes/pen/NWPyXNv.js'></script>
 <script>
-   LOCALT3('quetztabbed', 'quetz_tab', 'tabcontent');
+   LOCALT3('freeformtabbox', 'freeformtab', 'tabcontent');
 </script>
