@@ -175,9 +175,9 @@ quo span {display:block; font:400 15px Rubik; margin:20px 0 0; color:#333;}
    --linecolor: var(--black);
 }
 
-#pr-button4:checked~label~.prt-content .prt-4 {
+/* #pr-button4:checked~label~.prt-content .prt-4 {
    background: #151515;
-}
+} */
 
 .historytab {
    margin: 0 auto;
@@ -229,6 +229,7 @@ quo span {display:block; font:400 15px Rubik; margin:20px 0 0; color:#333;}
 
 .historytext {
    font: italic 15px/22px 'Noto Serif', serif;
+   font: 400 14px/22px 'Rubik', sans-serif;
    color: rgba(255, 255, 255, .75);
    margin: 0 0 30px;
 }
