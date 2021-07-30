@@ -273,8 +273,8 @@ quo span {display:block; font:400 15px Rubik; margin:20px 0 0; color:#333;}
 }
 
 .freeformtab.freeformtabbox_active {
-   color: var(--offwhite);
-   border-color: var(--offwhite);
+   color: var(--black);
+   border-color: var(--black);
 }
 
 .tabcontent {
