@@ -28,7 +28,7 @@
 
 
 <center>
-   <div class="asf-phone-wrapper quartzphone senpai3">
+   <div class="asf-phone-wrapper typingphone senpai3">
       <div class="asf-phone-background"></div>
       <div class="asf-phone-box">
          <div class="asf-phone-title"> incoming text from carsyn valentia</div>
@@ -48,7 +48,7 @@
             </div>
          </div>
          <div class="asf-phone-dock">
-            <div class="asf-phone-input">
+            <div class="asf-phone-input-box">
                <div class="phone-input-text one-text">I'm not frai</div>
                <div class="phone-input-text two-text">Ok</div>
             </div>
@@ -60,6 +60,86 @@
 
 
 <style>
+   .typingphone .asf-phone-text-wrap {
+      height: 289px;
+   }
+
+   .asf-phone-dock {
+      padding: 8px 14px;
+      border-top: 2px solid var(--blavy);
+   }
+
+   .asf-phone-input-box {
+      border: 2px solid var(--blavy);
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 155%;
+      text-align: left;
+      height: 17px;
+   }
+
+   .phone-input-text {
+      animation: typing 4s steps(30, end);
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      width: 0;
+      max-width: 235px;
+   }
+
+   .showtyping {
+      animation: sent 1s steps(2, end);
+      animation-fill-mode: forwards;
+      opacity: 0;
+   }
+
+
+   @keyframes typing {
+
+      0%,
+      100% {
+         width: 0%
+      }
+
+      66% {
+         width: 100%
+      }
+   }
+
+   @keyframes sending {
+      0% {
+         width: 0%
+      }
+
+      66%,
+      99.9% {
+         width: 100%;
+         opacity: 1;
+      }
+
+      100% {
+         opacity: 0;
+      }
+   }
+
+   @keyframes sent {
+      0% {
+         opacity: 0;
+      }
+
+      1%,
+      100% {
+         opacity: 1;
+      }
+   }
+
+
+
+
+
    .senpai3 .one-text {
       animation-delay: 1s;
       animation-duration: 2.5s;
@@ -331,7 +411,7 @@
       border-radius: 100%;
       height: 40px;
       width: 40px;
-      align: center;
+      text-align: center;
       margin: auto;
    }
 
