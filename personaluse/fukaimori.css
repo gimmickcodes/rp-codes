@@ -168,8 +168,7 @@ quo span {display:block; font:400 15px Rubik; margin:20px 0 0; color:#333;}
 
 
 /* TENNIN APP */
-.prt {
- background: var(--offwhite);
+.prt.prt-4 {
    background: #151515;
    --ddd: #ddd;
    --black: #151515;
@@ -188,7 +187,7 @@ quo span {display:block; font:400 15px Rubik; margin:20px 0 0; color:#333;}
    text-align: left;
 }
 
-.historytab br {
+.prt-4 br {
    display: none;
 }
 
@@ -216,9 +215,10 @@ quo span {display:block; font:400 15px Rubik; margin:20px 0 0; color:#333;}
    align-items: center;
 }
 
+
 .h3 {
    writing-mode: horizontal-tb;
-   font: 12px/1em Vidaloka;
+   font: 15px/1em Vidaloka;
    letter-spacing: 1.5px;
    text-transform: uppercase;
    padding: 20px 0 0;
@@ -226,7 +226,7 @@ quo span {display:block; font:400 15px Rubik; margin:20px 0 0; color:#333;}
 }
 
 .historytext {
-   font: italic 16px/21px Vidaloka;
+   font: italic 15px/22px 'Noto Serif', serif;
    color: rgba(255, 255, 255, .75);
    margin: 0 0 30px;
 }
