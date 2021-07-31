@@ -238,12 +238,12 @@ quo span { display: block; font: 400 15px Rubik; margin: 20px 0 0; color: #333; 
 
 /* TENNIN APP */
 
-.prt-info {
+.prc-info {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
 }
 
-.prt-info i {
+.prc-info i {
     text-align: left !important;
 }
 
