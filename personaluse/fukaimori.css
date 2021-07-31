@@ -368,8 +368,8 @@ quo span { display: block; font: 400 15px Rubik; margin: 20px 0 0; color: #333; 
     margin: 0 12px 0 0;
     padding-bottom: 5px;
     margin-bottom: -5px;
-    color: var(--offgray);
-    border-bottom: 5px solid var(--offgray);
+    color: var(--main);
+    border-bottom: 5px solid var(--main);
     transition: .5s ease;
     -webkit-transition: .5s ease;
 }
@@ -380,7 +380,7 @@ quo span { display: block; font: 400 15px Rubik; margin: 20px 0 0; color: #333; 
 }
 
 .tabcontent {
-    border-top: 5px solid var(--offgray);
+    border-top: 5px solid var(--main);
     display: none;
 }
 
