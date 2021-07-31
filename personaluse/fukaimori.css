@@ -388,3 +388,24 @@ quo span { display: block; font: 400 15px Rubik; margin: 20px 0 0; color: #333; 
     display: block;
     ;
 }
+
+
+/* SKILLS */
+.prc-entry {
+    text-align: left;
+ }
+
+ .prc-entry b {
+    color: var(--accent, var(--human));
+ }
+
+ .prc-entry blockquote {
+    margin: 1em 40px;
+ }
+
+ .prc-entry .h6 {
+    text-transform: uppercase;
+    text-decoration: none;
+    font: 700 12px/18px Rubik;
+    letter-spacing: 1px;
+ }
