@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
 <head>
-   <!-- <link href="../css-templates.css" rel="stylesheet"> -->
-
    <link rel="stylesheet" href="fukaimori.css" type="text/css">
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,16 +11,14 @@
 </head>
 
 <style>
-   #pr-button4:checked~label~.prt-content .prt-4 {
-      background: #151515;
-   }
-
    .prt.prt-4 {
       position: relative;
       width: 815px;
       margin: 30px auto;
       height: auto;
+   }
 
+   .prt.prt-4 {
       background: var(--offwhite);
       /* background: #151515; */
       --ddd: #ddd;
@@ -32,12 +28,17 @@
    }
 
 
+   #pr-button4:checked~label~.prt-content .prt-4 {
+      background: #151515;
+   }
+
    .historytab {
       margin: 0 auto;
       padding: 60px 100px;
       width: calc(100% - 200px);
       display: flex;
       flex-direction: column;
+      background: var(--accent, var(--human));
       background: var(--human);
       text-align: left;
    }
@@ -65,9 +66,10 @@
       writing-mode: vertical-rl;
       color: #ddd;
       margin: 0px auto;
-      padding: 30px 0 30px;
+      padding: 30px 0 25px;
       display: flex;
       align-items: center;
+      color: var(--offwhite);
    }
 
    .h3 {
@@ -79,10 +81,9 @@
       color: var(--offwhite);
    }
 
-   .historytext {
-      font: italic 15px/22px 'Noto Serif', serif;
-      font: 400 14px/22px 'Rubik', sans-serif;
-      color: rgba(255, 255, 255, .75);
+   .year_body {
+      font: 400 14px/21px 'Rubik', sans-serif;
+      color: #ddd;
       margin: 0 0 30px;
    }
 
@@ -93,16 +94,30 @@
       background: var(--human);
    }
 
-   .h4 {
-      font: bold 15px/1.4em Rubik;
-      letter-spacing: 1px;
+   .hook {
+      color: rgba(255, 255, 255, .75);
+      margin-bottom: 25px;
    }
 
-   .hook {
-      font: normal 15px/21px Vidaloka;
-      color: rgba(255, 255, 255, .75);
-      font-family: Rubik;
-      margin-bottom: 20px;
+   .hooklabel {
+      font: bold 16px/21px Vidaloka;
+      letter-spacing: 1px;
+      color: var(--offwhite);
+   }
+
+   .hook br+br {
+      display: block;
+      content: '';
+      margin: 14px 0;
+   }
+
+   .hookbody {
+      font: normal 14px/21px Rubik;
+      letter-spacing: .2px;
+      border-left: 1px solid var(--offgray);
+      padding-left: 14px;
+      margin: 7px 0 0;
+      color: #ddd;
    }
 
    .tabbednav {
@@ -126,8 +141,8 @@
    }
 
    .freeformtab.freeformtabbox_active {
-      color: var(--main);
-      border-color: var(--main);
+      color: var(--black);
+      border-color: var(--black);
    }
 
    .tabcontent {
@@ -137,6 +152,7 @@
 
    .tabcontent.freeformtabbox_active {
       display: block;
+      ;
    }
 </style>
 
@@ -163,7 +179,7 @@
                            <div class="h3">act one</div>
                         </div>
                      </div>
-                     <div class="historytext">
+                     <div class="year_body">
                         A woman stands at the castle gates. Dust-cloaked, sandals worn, clothing patched from travel, she knocks, and when the doors open, she presents the babe in her arms, insists he has the lord's eyes. The father comes on a whim, sees it is for true, and turns her away all the same.
                      </div>
                   </div>
@@ -176,7 +192,7 @@
                            <div class="h3">act two</div>
                         </div>
                      </div>
-                     <div class="historytext">
+                     <div class="year_body">
                         Discarded dalliance, she has no one in Oihama and nowhere to return, only that distant border town from whence she'd come and the hatred of a jilted partner. And so she starts anew: a new hole, dug deeper every year as debts pile high.
                      </div>
                   </div>
@@ -189,7 +205,7 @@
                            <div class="h3">act three</div>
                         </div>
                      </div>
-                     <div class="historytext">
+                     <div class="year_body">
                         She writes him, your mother. Because a courtesan's wages aren't enough, because health fades, and even dreams can be filling when you have little else. Frequently, sporadically, pleadingly, she writes — of your resemblance, of your magic, of old promises and other things you've stopped keeping track of, all in hopes he'll claim you son and provide everything she can't. No reply will ever come, only the odd gift like a bone for dog, and somehow that is worse.
                      </div>
                   </div>
@@ -202,7 +218,7 @@
                            <div class="h3">act four</div>
                         </div>
                      </div>
-                     <div class="historytext">
+                     <div class="year_body">
                         You wait and wait and wait for her daydream of a better life, A boy has to learn to fend for himself. The backstreets form its own kind of school, teach you to steal, to run, to make ends meet while mother fights battles of a different kind in bedrooms and in soiled sheets. You grow to doubt
                      </div>
                   </div>
@@ -215,7 +231,7 @@
                            <div class="h3">act five</div>
                         </div>
                      </div>
-                     <div class="historytext">
+                     <div class="year_body">
                         At nine, you glimpse your father in the flesh. Mother points him out from the retinue, but where she sees hope, you see privilege, you see eyes that go right through you. Here's the man who left her, and no different than the rest.
                      </div>
                   </div>
@@ -228,7 +244,7 @@
                            <div class="h3">act six</div>
                         </div>
                      </div>
-                     <div class="historytext">
+                     <div class="year_body">
                         You're on your own, but you're ok. You've a knack for magic, always have — for getting into places, for winning over marks. You know the myths, the legends, and when friends whisper <i>tennin</i> you don't trouble to correct them, only ask they keep it quiet if they want to get ahead. Yokai are a distant threat when hunger's around the corner, so all the doors you open are ones that lead to jewels.
                      </div>
                   </div>
@@ -241,7 +257,7 @@
                            <div class="h3">act seven</div>
                         </div>
                      </div>
-                     <div class="historytext">
+                     <div class="year_body">
                         It must be fate that brings you to Oihama. Fate, that this is where you're caught. This time, <i>this</i> time when he sees you, you see recognition come two-fold: a feather on his bloodline, another weapon in their arsenal. Your mother is less than a footnote in the story they put out, that of a long lost son come home at last. No matter; none are fit to speak her name.
                      </div>
                   </div>
@@ -254,7 +270,7 @@
                            <div class="h3">act eight</div>
                         </div>
                      </div>
-                     <div class="historytext">
+                     <div class="year_body">
                         You still marvel at how swift people are to change their tune. A name appended, a dash of divinity, and everyone takes note, is eager for your favor. They bribe you with respect, with their hopes and expectations; they give it all so freely it should come as no surprise when you give nothing in return. After all, you didn't come here just to serve.
                      </div>
                   </div>
@@ -268,13 +284,19 @@
 
 
                <div class="hook">
-                  <div class="h4">Hook One</div>
-                  Hello
+                  <div class="hooklabel">Hook </div>
+                  <div class="hookbody">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet purus vehicula, dapibus enim sed, semper libero. Maecenas pulvinar dolor vitae enim efficitur, eu aliquam urna mattis. Nulla facilisi. Proin dolor leo, pulvinar vitae leo vel, hendrerit ullamcorper neque. <br><br>
+
+                     Morbi neque risus, vulputate ut tortor tempus, pulvinar malesuada nibh. Morbi consequat dolor tincidunt lobortis pellentesque. Aenean pretium diam ac tempor tincidunt.
+                  </div>
                </div>
 
                <div class="hook">
-                  <div class="h4">Hook One</div>
-                  Hello
+                  <div class="hooklabel">Hook</div>
+                  <div class="hookbody">
+                     Hi
+                  </div>
                </div>
 
 
