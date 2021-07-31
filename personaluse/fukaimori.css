@@ -245,12 +245,12 @@ quo span { display: block; font: 400 15px Rubik; margin: 20px 0 0; color: #333; 
 }
 
 
-.prt.prt-4 {
+/* .prt.prt-4 {
     position: relative;
     width: 815px;
     margin: 30px auto;
     height: auto;
-}
+} */
 
 .prt.prt-4 {
     background: var(--offwhite);
