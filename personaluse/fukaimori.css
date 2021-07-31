@@ -262,9 +262,9 @@ quo span { display: block; font: 400 15px Rubik; margin: 20px 0 0; color: #333; 
 }
 
 
-#pr-button4:checked~label~.prt-content .prt-4 {
+/* #pr-button4:checked~label~.prt-content .prt-4 {
     background: #151515;
-}
+} */
 
 .historytab {
     margin: 0 auto;
