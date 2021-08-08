@@ -351,7 +351,7 @@ quo span { display: block; font: 400 15px Rubik; margin: 20px 0 0; color: #333; 
 .hook br+br {
     display: block;
     content: '';
-    margin: 11px 0;
+    margin: 8px 0;
 }
 
 .hookbody {
