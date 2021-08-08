@@ -346,22 +346,22 @@ quo span { display: block; font: 400 15px Rubik; margin: 20px 0 0; color: #333; 
 .hooklabel {
     font: bold 16px/21px Vidaloka;
     letter-spacing: 1px;
-    color: var(--offwhite);
+    color: #ddd;
 }
 
 .hook br+br {
     display: block;
     content: '';
-    margin: 14px 0;
+    margin: 11px 0;
 }
 
 .hookbody {
-    font: normal 14px/21px Rubik;
+    font: normal 13px/20px Rubik;
+    color: var(--offwhite);
     letter-spacing: .2px;
-    border-left: 1px solid var(--offgray);
+    border-left: 1px solid var(--main);
     padding-left: 14px;
     margin: 7px 0 0;
-    color: #ddd;
 }
 
 .tabbednav {
