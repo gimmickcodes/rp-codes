@@ -35,7 +35,7 @@
 
    <div class="palette-grid">
 
-      <div class="palette-card adjuvant" style="--palette-pfp: url(https://files.jcink.net/uploads2/fukaimori//av-126.png)">
+      <div class="palette-card adjuvant" style="--palette-pfp: url(https://files.jcink.net/uploads2/fukaimori//av-126.png)" onclick="">
          <div class="palette-img">
             <div class="imgtint"> </div>
             <div class="imgbase"> </div>
@@ -52,7 +52,7 @@
       </div>
 
 
-      <div class="palette-card neutral" style="--palette-pfp: url(http://files.jcink.net/uploads2/xxaswefall//av-12.png)">
+      <div class="palette-card neutral" style="--palette-pfp: url(http://files.jcink.net/uploads2/xxaswefall//av-12.png)" onclick="">
          <div class="palette-img">
             <div class="imgtint"> </div>
             <div class="imgbase"> </div>
@@ -244,6 +244,9 @@
       filter: grayscale(.75) contrast(1) brightness(1.1);
       opacity: 1;
       transition: all 750ms ease;
+      -webkit-transition: all 750ms ease;
+      -o-transition: all 750ms ease;
+      -moz-transition: all 750ms ease;
    }
 
    .imgtint {
@@ -266,12 +269,18 @@
       mix-blend-mode: color-dodge;
       z-index: 10;
       transition: all 500ms ease-in-out;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      -o-transition: all 500ms ease-in-out;
    }
 
    .palette-content {
       position: relative;
       background: #ededed;
       transition: all 500ms ease-in-out;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      -o-transition: all 500ms ease-in-out;
       z-index: 50;
    }
 
