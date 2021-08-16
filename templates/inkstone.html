@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<head>
+   <link href="../css-templates.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <!-- Bootstrap for scroll position detection -->
+   <!-- https://getbootstrap.com/docs/5.0/components/scrollspy/#list-item-4  -->
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+   <!-- Font Awesome -->
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Varta:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+   :root {
+      --serif: 'Source Serif Pro', serif;
+      --sansserif: 'Varla', sans-serif;
+   }
+</style>
+
+
+<div class="inkstonebox">
+   <div class="inkstone">
+
+      <div id="inkstonemenu">
+         <a class="list-group-item inkstonechar-tab active" href="#inkstonechar-1">Name 1</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-2">Name 2</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-3">Name 3</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-4">Name 4</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-5">Name 5</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-6">Name 6</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-7">Name 7</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-8">Name 8</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-9">Name 9</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-10">Name 10</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-11">Name 11</a>
+         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-12">Name 12</a>
+      </div>
+
+      <div class="inkstonetop" data-bs-spy="scroll" data-bs-target="#inkstonemenu" data-bs-offset="0" tabindex="0">
+
+
+         <div id="inkstonechar-1" class="inkpageouter">
+            <button class="inkpagetoggle">
+               <div class="chevron-arrow"> </div>
+            </button>
+            <div class="inkpageinner">
+               <div class="inkpage-left">
+                  <img src="https://cdn.discordapp.com/attachments/683720444796338317/823282497886093312/200x300-custom-03-zoom.png">
+                  <div class="inkstone-h1">One</div>
+                  <p>
+                     Bacon ipsum dolor amet corned beef t-bone chicken, ground round boudin filet mignon tri-tip pastrami tail tenderloin. Pork pig tri-tip sausage chislic boudin cow. Bacon shoulder beef hamburger bresaola jerky jowl drumstick swine. Jowl tenderloin strip steak, biltong pig shankle shank. <br><br>
+
+                     Boudin pork tenderloin flank chislic chicken. Corned beef kevin tongue salami pastrami brisket chicken chuck pancetta, rump shank. Venison alcatra fatback, short loin picanha salami boudin sirloin beef ribs meatball turkey shankle kevin.
+                  </p>
+                  <div class="stars">
+                     <i class="fas fa-star filled"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                  </div>
+               </div>
+
+               <div class="inkpage-right">
+                  <div class="inkstone-h3">Threads</div>
+
+                  <div class="threadscroll">
+                     <div class="thread">
+                        <a href="#">Thread title</a>
+                        <span class="thread-desc">a description here</span>
+                     </div>
+
+                     <div class="thread">
+                        <a href="#">Thread title</a>
+                        <span class="thread-desc">a description here</span>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div id="inkstonechar-2" class="inkpageouter">
+            <button class="inkpagetoggle" onclick="scrollHere">
+               <div class="chevron-arrow"> </div>
+            </button>
+
+            <div class="inkpageinner">
+               <div class="inkpage-left">
+                  <img src="https://cdn.discordapp.com/attachments/683720444796338317/823282497886093312/200x300-custom-03-zoom.png">
+                  <div class="inkstone-h1">Two</div>
+                  <p>
+                     Bacon ipsum dolor amet corned beef t-bone chicken, ground round boudin filet mignon tri-tip pastrami tail tenderloin. Pork pig tri-tip sausage chislic boudin cow. Bacon shoulder beef hamburger bresaola jerky jowl drumstick swine. Jowl tenderloin strip steak, biltong pig shankle shank.
+                  </p>
+                  <div class="stars">
+                     <i class="fas fa-star filled"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                  </div>
+               </div>
+               <div class="inkpage-right">
+                  <div class="inkstone-h3">Threads</div>
+
+                  <div class="threadscroll">
+                     <div class="thread">
+                        <a href="#">Thread title</a>
+                        <span class="thread-desc">a description here</span>
+                     </div>
+
+                     <div class="thread">
+                        <a href="#">Thread title</a>
+                        <span class="thread-desc">a description here</span>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div id="inkstonechar-3" class="inkpageouter">
+            <button class="inkpagetoggle">
+               <div class="chevron-arrow"> </div>
+            </button>
+            <div class="inkpageinner">
+               <div class="inkpage-left">
+                  <img src="https://cdn.discordapp.com/attachments/683720444796338317/823282497886093312/200x300-custom-03-zoom.png">
+                  <div class="inkstone-h1">Three</div>
+                  <p>
+                     Bacon ipsum dolor amet corned beef t-bone chicken, ground round boudin filet mignon tri-tip pastrami tail tenderloin. Pork pig tri-tip sausage chislic boudin cow. Bacon shoulder beef hamburger bresaola jerky jowl drumstick swine. Jowl tenderloin strip steak, biltong pig shankle shank.
+                  </p>
+                  <div class="stars">
+                     <i class="fas fa-star filled"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                  </div>
+               </div>
+               <div class="inkpage-right">
+                  <div class="inkstone-h3">Threads</div>
+
+                  <div class="threadscroll">
+                     <div class="thread">
+                        <a href="#">Thread title</a>
+                        <span class="thread-desc">a description here</span>
+                     </div>
+
+                     <div class="thread">
+                        <a href="#">Thread title</a>
+                        <span class="thread-desc">a description here</span>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+         <div id="inkstonechar-4" class="inkpageouter">
+            <button class="inkpagetoggle">
+               <div class="chevron-arrow"> </div>
+            </button>
+            <div class="inkpageinner">
+               <div class="inkpage-left">
+                  <img src="https://cdn.discordapp.com/attachments/683720444796338317/823282497886093312/200x300-custom-03-zoom.png">
+                  <div class="inkstone-h1">Four</div>
+                  <p>
+                     Bacon ipsum dolor amet corned beef t-bone chicken, ground round boudin filet mignon tri-tip pastrami tail tenderloin. Pork pig tri-tip sausage chislic boudin cow. Bacon shoulder beef hamburger bresaola jerky jowl drumstick swine. Jowl tenderloin strip steak, biltong pig shankle shank.
+                  </p>
+                  <div class="stars">
+                     <i class="fas fa-star filled"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                     <i class="far fa-star"></i>
+                  </div>
+               </div>
+               <div class="inkpage-right">
+                  <div class="inkstone-h3">Threads</div>
+
+                  <div class="threadscroll">
+                     <div class="thread">
+                        <a href="#">Thread title</a>
+                        <span class="thread-desc">a description here</span>
+                     </div>
+
+                     <div class="thread">
+                        <a href="#">Thread title</a>
+                        <span class="thread-desc">a description here</span>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+
+      </div>
+      <div class="inkstone-liner"> </div>
+   </div>
+   <a href="http://pixel-perfect.boards.net/user/2465" class="credits">made by gimmick</a>
+
+</div>
+
+
+
+<style>
+   html {
+      scroll-behavior: smooth;
+   }
+
+   .inkstonebox {
+      width: min-content;
+      margin: 30px auto;
+      background: transparent;
+   }
+
+   a.credits {
+      display: block;
+      text-align: right;
+      margin-top: 4px;
+      margin-right: 20px;
+      font: 700 7px/10px sans-serif;
+      letter-spacing: .8px;
+      text-decoration: none;
+      text-transform: uppercase;
+   }
+
+   .inkstone {
+      height: auto;
+      display: grid;
+      grid-template-columns: 100px 320px 20px;
+      grid-template-areas: 'inkstonemenu body border';
+   }
+
+   #inkstonemenu {
+      background: #222;
+      grid-area: inkstonemenu;
+      margin: 20px 0;
+      padding: 16px 16px 16px 0px;
+      height: 450px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      text-align: right;
+      align-items: flex-end;
+   }
+
+   a.inkstonechar-tab.active {
+      color: rgba(255, 255, 255, 1);
+      font-weight: 600;
+      margin-right: 8px;
+   }
+
+   /* a.inkstonechar-tab.active:before {
+      content: '▸';
+      display: inline-block;
+      color: white;
+      margin-right: 3px;
+   } */
+
+   a.inkstonechar-tab {
+      white-space: nowrap;
+      margin: 10px 0;
+      color: rgba(255, 255, 255, .6);
+      font: 12px/1em var(--serif);
+      letter-spacing: .75px;
+      text-decoration: none;
+      transition: all 100ms ease;
+      -webkit-transition: all 100ms ease;
+      z-index: 20;
+   }
+
+   /* .inkstonetop-shadow {
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .25));
+   } */
+
+   .inkstonetop {
+      grid-area: body;
+      height: 520px;
+      overflow: auto;
+      display: grid;
+      grid-row-gap: 0;
+      position: relative;
+      /* clip-path: polygon(0% 0%, calc(100% - 32px) 0%, 100% 32px, 100% 100%, 32px 100%, 0% calc(100% - 32px)); */
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .25);
+      background: #fff;
+      z-index: 0;
+      overflow-x: hidden;
+   }
+
+   .inkstone-liner {
+      grid-area: border;
+      background: #222;
+      margin: 20px 0;
+      position: relative;
+   }
+
+   .inkpageinner {
+      width: 640px;
+      height: 451px;
+      margin: 0;
+      padding: 40px 0 30px 30px;
+      position: relative;
+      z-index: 0;
+      display: flex;
+      transition: all 300ms ease-out;
+      font: 12px/18px var(--sansserif);
+   }
+
+   .inkpageouter {
+      position: relative;
+      z-index: 0;
+   }
+
+   .inkpageouter::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -10;
+      position: absolute;
+      background: url(https://cdn.discordapp.com/attachments/683720444796338317/876529579425169438/unknown.png);
+      background-size: contain;
+      filter: contrast(.7) brightness(1.2);
+      mix-blend-mode: soft-light;
+      opacity: .75;
+   }
+
+   .inkpage-left {
+      width: 260px;
+      margin-right: 30px;
+      display: inline;
+   }
+
+   .inkpage-right {
+      width: 260px;
+      margin-left: 30px;
+      padding-top: 2px;
+      display: inline-grid;
+      grid-template-rows: auto 1fr;
+      align-items: flex-start;
+   }
+
+   .threadscroll {
+      height: 100%;
+      overflow: auto;
+   }
+
+   .inkstone-h3 {
+      font: 600 16px/1em var(--serif);
+      margin-bottom: 16px;
+   }
+
+   .thread {
+      margin: 0 0 8px;
+   }
+
+   .thread a {
+      font-size: 13px;
+      font-family: var(--serif);
+      font-weight: 600;
+      text-decoration: none;
+      color: rgb(49, 85, 163);
+   }
+
+   .thread a:hover {
+      text-decoration: underline;
+   }
+
+   .thread span::before {
+      content: ' — ';
+   }
+
+   .inkpage br+br {
+      content: '';
+      display: block;
+      height: 10px;
+   }
+
+   .inkpagetoggle {
+      position: absolute;
+      top: 40px;
+      left: 264px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      transition: all 300ms ease;
+      cursor: pointer;
+   }
+
+   .inkpagetoggle:hover {
+      box-shadow: 0 0 4px 0px rgba(0, 0, 0, .25);
+   }
+
+   .chevron-arrow {
+      display: block;
+      border-right: 2px solid rgba(0, 0, 0, .5);
+      border-bottom: 2px solid rgba(0, 0, 0, .5);
+      width: 8px;
+      height: 8px;
+      transform: rotate(-45deg);
+      margin-left: -2px;
+   }
+
+   .activeinkpage .inkpagetoggle {
+      transform: scale(-100%);
+      /* transform: rotate(180deg);
+      background: #bbb; */
+   }
+
+   .activeinkpage .inkpageinner {
+      transform: translateX(-320px);
+   }
+
+   .inkpageouter::after {
+      /* divider rule */
+      content: '';
+      display: block;
+      position: absolute;
+      background: #ccc;
+      height: 1px;
+      width: 260px;
+      bottom: 0;
+      left: 30px;
+   }
+
+   #inkstonemenu::after,
+   .inkstone-liner::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      position: absolute;
+      background: url(https://cdn.discordapp.com/attachments/683720444796338317/876529579425169438/unknown.png) center center / cover;
+      opacity: .95;
+      mix-blend-mode: color-burn;
+   }
+
+   .stars {
+      position: absolute;
+      display: flex;
+      flex-direction: row-reverse;
+      bottom: 20px;
+      left: 158px;
+      font-size: 24px;
+   }
+
+   .stars i {
+      opacity: .15;
+   }
+
+   .stars i.filled {
+      opacity: .5;
+   }
+
+   .inkpageinner img {
+      max-width: calc(100% - 40px);
+      max-height: 100px;
+      border: 5px solid transparent;
+      box-shadow: 0 0 0 1px #ccc;
+   }
+
+   .inkstone-h1 {
+      font: normal 28px/1em var(--serif);
+      margin: 12px 0 10px 0;
+   }
+
+   .inkstone p {
+      padding-right: 20px;
+      height: 256px;
+      overflow: auto;
+   }
+
+   .inkstonetop::-webkit-scrollbar,
+   #inkstonemenu::-webkit-scrollbar {
+      width: 0px !important;
+   }
+
+   .inkstone p::-webkit-scrollbar,
+   .threadscroll::-webkit-scrollbar {
+      background: transparent !important;
+      width: 3px !important;
+   }
+
+   .inkstone p::-webkit-scrollbar-track,
+   .threadscroll::-webkit-scrollbar-track {
+      background: transparent !important;
+      border: 0;
+   }
+
+   .inkstone p::-webkit-scrollbar-thumb,
+   .threadscroll::-webkit-scrollbar-thumb {
+      background: #222 !important;
+      border: 0;
+   }
+</style>
+
+
+
+
+<script>
+   // Smooth scroll to position via nav bar
+   // See https://webdesign.tutsplus.com/tutorials/smooth-scrolling-vanilla-javascript--cms-35165
+
+   const links = document.querySelectorAll(".inkstone #inkstonemenu a");
+
+   for (const link of links) {
+      link.addEventListener("click", clickHandler);
+   }
+
+   function clickHandler(e) {
+      e.preventDefault();
+      const href = this.getAttribute("href");
+
+      document.querySelector(href).scrollIntoView({
+         behavior: "smooth",
+         block: "end"
+      });
+   }
+
+
+
+   // Toggle one page at a time and scroll to active page
+   // https://stackoverflow.com/questions/28969592/scroll-to-element-inside-scrollable-div
+
+   $("button.inkpagetoggle").on('click', function () {
+      var activePage = $(this).parent() // selects target page
+      var overflowBox = activePage.parent() // selects the scrolling container
+
+      var scrollCurrent = overflowBox.scrollTop(); //find current scroll position
+      var scrollPos = overflowBox.scrollTop() + activePage.position().top //distance to top of target page from top of scrolling container  
+      var scrollPosCenter = overflowBox.scrollTop() + activePage.position().top - overflowBox.height() / 2 + activePage.height() / 2      //distance to center of target page from top of scrolling container
+
+      // find distance between current scroll position and target page
+      var distance = Math.abs(scrollCurrent - scrollPos)
+
+      // Toggle class
+      // If target too far out of view, scroll to it before toggling page
+      if (distance == 0) {
+         activePage.toggleClass('activeinkpage').siblings().removeClass('activeinkpage');
+      }
+      else {
+         // animates scroll to target's position
+         overflowBox.animate({
+            scrollTop: scrollPos
+         }, 300).promise().done(setTimeout(function () {
+            activePage.toggleClass('activeinkpage').siblings().removeClass('activeinkpage');
+         }, 500)); //500ms delay after scroll
+      }
+   })
+</script>
