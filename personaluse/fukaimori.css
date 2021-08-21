@@ -1031,6 +1031,9 @@ a.credits {
 
 .palette-card:hover .palette-content {
     transform: translateY(-175px);
+    -webkit-transform: translateY(-175px);
+    -moz-transform: translateY(-175px);
+    -o-transform: translateY(-175px);
 }
 
 .palette-card:hover .palettecontent-title {
