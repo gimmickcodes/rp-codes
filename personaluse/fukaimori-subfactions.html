@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+<head>
+   <!-- <link href="../css-templates.css" rel="stylesheet"> -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <link href="fukaimori.css" rel="stylesheet">
+
+   <script src="//pull.cappuccicons.com/cpf.js"></script>
+
+</head>
+
+
+<style>
+   .two-up {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      border-top: 3px solid var(--BG);
+   }
+
+   .two-up .fmfac_tabsbox {
+      background: #d5d5d5;
+      text-align: center;
+      border-right: 3px solid var(--BG);
+      height: calc(100% - 40px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 0;
+   }
+
+   .two-up .fmfac_tab i {
+      font-size: 32px;
+   }
+
+   .two-up .fmfac_tab {
+      margin: 0;
+      display: block;
+   }
+
+   .two-up .fmfac_stats {
+      background: transparent;
+      box-shadow: none;
+   }
+
+   .two-up .fmfac_cont {
+      height: 150px;
+      overflow: auto;
+   }
+
+   .two-up .fmfac_contbox {
+      border: 0;
+      background: var(--offwhite);
+   }
+
+   .fmfac_roles {
+      background: #d5d5d5;
+   }
+</style>
+
+
+
+<div class="qtest">
+
+   <div id="fmfac" class="fmfac_fac">
+      <h2>TAB BETWEEN INFO/ROLES</h2>
+
+      <div class='two-up'>
+
+         <div class="fmfac_tabsbox">
+            <div class="fmfac_tab fmfac_active"><i class="cp cp-flower"></i></div>
+            <div class="fmfac_tab"><i class="cp cp-flower"></i></div>
+            <div class="fmfac_tab"><i class="cp cp-flower"></i></div>
+         </div>
+
+         <div class="fmfac_contbox">
+            <div class="fmfac_cont fmfac_active">
+               <h2>HOME</h2>
+               <p>Ikyo</p>
+               <h2>CREST</h2>
+               <p>Golden crystanthemum</p>
+               <h2>MOTTO</h2>
+               <p>Brighter than the morning sun</p>
+            </div>
+
+            <div class="fmfac_cont">
+               <p style="margin: 0px;">The Imperial Family is the nominal, religious head of the Mori subcontinent. They reside in the palace at Ikyo, the capital of the region.
+                  <br><br>
+                  Once, they were also a centre of militaristic authority, their power waned many years ago and now the land runs as per a feudal system, where the responsibility has been distributed to three major clans who preside over the human occupied regions of the continent.
+               </p>
+            </div>
+
+            <div class="fmfac_cont">
+               <h2>GOALS</h2>
+               <p>To overtake the yōkai and to reestablish supremacy over the continent, to ensure the welfare of their people and to continue to show people a path of hope.</p>
+
+               <h2>RELATIONSHIPS</h2>
+               <p>Strong ties with the Fujiwara, Osaki and Towaguchi clans. They are patrons of the arts, crafts and smithery.</p>
+            </div>
+
+         </div>
+
+      </div>
+
+      <div class="fmfac_roles">
+
+         <c>EMPEROR</c> <a href="index.php?showuser=10" rel="nofollow" alt="profile link" class="user-tagged mgroup-12">Mori Taisho</a><br>
+         <c>EMPRESS</c> <a href="index.php?showuser=8" rel="nofollow" alt="profile link" class="user-tagged mgroup-12">Mori Izuko</a><br>
+         <c>HEIR</c> <a href="index.php?showuser=38" rel="nofollow" alt="profile link" class="user-tagged mgroup-7">Mori Ryusei</a><br>
+         <c>CHILD</c> <a href="index.php?showuser=77" rel="nofollow" alt="profile link" class="user-tagged mgroup-7">Mori Mugen</a><br>
+      </div>
+   </div>
+
+</div>
+
+<script src='https://codepen.io/breezescodes/pen/XWdymYM.js'></script>
+<script>localT4({
+      outerName: '#fmfac',
+      tabClassName: '.fmfac_tab',
+      contClassName: '.fmfac_cont'
+   });</script>
+
+
+
+<style>
+   .fukai-mori h2 {
+      font: 700 18px Rubik;
+      margin: 20px;
+      color: #333;
+      text-transform: uppercase;
+   }
+
+   .fukai-mori p {
+      margin: 30px 0 0;
+      text-align: justify;
+      color: #333;
+   }
+
+   .fmfac_cont p:last-of-type {
+      margin-bottom: 0;
+   }
+
+   @keyframes scale {
+      0% {
+         opacity: 0;
+      }
+
+      100% {
+         opacity: 1;
+      }
+   }
+
+
+
+
+   body {
+      background: #ebebeb
+   }
+
+
+   .qtest {
+      width: min-content;
+   }
+
+   #fmfac {
+      position: relative;
+      min-height: 200px;
+      clear: both;
+      border-top: 0px solid var(--BG);
+   }
+
+   .fmfac_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 500;
+   }
+
+   .fmfac_tab {
+      display: inline;
+      margin-left: 10px;
+      height: auto;
+      color: var(--offgray);
+      transition: 300ms ease-in-out;
+      cursor: pointer;
+   }
+
+   .fmfac_tab i {
+      font-size: 24px;
+   }
+
+   .fmfac_tab.fmfac_active {
+      color: #222;
+      font-weight: 600;
+   }
+
+   .fmfac_contbox {
+      border-top: 3px solid var(--BG);
+      background: #d5d5d5;
+   }
+
+   .fmfac_cont {
+      display: none;
+      width: 480px;
+      height: auto;
+      overflow: auto;
+      padding: 20px;
+      animation: scale 800ms ease;
+      max-height: 200px;
+   }
+
+   .fmfac_cont.fmfac_active {
+      display: block;
+   }
+
+
+   .fmfac_cont h2 {
+      margin: 0px;
+      font: bold 14px Rubik;
+      letter-spacing: 1px;
+      /* color: var(--accent); */
+   }
+
+   .fmfac_cont p {
+      margin: 5px 0 15px;
+      text-align: justify;
+      font: 12px/150% Rubik;
+   }
+
+   .fmfac_stats {
+      display: grid;
+      /* grid-template-columns: auto 1fr;
+      grid-column-gap: 10px; */
+      grid-row-gap: 5px;
+      align-items: start;
+      grid-auto-flow: column;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: 1fr 2fr 2fr;
+
+      background: var(--staff);
+      box-shadow: 0 0 0 20px var(--staff);
+      color: white !important;
+   }
+
+   .fmfac_cont hr {
+      height: 1px;
+      border: 0;
+      border-bottom: 1px dashed var(--accent);
+      margin: 15px 0 20px;
+   }
+
+   .fmfac_stats p {
+      margin: 0
+   }
+
+   .fmfac_cont br+br {
+      display: block;
+      content: '';
+      height: 10px;
+   }
+
+   .fmfac_roles {
+      padding: 20px 20px;
+      border-top: 3px solid var(--BG);
+   }
+
+   .fmfac_roles c {
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      padding: 3px;
+      border-radius: 3px;
+      color: #eee;
+      background: var(--staff);
+      font: 500 11px Rubik;
+      margin: 5px 0;
+      margin-right: 5px;
+      margin-bottom: 10px;
+   }
+
+   .fmfac_fac ::-webkit-scrollbar {
+      width: 3px;
+      background: #d5d5d5;
+   }
+
+   .fmfac_fac ::-webkit-scrollbar-thumb {
+      background: var(--main);
+      border-radius: 0;
+   }
+</style>
+
+
+
+
+
+
+
+
+
+
+<textarea>
+[blockquote][dohtml]
+<div class="qtest">
+
+<div id="fmfac" class="fmfac_fac">
+<div class="fmfac_header">
+<h2>TAB BETWEEN INFO/ROLES</h2>
+
+<div class="fmfac_tabsbox">
+<div class="fmfac_tab fmfac_active">About</div>
+<div class="fmfac_tab">Positions</div>
+</div>
+</div>
+
+<div class="fmfac_contbox">
+<div class="fmfac_cont fmfac_active">
+
+<div class="fmfac_stats">
+   <h2>HOME</h2>
+   <p>Ikyo</p>
+   <h2>CREST</h2>
+   <p>Golden crystanthemum</p>
+   <h2>MOTTO</h2>
+   <p>Brighter than the morning sun</p>
+</div>
+<br><br><br>
+
+<p style="margin: 0px;">The Imperial Family is the nominal, religious head of the Mori subcontinent. They reside in the palace at Ikyo, the capital of the region.
+   
+   Once, they were also a centre of militaristic authority, their power waned many years ago and now the land runs as per a feudal system, where the responsibility has been distributed to three major clans who preside over the human occupied regions of the continent.
+</p>
+
+<HR>
+
+<h2>GOALS</h2>
+<p>To overtake the yōkai and to reestablish supremacy over the continent, to ensure the welfare of their people and to continue to show people a path of hope.</p>
+
+<h2>RELATIONSHIPS</h2>
+<p>Strong ties with the Fujiwara, Osaki and Towaguchi clans. They are patrons of the arts, crafts and smithery.</p>
+</div>
+
+<div class="fmfac_cont fmfac_roles">
+<c>EMPEROR</c> <a href="index.php?showuser=10" rel="nofollow" alt="profile link" class="user-tagged mgroup-12">Mori Taisho</a><br>
+<c>EMPRESS</c> <a href="index.php?showuser=8" rel="nofollow" alt="profile link" class="user-tagged mgroup-12">Mori Izuko</a><br>
+<c>HEIR</c> <a href="index.php?showuser=38" rel="nofollow" alt="profile link" class="user-tagged mgroup-7">Mori Ryusei</a><br>
+<c>CHILD</c> <a href="index.php?showuser=77" rel="nofollow" alt="profile link" class="user-tagged mgroup-7">Mori Mugen</a><br>
+</div>
+
+</div>
+</div>
+
+
+<br><br>
+
+<div id="fmfac" class="fmfac_fac">
+<div class="fmfac_header">
+<h2>TAB BETWEEN INFO</h2>
+
+<div class="fmfac_tabsbox">
+<div class="fmfac_tab fmfac_active"><i class="cp cp-flower"></i></div>
+<div class="fmfac_tab"><i class="cp cp-flower"></i></div>
+</div>
+</div>
+
+<div class="fmfac_contbox">
+<div class="fmfac_cont fmfac_active">
+
+<div class="fmfac_stats">
+   <h2>HOME</h2>
+   <p>Ikyo</p>
+   <h2>CREST</h2>
+   <p>Golden crystanthemum</p>
+   <h2>MOTTO</h2>
+   <p>Brighter than the morning sun</p>
+</div>
+<br>
+<hr>
+<p style="margin: 0px;">The Imperial Family is the nominal, religious head of the Mori subcontinent. They reside in the palace at Ikyo, the capital of the region.
+
+   Once, they were also a centre of militaristic authority, their power waned many years ago and now the land runs as per a feudal system, where the responsibility has been distributed to three major clans who preside over the human occupied regions of the continent.
+</p>
+</div>
+
+<div class="fmfac_cont">
+
+
+<h2>GOALS</h2>
+<p>To overtake the yōkai and to reestablish supremacy over the continent, to ensure the welfare of their people and to continue to show people a path of hope.</p>
+
+<h2>RELATIONSHIPS</h2>
+<p>Strong ties with the Fujiwara, Osaki and Towaguchi clans. They are patrons of the arts, crafts and smithery.</p>
+
+</div>
+
+<div class="fmfac_roles">
+<c>EMPEROR</c> <a href="index.php?showuser=10" rel="nofollow" alt="profile link" class="user-tagged mgroup-12">Mori Taisho</a><br>
+<c>EMPRESS</c> <a href="index.php?showuser=8" rel="nofollow" alt="profile link" class="user-tagged mgroup-12">Mori Izuko</a><br>
+<c>HEIR</c> <a href="index.php?showuser=38" rel="nofollow" alt="profile link" class="user-tagged mgroup-7">Mori Ryusei</a><br>
+<c>CHILD</c> <a href="index.php?showuser=77" rel="nofollow" alt="profile link" class="user-tagged mgroup-7">Mori Mugen</a><br>
+</div>
+
+</div>
+</div>
+
+
+
+
+<br><br>
+
+
+<div class="fmfac_fac">
+<div class="fmfac_header">
+<h2>NO TABS</h2>
+
+</div>
+
+<div class="fmfac_contbox">
+<div class="fmfac_cont fmfac_active">
+
+<div class="fmfac_stats">
+   <h2>HOME</h2>
+   <p>Ikyo</p>
+   <h2>CREST</h2>
+   <p>Golden crystanthemum</p>
+   <h2>MOTTO</h2>
+   <p>Brighter than the morning sun</p>
+</div>
+<p>
+   The Imperial Family is the nominal, religious head of the Mori subcontinent. They reside in the palace at Ikyo, the capital of the region.
+
+   Once, they were also a centre of militaristic authority, their power waned many years ago and now the land runs as per a feudal system, where the responsibility has been distributed to three major clans who preside over the human occupied regions of the continent.
+</p>
+
+<hr>
+
+<h2>GOALS</h2>
+<p>To overtake the yōkai and to reestablish supremacy over the continent, to ensure the welfare of their people and to continue to show people a path of hope.</p>
+
+<h2>RELATIONSHIPS</h2>
+<p>Strong ties with the Fujiwara, Osaki and Towaguchi clans. They are patrons of the arts, crafts and smithery.</p>
+
+</div>
+
+<div class="fmfac_roles">
+<c>EMPEROR</c> <a href="index.php?showuser=10" rel="nofollow" alt="profile link" class="user-tagged mgroup-12">Mori Taisho</a><br>
+<c>EMPRESS</c> <a href="index.php?showuser=8" rel="nofollow" alt="profile link" class="user-tagged mgroup-12">Mori Izuko</a><br>
+<c>HEIR</c> <a href="index.php?showuser=38" rel="nofollow" alt="profile link" class="user-tagged mgroup-7">Mori Ryusei</a><br>
+<c>CHILD</c> <a href="index.php?showuser=77" rel="nofollow" alt="profile link" class="user-tagged mgroup-7">Mori Mugen</a><br>
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+<script src='https://codepen.io/breezescodes/pen/XWdymYM.js'></script>
+<script>localT4({
+      outerName: '#fmfac',
+      tabClassName: '.fmfac_tab',
+      contClassName: '.fmfac_cont'
+   });</script>
+
+
+
+<style>
+
+#fmfac {
+position: relative;
+min-height: 200px;
+clear: both;
+border-top: 0px solid var(--BG);
+}
+
+.fmfac_header {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+font-weight: 500;
+}
+
+.fmfac_tab {
+display: inline;
+margin-left: 10px;
+height: auto;
+color: var(--offgray);
+transition: 300ms ease-in-out;
+cursor: pointer;
+}
+
+.fmfac_tab i {
+font-size: 24px;
+}
+
+.fmfac_tab.fmfac_active {
+color: #222;
+font-weight: 600;
+}
+
+.fmfac_contbox {
+border-top: 3px solid var(--BG);
+background: #d5d5d5;
+}
+
+.fmfac_cont {
+display: none;
+width: 440px;
+height: auto;
+overflow: auto;
+padding: 20px;
+animation: scale 800ms ease;
+max-height: 200px;
+}
+
+.fmfac_cont.fmfac_active {
+display: block;
+}
+
+
+.fmfac_cont h2 {
+margin: 0px;
+font: bold 12px Rubik;
+letter-spacing: 1px;
+}
+
+.fmfac_cont p {
+margin: 5px 0 15px;
+text-align: justify;
+font: 12px/150% Rubik;
+}
+
+.fmfac_stats {
+display: grid;
+
+grid-row-gap: 5px;
+align-items: start;
+grid-auto-flow: column;
+grid-template-rows: repeat(2, auto);
+grid-template-columns: 1fr 2fr 2fr;
+
+background: var(--staff);
+box-shadow: 0 0 0 20px var(--staff);
+color: white !important;
+}
+
+.fmfac_cont hr {
+height: 1px;
+border: 0;
+border-bottom: 1px dashed var(--accent);
+margin: 15px 0 20px;
+}
+
+.fmfac_stats p {
+margin: 0
+}
+
+.fmfac_cont br+br {
+display: block;
+content: '';
+height: 10px;
+}
+
+.fmfac_roles {
+padding: 20px 20px;
+border-top: 3px solid var(--BG);
+}
+
+.fmfac_roles c {
+display: inline-block;
+width: 100px;
+text-align: center;
+padding: 3px;
+border-radius: 3px;
+color: #eee;
+background: var(--staff);
+font: 500 11px Rubik;
+margin: 5px 0;
+margin-right: 5px;
+margin-bottom: 10px;
+}
+
+.fmfac_fac ::-webkit-scrollbar {
+width: 3px;
+background: #d5d5d5;
+}
+
+.fmfac_fac ::-webkit-scrollbar-thumb {
+background: var(--main);
+border-radius: 0;
+}
+</style>[/dohtml][/blockquote]</textarea>

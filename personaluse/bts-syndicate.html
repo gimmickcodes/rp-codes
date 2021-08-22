@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="../css-templates.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<div id="cryptic_group">
+
+ <div class="tabs_holder"> <div class="tab cryptic_group_active">Overview</div> <div class="tab">Seeking</div> <div class="tab">Roster</div> </div> 
+
+ <div class="tab_content cryptic_group_active"> <div class="header"> <h1>The Gallery <br> <i>Overview</i></h1> </div> <div class="main"> The larger the city, the longer its shadow and the more denizens working within it. The Gallery Syndicate, the Gallery for short, is one such organization. Ten years ago, they noticed Cyril’s brother (a vessel) and recruited him and the rest of their band of thieves into their group. Formerly a middling-sized street gang, they’ve expanded over the years and developed into the operation they are today. An elusive yet influential presence in New Paris’s black market with their fingers in a number pies: theft, drugs, smuggling, bribery, information broking, hit jobs – your usual illicit services. Of course, they also control some legitimate businesses – clubs, bars, casinos, etc. – which they use as bases around the city.
+
+ <br><br> Despite having connections to and dealings with many industries and levels of society, their core membership is tight-knit and surprisingly small because of certain changes in leadership. Four years ago, Anton, the previous leader and Cyril's brother, met an early death.<i>(He killed him. It's not public knowledge among outsiders but has nevertheless inspired much speculation).</i> Cyril inherited their same spirit and became the Gallery’s de facto head. And, as head, he made some changes to bring it in line with his own ideals, removing those who disagreed.
+
+ <br><br>What ideals, you ask?
+
+ <ol> <li>Vessels are dangerous, prone to power-trips, and should be eliminated. Genesis wants to maintain the status quo; Eden wants to create paradise; the Gallery wants to take it a step further and <b>purge that paradise of vessels</b>, so everyone is on an even playing field. <i>Cyril's involvement in Eden and implied interest in the Phoenix is no secret, but only select members know his full motive.</i></li> <li>Keep tabs on potential Phoenix vessels and try to seem an attractive vessel — an implied extension of Cyril's Eden affiliation. What's less known is the Gallery's desire to <b>get rid of them</b>, as well as any who seem to abuse their vessel-hood – regardless of guild.</li> <li><b>Eat the rich.</b> Most are privileged, corrupt, and/or don’t care about the less fortunate. Who would know better than the very ones being contacted to enable their selfish whims? For Cyril, the upperclass, business tycoons, etc. are as much targets as they are clients, deserving to be baited, exposed or worse. Civilians are to be left alone, the helpless given aid or leniency (assuming they don't interfere).</li> </ol>
+
+ </div> </div> 
+
+ <div class="tab_content"> <div class="header"> <h1>The Gallery <br> <i>Plot Ideas</i></h1> </div> <div class="main">
+
+ These may be either civilians or vessels, and may belong to either guild, or even none. <br><br> <b>Gallery members</b> may include:
+
+ <ul> <li>His innermost circle. These should be people he’s known for <em>at least</em> five years, with the farthest back being people he ran with in his street rat days. They're found family who believe fully in his cause. </li> <li>People expressly recruited within the past four years because they share similar sentiments about vessels. They'd want to help bring about Ideal #1, #2, or both, but the degree of involvement is up to you. May or may not also be involved on the criminal side of things.</li> <li>Tied to the previous, but spies within Eden, Genesis, or anywhere really </li> <li>Regular members involved with day-to-day operations, drawn by the <i>target-the-rich</i> schtick. <i>Likely unaware of the intent to wipe out vessels.</i></li> <li>Regular members from before Cyril took over who may not necessarily like his moralities (Ideal #3), but didn’t cause enough of a stink about it to get thrown out. <i>Likely unaware of the intent to wipe out vessels.</i></li> </ul>
+
+ People connected to but <b>not a member</b> of the Gallery. Unless specified, they're <i>unaware</i> of the group's motives surrounding the Phoenix:
+
+ <ul> <li>Criminals: contractors, “freelancers”, Partnerships, informants, average joes looking for a quick buck</li> <li>Sympathizers of their <i>Eat the rich</i> attitude. Anyone willing to do favors for or look the other way for certain operations</li> <li>Clients</li> <li>Employees at any of the places they run – may or may not know about the illegal activities happening behind the scenes, or even that it's owned by the Gallery</li> </ul>
+
+ </div> </div> 
+
+
+
+ <div class="tab_content"> <div class="header"> <h1>The Gallery <br> <i>Roster</i></h1> </div> <div class="main columnal">
+
+ <h3>Members</h3> <div class="member-list"> Cyril Courbet – leader <br> Member <br> Member </div>
+
+ <h3>Associates</h3> Melody Cadia – client<br> Member <br> Member
+
+ </div> </div> 
+
+
+
+</div> 
+
+ <style>
+
+ #cryptic_group { background: #eee; font: 12px/17px 'Inter'; width: 415px; margin: auto; padding: 35px; position: relative; z-index: 0; color: #333; border-top: 10px solid black; border-bottom: 10px solid black; }
+
+ #cryptic_group .tabs_holder { width: 70px; padding: 0 10px; display: flex; flex-direction: column; justify-content: center; align-content: space-between; border: 1px solid gray; float: right; height: 62px; margin-top: -8px; z-index: 300; }
+
+ #cryptic_group .tab { font: 9px/13px 'Inter'; letter-spacing: 1px; text-transform: uppercase; }
+
+ #cryptic_group .tab.cryptic_group_active { font-weight: bold; } 
+
+ #cryptic_group .tab_content { height: 0; opacity: 0; display: none; }
+
+ #cryptic_group .tab_content.cryptic_group_active { display: block; opacity: 1; height: auto; } 
+
+ #cryptic_group .tab_content>.header h1 i {}
+
+ #cryptic_group .tab_content.cryptic_group_active>.header h1 i { animation-name: fadein-fast; animation-duration: 1s; animation-timing-function: ease; }
+
+ .tab_content>div.main {}
+
+ #cryptic_group .tab_content.cryptic_group_active>div.main { animation-name: fadein-slow; animation-duration: 1s; animation-timing-function: ease; }
+
+ #cryptic_group @keyframes fadein-fast { from { opacity: .5; } to { opacity: 1; } }
+
+ #cryptic_group @keyframes fadein-slow { from { opacity: 0; } to { opacity: 1; } }
+
+ #cryptic_group .header { margin-bottom: 40px; border-bottom: 2px solid black; width: 160px; } 
+
+ #cryptic_group h1 { font: bold 18px/24px 'Inter'; letter-spacing: 2px; text-transform: uppercase; color: #000; white-space: nowrap; margin: 0 0 6px; }
+
+ #cryptic_group h1 i { color: #b6b6b6; font-style: normal; }
+
+ #cryptic_group ol, #cryptic_group ul { padding-inline-start: 0; margin: 10px 0 30px; margin-left: 30px; width: 90%; text-align: justify; }
+
+ #cryptic_group ul { margin-left: 15px; }
+
+ #cryptic_group ol>li { list-style-type: none; counter-increment: item; text-indent: -30px; margin: 10px 0 }
+
+ #cryptic_group ol>li:before { width: 20px; padding-right: 10px; content: "0" counter(item) "."; }
+
+ #cryptic_group li { margin: 10px 0; }
+
+ #cryptic_group .main i { opacity: .6; }
+
+ #cryptic_group .main b { letter-spacing: .25px; }
+
+ #cryptic_group h3 { text-transform: uppercase; font-size: 11px; letter-spacing: 1px; font-weight: normal; margin: 0; text-align: right; }
+
+ #cryptic_group .main.columnal { display: grid; grid-template-columns: auto 1fr; align-self: flex-start; justify-content: space-between; grid-row-gap: 30px; grid-column-gap: 16px; }
+
+</style> 
+
+<script src='https://codepen.io/breezescodes/pen/NWPyXNv.js'></script> <script type="text/javascript"> LOCALT3('cryptic_group', 'tab', 'tab_content');
+
+</script>

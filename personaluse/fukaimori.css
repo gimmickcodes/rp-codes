@@ -718,7 +718,7 @@ quo span {
     margin: 0 auto;
 }
 
-.h2 {
+.year .h2 {
     font: normal 30px/1em Kouzan;
     letter-spacing: 0px;
     text-align: center;
@@ -729,9 +729,10 @@ quo span {
     padding: 30px 0 25px;
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
-.h3 {
+.year .h3 {
     writing-mode: horizontal-tb;
     font: 15px/1em Vidaloka;
     letter-spacing: 1.5px;
