@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<head>
+   <link href="../css-templates.css" rel="stylesheet">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+
+<div class="ltrhead">
+   <div class="ltrheadinner">
+
+      <div class="ltrhead-topper">
+         <div class="ltrhead-topleft">
+            <div class="ltr-tags">for <a href="#">walter mitty</a></div>
+            <div class="ltr-lyrics">with love from writer, at most two lines of text</div>
+         </div>
+
+         <div class="ltrhead-topright"><img src="../assets/200x200-hawks-028.jpg"></div>
+      </div>
+
+      <div class="ltrhead-text">
+         Enim, ultricies platea ullamcorper aliquet habitant odio amet. Duis commodo, leo vitae egestas enim. Vitae ut placerat at mauris eget augue velit porttitor. Porttitor sed arcu mauris morbi quis. Ut in enim aliquet natoque erat turpis porttitor adipiscing. Dui diam dignissim aliquam nulla id. Viverra viverra facilisis nullam mattis viverra. Porttitor eget fringilla mauris sed magna consequat. Tellus morbi ut consectetur faucibus purus a, urna nulla. Aliquam dui lobortis duis venenatis eget sed quam sapien nec. Habitant pellentesque vulputate facilisi ultrices nibh. Aliquam at amet volutpat, velit amet, nunc mattis faucibus. <br><br>
+         <b>"Talk the <i>talk</i>."</b>
+         <br><br>
+         Viverra a ipsum tortor senectus. Quisque ut urna aliquam amet, placerat lorem amet. Eu sagittis, pharetra, pellentesque proin. Tortor sed interdum amet, vehicula mattis auctor risus cursus. Vel elit in nunc viverra mauris malesuada orci lobortis porttitor. Consectetur ipsum sit viverra ut. Nam orci et dictum sed. Praesent dignissim imperdiet tristique dignissim ut pellentesque accumsan et.
+      </div>
+
+
+      <div class="ltr-lines">
+         <div class="ltr-line-1"> </div>
+         <div class="ltr-line-2"> </div>
+      </div>
+   </div>
+   <a href="http://pixel-perfect.boards.net/user/2465" class="gimcredits">made by gimmick</a>
+</div>
+
+
+
+<style>
+   .ltrhead {
+      width: 340px;
+      margin: 30px auto;
+      --accent: #c74e4e;
+   }
+
+   .ltrhead a.gimcredits {
+      display: block;
+      text-align: right;
+      padding-top: 4px;
+      font: 700 7px/10px sans-serif;
+      letter-spacing: .8px;
+      text-decoration: none;
+      text-transform: uppercase;
+   }
+
+   .ltrheadinner {
+      background: #efefef;
+      position: relative;
+   }
+
+   .ltrhead-topper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      padding: 25px 25px 0;
+   }
+
+   .ltrhead-topleft {
+      width: 240px;
+      height: 49px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(2, 240px);
+      align-items: center;
+      color: var(--accent);
+      font: 800 10px/14px 'Nunito Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.25px;
+      padding-bottom: 1px;
+   }
+
+   .ltrhead-topper::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: var(--accent);
+      width: 30px;
+   }
+
+   .ltr-tags a {
+      color: inherit;
+      text-decoration: none;
+   }
+
+   .ltr-tags,
+   .ltr-lyrics {
+      transition: transform .5s ease, opacity .3s ease;
+   }
+
+   .ltr-tags {
+      transition-delay: .2s;
+   }
+
+   .ltr-lyrics {
+      transform: translate(-100px);
+      -webkit-transform: translate(-100px);
+      -moz-transform: translate(-100px);
+      -o-transform: translate(-100px);
+      opacity: 0;
+   }
+
+   .ltrheadinner:hover .ltr-tags {
+      transform: translate(140px);
+      -webkit-transform: translate(140px);
+      -moz-transform: translate(140px);
+      -o-transform: translate(140px);
+      opacity: 0;
+      transition-delay: 0;
+   }
+
+   .ltrheadinner:hover .ltr-lyrics {
+      transform: translate(-240px);
+      -webkit-transform: translate(-240px);
+      -moz-transform: translate(-240px);
+      -o-transform: translate(-240px);
+      opacity: 1;
+      transition-delay: .25s;
+   }
+
+   .ltrhead-topright img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+   }
+
+   .ltrhead-text {
+      color: rgba(0, 0, 0, .8);
+      font: 400 13px/17px 'Nunito Sans', sans-serif;
+      letter-spacing: 0;
+      z-index: 100;
+      position: relative;
+      padding: 20px 25px 30px;
+   }
+
+   .ltrhead-text b {
+      color: var(--accent);
+   }
+
+   .ltrhead-text br+br {
+      content: '';
+      display: block;
+      margin-top: 12px;
+   }
+
+   .ltr-lines {
+      position: relative;
+      z-index: 100;
+   }
+
+   .ltr-lines>div {
+      background-size: 5.66px 5.66px;
+      background-size: 9px 9px;
+   }
+
+   .ltr-line-0 {
+      height: 5px;
+      background: var(--ltr-line5);
+      display: none;
+   }
+
+   .ltr-line-1 {
+      height: 1px;
+      background: var(--accent);
+   }
+
+   .ltr-line-2 {
+      margin-top: 5px;
+      height: 20px;
+      background: var(--accent);
+   }
+</style>

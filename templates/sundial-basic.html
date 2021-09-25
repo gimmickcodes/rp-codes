@@ -11,13 +11,12 @@
     html {
         background: #000;
     }
-
 </style>
 
 <div class="sundial">
 
     <div class="sundialinner">
-        <div class="gradientbox gradient-day"> </div>
+        <!-- <div class="gradientbox gradient-day"> </div> -->
 
         <div class="skylines skyline-0"> </div>
 
@@ -86,154 +85,8 @@
     .sundialinner {
         background: var(--skybase);
         position: relative;
-        background: linear-gradient(to bottom, rgb(11, 2, 65, .25) 70%, rgb(73, 16, 47, .5)), #0b0b0c;
     }
 
-    .gradientbox {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        z-index: 0;
-    }
-
-    .gradient-day {
-        background: radial-gradient(circle at 0% 0%, #FFA216 0%, #A93131 19.41%, #49102F 58.03%, #0B0241 100%);
-        background: radial-gradient(105.69% 49.89% at 50% 50.11%, #FFA216 0%, #A93131 19.41%, #49102F 58.03%, #0B0241 100%);
-        background-size: 300% 400%;
-        background-position: 50% 0%;
-        animation: gradient-day 30s linear infinite;
-        animation-play-state: paused;
-        opacity: 1;
-    }
-
-    .sundialinner:hover .gradient-day {
-        animation-play-state: running
-    }
-
-    @keyframes gradient-day {
-
-        /* starts center bottom then goes clockwise */
-        0% {
-            /* center bottom */
-            opacity: .15;
-            background-position: 50% 0%;
-        }
-
-        5% {
-            opacity: .5;
-        }
-
-        23% {
-            /* left bottom */
-            opacity: 1;
-            background-position: 100% 0%;
-        }
-
-        45% {
-            /* left top */
-            background-position: 100% 99%;
-        }
-
-        50% {
-            opacity: 1;
-        }
-
-        55% {
-            /* right top */
-            background-position: 0% 99%;
-        }
-
-        77% {
-            /* right bottom */
-            background-position: 0% 0%;
-            opacity: 1
-        }
-
-        95% {
-            opacity: .5;
-        }
-
-        100% {
-            /* center bottom */
-            background-position: 50% 0%;
-            opacity: .15;
-        }
-    }
-
-    /*    unused animations     */
-
-    @keyframes gradient-daycorner {
-
-        /* starts bottom left then goes clockwise */
-        0%,
-        100% {
-            /* bottom left */
-            background-size: 300% 400%;
-            background-position: 100% 0%;
-        }
-
-        20% {
-            /* top left */
-            background-size: 300% 400%;
-            background-position: 100% 100%;
-        }
-
-        40% {
-            /* top right */
-            background-size: 300% 400%;
-            background-position: 150% 100%;
-        }
-
-        80% {
-            /* bottom right */
-            background-position: 150% 0%;
-        }
-    }
-
-
-    @keyframes gradient-diagonal {
-        from {
-            background-size: 300% 400%;
-            background-position: 100% 100%;
-        }
-
-        /*
-        50% {
-            background-size: 300% 400%;
-            background-position: 300% 100%;
-        }
-*/
-
-        100% {
-            background-position: 300% 0%;
-        }
-    }
-
-    .gradient-sunset {
-        background: radial-gradient(circle, var(--skyline5), var(--skybase) 50%);
-        background-size: 200% 200%;
-        background-position: 50% 50%;
-        animation: gradient-sunset 50s linear 1;
-    }
-
-    @keyframes gradient-sunset {
-        from {
-            background-size: 200% 200%;
-            /*            off screen top*/
-            /*
-            background-position: 50% 150%;
-*/
-            background-position: 50% 50%;
-            opacity: .25;
-        }
-
-        to {
-            background-size: 100% 200%;
-            background-position: 50% -50%;
-            opacity: 1;
-        }
-    }
 
     .sundial-topper {
         padding: 30px 45px;
@@ -328,7 +181,6 @@
     .skylines {
         position: relative;
         z-index: 100;
-        display: none;
     }
 
     .skyline-0 {
@@ -360,5 +212,4 @@
         height: 5px;
         background: var(--skyline5);
     }
-
 </style>

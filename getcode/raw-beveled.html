@@ -72,7 +72,7 @@ Your post here
 <style>
 .bev-credits { width: 400px; margin: 20px auto; }
 
-.bev-credits>a { font: 700 7px/10px sans-serif; letter-spacing: .8px; text-decoration: none; text-transform: uppercase; display: block; text-align: center; margin-top: 4px; }
+.bev-credits>a { font: 700 7px/10px sans-serif; letter-spacing: .8px; text-decoration: none; text-transform: uppercase; display: block; text-align: right; margin-top: 4px; }
 
 #bev-outerbox-l { padding: 3px; position: relative; background: rgba(var(--accentRGBcolor), .1); border: 1px solid var(--accentcolor); font: 400 13px/1.3em 'Roboto'; -webkit-text-size-adjust: none; color: #444; border-radius: var(--roundedcorner); --roundedcorner: 0 20px 0 0; --accentcolor: #3a60bf; --accentRGBcolor: 52, 102, 227; }
 
@@ -126,7 +126,7 @@ Your post here
 
 <script>
     //Copy code
-    document.querySelector("button").onclick = function() {
+    document.querySelector("button").onclick = function () {
         document.querySelector("textarea").select();
         document.execCommand('copy');
     }
