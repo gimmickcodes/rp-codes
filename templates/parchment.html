@@ -242,12 +242,14 @@
 
    .parchmentfooter {
       transform: scaleY(-1);
-      -webkit-transform: scaleY(-1)
+      -webkit-transform: scaleY(-1);
+      -moz-transform: scaleY(-1);
+      -o-transform: scaleY(-1);
    }
 
    .scrolledbody {
       margin: 0 20px;
-      background: #ddd url(https://i.imgur.com/KtlE20A.jpg);
+      background: #ddd url(https://i.imgur.com/KtlE20A.jpg) center repeat;
       padding: 10px;
    }
 
@@ -266,7 +268,7 @@
       left: 1px;
       width: calc(100% - 2px);
       height: calc(100% - 2px);
-      background: #ddd url(https://i.imgur.com/KtlE20A.jpg);
+      background: #ddd url(https://i.imgur.com/KtlE20A.jpg) center repeat;
       clip-path: var(--scooped);
       -webkit-clip-path: var(--scooped);
    }
