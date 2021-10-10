@@ -890,7 +890,7 @@ a.credits {
 
 .palette-header {
     position: relative;
-    background: var(--accent);
+    background: #2a2a2a;
     margin-bottom: 30px;
     /* padding-bottom: 5px; */
 }
@@ -913,7 +913,8 @@ a.credits {
     width: 75%;
     height: 84px;
     overflow: hidden;
-    opacity: .2;
+    color: #fff;
+    opacity: .07;
     position: absolute;
     display: flex;
     align-items: flex-start;
@@ -1067,4 +1068,193 @@ a.credits {
 .palette-content ::-webkit-scrollbar-thumb {
     background: rgba(var(--accentRGB, var(--mainRGB)), .5) !important;
     border: 0;
+}
+
+/* TATAMI MULTIPLOTTER */
+
+.tatami {
+    position: relative;
+    width: 100%;
+    max-width: 675px;
+    height: 223px;
+    overflow: hidden;
+    margin: 20px auto;
+    border-top: 6px solid black;
+}
+
+.tatamiart {
+    background: var(--accent);
+    z-index: 0;
+}
+
+.tatamiart img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0) contrast(1.1) saturate(1.5) brightness(1.25);
+    mix-blend-mode: soft-light;
+    transition: .5s ease-in-out;
+}
+
+.tatamiheader {
+    background: var(--accent);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'name stats app';
+    z-index: 20;
+    position: relative;
+    transition: .5s ease-in-out;
+}
+
+.tatamiheader>div, .tatamiheader>a {
+    display: flex;
+    align-items: center;
+    color: #dedede;
+    height: 48px;
+    padding: 0 18px 3px;
+}
+
+.tatamiheader-name {
+    grid-area: name;
+    flex-grow: 1;
+    font: 18px/1em 'Vidaloka', serif;
+    letter-spacing: .5px;
+    text-transform: lowercase;
+}
+
+.tatamiheader-stats {
+    grid-area: stats;
+    background: #2a2a2a;
+    flex-grow: 2;
+    font: 300 11px/12px 'Rubik', sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    padding: 2px 0 0;
+}
+
+.tatamiheader span {
+    margin-top: 5px;
+}
+
+.tatamiheader span:not(:last-child)::after {
+    content: ' ';
+    font-weight: 300;
+    opacity: .3;
+    margin: 0 6px;
+}
+
+.tatamiheader-app {
+    grid-area: app;
+    background: #2a2a2a;
+    align-items: center;
+    font-size: 15px;
+}
+
+.tatamiheader-app i {
+    margin-top: 3px;
+}
+
+.tatamiheader-app:hover {
+    background: #000;
+}
+
+.tatamibody {
+    height: calc(229px - 50px - 54px);
+    overflow: auto;
+    background: #dedede;
+    padding: 20px 40px 30px;
+    position: relative;
+    z-index: 10;
+    font: 14px/20px 'Roboto';
+    color: #333;
+}
+
+.tatamibody br+br {
+    content: '';
+    display: block;
+    height: 15px;
+}
+
+.tatamibody ul, .tatamibody li {
+    margin: 15px 0;
+}
+
+.tatamibody ul {
+    padding-left: 30px;
+}
+
+.tatamibody li::marker {
+    content: '– ';
+    color: var(--accent);
+}
+
+.tatamibody b, .tatamibody i {
+    color: var(--accent);
+}
+
+.tatamibody b {
+    font-weight: 800;
+}
+
+.tatami:hover .tatamiart img {
+    filter: grayscale(0) contrast(1.1) saturate(1.5) brightness(.25);
+    transition-delay: 0;
+}
+
+.tatami:hover .tatamiheader {
+    margin-top: -175px;
+    transition-delay: .15s;
+}
+
+.tatami ::-webkit-scrollbar {
+    width: 3px !important;
+    background: #dedede
+}
+
+.tatami ::-webkit-scrollbar-track {
+    background: #dedede;
+    border: 0;
+}
+
+.tatami ::-webkit-scrollbar-thumb {
+    background: rgba(var(--accentRGB, var(--mainRGB)), 1) !important;
+    border: 5px solid #dedede;
+    border-left: 0;
+    border-right: 0;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        margin-left: 0;
+    }
+    .postcolor {
+        padding: 10px;
+    }
+    .tatami {
+        height: 259px;
+    }
+    .tatamiheader {
+        grid-template-areas: 'name name app' 'stats stats stats';
+    }
+    .tatamiheader>div, .tatamiheader>a {
+        height: 42px;
+        padding: 0 20px;
+        align-items: center;
+    }
+    .tatamiheader span {
+        margin-top: 0;
+    }
+    .tatami:hover .tatamiheader {
+        margin-top: -175px;
+    }
+    .tatamiheader-app {
+        background: var(--accent);
+    }
+    .tatamiheader-app:hover {
+        background: rgba(0, 0, 0, .25);
+    }
+    .tatamibody {
+        padding: 18px 15px 18px 18px;
+    }
 }
