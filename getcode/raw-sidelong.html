@@ -104,6 +104,7 @@ width: 50px;
 display: flex;
 justify-content: center;
 padding-top: 40px;
+text-align: left;
 }
 
 .sidelong .bodybox {
@@ -253,11 +254,11 @@ border: 0 !important
 
             <button>Copy code</button>
         </div>
-    
-    
-    
-    
-         <div class="contentbox">
+
+
+
+
+        <div class="contentbox">
             <h1>Optional image</h1>
 
             <!--            START RAW HTML              -->
@@ -473,8 +474,8 @@ border: 0 !important
 
             <button>Copy code</button>
         </div>
-    
-    
+
+
     </div>
 
 
@@ -485,7 +486,7 @@ border: 0 !important
 
 <script>
     //Copy code
-    document.querySelector("button").onclick = function() {
+    document.querySelector("button").onclick = function () {
         document.querySelector("textarea").select();
         document.execCommand('copy');
     }
