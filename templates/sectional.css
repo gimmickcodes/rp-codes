@@ -75,7 +75,7 @@ a.credits {
 }
 
 .col-about, .col-plots {
-   padding: 18px 20px 25px 20px;
+   padding: 18px 18px 25px 20px;
    height: calc(100% - 42px);
    overflow: auto;
 }
@@ -404,7 +404,6 @@ a.credits {
 
 .twofer .PT_spots {
    grid-template-columns: 250px 325px;
-   overflow: auto;
 }
 
 .col-threads, .col-relations {
@@ -625,6 +624,19 @@ a.credits {
    letter-spacing: .4px;
 }
 
+#sectional.dark ::-webkit-scrollbar-thumb {
+   background: var(--accent);
+   border: 0;
+}
+
+#sectional.dark .col-about::-webkit-scrollbar {
+   background: rgb(0, 0, 0, 0);
+}
+
+#sectional.dark .col-about::-webkit-scrollbar-track {
+   background: rgb(0, 0, 0, 0);
+}
+
 .twofer.dark .col-about {
    --accent: rgba(var(--accentrgb), .7);
 }
@@ -647,4 +659,8 @@ a.credits {
 .dark .col-relations i {
    opacity: .75;
    color: var(--linkgray)
+}
+
+.dark .sectional_thread, .dark .sectional_rel, .dark .sectional_rel p {
+   border-color: rgb(var(--whitergb), .1);
 }
