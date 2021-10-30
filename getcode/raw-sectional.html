@@ -350,10 +350,32 @@ Blurb about them</p>
 
 
 <script>
-   //Copy code
-   document.querySelector("button").onclick = function () {
-      document.querySelector("textarea").select();
-      document.execCommand('copy');
+
+   // Copy code, multiple textareas and buttons
+
+   window.onload = function () {
+      // Get all the elements that match the selector as arrays
+      var copyTextareaBtn = Array.prototype.slice.call(document.querySelectorAll('button'));
+      var copyTextarea = Array.prototype.slice.call(document.querySelectorAll('textarea'));
+
+      // Loop through the button array and set up event handlers for each element
+      copyTextareaBtn.forEach(function (btn, idx) {
+
+         btn.addEventListener("click", function () {
+
+            // Get the textarea who's index matches the index of the button
+            copyTextarea[idx].select();
+
+            try {
+               var msg = document.execCommand('copy') ? 'successful' : 'unsuccessful';
+               console.log('Code successfully copied');
+            } catch (err) {
+               console.log('Could not be copied');
+            }
+
+         });
+
+      });
    }
 
 </script>
