@@ -1,899 +1,902 @@
 <!DOCTYPE html>
 
 <head>
-   <link href="../css-templates.css" rel="stylesheet">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="../css-templates.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-   <!-- Bootstrap for scroll position detection -->
-   <!-- https://getbootstrap.com/docs/5.0/components/scrollspy/#list-item-4  -->
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <!-- Bootstrap for scroll position detection -->
+    <!-- https://getbootstrap.com/docs/5.0/components/scrollspy/#list-item-4  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-   <!-- Font Awesome -->
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
 
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Varta:wght@400;500;600;700&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varta:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
 
 </head>
 
 <style>
-   :root {
-      --serif: 'Source Serif Pro', serif;
-      --sansserif: 'Varla', sans-serif;
-   }
+    :root {
+        --serif: 'Source Serif Pro', serif;
+        --sansserif: 'Varla', sans-serif;
+    }
+
 </style>
 
 
 <div class="inkstonebox">
-   <div class="inkstone">
+    <div class="inkstone">
 
-      <div id="inkstonemenu">
-         <a class="list-group-item inkstonechar-tab active" href="#inkstonechar-1">Name 1</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-2">Name 2</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-3">Name 3</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-4">Name 4</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-5">Name 5</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-6">Name 6</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-7">Name 7</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-8">Name 8</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-9">Name 9</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-10">Name 10</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-11">Name 11</a>
-         <a class="list-group-item inkstonechar-tab" href="#inkstonechar-12">Name 12</a>
-      </div>
+        <div id="inkstonemenu">
+            <a class="list-group-item inkstonechar-tab active" href="#inkstonechar-1">Name 1</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-2">Name 2</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-3">Name 3</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-4">Name 4</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-5">Name 5</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-6">Name 6</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-7">Name 7</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-8">Name 8</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-9">Name 9</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-10">Name 10</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-11">Name 11</a>
+            <a class="list-group-item inkstonechar-tab" href="#inkstonechar-12">Name 12</a>
+        </div>
 
-      <div class="inkstonetop" data-bs-spy="scroll" data-bs-target="#inkstonemenu" data-bs-offset="0" tabindex="0">
-         <!-- start character area -->
+        <div class="inkstonetop" data-bs-spy="scroll" data-bs-target="#inkstonemenu" data-bs-offset="0" tabindex="0">
+            <!-- start character area -->
 
-         <div id="inkstonechar-1" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/333/fff/">
-                  <div class="inkstone-h1">Character One</div>
-                  <p>
-                     Bacon ipsum dolor amet sed pig pork chop spare ribs beef et, exercitation irure t-bone dolore pork belly. Consequat t-bone do pork. Laboris ball tip aliquip incididunt, rump ut buffalo labore ullamco minim. Veniam esse ribeye eiusmod, strip steak cillum reprehenderit picanha short ribs pork chop ut sirloin.
-                     <br><br>
-                     <!-- Fugiat picanha veniam ullamco brisket irure. Sausage leberkas ipsum, pancetta alcatra nisi minim swine shankle flank. Nulla velit excepteur duis ipsum dolore. Cupidatat commodo ham hock, pancetta leberkas quis ut ipsum pork belly short ribs landjaeger id dolore swine fatback. Picanha irure alcatra meatball. Sint capicola salami, chislic ullamco turkey ut turducken magna. Irure t-bone dolore pork belly. -->
-                  </p>
-                  <div class="stars">
-                     ⭑⭑⭒⭒
-                  </div>
-               </div>
+            <div id="inkstonechar-1" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/333/fff/">
+                        <div class="inkstone-h1">Character One</div>
+                        <p>
+                            Bacon ipsum dolor amet sed pig pork chop spare ribs beef et, exercitation irure t-bone dolore pork belly. Consequat t-bone do pork. Laboris ball tip aliquip incididunt, rump ut buffalo labore ullamco minim. Veniam esse ribeye eiusmod, strip steak cillum reprehenderit picanha short ribs pork chop ut sirloin.
+                            <br><br>
+                            <!-- Fugiat picanha veniam ullamco brisket irure. Sausage leberkas ipsum, pancetta alcatra nisi minim swine shankle flank. Nulla velit excepteur duis ipsum dolore. Cupidatat commodo ham hock, pancetta leberkas quis ut ipsum pork belly short ribs landjaeger id dolore swine fatback. Picanha irure alcatra meatball. Sint capicola salami, chislic ullamco turkey ut turducken magna. Irure t-bone dolore pork belly. -->
+                        </p>
+                        <div class="stars">
+                            ⭑⭑⭒⭒
+                        </div>
+                    </div>
 
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
-         <div id="inkstonechar-2" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads" onclick="scrollHere">
-               <div class="chevron-arrow"> </div>
-            </button>
+            <div id="inkstonechar-2" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads" onclick="scrollHere">
+                    <div class="chevron-arrow"> </div>
+                </button>
 
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/A63C3C/fff/">
-                  <div class="inkstone-h1">Two</div>
-                  <p>
-                     Aliqua turducken sausage id buffalo, duis aute tenderloin proident. Pancetta cow consectetur commodo ex doner. Incididunt mollit frankfurter pork chop, ut shankle spare ribs veniam qui excepteur consectetur beef ribs jerky. Reprehenderit magna shoulder occaecat irure ut kevin bacon pariatur cupim tenderloin quis pork chop ad cow. Bacon biltong leberkas ut consequat. Enim adipisicing veniam magna pancetta, frankfurter doner salami pork belly sint drumstick pig cillum.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/A63C3C/fff/">
+                        <div class="inkstone-h1">Two</div>
+                        <p>
+                            Aliqua turducken sausage id buffalo, duis aute tenderloin proident. Pancetta cow consectetur commodo ex doner. Incididunt mollit frankfurter pork chop, ut shankle spare ribs veniam qui excepteur consectetur beef ribs jerky. Reprehenderit magna shoulder occaecat irure ut kevin bacon pariatur cupim tenderloin quis pork chop ad cow. Bacon biltong leberkas ut consequat. Enim adipisicing veniam magna pancetta, frankfurter doner salami pork belly sint drumstick pig cillum.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
-         <div id="inkstonechar-3" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/A75D3E/fff/">
-                  <div class="inkstone-h1">Three</div>
-                  <p>
-                     Drumstick venison eu in turkey kielbasa. Ham buffalo cow et proident, fatback alcatra ut boudin enim dolore esse. Buffalo eiusmod cupim tri-tip ball tip in ham hock tempor ham. Quis pastrami ex labore. Buffalo cupim labore enim short loin tri-tip consequat qui. Qui landjaeger voluptate sirloin. Tail capicola brisket quis non commodo.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-3" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/A75D3E/fff/">
+                        <div class="inkstone-h1">Three</div>
+                        <p>
+                            Drumstick venison eu in turkey kielbasa. Ham buffalo cow et proident, fatback alcatra ut boudin enim dolore esse. Buffalo eiusmod cupim tri-tip ball tip in ham hock tempor ham. Quis pastrami ex labore. Buffalo cupim labore enim short loin tri-tip consequat qui. Qui landjaeger voluptate sirloin. Tail capicola brisket quis non commodo.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
 
-         <div id="inkstonechar-4" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/A87E40/fff/">
-                  <div class="inkstone-h1">Four</div>
-                  <p>
-                     Sint capicola salami, chislic ullamco turkey ut turducken magna. Beef ribs ham hock chicken, commodo tail swine occaecat tri-tip. Filet mignon ham burgdoggen drumstick meatball shoulder turducken porchetta frankfurter andouille. Exercitation duis leberkas, nulla jowl irure kevin.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-4" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/A87E40/fff/">
+                        <div class="inkstone-h1">Four</div>
+                        <p>
+                            Sint capicola salami, chislic ullamco turkey ut turducken magna. Beef ribs ham hock chicken, commodo tail swine occaecat tri-tip. Filet mignon ham burgdoggen drumstick meatball shoulder turducken porchetta frankfurter andouille. Exercitation duis leberkas, nulla jowl irure kevin.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
 
-         <div id="inkstonechar-5" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/988e36/fff/">
-                  <div class="inkstone-h1">Five</div>
-                  <p>
-                     Bresaola eu occaecat laborum elit ground round pork nulla nostrud deserunt leberkas ball tip in beef. Doner culpa consectetur non beef shoulder, spare ribs pastrami ut leberkas mollit tempor turkey fatback. Meatball eu aute sed enim corned beef duis anim ut ut officia sirloin labore cupidatat occaecat. Officia mollit quis, est incididunt pork chop shoulder.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-5" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/988e36/fff/">
+                        <div class="inkstone-h1">Five</div>
+                        <p>
+                            Bresaola eu occaecat laborum elit ground round pork nulla nostrud deserunt leberkas ball tip in beef. Doner culpa consectetur non beef shoulder, spare ribs pastrami ut leberkas mollit tempor turkey fatback. Meatball eu aute sed enim corned beef duis anim ut ut officia sirloin labore cupidatat occaecat. Officia mollit quis, est incididunt pork chop shoulder.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
 
-         <div id="inkstonechar-6" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/879a38/fff/">
-                  <div class="inkstone-h1">Six</div>
-                  <p>
-                     Duis pork belly labore, id veniam prosciutto brisket doner. Leberkas ut kielbasa picanha, ball tip tri-tip pork loin. Nostrud picanha beef ribs meatball. Fatback ullamco deserunt aliquip, est tri-tip leberkas mollit porchetta non short ribs. Sirloin laborum excepteur kevin aliquip swine ut sunt pariatur porchetta exercitation andouille ad ut officia.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-6" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/879a38/fff/">
+                        <div class="inkstone-h1">Six</div>
+                        <p>
+                            Duis pork belly labore, id veniam prosciutto brisket doner. Leberkas ut kielbasa picanha, ball tip tri-tip pork loin. Nostrud picanha beef ribs meatball. Fatback ullamco deserunt aliquip, est tri-tip leberkas mollit porchetta non short ribs. Sirloin laborum excepteur kevin aliquip swine ut sunt pariatur porchetta exercitation andouille ad ut officia.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
 
 
-         <div id="inkstonechar-7" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/519e3d/fff/">
-                  <div class="inkstone-h1">Seven</div>
-                  <p>
-                     Labore occaecat ad brisket cupidatat et in veniam. T-bone nulla drumstick meatball corned beef, tail ipsum. Ullamco short loin turkey in brisket biltong. Ham incididunt spare ribs, prosciutto swine aliqua ground round veniam elit pancetta aliquip sausage. Venison drumstick do t-bone in ea ut laborum ut beef.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-7" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/519e3d/fff/">
+                        <div class="inkstone-h1">Seven</div>
+                        <p>
+                            Labore occaecat ad brisket cupidatat et in veniam. T-bone nulla drumstick meatball corned beef, tail ipsum. Ullamco short loin turkey in brisket biltong. Ham incididunt spare ribs, prosciutto swine aliqua ground round veniam elit pancetta aliquip sausage. Venison drumstick do t-bone in ea ut laborum ut beef.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
 
-         <div id="inkstonechar-8" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/42a368/fff/">
-                  <div class="inkstone-h1">Eight</div>
-                  <p>
-                     Pig irure laborum jerky, occaecat ullamco t-bone sausage. Ex fatback ball tip, rump pariatur magna brisket mollit id shoulder cillum exercitation picanha do tri-tip. Dolor nostrud ball tip leberkas ipsum consequat. Drumstick alcatra fatback culpa pork loin frankfurter ut, sed pig tail irure beef pancetta. Aliqua enim turkey, id excepteur culpa reprehenderit brisket elit exercitation pastrami ut labore. Aute filet mignon ground round, do drumstick cupidatat consequat pastrami ullamco chuck.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-8" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/42a368/fff/">
+                        <div class="inkstone-h1">Eight</div>
+                        <p>
+                            Pig irure laborum jerky, occaecat ullamco t-bone sausage. Ex fatback ball tip, rump pariatur magna brisket mollit id shoulder cillum exercitation picanha do tri-tip. Dolor nostrud ball tip leberkas ipsum consequat. Drumstick alcatra fatback culpa pork loin frankfurter ut, sed pig tail irure beef pancetta. Aliqua enim turkey, id excepteur culpa reprehenderit brisket elit exercitation pastrami ut labore. Aute filet mignon ground round, do drumstick cupidatat consequat pastrami ullamco chuck.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
 
-         <div id="inkstonechar-9" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/48a7a6/fff/">
-                  <div class="inkstone-h1">Nine</div>
-                  <p>
-                     Consectetur in elit turkey burgdoggen brisket. Lorem fugiat adipisicing, prosciutto in filet mignon frankfurter hamburger minim strip steak. Ham pork belly corned beef picanha andouille ullamco. Minim excepteur cow adipisicing, corned beef dolore chicken leberkas fugiat turducken doner frankfurter magna nostrud turkey. Tenderloin ex burgdoggen, aliqua spare ribs picanha adipisicing kevin cupidatat. Andouille pariatur buffalo ad. Pastrami andouille ex, doner veniam leberkas non labore lorem chuck.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-9" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/48a7a6/fff/">
+                        <div class="inkstone-h1">Nine</div>
+                        <p>
+                            Consectetur in elit turkey burgdoggen brisket. Lorem fugiat adipisicing, prosciutto in filet mignon frankfurter hamburger minim strip steak. Ham pork belly corned beef picanha andouille ullamco. Minim excepteur cow adipisicing, corned beef dolore chicken leberkas fugiat turducken doner frankfurter magna nostrud turkey. Tenderloin ex burgdoggen, aliqua spare ribs picanha adipisicing kevin cupidatat. Andouille pariatur buffalo ad. Pastrami andouille ex, doner veniam leberkas non labore lorem chuck.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
 
-         <div id="inkstonechar-10" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/4d74ab/fff/">
-                  <div class="inkstone-h1">Ten</div>
-                  <p>
-                     Tenderloin ex burgdoggen, aliqua spare ribs picanha adipisicing kevin cupidatat. Andouille pariatur buffalo ad. Pastrami andouille ex, doner veniam leberkas non labore lorem chuck.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-10" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/4d74ab/fff/">
+                        <div class="inkstone-h1">Ten</div>
+                        <p>
+                            Tenderloin ex burgdoggen, aliqua spare ribs picanha adipisicing kevin cupidatat. Andouille pariatur buffalo ad. Pastrami andouille ex, doner veniam leberkas non labore lorem chuck.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
 
-         <div id="inkstonechar-11" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/6553b0/fff/">
-                  <div class="inkstone-h1">Eleven</div>
-                  <p>
-                     Drumstick venison eu in turkey kielbasa. Ham buffalo cow et proident, fatback alcatra ut boudin enim dolore esse. Buffalo eiusmod cupim tri-tip ball tip in ham hock tempor ham. Quis pastrami ex labore. Buffalo cupim labore enim short loin tri-tip consequat qui. Qui landjaeger voluptate sirloin. Tail capicola brisket quis non commodo.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-11" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/6553b0/fff/">
+                        <div class="inkstone-h1">Eleven</div>
+                        <p>
+                            Drumstick venison eu in turkey kielbasa. Ham buffalo cow et proident, fatback alcatra ut boudin enim dolore esse. Buffalo eiusmod cupim tri-tip ball tip in ham hock tempor ham. Quis pastrami ex labore. Buffalo cupim labore enim short loin tri-tip consequat qui. Qui landjaeger voluptate sirloin. Tail capicola brisket quis non commodo.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
 
-         <div id="inkstonechar-12" class="inkpageouter">
-            <button class="inkpagetoggle" title="Toggle threads">
-               <div class="chevron-arrow"> </div>
-            </button>
-            <div class="inkpageinner">
-               <div class="inkpage-left">
-                  <img src="https://via.placeholder.com/100/a159b4/fff/">
-                  <div class="inkstone-h1">Twelve</div>
-                  <p>
-                     Consequat t-bone do pork. Laboris ball tip aliquip incididunt, rump ut buffalo labore ullamco minim. Veniam esse ribeye eiusmod, strip steak cillum reprehenderit picanha short ribs pork chop ut sirloin.
-                  </p>
-                  <div class="stars">
-                     <i class="fas fa-star filled"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                     <i class="far fa-star"></i>
-                  </div>
-               </div>
-               <div class="inkpage-right">
-                  <div class="inkstone-h3">Threads</div>
+            <div id="inkstonechar-12" class="inkpageouter">
+                <button class="inkpagetoggle" title="Toggle threads">
+                    <div class="chevron-arrow"> </div>
+                </button>
+                <div class="inkpageinner">
+                    <div class="inkpage-left">
+                        <img src="https://via.placeholder.com/100/a159b4/fff/">
+                        <div class="inkstone-h1">Twelve</div>
+                        <p>
+                            Consequat t-bone do pork. Laboris ball tip aliquip incididunt, rump ut buffalo labore ullamco minim. Veniam esse ribeye eiusmod, strip steak cillum reprehenderit picanha short ribs pork chop ut sirloin.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="inkpage-right">
+                        <div class="inkstone-h3">Threads</div>
 
-                  <div class="threadscroll">
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                        <div class="threadscroll">
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                     <div class="thread">
-                        <a href="#">Thread title</a>
-                        <span class="thread-desc">a description here</span>
-                     </div>
+                            <div class="thread">
+                                <a href="#">Thread title</a>
+                                <span class="thread-desc">a description here</span>
+                            </div>
 
-                  </div>
-               </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
 
-         <!-- end character area -->
-      </div>
-      <div class="inkstone-liner"> </div>
-   </div>
-   <a href="http://pixel-perfect.boards.net/user/2465" class="credits">made by gimmick</a>
+            <!-- end character area -->
+        </div>
+        <div class="inkstone-liner"> </div>
+    </div>
+    <a href="http://pixel-perfect.boards.net/user/2465" class="credits">made by gimmick</a>
 
 </div>
 
 
 
 <style>
-   .inkstonebox {
-      width: min-content;
-      margin: 30px auto;
-      background: transparent;
-      --serif: 'Source Serif Pro', serif;
-      --sansserif: 'Varla', sans-serif;
-   }
+    .inkstonebox {
+        width: min-content;
+        margin: 30px auto;
+        background: transparent;
+        --serif: 'Source Serif Pro', serif;
+        --sansserif: 'Varla', sans-serif;
+    }
 
-   a.credits {
-      display: block;
-      text-align: right;
-      margin-top: 4px;
-      margin-right: 20px;
-      font: 700 7px/10px sans-serif;
-      letter-spacing: .8px;
-      text-decoration: none;
-      text-transform: uppercase;
-   }
+    a.credits {
+        display: block;
+        text-align: right;
+        margin-top: 4px;
+        margin-right: 20px;
+        font: 700 7px/10px sans-serif;
+        letter-spacing: .8px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
 
-   .inkstone {
-      height: auto;
-      display: grid;
-      grid-template-columns: 120px 320px 20px;
-      grid-template-areas: 'inkstonemenu body border';
-   }
+    .inkstone {
+        height: auto;
+        display: grid;
+        grid-template-columns: 120px 320px 20px;
+        grid-template-areas: 'inkstonemenu body border';
+    }
 
-   #inkstonemenu {
-      background: #222;
-      grid-area: inkstonemenu;
-      margin: 20px 0;
-      padding: 16px 16px 16px 0px;
-      height: 450px;
-      overflow: auto;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      text-align: right;
-      align-items: flex-end;
-   }
+    #inkstonemenu {
+        background: #222;
+        grid-area: inkstonemenu;
+        margin: 20px 0;
+        padding: 16px 16px 16px 0px;
+        height: 450px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        text-align: right;
+        align-items: flex-end;
+    }
 
-   a.inkstonechar-tab {
-      margin: 8px 0;
-      color: rgba(255, 255, 255, .6);
-      font: 500 12px/16px var(--serif);
-      letter-spacing: .75px;
-      text-decoration: none;
-      transition: all 100ms ease;
-      -webkit-transition: all 100ms ease;
-      -moz-transition: all 100ms ease;
-      -o-transition: all 100ms ease;
-      z-index: 20;
-   }
+    a.inkstonechar-tab {
+        margin: 8px 0;
+        color: rgba(255, 255, 255, .6);
+        font: 500 12px/16px var(--serif);
+        letter-spacing: .75px;
+        text-decoration: none;
+        transition: all 100ms ease;
+        -webkit-transition: all 100ms ease;
+        -moz-transition: all 100ms ease;
+        -o-transition: all 100ms ease;
+        z-index: 20;
+    }
 
-   a.inkstonechar-tab.active {
-      color: rgba(255, 255, 255, .9);
-      font-weight: 600;
-      padding-right: 8px;
-      letter-spacing: 1px;
-   }
+    a.inkstonechar-tab.active {
+        color: rgba(255, 255, 255, .9);
+        font-weight: 600;
+        padding-right: 8px;
+        letter-spacing: 1px;
+    }
 
-   .inkstonetop {
-      grid-area: body;
-      height: 520px;
-      overflow: auto;
-      display: grid;
-      grid-row-gap: 0;
-      position: relative;
-      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .25);
-      background: #fff;
-      z-index: 0;
-      overflow-x: hidden;
-   }
+    .inkstonetop {
+        grid-area: body;
+        height: 520px;
+        overflow: auto;
+        display: grid;
+        grid-row-gap: 0;
+        position: relative;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .25);
+        background: #fff;
+        z-index: 0;
+        overflow-x: hidden;
+    }
 
-   .inkstone-liner {
-      grid-area: border;
-      background: #222;
-      margin: 20px 0;
-      position: relative;
-   }
+    .inkstone-liner {
+        grid-area: border;
+        background: #222;
+        margin: 20px 0;
+        position: relative;
+    }
 
-   .inkpageinner {
-      width: 610px;
-      height: 451px;
-      margin: 0;
-      padding: 40px 0 30px 30px;
-      position: relative;
-      z-index: 0;
-      display: flex;
-      transition: all 300ms ease-out;
-      -webkit-transition: all 300ms ease-out;
-      -moz-transition: all 300ms ease-out;
-      -o-transition: all 300ms ease-out;
-      font: 12px/18px var(--sansserif);
-      color: #333;
-   }
+    .inkpageinner {
+        width: 610px;
+        height: 451px;
+        margin: 0;
+        padding: 40px 0 30px 30px;
+        position: relative;
+        z-index: 0;
+        display: flex;
+        transition: all 300ms ease-out;
+        -webkit-transition: all 300ms ease-out;
+        -moz-transition: all 300ms ease-out;
+        -o-transition: all 300ms ease-out;
+        font: 12px/18px var(--sansserif);
+        color: #333;
+    }
 
-   .inkpageouter {
-      position: relative;
-      z-index: 0;
-   }
+    .inkpageouter {
+        position: relative;
+        z-index: 0;
+    }
 
-   .inkpageouter::before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -10;
-      position: absolute;
-      background: url(https://cdn.discordapp.com/attachments/683720444796338317/876529579425169438/unknown.png);
-      background-size: contain;
-      filter: contrast(.7) brightness(1.2);
-      mix-blend-mode: soft-light;
-      opacity: .75;
-   }
+    .inkpageouter::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        position: absolute;
+        background: url(https://cdn.discordapp.com/attachments/683720444796338317/876529579425169438/unknown.png);
+        background-size: contain;
+        filter: contrast(.7) brightness(1.2);
+        mix-blend-mode: soft-light;
+        opacity: .75;
+    }
 
-   .inkpage-left {
-      width: 260px;
-      margin-right: 30px;
-      display: inline-grid;
-      grid-template-rows: auto auto 1fr 24px;
-      grid-template-rows: auto auto 1fr;
-      justify-content: space-around;
-      /* height: 460px; only if using stars */
-   }
+    .inkpage-left {
+        width: 260px;
+        margin-right: 30px;
+        display: inline-grid;
+        grid-template-rows: auto auto 1fr 24px;
+        grid-template-rows: auto auto 1fr;
+        justify-content: space-around;
+        /* height: 460px; only if using stars */
+    }
 
-   .inkpage-right {
-      width: 260px;
-      margin-left: 30px;
-      padding-top: 2px;
-      display: inline-grid;
-      grid-template-rows: auto 1fr;
-      align-items: flex-start;
-   }
+    .inkpage-right {
+        width: 260px;
+        margin-left: 30px;
+        padding-top: 2px;
+        display: inline-grid;
+        grid-template-rows: auto 1fr;
+        align-items: flex-start;
+    }
 
-   .inkpagetoggle {
-      position: absolute;
-      top: 40px;
-      left: 264px;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 100%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-      transition: all 300ms ease;
-      -webkit-transition: all 300ms ease;
-      -moz-transition: all 300ms ease;
-      -o-transition: all 300ms ease;
-      cursor: pointer;
-   }
+    .inkpagetoggle {
+        position: absolute;
+        top: 40px;
+        left: 264px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        transition: all 300ms ease;
+        -webkit-transition: all 300ms ease;
+        -moz-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        cursor: pointer;
+    }
 
-   .inkpagetoggle:hover {
-      box-shadow: 0 0 4px 0px rgba(0, 0, 0, .25);
-   }
+    .inkpagetoggle:hover {
+        box-shadow: 0 0 4px 0px rgba(0, 0, 0, .25);
+    }
 
-   .chevron-arrow {
-      display: block;
-      border-right: 2px solid rgba(0, 0, 0, .5);
-      border-bottom: 2px solid rgba(0, 0, 0, .5);
-      width: 8px;
-      height: 8px;
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      margin-left: -2px;
-   }
+    .chevron-arrow {
+        display: block;
+        border-right: 2px solid rgba(0, 0, 0, .5);
+        border-bottom: 2px solid rgba(0, 0, 0, .5);
+        width: 8px;
+        height: 8px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        margin-left: -2px;
+    }
 
-   .activeinkpage .inkpagetoggle {
-      transform: scale(-100%);
-      -webkit-transform: scale(-100%);
-      -moz-transform: scale(-100%);
-      -o-transform: scale(-100%);
-   }
+    .activeinkpage .inkpagetoggle {
+        transform: scale(-100%);
+        -webkit-transform: scale(-100%);
+        -moz-transform: scale(-100%);
+        -o-transform: scale(-100%);
+    }
 
-   .activeinkpage .inkpageinner {
-      transform: translateX(-320px);
-      -webkit-transform: translateX(-320px);
-      -moz-transform: translateX(-320px);
-      -o-transform: translateX(-320px);
-   }
+    .activeinkpage .inkpageinner {
+        transform: translateX(-320px);
+        -webkit-transform: translateX(-320px);
+        -moz-transform: translateX(-320px);
+        -o-transform: translateX(-320px);
+    }
 
-   .inkpageouter::after {
-      content: '';
-      display: block;
-      position: absolute;
-      background: #ccc;
-      height: 1px;
-      width: 260px;
-      bottom: 0;
-      left: 30px;
-   }
+    .inkpageouter::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: #ccc;
+        height: 1px;
+        width: 260px;
+        bottom: 0;
+        left: 30px;
+    }
 
-   #inkstonemenu::after,
-   .inkstone-liner::after {
-      content: '';
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 5;
-      position: absolute;
-      background: url(https://cdn.discordapp.com/attachments/683720444796338317/876529579425169438/unknown.png) center center / cover;
-      opacity: .95;
-      mix-blend-mode: color-burn;
-   }
+    #inkstonemenu::after,
+    .inkstone-liner::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        position: absolute;
+        background: url(https://cdn.discordapp.com/attachments/683720444796338317/876529579425169438/unknown.png) center center / cover;
+        opacity: .95;
+        mix-blend-mode: color-burn;
+    }
 
-   .stars {
-      position: relative;
-      display: flex;
-      flex-direction: row-reverse;
-      margin-right: -4px;
-      display: none;
-   }
+    .stars {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-right: -4px;
+        display: none;
+    }
 
-   .stars i {
-      font-size: 24px;
-      opacity: .15;
-   }
+    .stars i {
+        font-size: 24px;
+        opacity: .15;
+    }
 
-   .stars i.filled {
-      opacity: .5;
-   }
+    .stars i.filled {
+        opacity: .5;
+    }
 
-   .inkpageinner img {
-      width: 100px;
-      height: 100px;
-      border: 4px solid transparent;
-      box-shadow: 0 0 0 1px #ccc;
-   }
+    .inkpageinner img {
+        width: 100px;
+        height: 100px;
+        border: 4px solid transparent;
+        box-shadow: 0 0 0 1px #ccc;
+    }
 
-   .inkstone-h1 {
-      height: max-content;
-      font: normal 28px/30px var(--serif);
-      margin: 16px 0 8px 0;
-      color: #000;
-   }
+    .inkstone-h1 {
+        height: max-content;
+        font: normal 28px/30px var(--serif);
+        margin: 16px 0 8px 0;
+        color: #000;
+    }
 
-   .inkstone p {
-      margin: 0;
-      padding-right: 20px;
-      overflow: auto;
-      height: calc(100% + 10px);
-   }
+    .inkstone p {
+        margin: 0;
+        padding-right: 20px;
+        overflow: auto;
+        height: calc(100% + 10px);
+    }
 
-   .threadscroll {
-      height: 100%;
-      overflow: auto;
-      padding-right: 15px;
-   }
+    .threadscroll {
+        height: 100%;
+        overflow: auto;
+        padding-right: 15px;
+    }
 
-   .inkstone-h3 {
-      margin-bottom: 16px;
-      font: 400 24px/30px var(--serif);
-      opacity: .3;
-      margin-right: 40px;
-      text-align: right;
-      margin-bottom: 12px;
-   }
+    .inkstone-h3 {
+        margin-bottom: 16px;
+        font: 400 24px/30px var(--serif);
+        opacity: .3;
+        margin-right: 40px;
+        text-align: right;
+        margin-bottom: 12px;
+    }
 
-   .thread {
-      margin: 0 0 8px;
-   }
+    .thread {
+        margin: 0 0 8px;
+    }
 
-   .thread a {
-      font-size: 14px;
-      font-family: var(--serif);
-      font-weight: 600;
-      text-decoration: none;
-      color: #000;
-      transition: all 300ms ease;
-      -webkit-transition: all 300ms ease;
-      -moz-transition: all 300ms ease;
-      -o-transition: all 300ms ease;
-   }
+    .thread a {
+        font-size: 14px;
+        font-family: var(--serif);
+        font-weight: 600;
+        text-decoration: none;
+        color: #000;
+        transition: all 300ms ease;
+        -webkit-transition: all 300ms ease;
+        -moz-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+    }
 
-   .thread a:hover {
-      text-decoration: none;
-      opacity: .5;
-   }
+    .thread a:hover {
+        text-decoration: none;
+        opacity: .5;
+    }
 
-   .thread span::before {
-      content: ' – ';
-   }
+    .thread span::before {
+        content: ' – ';
+    }
 
-   .inkpageinner br+br {
-      content: '';
-      display: block;
-      height: 10px;
-   }
+    .inkpageinner br+br {
+        content: '';
+        display: block;
+        height: 10px;
+    }
 
-   .inkstonetop::-webkit-scrollbar,
-   #inkstonemenu::-webkit-scrollbar {
-      width: 0px !important;
-   }
+    .inkstonetop::-webkit-scrollbar,
+    #inkstonemenu::-webkit-scrollbar {
+        width: 0px !important;
+    }
 
-   .inkstone p::-webkit-scrollbar,
-   .threadscroll::-webkit-scrollbar {
-      background: transparent !important;
-      width: 2px !important;
-   }
+    .inkstone p::-webkit-scrollbar,
+    .threadscroll::-webkit-scrollbar {
+        background: transparent !important;
+        width: 2px !important;
+    }
 
-   .inkstone p::-webkit-scrollbar-track,
-   .threadscroll::-webkit-scrollbar-track {
-      background: transparent !important;
-      border: 0;
-   }
+    .inkstone p::-webkit-scrollbar-track,
+    .threadscroll::-webkit-scrollbar-track {
+        background: transparent !important;
+        border: 0;
+    }
 
-   .inkstone p::-webkit-scrollbar-thumb,
-   .threadscroll::-webkit-scrollbar-thumb {
-      background: #333 !important;
-      border: 0;
-   }
+    .inkstone p::-webkit-scrollbar-thumb,
+    .threadscroll::-webkit-scrollbar-thumb {
+        background: #333 !important;
+        border: 0;
+    }
+
 </style>
 
 
 
 
 <script>
-   // Smooth scroll to position via nav bar
-   // See https://webdesign.tutsplus.com/tutorials/smooth-scrolling-vanilla-javascript--cms-35165
+    // Smooth scroll to position via nav bar
+    // See https://webdesign.tutsplus.com/tutorials/smooth-scrolling-vanilla-javascript--cms-35165
 
-   const links = document.querySelectorAll(".inkstone #inkstonemenu a");
+    const links = document.querySelectorAll(".inkstone #inkstonemenu a");
 
-   for (const link of links) {
-      link.addEventListener("click", clickHandler);
-   }
+    for (const link of links) {
+        link.addEventListener("click", clickHandler);
+    }
 
-   function clickHandler(e) {
-      e.preventDefault();
-      const href = this.getAttribute("href");
+    function clickHandler(e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
 
-      document.querySelector(href).scrollIntoView({
-         behavior: "smooth",
-         block: "end"
-      });
-   }
+        document.querySelector(href).scrollIntoView({
+            behavior: "smooth",
+            block: "end"
+        });
+    }
 
 
-   // Toggle one page at a time and scroll to active page
-   // https://stackoverflow.com/questions/28969592/scroll-to-element-inside-scrollable-div
+    // Toggle one page at a time and scroll to active page
+    // https://stackoverflow.com/questions/28969592/scroll-to-element-inside-scrollable-div
 
-   $("button.inkpagetoggle").on('click', function () {
-      var activePage = $(this).parent() // selects target page
-      var overflowBox = activePage.parent() // selects the scrolling container
+    $("button.inkpagetoggle").on('click', function() {
+        var activePage = $(this).parent() // selects target page
+        var overflowBox = activePage.parent() // selects the scrolling container
 
-      var scrollCurrent = overflowBox.scrollTop(); //find current scroll position
-      var scrollPos = overflowBox.scrollTop() + activePage.position().top //distance to top of target page from top of scrolling container  
-      var scrollPosCenter = overflowBox.scrollTop() + activePage.position().top - overflowBox.height() / 2 + activePage.height() / 2      //distance to center of target page from top of scrolling container
+        var scrollCurrent = overflowBox.scrollTop(); //find current scroll position
+        var scrollPos = overflowBox.scrollTop() + activePage.position().top //distance to top of target page from top of scrolling container  
+        var scrollPosCenter = overflowBox.scrollTop() + activePage.position().top - overflowBox.height() / 2 + activePage.height() / 2 //distance to center of target page from top of scrolling container
 
-      // find distance between current scroll position and target page
-      var distance = Math.abs(scrollCurrent - scrollPos)
+        // find distance between current scroll position and target page
+        var distance = Math.abs(scrollCurrent - scrollPos)
 
-      // Toggle class
-      // If target too far out of view, scroll to it before toggling page
-      if (distance <= 10) {
-         activePage.toggleClass('activeinkpage').siblings().removeClass('activeinkpage');
-      }
-      else {
-         // animates scroll to target's position
-         overflowBox.animate({
-            scrollTop: scrollPos
-         }, 300).promise().done(setTimeout(function () {
+        // Toggle class
+        // If target too far out of view, scroll to it before toggling page
+        if (distance <= 10) {
             activePage.toggleClass('activeinkpage').siblings().removeClass('activeinkpage');
-         }, 500)); //500ms delay after scroll
-      }
-   })
+        } else {
+            // animates scroll to target's position
+            overflowBox.animate({
+                scrollTop: scrollPos
+            }, 300).promise().done(setTimeout(function() {
+                activePage.toggleClass('activeinkpage').siblings().removeClass('activeinkpage');
+            }, 500)); //500ms delay after scroll
+        }
+    })
+
 </script>
