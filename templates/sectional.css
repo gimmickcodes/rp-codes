@@ -643,6 +643,11 @@ a.credits {
    background: rgb(0, 0, 0, 0);
 }
 
+.dark.single:hover .sectional_icon img, .dark.twofer:hover .sectional_icon img, .dark .PT_spots:hover .sectional_icon img {
+   opacity: 1;
+   filter: grayscale(0) brightness(.9);
+}
+
 .twofer.dark .col-about {
    --accent: rgba(var(--accentrgb), .7);
 }
