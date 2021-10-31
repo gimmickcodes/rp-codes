@@ -8,7 +8,7 @@
    --bordergray: #ccc;
    --linkgray: #999;
    --textmain: #222;
-   --textinverse: #dedede;
+   --textinverse: #d5d5d5;
    text-align: right;
 }
 
@@ -613,7 +613,7 @@ a.credits {
    --bordergray: #050505;
    --linkgray: #666;
    --textmain: #909090;
-   --textinverse: #c5c5c5;
+   --textinverse: #d6d6d6;
 }
 
 .dark .sectional_nav {
