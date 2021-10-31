@@ -442,7 +442,7 @@ a.credits {
 }
 
 .sectional_thread a {
-   font: bold 20px/1.4em 'PT Serif', serif;
+   font: bold 18px/1.4em 'PT Serif', serif;
    display: flex;
    align-items: center;
    color: var(--linkgray);
