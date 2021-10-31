@@ -77,7 +77,7 @@ a.credits {
 
 .col-about, .col-plots {
    padding: 18px 18px 25px 20px;
-   height: calc(100% - 42px);
+   height: calc(100% - 43px);
    overflow: auto;
 }
 
