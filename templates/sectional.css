@@ -45,6 +45,7 @@ a.credits {
    text-transform: uppercase;
    letter-spacing: 1.5px;
    transition: .25s ease-in-out;
+   display: inline-block;
 }
 
 .PTab:hover {
@@ -473,9 +474,6 @@ a.credits {
    font: bold 18px/27px 'PT Serif', serif;
    color: var(--accent);
    display: block;
-   /* display: flex;
-   justify-content: space-between;
-   width: calc(100% + 140px); */
 }
 
 .sectional_thread a:after, .sectional_thread a:before {
@@ -556,13 +554,16 @@ a.credits {
       flex-grow: 2;
       padding: 0;
    }
+   .sectional_nav, .sectional_name {
+      border-bottom: 1px solid var(--black);
+   }
+   .sectional_stats>div:last-child, .twofer .sectional_nav>div:last-child {
+      border-bottom: 1px solid rgba(var(--whitergb), .2);
+   }
    .PT_spots, .single .sectionalinside {
       height: auto;
       grid-template-columns: 1fr !important;
       grid-template-rows: 1fr auto auto;
-   }
-   .col-about, .col-plots {
-      max-height: 200px;
    }
    .largepic .col-meta {
       max-height: 135px;
@@ -594,16 +595,21 @@ a.credits {
       grid-template-columns: 1fr !important;
       grid-template-rows: 1fr auto;
    }
-   .twofer .col-about, .twofer .col-plots {
-      max-height: 200px;
-   }
    .col-threads, .col-relations {
       height: 400px;
    }
    .sectional_rel {
       padding-right: 20px;
    }
+   .sectional_rel p {
+      padding-right: 20px;
+   }
+   .sectional_rel i {
+      margin-left: 20px;
+   }
 }
+
+/* DARK MDOE */
 
 #sectional.dark {
    --bgcolor: #1c1c1c;
@@ -663,4 +669,10 @@ a.credits {
 
 .dark .sectional_thread, .dark .sectional_rel, .dark .sectional_rel p {
    border-color: rgb(var(--whitergb), .1);
+}
+
+@media only screen and (max-width: 500px) {
+   .dark .sectional_nav {
+      border-color: rgb(var(--whitergb), .1);
+   }
 }
