@@ -1,31 +1,46 @@
  html {
-        background: lightgray;
-    }
+     background: lightgray;
+ }
 
-    ::-webkit-scrollbar {
-        -webkit-appearance: none;
-        width: 10px !important;
-        height: 10px;
-        border: 0 !important;
-        background: #e2e2e2;
-    }
+ ::-webkit-scrollbar {
+     -webkit-appearance: none;
+     width: 10px !important;
+     height: 10px;
+     border: 0 !important;
+     background: #e2e2e2;
+ }
 
-    ::-webkit-scrollbar-thumb {
-        background: darkgray;
-        border-left: 2px solid white;
-    }
+ ::-webkit-scrollbar-thumb {
+     background: darkgray;
+     border-left: 2px solid white;
+ }
 
-    ::-webkit-scrollbar-track {
-        background: #e2e2e2;
-        border-left: 2px solid white
-    }
+ ::-webkit-scrollbar-track {
+     background: #e2e2e2;
+     border-left: 2px solid white
+ }
 
-    ::-webkit-scrollbar-thumb:horizontal {
-        border-top: 2px solid white;
-        border-left: 0;
-    }
+ ::-webkit-scrollbar-thumb:horizontal {
+     border-top: 2px solid white;
+     border-left: 0;
+ }
 
-    ::-webkit-scrollbar-track:horizontal {
-        border-top: 2px solid white;
-        border-left: 0;
-    }
+ ::-webkit-scrollbar-track:horizontal {
+     border-top: 2px solid white;
+     border-left: 0;
+ }
+
+ .canvaslabel {
+     text-align: center;
+     font: bold 12px arial;
+     margin: 50px auto 30px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+ }
+
+ .canvasrow {
+     display: flex;
+     align-items: flex-start;
+     padding-right: 200px !important;
+     width: min-content
+ }

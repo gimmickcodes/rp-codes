@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
-
-
-
 html {
     height: 100vh;
 }
@@ -19,12 +16,7 @@ body {
     grid-column-gap: 10px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
@@ -52,7 +44,7 @@ h5 {
     font: 15px 'DM Mono', sans-serif;
 }
 
-.info_col > div {
+.info_col>div {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -88,7 +80,7 @@ button, button:hover {
 }
 
 button:hover {
-  cursor: pointer;
+    cursor: pointer;
     color: #000;
     border-color: #000
 }
@@ -114,38 +106,30 @@ iframe {
     body {
         grid-template-columns: 1fr;
         grid-template-rows: 75% auto;
-        grid-template-areas:
-            "demo"
-            "info";
+        grid-template-areas: "demo" "info";
         grid-column-gap: 0;
         border-width: 10px;
     }
-
     .info_col {
         max-width: 100%;
         margin: 0;
         margin-bottom: 10px;
     }
-
-    .info_col > div {
+    .info_col>div {
         border: 0;
         align-content: center;
         width: 75%;
         margin: auto;
         padding: 10px 0 20px;
     }
-
     h1 {
         margin: 0 0 5px;
         font-size: 16px;
     }
-
     textarea {
         height: 100px;
     }
-
     iframe {
         height: 100%;
     }
-
 }
