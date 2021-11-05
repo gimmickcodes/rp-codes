@@ -28,32 +28,40 @@
       width: 100px;
       text-align: left;
    }
+
+
+   @media only screen and (max-width: 480px) {
+      .canvaslabel {
+         margin: 50px auto 30px;
+         text-align: center;
+         width: auto;
+      }
+   }
 </style>
 
 
 <div class="canvasrow">
-   <!-- Top banner with image -->
+   <!-- Vertical image -->
    <div class="canvaslabel">Vertical image</div>
 
-   <div class="creditwrap" style="--tallimg: url(https://media.discordapp.net/attachments/683720444796338317/762697629066592276/200x300-custom-02.jpg);">
-      <div class="outer-wrapper vertimg">
-         <div class="inner-wrapper">
-            <div class="col-image imgbg">
-               <div class="imgbox"> </div>
+   <div class="prismatic" style="--tallimg: url(https://media.discordapp.net/attachments/683720444796338317/762697629066592276/200x300-custom-02.jpg);">
+      <div class="prismatic-border prism-vertimg">
+         <div class="prismatic-inner">
+            <div class="prismcol-img prism-imgbg">
+               <div class="prism-imgbox"> </div>
             </div>
 
-            <div class="col-body">
-               <div class="textbox">
+            <div class="prismcol-body">
+               <div class="prism-textbox">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                   <br><br>
                   <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                   <br><br>
                   Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
                </div>
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note spanning multiple lines</div>
-
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note long enough to go multiple lines</div>
+                  <div class="prism-tags"><a href=#>tagged</a><a href=#>tagged</a><a href=#>tagged</a><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -67,26 +75,25 @@
    <!-- Big quote -->
    <div class="canvaslabel">QUOTE</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper">
-         <div class="inner-wrapper">
-            <div class="col-quote">
-               <div class="h2"> I am flame and I am fire, I am destruction decay and desire
+   <div class="prismatic">
+      <div class="prismatic-border">
+         <div class="prismatic-inner">
+            <div class="prismcol-quote">
+               <div class="prismh2"> I am flame and I am fire, I am destruction decay and desire
                </div>
             </div>
 
-            <div class="col-body">
-               <div class="textbox">
+            <div class="prismcol-body">
+               <div class="prism-textbox">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                   <br><br>
                   <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                   <br><br>
                   Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
                </div>
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note spanning multiple lines</div>
-
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note long enough to go multiple lines</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -100,25 +107,25 @@
    <!-- Top banner with image -->
    <div class="canvaslabel">Top Banner w. optional icon</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper onecol">
-         <div class="inner-wrapper">
-            <div class="onecol-header imgbg">
-               Feels like I'm all on my own tonight <br>
-               and I find myself in pieces
+   <div class="prismatic">
+      <div class="prismatic-border prism-one">
+         <div class="prismatic-inner">
+            <div class="prism-oneheader prism-imgbg">
+               <span>Feels like I'm all on my own tonight <br>
+                  and I find myself in pieces</span>
             </div>
 
-            <div class="onecol-body">
-               <img src="https://cdn.discordapp.com/attachments/683720444796338317/896532812763648010/200x300-custom-04-zoom.jpg">
+            <div class="prism-onebody">
+               <img src="https://i.ibb.co/gmkq7VX/3.png">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                <br><br>
                <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                <br><br>
                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
 
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note</div>
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -129,27 +136,27 @@
 
 
 
-   <!-- Top banner with image -->
+   <!-- Top banner without image -->
    <div class="canvaslabel">Top Banner, no icon</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper onecol">
-         <div class="inner-wrapper">
-            <div class="onecol-header imgbg">
-               Feels like I'm all on my own tonight <br>
-               and I find myself in pieces
+   <div class="prismatic">
+      <div class="prismatic-border prism-one">
+         <div class="prismatic-inner">
+            <div class="prism-oneheader prism-imgbg">
+               <span>Feels like I'm all on my own tonight <br>
+                  and I find myself in pieces</span>
             </div>
 
-            <div class="onecol-body">
+            <div class="prism-onebody">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                <br><br>
                <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                <br><br>
                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
 
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note</div>
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -162,20 +169,20 @@
    <!-- Minimal with image-->
    <div class="canvaslabel">Minimal w. optional icon</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper onecol bare">
-         <div class="inner-wrapper">
-            <div class="onecol-body">
-               <img src="https://cdn.discordapp.com/attachments/683720444796338317/896532812763648010/200x300-custom-04-zoom.jpg">
+   <div class="prismatic">
+      <div class="prismatic-border prism-one">
+         <div class="prismatic-inner">
+            <div class="prism-onebody">
+               <img src="https://i.ibb.co/gmkq7VX/3.png">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                <br><br>
                <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                <br><br>
                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
 
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note</div>
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -190,19 +197,19 @@
    <!-- Minimal -->
    <div class="canvaslabel">Minimal</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper onecol bare">
-         <div class="inner-wrapper">
-            <div class="onecol-body">
+   <div class="prismatic">
+      <div class="prismatic-border prism-one">
+         <div class="prismatic-inner">
+            <div class="prism-onebody">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                <br><br>
                <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                <br><br>
                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
 
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note</div>
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -227,28 +234,27 @@
 
 
 
-   <!-- Top banner with image -->
+   <!-- Vertical image -->
    <div class="canvaslabel">Vertical image</div>
 
-   <div class="creditwrap" style="--tallimg: url(../assets/200x600-custom-02.jpg); --accent1: rgb(124 84 208)">
-      <div class="outer-wrapper vertimg">
-         <div class="inner-wrapper">
-            <div class="col-image imgbg">
-               <div class="imgbox"> </div>
+   <div class="prismatic" style="--tallimg: url(../assets/200x600-custom-02.jpg);">
+      <div class="prismatic-border prism-vertimg">
+         <div class="prismatic-inner">
+            <div class="prismcol-img prism-imgbg">
+               <div class="prism-imgbox"> </div>
             </div>
 
-            <div class="col-body">
-               <div class="textbox">
+            <div class="prismcol-body">
+               <div class="prism-textbox">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                   <br><br>
                   <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                   <br><br>
                   Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
                </div>
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note spanning multiple lines</div>
-
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note long enough to go multiple lines</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -262,26 +268,25 @@
    <!-- Big quote -->
    <div class="canvaslabel">QUOTE</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper">
-         <div class="inner-wrapper">
-            <div class="col-quote">
-               <div class="h2"> I am flame and I am fire, I am destruction decay and desire
+   <div class="prismatic">
+      <div class="prismatic-border">
+         <div class="prismatic-inner">
+            <div class="prismcol-quote">
+               <div class="prismh2"> I am flame and I am fire, I am destruction decay and desire
                </div>
             </div>
 
-            <div class="col-body">
-               <div class="textbox">
+            <div class="prismcol-body">
+               <div class="prism-textbox">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                   <br><br>
                   <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                   <br><br>
                   Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
                </div>
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note spanning multiple lines</div>
-
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note long enough to go multiple lines</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -295,25 +300,26 @@
    <!-- Top banner with image -->
    <div class="canvaslabel">Top Banner w. optional icon</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper onecol">
-         <div class="inner-wrapper">
-            <div class="onecol-header imgbg">
-               Feels like I'm all on my own tonight <br>
-               and I find myself in pieces
+   <div class="prismatic">
+      <div class="prismatic-border prism-one">
+         <div class="prismatic-inner">
+            <div class="prism-oneheader prism-imgbg">
+               <span>
+                  Feels like I'm all on my own tonight <br>
+                  and I find myself in pieces</span>
             </div>
 
-            <div class="onecol-body">
-               <img src="https://cdn.discordapp.com/attachments/683720444796338317/896532812763648010/200x300-custom-04-zoom.jpg">
+            <div class="prism-onebody">
+               <img src="https://i.ibb.co/6H4xnJ5/33.png">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                <br><br>
                <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                <br><br>
                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
 
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note</div>
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -324,27 +330,27 @@
 
 
 
-   <!-- Top banner no image -->
+   <!-- Top banner without image -->
    <div class="canvaslabel">Top Banner, no icon</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper onecol">
-         <div class="inner-wrapper">
-            <div class="onecol-header imgbg">
-               Feels like I'm all on my own tonight <br>
-               and I find myself in pieces
+   <div class="prismatic">
+      <div class="prismatic-border prism-one">
+         <div class="prismatic-inner">
+            <div class="prism-oneheader prism-imgbg">
+               <span>Feels like I'm all on my own tonight <br>
+                  and I find myself in pieces</span>
             </div>
 
-            <div class="onecol-body">
+            <div class="prism-onebody">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                <br><br>
                <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                <br><br>
                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
 
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note</div>
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -358,20 +364,20 @@
    <!-- Minimal with image-->
    <div class="canvaslabel">Minimal w. optional icon</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper onecol bare">
-         <div class="inner-wrapper">
-            <div class="onecol-body">
-               <img src="https://cdn.discordapp.com/attachments/683720444796338317/896532812763648010/200x300-custom-04-zoom.jpg">
+   <div class="prismatic">
+      <div class="prismatic-border prism-one">
+         <div class="prismatic-inner">
+            <div class="prism-onebody">
+               <img src="https://i.ibb.co/6H4xnJ5/33.png">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                <br><br>
                <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                <br><br>
                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
 
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note</div>
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -385,19 +391,19 @@
    <!-- Minimal -->
    <div class="canvaslabel">Minimal</div>
 
-   <div class="creditwrap">
-      <div class="outer-wrapper onecol bare">
-         <div class="inner-wrapper">
-            <div class="onecol-body">
+   <div class="prismatic">
+      <div class="prismatic-border prism-one">
+         <div class="prismatic-inner">
+            <div class="prism-onebody">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit orci, suscipit quis erat id, suscipit convallis libero. Nulla rhoncus purus finibus, auctor neque sollicitudin, sodales justo. Donec eu augue dolor. Nunc condimentum orci at nisi posuere porttitor. Donec sollicitudin felis magna, et pellentesque velit fermentum a. Fusce ornare orci at mi mollis rhoncus. Duis vestibulum, mi et finibus iaculis, erat sem rhoncus ipsum, ut venenatis elit elit vitae ex. Curabitur vitae ante ac magna scelerisque vehicula.
                <br><br>
-               <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i>Suspendisse nec purus mattis, tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
+               <b>"Donec volutpat luctus pulvinar. Nullam molestie nulla eu pharetra sodales."</b> <i><b>Suspendisse nec purus mattis, </b>tristique leo sit amet, molestie arcu. Donec luctus lobortis aliquam. Proin feugiat nisi eget suscipit mollis.</i> Cras sagittis convallis ullamcorper. Proin sollicitudin facilisis sapien. Duis porttitor sem pharetra molestie dapibus.
                <br><br>
                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis lacinia lacus nec est vehicula, in commodo felis dignissim. Mauris fringilla condimentum congue.
 
-               <div class="meta">
-                  <div class="tags">admin</div>
-                  <div class="notes">this is a note</div>
+               <div class="prism-meta">
+                  <div class="prism-notes">this is a note</div>
+                  <div class="prism-tags"><a href=#>tagged</a></div>
                </div>
             </div>
 
@@ -422,7 +428,7 @@
 
 
 <style>
-   .outer-wrapper {
+   .prismatic {
       /* font: 400 13px/1.5em 'Asap', blacker than Assistant; */
       font: 400 12px/1.5em 'Inter', too wide;
       font: 300 13px/1.4em 'Kanit';
@@ -433,7 +439,9 @@
 </style>
 
 <style>
-   .creditwrap {
+   @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+   .prismatic {
       margin: 30px auto;
       width: max-content;
       max-width: 594px;
@@ -442,22 +450,19 @@
       --seriftype: 'PT Serif', serif;
       --bgcolor: #f8f8f8;
       --outerborder: white;
-
-
-      --bannerimg: url(https://media.discordapp.net/attachments/904258620554883112/905490265685524521/unknown.jpeg);
-
-      --accent1: rgb(102, 131, 194);
-      --accent1rgb: 102, 131, 194;
+      --accent1: rgb(52 95 189);
+      --accent1rgb: 52, 95, 189;
+      --bannerimg: url(https://media.discordapp.net/attachments/683720444796338317/906228336991285348/unknown.png);
    }
 
-   a.credits {
+   .prismatic a.credits {
       font: 700 7px/10px 'Roboto', sans-serif;
       letter-spacing: .8px;
       text-decoration: none;
       text-transform: uppercase;
    }
 
-   .outer-wrapper {
+   .prismatic-border {
       padding: 8px;
       background: var(--outerborder);
       box-shadow: 0px 0px 40px rgb(0, 0, 0, 0.1);
@@ -466,17 +471,17 @@
       font: 400 13px/1.4em 'Assistant', sans-serif;
    }
 
-   .inner-wrapper {
+   .prismatic-inner {
       display: grid;
       grid-template-columns: 190px 390px;
    }
 
-   .onecol .inner-wrapper {
+   .prism-one .prismatic-inner {
       display: block;
       max-width: 450px;
    }
 
-   .col-image {
+   .prismcol-img {
       background: var(--bgcolor);
       display: flex;
       align-items: center;
@@ -485,7 +490,7 @@
       overflow: hidden;
    }
 
-   .imgbg:after {
+   .prism-imgbg:after {
       content: '';
       position: absolute;
       width: 100%;
@@ -498,7 +503,7 @@
       z-index: 0;
    }
 
-   .imgbg:before {
+   .prism-imgbg:before {
       content: '';
       position: absolute;
       width: 100%;
@@ -506,12 +511,12 @@
       top: 0;
       left: 0;
       background: linear-gradient(120deg, rgb(var(--accent1rgb), .75), rgb(var(--accent1rgb), 0) 60%, rgb(var(--accent1rgb), 0) 80%, rgb(var(--accent1rgb), .75));
-      mix-blend-mode: hard-light;
+      mix-blend-mode: color-burn;
       opacity: .5;
-      z-index: 20;
+      z-index: 10;
    }
 
-   .imgbox {
+   .prism-imgbox {
       width: 100px;
       height: 250px;
       background: var(--tallimg) center center / cover;
@@ -520,89 +525,106 @@
       z-index: 20;
    }
 
-   .col-body {
+   .prismcol-body {
       background: var(--bgcolor);
-      padding: 45px 45px 30px;
+      padding: 45px 45px 20px;
       padding-right: 25px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
    }
 
-   .textbox {
+   .prism-textbox {
       padding-right: 20px;
    }
 
-   .vertimg .textbox {
+   .prism-vertimg .prism-textbox {
       max-height: 500px;
       overflow: auto;
    }
 
-   b {
+   .prismatic br+br {
+      content: '';
+      display: block;
+      height: .85em;
+   }
+
+   .prismatic i {
+      opacity: .75;
+   }
+
+   .prismatic b {
       color: var(--accent1);
-      padding: 2px 0;
       font-family: var(--seriftype);
+      opacity: 1;
    }
 
-   i {
-      opacity: .7;
-   }
-
-   .meta {
+   .prism-meta {
       display: flex;
       align-items: center;
-      flex-direction: row-reverse;
-      margin-top: 24px;
+      margin-top: 1.25em;
       justify-content: space-between;
+      flex-wrap: wrap;
    }
 
-   .notes {
-      margin-right: 9px;
+   .prism-notes {
       font: 12px/1.4em 'Assistant';
       letter-spacing: .3px;
+      flex-basis: 50%;
+      flex-grow: 1;
    }
 
-   .notes::before {
-      content: 'Notes | ';
+   .prism-notes::before {
+      content: 'notes | ';
       text-transform: uppercase;
       font: bold 10px var(--seriftype);
       letter-spacing: 1px;
       color: var(--accent1);
    }
 
-   .tags {
-      background: rgb(var(--accent1rgb), .05);
+   .prism-tags {
       display: inline-flex;
+      flex-wrap: nowrap;
+      max-width: calc(100% - 20px);
+      padding: 8px 0;
+      overflow-x: auto;
+   }
+
+   .prism-tags a {
+      display: flex;
       align-items: center;
-      padding: 0 20px;
+      margin-right: 8px;
+      background: rgb(var(--accent1rgb), .05);
+      padding: 0 16px;
       height: 40px;
       text-transform: uppercase;
       font: bold 10px var(--seriftype);
       letter-spacing: 1px;
+      color: inherit;
+      text-decoration: none;
+      column-gap: 8px;
    }
 
-   .tags:first-child {
-      align-self: flex-end;
+   .prism-tags a:last-child {
+      margin-right: 0;
    }
 
-
-
-   .col-quote {
+   .prismcol-quote {
       background: var(--bgcolor);
    }
 
-   .col-quote+.col-body {
+   .prismcol-quote+.prismcol-body {
       padding-left: 30px;
    }
 
-   .h2 {
+   .prismh2 {
       padding: 45px 0 0 20px;
       font: bold italic 22px/1.1em var(--seriftype);
       color: rgb(var(--accent1rgb), .5);
       text-align: right;
    }
 
-   .h2::before {
+   .prismh2::before {
       content: '\201C';
       display: block;
       width: 0;
@@ -616,14 +638,11 @@
       color: #888;
    }
 
-
-
-
-   .onecol.outer-wrapper {
+   .prism-one.prismatic-border {
       padding: 4px;
    }
 
-   .onecol-header {
+   .prism-oneheader {
       position: relative;
       background: var(--bgcolor);
       padding: 25px 35px;
@@ -632,109 +651,141 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+   }
+
+   .prism-oneheader span {
       font: bold 11px/1.5em var(--seriftype);
       text-transform: uppercase;
       letter-spacing: 1px;
+      z-index: 50;
+      /* color: rgba(0, 0, 0, 1);
+      color: rgb(var(--accent1rgb), .5); */
+      /* color: rgba(255, 255, 255, .15); */
+      color: rgb(0, 0, 0, .15);
+      text-shadow: 0px 0px 1px rgba(var(--accent1rgb), .5);
+      /* text-shadow: 0px 0px 1px rgba(255, 255, 255, .15); */
+      /* mix-blend-mode: exclusion; */
    }
 
-   .onecol-header.imgbg::after {
+   .prism-oneheader.prism-imgbg::after {
       --tallimg: var(--bannerimg);
+      opacity: .2;
+      filter: saturate(1.5) blur(2px) brightness(1.1);
    }
 
-   .onecol-header.imgbg::before {
-      background: linear-gradient(to right, rgb(var(--accent1rgb), 1), rgb(var(--accent1rgb), .5));
+   .prism-oneheader.prism-imgbg::before {
+      /* background: linear-gradient(to right, rgb(var(--accent1rgb), 1), rgb(var(--accent1rgb), .5)); */
       opacity: .25;
    }
 
-   .onecol-body {
+   .prism-onebody {
       background: var(--bgcolor);
-      padding: 45px 45px 35px;
+      padding: 45px 45px 20px;
    }
 
-   .onecol-body:not(:first-child) {
+   .prism-onebody:not(:first-child) {
       padding-top: 30px;
    }
 
-   img {
+   .prismatic img {
       object-fit: cover;
       width: 90px;
       height: 90px;
-      filter: saturate(1.75) contrast(.8) brightness(1.25);
-      opacity: .9;
+      filter: saturate(1.75) contrast(.9) brightness(1.05);
+      opacity: .85;
       float: left;
-      margin: 5px 18px 5px 0;
+      margin: 5px 14px 5px 0;
    }
 
 
 
-   ::-webkit-scrollbar {
+   .prismatic ::-webkit-scrollbar {
       width: 3px !important;
+      height: 1px !important;
       background: rgb(var(--accent1rgb), 0);
       border: 0;
    }
 
-   ::-webkit-scrollbar-thumb {
+   .prismatic ::-webkit-scrollbar-thumb {
       background: rgb(var(--accent1rgb), .1);
       border: 0;
    }
 
-   ::-webkit-scrollbar-track {
+   .prismatic ::-webkit-scrollbar-track {
       background: var(--bgcolor);
       border: 0;
    }
 
 
+   /* DARK THEME */
 
-
-   .d-theme .creditwrap {
+   .d-theme .prismatic {
       --outerborder: #111;
       --bgcolor: #222;
-      --accent1: rgb(183, 91, 91);
-      --accent1rgb: 183, 91, 91;
+      --accent1: rgb(124 84 208);
+      --accent1rgb: 124, 84, 208;
    }
 
-   .d-theme .outer-wrapper {
+   .d-theme .prismatic-border {
       color: #999;
       letter-spacing: .7px;
-      font-size: 14px;
-      line-height: 1.5em;
-      font-weight: 300 !important;
+      font: 300 14px/1.5em 'Assistant', sans-serif;
    }
 
-   .d-theme .outer-wrapper b {
-      font: inherit;
-      font-family: var(--seriftype);
-      font-weight: 700;
+   .d-theme .prism-oneheader span {
+      letter-spacing: 1.75px;
+      color: rgba(255, 255, 255, .4);
+      text-shadow: 0px 0px 1px rgba(var(--accent1rgb), 1);
+      mix-blend-mode: exclusion;
+      opacity: 1;
    }
 
-   .d-theme .outer-wrapper i {
-      color: rgb(255, 255, 255, .8);
+   .d-theme .prism-oneheader.prism-imgbg::before {
+      mix-blend-mode: overlay;
+      opacity: 1;
    }
 
-   .d-theme .imgbox {
+   .d-theme .prism-oneheader.prism-imgbg::after {
+      mix-blend-mode: difference;
+      opacity: .15;
+   }
+
+   .d-theme .prismatic i {
+      opacity: 1;
+      color: rgb(var(--accent1rgb), .75);
+      text-shadow: 0 0 0 rgba(255, 255, 255, .6);
+   }
+
+   .d-theme .prismatic b {
+      opacity: .9;
+   }
+
+   .d-theme .prism-imgbox {
       filter: saturate(1.5) contrast(1.25) brightness(.75) grayscale(.3);
       opacity: .9;
    }
 
    .d-theme img {
-      filter: saturate(1.5) contrast(1) brightness(1) grayscale(.3);
-      opacity: .9;
+      filter: saturate(1.5) contrast(.9) brightness(1) grayscale(.2);
+      opacity: .85;
    }
 
-   .d-theme .imgbg::before {
+   .d-theme .prism-imgbg::before {
       opacity: .1;
+      mix-blend-mode: saturation;
    }
 
-   .d-theme .imgbg::after {
+
+   .d-theme .prism-imgbg::after {
       filter: saturate(1.5) blur(2px);
-      opacity: .06;
+      opacity: .08;
    }
 
-   .d-theme .notes {
+   .d-theme .prism-notes {
       letter-spacing: 1.2px;
    }
 
-   .d-theme .tags {
+   .d-theme .prism-tags a {
       background: var(--outerborder);
       letter-spacing: 1.4px;
    }
@@ -747,48 +798,41 @@
 
 
    @media only screen and (max-width: 480px) {
-      .canvasrow {
-         display: block;
-         width: 100%;
-         padding-right: 0;
-      }
 
-      .canvaslabel {
-         margin: 50px auto 30px;
-         text-align: center;
+      .prismatic {
          width: auto;
       }
 
-      .creditwrap {
-         width: auto;
-      }
-
-      .inner-wrapper {
+      .prismatic-inner {
          grid-template-columns: 1fr;
          display: block;
       }
 
 
-      .col-image {
+      .prismcol-img {
          display: none;
       }
 
-      .h2 {
+      .prismh2 {
          text-align: left;
          padding: 45px 20px 0;
       }
 
-      .col-body,
-      .onecol-body {
+      .prismcol-body,
+      .prism-onebody {
          padding: 20px !important;
       }
 
-      .vertimg .textbox {
+      .prism-vertimg .prism-textbox {
          max-height: none;
       }
 
-      .textbox {
+      .prism-textbox {
          padding: 0
+      }
+
+      .prism-oneheader {
+         padding: 25px 15px
       }
    }
 </style>
