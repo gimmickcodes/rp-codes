@@ -41,6 +41,6 @@
  .canvasrow {
      display: flex;
      align-items: flex-start;
-     padding-right: 200px !important;
+     padding-right: 200px;
      width: min-content
  }
