@@ -274,7 +274,7 @@
 
 /* DARK THEME */
 
-.d-theme.prismatic {
+.d-theme.prismatic, .d-theme .prismatic {
    --outerborder: #111;
    --bgcolor: #222;
    --accent1: rgb(124 84 208);
