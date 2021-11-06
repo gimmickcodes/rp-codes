@@ -34,11 +34,6 @@
    grid-template-columns: 190px 390px;
 }
 
-.prism-one .prismatic-inner {
-   display: block;
-   max-width: 450px;
-}
-
 .prismcol-img {
    background: var(--bgcolor);
    display: flex;
@@ -85,7 +80,7 @@
 
 .prismcol-body {
    background: var(--bgcolor);
-   padding: 45px 45px 20px;
+   padding: 40px 45px 20px;
    padding-right: 25px;
    display: flex;
    flex-direction: column;
@@ -167,19 +162,20 @@
    margin-right: 0;
 }
 
+.prism-bquote .prismatic-inner {
+   grid-template-columns: 195px 385px;
+}
+
 .prismcol-quote {
    background: var(--bgcolor);
+   padding: 41px 2px 0 25px;
+   font: bold italic 21px/1.2em var(--seriftype);
+   color: rgb(var(--accent1rgb), .5);
+   text-align: right;
 }
 
 .prismcol-quote+.prismcol-body {
-   padding-left: 30px;
-}
-
-.prismh2 {
-   padding: 45px 2px 0 20px;
-   font: bold italic 22px/1.1em var(--seriftype);
-   color: rgb(var(--accent1rgb), .5);
-   text-align: right;
+   padding-left: 25px;
 }
 
 .prismh2::before {
@@ -198,6 +194,11 @@
 
 .prism-one.prismatic-border {
    padding: 4px;
+}
+
+.prism-one .prismatic-inner {
+   display: block;
+   max-width: 450px;
 }
 
 .prism-oneheader {
@@ -238,7 +239,7 @@
 
 .prism-onebody {
    background: var(--bgcolor);
-   padding: 45px 45px 20px;
+   padding: 40px 45px 20px;
 }
 
 .prism-onebody:not(:first-child) {
@@ -359,9 +360,9 @@
    .prismcol-img {
       display: none;
    }
-   .prismh2 {
+   .prismcol-quote {
       text-align: left;
-      padding: 45px 20px 0;
+      padding: 40px 20px 0;
    }
    .prismcol-body, .prism-onebody {
       padding: 20px !important;
