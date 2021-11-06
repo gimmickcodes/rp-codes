@@ -176,7 +176,7 @@
 }
 
 .prismh2 {
-   padding: 45px 0 0 20px;
+   padding: 45px 2px 0 20px;
    font: bold italic 22px/1.1em var(--seriftype);
    color: rgb(var(--accent1rgb), .5);
    text-align: right;

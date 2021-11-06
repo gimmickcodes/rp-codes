@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<head>
+   <link href="../css-templates.css" rel="stylesheet">
+</head>
+
+
+<style>
+   html {
+      background: #555
+   }
+</style>
+
+
+
+
+<div class="excerpt excerpt-d">
+   <div class="excerpt-header">
+      No more dreaming of the dead as if death itself was undone
+      <!-- turn your thoughts away from cold unfeeling light -->
+      <!-- sometimes I forget where I came from just to remember that I’m here at all -->
+   </div>
+
+   <div class="excerpt-body">
+      <div class="excerpt-imgs">
+         <img src="../assets/200x200-hawks-365.jpg">
+      </div>
+      <div class="excerpt-imgs">
+      </div>
+      Ham hock ea ipsum, officia venison quis ball tip cupidatat consequat nisi adipisicing est. Dolore dolor beef ribs, sausage filet mignon pork chop frankfurter aute tongue. Elit strip steak do chicken cupidatat proident pancetta flank ut pastrami eu leberkas. Ea in beef ribs ball tip cupidatat corned beef pork chop shankle deserunt. In fugiat ad alcatra sunt anim. Minim fatback kielbasa, culpa exercitation short loin ut laboris do aliqua jerky. Turkey laborum duis, pork loin enim frankfurter reprehenderit qui leberkas pork chop shankle fugiat laboris occaecat labore.
+      <br><br>
+      <b>"This is bolded text."</b> <br><br>
+      Et biltong turkey rump picanha. Beef in labore leberkas meatloaf cillum ex occaecat quis, hamburger proident burgdoggen. Ea sunt tri-tip, spare ribs tempor ad shankle jerky. Meatloaf veniam culpa, fugiat pork loin tri-tip biltong labore ground round.
+
+      <div class="excerpt-ooc"><a href="#">admin</a> - this is a note</div>
+   </div>
+</div>
+
+
+
+<br><br><br>
+
+
+<div class="excerpt">
+   <div class="excerpt-body">
+      <div class="excerpt-imgs">
+         <img src="../assets/200x200-hawks-365.jpg"><img src="../assets/200x200-hawks-365.jpg">
+      </div>
+      Ham hock ea ipsum, officia venison quis ball tip cupidatat consequat nisi adipisicing est. Dolore dolor beef ribs, sausage filet mignon pork chop frankfurter aute tongue. Elit strip steak do chicken cupidatat proident pancetta flank ut pastrami eu leberkas. Ea in beef ribs ball tip cupidatat corned beef pork chop shankle deserunt. In fugiat ad alcatra sunt anim. Minim fatback kielbasa, culpa exercitation short loin ut laboris do aliqua jerky. Turkey laborum duis, pork loin enim frankfurter reprehenderit qui leberkas pork chop shankle fugiat laboris occaecat labore.
+      <br><br>
+      <b>"This is bolded text."</b><br><br>
+      Et biltong turkey rump picanha. Beef in labore leberkas meatloaf cillum ex occaecat quis, hamburger proident burgdoggen. Ea sunt tri-tip, spare ribs tempor ad shankle jerky. Meatloaf veniam culpa, fugiat pork loin tri-tip biltong labore ground round.
+
+      <div class="excerpt-ooc"><a href="#">admin</a> - this is a note</div>
+   </div>
+</div>
+
+
+
+
+
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+   @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+
+   @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
+
+   @import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap');
+
+
+
+   .excerpt {
+      margin: 15px auto;
+      max-width: 336px;
+      font: 12.5px/17px 'Inter', sans-serif;
+      border-top: 4px solid #000;
+      position: relative;
+   }
+
+   .excerpt-d,
+   .excerpt-d div {
+      border-color: #aaa !important;
+   }
+
+   .excerpt-header {
+      text-align: left;
+      font: bold 20px/1.2em 'DM Serif Text', georgia;
+      font: italic 600 20px/1.2em 'Source Serif Pro', georgia;
+      font: 700 18px/22px 'Martel', georgia;
+      padding: 8px 20% 16px 0;
+      border-bottom: 1px solid #000;
+   }
+
+   .excerpt-body {
+      text-align: left;
+      padding: 12px 0 0;
+   }
+
+   .excerpt-imgs {
+      display: flex;
+      flex-direction: column;
+      /* width: 33.3%;
+      min-width: 40px; */
+      max-width: 88px;
+      float: left;
+      margin: 3px 12px 4px 0;
+   }
+
+   .excerpt img {
+      border: 1px solid #000;
+      padding: 2px;
+      filter: grayscale(.3) contrast(.9) saturate(1);
+      opacity: .85;
+      transition: all .4s ease;
+   }
+
+   .excerpt img:not(:first-child) {
+      margin-top: 8px;
+   }
+
+   .excerpt:hover img {
+      filter: grayscale(0) contrast(1) saturate(1.1);
+   }
+
+   .excerpt b {
+      /* font: 800 12px 'Martel'; */
+      color: #ba303d;
+      position: relative;
+   }
+
+   /* b::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--accent);
+      background: white;
+      width: 100%;
+      height: 1.2em;
+      z-index: -1;
+      opacity: .1;
+      mix-blend-mode: exclusion;
+      transition: all .3s ease;
+   } */
+
+   .excerpt-ooc {
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      margin-top: 1.75em;
+      padding: 6px 0;
+      font: 11px/15px 'Inter', sans-serif;
+   }
+
+   .excerpt-ooc a {
+      font-weight: 500;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 9px;
+      letter-spacing: .9px;
+   }
+
+   .excerpt br {
+      content: '';
+      display: block;
+      height: .5em;
+   }
+
+   @media only screen and (max-width: 340px) {
+      .excerpt-header {
+         padding-right: 0;
+      }
+   }
+</style>
