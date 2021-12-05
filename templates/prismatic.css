@@ -268,7 +268,7 @@
    border: 0;
 }
 
-.prismatic ::-webkit-scrollbar-track {
+.prismatic ::-webkit-scrollbar-track, .prismatic ::-webkit-scrollbar-track-piece {
    background: var(--bgcolor);
    border: 0;
 }
