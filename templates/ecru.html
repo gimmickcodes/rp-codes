@@ -13,13 +13,17 @@
    html {
       --displayfont: 'Playfair Display';
       --bodyfont: 'Roboto';
+
+      & * {
+         color: red !important;
+      }
    }
 
    .canvaslabel {
       margin-left: 100px;
       margin-right: 20px;
       width: 100px;
-      text-align: left;
+      text-align: center;
    }
 
 
@@ -30,247 +34,150 @@
          width: auto;
       }
    }
+
+
+
+   .scrolls {
+      height: 100%;
+      overflow: auto;
+   }
+
+   .titlerow {
+      border-bottom: 1px solid white;
+      height: 66px;
+      width: 100%;
+   }
+
+   .textarea {
+      padding: 0 30px 27px;
+      margin-top: 18px;
+   }
+
+   .textarea hr {
+      width: calc(100% + 60px);
+      margin-left: -30px;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+      border: 0;
+      border-bottom: 1px solid white;
+   }
+
+   .statsbox {
+      margin: 9px 0;
+   }
+
+   .h1 {
+      color: var(--accent);
+      font: bold 24px/1.2em var(--displayfont);
+   }
+
+   .h2 {
+      font: bold 15px/1.1em var(--displayfont);
+   }
+
+   .h3 {
+      font: bold 10px/1.5em var(--bodyfont);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+
+      /* font: 800 13px/1.5em var(--displayfont);
+      text-transform: none;
+      letter-spacing: .5px;
+      margin: 15px 0 1px; */
+   }
+
+   .h5 {
+      font: 9px/1.75em var(--bodyfont);
+      text-transform: uppercase;
+      letter-spacing: 1.26px;
+   }
+
+   .h5 b {
+      display: inline-block;
+      width: 48px;
+      margin-right: 10px;
+      color: var(--accent);
+   }
+
+   .h6 {
+      font: 400 8px/1.5em var(--bodyfont);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+   }
+
+   .p {
+      font: normal 12.5px/1.4em var(--bodyfont);
+   }
+
+   br+br {
+      content: '';
+      display: block;
+      height: 12px;
+   }
+
+
+   :root * {
+      box-sizing: border-box;
+   }
 </style>
 
 
 
-<div id="botanic">
-   <div class="botanicinner">
-
-      <div class="botanicheader">Plot with me on discord</div>
-
-      <div class="botanicgrid">
-         <div class="botanicnav">
-
-            <div class="botanictab botanic_active">
-               <div class="botanictab-overlay">
-                  <span class="botanic-numerator">1</span>
-                  /6
-               </div>
-               <div class="botanictab-base">
-                  <div class="botanictab-img" style="background-image: url(https://i.ibb.co/qdV7pRf/B2.png)"></div>
-               </div>
-            </div>
-
-            <div class="botanictab">
-               <div class="botanictab-overlay">
-                  <span class="botanic-numerator">2</span>
-                  /6
-               </div>
-               <div class="botanictab-base">
-                  <div class="botanictab-img" style="background-image: url(https://i.ibb.co/drTc9xH/B1.png)"></div>
-               </div>
-            </div>
-
-            <div class="botanictab">
-               <div class="botanictab-overlay">
-                  <span class="botanic-numerator">3</span>
-                  /6
-               </div>
-               <div class="botanictab-base">
-                  <div class="botanictab-img" style="background-image: url(https://i.ibb.co/tLW7rkP/B2.png)"></div>
-               </div>
-            </div>
-
-            <div class="botanictab">
-               <div class="botanictab-overlay">
-                  <span class="botanic-numerator">4</span>
-                  /6
-               </div>
-               <div class="botanictab-base">
-                  <div class="botanictab-img" style="background-image: url(https://i.ibb.co/yNr2GqC/B2.png)"></div>
-               </div>
-            </div>
-
-            <div class="botanictab">
-               <div class="botanictab-overlay">
-                  <span class="botanic-numerator">5</span>
-                  /6
-               </div>
-               <div class="botanictab-base">
-                  <div class="botanictab-img" style="background-image: url(https://via.placeholder.com/90x110/6C5865/FFFFFF/)"></div>
-               </div>
-            </div>
-
-            <div class="botanictab">
-               <div class="botanictab-overlay">
-                  <span class="botanic-numerator">6</span>
-                  /6
-               </div>
-               <div class="botanictab-base">
-                  <div class="botanictab-img" style="background-image: url(https://via.placeholder.com/90x110/405765/FFFFFF/)"></div>
-               </div>
-            </div>
-
-
-         </div>
-
-
-
-         <div class="botanicmainbox">
-
-            <div class="botanic-main botanic_active">
-               <div class="botanic-title">
-                  <div class="botanic-h1">Amethyst</div>
-               </div>
-               <div class="botanic-body">
-                  <div class="botanic-statsbox">
-                     <b>Age</b> ##-years old <br>
-                     <b>Species</b> Unknown <br>
-                     <b>Group</b> – <br>
-                     <b>FC Rec</b> –
-                  </div>
-                  Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet.
-                  <hr>
-                  <div class="botanic-h3">Hook</div>
-                  In flank chuck buffalo ham exercitation pig incididunt tongue non cupidatat excepteur pork chop prosciutto. Velit irure ullamco burgdoggen magna salami ad est cillum eiusmod shank in duis dolore. Tail nulla consequat pork chop aute. Aliqua jowl eu turkey qui.
-
-                  <div class="botanic-h3">Hook</div>
-                  Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet.
-               </div>
-            </div>
-
-            <div class="botanic-main">
-               <div class="botanic-title">
-                  <div class="botanic-h1">Beryl</div>
-               </div>
-               <div class="botanic-body">
-                  <div class="botanic-statsbox">
-                     <b>Age</b> ##-years old <br>
-                     <b>Species</b> Unknown <br>
-                     <b>Group</b> – <br>
-                     <b>FC Rec</b> –
-                  </div>
-                  Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
-               </div>
-            </div>
-
-
-            <div class="botanic-main">
-               <div class="botanic-title">
-                  <div class="botanic-h1">Citrine</div>
-               </div>
-               <div class="botanic-body">
-                  <div class="botanic-statsbox">
-                     <b>Age</b> ##-years old <br>
-                     <b>Species</b> Unknown <br>
-                     <b>Group</b> – <br>
-                     <b>FC Rec</b> –
-                  </div>
-                  Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
-               </div>
-            </div>
-
-
-            <div class="botanic-main">
-               <div class="botanic-title">
-                  <div class="botanic-h1">Diamond</div>
-               </div>
-               <div class="botanic-body">
-                  <div class="botanic-statsbox">
-                     <b>Age</b> ##-years old <br>
-                     <b>Species</b> Unknown <br>
-                     <b>Group</b> – <br>
-                     <b>FC Rec</b> –
-                  </div>
-                  Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
-               </div>
-            </div>
-
-            <div class="botanic-main">
-               <div class="botanic-title">
-                  <div class="botanic-h1">Emerald</div>
-               </div>
-               <div class="botanic-body">
-                  <div class="botanic-statsbox">
-                     <b>Age</b> ##-years old <br>
-                     <b>Species</b> Unknown <br>
-                     <b>Group</b> – <br>
-                     <b>FC Rec</b> –
-                  </div>
-                  Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
-               </div>
-            </div>
-
-
-            <div class="botanic-main">
-               <div class="botanic-title">
-                  <div class="botanic-h1">Garnet</div>
-               </div>
-               <div class="botanic-body">
-                  <div class="botanic-statsbox">
-                     <b>Age</b> ##-years old <br>
-                     <b>Species</b> Unknown <br>
-                     <b>Group</b> – <br>
-                     <b>FC Rec</b> –
-                  </div>
-                  Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
-               </div>
-            </div>
-
-
-         </div>
-
-      </div>
-   </div>
-   <a href="http://pixel-perfect.boards.net/user/2465" class="gimcredits">made by gimmick</a>
-</div>
-
 
 <style>
-   #botanic {
+   #boutique {
       margin: 30px auto;
       width: fit-content;
       overflow: hidden;
       text-align: right;
-      --fallback: url(https://i.ibb.co/cx2t7YM/19.png);
       --bgcolor: #F2F0EC;
-      --accent: #405765;
+      --bgrgb: 242, 240, 236;
+      --accent: #415471;
       --accentrgb: 64, 87, 101;
    }
 
-   .botanicheader {
+   .boutiqueheader {
       background: var(--accent);
-      color: var(--bgcolor);
-      padding: 0 15px;
+      color: rgb(var(--bgrgb), 1);
+      padding: 4px 15px 0;
       height: 30px;
-      box-sizing: border-box;
       display: flex;
       align-items: center;
-      padding-top: 1px;
       font: 700 9px/1.5em var(--bodyfont);
       text-transform: uppercase;
       letter-spacing: 1.75px;
    }
 
-   .botanicgrid {
+   .boutiquegrid {
       position: relative;
       display: grid;
       grid-template-columns: 300px 330px;
       grid-template-areas: 'nav main';
       grid-template-rows: 310px;
-      background: var(--bgcolor);
+      background: rgb(var(--bgrgb), 1);
       text-align: left;
+      border: 2px solid var(--accent);
    }
 
-   .botanicnav {
+   .boutiquenav {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(96px, 96px));
       grid-column-gap: 24px;
       grid-row-gap: 24px;
-      box-sizing: border-box;
+
       justify-content: center;
       padding: 27px 0;
       border-right: 1px solid white;
-      overflow: auto;
    }
 
-   .botanictab {
+   .boutiquetab {
       cursor: pointer;
       width: 90px;
       height: 110px;
       border: 1px solid white;
       padding: 3px;
+      box-sizing: content-box;
       opacity: 1;
       position: relative;
       background-size: cover;
@@ -278,18 +185,18 @@
       transition: .4s ease;
    }
 
-   .botanictab.botanic_active {
-      border-color: rgba(var(--accentrgb), .4);
+   .boutiquetab.boutique_active {
+      border-color: rgb(var(--accentrgb), .4);
    }
 
-   .botanictab-base {
+   .boutiquetab-base {
       position: relative;
       width: 90px;
       height: 110px;
       overflow: hidden;
    }
 
-   .botanictab-img {
+   .boutiquetab-img {
       width: 90px;
       height: 110px;
       background-size: cover;
@@ -299,27 +206,27 @@
       transition: all .4s ease;
    }
 
-   .botanictab:hover .botanictab-img {
+   .boutiquetab:hover .boutiquetab-img {
       opacity: .6;
       filter: blur(0px) brightness(1) saturate(1) contrast(1);
       transform: scale(1.0);
    }
 
-   .botanictab.botanic_active .botanictab-img {
+   .boutiquetab.boutique_active .boutiquetab-img {
       mix-blend-mode: normal;
       opacity: 1;
       transform: scale(1.05);
       filter: blur(0) brightness(.9) saturate(1.3) contrast(1.1);
    }
 
-   .botanictab-overlay {
+   .boutiquetab-overlay {
       position: absolute;
       z-index: 50;
       display: flex;
       width: calc(100% - 6px);
       height: calc(100% - 6px);
       padding: 9px 12px;
-      box-sizing: border-box;
+
       overflow: hidden;
       justify-content: flex-end;
       align-items: flex-end;
@@ -328,199 +235,1018 @@
 
       font: bold 20px/1.2em var(--displayfont);
       color: rgb(var(--accentrgb), 0);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .6) 100%);
+      background: linear-gradient(145deg, rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, .6) 100%);
       transition: .4s ease;
    }
 
-   .botanictab:hover .botanictab-overlay {
+   .boutiquetab:hover .boutiquetab-overlay {
       opacity: 1;
       color: rgb(var(--accentrgb), 1);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .6) 100%);
+      background: linear-gradient(145deg, rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, .6) 100%);
    }
 
-   .botanictab.botanic_active .botanictab-overlay {
+   .boutiquetab.boutique_active .boutiquetab-overlay {
       opacity: 0;
       color: rgb(var(--accentrgb), 0);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .6) 100%);
+      background: linear-gradient(145deg, rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, .6) 100%);
    }
 
-   .botanictab.botanic_active:hover .botanictab-overlay {
+   .boutiquetab.boutique_active:hover .boutiquetab-overlay {
       opacity: 1;
       color: rgb(var(--accentrgb), 1);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .6) 100%);
+      background: linear-gradient(145deg, rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, .6) 100%);
    }
 
-   .botanic-numerator {
+   .boutique-numerator {
       font: bold 42px/1.2em var(--displayfont);
    }
 
 
-   .botanicmainbox {
+   .boutiquemainbox {
       grid-area: main;
-      overflow: auto;
+      width: 100%;
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
    }
 
-   .botanic-main {
-      font: normal 12.5px/1.35em var(--bodyfont);
+   .boutique-main {
       opacity: 0;
       z-index: 0;
-      display: none;
+      position: absolute;
+      transition: .4s ease-in-out;
    }
 
-   .botanic_active.botanic-main {
+   .boutique_active.boutique-main {
       opacity: 1;
       z-index: 20;
-      display: block;
    }
 
-   .botanic-title {
-      border-bottom: 1px solid white;
+   #boutique .titlerow {
       padding: 24px 30px 12px;
+      /* position: sticky;
+      top: -15px;
+      background: rgb(var(--bgrgb),1);
+      z-index: 20; */
    }
 
-   .botanic-body {
-      padding: 18px 30px;
-   }
-
-   .botanic-h1 {
-      color: var(--accent);
-      font: bold 24px/1.2em var(--displayfont);
-   }
-
-   .botanic-statsbox {
-      margin: 0 0 1em;
-      font: 9px/1.75em var(--bodyfont);
-      text-transform: uppercase;
-      letter-spacing: 1.26px;
-      justify-content: space-between;
-   }
-
-   .botanicmainbox br+br {
-      content: '';
-      display: block;
-      height: 12px;
-   }
-
-   .botanic-statsbox b {
-      display: inline-block;
-      width: 48px;
-      margin-right: 10px;
-   }
-
-   .botanic-h3 {
-      font: bold 10px/1.5em var(--bodyfont);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin: 15px 0 1px;
-      color: var(--accent);
-
-      font: 800 13px/1.5em var(--displayfont);
-      text-transform: none;
-      letter-spacing: .5px;
+   #boutique .h3 {
       margin: 15px 0 1px;
    }
 
-   .botanic-body hr {
-      width: calc(100% + 60px);
-      margin-left: -30px;
-      margin-top: 1.5em;
-      margin-bottom: 1.5em;
-      border: 0;
-      border-bottom: 1px solid white;
+
+   #boutique .fadesin {
+      transition: all .5s ease-in-out;
+   }
+
+   #boutique .textarea.fadesin {
+      opacity: 0;
+   }
+
+   #boutique .textarea.fadesin {
+      transform: translate(-0, 132px);
+   }
+
+
+   #boutique .h1.fadesin {
+      transform: translate(0, 0);
+      opacity: 0;
+   }
+
+   .boutique_active .fadesin {
+      transform: translate(0) !important;
+      opacity: 1 !important;
    }
 
 
 
 
-   #botanic ::-webkit-scrollbar {
-      width: 2px !important;
+   #boutique ::-webkit-scrollbar {
+      width: 4px !important;
       height: 1px !important;
       background: rgb(var(--accentrgb), 0);
       border: 0;
    }
 
-   #botanic ::-webkit-scrollbar-thumb {
-      background: rgb(var(--accentrgb), .2);
+   #boutique ::-webkit-scrollbar-track,
+   #boutique ::-webkit-scrollbar-track-piece {
+      background: rgb(var(--accentrgb), 0);
       border: 0;
+      border-right: 2px solid rgb(var(--bgrgb), 1);
    }
 
-   #botanic ::-webkit-scrollbar-track,
-   #botanic ::-webkit-scrollbar-track-piece {
+   #boutique ::-webkit-scrollbar-thumb {
+      background: rgb(var(--accentrgb), .4);
+      border: 2px solid rgb(var(--bgrgb), 1);
+      border-left: 0;
+   }
+
+
+   #boutique .boutiquenav::-webkit-scrollbar-thumb {
+      background: white;
+      /* background: rgb(var(--accentrgb), .2); */
+      /* border: 0; */
+   }
+</style>
+
+
+
+
+
+<style>
+   .ecru {
+      margin: 30px auto;
+      width: fit-content;
+      overflow: hidden;
+      text-align: right;
+      --fallback: url(https://i.ibb.co/cx2t7YM/19.png);
+      --bgcolor: #F2F0EC;
+      --bgrgb: 242, 240, 236;
+      --accent: #415471;
+      --accentrgb: 65, 84, 113;
+      --accent2: #F0E4D0;
+      --accent2rgb: 240, 228, 208;
+   }
+
+   a.gimcredits {
+      display: block;
+      margin-top: 4px;
+      font: 700 7px/10px var(--bodyfont);
+      letter-spacing: .8px;
+      text-decoration: none;
+      text-transform: uppercase;
+   }
+
+   .ecruinner {
+      position: relative;
+      background: rgb(var(--bgrgb), 1);
+      text-align: left;
+      overflow: hidden;
+   }
+
+   .ecrugrid {
+      display: grid;
+      grid-template-areas: 'header header'
+         'main sidebar';
+      grid-template-columns: 372px 186px;
+      grid-template-rows: auto 270px;
+   }
+
+   .ecrusidebar {
+      grid-area: sidebar;
+      position: relative;
+      border-left: 1px solid white;
+      z-index: 50;
+      overflow-y: auto;
+      overflow-x: hidden;
+   }
+
+   .ecru .PTab_ecru {
+      cursor: pointer;
+      padding: 14px 0 14px 18px;
+      height: 53.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgb(0, 0, 0, .3);
+      border-bottom: 1px solid white;
+      transition: .5s ease;
+   }
+
+   .ecru .PTab_ecru.ecru_active {
+      background: rgb(var(--bgrgb), 1);
+      color: var(--accent);
+   }
+
+   .ecru .PTab_ecru:hover {
+      color: rgb(0, 0, 0, .6);
+   }
+
+   .ecru .PTab_ecru.ecru_active:hover {
+      color: var(--accent);
+   }
+
+   .ecru .h6 {
+      color: rgb(0, 0, 0, .5);
+      margin-top: 2px;
+      transition: .5s ease;
+   }
+
+   .ecru .PTab_ecru.ecru_active .h6 {
+      color: rgb(0, 0, 0, 1);
+   }
+
+   .ecru .PTab_ecru:nth-last-of-type(2) {
+      border-bottom: 0;
+   }
+
+
+   .pointer {
+      position: absolute;
+      top: 21px;
+      right: 0;
+      width: 8px;
+      height: 12px;
+      clip-path: polygon(100% 0, 0 50%, 100% 100%);
+      background: var(--accent);
+      margin-right: -2px;
+      transition: .5s;
+   }
+
+   .ecru .PTab_ecru:nth-child(2).ecru_active~.pointer {
+      top: 74px;
+   }
+
+   .ecru .PTab_ecru:nth-child(3).ecru_active~.pointer {
+      top: 129px;
+   }
+
+   .ecru .PTab_ecru:nth-child(4).ecru_active~.pointer {
+      top: 182px;
+   }
+
+   .ecru .PTab_ecru:nth-child(5).ecru_active~.pointer {
+      top: 235px;
+   }
+
+   .ecru .PTab_ecru:nth-child(6).ecru_active~.pointer {
+      top: 288px;
+   }
+
+   .headertest {
+      grid-area: header;
+      border-bottom: 1px solid white;
+   }
+
+   .ecrumain {
+      grid-area: main;
+      position: relative;
+      z-index: 10;
+      opacity: 0;
+      transition: all .75s ease-in-out, z-index 0s .75s ease;
+   }
+
+   .ecrumain.ecru_active {
+      opacity: 1;
+      z-index: 15;
+   }
+
+   .ecru-headerfiller {
+      position: relative;
+      background-image: var(--fallback);
+      background-position: center;
+      background-size: cover;
+      filter: contrast(1.5) brightness(.75);
+      height: 100px;
+      box-sizing: content-box;
+      z-index: 0;
+      opacity: 1;
+   }
+
+   .ecru-headergradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 558px;
+      height: 100px;
+      background: linear-gradient(to top right, rgb(var(--bgrgb), .9) 0%, rgb(var(--bgrgb), 0) 100%);
+      opacity: 1;
+      z-index: 10;
+   }
+
+   /* .headertest::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 558px;
+      height: 100px;
+      background: var(--accent);
+      mix-blend-mode: color;
+      opacity: 1.5;
+      z-index: 5;
+   } */
+
+   .ecru-headerfiller::after,
+   .ecru-charbanner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--accent);
+      z-index: 7;
+      mix-blend-mode: saturation;
+      opacity: .5;
+   }
+
+   .ecru-charbanner::after {
+      z-index: 17;
+   }
+
+   .ecru-headerfiller::before,
+   .ecru-charbanner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FFF2DE;
+      z-index: 6;
+      mix-blend-mode: color;
+      opacity: .5;
+   }
+
+   .ecru-charbanner::before {
+      z-index: 16;
+   }
+
+   .ecru-charbanner {
+      background-image: var(--charbanner, var(--fallback));
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: contrast(1.5) brightness(.75);
+      height: 100px;
+      width: 558px;
+      position: absolute;
+      top: -101px;
+      left: 0;
+      z-index: 10;
+      transition-delay: .75s;
+   }
+
+   .ecrumain .ecru-headergradient {
+      top: -101px;
+      z-index: 19;
+   }
+
+   .ecrumain img {
+      position: relative;
+      display: block;
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      filter: contrast(.95) grayscale(.5) brightness(1.1);
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      margin: -62px 0 0 27px;
+      z-index: 100;
+      border: 1px solid white;
+      padding: 3px;
+      opacity: 0;
+   }
+
+   .withbanner .textarea {
+      padding-top: 18px;
+      margin-top: 0;
+   }
+
+   .withbanner img+.textarea {
+      margin-top: -28px;
+      padding-top: 43px;
+   }
+
+   .ecru .fadesin {
+      transition: all .6s ease-in-out;
+   }
+
+   .ecru .textarea.fadesin {
+      opacity: 0;
+   }
+
+   .ecru .textarea.fadesin {
+      transform: translate(0, 320px);
+   }
+
+   .ecru img.fadesin {
+      transform: translate(-320px, 0);
+   }
+
+   .ecru .h1.fadesin {
+      opacity: 0;
+   }
+
+   .ecru .ecru_active .fadesin {
+      transform: translate(0, 0) !important;
+      opacity: 1;
+   }
+
+   .ecruinner .h1 {
+      margin-bottom: 6px;
+   }
+
+   .ecruinner .h3 {
+      margin: 15px 0 1px;
+   }
+
+   .ecru ::-webkit-scrollbar {
+      width: 3px !important;
+      height: 1px !important;
       background: rgb(var(--accentrgb), 0);
       border: 0;
    }
 
-   #botanic .botanicnav::-webkit-scrollbar {
-      width: 2px !important;
+   .ecru ::-webkit-scrollbar-track,
+   .ecru ::-webkit-scrollbar-track-piece {
+      background: rgb(var(--accentrgb), 0);
+      border: 0;
+      border-right: 2px solid rgb(var(--accentrgb), 0);
    }
 
-   /* #botanic .botanicnav::-webkit-scrollbar-thumb {
-      background: rgb(var(--accentrgb), .1);
+   .ecru ::-webkit-scrollbar-thumb {
+      background: rgb(var(--accentrgb), .2);
+      border: 1px solid white;
+      border-left: 0;
+   }
+
+
+
+
+
+
+   /* HEADSHOTS */
+
+   .ecru.wheadshots .ecru-headergradient,
+   .wheadshots .ecrumain img {
+      display: none;
+   }
+
+   .ecru.wheadshots {
+      width: 630px;
+   }
+
+   .ecru.wheadshots .ecrugrid {
+      grid-template-areas: 'main sidebar';
+      grid-template-columns: 384px 246px;
+      grid-template-rows: 330px;
+   }
+
+   .ecru.wheadshots .titlerow {
+      padding: 21px 30px 0;
+   }
+
+   .ecru.wheadshots .textarea.fadesin {
+      transform: none;
+      margin-top: 320px;
+   }
+
+   .ecru.wheadshots .ecru_active .textarea.fadesin {
+      margin-top: 18px;
+   }
+
+   .ecru.wheadshots .ecrusidebar {
+      background: rgb(var(--accent), 1);
+   }
+
+   .ecru.wheadshots .PTab_ecru {
+      padding: 0 0 0 18px;
+      height: 66px;
+      background: rgb(var(--accentrgb), .85);
+      border-bottom-color: rgb(var(--bgrgb), .15);
+      color: rgb(0, 0, 0, .6);
+      color: rgb(var(--bgrgb), .5);
+   }
+
+   .ecru.wheadshots .PTab_ecru:hover {
+      /* background: rgb(var(--accentrgb), 1); */
+      color: rgb(0, 0, 0, 1);
+
+      color: rgb(var(--bgrgb), .8);
+   }
+
+   .ecru.wheadshots .PTab_ecru.ecru_active {
+      background: rgb(var(--accentrgb), 1);
+      color: rgb(var(--bgrgb), .8);
+   }
+
+   .ecru.wheadshots .PTab_ecru.ecru_active:hover {
+      color: rgb(var(--bgrgb), .8);
+   }
+
+   .ecru.wheadshots .h6 {
+      color: rgb(0, 0, 0, 1);
+      color: rgb(var(--bgrgb), .6);
+   }
+
+   .ecru.wheadshots .PTab_ecru:hover .h6 {
+      color: rgb(var(--accent2rgb), .8);
+   }
+
+   .ecru.wheadshots .PTab_ecru.ecru_active .h6 {
+      color: rgb(var(--bgrgb), .8);
+   }
+
+
+   img.icon {
+      position: relative;
+      width: 38px;
+      height: 38px;
+      border-radius: 3px;
+      margin-right: 15px;
+      object-fit: cover;
+      filter: grayscale(.75);
+      opacity: .75;
+      transition: .5s ease;
+   }
+
+
+   .PTab_ecru:hover img.icon {
+      filter: none;
+      opacity: .9;
+   }
+
+   .ecru_active img.icon {
+      opacity: .9;
+      filter: none;
+      mix-blend-mode: normal
+   }
+
+   .ecru.wheadshots .PTab_ecru:nth-child(1).ecru_active~.pointer {
+      top: 28px;
+   }
+
+   .ecru.wheadshots .PTab_ecru:nth-child(2).ecru_active~.pointer {
+      top: 94px;
+   }
+
+   .ecru.wheadshots .PTab_ecru:nth-child(3).ecru_active~.pointer {
+      top: 160px;
+   }
+
+   .ecru.wheadshots .PTab_ecru:nth-child(4).ecru_active~.pointer {
+      top: 226px;
+   }
+
+   .ecru.wheadshots .PTab_ecru:nth-child(5).ecru_active~.pointer {
+      top: 290px;
+   }
+
+   .ecru.wheadshots .PTab_ecru:nth-child(6).ecru_active~.pointer {
+      top: 356px;
+   }
+
+
+   .ecru.wheadshots .ecrusidebar::-webkit-scrollbar {
+      width: 3px !important;
+      border-left: 1px solid rgb(var(--bgrgb), 1);
+   }
+
+   .ecru.wheadshots .ecrusidebar::-webkit-scrollbar-track,
+   .ecru.wheadshots .ecrusidebar::-webkit-scrollbar-track-piece {
+      background: rgb(var(--accentrgb), .85);
+   }
+
+   .ecru.wheadshots .ecrusidebar::-webkit-scrollbar-thumb {
+      background: rgb(0, 0, 0, .2);
+      border: 0;
+      /* border-left: 1px solid rgb(var(--bgrgb),1); */
+   }
+
+
+   /* OOC */
+
+   .ecruooc {}
+
+   .ecru.ecruooc .ecrugrid {
+      grid-template-areas: 'header header'
+         'main sidebar';
+      grid-template-columns: 384px 246px;
+      grid-template-rows: auto 264px;
+   }
+
+   .ecru.ecruooc .titlerow {
+      grid-area: header;
+      padding: 6px 30px 0;
+      display: flex;
+      align-items: center;
+      z-index: 30;
+      /* background: linear-gradient(to top left, rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, .75) 90%); */
+      background: var(--accent);
+   }
+
+   .ecru.ecruooc .h1 {
+      color: rgb(var(--bgrgb), 1) !important;
+   }
+
+   /* .ecru.ecruooc .ecrusidebar {
+      background: rgb(255, 255, 255, .15);
    } */
+
+   .ecrusideheader {
+      background: rgb(var(--accentrgb), 1);
+      color: rgb(var(--bgrgb), 1);
+      padding: 0 18px;
+      height: 27px;
+      display: flex;
+      align-items: center;
+      padding-top: 1px;
+      font: 700 9px/1.5em var(--bodyfont);
+      text-transform: uppercase;
+      letter-spacing: 1.75px;
+      display: none;
+   }
+
+   .ecru.ecruooc .PTab_ecru {
+      padding: 0 0 0 18px;
+      height: 66px;
+   }
+
+   .ecru.ecruooc .PTab_ecru .h6 {
+      /* color: rgb(var(--accentrgb), .5); */
+   }
+
+   .ecru.ecruooc .PTab_ecru:nth-last-of-type(2) {
+      border-bottom: 1px solid white;
+   }
+
+   .ecru.ecruooc .PTab_ecru:nth-last-of-type(1) {
+      border-bottom: 0;
+   }
+
+   .ecru.ecruooc .h2 {
+      color: var(--accent);
+   }
+
+   .ecru.ecruooc img.icon {
+      opacity: 1;
+   }
+
+   .ecru.ecruooc .PTab_ecru:hover img.icon {
+      opacity: 1;
+      filter: none;
+   }
+
+   .ecru.ecruooc .PTab_ecru:hover {
+      background: rgb(var(--bgrgb), 1);
+      background: rgb(0, 0, 0, .04);
+      opacity: 1;
+   }
+
+   .ecru.ecruooc a.PTab_ecru {
+      text-decoration: none;
+      font: inherit
+   }
+
+   .ecru.ecruooc .pointer {
+      display: none;
+   }
+
+   .ecru.ecruooc .PTab_ecru::after {
+      content: ' ';
+      position: absolute;
+      right: -10px;
+      display: inline-block;
+      width: 8px;
+      height: 12px;
+      clip-path: polygon(100% 0, 0 50%, 100% 100%);
+      background: var(--accent);
+      opacity: 1;
+      transition: .3s cubic-bezier(0.7, -0.2, 0.4, 1.2);
+   }
+
+   .ecru.ecruooc .PTab_ecru:hover::after {
+      opacity: 1;
+      right: -2px;
+   }
+
+   .ecru.ecruooc .ecrumain {
+      opacity: 1;
+   }
+
+   .ecru.ecruooc .textarea {
+      margin-top: 0;
+      padding-top: 18px;
+   }
+
+   .ecru.ecruooc .statsbox {
+      margin-top: 0;
+   }
 </style>
 
-<script src='https://codepen.io/breezescodes/pen/NWPyXNv.js'></script>
-<script>
-   LOCALT3('botanic', 'botanictab', 'botanic-main');
-</script>
+<!-- <style>
+   .imgbg {
+      background: rgb(255, 255, 255, .9);
+      background: rgb(var(--bgrgb), 1)
+   }
+
+   .imgbg::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      transform: scale(-100%, 100%);
+      background-image: url(https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80);
+      background-size: 200%;
+      background-position: left 53% bottom 50.5%;
+      z-index: -10;
+
+      /* on ecru */
+      /* background-image: url(https://images.unsplash.com/photo-1550895030-823330fc2551?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80); */
+      mix-blend-mode: darken;
+      z-index: -2;
+      opacity: 1;
+      background-size: cover;
+      background-position: left 70% bottom 100%;
+      filter: contrast(1.2);
+   }
+
+   .imgbg::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      background: var(--accent);
+      mix-blend-mode: hue;
+      opacity: 1;
+      z-index: 3;
+
+      /* on ecru */
+      /* z-index: 3;
+      opacity: .5; */
+   }
+
+   .imgbg .ecrumain {
+      background: rgb(255, 255, 255, .9);
+      z-index: 5;
+      /* background: rgb(var(--bgrgb),1) */
+   }
 
 
 
+   .withbanner .imgbg {
+      background: rgb(255, 255, 255, .75);
+      background: rgb(var(--bgrgb), 1)
+   }
 
-<div class="canvasrow">
+   .withbanner .imgbg::after {
+      opacity: .05;
+      z-index: 1;
+      mix-blend-mode: luminosity;
+   }
+
+   .withbanner .imgbg::before {
+      opacity: 1;
+      background: rgb(var(--bgrgb), 1)
+   }
+
+   .withbanner .imgbg .ecrumain {
+      background: transparent
+   }
+</style> -->
+
+
+<div class=" ">
+
+
+   <!-- Icon grid -->
+   <div class="canvaslabel">Icon grid</div>
+
+
+   <div id="boutique">
+      <div class="boutiqueinner">
+
+         <div class="boutiqueheader">Plot on discord @handle</div>
+
+         <div class="boutiquegrid">
+            <div class="boutiquenav scrolls">
+
+               <div class="boutiquetab boutique_active">
+                  <div class="boutiquetab-overlay">
+                     <span class="boutique-numerator">1</span>
+                     /6
+                  </div>
+                  <div class="boutiquetab-base">
+                     <div class="boutiquetab-img" style="background-image: url(https://i.ibb.co/qdV7pRf/B2.png)"></div>
+                  </div>
+               </div>
+
+               <div class="boutiquetab">
+                  <div class="boutiquetab-overlay">
+                     <span class="boutique-numerator">2</span>
+                     /6
+                  </div>
+                  <div class="boutiquetab-base">
+                     <div class="boutiquetab-img" style="background-image: url(https://i.ibb.co/drTc9xH/B1.png)"></div>
+                  </div>
+               </div>
+
+               <div class="boutiquetab">
+                  <div class="boutiquetab-overlay">
+                     <span class="boutique-numerator">3</span>
+                     /6
+                  </div>
+                  <div class="boutiquetab-base">
+                     <div class="boutiquetab-img" style="background-image: url(https://i.ibb.co/tLW7rkP/B2.png)"></div>
+                  </div>
+               </div>
+
+               <div class="boutiquetab">
+                  <div class="boutiquetab-overlay">
+                     <span class="boutique-numerator">4</span>
+                     /6
+                  </div>
+                  <div class="boutiquetab-base">
+                     <div class="boutiquetab-img" style="background-image: url(https://i.ibb.co/yNr2GqC/B2.png)"></div>
+                  </div>
+               </div>
+
+               <div class="boutiquetab">
+                  <div class="boutiquetab-overlay">
+                     <span class="boutique-numerator">5</span>
+                     /6
+                  </div>
+                  <div class="boutiquetab-base">
+                     <div class="boutiquetab-img" style="background-image: url(https://via.placeholder.com/90x110/6C5865/FFFFFF/)"></div>
+                  </div>
+               </div>
+
+               <div class="boutiquetab">
+                  <div class="boutiquetab-overlay">
+                     <span class="boutique-numerator">6</span>
+                     /6
+                  </div>
+                  <div class="boutiquetab-base">
+                     <div class="boutiquetab-img" style="background-image: url(https://via.placeholder.com/90x110/405765/FFFFFF/)"></div>
+                  </div>
+               </div>
+
+
+            </div>
+
+
+
+            <div class="boutiquemainbox">
+
+               <div class="boutique-main p boutique_active scrolls">
+                  <div class="titlerow">
+                     <div class="h1 fadesin">Amethyst</div>
+                  </div>
+
+                  <div class="textarea fadesin">
+                     <div class="statsbox h5">
+                        <b>Age</b> ##-years old <br>
+                        <b>Species</b> Unknown <br>
+                        <b>Group</b> – <br>
+                        <b>FC Rec</b> –
+                     </div>
+                     Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet.
+                     <hr>
+                     <div class="h3">Heading</div>
+                     In flank chuck buffalo ham exercitation pig incididunt tongue non cupidatat excepteur pork chop prosciutto. Velit irure ullamco burgdoggen magna salami ad est cillum eiusmod shank in duis dolore. Tail nulla consequat pork chop aute. Aliqua jowl eu turkey qui.
+
+                     <div class="h3">Heading</div>
+                     Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet.
+                  </div>
+               </div>
+
+               <div class="boutique-main p scrolls">
+                  <div class="titlerow">
+                     <div class="h1 fadesin">Beryl</div>
+                  </div>
+                  <div class="textarea fadesin">
+                     <div class="statsbox h5">
+                        <b>Age</b> ##-years old <br>
+                        <b>Species</b> Unknown <br>
+                        <b>Group</b> – <br>
+                        <b>FC Rec</b> –
+                     </div>
+                     Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
+                  </div>
+               </div>
+
+
+               <div class="boutique-main p scrolls">
+                  <div class="titlerow">
+                     <div class="h1 fadesin">Citrine</div>
+                  </div>
+                  <div class="textarea fadesin">
+                     <div class="statsbox h5">
+                        <b>Age</b> ##-years old <br>
+                        <b>Species</b> Unknown <br>
+                        <b>Group</b> – <br>
+                        <b>FC Rec</b> –
+                     </div>
+                     Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
+                  </div>
+               </div>
+
+
+               <div class="boutique-main p scrolls">
+                  <div class="titlerow">
+                     <div class="h1 fadesin">Diamond</div>
+                  </div>
+                  <div class="textarea fadesin">
+                     <div class="statsbox h5">
+                        <b>Age</b> ##-years old <br>
+                        <b>Species</b> Unknown <br>
+                        <b>Group</b> – <br>
+                        <b>FC Rec</b> –
+                     </div>
+                     Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
+                  </div>
+               </div>
+
+               <div class="boutique-main p scrolls">
+                  <div class="titlerow">
+                     <div class="h1 fadesin">Emerald</div>
+                  </div>
+                  <div class="textarea fadesin">
+                     <div class="statsbox h5">
+                        <b>Age</b> ##-years old <br>
+                        <b>Species</b> Unknown <br>
+                        <b>Group</b> – <br>
+                        <b>FC Rec</b> –
+                     </div>
+                     Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
+                  </div>
+               </div>
+
+
+               <div class="boutique-main p scrolls">
+                  <div class="titlerow">
+                     <div class="h1 fadesin">Garnet</div>
+                  </div>
+                  <div class="textarea fadesin">
+                     <div class="statsbox h5">
+                        <b>Age</b> ##-years old <br>
+                        <b>Species</b> Unknown <br>
+                        <b>Group</b> – <br>
+                        <b>FC Rec</b> –
+                     </div>
+                     Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
+                  </div>
+               </div>
+
+
+            </div>
+
+         </div>
+      </div>
+      <a href="http://pixel-perfect.boards.net/user/2465" class="gimcredits">made by gimmick</a>
+   </div>
+
+
+
 
    <!-- Banner image -->
    <div class="canvaslabel">Banner</div>
 
 
-   <div id="ecru" class="ecruouter">
+   <div id="ecru" class="ecru withbanner">
       <div class="ecruinner">
-
-         <div class="ecru-gradient">
-            <div class="ecru-headerspace"> </div>
-         </div>
 
 
          <div class="ecrugrid">
+
+            <div class="headertest">
+               <div class="ecru-headergradient"> </div>
+               <div class="ecru-headerfiller"> </div>
+            </div>
+
             <div class="ecrusidebar">
 
-               <div class="PTab ecru_active">
-                  <div class="ecru-tablabel">Overview
+               <div class="PTab_ecru ecru_active">
+                  <div class="ecru-tabtext h2">Overview
                   </div>
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
-                     Default
-                     <div class="ecru-h6">Open</div>
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
+                     Optional Icon
+                     <div class="h6">Open</div>
                   </div>
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
-                     With Optional Icon
-                     <div class="ecru-h6">Open</div>
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
+                     Icon + Custom Banner
+                     <div class="h6">Open</div>
                   </div>
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
-                     Custom Banner w. Icon
-                     <div class="ecru-h6">Open</div>
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
+                     Custom Banner Only
+                     <div class="h6">Open</div>
                   </div>
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
-                     Custom Banner
-                     <div class="ecru-h6">Open</div>
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
+                     Slot One
+                     <div class="h6">Open</div>
                   </div>
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
-                     Nav Scrolls
-                     <div class="ecru-h6">Open</div>
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
+                     Slot Two
+                     <div class="h6">Open</div>
                   </div>
                </div>
 
@@ -529,74 +1255,51 @@
 
 
             <div class="ecrumain ecru_active" style="--charbanner:">
-               <div class="ecru-gradient">
-                  <div class="ecru-bannerimg"> </div>
-               </div>
-
-               <div class="ecru-textarea">
-                  <div class="ecru-h1">Overview</div>
-
-                  Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
+               <div class="textarea fadesin p scrolls">
+                  <div class="h1 fadesin">Overview</div>
+                  If no charbanner included at all, it shows actual header below. Nisl suspendisse euismod a integer vel commodo leo. Enim tortor arcu sit eros justo posuere mattis. Cursus viverra id ut neque vitae orci. Eu commodo at ullamcorper elit tincidunt nibh. Tincidunt ipsum bibendum id nibh tellus. Nisi, at scelerisque amet
 
                </div>
             </div>
 
 
             <div class="ecrumain" style="--charbanner:">
-               <div class="ecru-textarea">
-                  <div class="ecru-h1">Default</div>
+               <div class="ecru-headergradient"> </div>
+               <div class="ecru-charbanner"> </div>
 
+               <img class="fadesin" src="https://i.ibb.co/TPYJLSD/10.png">
+
+               <div class="textarea fadesin p scrolls">
+                  <div class="h1 fadesin">Optional Icon</div>
+                  If charbanner included without a url provided, it uses fallback.
                   Porchetta culpa consectetur turducken eu in kielbasa tempor in non cupidatat reprehenderit. Tri-tip magna ut nulla occaecat venison Chickadeecken adipisicing chuck excepteur elit enim dolor turkey mollit.
-                  <div class="ecru-statsbox">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Species</b> Unknown <br>
                      <b>Group</b> – <br>
                      <b>FC Rec</b> –
                   </div>
                   <hr>
-                  <div class="ecru-h3">Hook</div>
+                  <div class="h3">Heading</div>
                   In flank chuck buffalo ham exercitation pig incididunt tongue non cupidatat excepteur pork chop prosciutto. Velit irure ullamco burgdoggen magna salami ad est cillum eiusmod shank in duis dolore. Tail nulla consequat pork chop aute. Aliqua jowl eu turkey qui.
                   <br><br>
                   In flank chuck buffalo ham exercitation pig incididunt tongue non cupidatat excepteur pork chop prosciutto. Velit irure ullamco burgdoggen magna salami ad est cillum eiusmod shank in duis dolore. Tail nulla consequat pork chop aute. Aliqua jowl eu turkey qui.
 
-                  <div class="ecru-h3">Hook</div>
+                  <div class="h3">Heading</div>
                   In flank chuck buffalo ham exercitation pig incididunt tongue non cupidatat excepteur pork chop prosciutto.
                </div>
             </div>
 
-            <div class="ecrumain" style="--charbanner:">
-               <!-- <div class="ecru-gradient">
-               <div class="ecru-bannerimg"> </div>
-            </div> -->
-
-               <img src="https://i.ibb.co/TPYJLSD/10.png">
-
-               <div class="ecru-textarea">
-                  <div class="ecru-h1">With Optional Icon</div>
-
-                  Porchetta culpa consectetur turducken eu in kielbasa tempor in non cupidatat reprehenderit. Tri-tip magna ut nulla occaecat venison Chickadeecken adipisicing chuck excepteur elit enim dolor turkey mollit.
-                  <div class="ecru-statsbox">
-                     <b>Age</b> ##-years old <br>
-                     <b>Species</b> Unknown <br>
-                     <b>Group</b> – <br>
-                     <b>FC Rec</b> –
-                  </div>
-               </div>
-            </div>
-
-
             <div class="ecrumain" style="--charbanner: url(https://i.ibb.co/hRLLrq6/79411444-test.png)">
-               <div class="ecru-gradient">
-                  <div class="ecru-bannerimg"> </div>
-               </div>
+               <div class="ecru-headergradient"> </div>
+               <div class="ecru-charbanner"> </div>
 
-               <img src="https://i.ibb.co/DWvmXnm/32.png" class="ecru-icon">
+               <img class="fadesin" src="https://i.ibb.co/DWvmXnm/32.png" class="ecru-icon">
 
-               <div class="ecru-textarea">
-                  <div class="ecru-h1">Custom Banner w. Icon</div>
-
+               <div class="textarea fadesin p scrolls">
+                  <div class="h1 fadesin">Icon + Custom Banner</div>
                   Porchetta culpa consectetur turducken eu in kielbasa tempor in non cupidatat reprehenderit. Tri-tip magna ut nulla occaecat venison Chickadeecken adipisicing chuck excepteur elit enim dolor turkey mollit.
-                  <div class="ecru-statsbox">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Species</b> Unknown <br>
                      <b>Group</b> – <br>
@@ -606,35 +1309,16 @@
             </div>
 
 
-            <div class="ecrumain" style="--charbanner:url(https://cdn.discordapp.com/attachments/683720444796338317/847241835893882910/1080x180-gojo-01.jpg)">
-               <div class="ecru-gradient">
-                  <div class="ecru-bannerimg"> </div>
-               </div>
 
-               <div class="ecru-textarea">
-                  <div class="ecru-h1">Custom Banner Only</div>
 
+            <div class="ecrumain" style="--charbanner:url(https://media.discordapp.net/attachments/683720444796338317/847241835893882910/1080x180-gojo-01.jpg)">
+               <div class="ecru-headergradient"> </div>
+               <div class="ecru-charbanner"> </div>
+
+               <div class="textarea fadesin p scrolls">
+                  <div class="h1 fadesin">Custom Banner Only</div>
                   Porchetta culpa consectetur turducken eu in kielbasa tempor in non cupidatat reprehenderit. Tri-tip magna ut nulla occaecat venison Chickadeecken adipisicing chuck excepteur elit enim dolor turkey mollit.
-                  <div class="ecru-statsbox">
-                     <b>Age</b> ##-years old <br>
-                     <b>Species</b> Unknown <br>
-                     <b>Group</b> – <br>
-                     <b>FC Rec</b> –
-                  </div>
-               </div>
-            </div>
-
-
-            <div class="ecrumain" style="--charbanner:">
-               <div class="ecru-gradient">
-                  <div class="ecru-bannerimg"> </div>
-               </div>
-
-               <div class="ecru-textarea">
-                  <div class="ecru-h1">Headline</div>
-
-                  Porchetta culpa consectetur turducken eu in kielbasa tempor in non cupidatat reprehenderit. Tri-tip magna ut nulla occaecat venison Chickadeecken adipisicing chuck excepteur elit enim dolor turkey mollit.
-                  <div class="ecru-statsbox">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Species</b> Unknown <br>
                      <b>Group</b> – <br>
@@ -658,71 +1342,71 @@
    <div class="canvaslabel">No banner</div>
 
 
-   <div id="ecru" class="ecruouter headshots">
-      <div class="ecruinner">
+   <div id="ecru" class="ecru wheadshots">
+      <div class="ecruinner imgbg">
 
 
          <div class="ecrugrid">
             <div class="ecrusidebar">
 
-               <div class="PTab ecru_active">
-                  <div class="ecru-tablabel">Aardvark
-                     <div class="ecru-h6">## / human / group</div>
+               <div class="PTab_ecru ecru_active">
+                  <div class="ecru-tabtext h2">Aardvark
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Badger
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Chickadee
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Dodo
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Echidna
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </div>
 
-               <div class="PTab">
-                  <div class="ecru-tablabel">
+               <div class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Fox
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </div>
 
                <div class="pointer"> </div>
             </div>
 
 
-            <div class="ecrumain ecru_active">
-               <div class="ecru-h1box">
-                  <div class="ecru-h1">Aardvark</div>
+            <div class="ecrumain scrolls ecru_active">
+               <div class="titlerow">
+                  <div class="h1 fadesin">Aardvark</div>
                </div>
 
-               <div class="ecru-textarea">
-                  <div class="ecru-statsbox">
+               <div class="textarea fadesin p">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Species</b> Unknown <br>
                      <b>Group</b> – <br>
@@ -730,22 +1414,22 @@
                   </div>
                   Porchetta culpa consectetur turducken eu in kielbasa tempor in non cupidatat reprehenderit. Tri-tip magna ut nulla occaecat venison Chickadeecken adipisicing chuck excepteur elit enim dolor turkey mollit.
                   <hr>
-                  <div class="ecru-h3">Hook</div>
+                  <div class="h3">Heading</div>
                   In flank chuck buffalo ham exercitation pig incididunt tongue non cupidatat excepteur pork chop prosciutto. Velit irure ullamco burgdoggen magna salami ad est cillum eiusmod shank in duis dolore. Tail nulla consequat pork chop aute. Aliqua jowl eu turkey qui.
                   <br><br>
-                  <div class="ecru-h3">Hook</div>
+                  <div class="h3">Heading</div>
                   In flank chuck buffalo ham exercitation pig incididunt tongue non cupidatat excepteur pork chop prosciutto.
                </div>
             </div>
 
 
-            <div class="ecrumain">
-               <div class="ecru-h1box">
-                  <div class="ecru-h1">Badger</div>
+            <div class="ecrumain scrolls">
+               <div class="titlerow">
+                  <div class="h1 fadesin">Badger</div>
                </div>
 
-               <div class="ecru-textarea">
-                  <div class="ecru-statsbox">
+               <div class="textarea fadesin p">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Species</b> Unknown <br>
                      <b>Group</b> – <br>
@@ -757,13 +1441,13 @@
             </div>
 
 
-            <div class="ecrumain">
-               <div class="ecru-h1box">
-                  <div class="ecru-h1">Chickadee</div>
+            <div class="ecrumain scrolls">
+               <div class="titlerow">
+                  <div class="h1 fadesin">Chickadee</div>
                </div>
 
-               <div class="ecru-textarea">
-                  <div class="ecru-statsbox">
+               <div class="textarea fadesin p">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Species</b> Unknown <br>
                      <b>Group</b> – <br>
@@ -774,13 +1458,13 @@
             </div>
 
 
-            <div class="ecrumain">
-               <div class="ecru-h1box">
-                  <div class="ecru-h1">Dodo</div>
+            <div class="ecrumain scrolls">
+               <div class="titlerow">
+                  <div class="h1 fadesin">Dodo</div>
                </div>
 
-               <div class="ecru-textarea">
-                  <div class="ecru-statsbox">
+               <div class="textarea fadesin p">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Species</b> Unknown <br>
                      <b>Group</b> – <br>
@@ -791,13 +1475,13 @@
             </div>
 
 
-            <div class="ecrumain">
-               <div class="ecru-h1box">
-                  <div class="ecru-h1">Echidna</div>
+            <div class="ecrumain scrolls">
+               <div class="titlerow">
+                  <div class="h1 fadesin">Echidna</div>
                </div>
 
-               <div class="ecru-textarea">
-                  <div class="ecru-statsbox">
+               <div class="textarea fadesin p">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Species</b> Unknown <br>
                      <b>Group</b> – <br>
@@ -808,13 +1492,13 @@
             </div>
 
 
-            <div class="ecrumain">
-               <div class="ecru-h1box">
-                  <div class="ecru-h1">Fox</div>
+            <div class="ecrumain scrolls">
+               <div class="titlerow">
+                  <div class="h1 fadesin">Fox</div>
                </div>
 
-               <div class="ecru-textarea">
-                  <div class="ecru-statsbox">
+               <div class="textarea fadesin p">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Species</b> Unknown <br>
                      <b>Group</b> – <br>
@@ -839,19 +1523,19 @@
    <div class="canvaslabel">Member Directory</div>
 
 
-   <div class="ecruouter headshots ooc">
-      <div class="ecruinner">
+   <div class="ecru ecruooc">
+      <div class="ecruinner imgbg">
 
 
          <div class="ecrugrid">
-            <div class="ecru-oocheader">
-               <div class="ecru-h1">Overview</div>
+            <div class="titlerow">
+               <div class="h1">OOC Name</div>
             </div>
 
 
-            <div class="ecrumain ecru_active">
-               <div class="ecru-textarea">
-                  <div class="ecru-statsbox">
+            <div class="ecrumain">
+               <div class="textarea p scrolls">
+                  <div class="statsbox h5">
                      <b>Age</b> ##-years old <br>
                      <b>Pronouns</b> He/She/They <br>
                      <b>Timezone</b> All <br>
@@ -866,52 +1550,53 @@
 
 
             <div class="ecrusidebar">
+               <div class="ecrusideheader">I Play </div>
 
-               <a href="#" class="PTab">
-                  <div class="ecru-tablabel">Magpie
-                     <div class="ecru-h6">## / human / group</div>
+               <a href="#" class="PTab_ecru">
+                  <div class="ecru-tabtext h2">Magpie
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </a>
 
-               <a href="#" class="PTab">
-                  <div class="ecru-tablabel">
+               <a href="#" class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Newt
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </a>
 
-               <a href="#" class="PTab">
-                  <div class="ecru-tablabel">
+               <a href="#" class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Otter
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </a>
 
-               <a href="#" class="PTab">
-                  <div class="ecru-tablabel">
+               <a href="#" class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Possum
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </a>
 
-               <a href="#" class="PTab">
-                  <div class="ecru-tablabel">
+               <a href="#" class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Quokka
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </a>
 
-               <a href="#" class="PTab">
-                  <div class="ecru-tablabel">
+               <a href="#" class="PTab_ecru">
+                  <div class="ecru-tabtext h2">
                      Raccoon
-                     <div class="ecru-h6">## / human / group</div>
+                     <div class="h6">## / human / group</div>
                   </div>
-                  <img src="../assets/100x100-deku-83.jpg">
+                  <img class="icon" src="../assets/100x100-deku-83.jpg">
                </a>
 
             </div>
@@ -926,528 +1611,30 @@
    </div>
 
 </div>
-<style>
-   .ecruouter {
-      margin: 30px auto;
-      width: fit-content;
-      overflow: hidden;
-      text-align: right;
-      --fallback: url(https://i.ibb.co/cx2t7YM/19.png);
-      --bgcolor: #f1f0eb;
-      --accent: #2D7175;
-      --accentrgb: 45, 113, 117;
-   }
 
-   a.gimcredits {
-      margin-top: 4px;
-      font: 700 7px/10px var(--bodyfont);
-      letter-spacing: .8px;
-      text-decoration: none;
-      text-transform: uppercase;
-   }
 
-   .ecruinner {
-      position: relative;
-      background: var(--bgcolor);
-      text-align: left;
-      font-family: var(--bodyfont);
-      overflow: hidden
-   }
 
-   .ecrugrid {
-      display: grid;
-      grid-template-areas: 'main sidebar';
-      grid-template-columns: 372px 186px;
-      grid-template-rows: 270px;
-   }
 
-   .ecrusidebar {
-      grid-area: sidebar;
-      position: relative;
-      background: rgb(0, 0, 0, .02);
-      border-left: 1px solid white;
-      z-index: 50;
-      overflow-y: auto;
-      overflow-x: hidden;
-   }
 
-   .ecruouter .PTab {
-      cursor: pointer;
-      padding: 14px 0 14px 18px;
-      height: 53.5px;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: .5s ease;
 
-      color: rgb(0, 0, 0, .3);
-      font: bold 15px/1.1em Playfair Display;
-      border-bottom: 1px solid white;
-   }
 
-   .ecruouter .PTab:nth-last-of-type(2) {
-      border-bottom: 0;
-   }
 
-   .ecruouter .PTab .ecru-h6 {
-      opacity: .4;
-      color: initial;
-      margin-top: 1px;
-      font: 400 8px/1.5em var(--bodyfont);
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      transition: .5s ease;
-   }
 
-   .ecruouter .PTab.ecru_active {
-      background: var(--bgcolor);
-   }
 
-   .ecruouter .PTab.ecru_active,
-   .ecruouter .PTab:hover {
-      color: var(--accent);
-   }
 
-   .ecruouter .PTab.ecru_active div,
-   .ecruouter .PTab:hover div {
-      opacity: 1;
-   }
 
-   .pointer {
-      position: absolute;
-      top: 21px;
-      right: 0;
-      width: 8px;
-      height: 12px;
-      clip-path: polygon(100% 0, 0 50%, 100% 100%);
-      background: var(--accent);
-      margin-right: -2px;
-      transition: .5s;
-   }
-
-   .ecruouter .PTab:nth-child(2).ecru_active~.pointer {
-      top: 74px;
-   }
-
-   .ecruouter .PTab:nth-child(3).ecru_active~.pointer {
-      top: 129px;
-   }
-
-   .ecruouter .PTab:nth-child(4).ecru_active~.pointer {
-      top: 182px;
-   }
-
-   .ecruouter .PTab:nth-child(5).ecru_active~.pointer {
-      top: 235px;
-   }
-
-   .ecruouter .PTab:nth-child(6).ecru_active~.pointer {
-      top: 288px;
-   }
-
-   .ecrumain {
-      grid-area: main;
-      position: relative;
-      z-index: 10;
-      opacity: 0;
-      transition: all .75s ease-in-out, z-index 0s .75s ease;
-   }
-
-   .ecrumain.ecru_active {
-      opacity: 1;
-      z-index: 15;
-   }
-
-   .ecru-headerspace {
-      position: relative;
-      background-color: var(--bgcolor);
-      background: var(--fallback) center center / cover;
-      height: 100px;
-      border-bottom: 1px solid white;
-      z-index: 0;
-   }
-
-   .ecruinner>.ecru-gradient::before {
-      top: 0;
-      opacity: 1;
-      z-index: 1;
-   }
-
-   .ecru-gradient::before {
-      content: '';
-      position: absolute;
-      top: -101px;
-      left: 0;
-      width: 558px;
-      height: 100px;
-      background: linear-gradient(to top right, var(--bgcolor) 0%, rgba(241, 240, 235, 0) 100%);
-      z-index: 30;
-      opacity: 1;
-   }
-
-
-   .ecru-bannerimg::after,
-   .ecru-headerspace::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--accent);
-      z-index: 31;
-      mix-blend-mode: color;
-      opacity: .5;
-   }
-
-   .ecru-bannerimg::before,
-   .ecru-headerspace::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #FFF2DE;
-      z-index: 32;
-      mix-blend-mode: color;
-      opacity: .5;
-   }
-
-   .ecru-bannerimg {
-      background-color: transparent;
-      background-image: var(--charbanner, var(--fallback));
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-blend-mode: color-burn;
-      height: 100px;
-      width: 558px;
-      position: absolute;
-      top: -101px;
-      left: 0;
-      z-index: -1;
-      transition-delay: .75s;
-   }
-
-   .ecrumain img {
-      display: block;
-      width: 90px;
-      height: 90px;
-      object-fit: cover;
-      filter: contrast(.95) grayscale(.5) brightness(1.1);
-      border-top-left-radius: 50px;
-      border-top-right-radius: 50px;
-      margin: -62px 0 0 27px;
-      z-index: 40;
-      border: 1px solid white;
-      padding: 3px;
-      opacity: 0;
-   }
-
-   .ecrumain {
-      display: flex;
-      flex-direction: column;
-   }
-
-   .ecru-textarea {
-      font: normal 12.5px/1.4em var(--bodyfont);
-      overflow: auto;
-      padding: 15px 30px 27px;
-      opacity: 0;
-   }
-
-   img+.ecru-textarea {
-      margin-top: -36px;
-      padding-top: 51px;
-   }
-
-   .ecrumain img,
-   .ecru-textarea {
-      transform: translate(0, 320px);
-      transition: all .6s ease-in-out;
-   }
-
-   .ecrumain img {
-      transform: translate(-320px, 0);
-   }
-
-
-   .ecru_active .ecru-textarea,
-   .ecru_active.ecrumain img {
-      transform: translate(0, 0);
-      opacity: 1;
-   }
-
-   .ecru-h1 {
-      color: var(--accent);
-      font: bold 24px/1.2em var(--displayfont);
-      margin-bottom: 6px;
-   }
-
-   .ecru-h3 {
-      font: bold 9px/1.5em var(--bodyfont);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin: 15px 0 1px;
-   }
-
-   .ecru-statsbox {
-      margin: 9px 0;
-      font: 9px/1.75em var(--bodyfont);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      justify-content: space-between;
-   }
-
-   .ecru-statsbox b {
-      display: inline-block;
-      width: 48px;
-      margin-right: 10px;
-   }
-
-   #ecru br+br {
-      content: '';
-      display: block;
-      height: 12px;
-   }
-
-   .ecruinner hr {
-      width: calc(100% + 60px);
-      margin-left: -30px;
-      margin-top: 1.5em;
-      margin-bottom: 1.5em;
-      border: 0;
-      border-top: 1px solid white;
-      height: 1px;
-   }
-
-
-
-
-   .ecruouter ::-webkit-scrollbar {
-      width: 3px !important;
-      height: 1px !important;
-      background: rgb(var(--accentrgb), 0);
-      border: 0;
-   }
-
-   .ecruouter ::-webkit-scrollbar-thumb {
-      background: rgb(var(--accentrgb), .1);
-      border: 0;
-   }
-
-   .ecruouter ::-webkit-scrollbar-track,
-   .ecruouter ::-webkit-scrollbar-track-piece {
-      background: rgb(var(--accentrgb), 0);
-      border: 0;
-   }
-
-   .ecruouter .ecrusidebar::-webkit-scrollbar {
-      width: 2px !important;
-   }
-
-   .ecruouter .ecrusidebar::-webkit-scrollbar-thumb {
-      background: white;
-   }
-
-
-
-
-   /* HEADSHOTS */
-
-   .ecruouter.headshots .ecru-gradient,
-   .headshots .ecrumain img {
-      display: none;
-   }
-
-   .ecruouter.headshots {
-      width: 630px;
-   }
-
-   .ecruouter.headshots .ecrugrid {
-      grid-template-columns: 384px 246px;
-      grid-template-rows: 330px;
-   }
-
-
-   .ecruouter.headshots .PTab {
-      padding: 0 0 0 18px;
-      height: 66px;
-   }
-
-   .ecruouter.headshots .PTab img {
-      width: 38px;
-      height: 38px;
-      border-radius: 3px;
-      margin-right: 15px;
-      object-fit: cover;
-      filter: grayscale(.5);
-      opacity: .4;
-      transition: .5s ease;
-   }
-
-   .ecruouter.headshots .PTab.ecru_active img {
-      opacity: 1;
-      filter: none;
-   }
-
-   .ecruouter.headshots .PTab:nth-child(1).ecru_active~.pointer {
-      top: 28px;
-   }
-
-   .ecruouter.headshots .PTab:nth-child(2).ecru_active~.pointer {
-      top: 94px;
-   }
-
-   .ecruouter.headshots .PTab:nth-child(3).ecru_active~.pointer {
-      top: 160px;
-   }
-
-   .ecruouter.headshots .PTab:nth-child(4).ecru_active~.pointer {
-      top: 226px;
-   }
-
-   .ecruouter.headshots .PTab:nth-child(5).ecru_active~.pointer {
-      top: 290px;
-   }
-
-   .ecruouter.headshots .PTab:nth-child(6).ecru_active~.pointer {
-      top: 356px;
-   }
-
-   .ecruouter.headshots .ecru-tablabel {
-      width: 150px;
-   }
-
-   .ecruouter.headshots .ecrumain {
-      display: none;
-   }
-
-   .ecruouter.headshots .ecrumain.ecru_active {
-      display: block;
-      overflow-y: auto;
-      overflow-x: hidden;
-   }
-
-   .ecruouter.headshots .ecru-textarea {
-      padding: 0 30px 27px;
-      margin-top: 18px;
-      /* overflow: unset; */
-   }
-
-   .ecruouter.headshots .ecru-h1box {
-      border-bottom: 1px solid white;
-      height: 66px;
-      width: 384px;
-      padding: 21px 30px 0;
-      box-sizing: border-box;
-      font-size: 24px;
-   }
-
-   .ecruouter.headshots .ecru-statsbox {
-      margin: 9px 0;
-   }
-
-   .ecruouter.headshots .PTab:hover img {
-      background: var(--bgcolor);
-      filter: none;
-      opacity: 1;
-   }
-
-   .ecru-h1box .ecru-h1 {
-      transform: translate(-320px, 0);
-      transition: .6s ease-in-out;
-      opacity: 0;
-   }
-
-   .ecru_active .ecru-h1box .ecru-h1 {
-      transform: translate(0, 0);
-      opacity: 1;
-   }
-
-
-   /* OOC */
-
-   .ecruouter.ooc .ecrugrid {
-      grid-template-areas: 'header header'
-         'main sidebar';
-      grid-template-columns: 384px 246px;
-      grid-template-rows: auto 264px;
-   }
-
-   .ecru-oocheader {
-      grid-area: header;
-      border-bottom: 1px solid white;
-      box-sizing: border-box;
-      height: 66px;
-      width: 100%;
-      padding: 12px 30px 0;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-   }
-
-   .ecruouter.ooc .PTab:nth-last-of-type(2) {
-      border-bottom: 1px solid white;
-   }
-
-   .ecruouter.ooc .PTab:nth-last-of-type(1) {
-      border-bottom: 0;
-   }
-
-   .ecruouter.ooc .pointer {
-      display: none;
-   }
-
-   .ecruouter.ooc .PTab::after {
-      content: ' ';
-      position: absolute;
-      right: -10px;
-      display: inline-block;
-      width: 8px;
-      height: 12px;
-      clip-path: polygon(100% 0, 0 50%, 100% 100%);
-      background: var(--accent);
-      opacity: 1;
-      transition: .3s cubic-bezier(0.7, -0.2, 0.4, 1.2);
-   }
-
-   .ecruouter.ooc .PTab:hover::after {
-      opacity: 1;
-      right: -2px;
-   }
-
-   .ecruouter.ooc .PTab {
-      color: var(--accent);
-   }
-
-   .ecruouter.ooc .PTab .ecru-h6,
-   .ecruouter.ooc .PTab img {
-      opacity: 1;
-   }
-
-   .ecruouter.ooc .PTab:hover {
-      background: var(--bgcolor);
-      opacity: 1;
-   }
-
-   .ecruouter.ooc a.PTab {
-      text-decoration: none;
-   }
-
-   /* .ecruouter.ooc .ecru-oocheader {
-      background: rgb(var(--accentrgb), 1);
-   }
-
-   .ecruouter.ooc .ecru-h1 {
-      color: var(--bgcolor);
-   } */
-</style>
 
 
 <script src='https://codepen.io/breezescodes/pen/NWPyXNv.js'></script>
 <script>
-   LOCALT3('ecru', 'PTab', 'ecrumain');
+   LOCALT3('boutique', 'boutiquetab', 'boutique-main');
+</script>
+
+
+
+
+
+<script src='https://codepen.io/breezescodes/pen/NWPyXNv.js'></script>
+<script>
+   LOCALT3('ecru', 'PTab_ecru', 'ecrumain');
 </script>
