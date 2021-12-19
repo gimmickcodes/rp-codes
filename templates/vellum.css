@@ -286,6 +286,7 @@
    opacity: 0;
    z-index: 0;
    position: absolute;
+   width: 100%;
    transition: .4s ease-in-out;
 }
 
@@ -373,7 +374,7 @@
    width: fit-content;
    overflow: hidden;
    text-align: right;
-   --fallback: url(https://lh3.google.com/u/0/d/1TXZjxRE6e_yY3sm8ZpCbleBJMjV-b6-I=w2360-h1048-iv1), url(https://lh3.google.com/u/0/d/1kTQCqh_iKwI237gSs0kmo1zEFwDguy-s=w2360-h1048-iv1)
+   --defaultheader: url(https://lh3.google.com/u/0/d/1TXZjxRE6e_yY3sm8ZpCbleBJMjV-b6-I=w2360-h1048-iv1), url(https://lh3.google.com/u/0/d/1kTQCqh_iKwI237gSs0kmo1zEFwDguy-s=w2360-h1048-iv1)
 }
 
 a.gimcredits {
@@ -487,7 +488,7 @@ a.gimcredits {
 
 .vellum-headerfiller {
    position: relative;
-   background-image: var(--fallback);
+   background-image: var(--defaultheader);
    background-position: center;
    background-size: cover;
    filter: contrast(1.5) brightness(.75);
@@ -546,7 +547,7 @@ a.gimcredits {
 
 .vellum-charbanner {
    background-color: rgb(var(--bgrgb), 1);
-   background-image: var(--charbanner, var(--fallback));
+   background-image: var(--charbanner, var(--defaultheader));
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
