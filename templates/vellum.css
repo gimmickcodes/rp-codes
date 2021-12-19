@@ -1,0 +1,935 @@
+/* Universal */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+#boutique,
+.vellum {
+   --displayfont: 'Playfair Display';
+   --bodyfont: 'Roboto';
+   --whitergb: 255, 255, 255;
+   --blackrgb: 0, 0, 0;
+   --bordercolor: 1px solid rgb(var(--whitergb), .85);
+   --bgrgb: 242, 240, 236;
+   --accent: #416271;
+   --accentrgb: 65, 98, 113;
+}
+
+.boutiquegrid *,
+.vellum * {
+   box-sizing: border-box;
+}
+
+#boutique .scrolls,
+.vellum .scrolls {
+   height: 100%;
+   overflow: auto;
+}
+
+#boutique .titlerow,
+.vellum .titlerow {
+   border-bottom: var(--bordercolor);
+   height: 66px;
+   width: 100%;
+}
+
+#boutique .textarea,
+.vellum .textarea {
+   padding: 0 30px 27px;
+   margin-top: 18px;
+}
+
+#boutique hr,
+.vellum hr {
+   width: calc(100% + 60px);
+   margin-left: -30px;
+   margin-top: 1.5em;
+   margin-bottom: 1.5em;
+   border: 0;
+   border-bottom: var(--bordercolor);
+}
+
+#boutique .statsbox,
+.vellum .statsbox {
+   margin: 9px 0;
+}
+
+
+.boutiqueinner .textarea b, .vellum .textarea b {
+   color: var(--accent);
+   font-weight: 700;
+}
+
+#boutique .h1,
+.vellum .h1 {
+   color: var(--accent);
+   font: bold 24px/1.2em var(--displayfont);
+}
+
+.vellum.withbanner .h1 {
+   color: var(--accent);
+   font: bold 21px/1.2em var(--displayfont);
+}
+
+#boutique .h2,
+.vellum .h2 {
+   font: bold 15px/1.1em var(--displayfont);
+}
+
+#boutique .h3,
+.vellum .h3 {
+   font: bold 10px/1.5em var(--bodyfont);
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   color: var(--accent);
+}
+
+#boutique .h5,
+.vellum .h5 {
+   font: 9px/1.75em var(--bodyfont);
+   text-transform: uppercase;
+   letter-spacing: 1.26px;
+}
+
+#boutique .h5 b,
+.vellum .h5 b {
+   display: inline-block;
+   width: 48px;
+   margin-right: 10px;
+   color: var(--accent);
+   background: transparent;
+   padding: 0;
+}
+
+#boutique .h6,
+.vellum .h6 {
+   font: 400 8px/1.5em var(--bodyfont);
+   text-transform: uppercase;
+   letter-spacing: 1.2px;
+}
+
+#boutique .graf,
+.vellum .graf {
+   font: normal 12.5px/1.4em var(--bodyfont);
+   color: rgb(var(--blackrgb), .8);
+}
+
+#boutique br+br,
+.vellum br+br {
+   content: '';
+   display: block;
+   height: 12px;
+}
+
+.boutiqueinner .textarea a, .vellum .textarea a {
+   color: var(--accent);
+   font: inherit;
+   font-weight: 700;
+   text-decoration-style: dotted;
+   text-underline-offset: 2px;
+   transition: .3s ease;
+}
+
+.boutiqueinner .textarea a:hover, .vellum .textarea a:hover {
+   filter: invert(.5);
+}
+
+
+
+/* Botique */
+
+
+#boutique {
+   margin: 30px auto;
+   width: fit-content;
+   overflow: hidden;
+   text-align: right;
+   position: relative;
+}
+
+.boutiqueheader {
+   background: var(--accent);
+   color: rgb(var(--bgrgb), 1);
+   padding: 4px 15px 0;
+   height: 30px;
+   display: flex;
+   align-items: center;
+   font: 700 9px/1.5em var(--bodyfont);
+   text-transform: uppercase;
+   letter-spacing: 1.75px;
+}
+
+.boutiquegrid {
+   position: relative;
+   display: grid;
+   grid-template-columns: 300px 330px;
+   grid-template-areas: 'nav main';
+   grid-template-rows: 310px;
+   background: rgb(var(--bgrgb), 1);
+   text-align: left;
+   border: 2px solid var(--accent);
+}
+
+.boutiquenav {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(96px, 96px));
+   grid-column-gap: 24px;
+   grid-row-gap: 24px;
+   justify-content: center;
+   padding: 27px 0;
+   border-right: var(--bordercolor);
+   z-index: 1;
+}
+
+.boutiquetab {
+   cursor: pointer;
+   width: 90px;
+   height: 110px;
+   border: var(--bordercolor);
+   padding: 3px;
+   box-sizing: content-box;
+   opacity: 1;
+   position: relative;
+   background-size: cover;
+   z-index: 5;
+   transition: .4s ease;
+}
+
+.boutiquetab.boutique_active {
+   border-color: rgb(var(--accentrgb), .4);
+}
+
+.boutiquetab-base {
+   position: relative;
+   width: 90px;
+   height: 110px;
+   background: rgb(var(--bgrgb), 1);
+   overflow: hidden;
+}
+
+.boutiquetab-img {
+   width: 90px;
+   height: 110px;
+   background-size: cover;
+   overflow: hidden;
+   opacity: .4;
+   filter: blur(1px) brightness(1) saturate(.5) contrast(1);
+   transition: all .4s ease;
+}
+
+.boutiquetab:hover .boutiquetab-img {
+   opacity: .6;
+   filter: blur(0px) brightness(1) saturate(1) contrast(1);
+   transform: scale(1.0);
+}
+
+.boutiquetab.boutique_active .boutiquetab-img {
+   mix-blend-mode: normal;
+   opacity: 1;
+   transform: scale(1.05);
+   filter: blur(0) brightness(.9) saturate(1.3) contrast(1.1);
+}
+
+.boutiquetab-overlay {
+   position: absolute;
+   z-index: 50;
+   display: flex;
+   width: calc(100% - 6px);
+   height: calc(100% - 6px);
+   padding: 9px 12px;
+   overflow: hidden;
+   justify-content: flex-end;
+   align-items: flex-end;
+   mix-blend-mode: hard-light;
+   opacity: 0;
+
+   font: bold 20px/1.2em var(--displayfont);
+   color: rgb(var(--accentrgb), 0);
+   background: linear-gradient(145deg, rgb(var(--whitergb), 0) 0%, rgb(var(--whitergb), .6) 100%);
+   transition: .4s ease;
+}
+
+.boutiquetab:hover .boutiquetab-overlay {
+   opacity: 1;
+   color: rgb(var(--accentrgb), 1);
+   background: linear-gradient(145deg, rgb(var(--whitergb), 0) 0%, rgb(var(--whitergb), .6) 100%);
+}
+
+.boutiquetab.boutique_active .boutiquetab-overlay {
+   opacity: 0;
+   color: rgb(var(--accentrgb), 0);
+   background: linear-gradient(145deg, rgb(var(--whitergb), 0) 0%, rgb(var(--whitergb), .6) 100%);
+}
+
+.boutiquetab.boutique_active:hover .boutiquetab-overlay {
+   opacity: 1;
+   color: rgb(var(--accentrgb), 1);
+   background: linear-gradient(145deg, rgb(var(--whitergb), 0) 0%, rgb(var(--whitergb), .6) 100%);
+}
+
+.boutique-numerator {
+   font: bold 42px/1.2em var(--displayfont);
+}
+
+
+.boutiquemainbox {
+   grid-area: main;
+   width: 100%;
+   position: relative;
+   overflow-x: hidden;
+   overflow-y: auto;
+}
+
+.boutiquetabbody {
+   opacity: 0;
+   z-index: 0;
+   position: absolute;
+   transition: .4s ease-in-out;
+}
+
+.boutique_active.boutiquetabbody {
+   opacity: 1;
+   z-index: 20;
+}
+
+#boutique .titlerow {
+   padding: 24px 30px 12px;
+   /* position: sticky;
+   top: -15px;
+   background: rgb(var(--bgrgb),1);
+   z-index: 20; */
+}
+
+#boutique .h3 {
+   margin: 15px 0 1px;
+}
+
+
+#boutique .fadesin {
+   transition: all .5s ease-in-out;
+}
+
+#boutique .textarea.fadesin {
+   opacity: 0;
+}
+
+#boutique .textarea.fadesin {
+   transform: translate(-0, 132px);
+}
+
+
+#boutique .h1.fadesin {
+   transform: translate(0, 0);
+   opacity: 0;
+}
+
+.boutique_active .fadesin {
+   transform: translate(0) !important;
+   opacity: 1 !important;
+}
+
+
+
+
+#boutique ::-webkit-scrollbar {
+   width: 4px !important;
+   height: 1px !important;
+   background: rgb(var(--accentrgb), 0);
+   border: 0;
+}
+
+#boutique ::-webkit-scrollbar-track,
+#boutique ::-webkit-scrollbar-track-piece {
+   background: rgb(var(--accentrgb), 0);
+   border: 0;
+   border-right: 2px solid rgb(var(--bgrgb), 1);
+}
+
+#boutique ::-webkit-scrollbar-thumb {
+   background: rgb(var(--accentrgb), .4);
+   border: 2px solid rgb(var(--bgrgb), 1);
+   border-left: 0;
+}
+
+
+#boutique .boutiquenav::-webkit-scrollbar-thumb {
+   background: white;
+   /* background: rgb(var(--accentrgb), .2); */
+   /* border: 0; */
+}
+
+
+
+
+
+
+
+/* Vellum */
+
+.vellum {
+   margin: 30px auto;
+   width: fit-content;
+   overflow: hidden;
+   text-align: right;
+   --fallback: url(https://lh3.google.com/u/0/d/1TXZjxRE6e_yY3sm8ZpCbleBJMjV-b6-I=w2360-h1048-iv1), url(https://lh3.google.com/u/0/d/1kTQCqh_iKwI237gSs0kmo1zEFwDguy-s=w2360-h1048-iv1)
+}
+
+a.gimcredits {
+   display: block;
+   margin-top: 4px;
+   font: 700 7px/10px var(--bodyfont);
+   letter-spacing: .8px;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+
+.velluminner {
+   position: relative;
+   background: rgb(var(--bgrgb), 1);
+   text-align: left;
+   overflow: hidden;
+}
+
+.vellumgrid {
+   display: grid;
+   grid-template-areas: 'header header'
+      'main sidebar';
+   grid-template-columns: 372px 186px;
+   grid-template-rows: auto 270px;
+}
+
+.vellumsidebar {
+   grid-area: sidebar;
+   position: relative;
+   border-left: var(--bordercolor);
+   z-index: 50;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+
+.vellum .vellumtab {
+   cursor: pointer;
+   padding: 14px 0 14px 18px;
+   height: 54px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: rgb(var(--blackrgb), .3);
+   border-bottom: var(--bordercolor);
+   transition: .5s ease;
+}
+
+.vellumtab>* {
+   pointer-events: none;
+}
+
+.vellum .vellumtab:hover {
+   color: var(--accent);
+}
+
+.vellum .vellumtab.vellum_active {
+   background: rgb(var(--bgrgb), 1);
+   color: var(--accent);
+}
+
+.vellum .h6 {
+   margin-top: 2px;
+   transition: .5s ease;
+   color: rgb(var(--blackrgb), .5);
+}
+
+.vellum .vellumtab:hover .h6 {
+   color: rgb(var(--blackrgb), 1);
+}
+
+.vellum .vellumtab.vellum_active .h6 {
+   color: rgb(var(--blackrgb), 1);
+}
+
+.vellum .vellumtab:nth-last-of-type(2) {
+   border-bottom: 0;
+}
+
+
+.pointer {
+   position: absolute;
+   top: 21px;
+   right: 0;
+   width: 8px;
+   height: 12px;
+   clip-path: polygon(100% 0, 0 50%, 100% 100%);
+   background: var(--accent);
+   margin-right: -2px;
+   transition: .5s;
+}
+
+
+
+.headertest {
+   grid-area: header;
+   border-bottom: var(--bordercolor);
+}
+
+.vellumtabbody {
+   grid-area: main;
+   position: relative;
+   z-index: 10;
+   opacity: 0;
+   transition: all .75s ease-in-out, z-index 0s .75s ease;
+}
+
+.vellumtabbody.vellum_active {
+   opacity: 1;
+   z-index: 15;
+}
+
+.vellum-headerfiller {
+   position: relative;
+   background-image: var(--fallback);
+   background-position: center;
+   background-size: cover;
+   filter: contrast(1.5) brightness(.75);
+   height: 100px;
+   box-sizing: content-box;
+   z-index: 0;
+   opacity: 1;
+}
+
+.vellum-headergradient {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 558px;
+   height: 100px;
+   background: linear-gradient(to top right, rgb(var(--bgrgb), .75) 0%, rgb(var(--bgrgb), 0) 100%);
+   opacity: 1;
+   z-index: 10;
+}
+
+.vellum-headerfiller::after,
+.vellum-charbanner::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: var(--accent);
+   z-index: 7;
+   mix-blend-mode: saturation;
+   opacity: .5;
+}
+
+.vellum-charbanner::after {
+   z-index: 17;
+}
+
+.vellum-headerfiller::before,
+.vellum-charbanner::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #FFF2DE;
+   z-index: 6;
+   mix-blend-mode: color;
+   opacity: .5;
+}
+
+.vellum-charbanner::before {
+   z-index: 16;
+}
+
+.vellum-charbanner {
+   background-color: rgb(var(--bgrgb), 1);
+   background-image: var(--charbanner, var(--fallback));
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   filter: contrast(1.5) brightness(.75);
+   height: 100px;
+   width: 558px;
+   position: absolute;
+   top: -101px;
+   left: 0;
+   z-index: 10;
+   transition-delay: .75s;
+}
+
+.vellumtabbody .vellum-headergradient {
+   top: -101px;
+   z-index: 19;
+}
+
+.vellumtabbody img {
+   position: relative;
+   display: block;
+   width: 90px;
+   height: 90px;
+   object-fit: cover;
+   filter: contrast(.95) grayscale(.5) brightness(1);
+   border-top-left-radius: 50px;
+   border-top-right-radius: 50px;
+   margin: -62px 0 0 27px;
+   z-index: 100;
+   border: var(--bordercolor);
+   padding: 3px;
+   opacity: 0;
+}
+
+.withbanner .textarea {
+   padding-top: 18px;
+   margin-top: 0;
+}
+
+.withbanner img+.textarea {
+   margin-top: -28px;
+   padding-top: 39px;
+}
+
+.vellum .fadesin {
+   transition: all .6s ease-in-out;
+}
+
+.vellum .textarea.fadesin {
+   opacity: 0;
+}
+
+.vellum .textarea.fadesin {
+   transform: translate(0, 320px);
+}
+
+.vellum img.fadesin {
+   transform: translate(-320px, 0);
+}
+
+.vellum .h1.fadesin {
+   opacity: 0;
+}
+
+.vellum .vellum_active .fadesin {
+   transform: translate(0, 0) !important;
+   opacity: 1;
+}
+
+.velluminner .h1 {
+   margin-bottom: 6px;
+}
+
+.velluminner .h3 {
+   margin: 15px 0 1px;
+}
+
+.vellum ::-webkit-scrollbar {
+   width: 2px !important;
+   height: 1px !important;
+   background: rgb(var(--accentrgb), 0);
+   border: 0;
+}
+
+.vellum ::-webkit-scrollbar-track,
+.vellum ::-webkit-scrollbar-track-piece {
+   background: rgb(var(--accentrgb), 0);
+   border: 0;
+}
+
+.vellum ::-webkit-scrollbar-thumb {
+   background: rgb(var(--accentrgb), .25);
+   border: 0;
+}
+
+
+.vellum .vellumsidebar::-webkit-scrollbar {
+   width: 3px !important;
+   border: 0;
+}
+
+.vellum .vellumsidebar::-webkit-scrollbar-track,
+.vellum .vellumsidebar::-webkit-scrollbar-track-piece {
+   border-right: 1px solid rgb(var(--whitergb), 1);
+}
+
+.vellum .vellumsidebar::-webkit-scrollbar-thumb {
+   background: rgb(var(--accentrgb), .25);
+   border-right: 1px solid rgb(var(--whitergb), 1);
+}
+
+
+
+
+/* HEADSHOTS */
+
+.vellum.wheadshots .vellum-headergradient,
+.wheadshots .vellumtabbody img {
+   display: none;
+}
+
+.vellum.wheadshots {
+   width: 630px;
+}
+
+.vellum.wheadshots .vellumgrid {
+   grid-template-areas: 'main sidebar';
+   grid-template-columns: 384px 246px;
+   grid-template-rows: 330px;
+}
+
+.vellum.wheadshots .titlerow {
+   padding: 21px 30px 0;
+}
+
+.vellum.wheadshots .textarea.fadesin {
+   transform: none;
+   margin-top: 320px;
+}
+
+.vellum.wheadshots .vellum_active .textarea.fadesin {
+   margin-top: 18px;
+}
+
+.vellum.wheadshots .vellumsidebar {
+   background: rgb(var(--accentrgb), 1);
+}
+
+.vellum.wheadshots .vellumtab {
+   padding: 0 0 0 18px;
+   height: 66px;
+   border-bottom-color: rgb(var(--bgrgb), .1);
+   color: rgb(var(--bgrgb), .55);
+   letter-spacing: .3px;
+}
+
+.vellum.wheadshots .vellumtab:hover {
+   background: rgb(var(--blackrgb), .1);
+}
+
+.vellum.wheadshots .vellumtab.vellum_active {
+   background: rgb(var(--blackrgb), .15);
+   color: rgb(var(--bgrgb), .85);
+}
+
+.vellum.wheadshots span {
+   color: var(--accent);
+   filter: invert(1);
+   mix-blend-mode: screen;
+   opacity: 1;
+   transition: .5s ease;
+}
+
+.vellum.wheadshots .h6 {
+   font-weight: 500;
+   letter-spacing: 1.7px;
+   color: rgb(var(--bgrgb), .55);
+   mix-blend-mode: normal;
+}
+
+.vellum.wheadshots .vellumtab:hover .h6 {
+   color: rgb(var(--bgrgb), .55);
+}
+
+.vellum.wheadshots .vellumtab.vellum_active .h6 {
+   color: rgb(var(--bgrgb), .8);
+}
+
+img.vellum-icon {
+   position: relative;
+   width: 38px;
+   height: 38px;
+   border-radius: 3px;
+   margin-right: 15px;
+   object-fit: cover;
+   filter: grayscale(.5) contrast(.5);
+   opacity: .75;
+   transition: .5s ease;
+}
+
+.vellumtab:hover img.vellum-icon {
+   filter: none;
+   opacity: .9;
+}
+
+.vellum_active img.vellum-icon {
+   opacity: .9;
+   filter: none;
+   mix-blend-mode: normal
+}
+
+.vellum.wheadshots .pointer {
+   top: 26.75px;
+   background: rgb(var(--bgrgb), .8);
+   /* filter: invert(1); */
+}
+
+.vellum.wheadshots ::-webkit-scrollbar {
+   width: 2px !important;
+}
+
+.vellum.wheadshots ::-webkit-scrollbar-track,
+.vellum.wheadshots ::-webkit-scrollbar-track-piece {
+   border: 0;
+}
+
+.vellum.wheadshots ::-webkit-scrollbar-thumb {
+   background: rgb(var(--accentrgb), .5);
+}
+
+.vellum.wheadshots .vellumsidebar::-webkit-scrollbar {
+   width: 3px !important;
+}
+
+.vellum.wheadshots .vellumsidebar::-webkit-scrollbar-track,
+.vellum.wheadshots .vellumsidebar::-webkit-scrollbar-track-piece {
+   background: rgb(var(--accentrgb), 0);
+}
+
+.vellum.wheadshots .vellumsidebar::-webkit-scrollbar-thumb {
+   background: rgb(var(--blackrgb), .25);
+   border: 0;
+}
+
+
+/* OOC */
+
+.vellum.vellumooc .vellumgrid {
+   grid-template-areas: 'header header'
+      'main sidebar';
+   grid-template-columns: 384px 246px;
+   grid-template-rows: auto 264px;
+}
+
+.vellum.vellumooc .titlerow {
+   grid-area: header;
+   padding: 6px 30px 0;
+   display: flex;
+   align-items: center;
+   z-index: 30;
+   background: var(--accent);
+}
+
+.vellum.vellumooc .h1 {
+   color: rgb(var(--bgrgb), .8) !important;
+}
+
+.vellumsidebarheader {
+   background: rgb(var(--accentrgb), 1);
+   color: rgb(var(--bgrgb), 1);
+   padding: 0 18px;
+   height: 27px;
+   display: flex;
+   align-items: center;
+   padding-top: 1px;
+   font: 700 9px/1.5em var(--bodyfont);
+   text-transform: uppercase;
+   letter-spacing: 1.75px;
+   display: none;
+}
+
+.vellum.vellumooc .vellumtab {
+   padding: 0 0 0 18px;
+   height: 66px;
+}
+
+.vellum.vellumooc .vellumtab:nth-last-of-type(2) {
+   border-bottom: var(--bordercolor);
+}
+
+.vellum.vellumooc .vellumtab:nth-last-of-type(1) {
+   border-bottom: 0;
+}
+
+.vellum.vellumooc .h2 {
+   color: var(--accent);
+}
+
+.vellum.vellumooc img.vellum-icon {
+   opacity: 1;
+   filter: grayscale(.5);
+
+}
+
+.vellum.vellumooc .vellumtab:hover img.vellum-icon {
+   opacity: 1;
+   filter: none;
+}
+
+.vellum.vellumooc .vellumtab:hover {
+   background: rgb(var(--bgrgb), 1);
+   background: rgb(var(--blackrgb), .04);
+   opacity: 1;
+}
+
+.vellum.vellumooc a.vellumtab {
+   text-decoration: none;
+   font: inherit
+}
+
+.vellum.vellumooc .vellumtab::after {
+   content: ' ';
+   position: absolute;
+   right: -10px;
+   display: inline-block;
+   width: 8px;
+   height: 12px;
+   clip-path: polygon(100% 0, 0 50%, 100% 100%);
+   background: var(--accent);
+   opacity: 1;
+   transition: .3s cubic-bezier(0.7, -0.2, 0.4, 1.2);
+}
+
+.vellum.vellumooc .vellumtab:hover::after {
+   opacity: 1;
+   right: -2px;
+}
+
+.vellum.vellumooc .vellumtabbody {
+   opacity: 1;
+}
+
+.vellum.vellumooc .textarea {
+   margin-top: 0;
+   padding-top: 18px;
+}
+
+.vellum.vellumooc .statsbox {
+   margin-top: 0;
+}
+
+
+
+
+/* Texture */
+
+.vellumtexture::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   background-image: url(https://images.unsplash.com/photo-1599503815079-dfb7085fc667?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80);
+   mix-blend-mode: multiply;
+   z-index: 0;
+   opacity: .15;
+   background-size: cover;
+}
+
+#boutique .vellumtexture::after {
+   opacity: .05;
+}
+
+.vellumtexture .vellumtabbody {
+   background: rgb(var(--bgrgb), 0.5);
+}
+
+.vellumtexture .vellumsidebar {
+   mix-blend-mode: multiply;
+}
+
+.vellum.vellumooc .vellumtexture .vellumsidebar {
+   background: rgb(var(--bgrgb), .7);
+   mix-blend-mode: normal;
+}
