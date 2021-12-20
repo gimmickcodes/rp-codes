@@ -147,6 +147,8 @@
    overflow: hidden;
    text-align: right;
    position: relative;
+   --accent: #415471;
+   --accentrgb: 65, 84, 113;
 }
 
 .boutiqueheader {
