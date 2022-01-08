@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Jcink mobile post padding */
+
+div.post1 {
+   padding: 15px;
+}
 
 div.postcolor {
-   /* Jcink mobile post padding */
-   padding: 10px;
+   padding: 0;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .prismatic {
    margin: 30px auto;
