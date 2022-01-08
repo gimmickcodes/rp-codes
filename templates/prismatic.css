@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+div.postcolor {
+   /* Jcink mobile post padding */
+   padding: 10px;
+}
+
 .prismatic {
    margin: 30px auto;
    width: max-content;
@@ -353,26 +359,33 @@
    .prismatic {
       width: auto;
    }
+
    .prismatic-inner {
       grid-template-columns: 1fr;
       display: block;
    }
+
    .prismcol-img {
       display: none;
    }
+
    .prismcol-quote {
       text-align: left;
       padding: 40px 20px 0;
    }
+
    .prismcol-body, .prism-onebody {
       padding: 20px !important;
    }
+
    .prism-vertimg .prism-textbox {
       max-height: none;
    }
+
    .prism-textbox {
       padding: 0
    }
+
    .prism-oneheader {
       padding: 25px 15px
    }
