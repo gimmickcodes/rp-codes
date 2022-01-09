@@ -163,6 +163,7 @@ div.postcolor {
 .prism-tags a {
    display: flex;
    align-items: center;
+   cursor: pointer;
    margin-right: 8px;
    background: rgb(var(--accent1rgb), .05);
    padding: 0 16px;
