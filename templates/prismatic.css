@@ -331,7 +331,7 @@ div.postcolor {
 }
 
 .d-theme.prismatic b, .d-theme .prismatic b {
-   color: rgb(var(--accent1rgb), 1);
+   color: rgb(var(--accent1rgb), 1) !important;
    opacity: .9;
 }
 
@@ -360,6 +360,7 @@ div.postcolor {
 }
 
 .d-theme .prism-tags a {
+   cursor: pointer;
    background: var(--outerborder);
    letter-spacing: 1.4px;
 }
