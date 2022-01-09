@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<head>
+   <link href="../css-templates.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<div class="blobular" onload="countLines">
+
+   <div class="blobularinner">
+
+      <div class="blob-blobs">
+         <div class="blob--1"> </div>
+         <div class="blob--2" style=""> </div>
+      </div>
+
+      <div class="blob-body">
+         <h1>In aliquet rutrum mollis iaculis amet fourth line.</h1>
+         <div class="tags">
+            <a href="#">tagged</a> + <a href="#">tagged 2</a>
+         </div>
+
+         <div class="blob-text">
+            Tempus porttitor vestibulum mi vel condimentum senectus. Vitae aenean vulputate a posuere. Neque, aenean elementum massa duis et. Faucibus feugiat enim velit imperdiet consequat scelerisque pellentesque mauris. Lobortis cum sapien vestibulum vitae enim. Porttitor justo, ac turpis vulputate nulla fermentum, sed curabitur. Mauris sit quam sit eget est nibh quisque. <br><br>
+            <p>Scelerisque in in malesuada ante elementum amet quis. Mauris tincidunt molestie feugiat eu turpis sed facilisis semper. Lectus ut feugiat aliquet nibh. Ut vitae mauris elementum tempus quisque velit metus. Sed sagittis, a dolor eget turpis ornare vitae vivamus scelerisque. Sed elit dolor morbi aliquam malesuada scelerisque id. Mauris magna leo ullamcorper suspendisse id lorem mauris eleifend. Hac ipsum aliquam posuere risus nibh egestas et viverra. Quis ultrices id in feugiat. Vestibulum volutpat ornare lectus sociis turpis.</p>
+            <p>
+               Venenatis, pharetra, ullamcorper ipsum nunc, viverra sagittis, at lacinia sapien. Orci, vulputate vel mi et, velit. Fermentum tortor pulvinar massa lacinia etiam. Lobortis lectus consectetur tincidunt mauris. A nullam eu iaculis dignissim
+            </p>
+         </div>
+
+         <div class="blob-footer"> </div>
+      </div>
+
+   </div>
+   <a href="http://pixel-perfect.boards.net/user/2465" class="gimcredits">made by gimmick</a>
+</div>
+</div>
+
+
+
+
+
+
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+   .blobular {
+      width: 418px;
+      margin: 30px auto;
+      --sans: 'Poppins', sans-serif;
+      --accent1: #7572FF;
+      --accent2: #A0C3F8;
+      --gradient: linear-gradient(180deg, var(--accent1) 0%, var(--accent2) 100%);
+   }
+
+   .blobular * {
+      position: relative;
+      box-sizing: border-box;
+      text-align: left;
+   }
+
+   .blobularinner {
+      background: linear-gradient(180deg, #EDEDED 0%, #FFFFFF 100%);
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 4px 0 rgb(0, 0, 0, .1);
+   }
+
+   a.gimcredits {
+      display: block;
+      margin-top: 4px;
+      margin-right: 8px;
+      font: 700 7px/10px var(--sans);
+      letter-spacing: .8px;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: right;
+   }
+
+   .blob-blobs {
+      position: relative;
+   }
+
+   .blob--1 {
+      position: absolute;
+      top: -90px;
+      left: 100px;
+      width: 185px;
+      height: 185px;
+      border-radius: 100%;
+      background: var(--gradient);
+      z-index: 0;
+   }
+
+   .blob--2 {
+      position: absolute;
+      top: -15px;
+      right: -35px;
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 100% 0% 100% 100%;
+      background: var(--gradient);
+      z-index: 1;
+   }
+
+
+   .blob--2::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: var(--gradient);
+      top: 0;
+      z-index: 2;
+      opacity: .6;
+      /* mix-blend-mode: multiply; */
+   }
+
+   .blob--2::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: url(../assets/200x200-silverash-01.jpg) center / cover;
+      mix-blend-mode: luminosity;
+      top: 0;
+      z-index: 5;
+      opacity: .25;
+   }
+
+   .blobularinner h1,
+   .blobularinner h2,
+   .blobularinner h3,
+   .blobularinner p,
+   .blobularinner a {
+      all: unset;
+   }
+
+
+   .blobularinner .blob-body {
+      padding: 40px 24px 24px;
+      z-index: 10;
+   }
+
+   .blobularinner h1 {
+      display: flex;
+      align-items: flex-end;
+      max-width: 300px;
+      height: 145px;
+      overflow: hidden;
+      color: #8486F4;
+      text-shadow:
+         -2px -2px 0 #fff,
+         0 -2px 0 #fff,
+         2px -2px 0 #fff,
+         2px 0 0 #fff,
+         2px 2px 0 #fff,
+         0 2px 0 #fff,
+         -2px 2px 0 #fff,
+         -2px 0 0 #fff;
+      font: bold 30px/1.25em var(--sans);
+      text-transform: uppercase;
+      letter-spacing: .025em;
+   }
+
+   .tags {
+      width: max-content;
+      padding: 4px 8px;
+      margin: 6px 0 15px;
+      border-radius: 4px;
+      font: bold 10px/1.25em var(--sans);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: var(--accent1);
+      background: white;
+      box-shadow: 0 1px 2px 0 rgb(0, 0, 0, .1);
+   }
+
+   .tags a {
+      cursor: pointer;
+      display: inline-block;
+   }
+
+   .tags a:first-of-type:before {
+      content: 'For ';
+   }
+
+   .blob-text {
+      padding: 16px 20px;
+      border-radius: 5px;
+      font: 12px/1.5em var(--sans);
+      z-index: 30;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
+      box-shadow: 0 2px 4px 0 rgb(0, 0, 0, .1);
+      backdrop-filter: blur(2px);
+   }
+
+   .blobularinner p,
+   .blobularinner br+br {
+      content: '';
+      display: block;
+      margin-top: .75em;
+   }
+
+   .blob-footer {
+      position: absolute;
+      bottom: -115px;
+      left: -85px;
+      width: 185px;
+      height: 185px;
+      border-radius: 100%;
+      background: var(--gradient);
+      z-index: 0;
+      opacity: .6;
+   }
+</style>
+
+
+
+
+
+<script>
+   function countLines() {
+      var el = document.querySelector('h1');
+      var divHeight = el.offsetHeight
+      var lineHeight = parseInt(el.style.lineHeight);
+      var lines = divHeight / lineHeight;
+      console.log(el);
+   }
+</script>

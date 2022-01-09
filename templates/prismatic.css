@@ -13,6 +13,7 @@ div.postcolor {
    max-width: 480px;
 }
 
+
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .prismatic {
@@ -329,6 +330,7 @@ div.postcolor {
 }
 
 .d-theme.prismatic b, .d-theme .prismatic b {
+   color: rgb(var(--accent1rgb), 1);
    opacity: .9;
 }
 
