@@ -39,10 +39,28 @@
  }
 
  .canvasrow {
-     display: flex;
-     align-items: flex-start;
+     display: grid;
+     grid-auto-flow: column;
+     margin: auto;
      padding-right: 200px;
      width: min-content
+ }
+
+
+
+ .canvaslabel {
+     text-align: center;
+     font: bold 12px arial;
+     margin: 50px auto 30px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+ }
+
+ .canvasrow .canvaslabel {
+     margin-left: 100px;
+     margin-right: 20px;
+     width: 100px;
+     text-align: left;
  }
 
  @media only screen and (max-width: 480px) {
@@ -50,5 +68,11 @@
          display: block;
          width: 100%;
          padding-right: 0;
+     }
+
+     .canvasrow .canvaslabel {
+         margin: 50px auto 30px;
+         width: auto;
+         text-align: center;
      }
  }

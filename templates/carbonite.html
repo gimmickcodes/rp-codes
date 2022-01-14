@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<head>
+   <link href="../css-templates.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+</head>
+
+<link href="carbonite.css" rel="stylesheet">
+
+<div id="carbonite">
+   <div class="carboniteheaderbar">OOC's Characters</div>
+
+   <div class="carboniteinside">
+
+      <div class="carbonitesidebar scrolls">
+         <div class="carbonitetab carbonite_active">
+            <div class=" carbonitetab--textarea">
+               <div>ONE</div>
+               <div>Age</div>
+               <div>Race</div>
+               <div>Occupation</div>
+            </div>
+            <div class="carbonitetab--iconarea"><img src="../assets/200x200-hawks-132.jpg"></div>
+         </div>
+
+         <div class="carbonitetab">
+            <div class="carbonitetab--textarea">
+               <div>TWO</div>
+               <div>Age</div>
+               <div>Race</div>
+               <div>Occupation</div>
+            </div>
+            <div class="carbonitetab--iconarea"><img src="../assets/200x200-hawks-132.jpg"></div>
+         </div>
+
+         <div class="carbonitetab">
+            <div class="carbonitetab--textarea">
+               <div>THREE</div>
+               <div>Age</div>
+               <div>Race</div>
+               <div>Occupation</div>
+            </div>
+            <div class="carbonitetab--iconarea"><img src="../assets/200x200-hawks-132.jpg"></div>
+         </div>
+
+         <div class="carbonitetab">
+            <div class="carbonitetab--textarea">
+               <div>FOUR</div>
+               <div>Age</div>
+               <div>Race</div>
+               <div>Occupation</div>
+            </div>
+            <div class="carbonitetab--iconarea"><img src="../assets/200x200-hawks-132.jpg"></div>
+         </div>
+
+         <div class="carbonitetab">
+            <div class="carbonitetab--textarea">
+               <div>FOUR</div>
+               <div>Age</div>
+               <div>Race</div>
+               <div>Occupation</div>
+            </div>
+            <div class="carbonitetab--iconarea"><img src="../assets/200x200-hawks-132.jpg"></div>
+         </div>
+
+      </div>
+
+
+      <div class="carbonitebody">
+
+         <div class="carbonitetabcontent carbonite_active">
+            <h1>take the world back from a heart attack</h1>
+            Bacon ipsum dolor amet occaecat filet mignon fatback irure id quis velit turducken pastrami salami ad. Voluptate meatball minim tri-tip buffalo do capicola alcatra consequat sint sausage enim. Shank tongue enim esse. Biltong shoulder adipisicing, meatloaf consequat deserunt ut eu andouille drumstick ham hock ground round shank kielbasa nostrud. Cillum do qui chicken.<br><br>
+
+            <b>This is bold.</b> <br>
+            <i>This is italic.</i> <br>
+            <u>This is underline.</u> <br>
+            This is a <a href="#">link</a>.<br><br>
+
+            <h2>subheading h2</h2>
+
+            <h3>subheading h3</h3>
+
+            Tempor kielbasa burgdoggen bacon in drumstick tenderloin veniam beef tongue hamburger sausage sunt. Shank sirloin pancetta, jerky pork aliquip strip steak sunt short ribs chuck. <br><br>
+            <ul>
+               <li>List item</li>
+               <li>List item</li>
+               <li>List item</li>
+            </ul>
+            <ol>
+               <li>List item</li>
+               <li>List item</li>
+               <li>List item</li>
+            </ol>
+            <blockquote>This is blockquote. </blockquote>
+            Cow dolore do, ut corned beef velit flank porchetta tri-tip chicken short ribs non landjaeger. Laborum ullamco hamburger tongue flank ipsum non reprehenderit nostrud quis meatloaf spare ribs esse. Beef aliqua pork loin ea. Capicola in ut, frankfurter cow ham in pastrami strip steak.
+
+         </div>
+
+
+         <div class="carbonitetabcontent">
+            <h1>name or lyrics</h1>
+            <hr>
+            Text text test
+         </div>
+
+
+         <div class="carbonitetabcontent">
+            <h1>name or lyrics</h1>
+            <hr>
+            Text text text
+         </div>
+
+         <div class="carbonitetabcontent">
+            <h1>name or lyrics</h1>
+            <hr>
+            Text text text
+         </div>
+
+         <div class="carbonitetabcontent">
+            <h1>name or lyrics</h1>
+            <hr>
+            Text text text
+         </div>
+
+
+      </div>
+   </div>
+
+   <a href="http://pixel-perfect.boards.net/user/2465" class="gimcredits">made by gimmick</a>
+
+</div>
+
+
+
+
+
+<script src='https://codepen.io/breezescodes/pen/NWPyXNv.js'></script>
+<script>
+   LOCALT3('carbonite', 'carbonitetab', 'carbonitetabcontent');
+</script>
+
+
+<script>
+
+   document.querySelectorAll('.carboniteinside').forEach(function (elem) {
+      var carbonitetab = elem.querySelectorAll('.carbonitetab')
+
+      // vertical slide transition for main content
+      $(carbonitetab).on('click', function () {
+         var carbonitetabChild = elem.querySelector('.carbonite_active');
+         var carbonitetabParent = carbonitetabChild.parentNode;
+         var carbonitetabNth = Array.prototype.indexOf.call(carbonitetabParent.children, carbonitetabChild); // Find nth-child number of active carbonitetab. Equivalent of parent.children.indexOf(child)
+
+         var increment = carbonitetabNth * $('.carbonitetabcontent').outerHeight(true); // sets how much to move by based on number of preceding carbonitetabcontents
+         var carbonitebodyNthChild = '.carbonitebody .carbonitetabcontent.nth-child(' + carbonitetabNth + ')';
+         $(this).parent().parent().find('.carbonitebody').css('margin-top', - increment);
+
+         console.log(carbonitetabNth)
+         console.log(carbonitebodyNthChild)
+         console.log('Move up by ' + increment)
+      })
+
+
+      // surface 'more indicator' if sidenav scrolls
+      var carbonitesidebar = elem.querySelector('.carbonitesidebar')
+
+      if ($(carbonitesidebar).get(0).scrollHeight > $(carbonitesidebar).height()) {
+         let div = document.createElement("div");
+         div.classList.add('moreindicator');
+         let divtext = document.createTextNode("Scrolls");
+         div.appendChild(divtext);
+         elem.querySelector('.carbonitesidebar').appendChild(div);
+
+         $('.moreindicator').css('opacity', .75);
+      }
+
+
+      $(carbonitesidebar).scroll(function () {
+         var div = $(this);
+         var bottom = div.height() / 2;
+         var indicatorHeight = '-' + $('.moreindicator').height() + 'px';
+
+         console.log('indicatorHeight:' + indicatorHeight)
+         console.log('Bottom:' + bottom)
+         console.log('scrollHeight:' + div[0].scrollHeight)
+         console.log('scrollTop:' + div.scrollTop())
+         console.log('divHeight:' + div.height())
+
+         // show indicator if at top 
+         if (div.scrollTop() == 0) {
+            console.log('Reached the top!');
+            $('.moreindicator').css('display', 'flex');
+            $('.moreindicator').css('opacity', .5);
+         }
+
+         // lighten indicator upon scrolling 
+         if (div.scrollTop() > 0) {
+            console.log('Scrolling...');
+            // $('.moreindicator').css('opacity', .5)
+         }
+
+         // hide indicator upon reaching the bottom
+         if (div[0].scrollHeight - div.scrollTop() == div.height()) {
+            console.log('Reached bottom');
+            $('.moreindicator').css('opacity', 0);
+            $('.moreindicator').css('margin-top', indicatorHeight);
+         }
+
+      });
+
+
+
+   })
+
+</script>
