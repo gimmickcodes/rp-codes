@@ -405,6 +405,7 @@ a.gimcredits {
 
 .moreindicator {
    pointer-events: none;
+   z-index: 30;
    position: sticky;
    width: 100%;
    height: 32px;
