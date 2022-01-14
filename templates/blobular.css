@@ -4,8 +4,7 @@
 
 
 .blobular {
-   width: max-content;
-   max-width: 418px;
+   width: 418px;
    margin: 30px auto;
    box-sizing: border-box;
    --fontDisplay: 'Poppins', sans-serif;
@@ -273,6 +272,7 @@ h1:after {
 
 @media only screen and (max-width: 400px) {
    .blobular {
+      max-width: 418px;
       width: 100%;
    }
 
