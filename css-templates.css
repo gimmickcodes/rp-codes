@@ -41,9 +41,9 @@
  .canvasrow {
      display: grid;
      grid-auto-flow: column;
-     margin: auto;
-     padding-right: 200px;
-     /* width: min-content */
+     padding: 0 200px;
+     box-sizing: border-box;
+     width: max-content;
  }
 
 
@@ -57,10 +57,13 @@
  }
 
  .canvasrow .canvaslabel {
-     margin-left: 100px;
      margin-right: 20px;
      width: 100px;
      text-align: left;
+ }
+
+ .canvasrow .canvaslabel:not(:first-child) {
+     margin-left: 100px;
  }
 
  @media only screen and (max-width: 480px) {
@@ -70,7 +73,8 @@
          padding-right: 0;
      }
 
-     .canvasrow .canvaslabel {
+     .canvasrow .canvaslabel,
+     .canvasrow .canvaslabel:not(:first-child) {
          margin: 50px auto 30px;
          width: auto;
          text-align: center;
