@@ -214,7 +214,7 @@
 
 .antique .threadinfo::before { content: 'ft.\00a0'; line-height: 11px; border-left: .5px solid rgba(138, 132, 120, 0.75); margin-left: 4px; padding-left: 8px; display: inline-block;}
 
-.antique ::-webkit-scrollbar { -webkit-appearance: none; width: 4px !important; border: 0 !important; }
+.antique ::-webkit-scrollbar { -webkit-appearance: none; width: 2px !important; border: 0 !important; }
 
 .antique ::-webkit-scrollbar-thumb { background: var(--primary); border: 0; }
 
@@ -224,7 +224,7 @@
 
 <script src="https://codepen.io/breezescodes/pen/XWdymYM.js"></script>
 <script>
-localT4({ outerName: '.antique', tabClassName: '.tab', contClassName: '.pagebox', });
+    localT4({ outerName: '.antique', tabClassName: '.tab', contClassName: '.pagebox', });
 </script>[/dohtml]
                    
         </textarea> <!--            END RAW HTML              -->
@@ -246,7 +246,7 @@ localT4({ outerName: '.antique', tabClassName: '.tab', contClassName: '.pagebox'
 
 <script>
     //Copy code
-    document.querySelector("button").onclick = function() {
+    document.querySelector("button").onclick = function () {
         document.querySelector("textarea").select();
         document.execCommand('copy');
     }
