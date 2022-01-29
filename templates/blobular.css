@@ -196,7 +196,7 @@ h1:after {
 }
 
 .blobularinner a {
-   color: var(--accentText);
+   color: var(--accentText) !important;
    text-decoration-color: var(--accentText);
    text-underline-offset: 2px;
 }
