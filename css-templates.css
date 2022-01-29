@@ -43,7 +43,7 @@
      grid-auto-flow: column;
      margin: auto;
      padding-right: 200px;
-     width: min-content
+     /* width: min-content */
  }
 
 
