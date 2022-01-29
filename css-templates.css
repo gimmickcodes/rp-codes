@@ -41,11 +41,10 @@
  .canvasrow {
      display: grid;
      grid-auto-flow: column;
-     padding: 0 200px;
+     padding: 0 200px 0 100px;
      box-sizing: border-box;
      width: max-content;
  }
-
 
 
  .canvaslabel {
