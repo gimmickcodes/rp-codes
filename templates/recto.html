@@ -10,31 +10,29 @@
     <link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
 </head>
 
-
-<div class="recto">
-    <div class="recto-inset">
-        <div class="sidecol">
-            <hr>
-            <h2><span class="th th-stars-o"> </span> Name the stars and know their dark returning</h2>
-            <hr>
-        </div>
-
-        <div class="maincol">
-            The truth is the universe is a constantly changing, moving, some would say “living” thing because you just never know what you are going to see on any given night of stargazing. Heading But of the many celestial phenomenons, there is probably none as exciting as that time you see your first asteroid on the move in the heavens.
-            <br><br>
-            <b>"There is a lot of exciting stuff going on in the stars above us that make astronomy so much fun."</b>
-            <br><br> To call asteroids the “rock stars” of astronomy is simultaneously a bad joke but an accurate depiction of how astronomy fans view them. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Like rock stars, asteroids have been given their fair share of urban myth and lore.<br><br> To call asteroids the “rock stars” of astronomy is simultaneously a bad joke but an accurate depiction of how astronomy fans view them. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Like rock stars, asteroids have been given their fair share of urban myth and lore.<br><br> To call asteroids the “rock stars” of astronomy is simultaneously a bad joke but an accurate depiction of how astronomy fans view them. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Like rock stars, asteroids have been given their fair share of urban myth and lore.<br><br>
-            <div class="ooc">
-                <h5>notes</h5> comments and <a href="#">tags</a> here
+<div class="rectocredits">
+    <div class="recto">
+        <div class="recto-inset">
+            <div class="sidecol">
+                <hr>
+                <h2><span class="th th-stars-o"> </span> Name the stars and know their dark returning</h2>
+                <hr>
             </div>
 
+            <div class="maincol">
+                The truth is the universe is a constantly changing, moving, some would say “living” thing because you just never know what you are going to see on any given night of stargazing. Heading But of the many celestial phenomenons, there is probably none as exciting as that time you see your first asteroid on the move in the heavens.
+                <br><br>
+                <b>"There is a lot of exciting stuff going on in the stars above us that make astronomy so much fun."</b>
+                <br><br> To call asteroids the “rock stars” of astronomy is simultaneously a bad joke but an accurate depiction of how astronomy fans view them. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Like rock stars, asteroids have been given their fair share of urban myth and lore.<br><br> To call asteroids the “rock stars” of astronomy is simultaneously a bad joke but an accurate depiction of how astronomy fans view them. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Like rock stars, asteroids have been given their fair share of urban myth and lore.<br><br> To call asteroids the “rock stars” of astronomy is simultaneously a bad joke but an accurate depiction of how astronomy fans view them. Unlike suns, planets and moons, asteroids are on the move, ever changing and, if they appear in the night sky, exciting and dynamic. Like rock stars, asteroids have been given their fair share of urban myth and lore.<br><br>
+                <div class="ooc">
+                    <h5>notes</h5> comments and <a href="#">tags</a> here
+                </div>
+
+            </div>
         </div>
     </div>
+    <a href="http://pixel-perfect.boards.net/user/2465" target="_blank">made by gimmick</a>
 </div>
-<div style="margin: 0px 0; text-align: center"><a style="font:normal 8px/8px arial;letter-spacing:.8px;text-decoration:none;text-transform:uppercase;" href="http://pixel-perfect.boards.net/user/2465" target="_blank">made by gimmick</a></div>
-
-
-
 
 <style>
     html {
@@ -49,11 +47,24 @@
         font-style: normal;
     }
 
+    .rectocredits {
+        width: fit-content;
+        margin: auto;
+    }
+
+    .rectocredits>a {
+        display: block;
+        text-align: right;
+        margin: 4px 0 0;
+        font: 700 7px/10px arial;
+        letter-spacing: .8px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
     .recto {
         padding: 2px;
         background: #f2f2f2;
-        width: min-content;
-        margin: auto;
         border: 1px solid cornflowerblue;
         font: 12px/17px 'Inter', arial;
         color: #333;
@@ -169,4 +180,25 @@
         border: 0;
     }
 
+    @media only screen and (max-width: 400px) {
+        .recto {
+            width: 100%;
+        }
+
+        .recto .recto-inset {
+            display: flex;
+            flex-direction: column;
+            padding: 32px 16px;
+        }
+
+        .recto .sidecol {
+            margin-bottom: 12px;
+            max-width: 144px;
+        }
+
+        .recto .maincol {
+            max-height: unset;
+            padding-right: 0;
+        }
+    }
 </style>
