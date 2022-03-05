@@ -38,20 +38,20 @@
     border-right: 1px solid;
  }
 
- .gildedwrap .faceted {
+ .gilded .faceted {
     position: absolute;
     width: calc(100% + 22px);
     left: -10px;
     z-index: -10;
  }
 
- .gildedwrap .faceted-border {
+ .gilded .faceted-border {
     height: 17px;
     clip-path: polygon(50% 0, 100% 16px, 100% 17px, 50% 1px, 0 17px, 0 16px);
     background: linear-gradient(to bottom right, var(--gildingGradient));
  }
 
- .gildedwrap .faceted-fill {
+ .gilded .faceted-fill {
     margin-top: -17px;
     height: 17px;
     background: #121212dd;
@@ -59,7 +59,7 @@
     clip-path: polygon(50% 0, 0% 100%, 100% 100%);
  }
 
- .gildedwrap .faceted.footer {
+ .gilded .faceted.footer {
     transform: scale(100%, -100%);
     bottom: -1px;
  }
@@ -172,7 +172,7 @@
     transition: .3s ease;
  }
 
- .gildedwrap a {
+ .gilded a {
     display: inline-block;
     font: unset;
     text-decoration: unset;
@@ -184,20 +184,20 @@
     color: #9D9786 !important;
  }
 
- .gildedwrap br+br {
+ .gilded br+br {
     content: '';
     display: block;
     height: 1em;
  }
 
- .gildedwrap b,
- .gildedwrap b i,
- .gildedwrap i b {
+ .gilded b,
+ .gilded b i,
+ .gilded i b {
     font-weight: 700;
     color: #aca24b;
  }
 
- .gildedwrap i {
+ .gilded i {
     color: #aca24b;
     font-weight: 500;
  }
