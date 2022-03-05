@@ -27,4 +27,26 @@
         text-decoration: none;
         text-transform: uppercase;
     }
+
+
+
+    ::-webkit-scrollbar {
+        width: 3px !important;
+        height: 1px !important;
+        background: rgb(var(--accent1rgb), 0);
+        border: 0;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgb(var(--accent1rgb), .1);
+        border: 0;
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-track-piece {
+        background: var(--bgcolor);
+        border: 0;
+    }
+
+    @media only screen and (max-width: 400px) {}
 </style>

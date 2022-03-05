@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <title>Gimmick's Codes: Gilded</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width">
+
+   <link href="../css.css" rel="stylesheet">
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167415539-1"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+         dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-167415539-1');
+
+   </script>
+</head>
+
+
+<body oncontextmenu="return false;">
+
+   <div class="demo_col"><iframe src="../templates/gilded.html" width="100%" height="100%" oncontextmenu="return false;"></iframe></div>
+
+
+
+   <div class="info_col">
+
+
+
+
+      <div class="contentbox">
+         <h5>Threading</h5>
+         <h1>Gilded</h1>
+
+         <!--            START RAW HTML              -->
+         <textarea readonly>
+[dohtml]
+<div class="gildedwrap">
+<div class="gilded gilded-border">
+
+<div class="faceted">
+<div class="faceted-border"> </div>
+<div class="faceted-fill"> </div>
+</div>
+<div class="faceted footer">
+<div class="faceted-border"> </div>
+<div class="faceted-fill"> </div>
+</div>
+<div class="gilded-underlay gilded-border"> </div>
+
+
+<div class="gildedheader gilded-border"><div class="gilded_iconframe">
+<img src="https://i.ibb.co/ySNzwyk/Wav10.png">
+<div class="gilded_icon"> </div>
+</div></div>
+
+<div class="gilded-body">
+Text
+
+<div class="gilded-tagbox">
+<img src="../assets/gilded-sideframe.svg" height="26">
+<div class="gilded-tags">@[tag] + @[tag]</div>
+<img src="../assets/gilded-sideframe.svg" height="26" style="transform: scale(-100%);">
+</div>
+</div>
+</div>
+
+<a href="http://pixel-perfect.boards.net/user/2465" class="gimcredits">made by gimmick</a>
+</div>
+
+<link href="https://gimmickcodes.github.io/rp-codes/templates/gilded.css" rel="stylesheet">[/dohtml]</textarea> <!--            END RAW HTML              -->
+
+
+         <button>Copy code</button>
+      </div>
+
+
+
+
+
+   </div>
+</body>
+
+
+
+<script>
+   //Copy code
+   document.querySelector("button").onclick = function () {
+      document.querySelector("textarea").select();
+      document.execCommand('copy');
+   }
+
+</script>
+
+
+
+<script>
+   // Copy code, multiple textareas and buttons
+
+   window.onload = function () {
+      // Get all the elements that match the selector as arrays
+      var copyTextareaBtn = Array.prototype.slice.call(document.querySelectorAll('button'));
+      var copyTextarea = Array.prototype.slice.call(document.querySelectorAll('textarea'));
+
+      // Loop through the button array and set up event handlers for each element
+      copyTextareaBtn.forEach(function (btn, idx) {
+
+         btn.addEventListener("click", function () {
+
+            // Get the textarea who's index matches the index of the button
+            copyTextarea[idx].select();
+
+            try {
+               var msg = document.execCommand('copy') ? 'successful' : 'unsuccessful';
+               console.log('Code successfully copied');
+            } catch (err) {
+               console.log('Could not be copied');
+            }
+
+         });
+
+      });
+   }
+</script>
