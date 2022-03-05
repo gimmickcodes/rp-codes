@@ -34,6 +34,8 @@
     background: #121212dd;
     opacity: .8;
     z-index: -1;
+    border-top: 0;
+    border-bottom: 0;
     border-left: 1px solid;
     border-right: 1px solid;
  }
@@ -61,6 +63,7 @@
 
  .gilded .faceted.footer {
     transform: scale(100%, -100%);
+    -webkit-transform: scale(100%, -100%);
     bottom: -1px;
  }
 
@@ -224,7 +227,7 @@
  }
 
 
- @media only screen and (max-width: 400px) {
+ @media only screen and (max-width: 420px) {
     .gilded-body {
        padding: 20px 24px 28px;
        font-size: 12px;
