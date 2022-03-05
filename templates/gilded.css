@@ -63,7 +63,7 @@
 
  .gilded .faceted.footer {
     transform: scaleY(-100%);
-    -webkit-transform: scaleY(-100%);
+    scale: -1;
     bottom: -1px;
  }
 
@@ -193,7 +193,7 @@
 
  .gilded .fliphorizontal {
     transform: scaleX(-100%);
-    -webkit-transform: scaleX(-100%);
+    scale: -1;
  }
 
  .gilded br+br {
