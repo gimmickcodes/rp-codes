@@ -62,8 +62,8 @@
  }
 
  .gilded .faceted.footer {
-    transform: scale(100%, -100%);
-    -webkit-transform: scale(100%, -100%);
+    transform: scaleY(-100%);
+    -webkit-transform: scaleY(-100%);
     bottom: -1px;
  }
 
@@ -189,6 +189,11 @@
  .gilded-tagbox:hover,
  .gilded-tagbox:hover a {
     color: #9D9786 !important;
+ }
+
+ .gilded .fliphorizontal {
+    transform: scaleX(-100%);
+    -webkit-transform: scaleX(-100%);
  }
 
  .gilded br+br {
