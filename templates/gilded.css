@@ -238,6 +238,11 @@
        font-size: 12px;
     }
 
+
+    .gilded-body:nth-child(4) {
+       padding-top: 32px;
+    }
+
     .gilded-tagbox {
        margin-top: 20px;
     }
