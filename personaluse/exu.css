@@ -1,0 +1,282 @@
+:root {
+   /* OFF-WHITES */
+   --paper: #f1ebe5;
+   --ivory: #fdfaf7;
+   --porcelain: #eaf3ff;
+
+   /* BLUES & GREYS */
+   --navy: #a6b0ba;
+   --slate: #7a8490;
+   --seafoam: #bec3c9;
+   --ink: #2a3441;
+
+   /* PINKS & ROUGES */
+   --blush: #f7ded6;
+   --marsala: #b77c7c;
+   --sand: #c4b6b5;
+
+   /* MEMBER GROUPS */
+   --staff: #B9AAC8;
+   --magi: #d79898;
+   --civilian: #7fb9d7;
+}
+
+.qphone {
+   width: 300px;
+   margin: 0 auto;
+   border: 1px solid var(--accent);
+   box-sizing: border-box;
+   font-family: 'Inter', sans-serif;
+   color: var(--ink);
+   overflow: hidden;
+}
+
+.qphone+.qphone {
+   margin-left: 80px;
+}
+
+.qphone>* {
+   box-sizing: border-box;
+}
+
+.qphone-topper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: row-reverse;
+   border-bottom: 1px solid var(--accent);
+   min-height: 48px;
+   padding: 8px 16px 8px 20px;
+   font-size: 13px;
+   font-weight: 400;
+   line-height: 1.4em;
+   color: var(--accent);
+   /* background-image: radial-gradient(#ffffff10 20%, transparent 20%),
+      radial-gradient(#ffffff10 20%, transparent 20%);
+   background-color: transparent;
+   background-position: 0 0, 84px 84px;
+   background-size: 8px 8px; */
+   font-family: 'DM Mono';
+}
+
+.qphone-topper b {
+   font-size: 14px;
+}
+
+.qphone-ui {
+   font-family: sans-serif;
+   opacity: .5;
+}
+
+.qphone-ui .fas {
+   font-size: 10px;
+}
+
+.qphone-bottom {
+   border-top: 1px solid var(--accent);
+   display: flex;
+   justify-content: space-between;
+   padding: 8px 16px 8px 20px;
+}
+
+.qphone-bottom-input {
+   flex-grow: 1;
+   height: 28px;
+   border: 1px solid var(--accent);
+   margin-right: 8px;
+   border-radius: 8px;
+}
+
+.qphone-bottom-send {
+   box-sizing: border-box;
+   width: 30px;
+   height: 30px;
+   border-radius: 100%;
+   background: var(--accent);
+   color: white;
+   font-size: 14px;
+   display: flex;
+   align-items: center;
+   padding-left: 7px;
+}
+
+.qphone-avi {
+   width: 40px;
+   height: 40px;
+   background-size: cover;
+   border-radius: 100%;
+   margin: 0 8px 0 4px;
+   display: none;
+}
+
+.qphone-body {
+   margin-bottom: 0px;
+   padding: 20px 14px 10px 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   height: 440px;
+   overflow: auto;
+   background: #ffffff30;
+}
+
+.qphone-new {
+   display: flex;
+   width: 100%;
+   margin: 8px 0 16px;
+}
+
+.qphone-new div {
+   margin: 0 8px;
+   text-transform: uppercase;
+   font-weight: 600;
+   font-size: 11px;
+   line-height: 16px;
+   letter-spacing: .4px;
+   white-space: nowrap;
+   color: var(--accent);
+}
+
+.qphone-new hr {
+   border: none;
+   width: 100%;
+   height: 1px;
+   background: var(--accent);
+   opacity: .5;
+}
+
+
+.qphone-pause,
+.qphone-body p {
+   margin: 5px 0 12px;
+   font-size: 10.5px;
+   line-height: 1em;
+   color: var(--slate);
+   /* font-style: italic; */
+}
+
+.qphone-msg {
+   max-width: 80%;
+   margin: 0 0 12px;
+   display: flex;
+   align-items: flex-start;
+   flex-direction: column;
+}
+
+.qphone-body h5 {
+   margin: unset;
+   margin-bottom: 6px;
+   font: unset;
+   font-size: 10.5px;
+   line-height: 1em;
+   font-weight: 700;
+   color: var(--accent);
+}
+
+.qphone-msgbubble {
+   width: fit-content;
+   border: 1px solid var(--accent);
+   border-radius: 8px 8px 8px 0;
+   text-align: left;
+   font-size: 11px;
+   line-height: 1.5em;
+   padding: 8px 12px;
+   margin: 0 0 6px;
+}
+
+.qphone-msgbubble:not(:last-child) {
+   border-radius: 8px !important;
+}
+
+
+/* CHARACTER TURNS */
+
+.from-name {
+   --accent: var(--marsala, var(--slate));
+}
+
+.from-micah {
+   --accent: #4958AC;
+}
+
+.from-name .name,
+.from-micah .micah {
+   align-self: flex-end;
+   align-items: flex-end;
+
+   align-self: flex-start;
+   align-items: flex-start;
+}
+
+
+.from-name .name>.qphone-msgbubble,
+.from-micah .micah>.qphone-msgbubble {
+   border-radius: 8px 8px 0 8px;
+   border-color: var(--accent);
+   background: var(--accent);
+   color: white;
+   font-weight: 400;
+   letter-spacing: .2px;
+}
+
+.qphone-new~.qphone-msg {
+   align-self: flex-end;
+   align-items: flex-end;
+}
+
+.neutral {
+   --accent: var(--navy);
+}
+
+.neutral .qphone-msgbubble {
+   color: var(--accent);
+   border-radius: 8px !important;
+   background: #ffffff85;
+}
+
+.qphone-msgbubble h5 {
+   margin-top: 2px;
+   font-size: 10px;
+   font-weight: 800;
+   text-transform: uppercase;
+}
+
+
+::-webkit-scrollbar {
+   width: 3px !important;
+   height: 1px !important;
+   background: #ffffff00;
+   border: 0;
+}
+
+::-webkit-scrollbar-thumb {
+   background: var(--accent);
+   border: 1px solid white;
+   border-right-width: 2px;
+   border-left: 0;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+   background: #ffffff00;
+   border: 0;
+}
+
+@media only screen and (max-width: 400px) {
+   .qphone {
+      max-width: 300px;
+      width: 100%;
+   }
+
+   .qphone-topper {
+      padding: 0 8px;
+   }
+
+   .qphone-body {
+      padding: 10px 10px 0;
+   }
+
+   .qphone-msg {
+      max-width: 90%;
+   }
+}
