@@ -60,7 +60,7 @@
 
          <div class="qphone-new">
             <hr>
-            <div>new messages</div>
+            <div>NEW MESSAGES</div>
             <hr>
          </div>
 
@@ -80,10 +80,37 @@
 
 
 
+   <div class="qphone lori" style="--accent:goldenrod;">
+      <div class="qphone-topper">
+         <div class="qphone-avi" style="background:url() center / cover,#ddd"> </div>
+         <div>To: <b>Name</b></div>
+      </div>
+      <div class="qphone-body">
+
+
+         <div class="qphone-msg bob">
+            <h5>Red</h5>
+            <div class="qphone-msgbubble">Lorem ipsum </div>
+            <div class="qphone-msgbubble">Lorem ipsum dolor sit amet</div>
+            <div class="qphone-pause">(a few seconds later) </div>
+            <div class="qphone-msgbubble">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo mi, mattis at enim nec, ornare tincidunt arcu. </div>
+            <div class="qphone-msgbubble">Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
+            <div class="qphone-msgbubble">Lorem </div>
+         </div>
+
+
+      </div>
+      <div class="qphone-bottom">
+         <div class="qphone-bottom-input"></div>
+         <div class="qphone-bottom-send"><i class="fas fa-paper-plane"></i></div>
+      </div>
+   </div>
 
 
 
-   <div class="qphone from-micah" style="--accent:;">
+
+
+   <div class="qphone micah" style="--accent: firebrick">
       <div class="qphone-topper">
          <div class="qphone-avi" style="background:url() center / cover,#ddd"> </div>
          <div>To: <b>Name</b></div>
@@ -112,8 +139,7 @@
 
 
 
-
-   <div class="qphone from-name">
+   <div class="qphone name" style="--accent:teal">
       <div class="qphone-topper">
          <div class="qphone-avi" style="background:url(https://files.jcink.net/uploads2/exuviate//av-10.png) center / cover,#ddd"> </div>
          <div>To: <b>Micah</b></div>
@@ -133,7 +159,7 @@
 
          <div class="qphone-new">
             <hr>
-            <div>new messages</div>
+            <div>NEW MESSAGES</div>
             <hr>
          </div>
 
@@ -155,8 +181,7 @@
 
 
 
-
-   <div class="qphone from-micah">
+   <div class="qphone micah">
       <div class="qphone-topper">
          <div class="qphone-avi" style="background:url() center / cover,#ddd"> </div>
          <div>To: <b>Name</b></div>
@@ -182,7 +207,7 @@
 
          <div class="qphone-new">
             <hr>
-            <div>new messages</div>
+            <div>NEW MESSAGES</div>
             <hr>
          </div>
 
@@ -204,39 +229,4 @@
 
 </div>
 
-
-
-
-
-<script>
-   phones = document.querySelectorAll('.qphone');
-
-   for (i = 0; i < phones.length; ++i) {
-      /* Check if phone has new messages class, otherwise it stops iterating; will jump to it otherwise */
-      if (phones[i].querySelectorAll(".qphone-new").length > 0) {
-         newest = phones[i].getElementsByClassName("qphone-new")
-         offsetHeight = phones[i].offsetTop
-         topPos = newest[0].offsetTop
-
-         document.getElementsByClassName("qphone-body")[i].scrollTop = topPos - offsetHeight;
-      }
-   }
-</script>
-
-<!-- <script>
-   // credit to Arche
-   for (var newest = document.getElementsByClassName("qphone-new"), wrapperEle = document.getElementsByClassName("qphone"), topPos = 0, i = 0; i < newest.length; i++) offsetHeight = wrapperEle[i].offsetTop, topPos = newest[i].offsetTop, document.getElementsByClassName("qphone-body")[i].scrollTop = topPos - offsetHeight;
-</script> -->
-
-
-<!-- <script>
-   phones = document.querySelectorAll('.qphone');
-   for (i = 0; i < phones.length; ++i) {
-      phone = document.getElementsByClassName("qphone")
-      newest = document.getElementsByClassName("qphone-new")
-      offsetHeight = phone[i].offsetTop
-      topPos = newest[i].offsetTop
-
-      document.getElementsByClassName("qphone-body")[i].scrollTop = topPos - offsetHeight;
-   }
-</script> -->
+<script src="exu.js"></script>

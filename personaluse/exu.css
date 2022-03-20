@@ -22,7 +22,7 @@
 }
 
 .qphone {
-   width: 300px;
+   width: 280px;
    margin: 0 auto;
    border: 1px solid var(--accent);
    box-sizing: border-box;
@@ -41,7 +41,7 @@
 
 .qphone-topper {
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
    flex-direction: row-reverse;
    border-bottom: 1px solid var(--accent);
@@ -115,7 +115,7 @@
    display: flex;
    flex-direction: column;
    align-items: flex-start;
-   height: 440px;
+   height: 420px;
    overflow: auto;
    background: #ffffff30;
 }
@@ -191,26 +191,24 @@
 
 /* CHARACTER TURNS */
 
-.from-name {
+.qphone.name {
    --accent: var(--marsala, var(--slate));
 }
 
-.from-micah {
+.qphone.micah {
    --accent: #4958AC;
 }
 
-.from-name .name,
-.from-micah .micah {
+/* 
+.qphone-new~.qphone-msg,
+.micah .micah {
    align-self: flex-end;
    align-items: flex-end;
+   /* align-self: flex-start;
+   align-items: flex-start; 
+}*/
 
-   align-self: flex-start;
-   align-items: flex-start;
-}
-
-
-.from-name .name>.qphone-msgbubble,
-.from-micah .micah>.qphone-msgbubble {
+.name .name>.qphone-msgbubble {
    border-radius: 8px 8px 0 8px;
    border-color: var(--accent);
    background: var(--accent);
@@ -219,19 +217,16 @@
    letter-spacing: .2px;
 }
 
-.qphone-new~.qphone-msg {
-   align-self: flex-end;
-   align-items: flex-end;
-}
+
+/* FOR NAMES INSIDE OF BUBBLES */
 
 .neutral {
    --accent: var(--navy);
 }
 
 .neutral .qphone-msgbubble {
-   color: var(--accent);
+   /* color: var(--accent); */
    border-radius: 8px !important;
-   background: #ffffff85;
 }
 
 .qphone-msgbubble h5 {
