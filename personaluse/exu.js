@@ -6,7 +6,7 @@ for (i = 0; i < phones.length; ++i) {
       newest = phones[i].getElementsByClassName("qphone-new")
       offsetHeight = phones[i].offsetTop
       topPos = newest[0].offsetTop
-      document.getElementsByClassName("qphone-body")[i].scrollTop = topPos - offsetHeight; // scroll to newest
+      document.getElementsByClassName("qphone-body")[i].scrollTop = topPos - offsetHeight - 60; // scroll to newest
    }
 
    // Add css for any new characters

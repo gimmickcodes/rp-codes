@@ -237,22 +237,22 @@
 }
 
 
-::-webkit-scrollbar {
+.qphone ::-webkit-scrollbar {
    width: 3px !important;
    height: 1px !important;
    background: #ffffff00;
    border: 0;
 }
 
-::-webkit-scrollbar-thumb {
+.qphone ::-webkit-scrollbar-thumb {
    background: var(--accent);
    border: 1px solid white;
    border-right-width: 2px;
    border-left: 0;
 }
 
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-track-piece {
+.qphone ::-webkit-scrollbar-track,
+.qphone ::-webkit-scrollbar-track-piece {
    background: #ffffff00;
    border: 0;
 }
