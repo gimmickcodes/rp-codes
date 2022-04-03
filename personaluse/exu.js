@@ -85,6 +85,8 @@ for (i = 0; i < telegram.length; ++i) {
    var findName = $(telegram[i]).attr('class');
    var newChar = findName.replace('telegram', '').replace('telegram-dark', '').replace('telegram-call', '');
 
+
+
    $("head").append('<style id="telegram" type="text/css"></style>');
    var sheet = $("#telegram").get(0).sheet;
    var addCSS = '.' + newChar + '{ --onBG:' + recipientColor + ' !important; --inBubble:' + textColor + ' !important; }';
