@@ -1,3 +1,5 @@
+// FOR EXUVIATE WIREFRAME PHONE - FLIPFLOPPING BETWEEN SENDER
+
 phones = document.querySelectorAll('.qphone');
 
 for (i = 0; i < phones.length; ++i) {
@@ -46,3 +48,51 @@ for (i = 0; i < phones.length; ++i) {
 
 //    document.getElementsByClassName("qphone-body")[i].scrollTop = topPos - offsetHeight;
 // } 
+
+
+
+
+
+// FOR INVERTING TEXT COLOR BASED ON BACKGROUND BRIGHTNESS
+
+telegram = document.querySelectorAll('.telegram');
+
+for (i = 0; i < telegram.length; ++i) {
+   const cssObj = window.getComputedStyle(telegram[i], null);
+   let bgColor = cssObj.getPropertyValue("--colorBase");
+   let bubbleColor = cssObj.getPropertyValue("--colorBubble");
+
+   rgbBubble = bubbleColor.replace(/\s/g, '').replace('rgb(', '').replace(')', '').split(',');
+   rgbBase = bgColor.replace(/\s+/g, '').replace('rgb(', '').replace(')', '').split(',');
+
+   // console.log(rgbBubble)
+   // console.log(rgbBase)
+
+   const bubbleBrightness = Math.round(((parseInt(rgbBubble[0]) * 299) +
+      (parseInt(rgbBubble[1]) * 587) +
+      (parseInt(rgbBubble[2]) * 114)) / 1000);
+   const textColor = (bubbleBrightness > 125) ? '#222' : '#ffffffcc';
+
+   const baseBrightness = Math.round(((parseInt(rgbBase[0]) * 299) +
+      (parseInt(rgbBase[1]) * 587) +
+      (parseInt(rgbBase[2]) * 114)) / 1000);
+   const recipientColor = (baseBrightness > 125) ? '#222' : '#ffffffcc';
+
+   // console.log('in bubble:' + textColor)
+   // console.log('bg:' + recipientColor)
+
+
+   var findName = $(telegram[i]).attr('class');
+   var newChar = findName.replace('telegram', '').replace('telegram-dark', '').replace('telegram-call', '');
+
+   $("head").append('<style id="telegram" type="text/css"></style>');
+   var sheet = $("#telegram").get(0).sheet;
+   var addCSS = '.' + newChar + '{ --onBG:' + recipientColor + ' !important; --inBubble:' + textColor + ' !important; }';
+   sheet.insertRule(addCSS, 0);
+
+}
+
+
+
+
+

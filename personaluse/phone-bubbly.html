@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<head>
+  <link href="../css-templates.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+  <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link href="exu.css" rel="stylesheet">
+</head>
+
+
+<div class="canvasrow">
+
+
+
+  <div class="qdevice">
+    <div class="qdevice-screen">
+
+      <div class="qdevice-headerbox">
+        <div class="qdevice-statusbar">
+          <div class="qdevice_status">11:33 PM</div>
+          <div class="qdevice_notch"> </div>
+          <div class="qdevice_status">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-three-quarters"></i>
+          </div>
+        </div>
+        <div class="qdevice-namebar">
+          <h2 class="qdevice_recipient">@Unknown</h2>
+          <img class="qdevice_pfp" src="../assets/250x400-lio-01.jpg">
+        </div>
+      </div>
+
+      <div class="qdevice-chatpanel">
+        <div class="qdevice-messages">
+
+          <div class="other qdevice_msg">hi there</div>
+          <div class="qdevice_msg">Hello</div>
+          <div class="quoted">This is a quote</div>
+          <div class="qdevice_msg">Bacon ipsum dolor amet chuck beef ribs flank</div>
+          <p>paragraph tag for pause</p>
+          <div class="quoted">This is a long quote that wraps onto two lines </div>
+          <div class="qdevice_msg">Chicken pastrami tongue proident anim drumstick chislic adipisicing short ribs corned beef. </div>
+          <div class="qdevice_msg"><img src="../assets/250x400-lio-01.jpg">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="qdevice_bottom">
+        <i class="fas fa-camera"></i>
+        <div class="qdevice_input">
+          <div class="qdevice_ui"><i class="fas fa-arrow-up"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="qdevice calling">
+    <div class="qdevice-screen">
+
+      <div class="qdevice-headerbox">
+        <div class="qdevice-statusbar">
+          <div class="qdevice_status">11:33 PM</div>
+          <div class="qdevice_notch"> </div>
+          <div class="qdevice_status">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-three-quarters"></i>
+          </div>
+        </div>
+        <div class="qdevice-namebar">
+          <h2 class="qdevice_recipient">Unknown</h2>
+          <img class="qdevice_pfp" src="../assets/250x400-lio-01.jpg">
+        </div>
+      </div>
+
+      <div class="qdevice-chatpanel">
+        <div class="qdevice-messages">
+
+          <div class="qdevice_msg">Hello</div>
+          <p>paragraph tag for pause</p>
+          <div class="qdevice_msg">Bacon ipsum dolor amet pariatur chuck beef ribs flank, chicken pastrami tongue proident anim drumstick chislic adipisicing short ribs corned beef. Aliquip pork chop doner, ball tip drumstick nisi pig spare ribs cupidatat dolor exercitation. </div>
+          <div class="qdevice_msg">Chicken pastrami tongue proident anim drumstick chislic adipisicing short ribs corned beef. </div>
+          <div class="qdevice_msg">Do irure occaecat alcatra chislic bacon, anim aliqua pork loin eiusmod. </div>
+        </div>
+      </div>
+
+      <div class="qdevice_bottom">
+        <i class="fas fa-microphone-slash"></i>
+        <div class="qdevice_ui hangup"><i class="fas fa-phone-slash"></i></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+<style>
+  :root {
+    background: pink;
+  }
+
+  .qdevice+.qdevice {
+    margin-left: 50px;
+  }
+
+  .qdevice {
+    margin: 30px auto;
+    width: 312px;
+    border-radius: 32px;
+    background: #222;
+    box-sizing: border-box;
+    border: 12px solid var(--phoneColor);
+    font-family: 'Inter', sans-serif;
+    --phoneColor: #222;
+    --charRGB: 180, 90, 155;
+    --charRGB: 80, 90, 255;
+    /* --charRGB: 180, 70, 255; */
+    /* --charRGB: 124, 203, 100; */
+    --baseRB: 80, 90, 255;
+    --charGradient: linear-gradient(60deg, rgb(var(--baseRB), 1) 0%, rgb(var(--baseRB), 0.5) 100%);
+    box-shadow: 0 12px 24px 0 #00000030;
+  }
+
+  .qdevice div {
+    box-sizing: border-box !important;
+    position: relative;
+  }
+
+  .qdevice-screen {
+    background: var(--charGradient);
+    border: 0px solid var(--phoneColor);
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 560px;
+    overflow: hidden;
+  }
+
+  .qdevice-statusbar {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 16px;
+    padding: 0 24px;
+    color: #fff;
+    font-size: 12px;
+    z-index: 5;
+  }
+
+  .qdevice_status {
+    padding: 6px 0 0;
+  }
+
+  .qdevice_status:last-of-type {
+    text-align: right;
+  }
+
+  .qdevice_status i:not(:first-child) {
+    margin-left: 4px;
+  }
+
+  .qdevice_notch {
+    height: 20px;
+    border-radius: 0 0 20px 20px;
+    background: var(--phoneColor);
+  }
+
+  .qdevice-namebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 12px 0;
+    color: #fff;
+    font: bold 20px/1em sans-serif;
+  }
+
+
+  h2.qdevice_recipient {
+    margin: unset;
+    margin-top: 16px;
+    font: unset;
+    font-family: 'Inter';
+  }
+
+  .qdevice_pfp {
+    display: block;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 100%;
+    box-shadow: 0 0 0 64px rgb(var(--charRGB), .2);
+    filter: brightness(1.05) contrast(1.05);
+    z-index: 0;
+  }
+
+  .qdevice-chatpanel {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px 12px 0;
+    border-radius: 20px 20px 0 0;
+    margin-top: 16px;
+    z-index: 5;
+    box-shadow: 0 -12px 28px 0 #00000030;
+    overflow: hidden;
+  }
+
+
+  .qdevice-messages {
+    grid-area: messages;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 12px 0 12px;
+    overflow: auto;
+  }
+
+  .qdevice_msg {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--charRGB), .1)), to(rgb(var(--charRGB), .125))) #fff;
+    border: 1px solid rgb(var(--charRGB), .1);
+    width: fit-content;
+    max-width: 85%;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    align-self: flex-end;
+    z-index: 4;
+    font-size: 12px;
+    line-height: 1.5em;
+    color: #222;
+  }
+
+  .other.qdevice_msg {
+    align-self: flex-start;
+    background: #eaeaea99;
+    display: none;
+  }
+
+  .other.qdevice_msg:last-of-type {
+    border-radius: 12px 12px 12px 0 !important;
+  }
+
+  .qdevice_msg:last-of-type {
+    border-radius: 12px 12px 0px 12px;
+    margin-bottom: 8px;
+  }
+
+  .quoted {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--charRGB), .3)), to(rgb(var(--charRGB), .3))) #fff;
+    width: fit-content;
+    max-width: 76%;
+    padding: 8px 10px 18px;
+    border-radius: 12px 12px 0;
+    align-self: flex-end;
+    margin-bottom: -12px;
+    font-size: 11px;
+  }
+
+  .quoted::after {
+    content: '';
+    width: 100%;
+    height: calc(100% - 8px);
+    height: 55%;
+    border: 2px solid rgb(var(--charRGB), .25);
+    border-radius: 16px 0 0 16px;
+    position: absolute;
+    display: block;
+    z-index: -1;
+    margin-top: -8px;
+    left: -12px;
+  }
+
+  .qdevice_msg img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    margin: 4px 0;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 8px 0 16px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: rgb(var(--charRGB));
+  }
+
+  p:before,
+  p:after {
+    display: block;
+    content: '';
+    width: 12px;
+    height: 1px;
+    margin: 0 6px;
+    background: #00000050;
+  }
+
+  .qdevice_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px 12px 20px;
+    background: #fff;
+    z-index: 10;
+    border-radius: 0 0 20px 20px;
+
+  }
+
+  .qdevice_input {
+    background: #e9e9e9;
+    width: 100%;
+    padding: 6px;
+    border-radius: 50px;
+    text-align: right;
+    margin-left: 12px;
+  }
+
+  .qdevice_ui {
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    background: rgb(var(--charRGB));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+  }
+
+  .qdevice_bottom>i {
+    font-size: 20px;
+    color: #00000030;
+    color: rgb(var(--charRGB));
+  }
+
+
+
+  /* CALLING VERSION */
+
+
+  /*.calling.qdevice {
+background: #fff;
+}
+.calling .qdevice-screen {
+background: #fff;
+}
+*/
+
+  .calling .qdevice-namebar {
+    flex-direction: column-reverse;
+    padding-top: 40px;
+  }
+
+  .calling img.qdevice_pfp {
+    width: 80px;
+    height: 80px;
+    animation-name: soundpulse;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+  }
+
+  @keyframes soundpulse {
+
+    0%,
+    100% {
+      box-shadow: 0 0 0 8px #ffffff10;
+    }
+
+    25% {
+      box-shadow: 0 0 0 16px #ffffff25;
+    }
+
+    50% {
+      box-shadow: 0 0 0 12px #ffffff20;
+    }
+
+    75% {
+      box-shadow: 0 0 0 16px #ffffff25;
+    }
+  }
+
+
+
+  .calling h2.qdevice_recipient {
+    margin-top: 16px;
+    margin-bottom: 4px;
+  }
+
+
+  .calling .qdevice-chatpanel {
+    background: transparent;
+    padding-bottom: 0;
+    border-radius: 0;
+    grid-template-rows: 326px auto;
+    box-shadow: none;
+  }
+
+  .calling .qdevice-messages {
+    padding-top: 0;
+    padding-right: 2px;
+  }
+
+  .calling .qdevice_msg {
+    align-self: center;
+    max-width: none;
+    width: calc(100% - 12px);
+    border-radius: 16px;
+    background: #00000050;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .5px;
+  }
+
+
+  .calling p {
+    color: #fff;
+    opacity: .85;
+  }
+
+  .calling p:before,
+  .calling p:after {
+    background-color: #fff;
+  }
+
+  .calling .qdevice_bottom {
+    justify-content: center;
+    background: transparent;
+    padding: 12px 0;
+  }
+
+  .calling .qdevice_ui {
+    width: 48px;
+    height: 48px;
+    margin: 0 12px;
+  }
+
+  .calling .qdevice_bottom>i {
+    opacity: .75;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 4px;
+    display: none;
+  }
+
+  .qdevice_ui.hangup {
+    background-color: #FF3B30;
+    color: #fff;
+  }
+
+
+  @media only screen and (max-width: 400px) {
+    .qdevice {
+      max-width: 312px;
+      width: 100%;
+      min-width: 250px;
+    }
+
+    .qdevice-statusbar {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 16px;
+    }
+
+    .qdevice_notch {
+      max-width: 120px;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+  }
+
+
+  .qdevice ::-webkit-scrollbar {
+    width: 3px !important;
+    height: 1px !important;
+    background: #ffffff00;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .qdevice ::-webkit-scrollbar-thumb {
+    background: rgb(var(--charRGB), .25);
+    border: 0;
+    border-top: 18px solid white;
+    border-radius: 2px;
+  }
+
+  .calling.qdevice ::-webkit-scrollbar-thumb {
+    background: #00000050;
+    border-top: 0;
+  }
+
+  .qdevice ::-webkit-scrollbar-track,
+  .qdevice ::-webkit-scrollbar-track-piece {
+    background: #ffffff00;
+    border: 0;
+  }
+</style>
