@@ -289,7 +289,7 @@
 .telegram {
    position: relative;
    margin: 0 auto;
-   width: 320px;
+   width: 312px;
    border-radius: 20px;
    box-sizing: border-box;
    font-family: 'Roboto', sans-serif;
@@ -355,7 +355,7 @@
    padding: 16px 16px 80px;
    display: flex;
    flex-direction: column;
-   height: 500px;
+   height: 472px;
    overflow-y: auto;
    align-items: flex-end;
    font: 12px/2.5em 'Roboto';
