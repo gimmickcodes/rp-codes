@@ -250,6 +250,7 @@ h2.bubblydevice_recipient i {
    align-items: center;
    justify-content: center;
    color: #fff;
+   font-size: 20px;
 }
 
 .bubblydevice_bottom>i {
