@@ -4,15 +4,12 @@
   <link href="../css-templates.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-
-
   <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-  <link href="exu.css" rel="stylesheet">
 </head>
 
 
@@ -34,7 +31,7 @@
           </div>
         </div>
         <div class="qdevice-namebar">
-          <h2 class="qdevice_recipient">@Unknown</h2>
+          <h2 class="qdevice_recipient"><i>@</i>Unknown</h2>
           <img class="qdevice_pfp" src="../assets/250x400-lio-01.jpg">
         </div>
       </div>
@@ -44,10 +41,10 @@
 
           <div class="other qdevice_msg">hi there</div>
           <div class="qdevice_msg">Hello</div>
-          <div class="quoted">This is a quote</div>
+          <div class="qdevice_quoted">This is a quote</div>
           <div class="qdevice_msg">Bacon ipsum dolor amet chuck beef ribs flank</div>
-          <p>paragraph tag for pause</p>
-          <div class="quoted">This is a long quote that wraps onto two lines </div>
+          <p>paragraph tag</p>
+          <div class="qdevice_quoted">This is a long quote that wraps onto two lines </div>
           <div class="qdevice_msg">Chicken pastrami tongue proident anim drumstick chislic adipisicing short ribs corned beef. </div>
           <div class="qdevice_msg"><img src="../assets/250x400-lio-01.jpg">
           </div>
@@ -58,7 +55,8 @@
       <div class="qdevice_bottom">
         <i class="fas fa-camera"></i>
         <div class="qdevice_input">
-          <div class="qdevice_ui"><i class="fas fa-arrow-up"></i></div>
+          <div class="qdevice_ui send"><i class="fas fa-arrow-up"></i></div>
+          <div class="qdevice_ui hangup"><i class="fas fa-phone-slash"></i></div>
         </div>
       </div>
     </div>
@@ -91,15 +89,14 @@
         <div class="qdevice-messages">
 
           <div class="qdevice_msg">Hello</div>
-          <p>paragraph tag for pause</p>
           <div class="qdevice_msg">Bacon ipsum dolor amet pariatur chuck beef ribs flank, chicken pastrami tongue proident anim drumstick chislic adipisicing short ribs corned beef. Aliquip pork chop doner, ball tip drumstick nisi pig spare ribs cupidatat dolor exercitation. </div>
+          <p>paragraph tag</p>
           <div class="qdevice_msg">Chicken pastrami tongue proident anim drumstick chislic adipisicing short ribs corned beef. </div>
           <div class="qdevice_msg">Do irure occaecat alcatra chislic bacon, anim aliqua pork loin eiusmod. </div>
         </div>
       </div>
 
       <div class="qdevice_bottom">
-        <i class="fas fa-microphone-slash"></i>
         <div class="qdevice_ui hangup"><i class="fas fa-phone-slash"></i></div>
       </div>
     </div>
@@ -115,25 +112,21 @@
     background: pink;
   }
 
-  .qdevice+.qdevice {
-    margin-left: 50px;
-  }
 
   .qdevice {
     margin: 30px auto;
     width: 312px;
-    border-radius: 32px;
+    border-radius: 40px;
     background: #222;
     box-sizing: border-box;
     border: 12px solid var(--phoneColor);
     font-family: 'Inter', sans-serif;
+    line-height: normal;
     --phoneColor: #222;
     --charRGB: 180, 90, 155;
     --charRGB: 80, 90, 255;
     /* --charRGB: 180, 70, 255; */
-    /* --charRGB: 124, 203, 100; */
-    --baseRB: 80, 90, 255;
-    --charGradient: linear-gradient(60deg, rgb(var(--baseRB), 1) 0%, rgb(var(--baseRB), 0.5) 100%);
+    --charGradient: linear-gradient(60deg, rgb(var(--charRGB), 1) 0%, rgb(var(--charRGB), 0.5) 100%);
     box-shadow: 0 12px 24px 0 #00000030;
   }
 
@@ -144,8 +137,7 @@
 
   .qdevice-screen {
     background: var(--charGradient);
-    border: 0px solid var(--phoneColor);
-    border-radius: 20px;
+    border-radius: 28px;
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 560px;
@@ -188,15 +180,19 @@
     justify-content: space-between;
     padding: 20px 12px 0;
     color: #fff;
-    font: bold 20px/1em sans-serif;
+    font: 700 20px/1em sans-serif;
   }
 
 
   h2.qdevice_recipient {
-    margin: unset;
-    margin-top: 16px;
-    font: unset;
+    all: unset;
+    margin-top: 24px;
     font-family: 'Inter';
+  }
+
+  h2.qdevice_recipient i {
+    font-weight: 400;
+    font-style: normal;
   }
 
   .qdevice_pfp {
@@ -216,7 +212,7 @@
     flex-direction: column;
     padding: 0 8px 12px 0;
     border-radius: 20px 20px 0 0;
-    margin-top: 16px;
+    margin-top: 14px;
     z-index: 5;
     box-shadow: 0 -12px 28px 0 #00000030;
     overflow: hidden;
@@ -232,7 +228,7 @@
   }
 
   .qdevice_msg {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--charRGB), .1)), to(rgb(var(--charRGB), .125))) #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--charRGB), .05)), to(rgb(var(--charRGB), .1))) #fff;
     border: 1px solid rgb(var(--charRGB), .1);
     width: fit-content;
     max-width: 85%;
@@ -242,7 +238,7 @@
     align-self: flex-end;
     z-index: 4;
     font-size: 12px;
-    line-height: 1.5em;
+    line-height: 1.4em;
     color: #222;
   }
 
@@ -261,8 +257,8 @@
     margin-bottom: 8px;
   }
 
-  .quoted {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--charRGB), .3)), to(rgb(var(--charRGB), .3))) #fff;
+  .qdevice_quoted {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--charRGB), .2)), to(rgb(var(--charRGB), .2))) #fff;
     width: fit-content;
     max-width: 76%;
     padding: 8px 10px 18px;
@@ -270,9 +266,10 @@
     align-self: flex-end;
     margin-bottom: -12px;
     font-size: 11px;
+    line-height: 14px;
   }
 
-  .quoted::after {
+  .qdevice_quoted::after {
     content: '';
     width: 100%;
     height: calc(100% - 8px);
@@ -293,7 +290,8 @@
     margin: 4px 0;
   }
 
-  p {
+  .qdevice p {
+    all: unset;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -304,13 +302,14 @@
     text-transform: uppercase;
     letter-spacing: .8px;
     color: rgb(var(--charRGB));
+    white-space: nowrap;
   }
 
-  p:before,
-  p:after {
+  .qdevice p:before,
+  .qdevice p:after {
     display: block;
     content: '';
-    width: 12px;
+    width: 100%;
     height: 1px;
     margin: 0 6px;
     background: #00000050;
@@ -345,7 +344,6 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-
   }
 
   .qdevice_bottom>i {
@@ -354,18 +352,11 @@
     color: rgb(var(--charRGB));
   }
 
-
+  .hangup {
+    display: none;
+  }
 
   /* CALLING VERSION */
-
-
-  /*.calling.qdevice {
-background: #fff;
-}
-.calling .qdevice-screen {
-background: #fff;
-}
-*/
 
   .calling .qdevice-namebar {
     flex-direction: column-reverse;
@@ -406,6 +397,7 @@ background: #fff;
   .calling h2.qdevice_recipient {
     margin-top: 16px;
     margin-bottom: 4px;
+    font-size: 18px;
   }
 
 
@@ -415,6 +407,7 @@ background: #fff;
     border-radius: 0;
     grid-template-rows: 326px auto;
     box-shadow: none;
+    margin-top: 12px;
   }
 
   .calling .qdevice-messages {
@@ -430,12 +423,13 @@ background: #fff;
     background: #00000050;
     color: #fff;
     font-size: 12px;
+    line-height: 1.6em;
     font-weight: 400;
     letter-spacing: .5px;
   }
 
 
-  .calling p {
+  .calling.qdevice p {
     color: #fff;
     opacity: .85;
   }
@@ -451,46 +445,18 @@ background: #fff;
     padding: 12px 0;
   }
 
-  .calling .qdevice_ui {
-    width: 48px;
-    height: 48px;
-    margin: 0 12px;
-  }
-
-  .calling .qdevice_bottom>i {
-    opacity: .75;
-    color: #fff;
-    font-size: 16px;
-    margin-right: 4px;
+  .calling .send {
     display: none;
   }
 
-  .qdevice_ui.hangup {
+  .calling .hangup {
+    width: 48px;
+    height: 48px;
+    margin: 0 12px;
+    display: flex;
     background-color: #FF3B30;
     color: #fff;
   }
-
-
-  @media only screen and (max-width: 400px) {
-    .qdevice {
-      max-width: 312px;
-      width: 100%;
-      min-width: 250px;
-    }
-
-    .qdevice-statusbar {
-      grid-template-columns: repeat(3, 1fr);
-      padding: 0 16px;
-    }
-
-    .qdevice_notch {
-      max-width: 120px;
-      width: 100%;
-      flex-grow: 1;
-    }
-
-  }
-
 
   .qdevice ::-webkit-scrollbar {
     width: 3px !important;
@@ -516,5 +482,28 @@ background: #fff;
   .qdevice ::-webkit-scrollbar-track-piece {
     background: #ffffff00;
     border: 0;
+  }
+
+
+
+
+  @media only screen and (max-width: 400px) {
+    .qdevice {
+      max-width: 312px;
+      width: 100%;
+      min-width: 250px;
+    }
+
+    .qdevice-statusbar {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 16px;
+    }
+
+    .qdevice_notch {
+      max-width: 120px;
+      width: 100%;
+      flex-grow: 1;
+    }
+
   }
 </style>

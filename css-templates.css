@@ -30,14 +30,6 @@
      border-left: 0;
  }
 
- .canvaslabel {
-     text-align: center;
-     font: bold 12px arial;
-     margin: 50px auto 30px;
-     text-transform: uppercase;
-     letter-spacing: 1px;
- }
-
  .canvasrow {
      display: grid;
      grid-auto-flow: column;
@@ -45,10 +37,15 @@
      padding: 0 200px 0 100px;
      box-sizing: border-box;
      width: max-content;
+     margin: auto;
  }
 
+ .canvasrow>div+div {
+     margin-left: 100px;
+ }
 
- .canvaslabel {
+ canvaslabel {
+     display: block;
      text-align: center;
      font: bold 12px arial;
      margin: 50px auto 30px;
@@ -56,13 +53,13 @@
      letter-spacing: 1px;
  }
 
- .canvasrow .canvaslabel {
+ .canvasrow canvaslabel {
      margin-right: 20px;
      width: 100px;
      text-align: left;
  }
 
- .canvasrow .canvaslabel:not(:first-child) {
+ .canvasrow canvaslabel:not(:first-child) {
      margin-left: 100px;
  }
 
@@ -74,8 +71,12 @@
          margin: auto;
      }
 
-     .canvasrow .canvaslabel,
-     .canvasrow .canvaslabel:not(:first-child) {
+     .canvasrow>div+div {
+         margin-left: auto;
+     }
+
+     .canvasrow canvaslabel,
+     .canvasrow canvaslabel:not(:first-child) {
          margin: 50px auto 30px;
          width: auto;
          text-align: center;
