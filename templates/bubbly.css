@@ -11,8 +11,8 @@
 }
 
 .bubbly-darkmode {
-   --panelBG: #1a1a1a;
-   --panelText: #ffffff90;
+   --panelBG: #1a1a1a !important;
+   --panelText: #ffffff90 !important;
 }
 
 .bubblydevice a.credits {
@@ -248,7 +248,6 @@ h2.bubblydevice_recipient i {
    background: var(--panelBG);
    z-index: 10;
    border-radius: 0 0 20px 20px;
-
 }
 
 .bubblydevice_input {
@@ -261,7 +260,7 @@ h2.bubblydevice_recipient i {
 }
 
 .bubbly-darkmode .bubblydevice_input {
-   background: #333;
+   background: rgb(24, 17, 17);
 }
 
 .bubblydevice_ui {
@@ -272,14 +271,16 @@ h2.bubblydevice_recipient i {
    display: inline-flex;
    align-items: center;
    justify-content: center;
-   color: #fff;
-   font-size: 16px;
 }
 
-.bubblydevice_bottom>i {
+.bubblydevice_bottom i {
    font-size: 20px;
-   color: #00000030;
    color: rgb(var(--accentRGB));
+}
+
+.bubblydevice_ui i {
+   color: #fff;
+   font-size: 16px;
 }
 
 .hangup {
