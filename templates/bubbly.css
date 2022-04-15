@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
 .bubblydevice {
    margin: 30px auto;
    width: fit-content;
    text-align: right;
+   --panelBG: #fff;
+   --panelText: #222;
    --phoneColor: #222;
-   --charRGB: 180, 90, 155;
-   --charRGB: 80, 90, 255;
+   --accentRGB: 80, 90, 255;
+}
+
+.bubbly-darkmode {
+   --panelBG: #1a1a1a;
+   --panelText: #ffffff90;
 }
 
 .bubblydevice a.credits {
@@ -25,7 +33,7 @@
    line-height: normal;
    box-shadow: 0 12px 24px 0 #00000030;
 
-   background: linear-gradient(60deg, rgb(var(--charRGB), 1) 0%, rgb(var(--charRGB), 0.5) 100%);
+   background: linear-gradient(60deg, rgb(var(--accentRGB), 1) 0%, rgb(var(--accentRGB), 0.5) 100%);
    background-color: var(--phoneColor);
    display: grid;
    grid-template-rows: auto auto 1fr auto;
@@ -102,13 +110,13 @@ h2.bubblydevice_recipient i {
    height: 50px;
    object-fit: cover;
    border-radius: 100%;
-   box-shadow: 0 0 0 64px rgb(var(--charRGB), .2);
+   box-shadow: 0 0 0 64px rgb(var(--accentRGB), .2);
    z-index: 0;
 }
 
 
 .bubblydevice-chatpanel {
-   background: #fff;
+   background: var(--panelBG);
    display: flex;
    flex-direction: column;
    padding: 0 8px 12px 0;
@@ -134,8 +142,8 @@ h2.bubblydevice_recipient i {
 }
 
 .bubblydevice_msg {
-   background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--charRGB), .05)), to(rgb(var(--charRGB), .1))) #fff;
-   border: 1px solid rgb(var(--charRGB), .1);
+   background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--accentRGB), .05)), to(rgb(var(--accentRGB), .1))) var(--panelBG);
+   border: 1px solid rgb(var(--accentRGB), .1);
    width: fit-content;
    max-width: 85%;
    padding: 8px 12px;
@@ -145,7 +153,12 @@ h2.bubblydevice_recipient i {
    z-index: 4;
    font-size: 12px;
    line-height: 1.4em;
-   color: #222;
+   color: var(--panelText);
+}
+
+.bubbly-darkmode .bubblydevice_msg {
+   background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--accentRGB), 0.4)), to(rgb(var(--accentRGB), .3))) var(--panelBG);
+   border-color: rgb(var(--accentRGB), .15);
 }
 
 .other.bubblydevice_msg {
@@ -164,7 +177,7 @@ h2.bubblydevice_recipient i {
 }
 
 .bubblydevice_quoted {
-   background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--charRGB), .2)), to(rgb(var(--charRGB), .2))) #fff;
+   background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--accentRGB), .2)), to(rgb(var(--accentRGB), .2))) var(--panelBG);
    width: fit-content;
    max-width: 76%;
    padding: 8px 10px 18px;
@@ -173,6 +186,7 @@ h2.bubblydevice_recipient i {
    margin-bottom: -12px;
    font-size: 11px;
    line-height: 14px;
+   color: var(--panelText);
 }
 
 .bubblydevice_quoted::after {
@@ -180,13 +194,18 @@ h2.bubblydevice_recipient i {
    width: 100%;
    height: calc(100% - 8px);
    height: 55%;
-   border: 2px solid rgb(var(--charRGB), .25);
+   border: 2px solid rgb(var(--accentRGB), .25);
    border-radius: 16px 0 0 16px;
    position: absolute;
    display: block;
    z-index: -1;
    margin-top: -8px;
    left: -12px;
+}
+
+.bubbly-darkmode .bubblydevice_quoted {
+   background: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--accentRGB), .2)), to(rgb(var(--accentRGB), .2))) var(--panelBG);
+   color: #ffffff80;
 }
 
 .bubblydevice_msg img {
@@ -207,7 +226,7 @@ h2.bubblydevice_recipient i {
    font-weight: 700;
    text-transform: uppercase;
    letter-spacing: .8px;
-   color: rgb(var(--charRGB));
+   color: rgb(var(--accentRGB));
    white-space: nowrap;
 }
 
@@ -218,7 +237,7 @@ h2.bubblydevice_recipient i {
    width: 100%;
    height: 1px;
    margin: 0 6px;
-   background: #00000050;
+   background: rgb(var(--accentRGB), .5);
 }
 
 .bubblydevice_bottom {
@@ -226,7 +245,7 @@ h2.bubblydevice_recipient i {
    justify-content: space-between;
    align-items: center;
    padding: 0 12px 12px 20px;
-   background: #fff;
+   background: var(--panelBG);
    z-index: 10;
    border-radius: 0 0 20px 20px;
 
@@ -241,11 +260,15 @@ h2.bubblydevice_recipient i {
    margin-left: 12px;
 }
 
+.bubbly-darkmode .bubblydevice_input {
+   background: #333;
+}
+
 .bubblydevice_ui {
    width: 28px;
    height: 28px;
    border-radius: 100%;
-   background: rgb(var(--charRGB));
+   background: rgb(var(--accentRGB));
    display: inline-flex;
    align-items: center;
    justify-content: center;
@@ -256,7 +279,7 @@ h2.bubblydevice_recipient i {
 .bubblydevice_bottom>i {
    font-size: 20px;
    color: #00000030;
-   color: rgb(var(--charRGB));
+   color: rgb(var(--accentRGB));
 }
 
 .hangup {
@@ -328,14 +351,20 @@ h2.bubblydevice_recipient i {
    max-width: none;
    width: calc(100% - 12px);
    border-radius: 16px;
-   background: #00000050;
+   background: #00000040;
    color: #ffffffdd;
    font-size: 12px;
-   line-height: 1.6em;
+   line-height: 1.5em;
    font-weight: 400;
-   letter-spacing: .5px;
+   letter-spacing: .4px;
 }
 
+
+.calling.bubbly-lightframe .bubblydevice_msg {
+   color: #000000ef;
+   background: #ffffff60;
+   letter-spacing: 0;
+}
 
 .calling.bubblydevice p {
    color: #fff;
@@ -350,7 +379,7 @@ h2.bubblydevice_recipient i {
 .calling .bubblydevice_bottom {
    justify-content: center;
    background: transparent;
-   padding: 12px 0;
+   padding: 12px 0 14px;
 }
 
 .calling .send {
@@ -375,9 +404,9 @@ h2.bubblydevice_recipient i {
 }
 
 .bubblydevice ::-webkit-scrollbar-thumb {
-   background: rgb(var(--charRGB), .25);
+   background: rgb(var(--accentRGB), .25);
    border: 0;
-   border-top: 18px solid #fff;
+   border-top: 18px solid var(--panelBG);
    border-radius: 2px;
 }
 
