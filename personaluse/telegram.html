@@ -16,7 +16,7 @@
 
 <div class="canvasrow">
 
-   <canvaslabel>Default, light mode</canvaslabel>
+   <canvaslabel>Texting, default light</canvaslabel>
 
 
    <div class="name telegram">
@@ -45,9 +45,9 @@
    </div>
 
 
-   <canvaslabel>Default, dark mode </canvaslabel>
+   <canvaslabel>Texting, default dark </canvaslabel>
 
-   <div class="telegram telegram-dark">
+   <div class="name3 telegram telegram-dark">
       <div class="telegram-topper">
          <img src="https://files.jcink.net/uploads2/exuviate//av-10.png?1645302276">
          <div class="telegram-recipients">
@@ -58,9 +58,11 @@
 
       <div class="telegram-body">
 
+         <div style="opacity: .5;"> Read 12:20pm </div>
+         5 minutes later<br>
+
          <div class="telegram_msg">Hi there</div>
          <div class="telegram_msg">Hey</div>
-         5 minutes later
          <div class="telegram_msg">
             <blockquote>this is a quote</blockquote>Veniam culpa short ribs corned beef. Sint commodo exercitation lorem sirloin cillum ipsum venison dolor corned beef cupidatat. Biltong hamburger consectetur landjaeger shankle short ribs, turducken spare ribs doner voluptate adipisicing ea culpa short loin. Elit tenderloin anim, fugiat magna pork chop turkey eiusmod pancetta t-bone.
          </div>
@@ -74,10 +76,10 @@
 
 
 
-   <canvaslabel>Calling </canvaslabel>
+   <canvaslabel>Calling, custom colors </canvaslabel>
 
 
-   <div class="name2 telegram telegram-dark telegram-call">
+   <div class="name2 telegram telegram-call">
       <div class="telegram-topper">
          <img src="https://files.jcink.net/uploads2/exuviate//av-10.png?1645302276">
          <div class="telegram-recipients">
@@ -103,21 +105,48 @@
 
 
 
+   <canvaslabel>Micah colors </canvaslabel>
+
+
+   <div class="micah telegram">
+      <div class="telegram-topper">
+         <img src="https://files.jcink.net/uploads2/exuviate//av-10.png?1645302276">
+         <div class="telegram-recipients">
+            <h3>Chatting with</h3>
+            <h1>Micah</h1>
+         </div>
+      </div>
+
+      <div class="telegram-body">
+
+         <div class="telegram_msg">Hey</div>
+         <div class="telegram_msg">Veniam culpa short ribs corned beef. Sint commodo exercitation lorem sirloin cillum ipsum venison dolor corned beef cupidatat. Biltong hamburger consectetur landjaeger shankle short ribs, turducken spare ribs doner voluptate adipisicing ea culpa short loin. Elit tenderloin anim. Veniam culpa short ribs corned beef. Sint commodo exercitation lorem sirloin cillum ipsum venison dolor corned beef cupidatat. Biltong hamburger consectetur landjaeger shankle short ribs, turducken spare ribs doner voluptate adipisicing ea culpa short loin. Elit tenderloin anim. Veniam culpa short ribs corned beef. Sint commodo exercitation lorem sirloin cillum ipsum venison dolor corned beef cupidatat. Biltong hamburger consectetur landjaeger shankle short ribs, turducken spare ribs doner voluptate adipisicing ea culpa short loin. Elit tenderloin anim. Veniam culpa short ribs corned beef. Sint commodo exercitation lorem sirloin cillum ipsum venison dolor corned beef cupidatat. Biltong hamburger consectetur landjaeger shankle short ribs, turducken spare ribs doner voluptate adipisicing ea culpa short loin. Elit tenderloin anim. </div>
+      </div>
+
+      <div class="telegram_button">
+         <i class="far fa-keyboard"></i>
+         <i class="fas fa-phone-slash calling"></i>
+      </div>
+   </div>
+
+
+
+
 
    <style>
       :root {
          background: var(--ivory);
       }
 
-      .name {
-         --colorBase: rgb(220, 220, 220);
-         --colorBubble: rgb(66, 81, 97);
-      }
-
       .name2 {
          --colorBase: rgb(50, 70, 88);
          --colorBubble: rgb(187, 178, 168);
          --colorBubble: rgb(74, 95, 110);
+      }
+
+      .micah {
+         --colorBase: rgb(73, 88, 172);
+         --colorBubble: rgba(255, 255, 255, 0.1);
       }
    </style>
 
@@ -168,9 +197,9 @@
    <canvaslabel>Color changing</canvaslabel>
 
 
-   <div class="demo telegram" style="">
+   <div class="demo telegram">
       <div class="telegram-topper">
-         <img src="https://files.jcink.net/uploads2/exuviate//av-10.png?1645302276">
+         <img src="https://via.placeholder.com/100x100/bbb/bbb">
          <div class="telegram-recipients">
             <h3>Chatting with</h3>
             <h1>Micah</h1>
@@ -178,7 +207,7 @@
       </div>
 
       <div class="telegram-body">
-
+         <p> 5 minutes later </p>
          <div class="telegram_msg">Text colors changing automatically</div>
       </div>
 
@@ -215,10 +244,10 @@
             (parseInt(randomBubble[2]) * 114)) / 1000);
          const demoBubbletext = (randomBubbleBrightness > 125) ? '#222' : '#ffffffcc';
 
-         console.log('—')
-         console.log(randomBubbleColor)
-         console.log(randomBubbleBrightness)
-         console.log(demoBubbletext)
+         // console.log('—')
+         // console.log(randomBubbleColor)
+         // console.log(randomBubbleBrightness)
+         // console.log(demoBubbletext)
 
 
          var sheet = document.getElementById('demoTelegram');

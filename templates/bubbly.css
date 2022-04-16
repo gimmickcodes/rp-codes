@@ -34,7 +34,7 @@
    box-shadow: 0 12px 24px 0 #00000030;
 
    background: linear-gradient(60deg, rgb(var(--accentRGB), 1) 0%, rgb(var(--accentRGB), 0.5) 100%);
-   background-color: var(--phoneColor);
+   background-color: #222;
    display: grid;
    grid-template-rows: auto auto 1fr auto;
    height: 560px;
@@ -43,6 +43,10 @@
    position: relative;
    overflow: hidden;
    /* auto if trying sticky */
+}
+
+.bubbly-lightgradient .bubblydevice-screen {
+   background-color: #ddd;
 }
 
 .bubblydevice-screen div {
@@ -251,7 +255,7 @@ h2.bubblydevice_recipient i {
 }
 
 .bubblydevice_input {
-   background: #e9e9e9;
+   background: #f0f0f0;
    width: 100%;
    padding: 6px;
    border-radius: 50px;
@@ -361,7 +365,7 @@ h2.bubblydevice_recipient i {
 }
 
 
-.calling.bubbly-lightframe .bubblydevice_msg {
+.calling.bubbly-lightgradient .bubblydevice_msg {
    color: #000000ef;
    background: #ffffff60;
    letter-spacing: 0;

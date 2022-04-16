@@ -21,6 +21,10 @@
    --civilian: #7fb9d7;
 }
 
+
+
+/* WIREFRAME PHONE */
+
 .qphone {
    width: 280px;
    margin: 0 auto;
@@ -283,7 +287,7 @@
 
 
 
-
+/* TELEGRAM */
 
 
 .telegram {
@@ -359,6 +363,12 @@
    overflow-y: auto;
    align-items: flex-end;
    font: 12px/2.5em 'Roboto';
+}
+
+.telegram-body p {
+   margin: 0;
+   opacity: .7;
+   /* line-height: 2em; */
 }
 
 .telegram-body::after {
