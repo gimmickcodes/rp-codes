@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<head>
+   <link href="../css-templates.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+   <!-- <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script> -->
+
+   <!-- from POAM -->
+   <script src="https://kit.fontawesome.com/06822eff19.js" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+   :root {
+      background: #111;
+   }
+</style>
+
+
+<div class="canvasrow">
+
+   <div class="poamgacha hokma">
+      <div class="poamgacha-bg" style="background-image:url(https://images2.imgbox.com/41/87/BBJe3vnr_o.png)"> </div>
+
+      <div class="poamgacha-statbox">
+         <div class="poamgacha-text">
+            <h1 class="poamgacha-h1">The Epithet</h1>
+            <div class="poamgacha-stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+            </div>
+         </div>
+
+         <div class="poamgacha-grpicon">
+            <img class="poamgacha-grpicon-img" src="https://files.jcink.net/uploads2/stallas/ruina/HokmaIcon3.png">
+         </div>
+      </div>
+
+      <div class="poamgacha-frame">
+         <div class="poamgacha-frame-shadow"> </div>
+      </div>
+   </div>
+
+
+
+   <div class="poamgacha yesod">
+      <div class="poamgacha-bg" style="background-image:url(https://images2.imgbox.com/41/87/BBJe3vnr_o.png)"> </div>
+
+      <div class="poamgacha-statbox">
+         <div class="poamgacha-text">
+            <h1 class="poamgacha-h1">The Epithet</h1>
+            <div class="poamgacha-stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+            </div>
+         </div>
+
+         <div class="poamgacha-grpicon">
+            <img class="poamgacha-grpicon-img" src="https://files.jcink.net/uploads2/stallas/ruina/YesodIcon3.png">
+         </div>
+      </div>
+
+      <div class="poamgacha-frame">
+         <div class="poamgacha-frame-shadow"> </div>
+      </div>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- How to have a masked div drop shadow  -->
+<a href="http://jsfiddle.net/nRNTX/">http://jsfiddle.net/nRNTX/</a>
+
+
+
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Bubbler+One&family=Flamenco:wght@300;400&family=Glass+Antiqua&family=Kodchasan:wght@200;300;400;500&family=Limelight&family=Montserrat+Alternates:wght@100;200;300;400;500&family=Nixie+One&family=Poiret+One&family=Tulpen+One&family=Wire+One&display=swap');
+
+   .poamgacha {
+      width: 250px;
+      height: 400px;
+      overflow: hidden;
+      margin: 30px auto;
+      background-color: rgb(var(--accent));
+      position: relative;
+      --blackrgb: 17, 17, 17;
+      --borderglow: 0px 0px 2px #FFFFFF;
+      --accent: 154, 125, 83;
+      --bordercolor: #FFCF23;
+
+      --keter: #fefffe;
+      --hokma: 195, 195, 195;
+      --binah: #7e684e;
+      --chesed: 89, 144, 236;
+      --gebura: #d23636;
+      --tiphereth: #d7a257;
+      --netzach: #379463;
+      --hod: #e88457;
+      --yesod: 106, 99, 196;
+      --malkuth: #d0b98e;
+   }
+
+   .chesed {
+      --accent: var(--chesed);
+      --bordercolor: #C5DAFF;
+   }
+
+   .hokma {
+      --accent: var(--hokma);
+      --bordercolor: #ffffff;
+   }
+
+   .yesod {
+      --accent: var(--yesod);
+      --bordercolor: #c1bdf8;
+   }
+
+   .poamgacha>* {
+      box-sizing: border-box;
+      transition: all .6s 0s ease-in-out;
+   }
+
+   .poamgacha-statbox {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      align-items: flex-end;
+      grid-template-columns: 1fr auto;
+      grid-column-gap: 12px;
+      position: relative;
+      z-index: 50;
+      padding: 0 16px 20px;
+   }
+
+   .poamgacha-text {
+      transition: all .6s 0s ease-in-out;
+   }
+
+   h1.poamgacha-h1 {
+      all: unset;
+      display: block;
+      font: 28px/32px sans-serif;
+      font-family: 'Glass Antiqua';
+      font-family: 'Tulpen One';
+      font-family: 'Poiret One';
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      color: white;
+   }
+
+   .poamgacha-stars i {
+      font-size: 16px;
+      color: #FFE500;
+   }
+
+   .poamgacha-stars i:not(:first-child) {
+      margin-left: -2px;
+   }
+
+   .poamgacha::after {
+      content: ' ';
+      width: 100%;
+      height: 136px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 10;
+      background: linear-gradient(0, rgb(var(--accent)) 0%, rgb(var(--blackrgb), 0) 100%);
+      transition: all .6s 0s ease-in-out;
+   }
+
+   .poamgacha-grpicon {
+      width: 52px;
+      height: 52px;
+      border-radius: 100px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(0deg, rgb(var(--accent), 0.5), rgb(var(--accent), 1));
+      background-color: rgb(var(--blackrgb), 1);
+      border: 1px solid var(--bordercolor);
+      box-shadow: 0px 0px 2px #FFFFFF;
+      transition: all .6s 0s ease-in-out;
+   }
+
+   img.poamgacha-grpicon-img {
+      width: 42px;
+      mix-blend-mode: screen;
+      filter: brightness(1.5);
+   }
+
+   .poamgacha-frame {
+      position: absolute;
+      z-index: 20;
+      top: 4px;
+      left: 4px;
+      width: 241px;
+      height: 391px;
+      background-size: cover;
+      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+   }
+
+   .poamgacha-frame-shadow {
+      width: 100%;
+      height: 100%;
+      background: var(--bordercolor);
+      -webkit-mask-size: 241px 390px;
+      mask: url("https://media.discordapp.net/attachments/683720444796338317/975992451376480276/POAM-gacha-2.png");
+      -webkit-mask-box-image: url("https://media.discordapp.net/attachments/683720444796338317/975992451376480276/POAM-gacha-2.png");
+   }
+
+   .poamgacha-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+
+      filter: contrast(1.25);
+      filter: brightness(.9);
+      opacity: .75;
+   }
+
+   .poamgacha:hover .poamgacha-bg {
+      transform: scale(102%);
+      /* filter: brightness(.8); */
+      filter: none;
+      opacity: .9;
+   }
+
+   .poamgacha:hover:after {
+      /* opacity: 0; */
+      transform: translateY(136px)
+   }
+
+   .poamgacha:hover .poamgacha-grpicon {
+      opacity: 0;
+      transform: translateX(100px)
+   }
+
+   .poamgacha:hover .poamgacha-text {
+      opacity: 0;
+      transform: translateX(-100px)
+   }
+</style>
+
+
+
+
+<style>
+   a.gimcredits {
+      display: block;
+      margin-top: 4px;
+      font: 700 7px/10px sans-serif;
+      letter-spacing: .8px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      display: none;
+   }
+
+   ::-webkit-scrollbar {
+      width: 3px !important;
+      height: 1px !important;
+      background: rgb(var(--accent1rgb), 0);
+      border: 0;
+   }
+
+   ::-webkit-scrollbar-thumb {
+      background: rgb(var(--accent1rgb), .1);
+      border: 0;
+   }
+
+   ::-webkit-scrollbar-track,
+   ::-webkit-scrollbar-track-piece {
+      background: var(--bgcolor);
+      border: 0;
+   }
+
+   @media only screen and (max-width: 400px) {}
+</style>
