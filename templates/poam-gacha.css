@@ -6,7 +6,7 @@
    height: 400px;
    display: flex;
    overflow: hidden;
-   margin: 30px auto;
+   margin: 0 auto;
    background-color: rgb(var(--accent));
    position: relative;
    --blackrgb: 17, 17, 17;
@@ -164,7 +164,7 @@ h1.poamgacha-h1 {
 img.poamgacha-grpicon-img {
    width: 42px;
    mix-blend-mode: screen;
-   filter: brightness(1.5);
+   filter: brightness(1.5) saturate(0);
 }
 
 .poamgacha-frame {
@@ -184,7 +184,7 @@ img.poamgacha-grpicon-img {
    width: 100%;
    height: 100%;
    background: var(--bordercolor);
-   -webkit-mask-box-image: url("../assets/POAM-gacha-frame-2.png");
+   -webkit-mask-box-image: url(https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_2.png);
 }
 
 .poamgacha-bg {
@@ -286,7 +286,7 @@ h1.poamgacha_arch-h1 {
    background-size: cover;
    background-position: center;
    filter: brightness(.8);
-   transform: scale(1.1);
+   transform: scale(1);
    opacity: .9;
 }
 
@@ -306,7 +306,7 @@ h1.poamgacha_arch-h1 {
    width: 100%;
    height: 100%;
    background: var(--bordercolor);
-   -webkit-mask-box-image: url("../assets/POAM-gacha-frame-1.png");
+   -webkit-mask-box-image: url(https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_1.png);
    transition: var(--fadeout);
 }
 
@@ -319,7 +319,8 @@ h1.poamgacha_arch-h1 {
    width: 100%;
    height: 100%;
    background-size: cover;
-   -webkit-mask-box-image: url("../assets/POAM-gacha-frame-1-fill_2.png");
+   -webkit-mask-box-image: url(https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_1_fill_2.png);
+
    background: rgb(var(--accent));
    opacity: .3;
    mix-blend-mode: screen;
@@ -335,14 +336,15 @@ h1.poamgacha_arch-h1 {
    width: 100%;
    height: 100%;
    background-size: cover;
-   -webkit-mask-box-image: url("../assets/POAM-gacha-frame-1-fill_1.png");
+   -webkit-mask-box-image: url(https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_1_fill_1.png);
+
    background: linear-gradient(0, rgb(var(--accent), .4), rgb(var(--accent), 0));
    mix-blend-mode: screen;
    opacity: 0;
 }
 
 .poamgacha_arch:hover .poamgacha_arch-bg {
-   transform: scale(1);
+   transform: scale(1.1);
    filter: brightness(1);
    opacity: .9;
    transition: all 1s ease, opacity 1s ease .2s;
