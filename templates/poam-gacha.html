@@ -51,11 +51,11 @@
 
 
    <div class="poamgacha_arch gebura">
-      <div class="poamgacha_arch-bg" style="background-image:url(https://images2.imgbox.com/41/87/BBJe3vnr_o.png)"> </div>
+      <div class="poamgacha-bg" style="background-image:url(https://images2.imgbox.com/41/87/BBJe3vnr_o.png)"> </div>
 
-      <div class="poamgacha_arch-statbox">
-         <h1 class="poamgacha_arch-h1">Epithet Here</h1>
-         <div class="poamgacha_arch-stars">
+      <div class="poamgacha-statbox">
+         <h1 class="poamgacha-h1">Epithet Here</h1>
+         <div class="poamgacha-stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -63,8 +63,8 @@
          </div>
       </div>
 
-      <div class="poamgacha_arch-frame">
-         <div class="poamgacha_arch-frame-shadow"> </div>
+      <div class="poamgacha-frame">
+         <div class="poamgacha-frame-shadow"> </div>
       </div>
    </div>
 
@@ -98,11 +98,11 @@
 
 
    <div class="poamgacha_arch malkuth">
-      <div class="poamgacha_arch-bg" style="background-image:url(https://images2.imgbox.com/41/87/BBJe3vnr_o.png)"> </div>
+      <div class="poamgacha-bg" style="background-image:url(https://images2.imgbox.com/41/87/BBJe3vnr_o.png)"> </div>
 
-      <div class="poamgacha_arch-statbox">
-         <h1 class="poamgacha_arch-h1">Epithet Here</h1>
-         <div class="poamgacha_arch-stars">
+      <div class="poamgacha-statbox">
+         <h1 class="poamgacha-h1">Epithet Here</h1>
+         <div class="poamgacha-stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -110,8 +110,8 @@
          </div>
       </div>
 
-      <div class="poamgacha_arch-frame">
-         <div class="poamgacha_arch-frame-shadow"> </div>
+      <div class="poamgacha-frame">
+         <div class="poamgacha-frame-shadow"> </div>
       </div>
    </div>
 
@@ -310,7 +310,6 @@
       height: 100%;
       background-size: cover;
       filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
-
       -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
    }
 
@@ -345,7 +344,6 @@
    .poamgacha:hover .poamgacha-grpicon {
       opacity: 1;
       transform: none;
-
    }
 
    .poamgacha:hover .poamgacha-h1 {
@@ -362,9 +360,11 @@
 
 
 
+
+
    /* ARCHED FRAME */
 
-   .poamgacha_arch-statbox {
+   .poamgacha_arch .poamgacha-statbox {
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -375,7 +375,7 @@
       padding: 0 16px 20px;
    }
 
-   h1.poamgacha_arch-h1 {
+   .poamgacha_arch h1.poamgacha-h1 {
       all: unset;
       display: block;
       font: 26px/1.125em sans-serif;
@@ -387,15 +387,21 @@
       transition: var(--fadeout);
    }
 
-   .poamgacha_arch-stars i {
+   .poamgacha_arch .poamgacha-stars i {
       font-size: 16px;
       color: #FFE500;
       text-shadow: 1px 1px 2px #111, 0px 0px 0px #fff;
       transition: var(--fadeout);
+      transform: none;
+      opacity: 1;
    }
 
-   .poamgacha_arch-stars i:not(:first-child) {
+   .poamgacha_arch .poamgacha-stars i:not(:first-child) {
       margin-left: -2px;
+   }
+
+   .poamgacha_arch .poamgacha-grpicon {
+      display: none;
    }
 
    .poamgacha_arch::after {
@@ -411,7 +417,7 @@
       transition: var(--fadeout);
    }
 
-   .poamgacha_arch-bg {
+   .poamgacha_arch .poamgacha-bg {
       width: 100%;
       height: 100%;
       position: absolute;
@@ -420,11 +426,11 @@
       background-size: cover;
       background-position: center;
       filter: brightness(.8);
-      transform: scale(1);
       opacity: .9;
+      transform: scale(1);
    }
 
-   .poamgacha_arch-frame {
+   .poamgacha_arch .poamgacha-frame {
       position: absolute;
       z-index: 30;
       top: 0;
@@ -436,7 +442,7 @@
       -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
    }
 
-   .poamgacha_arch-frame-shadow {
+   .poamgacha_arch .poamgacha-frame-shadow {
       width: 100%;
       height: 100%;
       background: var(--bordercolor);
@@ -444,7 +450,7 @@
       transition: var(--fadeout);
    }
 
-   .poamgacha_arch-frame::before {
+   .poamgacha_arch .poamgacha-frame::before {
       content: '';
       position: absolute;
       z-index: 10;
@@ -460,7 +466,7 @@
       transition: var(--fadeout);
    }
 
-   .poamgacha_arch-frame::after {
+   .poamgacha_arch .poamgacha-frame::after {
       content: '';
       position: absolute;
       z-index: 10;
@@ -475,9 +481,9 @@
       opacity: 0;
    }
 
-   .poamgacha_arch:hover .poamgacha_arch-bg {
-      transform: scale(1.1);
+   .poamgacha_arch:hover .poamgacha-bg {
       filter: brightness(1);
+      transform: scale(1.1);
       opacity: .9;
       transition: all 1s ease, opacity 1s ease .2s;
    }
@@ -486,16 +492,16 @@
       transform: translateY(60px);
    }
 
-   .poamgacha_arch:hover .poamgacha_arch-frame-shadow {
+   .poamgacha_arch:hover .poamgacha-frame-shadow {
       opacity: 0.7;
    }
 
-   .poamgacha_arch:hover .poamgacha_arch-frame::before,
-   .poamgacha_arch:hover .poamgacha_arch-frame::after {
+   .poamgacha_arch:hover .poamgacha-frame::before,
+   .poamgacha_arch:hover .poamgacha-frame::after {
       opacity: 0.1;
    }
 
-   .poamgacha_arch:hover .poamgacha_arch-statbox {
+   .poamgacha_arch:hover .poamgacha-statbox {
       transform: translateY(30px);
       opacity: 0;
    }
