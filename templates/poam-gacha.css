@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Bubbler+One&family=Flamenco:wght@300;400&family=Glass+Antiqua&family=Kodchasan:wght@200;300;400;500&family=Limelight&family=Montserrat+Alternates:wght@100;200;300;400;500&family=Nixie+One&family=Poiret+One&family=Tulpen+One&family=Wire+One&display=swap');
+
+.poamgacha,
+.poamgacha_arch {
+   width: 250px;
+   height: 400px;
+   display: flex;
+   overflow: hidden;
+   margin: 30px auto;
+   background-color: rgb(var(--accent));
+   position: relative;
+   --blackrgb: 17, 17, 17;
+   --borderglow: 0px 0px 2px #FFFFFF;
+   --accent: 154, 125, 83;
+   --bordercolor: #FFCF23;
+   --fadeout: all 1s 0s ease;
+
+   --keter: 254, 255, 254;
+   --hokma: 195, 195, 195;
+   --binah: 126, 104, 78;
+   --chesed: 89, 144, 236;
+   --gebura: 210, 54, 54;
+   --tiphereth: 215, 162, 87;
+   --netzach: 55, 148, 99;
+   --hod: 232, 132, 87;
+   --yesod: 106, 99, 196;
+   --malkuth: 208, 185, 142;
+}
+
+.keter {
+   --accent: var(--keter);
+   --bordercolor: #fefffe;
+}
+
+.hokma {
+   --accent: var(--hokma);
+   --bordercolor: #e7e7e7;
+}
+
+.binah {
+   --accent: var(--binah);
+   --bordercolor: #b9ad9f;
+}
+
+.chesed {
+   --accent: var(--chesed);
+   --bordercolor: #C5DAFF;
+}
+
+.gebura {
+   --accent: var(--gebura);
+   --bordercolor: #d2acac;
+}
+
+.tiphereth {
+   --accent: var(--tiphereth);
+   --bordercolor: #dccbb3;
+}
+
+.netzach {
+   --accent: var(--netzach);
+   --bordercolor: #aac6b7;
+}
+
+.hod {
+   --accent: var(--hod);
+   --bordercolor: #dfbcac;
+}
+
+.yesod {
+   --accent: var(--yesod);
+   --bordercolor: #c1bdf8;
+}
+
+.malkuth {
+   --accent: var(--malkuth);
+   --bordercolor: #f3e9d7;
+}
+
+.poamgacha>div,
+.poamgacha>*,
+.poamgacha_arch>div,
+.poamgacha_arch>* {
+   box-sizing: border-box;
+   transition: var(--fadeout);
+}
+
+.poamgacha-statbox {
+   width: 100%;
+   display: grid;
+   align-self: flex-end;
+   align-items: flex-end;
+   grid-template-columns: 1fr auto;
+   grid-column-gap: 12px;
+   position: relative;
+   z-index: 50;
+   padding: 0 16px 20px;
+}
+
+.poamgacha-text {
+   transition: var(--fadeout);
+}
+
+h1.poamgacha-h1 {
+   all: unset;
+   display: block;
+   font: 28px/1.125em sans-serif;
+   font-family: 'Poiret One';
+   text-transform: uppercase;
+   margin-bottom: 4px;
+   color: white;
+   transition: var(--fadeout);
+
+   transform: scale(1.2) translate(12px, 16px);
+   transform-origin: top center;
+}
+
+.poamgacha-stars i {
+   font-size: 16px;
+   color: #FFE500;
+   text-shadow: 1px 1px 2px #111, 0px 0px 0px #fff;
+   transition: var(--fadeout);
+
+   opacity: 0;
+   transform: translateX(-80px);
+}
+
+.poamgacha-stars i:not(:first-child) {
+   margin-left: -2px;
+}
+
+.poamgacha::after {
+   content: ' ';
+   width: 100%;
+   height: 136px;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   z-index: 10;
+   background: linear-gradient(0, rgb(var(--accent)) 0%, rgb(var(--blackrgb), 0) 100%);
+   transition: var(--fadeout);
+   transform: translateY(30px);
+}
+
+.poamgacha-grpicon {
+   width: 52px;
+   height: 52px;
+   border-radius: 100px;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(0deg, rgb(var(--accent), 0.5), rgb(var(--accent), 1));
+   background-color: rgb(var(--blackrgb), 1);
+   border: 1px solid var(--bordercolor);
+   box-shadow: 0px 0px 2px #FFFFFF;
+   box-shadow: 1px 1px 2px #111, 0px 0px 2px #fff;
+   transition: var(--fadeout);
+
+   opacity: 0;
+   transform: translateX(80px);
+}
+
+img.poamgacha-grpicon-img {
+   width: 42px;
+   mix-blend-mode: screen;
+   filter: brightness(1.5);
+}
+
+.poamgacha-frame {
+   position: absolute;
+   z-index: 20;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+
+   -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+}
+
+.poamgacha-frame-shadow {
+   width: 100%;
+   height: 100%;
+   background: var(--bordercolor);
+   -webkit-mask-box-image: url("../assets/POAM-gacha-frame-2.png");
+}
+
+.poamgacha-bg {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   z-index: 0;
+   background-size: cover;
+   background-position: center;
+   filter: brightness(.9);
+   opacity: .9;
+}
+
+.poamgacha:hover .poamgacha-bg {
+   transform: scale(1.1);
+   transition: all 1s ease, opacity 1s ease .2s;
+}
+
+.poamgacha:hover:after {
+   transform: none
+}
+
+.poamgacha:hover .poamgacha-grpicon {
+   opacity: 1;
+   transform: none;
+
+}
+
+.poamgacha:hover .poamgacha-h1 {
+   transform: none;
+}
+
+.poamgacha:hover .poamgacha-stars i {
+   opacity: 1;
+   transform: none;
+}
+
+
+
+
+
+
+/* ARCHED FRAME */
+
+.poamgacha_arch-statbox {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: center;
+   position: relative;
+   z-index: 50;
+   padding: 0 16px 20px;
+}
+
+h1.poamgacha_arch-h1 {
+   all: unset;
+   display: block;
+   font: 26px/1.125em sans-serif;
+   font-family: 'Poiret One';
+   text-transform: uppercase;
+   text-align: center;
+   margin-bottom: 6px;
+   color: white;
+   transition: var(--fadeout);
+}
+
+.poamgacha_arch-stars i {
+   font-size: 16px;
+   color: #FFE500;
+   text-shadow: 1px 1px 2px #111, 0px 0px 0px #fff;
+   transition: var(--fadeout);
+}
+
+.poamgacha_arch-stars i:not(:first-child) {
+   margin-left: -2px;
+}
+
+.poamgacha_arch::after {
+   content: ' ';
+   width: 100%;
+   height: 130px;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   z-index: 10;
+   background: linear-gradient(0, rgb(var(--accent)) 0%, rgb(var(--blackrgb), 0) 100%);
+   opacity: .8;
+   transition: var(--fadeout);
+}
+
+.poamgacha_arch-bg {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   z-index: 0;
+   background-size: cover;
+   background-position: center;
+   filter: brightness(.8);
+   transform: scale(1.1);
+   opacity: .9;
+}
+
+.poamgacha_arch-frame {
+   position: absolute;
+   z-index: 30;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+   -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+}
+
+.poamgacha_arch-frame-shadow {
+   width: 100%;
+   height: 100%;
+   background: var(--bordercolor);
+   -webkit-mask-box-image: url("../assets/POAM-gacha-frame-1.png");
+   transition: var(--fadeout);
+}
+
+.poamgacha_arch-frame::before {
+   content: '';
+   position: absolute;
+   z-index: 10;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   -webkit-mask-box-image: url("../assets/POAM-gacha-frame-1-fill_2.png");
+   background: rgb(var(--accent));
+   opacity: .3;
+   mix-blend-mode: screen;
+   transition: var(--fadeout);
+}
+
+.poamgacha_arch-frame::after {
+   content: '';
+   position: absolute;
+   z-index: 10;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   -webkit-mask-box-image: url("../assets/POAM-gacha-frame-1-fill_1.png");
+   background: linear-gradient(0, rgb(var(--accent), .4), rgb(var(--accent), 0));
+   mix-blend-mode: screen;
+   opacity: 0;
+}
+
+.poamgacha_arch:hover .poamgacha_arch-bg {
+   transform: scale(1);
+   filter: brightness(1);
+   opacity: .9;
+   transition: all 1s ease, opacity 1s ease .2s;
+}
+
+.poamgacha_arch:hover:after {
+   transform: translateY(60px);
+}
+
+.poamgacha_arch:hover .poamgacha_arch-frame-shadow {
+   opacity: 0.7;
+}
+
+.poamgacha_arch:hover .poamgacha_arch-frame::before,
+.poamgacha_arch:hover .poamgacha_arch-frame::after {
+   opacity: 0.1;
+}
+
+.poamgacha_arch:hover .poamgacha_arch-statbox {
+   transform: translateY(30px);
+   opacity: 0;
+}
