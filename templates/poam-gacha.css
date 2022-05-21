@@ -6,14 +6,14 @@
    height: 400px;
    display: flex;
    overflow: hidden;
-   margin: 0 auto;
+   margin: 30px auto;
    background-color: rgb(var(--accent));
    position: relative;
    --blackrgb: 17, 17, 17;
    --borderglow: 0px 0px 2px #FFFFFF;
    --accent: 154, 125, 83;
    --bordercolor: #FFCF23;
-   --fadeout: all 1s 0s ease;
+   --fadeout: all .6s 0s ease;
 
    --keter: 254, 255, 254;
    --hokma: 195, 195, 195;
@@ -77,6 +77,7 @@
    --bordercolor: #f3e9d7;
 }
 
+
 .poamgacha>div,
 .poamgacha>*,
 .poamgacha_arch>div,
@@ -87,42 +88,52 @@
 
 .poamgacha-statbox {
    width: 100%;
-   display: grid;
-   align-self: flex-end;
-   align-items: flex-end;
-   grid-template-columns: 1fr auto;
    grid-column-gap: 12px;
    position: relative;
    z-index: 50;
-   padding: 0 16px 20px;
+   padding: 0 16px 18px;
+   display: grid;
+   align-items: flex-end;
+   align-self: flex-end;
+   grid-template-columns: 80% 0;
+   grid-template-areas: 'text mgrp';
 }
 
-.poamgacha-text {
+.poamgacha .poamgacha-text {
+   grid-area: text;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
    transition: var(--fadeout);
 }
 
 h1.poamgacha-h1 {
    all: unset;
    display: block;
-   font: 28px/1.125em sans-serif;
+   font: 27px/1.125em sans-serif;
    font-family: 'Poiret One';
    text-transform: uppercase;
-   margin-bottom: 4px;
-   color: white;
-   transition: var(--fadeout);
-
-   transform: scale(1.2) translate(12px, 16px);
-   transform-origin: top center;
+   color: #ffffff;
+   text-shadow: 0px 0px 1px #ffffffaa;
+   transition: var(--fadeout), font 0s;
+   /* text + stars by default */
+   transform: scale(1.25) translateY(-14px);
+   transform-origin: top left;
+   /* text only by default */
+   /* transform: scale(1.2) translate(4px, 12px); */
 }
 
-.poamgacha-stars i {
+.poamgacha-stars {
    font-size: 16px;
    color: #FFE500;
-   text-shadow: 1px 1px 2px #111, 0px 0px 0px #fff;
-   transition: var(--fadeout);
-
-   opacity: 0;
-   transform: translateX(-80px);
+   text-shadow: 0px 0px 2px #ffffffcc, 0 1px 2px #111;
+   transition: var(--fadeout), font 0s;
+   /* text + stars by default */
+   opacity: 1;
+   transform-origin: top left;
+   /* text only by default */
+   /* opacity: 0;
+   transform: translateX(-80px); */
 }
 
 .poamgacha-stars i:not(:first-child) {
@@ -143,8 +154,9 @@ h1.poamgacha-h1 {
 }
 
 .poamgacha-grpicon {
-   width: 52px;
-   height: 52px;
+   grid-area: mgrp;
+   width: 48px;
+   height: 48px;
    border-radius: 100px;
    overflow: hidden;
    display: flex;
@@ -162,7 +174,7 @@ h1.poamgacha-h1 {
 }
 
 img.poamgacha-grpicon-img {
-   width: 42px;
+   width: 40px;
    mix-blend-mode: screen;
    filter: brightness(1.5) saturate(0);
 }
@@ -176,7 +188,6 @@ img.poamgacha-grpicon-img {
    height: 100%;
    background-size: cover;
    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
-
    -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
 }
 
@@ -184,7 +195,7 @@ img.poamgacha-grpicon-img {
    width: 100%;
    height: 100%;
    background: var(--bordercolor);
-   -webkit-mask-box-image: url(https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_2.png);
+   -webkit-mask-box-image: url("https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_2.png");
 }
 
 .poamgacha-bg {
@@ -195,17 +206,38 @@ img.poamgacha-grpicon-img {
    z-index: 0;
    background-size: cover;
    background-position: center;
-   filter: brightness(.9);
+   filter: brightness(.9) contrast(.9);
    opacity: .9;
 }
 
 .poamgacha:hover .poamgacha-bg {
+   filter: none;
+   opacity: 1;
    transform: scale(1.1);
-   transition: all 1s ease, opacity 1s ease .2s;
+   transition: all .6s ease;
 }
 
 .poamgacha:hover:after {
    transform: none
+}
+
+.poamgacha:hover .poamgacha-statbox {
+   grid-template-columns: 1fr auto;
+}
+
+.poamgacha:hover .poamgacha-text {
+   transform: translate(0px, 0px);
+}
+
+.poamgacha:hover .poamgacha-h1 {
+   transform: none;
+   /* font-size: 25px; */
+}
+
+.poamgacha:hover .poamgacha-stars {
+   transform: scale(.9) translateY(2px);
+   /* font-size: 14px; */
+   opacity: 1;
 }
 
 .poamgacha:hover .poamgacha-grpicon {
@@ -213,14 +245,8 @@ img.poamgacha-grpicon-img {
    transform: none;
 }
 
-.poamgacha:hover .poamgacha-h1 {
-   transform: none;
-}
 
-.poamgacha:hover .poamgacha-stars i {
-   opacity: 1;
-   transform: none;
-}
+
 
 
 
@@ -230,14 +256,15 @@ img.poamgacha-grpicon-img {
 /* ARCHED FRAME */
 
 .poamgacha_arch .poamgacha-statbox {
-   width: 100%;
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
    align-items: center;
-   position: relative;
-   z-index: 50;
-   padding: 0 16px 20px;
+   padding-bottom: 20px;
+}
+
+.poamgacha_arch .poamgacha-text {
+   text-align: center;
 }
 
 .poamgacha_arch h1.poamgacha-h1 {
@@ -247,15 +274,16 @@ img.poamgacha-grpicon-img {
    font-family: 'Poiret One';
    text-transform: uppercase;
    text-align: center;
-   margin-bottom: 6px;
+   margin-bottom: 4px;
    color: white;
+   text-shadow: 0 0 1px #ffffffcc;
    transition: var(--fadeout);
 }
 
-.poamgacha_arch .poamgacha-stars i {
+.poamgacha_arch .poamgacha-stars {
    font-size: 16px;
    color: #FFE500;
-   text-shadow: 1px 1px 2px #111, 0px 0px 0px #fff;
+   text-shadow: 0px 0px 2px #ffffffcc, 0 1px 2px #111;
    transition: var(--fadeout);
    transform: none;
    opacity: 1;
@@ -290,7 +318,7 @@ img.poamgacha-grpicon-img {
    z-index: 0;
    background-size: cover;
    background-position: center;
-   filter: brightness(.8);
+   filter: brightness(.9) contrast(.9);
    opacity: .9;
    transform: scale(1);
 }
@@ -311,7 +339,7 @@ img.poamgacha-grpicon-img {
    width: 100%;
    height: 100%;
    background: var(--bordercolor);
-   -webkit-mask-box-image: url(https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_1.png);
+   -webkit-mask-box-image: url("https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_1.png");
    transition: var(--fadeout);
 }
 
@@ -324,8 +352,7 @@ img.poamgacha-grpicon-img {
    width: 100%;
    height: 100%;
    background-size: cover;
-   -webkit-mask-box-image: url(https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_1_fill_2.png);
-
+   -webkit-mask-box-image: url("https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_1_fill_2.png");
    background: rgb(var(--accent));
    opacity: .3;
    mix-blend-mode: screen;
@@ -341,8 +368,7 @@ img.poamgacha-grpicon-img {
    width: 100%;
    height: 100%;
    background-size: cover;
-   -webkit-mask-box-image: url(https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_1_fill_1.png);
-
+   -webkit-mask-box-image: url("https://files.jcink.net/uploads/echostestsite/POAM_gacha_frame_1_fill_1.png");
    background: linear-gradient(0, rgb(var(--accent), .4), rgb(var(--accent), 0));
    mix-blend-mode: screen;
    opacity: 0;
@@ -351,8 +377,8 @@ img.poamgacha-grpicon-img {
 .poamgacha_arch:hover .poamgacha-bg {
    filter: brightness(1);
    transform: scale(1.1);
-   opacity: .9;
-   transition: all 1s ease, opacity 1s ease .2s;
+   opacity: 1;
+   transition: all .6s ease;
 }
 
 .poamgacha_arch:hover:after {
