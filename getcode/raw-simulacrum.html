@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link href="../css.css" rel="stylesheet">
+    <link href="../css-getcode.css" rel="stylesheet">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167415539-1"></script>
@@ -353,11 +353,11 @@ Text here
 </style>
 <script src="https://codepen.io/breezescodes/pen/XWdymYM.js"></script>
 <script>
-localT4({
-outerName: '#sim_masterbox',
-tabClassName: '.simtab',
-contClassName: '.viewport',
-});
+    localT4({
+        outerName: '#sim_masterbox',
+        tabClassName: '.simtab',
+        contClassName: '.viewport',
+    });
 </script>[/dohtml]
                    
         </textarea> <!--            END RAW HTML              -->
@@ -379,7 +379,7 @@ contClassName: '.viewport',
 
 <script>
     //Copy code
-    document.querySelector("button").onclick = function() {
+    document.querySelector("button").onclick = function () {
         document.querySelector("textarea").select();
         document.execCommand('copy');
     }
