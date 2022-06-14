@@ -399,33 +399,30 @@
         var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss")
         $(document.body).append(clicktodismiss);
 
-        $(document).on("click", "#navbar-btn.closed", function (e) {
+        $(document).on("click", "#navbar-btn", function (e) {
             $("html, body").animate({ scrollTop: 0 }, "500");
 
             if (window.scrollY > 0) {
                 setTimeout(function () {
                     $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
                     $('#header').addClass('openmenu');
-                    $('#navbar-btn').removeClass('closed').addClass('opened');
                 }, 400);
             } else {
                 $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
                 $('#header').addClass('openmenu');
-                $('#navbar-btn').removeClass('closed').addClass('opened');
             }
         });
 
         $(document).on("click", "#clicktodismiss", function () {
             $("#clicktodismiss").fadeOut("fast");
             $('#header').removeClass('openmenu');
-            $('#navbar-btn').removeClass('opened').addClass('closed');
         });
 
-        $(document).on("click", "#navbar-btn.opened", function () {
-            $("#clicktodismiss").fadeOut("fast");
-            $('#header').removeClass('openmenu');
-            $('#navbar-btn').removeClass('opened').addClass('closed');
-        });
+        // $(document).on("click", "#navbar-btn.opened", function () {
+        //     $("#clicktodismiss").fadeOut("fast");
+        //     $('#header').removeClass('openmenu');
+        //     $('#navbar-btn').removeClass('opened').addClass('closed');
+        // });
     });
 </script>
 
