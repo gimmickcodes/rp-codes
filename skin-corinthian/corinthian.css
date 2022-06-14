@@ -1,8 +1,36 @@
-@import url('AcademyC-Bold.otf');
-@import url('AcademyC-Italic.otf');
-@import url('AcademyC.otf');
-@import url('AcademyEngravedStd.otf');
+@font-face {
+   font-family: 'Academy';
+   src: url('AcademyC.otf');
+   src: url('AcademyC.otf') format('opentype');
+   font-weight: normal;
+   font-style: normal;
+}
 
+@font-face {
+   font-family: 'Academy';
+   src: url('AcademyC-Italic.otf');
+   src: url('AcademyC-Italic.otf') format('opentype');
+   font-weight: normal;
+   font-style: italic;
+}
+
+
+@font-face {
+   font-family: 'Academy';
+   src: url('AcademyC-Bold.otf');
+   src: url('AcademyC-Bold.otf') format('opentype');
+   font-weight: bold;
+   font-style: normal;
+}
+
+
+@font-face {
+   font-family: 'AcademyEngravedStd';
+   src: url('AcademyEngravedStd.otf');
+   src: url('AcademyEngravedStd.otf') format('opentype');
+   font-weight: normal;
+   font-style: normal;
+}
 
 :root {
    --paper: #faf5ed;
@@ -12,8 +40,8 @@
    --purple: #9394AC;
    --brick: #9E8382;
 
-   --fontHero: 'Academy Engraved Std';
-   --fontBodySerif: 'AcademyC', georgia;
+   --fontHero: 'AcademyEngravedStd';
+   --fontBodySerif: 'Academy', georgia;
    --fontBodySans: 'Karla', arial;
 
    --borderColor: var(--blackgreen);
@@ -78,7 +106,7 @@ a {
    margin: 0 0 8px;
 }
 
-a#navbar-controls {
+a#navbar-btn {
    background: var(--paper);
    color: var(--blackgreen);
    display: inline-block;
@@ -114,7 +142,6 @@ a#navbar-controls {
 h1 {
    margin: unset;
    font: 120px/120px var(--fontHero);
-   /* font-family: var(--fontBodySerif); */
    text-transform: uppercase;
    color: var(--blackgreen);
    text-shadow: 0 0 1px var(--paper), 0 0 2px var(--paper), 0 0 0px var(--paper);
@@ -174,12 +201,13 @@ h3 .shape {
    display: block;
    width: 636px;
    height: 100%;
-   background: url(hero-arches.png);
+   background: url('hero-arches.png');
    background-repeat: no-repeat;
    background-size: contain;
    background-position: center bottom;
-   filter: sepia(1) brightness(.5);
-   background-blend-mode: overlay;
+   filter: brightness(.5);
+   mix-blend-mode: overlay;
+   opacity: 1;
    z-index: 110;
 }
 
@@ -253,7 +281,7 @@ h3 .shape {
    height: 30px;
    display: flex;
    justify-content: space-between;
-   background: url('frame-topper-repeat.png') center;
+   background: url('plinth_repeat.png') center;
    background-size: contain;
 }
 
@@ -263,8 +291,8 @@ h3 .shape {
    position: relative;
    width: 15px;
    height: 30px;
-   margin-left: -7px;
-   background: url('frame-topper-end.png') center;
+   margin-left: -8px;
+   background: url('plinth_end.png') center;
    background-size: contain;
    background-repeat: no-repeat;
 }
@@ -272,7 +300,7 @@ h3 .shape {
 .plinth:after {
    transform: scaleX(-1);
    margin-left: 0;
-   margin-right: -7px;
+   margin-right: -8px;
 }
 
 .upsidedown {
@@ -322,7 +350,6 @@ h3 .shape {
 }
 
 .flexrow {
-   /* grid-area: lastpost; */
    display: flex;
    align-items: center;
    gap: 12px
@@ -330,14 +357,14 @@ h3 .shape {
 
 .lastpost-link a {
    margin-top: 2px;
-   font: 14px/1.4em 'AcademyC-Bold';
+   font: bold 14px/1.4em var(--fontBodySerif);
    text-transform: uppercase;
    text-decoration: none;
    color: var(--brick);
 }
 
 .lastpost-author a {
-   font: 12px/1.4em 'AcademyC-Bold';
+   font: bold 12px/1.4em var(--fontBodySerif);
    text-transform: uppercase;
    text-decoration: none;
    color: var(--purple);
@@ -366,6 +393,8 @@ h3 .shape {
    height: fit-content;
 }
 
+
+
 /* CATEGORY: GET STARTED */
 
 .cat-getstarted .cat-innerwrap {
@@ -381,16 +410,25 @@ h3 .shape {
    left: 0;
 }
 
-.cat-getstarted .cat-innerwrap::before {
+.handbookbg::before {
+   content: '';
+   position: absolute;
+   z-index: 0;
+   width: 45%;
+   height: calc(100% - var(--frameoffset));
+   background: linear-gradient(to bottom, var(--green) 0%, var(--paper) 50%);
+}
+
+.handbookbg::after {
    content: '';
    position: absolute;
    top: 9px;
    left: 9px;
    width: calc(50% - 30px - var(--frameoffset));
+   width: 50%;
    height: calc(100% - var(--frameoffset));
-   background: url('ch3_10b.png') right calc(-560px + 10%) bottom 160px / cover;
+   background: url('clouds-big.png') right 10% bottom 160px / 600px;
    background-repeat: no-repeat;
-   background-color: var(--paperdark);
 }
 
 
@@ -401,7 +439,7 @@ h3 .shape {
    right: 9px;
    width: calc(100% - var(--frameoffset));
    height: 100%;
-   background: url('ch3_10b.png') right calc(180px + 60%) bottom -40px / 760px;
+   background: url('clouds.png') right calc(180px + 60%) bottom -40px / 760px;
    background-repeat: no-repeat;
 }
 
@@ -411,8 +449,9 @@ h3 .shape {
    bottom: 0;
    width: 100%;
    height: 100%;
-   background: url('ch3_10c.png') right calc(131px + 60%) bottom -40px / 760px;
+   background: url('tail.png') right calc(131px + 60%) bottom -40px / 760px;
    background-repeat: no-repeat;
+   z-index: 5;
 }
 
 
@@ -422,7 +461,7 @@ h3 .shape {
    left: 9px;
    display: grid;
    width: calc(100% - var(--frameoffset));
-   height: 100%;
+   height: calc(100% - var(--frameoffset));
    grid-template-columns: 48% 52%;
    grid-template-areas: 'guidebook getstartedboards';
    grid-column-gap: 0;
@@ -434,16 +473,17 @@ h3 .shape {
 .handbooktext {
    grid-area: guidebook;
    position: relative;
-   border: 1px solid var(--borderColor);
    /* width: 30vw; */
    max-width: 324px;
-   margin-left: 80px;
-   margin: 0 auto;
-   padding: 36px 28px 28px;
+   margin: 12px auto 0;
+   margin-left: 64px;
+   padding: 36px 28px 40px;
    height: fit-content;
    background: var(--paper);
    display: block;
-   clip-path: polygon(0% 0%, calc(100%) 0%, 100% 100%, 100% calc(100% - 50px), calc(100% - 40px) 100%, 40px 100%, 0% calc(100%), 0% 40px);
+   border: 1px solid var(--borderColor);
+   box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--borderColor);
+   /* clip-path: polygon(0% 0%, calc(100%) 0%, 100% 100%, 100% calc(100% - 50px), calc(100% - 40px) 100%, 40px 100%, 0% calc(100%), 0% 40px); */
 }
 
 
@@ -462,10 +502,9 @@ h3 .shape {
    display: grid;
    height: 90%;
    background: var(--paper);
-   margin-left: 24px;
-   padding-left: 24px;
+   margin-left: 48px;
+   padding-left: 16px;
    padding-right: 64px;
-   margin-top: -0px;
 }
 
 .cat-getstarted .forumrow {
@@ -523,7 +562,7 @@ h3 .shape {
    z-index: 10;
    width: 400px;
    height: calc(100%);
-   background: url('ch3_10a.png') left / 600px;
+   background: url('horse.png') left / 600px;
    display: block;
    float: left;
    left: -30px;
@@ -741,7 +780,8 @@ h3 .shape {
 }
 
 .tab.tabbedlocations_active {
-   font-family: 'AcademyC-Bold';
+   font-family: var(--fontBodySerif);
+   font-weight: bold;
 }
 
 /* CATEGORY: OOC */
@@ -913,10 +953,10 @@ h3 .shape {
    border: 1px dotted var(--borderColor);
    /* padding: 14px; */
    box-shadow:
-      inset 0 0 0px 2px var(--paper), inset 0 0 0px 3px var(--borderColor), inset 0 0 0px 4px var(--paper), inset 0 0 0px 4.5px var(--borderColor), inset 0 0 0px 8.5px var(--paper), inset 0 0 0px 11.5px var(--borderColor), inset 0 0 0px 13.5px var(--paper), inset 0 0 0px 14px var(--borderColor);
+      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--borderColor), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--borderColor), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--borderColor), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--borderColor);
 
-   box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--borderColor), 0 0 0 4px var(--paper), 0 0 0 5px var(--borderColor),
-      inset 0 0 0px 2px var(--paper), inset 0 0 0px 3px var(--borderColor), inset 0 0 0px 4px var(--paper), inset 0 0 0px 4.5px var(--borderColor), inset 0 0 0px 8.5px var(--paper), inset 0 0 0px 11.5px var(--borderColor), inset 0 0 0px 13.5px var(--paper), inset 0 0 0px 14px var(--borderColor);
+   box-shadow: 0 0 0 2px var(--paperdark), 0 0 0 3px var(--borderColor), 0 0 0 4px var(--paperdark), 0 0 0 5px var(--borderColor),
+      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--borderColor), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--borderColor), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--borderColor), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--borderColor);
 }
 
 /* SCROLLBAR */
