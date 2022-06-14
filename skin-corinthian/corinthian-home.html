@@ -30,7 +30,7 @@
             <div class="flexrow">
                 <a href="#">Inbox (1)</a>
                 <a href="#">Alerts (2)</a>
-                <a href="#" id="navbar-btn">Menu</a>
+                <a id="navbar-btn" class="closed">Menu</a>
             </div>
         </div>
 
@@ -48,7 +48,7 @@
 
                 <div class="hero-imgbox"><img class="hero-img" src="hero-render.png">
                     <div class="hero-arches"></div>
-                    <div class="hero-colorfield"></div>
+                    <div class="hero-colorfield bgtexture"></div>
                 </div>
             </div>
 
@@ -365,15 +365,93 @@
 </body>
 
 <script src="https://codepen.io/breezescodes/pen/NWPyXNv.js"></script>
-<script>$(window).on('load', function () {
-        LOCALT3('tabbedlocations', 'tab', 'forumrow');
+<script>
+    LOCALT3('tabbedlocations', 'tab', 'forumrow');
+
+    // $("#navbar-btn").on('click', function () {
+    //     var activePage = $(this).parent() // selects target page
+    //     var overflowBox = activePage.parent() // selects the scrolling container
+    // })
+
+    // document.querySelector("#navbar-btn").addEventListener('click', function handleClick(event) {
+    //     document.getElementById('header').classList.add('openmenu');
+    //     event.target.classList.remove(
+    //         'openmenu'
+    //     );
+    // });
+
+
+    // var $menubtn = $('#navbar-btn');
+    // $menubtn.click(function () {
+    //     document.getElementById('header').classList.add('openmenu');
+    // });
+
+
+</script>
+
+
+
+<script>
+    // Adapted from jQuery Modal Popups by Black
+    // http://code.jfbs.net/?showtopic=57
+
+    $(document).ready(function () {
+        var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss")
+        $(document.body).append(clicktodismiss);
+
+        $(document).on("click", "#navbar-btn.closed", function (e) {
+            $("html, body").animate({ scrollTop: 0 }, "500");
+
+            if (window.scrollY > 0) {
+                setTimeout(function () {
+                    $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
+                    $('#header').addClass('openmenu');
+                    $('#navbar-btn').removeClass('closed').addClass('opened');
+                }, 400);
+            } else {
+                $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
+                $('#header').addClass('openmenu');
+                $('#navbar-btn').removeClass('closed').addClass('opened');
+            }
+        });
+
+        $(document).on("click", "#clicktodismiss", function () {
+            $("#clicktodismiss").fadeOut("fast");
+            $('#header').removeClass('openmenu');
+            $('#navbar-btn').removeClass('opened').addClass('closed');
+        });
+
+        $(document).on("click", "#navbar-btn.opened", function () {
+            $("#clicktodismiss").fadeOut("fast");
+            $('#header').removeClass('openmenu');
+            $('#navbar-btn').removeClass('opened').addClass('closed');
+        });
     });
 </script>
 
 
-<svg style="display:none">
-    <filter id="wavy2">
-        <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="2" seed="1"></feTurbulence>
-        <feDisplacementMap in="SourceGraphic" scale="10" />
-    </filter>
-</svg>
+
+
+
+
+
+<script>
+    // < !--- BACK TO THE(TOP) FUTURE-- ->
+    var btn = $("#btp");
+
+    btn.on("click", function (e) {
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "300");
+    });
+</script>
+
+
+
+
+
+
+<script src="https://assets.codepen.io/2434198/JQueryModalPopups.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+<script src="https://files.jcink.net/uploads/vene/site/jquery_style_my_tooltips.js"></script>

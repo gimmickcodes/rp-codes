@@ -1,3 +1,14 @@
+#clicktodismiss {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #00000000;
+   z-index: 2;
+}
+
+
 @font-face {
    font-family: 'Academy';
    src: url('AcademyC.otf');
@@ -107,11 +118,12 @@ a {
 }
 
 a#navbar-btn {
-   background: var(--paper);
-   color: var(--blackgreen);
+   border: 1px solid var(--paperdark);
+   /* color: var(--blackgreen); */
    display: inline-block;
    padding: 6px 8px;
-   font-weight: bold;
+   /* font-weight: bold; */
+   letter-spacing: 1px;
 }
 
 
@@ -123,7 +135,7 @@ a#navbar-btn {
 }
 
 .hero {
-   height: 664px;
+   height: 620px;
 }
 
 .hero-text {
@@ -191,6 +203,7 @@ h3 .shape {
    max-width: 652px;
    transition: .5s ease;
    pointer-events: none;
+   filter: contrast(.9) saturate(.9) sepia(0);
 }
 
 .hero-arches {
@@ -211,7 +224,31 @@ h3 .shape {
    z-index: 110;
 }
 
-.hero-colorfield {}
+.hero-colorfield {
+   position: absolute;
+   width: 800px;
+   height: 800px;
+   /* top: 362px; */
+   left: 400px;
+   top: 20%;
+   left: 20%;
+   background-blend-mode: multiply;
+   /* border-radius: 100%; */
+   z-index: -1;
+}
+
+.bgtexture {
+   background-image:
+      radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+      radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+      radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
+      radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
+   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+   background-position: 0 0, 130px 270px, 70px 80px;
+   background-blend-mode: soft-light;
+   opacity: 0.8;
+   transition: .5s ease;
+}
 
 
 /* NAV PANEL */
@@ -229,16 +266,21 @@ h3 .shape {
    z-index: 125;
 }
 
-#header:hover #navpanel {
+.openmenu #navpanel {
    opacity: 1;
 }
 
-#header:hover .hero-img {
+.openmenu .hero-img {
    transform: translateX(100px);
+   filter: saturate(.5) sepia(.1) contrast(.9);
 }
 
-#header:hover .hero-text {
+.openmenu .hero-text {
    transform: translate(300px);
+   opacity: 0;
+}
+
+.openmenu .bgtexture {
    opacity: 0;
 }
 
@@ -246,6 +288,7 @@ h3 .shape {
 /* FORUM */
 
 #bodywrapper {
+   position: relative;
    background: var(--paperdark);
 }
 
@@ -481,7 +524,7 @@ h3 .shape {
    height: fit-content;
    background: var(--paper);
    display: block;
-   border: 1px solid var(--borderColor);
+   border: 2px dotted var(--borderColor);
    box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--borderColor);
    /* clip-path: polygon(0% 0%, calc(100%) 0%, 100% 100%, 100% calc(100% - 50px), calc(100% - 40px) 100%, 40px 100%, 0% calc(100%), 0% 40px); */
 }
@@ -521,7 +564,7 @@ h3 .shape {
 
 .cat-getstarted .forumname {
    font: 28px/1em var(--fontHero);
-   margin-bottom: 4px;
+   margin-bottom: 6px;
 }
 
 .cat-getstarted .lastpost-author {}
@@ -529,7 +572,7 @@ h3 .shape {
 .cat-getstarted .lastpost-date {}
 
 .cat-getstarted .lastpost-avi {
-   margin-top: 28px;
+   margin-top: 24px;
 }
 
 
@@ -627,7 +670,7 @@ h3 .shape {
 
 .forum-twocol .forumname {
    font: 28px/1em var(--fontHero);
-   margin-bottom: 4px;
+   margin-bottom: 6px;
 }
 
 .forum-twocol .forumrow {
@@ -688,10 +731,11 @@ h3 .shape {
 
 .location_info .forumname {
    font: 48px/1em var(--fontHero);
+   margin-left: -2px;
 }
 
 .location_info .forumdesc {
-   font: 14px/1.4em var(--fontBodySans);
+   font: 18px/1.2em var(--fontBodySerif);
    max-width: 400px;
    padding-right: 1.5ch;
    max-height: 7em;
@@ -708,7 +752,7 @@ h3 .shape {
    display: block;
    width: 640px;
    height: 640px;
-   border: 80px solid red;
+   border: 80px solid cornflowerblue;
    background: rgba(0, 200, 20, 1);
 }
 
@@ -750,7 +794,7 @@ h3 .shape {
    position: absolute;
    bottom: 0;
    left: 0;
-   width: 50%;
+   width: 35%;
    /* max-width: 448px; */
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
@@ -760,13 +804,12 @@ h3 .shape {
    padding-top: 16px;
    padding-bottom: 32px;
    margin-left: 44px;
-   z-index: 10;
+   z-index: 15;
 }
 
 .tab {
    font: 15px/1.4em var(--fontBodySerif);
-   min-width: 200px;
-   max-width: 200px;
+   min-width: 150px;
    padding: 8px 48px;
    text-align: center;
    transition: .5s ease;
