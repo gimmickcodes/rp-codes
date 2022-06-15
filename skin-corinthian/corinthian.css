@@ -85,8 +85,8 @@ a {
 }
 
 #masterwrapper {
-   width: 95vw;
-   max-width: 1300px;
+   width: 100%;
+   max-width: 1200px;
    margin: 0 auto 50px;
 }
 
@@ -99,23 +99,21 @@ a {
    justify-content: space-between;
    flex-wrap: wrap;
    padding-top: 8px;
-   background: transparent;
    box-shadow: -20px 0 0 var(--blackgreen), 20px 0 0 var(--blackgreen);
    z-index: 230;
-   transition: background .3s ease;
 }
 
 #navbarline {
    width: 100%;
    margin: auto;
-   width: 95vw;
-   max-width: 1300px;
+   max-width: 1200px;
    height: 44px;
+   background: var(--navgradient);
    border-bottom: 1px solid var(--paper);
    position: fixed;
    top: 0;
+   transition: background .3s ease;
    z-index: 130;
-
 }
 
 #navbar a {
@@ -130,7 +128,6 @@ a {
 
 #navbar .flexrow {
    margin: 0 0 8px;
-   /* z-index: 200; */
 }
 
 a.navbar-open,
@@ -341,7 +338,7 @@ h3 .shape {
 
 
 .plinth {
-   width: calc(100%-32px);
+   width: calc(100%);
    height: 30px;
    display: flex;
    justify-content: space-between;
@@ -392,6 +389,9 @@ h3 .shape {
 .cat-outerwrapper {
    margin: 48px 0 72px;
    color: var(--blackgreen);
+
+   display: flex;
+   flex-direction: row-reverse;
 }
 
 .categoryLabel {
@@ -399,12 +399,19 @@ h3 .shape {
    text-transform: uppercase;
    letter-spacing: 2px;
    margin-bottom: 8px;
+
+   writing-mode: vertical-rl;
+   text-orientation: mixed;
+   font-size: 36px;
+   line-height: 0;
+   margin-left: 4px;
+   color: var(--brick);
 }
 
 .cat-innerwrap {
    background-color: var(--paper);
    position: relative;
-   position: relative;
+   width: 100%;
 }
 
 
@@ -537,7 +544,6 @@ h3 .shape {
 .handbooktext {
    grid-area: guidebook;
    position: relative;
-   /* width: 30vw; */
    max-width: 324px;
    margin: 12px auto 0;
    margin-left: 64px;
@@ -766,8 +772,10 @@ h3 .shape {
 
 .windowgate {
    z-index: 1;
-   position: absolute;
-   right: 0;
+   grid-area: placeimage;
+   /* position: absolute; */
+   /* right: 0; */
+   margin-left: -80px;
    border-radius: 100%;
    margin-top: -48px;
    display: block;
@@ -775,9 +783,11 @@ h3 .shape {
    height: 640px;
    border: 80px solid cornflowerblue;
    background: rgba(0, 200, 20, 1);
+   /* display: none; */
 }
 
 .location_photo {
+   position: absolute;
    grid-area: placeimage;
    background-size: cover;
    margin-right: 80px;
@@ -790,8 +800,6 @@ h3 .shape {
    transform: rotate(-45deg);
    z-index: 2;
    transition: opacity 0.5s 0.25s ease, transform .75s 0s ease;
-
-   display: none;
 }
 
 .tabbedlocations_active .location_photo,
@@ -837,7 +845,7 @@ h3 .shape {
    text-align: center;
    transition: .5s ease;
    margin: 6px 0;
-   flex: 2 0 0;
+   flex: 2 1 0;
    cursor: pointer;
 }
 
@@ -1044,4 +1052,19 @@ h3 .shape {
    border: 0;
 }
 
-@media only screen and (max-width: 400px) {}
+@media only screen and (max-width: 1240px) {
+   #masterwrapper {
+      width: 100%;
+      margin: 0 0 50px;
+      box-sizing: border-box;
+   }
+
+   #navbarline {
+      left: 0;
+   }
+
+   #navbar,
+   #bodywrapper {
+      margin: 0 20px;
+   }
+}

@@ -16,8 +16,8 @@
 
 <body>
 
-
     <div id="masterwrapper">
+
         <div id="navbar">
             <div class="flexrow">
                 <a href="#">Home</a>
@@ -254,6 +254,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="location_photo"></div>
+                                                <div class="windowgate"></div>
                                             </div>
 
                                             <div class="forumrow" id="">
@@ -272,6 +273,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="location_photo"></div>
+                                                <div class="windowgate"></div>
                                             </div>
 
                                             <div class="forumrow" id="">
@@ -290,12 +292,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="location_photo"></div>
+                                                <div class="windowgate"></div>
+
                                             </div>
 
 
                                         </div>
 
-                                        <div class="windowgate"></div>
 
                                     </div>
                                 </div>
@@ -315,7 +318,7 @@
                 <!-- CATEGORY: OOC -->
                 <div id="cat-4" class="cat-outerwrapper cat-ooc">
 
-                    <div class="categoryLabel">Out of Character</div>
+                    <div class="categoryLabel">Extra</div>
 
                     <div class="cat-innerwrap frameinset frameinset_1">
                         <div class="frameinset frameinset_2">
@@ -362,19 +365,28 @@
         </div>
 </body>
 
+
+
+
+
+
+
 <script src="https://codepen.io/breezescodes/pen/NWPyXNv.js"></script>
 <script>
     LOCALT3('tabbedlocations', 'tab', 'forumrow');
 </script>
 
 <script>
+    // Change nav bar on scroll
     window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
         if (document.body.scrollTop > 580 || document.documentElement.scrollTop > 580) {
             document.getElementById("navbarline").style.background = "var(--blackgreen)";
+            document.getElementById("navbarline").style.zIndex = "200";
         } else {
             document.getElementById("navbarline").style.background = "var(--navgradient)";
+            document.getElementById("navbarline").style.zIndex = "130";
         }
     }
 </script>
@@ -434,11 +446,6 @@
 
     });
 </script>
-
-
-
-
-
 
 
 <script>
