@@ -15,8 +15,9 @@
 
 
 <body>
-    <div id="masterwrapper">
 
+
+    <div id="masterwrapper">
         <div id="navbar">
             <div class="flexrow">
                 <a href="#">Home</a>
@@ -30,32 +31,29 @@
             <div class="flexrow">
                 <a href="#">Inbox (1)</a>
                 <a href="#">Alerts (2)</a>
-                <a id="navbar-btn" class="closed">Menu</a>
+                <a class="navbar-open">Menu</a>
+                <a class="navbar-close" style="display: none">Close</a>
             </div>
         </div>
 
+        <div id="navbarline"></div>
+
         <div id="header">
-            <div class="hero">
-                <div class="hero-text">
-
-                    <h1>
-                        Corin<div class="shape"> </div>thian
-                    </h1>
-                    <h3>
-                        <div class="shape"> </div> Inspired by Witch Hat Atelier
-                    </h3>
-                </div>
-
-                <div class="hero-imgbox"><img class="hero-img" src="hero-render.png">
-                    <div class="hero-arches"></div>
-                    <div class="hero-colorfield bgtexture"></div>
-                </div>
+            <div class="hero-text">
+                <h1>
+                    Corin<div class="shape"> </div>thian
+                </h1>
+                <h3>
+                    <div class="shape"> </div> Inspired by Witch Hat Atelier
+                </h3>
             </div>
 
+            <div class="hero-img"></div>
+            <div class="hero-arches"></div>
+            <div class="hero-texture"></div>
 
             <div id="navpanel">Welcome back</div>
         </div>
-
 
 
         <div id="bodywrapper" class="">
@@ -367,49 +365,47 @@
 <script src="https://codepen.io/breezescodes/pen/NWPyXNv.js"></script>
 <script>
     LOCALT3('tabbedlocations', 'tab', 'forumrow');
-
-    // $("#navbar-btn").on('click', function () {
-    //     var activePage = $(this).parent() // selects target page
-    //     var overflowBox = activePage.parent() // selects the scrolling container
-    // })
-
-    // document.querySelector("#navbar-btn").addEventListener('click', function handleClick(event) {
-    //     document.getElementById('header').classList.add('openmenu');
-    //     event.target.classList.remove(
-    //         'openmenu'
-    //     );
-    // });
-
-
-    // var $menubtn = $('#navbar-btn');
-    // $menubtn.click(function () {
-    //     document.getElementById('header').classList.add('openmenu');
-    // });
-
-
 </script>
 
+<script>
+    window.onscroll = function () { scrollFunction() };
 
+    function scrollFunction() {
+        if (document.body.scrollTop > 580 || document.documentElement.scrollTop > 580) {
+            document.getElementById("navbarline").style.background = "var(--blackgreen)";
+        } else {
+            document.getElementById("navbarline").style.background = "var(--navgradient)";
+        }
+    }
+</script>
 
 <script>
     // Adapted from jQuery Modal Popups by Black
     // http://code.jfbs.net/?showtopic=57
 
     $(document).ready(function () {
+        $(".navbar-close").hide();
+
         var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss")
         $(document.body).append(clicktodismiss);
 
-        $(document).on("click", "#navbar-btn", function (e) {
+        $(document).on("click", ".navbar-open", function (e) {
             $("html, body").animate({ scrollTop: 0 }, "500");
 
             if (window.scrollY > 0) {
                 setTimeout(function () {
                     $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
                     $('#header').addClass('openmenu');
+                    $(".navbar-close").show();
+                    $(".navbar-open").hide();
+
                 }, 400);
             } else {
                 $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
                 $('#header').addClass('openmenu');
+                $(".navbar-close").show();
+                $(".navbar-open").hide();
+
             }
         });
 
@@ -418,11 +414,24 @@
             $('#header').removeClass('openmenu');
         });
 
-        // $(document).on("click", "#navbar-btn.opened", function () {
-        //     $("#clicktodismiss").fadeOut("fast");
-        //     $('#header').removeClass('openmenu');
-        //     $('#navbar-btn').removeClass('opened').addClass('closed');
-        // });
+        $(document).on("click", ".navbar-close", function () {
+            $("#clicktodismiss").fadeOut("fast");
+            $('#header').removeClass('openmenu');
+            $(".navbar-close").hide();
+            $(".navbar-open").show();
+        });
+
+
+        $(window).scroll(function () {
+            var hT = $('#bodywrapper').offset().top,
+                hH = $('#bodywrapper').outerHeight(),
+                wH = $(window).height(),
+                wS = $(this).scrollTop();
+            if (wS > (hT + hH - wH)) {
+                console.log('H1 on the view!');
+            }
+        });
+
     });
 </script>
 
