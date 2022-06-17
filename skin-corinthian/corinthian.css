@@ -46,6 +46,11 @@
 :root {
    --paper: #faf5ed;
    --paperdark: #E9E4D7;
+
+   --paper: #E9E4D7;
+   --paperdark: #dcd6c8;
+
+
    --blackgreen: #494d48;
    --green: #7a9f9e;
    --purple: #9394AC;
@@ -90,6 +95,12 @@ a {
    margin: 0 auto 50px;
 }
 
+.maxwidth {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto 50px;
+}
+
 /* TOP NAV */
 
 #navbar {
@@ -99,20 +110,23 @@ a {
    justify-content: space-between;
    flex-wrap: wrap;
    padding-top: 8px;
-   box-shadow: -20px 0 0 var(--blackgreen), 20px 0 0 var(--blackgreen);
    z-index: 230;
+   margin-bottom: 0 !important;
 }
 
 #navbarline {
    width: 100%;
    margin: auto;
+   margin-top: -42px;
    max-width: 1200px;
-   height: 44px;
+   height: 42px;
    background: var(--navgradient);
    border-bottom: 1px solid var(--paper);
-   position: fixed;
-   top: 0;
+   position: sticky;
+   top: 0px;
    transition: background .3s ease;
+   box-shadow: -20px 0 0 var(--blackgreen), 20px 0 0 var(--blackgreen);
+
    z-index: 130;
 }
 
@@ -123,7 +137,7 @@ a {
    text-transform: uppercase;
    letter-spacing: 2px;
    white-space: nowrap;
-   text-shadow: 0 0 4px var(--blackgreen), 0 0 4px var(--blackgreen), 0 0 4px var(--blackgreen), 0 0 4px var(--blackgreen), 0 0 4px var(--blackgreen);
+   text-shadow: 0 0 2px var(--blackgreen), 0 0 2px var(--blackgreen), 0 0 2px var(--blackgreen), 0 0 2px var(--blackgreen), 0 0 3px var(--blackgreen), 0 0 3px var(--blackgreen), 0 0 3px var(--blackgreen), 0 0 3px var(--blackgreen);
 }
 
 #navbar .flexrow {
@@ -133,6 +147,7 @@ a {
 a.navbar-open,
 a.navbar-close {
    font: inherit;
+   background: var(--blackgreen);
    border: 1px solid var(--paperdark);
    display: inline-block;
    padding: 6px 8px;
@@ -145,15 +160,13 @@ a.navbar-close {
 #header {
    position: relative;
    width: 100%;
-   margin-top: -43px;
-
-   position: relative;
-   height: 663px;
+   margin-top: -80px;
+   height: 700px;
    overflow: hidden;
 }
 
 .hero-text {
-   padding-top: 160px;
+   margin-top: 200px;
    width: calc(50% - 96px);
    min-width: 480px;
    height: 100%;
@@ -167,20 +180,22 @@ a.navbar-close {
 
 h1 {
    margin: unset;
-   font: 120px/120px var(--fontHero);
+   font: 140px/120px var(--fontHero);
    text-transform: uppercase;
    color: var(--blackgreen);
-   text-shadow: 0 0 1px var(--paper), 0 0 2px var(--paper), 0 0 0px var(--paper);
+   text-shadow: 0 0 2px var(--paper), 0 0 1px var(--paper), 0 0 0px var(--paper);
 }
 
 h3 {
    margin: 0 40px 0 0;
    font: 20px/1.25em var(--fontBodySerif);
-   /* font-family: var(--fontHero); */
+   font-family: var(--fontHero);
+   letter-spacing: 2px;
    height: 336px;
    max-width: 400px;
    opacity: .7;
    white-space: nowrap;
+   text-transform: uppercase;
 }
 
 
@@ -189,7 +204,7 @@ h3 {
    shape-outside: circle(50%);
    width: 200px;
    height: 200px;
-   margin-right: -130px;
+   margin-right: -150px;
 }
 
 h3 .shape {
@@ -230,6 +245,29 @@ h3 .shape {
    opacity: 1;
    z-index: 110;
 }
+
+
+.openmenu #navpanel {
+   opacity: 1;
+}
+
+.openmenu .hero-img {
+   /* transform: translateX(100px); */
+   /* filter: saturate(.5) sepia(.1) contrast(.9); */
+   /* left: calc(35% + 120px); */
+   background-position: 100px bottom;
+}
+
+.openmenu .hero-text {
+   transform: translate(300px);
+   opacity: 0;
+}
+
+.openmenu .bgtexture {
+   opacity: 0;
+}
+
+
 
 /* .hero-colorfield {
    position: absolute;
@@ -273,33 +311,12 @@ h3 .shape {
    height: 512px;
    opacity: 0;
    position: absolute;
-   top: calc(50% - 256px);
+   top: calc(50% - 220px);
    left: 50%;
    transform: translateX(-50%);
    backdrop-filter: blur(5px);
    transition: .5s ease;
    z-index: 125;
-}
-
-.openmenu #navpanel {
-   opacity: 1;
-}
-
-.openmenu .hero-img {
-   /* transform: translateX(100px); */
-   /* filter: saturate(.5) sepia(.1) contrast(.9); */
-   /* left: calc(35% + 120px); */
-   background-position: 100px bottom;
-
-}
-
-.openmenu .hero-text {
-   transform: translate(300px);
-   opacity: 0;
-}
-
-.openmenu .bgtexture {
-   opacity: 0;
 }
 
 
@@ -309,33 +326,6 @@ h3 .shape {
    position: relative;
    background: var(--paperdark);
 }
-
-.frameinset {
-   border: 1px solid var(--borderColor);
-   padding: 1px;
-   height: 100%;
-}
-
-.frameinset_1 {}
-
-.frameinset_2 {
-   border-style: dotted;
-   padding: 3px
-}
-
-.frameinset_3 {
-   border-style: dotted;
-}
-
-.frameinset_4 {
-   border-width: 2px;
-   padding: 0;
-}
-
-
-
-
-
 
 .plinth {
    width: calc(100%);
@@ -386,10 +376,39 @@ h3 .shape {
 
 /* CATEGORY DEFAULTS */
 
-.cat-outerwrapper {
-   margin: 48px 0 72px;
-   color: var(--blackgreen);
 
+.frameinset {
+   border: 1px solid var(--borderColor);
+   padding: 1px;
+   height: 100%;
+}
+
+.frameinset_1 {
+   background: var(--paperdark);
+}
+
+.frameinset_2 {
+   border-style: dotted;
+   padding: 3px;
+   background: var(--paperdark);
+}
+
+.frameinset_3 {
+   border-style: dotted;
+}
+
+.frameinset_4 {
+   border-width: 2px;
+   padding: 0;
+   background: var(--paper);
+}
+
+
+
+.cat-outerwrapper {
+   margin: 40px 0;
+   color: var(--blackgreen);
+   /* width: 100%; */
    display: flex;
    flex-direction: row-reverse;
 }
@@ -664,14 +683,18 @@ h3 .shape {
 
 .forum-plottinghub .forumrow-subs {
    grid-area: subforums;
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
 }
 
 .forum-plottinghub .forumrow-subs a {
    padding: 8px 48px;
    text-align: center;
-   margin: 6px;
    transition: .5s ease;
 }
+
+
 
 .forum-plottinghub .forumrow-subs a:hover {
    color: var(--green)
@@ -727,14 +750,22 @@ h3 .shape {
 .cat-locations-layout {
    position: relative;
    height: 580px;
+   /* width: 100%; */
 }
 
-.forum_locations .forumrow {
+
+.forum_locations {
+   background: red;
+   height: 100%;
+   /* width: 100%; */
+}
+
+.cat-locations-layout .forumrow {
    display: grid;
    grid-template-areas: 'aboutplace placeimage';
    justify-content: space-between;
    align-items: flex-start;
-   width: 100%;
+   width: 50%;
    height: 100%;
    position: absolute;
 }
@@ -763,17 +794,17 @@ h3 .shape {
 
 .location_info .forumdesc {
    font: 18px/1.2em var(--fontBodySerif);
-   max-width: 400px;
+   max-width: 360px;
    padding-right: 1.5ch;
-   max-height: 7em;
-   margin: 2px 0 1.4em;
+   max-height: 6em;
+   margin: 2px 0 1.2em;
    overflow: auto;
 }
 
 .windowgate {
    z-index: 1;
    grid-area: placeimage;
-   /* position: absolute; */
+   position: absolute;
    /* right: 0; */
    margin-left: -80px;
    border-radius: 100%;
@@ -783,7 +814,7 @@ h3 .shape {
    height: 640px;
    border: 80px solid cornflowerblue;
    background: rgba(0, 200, 20, 1);
-   /* display: none; */
+   display: none;
 }
 
 .location_photo {
@@ -807,6 +838,10 @@ h3 .shape {
    opacity: 1;
    transform: rotate(0);
    z-index: 10;
+}
+
+.tabbedlocations_active .windowgate {
+   display: block;
 }
 
 .forumrow:nth-child(1) .location_photo {
@@ -841,6 +876,7 @@ h3 .shape {
 .tab {
    font: 15px/1.4em var(--fontBodySerif);
    min-width: 150px;
+   white-space: nowrap;
    padding: 8px 48px;
    text-align: center;
    transition: .5s ease;
@@ -858,7 +894,45 @@ h3 .shape {
    font-weight: bold;
 }
 
+
+
+
 /* CATEGORY: OOC */
+
+.cat-ooc-layout {
+   padding: 40px 48px;
+}
+
+.cat-ooc-layout .forumname {
+   font: 40px/1em var(--fontHero);
+   margin-left: -2px;
+}
+
+.cat-ooc-layout .forumrow:not(:first-of-type)::before {
+   content: '';
+   display: block;
+   height: 1px;
+   width: 200px;
+   background: var(--borderColor);
+   margin: 32px 0;
+}
+
+.cat-ooc-layout .forumrow-subs {
+   grid-area: subforums;
+   display: flex;
+   gap: 12px;
+}
+
+.cat-ooc-layout .forumrow-subs a {
+   padding: 8px 48px;
+   text-align: center;
+   transition: .5s ease;
+}
+
+.cat-ooc-layout .forumrow-subs a:hover {
+   color: var(--green)
+}
+
 
 /* CATEGORY: STATISTICS */
 
@@ -938,7 +1012,7 @@ h3 .shape {
          var(--paper) 20px,
          var(--borderColor) 20px,
          var(--borderColor) 21px,
-         #FAF5ED 21px);
+         var(--paper) 21px);
    /* display: grid;
    place-items: center; */
 }
@@ -1066,5 +1140,24 @@ h3 .shape {
    #navbar,
    #bodywrapper {
       margin: 0 20px;
+      box-shadow: none;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   .cat-outerwrapper {
+      display: block;
+   }
+
+   .categoryLabel {
+      writing-mode: unset;
+      text-orientation: unset;
+      font-size: 24px;
+      margin-bottom: 14px;
+   }
+
+   .location_photo,
+   .windowgate {
+      display: none;
    }
 }
