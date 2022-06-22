@@ -82,7 +82,7 @@ html {
    background: var(--blackgreen);
 }
 
-html::after {
+/* html::after {
    content: '';
    position: fixed;
    width: 100%;
@@ -93,7 +93,7 @@ html::after {
    top: 0;
    opacity: .7;
    z-index: -1;
-}
+} */
 
 
 body {
@@ -116,15 +116,12 @@ a {
 #masterwrapper {
    width: 100%;
    max-width: 1200px;
-   width: 1200px;
-
    margin: 0 auto 50px;
 }
 
 .maxwidth {
    width: 100%;
    max-width: 1200px;
-   /* width: 1200px; */
    margin: 0 auto 50px;
 }
 
@@ -158,7 +155,6 @@ a {
    margin: auto;
    margin-top: -42px;
    max-width: 1200px;
-   width: 1200px;
 
    height: 42px;
    background: var(--navgradient);
@@ -279,6 +275,7 @@ h3 .shape {
    filter: brightness(.5);
    mix-blend-mode: overlay;
    opacity: 1;
+   transition: .5s ease;
    z-index: 110;
 }
 
@@ -307,6 +304,11 @@ h3 .shape {
    /* filter: saturate(.5) sepia(.1) contrast(.9); */
    /* left: calc(35% + 120px); */
    background-position: 100px bottom;
+}
+
+.openmenu .hero-arches {
+   opacity: 0;
+   transform: translateX(100px);
 }
 
 .openmenu .hero-text {
@@ -347,14 +349,108 @@ h3 .shape {
    max-width: 1012px;
    height: 512px;
    opacity: 0;
-   position: absolute;
    top: calc(50% - 220px);
    left: 50%;
    transform: translateX(-50%);
    backdrop-filter: blur(5px);
    transition: .5s ease;
    z-index: 125;
+   padding: 20px;
+   color: var(--paperdark);
 }
+
+#navpanel .scoopedborder_1 {
+   background: transparent;
+   padding: 28px 50% 40px 40px;
+   height: calc(100% - 68px);
+}
+
+
+.navpanel-header {
+   margin-bottom: 32px;
+   gap: 20px !important;
+}
+
+.login-avi img {
+   width: 100px;
+   height: 100px;
+   object-fit: cover;
+   border-radius: 100%;
+}
+
+.navpanel-header h5 {
+   margin: unset;
+   font: unset;
+   font-family: var(--fontHero2);
+   color: var(--purple);
+}
+
+.navpanel-header h4 {
+   margin: unset;
+   font: 32px var(--fontHero);
+   color: var(--purple);
+   box-shadow: none;
+}
+
+.navpanel-header input {
+   background: var(--blackgreen);
+   background-blend-mode: multiply;
+   border: none;
+}
+
+.quicklinklabel {
+   font-size: 12px;
+   font-weight: 700;
+   text-transform: uppercase;
+   font-family: var(--fontHero2);
+   letter-spacing: 2px;
+   border-bottom: 1px dotted var(--green);
+   padding: 0 0 6px;
+   margin-bottom: 4px;
+   color: var(--purple);
+}
+
+.navpanel-quicklinks.flexrow {
+   gap: 20px;
+   margin-bottom: 40px;
+}
+
+.navpanel-quicklinks .flexcolumn {
+   gap: 8px;
+   flex: 1 0 1px;
+}
+
+.navpanel-quicklinks a {
+   font: 16px var(--fontBodySerif);
+   font-weight: 500;
+   letter-spacing: .4px;
+   color: var(--paperdark);
+   transition: .5s ease;
+}
+
+
+/* .quicklinklabel::after {
+   content: '';
+   display: block;
+   width: 32px;
+   height: 1px;
+   background: var(--paper);
+   margin: 8px 0;
+} */
+
+.navpanel-event {
+   margin-left: 2.5px;
+   width: calc(100% - 12px);
+   height: 80px;
+   border: 1px dotted var(--paper);
+   box-shadow: 0 0 0 2px var(--blackgreen), 0 0 0 2.5px var(--paper);
+   padding: 4px;
+}
+
+
+
+
+
 
 
 /* BODY */
@@ -402,28 +498,37 @@ h3 .shape {
 }
 
 .breadcrumbs {
-   padding: 8px 12px;
-   /* background: var(--paper); */
-   border: 1px dotted var(--borderColor);
-   box-shadow: 0 0 0 3px var(--paperdark), 0 0 0 4px var(--borderColor);
-   width: calc(100% - 10px);
-   margin: 12px auto 32px;
-   border-right: 0;
-   border-left: 0;
+   padding: 0px 0 12px;
+   border-bottom: 1px dotted var(--borderColor);
+   box-shadow: inset 0 -3px 0 0 var(--paperdark), inset 0 -4px 0 0 var(--borderColor);
+   width: calc(100% - 0px);
+   margin: 16px auto 32px;
 }
 
 .breadcrumbs>a {
-   font: 600 14px/1em var(--fontBodySerif);
+   font: 800 14px/1em var(--fontBodySerif);
    color: var(--paper);
    text-decoration: none;
    text-transform: uppercase;
-   letter-spacing: .6px;
-   color: var(--blackgreen);
+   letter-spacing: 1px;
+   color: var(--brick);
    text-decoration: none;
+   margin-left: 8px;
 }
 
-.breadcrumbs a:not(:last-of-type) {
-   margin-right: 8px;
+.breadcrumbs a:first-of-type {
+   color: var(--blackgreen);
+   margin-left: 0;
+}
+
+.breadcrumbs a:first-child::after {
+   content: '';
+   height: 14px;
+   width: 1px;
+   margin-bottom: -2px;
+   margin-left: 10px;
+   display: inline-block;
+   background-color: var(--blackgreen);
 }
 
 
@@ -638,7 +743,7 @@ h3 .shape {
 
 /* CATEGORY DEFAULTS */
 
-.cat-innerwrap::after {
+/* .frameinset_4::after {
    content: '';
    position: absolute;
    width: 100%;
@@ -649,16 +754,14 @@ h3 .shape {
    top: 0;
    opacity: .4;
    z-index: 0;
-}
+} */
 
 .cat-outerwrapper {
-   margin: 0 0 40px;
+   margin: 0 0 80px;
    color: var(--blackgreen);
-   /* width: 100%; */
    display: flex;
    flex-direction: row-reverse;
    position: relative;
-   z-index: 10;
 }
 
 .categoryLabel {
@@ -752,7 +855,6 @@ h3 .shape {
 
 
 .handbookbg {
-   float: left;
    width: 50%;
    height: 100%;
    left: 0;
@@ -821,7 +923,7 @@ h3 .shape {
 .handbooktext {
    grid-area: guidebook;
    position: relative;
-   max-width: 324px;
+   max-width: 380px;
    margin: 12px auto 0;
    margin-left: 64px;
    padding: 32px 28px 32px;
@@ -840,6 +942,7 @@ h3 .shape {
    margin-bottom: 2px;
    font-variation-settings: 'opsz' 72;
    color: var(--blackgreen);
+   display: block;
    /* text-shadow: 0 0 1px var(--blackgreen), 2px 0 0px var(--blackgreen);
    color: var(--paper); */
 }
@@ -853,7 +956,6 @@ h3 .shape {
    grid-area: getstartedboards;
    display: grid;
    height: 90%;
-   /* background: var(--paper); */
    margin-left: 48px;
    padding-left: 16px;
    padding-right: 64px;
@@ -882,9 +984,11 @@ h3 .shape {
 
 
 /* CATEGORY: CHARACTER */
+.cat-character .cat-innerwrap {
+   position: relative;
+}
 
 .cat-character .cat-character-layout {
-   position: relative;
    display: grid;
    grid-auto-flow: row;
    /* grid-template-columns: 1fr 3fr; */
@@ -895,14 +999,13 @@ h3 .shape {
    margin-left: auto;
    width: 68%;
    max-width: 660px;
-   background-color: var(--paper);
 
    margin-left: unset;
    margin-right: auto;
 }
 
 .plottinghubbgcolor {
-   /* background: var(--paperdark); */
+   background: var(--paperdark);
    position: absolute;
    width: 300px;
    height: calc(100% - var(--frameoffset));
@@ -910,12 +1013,12 @@ h3 .shape {
 
    right: 9px;
    width: 40%;
-   background-color: var(--paperdark);
+   background: linear-gradient(to right, var(--paper) 20%, var(--paperdark) 100%);
 }
 
 .plottinghubbg {
    position: absolute;
-   z-index: 10;
+   /* z-index: 10; */
    width: 400px;
    height: calc(100%);
    background: url('horse.svg') left / 600px;
@@ -936,6 +1039,7 @@ h3 .shape {
    grid-auto-flow: column;
    align-items: center;
    justify-content: space-between;
+   z-index: 5;
 }
 
 .forum-plottinghub {
@@ -945,7 +1049,6 @@ h3 .shape {
       'lastpost subforums';
    padding-bottom: 36px;
    border-bottom: 1px dotted var(--borderColor);
-   z-index: 0;
 }
 
 .forum-plottinghub .forumname {
@@ -1002,13 +1105,13 @@ h3 .shape {
 }
 
 .forum-twocol .forumrow {
-   padding: 32px 32px;
+   padding: 32px 24px;
    width: 100%;
    z-index: 10;
 }
 
 .forum-twocol .forumrow:first-of-type {
-   padding-left: 20px;
+   padding-left: 40px;
 }
 
 .forum-twocol .forumrow:first-of-type::after {
@@ -1070,9 +1173,10 @@ h3 .shape {
    padding-left: 0;
 }
 
-.location_info .forumname {
+.location_info .forumname a {
    font: 40px/1em var(--fontHero2);
    margin-left: -2px;
+   display: block;
 }
 
 .location_info .forumdesc {
@@ -1196,9 +1300,11 @@ h3 .shape {
 /* CATEGORY: OOC */
 
 .cat-ooc-layout {
+   position: relative;
    padding: 40px 48px;
-   background: url('town.svg') right calc(-200px + 50vw) top / 400px;
+   background: url('town.svg') right calc(-200px + 13vw) top / 400px;
    background-repeat: no-repeat;
+   z-index: 5;
 }
 
 .cat-ooc-layout .scoopedborder_2 {
@@ -1219,16 +1325,18 @@ h3 .shape {
    display: none;
 }
 
+.cat-ooc-layout .forumrow {
+   display: block;
+   width: fit-content;
+   z-index: 5;
+}
+
 .cat-ooc-layout .forumname {
    font: 28px/1em var(--fontHero2);
    margin-left: -2px;
    margin-bottom: 8px;
 }
 
-.cat-ooc-layout .forumrow {
-   display: block;
-   width: fit-content;
-}
 
 .cat-ooc-layout .forumrow:first-of-type::after {
    content: '';
@@ -1249,7 +1357,6 @@ h3 .shape {
 .cat-ooc-layout .flexrow {
    align-items: baseline;
    justify-content: space-between;
-
 }
 
 .cat-ooc-layout .forumrow-subs a {
@@ -1272,6 +1379,75 @@ h3 .shape {
          var(--borderColor) 21px,
          transparent 21px);
 }
+
+
+
+
+
+.cat-ooc .twocolcat {
+   margin: 0 0 40px;
+   color: var(--blackgreen);
+   display: flex;
+   gap: 20px;
+}
+
+.twocolcat .cat-ooc-layout {
+   position: relative;
+   padding: 0 48px 40px;
+   background: url('test.svg') center top -40px / contain;
+   background-repeat: no-repeat;
+   z-index: 5;
+}
+
+.twocolcat .cat-ooc-layout .forumrow {
+   display: block;
+   width: fit-content;
+   z-index: 5;
+   padding-top: 100px;
+}
+
+.twocolcat .cat-ooc-layout .forumname {
+   font: 28px/1em var(--fontHero2);
+   margin-left: -2px;
+   margin-bottom: 16px;
+}
+
+
+.twocolcat .cat-ooc-layout .forumrow:first-of-type::after {
+   content: '';
+   display: block;
+   height: 1px;
+   width: 100px;
+   background: var(--borderColor);
+   margin: 32px 0 28px;
+   display: none;
+}
+
+.twocolcat .cat-ooc-layout .forumrow-subs {
+   grid-area: subforums;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px;
+}
+
+.twocolcat .cat-ooc-layout .forumrow-subs a {
+   flex: 1 0 0px;
+}
+
+.twocolcat .cat-ooc-layout .flexrow {
+   align-items: baseline;
+   justify-content: space-between;
+}
+
+.twocolcat.cat-ooc-layout .forumrow-subs a {
+   padding: 6px 24px 8px;
+}
+
+.twocolcat .cat-ooc-layout .forumrow-subs a:hover {
+   color: var(--green)
+}
+
+
 
 /* CATEGORY: STATISTICS */
 
@@ -1299,24 +1475,33 @@ h3 .shape {
 }
 
 @media only screen and (max-width: 1240px) {
+
    #masterwrapper {
-      width: 100%;
-      margin: 0 0 50px;
+      width: 95%;
+      margin: 0 auto 50px;
       box-sizing: border-box;
    }
 
-   #navbarline {
-      left: 0;
+
+   #navbar.maxwidth {
+      width: 95%;
+      margin: 0 auto 50px;
    }
+
 
    #navbar,
    #bodywrapper {
-      margin: 0 20px;
+      margin: 0 auto;
       box-shadow: none;
    }
 }
 
 @media only screen and (max-width: 600px) {
+   #navbarline {
+      left: 0;
+      height: 60px;
+   }
+
    .cat-outerwrapper {
       display: block;
    }
