@@ -45,7 +45,7 @@
    --purple: #9394AC;
    --brick: #9E8382;
 
-   --borderColor: var(--blackgreen);
+   --borderColor: var(--green);
    --linkaccent: var(--brick);
    --frameoffset: 18px;
    --navgradient: linear-gradient(to right, var(--blackgreen) 30%, rgba(0, 0, 0, 0) 60%);
@@ -547,6 +547,10 @@ h3 .shape {
    gap: 0;
 }
 
+.breadcrumbs+.categoryLabel {
+   margin-top: 4px;
+}
+
 .breadcrumbs>a {
    font: 800 14px/1em var(--fontBodySerif);
    color: var(--paper);
@@ -779,13 +783,13 @@ h3 .shape {
 }
 
 .frameshadow {
-   border: 1px dotted var(--borderColor);
+   border: 1px dotted var(--blackgreen);
    /* padding: 14px; */
    box-shadow:
-      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--borderColor), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--borderColor), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--borderColor), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--borderColor);
+      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--blackgreen), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--blackgreen), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--blackgreen), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--blackgreen);
 
-   box-shadow: 0 0 0 2px var(--paperdark), 0 0 0 3px var(--borderColor), 0 0 0 4px var(--paperdark), 0 0 0 5px var(--borderColor),
-      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--borderColor), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--borderColor), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--borderColor), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--borderColor);
+   box-shadow: 0 0 0 2px var(--paperdark), 0 0 0 3px var(--blackgreen), 0 0 0 4px var(--paperdark), 0 0 0 5px var(--blackgreen),
+      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--blackgreen), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--blackgreen), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--blackgreen), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--blackgreen);
 }
 
 
@@ -812,7 +816,7 @@ h3 .shape {
    position: relative;
 }
 
-.categoryLabel {
+.cat-outerwrapper .categoryLabel {
    font: 24px/1em var(--fontHero);
    text-transform: uppercase;
    letter-spacing: 2px;
@@ -821,9 +825,11 @@ h3 .shape {
    writing-mode: vertical-rl;
    text-orientation: mixed;
    font-size: 36px;
-   line-height: 0;
+   line-height: 1em;
    width: 4px;
    color: var(--brick);
+
+   display: none;
 }
 
 .cat-innerwrap {
@@ -1004,6 +1010,7 @@ h3 .shape {
    grid-area: getstartedboards;
    display: grid;
    height: 90%;
+   margin-top: 20px;
    margin-left: 48px;
    padding-left: 16px;
    padding-right: 56px;
@@ -1456,27 +1463,43 @@ h3 .shape {
 
 .twocolcat .cat-ooc-layout {
    position: relative;
-   padding: 40px 48px 120px;
-   background: url('town-2.svg') left 0 bottom -40px/ contain;
-   background-repeat: no-repeat;
+   display: block;
+   padding: 92px 0 40px;
+   /* background: url('town-2.svg') left 0 top -40px/ contain;
+   background-repeat: no-repeat; */
    z-index: 5;
-   height: 100%;
+   box-sizing: border-box;
+   overflow: hidden;
 }
 
 .twocolcat .cat-ooc-layout .forumrow {
    z-index: 5;
    display: grid;
    grid-template-areas:
-      'boardinfo '
-      'subforums ';
+      'boardinfo'
+      'subforums';
    grid-template-columns: 1fr;
    grid-row-gap: 20px;
    justify-content: space-between;
    align-items: flex-start;
+   width: 100%;
+}
+
+.cat-ooc-layout .headerimg {
+   width: 110%;
+   height: 180px;
+   background: url('lintel.svg') center top / cover;
+   background-repeat: no-repeat;
+   position: absolute;
+   z-index: 2;
+   top: -4px;
+   right: 0%;
 }
 
 .forum-ooc-text {
    grid-area: boardinfo;
+   padding: 0 52px 0 48px;
+   z-index: 5;
 }
 
 
@@ -1505,6 +1528,7 @@ h3 .shape {
    flex-direction: row;
    flex-wrap: wrap;
    gap: 16px;
+   padding: 0 52px 0 48px;
 }
 
 .twocolcat .cat-ooc-layout .forumrow-subs a {
@@ -1594,12 +1618,27 @@ h3 .shape {
 
 
 
+.categoryLabel {
+   font: 36px/1em var(--fontHero);
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   color: var(--brick);
+   margin: 64px 0 24px;
+   /* display: flex;
+   flex-direction: column; */
+   text-align: right;
+}
+
 .divider {
    display: flex;
    align-items: center;
-   margin: 56px 0;
    width: calc(100% - 4px);
    text-align: center;
+}
+
+.divider:first-child {
+   margin-bottom: 10px;
+   display: none;
 }
 
 .arrowhead-1:after,
@@ -1613,6 +1652,10 @@ h3 .shape {
    display: block;
 }
 
+.arrowhead-1:after {
+   display: none;
+}
+
 .divider::after {
    transform: scaleX(-1);
    margin-right: 0;
@@ -1620,7 +1663,7 @@ h3 .shape {
 }
 
 .divider-content {
-   background: var(--brick);
+   background: var(--green);
    height: 1.5px;
    margin: 6px 0;
    width: calc(100% - 4px);
@@ -1632,9 +1675,10 @@ h3 .shape {
    position: absolute;
    width: 5px;
    height: 5px;
-   background: var(--brick);
+   background: var(--green);
    border-radius: 100%;
    top: calc(50% - 2.5px);
+   right: 0
 }
 
 
