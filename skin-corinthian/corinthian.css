@@ -40,15 +40,19 @@
    --paperdark: #E9E4D7; */
    --paper: #E9E4D7;
    --paperdark: #dcd6c8;
-   --blackgreen: #494d48;
+   --blackpurple: #3B3846;
    --green: #6D8076;
-   --purple: #9394AC;
+   --greendark: #54635B;
+   --purple: #83849A;
+   --purpledark: #746D8C;
    --brick: #9E8382;
 
    --borderColor: var(--green);
    --linkaccent: var(--brick);
    --frameoffset: 18px;
-   --navgradient: linear-gradient(to right, var(--blackgreen) 30%, rgba(0, 0, 0, 0) 60%);
+   --navgradient: linear-gradient(to right, var(--blackpurple) 30%, rgba(0, 0, 0, 0) 60%);
+
+   --membergroup: var(--membercolor, var(--brick));
 
    /* For hero */
    --fontHero: 'AcademyEngravedStd';
@@ -79,7 +83,7 @@
 }
 
 html {
-   background: var(--blackgreen);
+   background: var(--blackpurple);
 }
 
 /* html::after {
@@ -87,7 +91,7 @@ html {
    position: fixed;
    width: 100%;
    height: 100%;
-   background: url('https://media.discordapp.net/attachments/683720444796338317/876529579425169438/unknown.png?width=1360&height=906');
+   background: url('https://media.discordapp.net/attachments/683720444796338317/891394463040147607/textured-background-white-tone.jpg?width=1397&height=931');
    mix-blend-mode: multiply;
    filter: brightness(1);
    top: 0;
@@ -162,7 +166,7 @@ a {
    position: sticky;
    top: 0px;
    transition: background .3s ease;
-   box-shadow: -20px 0 0 var(--blackgreen), 20px 0 0 var(--blackgreen);
+   box-shadow: -20px 0 0 var(--blackpurple), 20px 0 0 var(--blackpurple);
    z-index: 130;
 }
 
@@ -173,7 +177,7 @@ a {
    text-transform: uppercase;
    letter-spacing: 2px;
    white-space: nowrap;
-   text-shadow: 0 0 2px var(--blackgreen), 0 0 2px var(--blackgreen), 0 0 2px var(--blackgreen), 0 0 2px var(--blackgreen), 0 0 3px var(--blackgreen), 0 0 3px var(--blackgreen), 0 0 3px var(--blackgreen), 0 0 3px var(--blackgreen);
+   text-shadow: 0 0 2px var(--blackpurple), 0 0 2px var(--blackpurple), 0 0 2px var(--blackpurple), 0 0 2px var(--blackpurple), 0 0 3px var(--blackpurple), 0 0 3px var(--blackpurple), 0 0 3px var(--blackpurple), 0 0 3px var(--blackpurple);
 }
 
 #navbar .flexrow {
@@ -183,7 +187,7 @@ a {
 a.navbar-open,
 a.navbar-close {
    font: inherit;
-   background: var(--blackgreen);
+   background: var(--blackpurple);
    border: 1px solid var(--paperdark);
    display: inline-block;
    padding: 6px 8px;
@@ -221,7 +225,7 @@ h1 {
    font: 120px/120px var(--fontHero);
    text-transform: uppercase;
    letter-spacing: 2px;
-   color: var(--blackgreen);
+   color: var(--blackpurple);
    opacity: .75;
    text-shadow: 0 0 2px var(--paper), 0 0 1px var(--paper), 0 0 1px var(--paper), 0px 0 1px var(--paper);
    overflow-wrap: break-word;
@@ -248,6 +252,7 @@ h3 .shape {
    z-index: 140;
    bottom: 0;
    left: 40%;
+   left: calc(50% - 150px);
    width: 100%;
    height: calc(100% + 100px);
    background: url('hero-render.png');
@@ -265,6 +270,7 @@ h3 .shape {
    bottom: 0;
    /* right: 164px; */
    left: 35%;
+   left: calc(45% - 150px);
    display: block;
    width: 636px;
    height: 100%;
@@ -287,7 +293,7 @@ h3 .shape {
    top: 362px;
    left: 400px;
    top: calc(50% - 30%);
-   left: calc(50% - 15%);
+   left: calc(45% - 150px);
    /* right: calc(15%); */
    mix-blend-mode: soft-light;
    border: 2px dashed var(--paperdark);
@@ -348,7 +354,6 @@ h3 .shape {
    position: absolute;
    width: 100%;
    max-width: 1012px;
-   height: 512px;
    opacity: 0;
    top: calc(50% - 220px);
    left: 50%;
@@ -363,7 +368,8 @@ h3 .shape {
 
 .navpanelinset {
    background-color: rgba(45, 54, 50, 0.9);
-   padding: 40px 52% 40px 40px;
+   background-color: rgba(46, 43, 54, 0.9);
+   padding: 40px 50% 40px 40px;
    height: calc(100% - 68px);
    background-image: radial-gradient(var(--green) 1%, transparent 2%),
       radial-gradient(var(--green) 1%, transparent 2%);
@@ -373,7 +379,7 @@ h3 .shape {
 
 
 .navpanel-header.flexrow {
-   margin-bottom: 40px;
+   margin-bottom: 24px;
    gap: 20px !important;
    flex-direction: row-reverse;
    justify-content: space-between;
@@ -385,9 +391,9 @@ h3 .shape {
    height: fit-content;
    /* margin-right: 28px; */
    border-radius: 100%;
-   box-shadow: 0 0 0px 1px var(--blackgreen), 0 0 0px 2px var(--green);
+   box-shadow: 0 0 0px 1px var(--blackpurple), 0 0 0px 2px var(--purple);
    padding: 4px;
-   border: 1px dotted var(--green);
+   border: 1px dotted var(--purple);
 }
 
 .login-avi img {
@@ -409,14 +415,17 @@ h3 .shape {
    text-transform: uppercase;
 }
 
-.navpanel-header h4 {
+.navpanel-header .accountswitchername {
    margin: unset;
    font: 32px var(--fontHero);
    color: var(--paperdark);
    box-shadow: none;
+
+   background: transparent;
+   border: unset;
 }
 
-.navpanel-header input {
+.navpanel-header input.accountswitcher {
    background: transparent;
    /* background: #00000050; */
    /* background-blend-mode: multiply; */
@@ -432,7 +441,7 @@ h3 .shape {
    font-family: var(--fontHero2);
    letter-spacing: 2px;
    padding: 0 0 6px;
-   color: var(--green);
+   color: var(--purple);
 }
 
 .quicklinklabel::after {
@@ -478,7 +487,7 @@ h3 .shape {
    width: calc(100% - 12px);
    height: 80px;
    border: 1px dotted var(--purple);
-   box-shadow: 0 0 0 2px var(--blackgreen), 0 0 0 2.5px var(--purple);
+   box-shadow: 0 0 0 2px var(--blackpurple), 0 0 0 2.5px var(--purple);
    padding: 4px;
 }
 
@@ -562,7 +571,7 @@ h3 .shape {
 }
 
 .breadcrumbs a:first-of-type {
-   color: var(--blackgreen);
+   color: var(--blackpurple);
 }
 
 .breadcrumbs a:first-child:after {
@@ -571,7 +580,7 @@ h3 .shape {
    width: 1px;
    margin: 0 10px -2px;
    display: inline-block;
-   background-color: var(--blackgreen);
+   background-color: var(--blackpurple);
 }
 
 .breadcrumbs a:not(:first-child)::after {
@@ -635,7 +644,7 @@ h3 .shape {
          rgba(0, 0, 0, 0) 6px,
          rgba(255, 100, 0, 1) 6px,
          rgba(255, 100, 0, 1) 7px,
-         var(--paper) 7px);
+         transparent 7px);
 }
 
 
@@ -647,8 +656,8 @@ h3 .shape {
    width: 100%;
    height: calc(100% - 13px);
    transform: translate(-50%, -50%);
-   border-left: 1px solid rgba(255, 100, 0, 1);
-   border-right: 1px solid rgba(255, 100, 0, 1);
+   border-left: 1px solid rgba(100, 100, 0, 1);
+   border-right: 1px solid rgba(255, 200, 0, 1);
 }
 
 .scoopedborder_1::after {
@@ -659,8 +668,8 @@ h3 .shape {
    width: calc(100% - 13px);
    height: 100%;
    transform: translate(-50%, -50%);
-   border-top: 1px solid rgba(255, 100, 0, 1);
-   border-bottom: 1px solid rgba(255, 100, 0, 1);
+   border-top: 1px solid rgba(105, 190, 0, 1);
+   border-bottom: 1px solid rgba(155, 100, 200, 1);
 }
 
 .scoopedborder_2 {
@@ -783,34 +792,34 @@ h3 .shape {
 }
 
 .frameshadow {
-   border: 1px dotted var(--blackgreen);
+   border: 1px dotted var(--blackpurple);
    /* padding: 14px; */
    box-shadow:
-      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--blackgreen), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--blackgreen), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--blackgreen), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--blackgreen);
+      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--blackpurple), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--blackpurple), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--blackpurple), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--blackpurple);
 
-   box-shadow: 0 0 0 2px var(--paperdark), 0 0 0 3px var(--blackgreen), 0 0 0 4px var(--paperdark), 0 0 0 5px var(--blackgreen),
-      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--blackgreen), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--blackgreen), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--blackgreen), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--blackgreen);
+   box-shadow: 0 0 0 2px var(--paperdark), 0 0 0 3px var(--blackpurple), 0 0 0 4px var(--paperdark), 0 0 0 5px var(--blackpurple),
+      inset 0 0 0px 2px var(--paperdark), inset 0 0 0px 3px var(--blackpurple), inset 0 0 0px 4px var(--paperdark), inset 0 0 0px 4.5px var(--blackpurple), inset 0 0 0px 8.5px var(--paperdark), inset 0 0 0px 11.5px var(--blackpurple), inset 0 0 0px 13.5px var(--paperdark), inset 0 0 0px 14px var(--blackpurple);
 }
 
 
 /* CATEGORY DEFAULTS */
 
-/* .frameinset_4::after {
+.textured::after {
    content: '';
    position: absolute;
-   width: 100%;
-   height: 100%;
-   background: url('https://media.discordapp.net/attachments/683720444796338317/876529579425169438/unknown.png?width=1360&height=906');
+   width: calc(100% - var(--frameoffset));
+   height: calc(100% - var(--frameoffset));
+   background: url('https://media.discordapp.net/attachments/683720444796338317/891394463040147607/textured-background-white-tone.jpg?width=1397&height=931');
    mix-blend-mode: multiply;
    filter: brightness(1);
-   top: 0;
-   opacity: .4;
+   top: 9px;
+   opacity: .5;
    z-index: 0;
-} */
+}
 
 .cat-outerwrapper {
    margin: 0 0 40px;
-   color: var(--blackgreen);
+   color: var(--blackpurple);
    display: flex;
    flex-direction: row-reverse;
    position: relative;
@@ -863,7 +872,7 @@ h3 .shape {
    font-weight: bold;
    text-transform: uppercase;
    text-decoration: none;
-   color: var(--brick);
+   color: var(--membergroup);
 }
 
 .lastpost-author a {
@@ -921,7 +930,7 @@ h3 .shape {
    z-index: 0;
    width: 45%;
    height: calc(100% - var(--frameoffset));
-   background: linear-gradient(to bottom, #dcd6c8 0%, var(--paper) 50%);
+   background: linear-gradient(to bottom, #B6BDB9 60%, var(--paper) 61%);
 }
 
 .handbookbg::after {
@@ -944,7 +953,7 @@ h3 .shape {
    right: 9px;
    width: calc(100% - var(--frameoffset));
    height: 100%;
-   background: url('clouds.svg') right calc(180px + 60%) bottom -40px / 760px;
+   background: url('clouds.svg') right calc(180px + 55%) bottom -30px / 760px;
    background-repeat: no-repeat;
 }
 
@@ -954,7 +963,7 @@ h3 .shape {
    bottom: 0;
    width: 100%;
    height: 100%;
-   background: url('tail.svg') right calc(131px + 60%) bottom -40px / 760px;
+   background: url('tail.svg') right calc(131px + 55%) bottom -30px / 760px;
    background-repeat: no-repeat;
    z-index: 5;
 }
@@ -979,15 +988,22 @@ h3 .shape {
    grid-area: guidebook;
    position: relative;
    max-width: 380px;
-   margin: 12px auto 0;
+   margin: 20px auto 0;
    margin-left: 64px;
    padding: 32px 28px 32px;
    height: fit-content;
-   background: var(--paper);
+   background-color: var(--paper);
    display: block;
    border: 1px dotted var(--borderColor);
    box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--borderColor);
-   border-bottom-right-radius: 32px;
+
+   /* lintel */
+   /* background: url('lintel.svg') right -50px top -50px / cover, var(--paper);
+   background-repeat: no-repeat;
+   z-index: 2;
+   top: -4px;
+   right: 0%;
+   padding-top: 60px; */
 }
 
 
@@ -995,15 +1011,16 @@ h3 .shape {
    font: 60px/1em var(--fontHero);
    margin-bottom: 2px;
    font-variation-settings: 'opsz' 72;
-   color: var(--blackgreen);
+   color: var(--blackpurple);
+   color: var(--greendark);
    display: block;
-   /* text-shadow: 0 0 1px var(--blackgreen), 2px 0 0px var(--blackgreen);
+   /* text-shadow: 0 0 1px var(--blackpurple), 2px 0 0px var(--blackpurple);
    color: var(--paper); */
 }
 
 .handbook-desc {
    font: 500 16px/1.3em var(--fontBodySerif);
-   color: var(--blackgreen);
+   color: var(--blackpurple);
 }
 
 .cat-getstarted-boards {
@@ -1031,6 +1048,7 @@ h3 .shape {
 .cat-getstarted .forumname {
    font: 28px/1em var(--fontHero);
    margin-bottom: 6px;
+   color: var(--greendark);
 }
 
 .cat-getstarted .lastpost-avi {
@@ -1078,7 +1096,7 @@ h3 .shape {
 
    right: 9px;
    width: 40%;
-   background: linear-gradient(to right, var(--paper) 20%, var(--paperdark) 100%);
+   background: linear-gradient(to right, var(--paper) 20%, #B6BDB9 21%);
 }
 
 .plottinghubbg {
@@ -1120,6 +1138,7 @@ h3 .shape {
    grid-area: name;
    font: 52px/1em var(--fontHero);
    margin-bottom: 8px;
+   color: var(--greendark);
 }
 
 
@@ -1169,6 +1188,7 @@ h3 .shape {
 .forum-twocol .forumname {
    font: 28px/1em var(--fontHero);
    margin-bottom: 6px;
+   color: var(--greendark);
 }
 
 .forum-twocol .forumrow {
@@ -1244,6 +1264,7 @@ h3 .shape {
    font: 40px/1em var(--fontHero);
    margin-left: -2px;
    display: block;
+   color: var(--greendark);
 }
 
 .location_info .forumdesc {
@@ -1403,7 +1424,8 @@ h3 .shape {
 .cat-ooc-layout .forumname {
    font: 28px/1em var(--fontHero2);
    margin-left: -2px;
-   margin-bottom: 8px;
+   margin-bottom: 8px;   
+   color: var(--greendark);
 }
 
 
@@ -1455,7 +1477,7 @@ h3 .shape {
 
 .cat-ooc .twocolcat {
    margin: 0;
-   color: var(--blackgreen);
+   color: var(--blackpurple);
    display: flex;
    gap: 20px;
    width: 100%;
@@ -1465,6 +1487,7 @@ h3 .shape {
    position: relative;
    display: block;
    padding: 92px 0 40px;
+   /* padding: 40px 0 92px; */
    /* background: url('town-2.svg') left 0 top -40px/ contain;
    background-repeat: no-repeat; */
    z-index: 5;
@@ -1488,12 +1511,23 @@ h3 .shape {
 .cat-ooc-layout .headerimg {
    width: 110%;
    height: 180px;
-   background: url('lintel.svg') center top / cover;
+   background: url('lintel.svg') right -20px top -5px / cover;
    background-repeat: no-repeat;
    position: absolute;
    z-index: 2;
    top: -4px;
    right: 0%;
+
+
+   background: url('clouds-low.svg') left 40px bottom -220px / 800px;
+   background-repeat: no-repeat;
+   top: unset;
+   right: unset;
+   bottom: 0;
+   left: 0;
+   height: 100%;
+   z-index: 0;
+   transform: scale(-1);
 }
 
 .forum-ooc-text {
@@ -1511,6 +1545,7 @@ h3 .shape {
    font: 32px/1em var(--fontHero);
    margin-left: -2px;
    margin-bottom: 4px;
+   color: var(--greendark);
 }
 
 .twocolcat .cat-ooc-layout .lastpost-avi {
@@ -1546,7 +1581,117 @@ h3 .shape {
 
 /* CATEGORY: STATISTICS */
 
+.cat-infocenter-layout {
+   display: grid;
+   grid-template-areas: 'links main recenttopics';
+   grid-template-columns: auto 2fr 1fr;
+}
 
+.infocenter-area-links {
+   grid-area: links;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 0 20px;
+   gap: 40px;
+   z-index: 5;
+   background: #B6BDB9;
+   border-right: 1px dotted var(--borderColor);
+
+   font: 400 16px var(--fontHero);
+}
+
+.infocenter-area-links .flexcolumn {
+   align-items: center;
+   gap: 8px;
+}
+
+.infocenter-area-main {
+   grid-area: main;
+   padding: 40px 20px 28px 28px;
+   z-index: 5;
+}
+
+.infocenter-area-recenttopics {
+   grid-area: recenttopics;
+   background: orange;
+   z-index: 5;
+}
+
+.infocenter-link-icon {
+   width: 50px;
+   display: block;
+}
+
+.infocenter-h1 {
+   font: 32px/1em var(--fontHero);
+   margin-bottom: 12px;
+}
+
+.infocenter-h3 {
+   font: bold 12px/1em var(--fontHero2);
+   letter-spacing: .6px;
+   text-transform: uppercase;
+   margin-bottom: 12px;
+   text-align: right;
+}
+
+.divider+.infocenter-h3 {
+   margin-top: 8px;
+}
+
+.onlinenowbox {
+   height: 120px;
+   overflow: auto;
+   font: bold 14px/20px var(--fontHero);
+   text-transform: uppercase;
+   letter-spacing: .5px;
+   margin: 2px 0 20px;
+}
+
+
+.onlinetodaybox {
+   height: 6em;
+   overflow: auto;
+   font: bold 11px/18px var(--fontHero);
+   text-transform: uppercase;
+   letter-spacing: .5px;
+}
+
+.onlinenowbox a,
+.onlinetodaybox a {
+   display: inline-block;
+   margin-right: 10px;
+   color: var(--membergroup);
+   text-decoration: none;
+}
+
+.infocenter-statboxes {
+   display: grid;
+   grid-auto-flow: column;
+   grid-template-columns: 1fr 1fr 1fr;
+   margin-top: 24px;
+   gap: 16px;
+}
+
+.infocenter-statbox {
+   padding: 18px 18px 14px;
+
+   /* background-color: var(--paper);
+   display: block;
+   border: 1px dotted var(--borderColor);
+   box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--borderColor); */
+}
+
+.infocenter-h4 {
+   font: 28px/1em var(--fontHero);
+}
+
+.infocenter-h5 {
+   font: 14px/1em var(--fontBodySerif);
+   margin-bottom: 8px;
+}
 
 
 
@@ -1554,7 +1699,7 @@ h3 .shape {
 #bodywrapper ::-webkit-scrollbar {
    width: 3px !important;
    height: 1px !important;
-   background: var(--paper);
+   background: rgba(0, 0, 0, 0);
    border: 0;
 }
 
@@ -1565,7 +1710,7 @@ h3 .shape {
 
 #bodywrapper ::-webkit-scrollbar-track,
 #bodywrapper ::-webkit-scrollbar-track-piece {
-   background: var(--bgcolor);
+   background: rgba(0, 0, 0, 0);
    border: 0;
 }
 
@@ -1663,7 +1808,7 @@ h3 .shape {
 }
 
 .divider-content {
-   background: var(--green);
+   background: var(--greendark);
    height: 1.5px;
    margin: 6px 0;
    width: calc(100% - 4px);
