@@ -38,6 +38,7 @@
 :root {
    /* --paper: #faf5ed;
    --paperdark: #E9E4D7; */
+   --paperlight: #EEEAE0;
    --paper: #E9E4D7;
    --paperdark: #dcd6c8;
    --blackish: #413737;
@@ -142,14 +143,12 @@ a {
 }
 
 #masterwrapper {
-   width: 100%;
-   max-width: 1200px;
+   width: min(100%, 1200px);
    margin: 0 auto 50px;
 }
 
 .maxwidth {
-   width: 100%;
-   max-width: 1200px;
+   width: min(100%, 1200px);
    margin: 0 auto 50px;
 }
 
@@ -209,10 +208,9 @@ a {
 }
 
 #navbarline {
-   width: 100%;
+   width: min(100%, 1200px);
    margin: auto;
    margin-top: -42px;
-   max-width: 1200px;
 
    height: 42px;
    background: var(--navgradient);
@@ -407,8 +405,8 @@ h3 .shape {
 
 #navpanel {
    position: absolute;
-   width: 100%;
-   max-width: 1012px;
+   width: min(100vw, 1012px);
+
    opacity: 0;
    top: calc(50% - 220px);
    left: 50%;
@@ -451,11 +449,12 @@ h3 .shape {
    box-shadow: 0 0 0px 1px var(--blackish), 0 0 0px 2px var(--brickdark);
    padding: 4px;
    border: 1px dotted var(--brickdark);
+   margin-right: -12px;
 }
 
 .login-avi img {
-   width: 72px;
-   height: 72px;
+   width: 80px;
+   height: 80px;
    object-fit: cover;
    border-radius: 100%;
    display: block;
@@ -499,7 +498,7 @@ h3 .shape {
    font-family: var(--fontHero2);
    letter-spacing: 2px;
    padding: 0 0 6px;
-   color: var(--brickdark);
+   color: var(--brick);
 }
 
 .quicklinklabel::after {
@@ -678,86 +677,105 @@ h3 .shape {
 .frameinset_4 {
    border-width: 2px;
    padding: 0;
-   background: var(--paper);
+   background: var(--paperlight);
 }
 
 
-.scoopedborder_1 {
+
+.scoopedbox {
+   --r: 6px;
+   box-sizing: border-box;
    position: relative;
+   padding: var(--r);
+   /* width: calc(100% - 2*var(--r)); */
+   flex: 1 1 0px;
+   /* max-width: 47em;
+   min-height: 10em; */
+   color: #000;
    background-image: radial-gradient(circle at 0 0,
-         rgba(0, 0, 0, 0) 6px,
-         rgba(255, 100, 0, 1) 6px,
-         rgba(255, 100, 0, 1) 7px,
-         transparent 7px),
+         rgba(0, 0, 0, 0) var(--r),
+         var(--green) var(--r),
+         var(--green) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px)),
       radial-gradient(circle at 100% 0,
-         rgba(0, 0, 0, 0) 6px,
-         rgba(255, 100, 0, 1) 6px,
-         rgba(255, 100, 0, 1) 7px,
-         transparent 7px),
+         rgba(0, 0, 0, 0) var(--r),
+         var(--green) var(--r),
+         var(--green) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px)),
       radial-gradient(circle at 0 100%,
-         rgba(0, 0, 0, 0) 6px,
-         rgba(255, 100, 0, 1) 6px,
-         rgba(255, 100, 0, 1) 7px,
-         transparent 7px),
+         rgba(0, 0, 0, 0) var(--r),
+         var(--green) var(--r),
+         var(--green) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px)),
       radial-gradient(circle at 100% 100%,
-         rgba(0, 0, 0, 0) 6px,
-         rgba(255, 100, 0, 1) 6px,
-         rgba(255, 100, 0, 1) 7px,
-         transparent 7px);
+         rgba(0, 0, 0, 0) var(--r),
+         var(--green) var(--r),
+         var(--green) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px));
 }
 
+.scoopedbox svg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+}
 
-.scoopedborder_1::before {
+.scoopedbox::before {
    content: "";
    position: absolute;
    top: 50%;
    left: 50%;
    width: 100%;
-   height: calc(100% - 13px);
+   height: calc(100% - 2*var(--r));
    transform: translate(-50%, -50%);
-   border-left: 1px solid rgba(100, 100, 0, 1);
-   border-right: 1px solid rgba(255, 200, 0, 1);
+   border-left: 1px solid var(--green);
+   border-right: 1px solid var(--green);
 }
 
-.scoopedborder_1::after {
+.scoopedbox::after {
    content: "";
    position: absolute;
    top: 50%;
    left: 50%;
-   width: calc(100% - 13px);
+   width: calc(100% - 2*var(--r));
    height: 100%;
    transform: translate(-50%, -50%);
-   border-top: 1px solid rgba(105, 190, 0, 1);
-   border-bottom: 1px solid rgba(155, 100, 200, 1);
+   border-top: 1px solid var(--green);
+   border-bottom: 1px solid var(--green);
 }
 
-.scoopedborder_2 {
+
+
+.doublescooped {
    position: relative;
    width: 100%;
    height: 100%;
    background-image: radial-gradient(circle at 0 0,
-         var(--paper) 20px,
-         var(--borderColor) 20px,
-         var(--borderColor) 21px,
+         var(--paperlight) 20px,
+         var(--green) 20px,
+         var(--green) 21px,
          transparent 21px),
       radial-gradient(circle at 100% 0,
-         var(--paper) 20px,
-         var(--borderColor) 20px,
-         var(--borderColor) 21px,
+         var(--paperlight) 20px,
+         var(--green) 20px,
+         var(--green) 21px,
          transparent 21px),
       radial-gradient(circle at 0 100%,
-         var(--paper) 20px,
-         var(--borderColor) 20px,
-         var(--borderColor) 21px,
+         var(--paperlight) 20px,
+         var(--green) 20px,
+         var(--green) 21px,
          transparent 21px),
       radial-gradient(circle at 100% 100%,
-         var(--paper) 20px,
-         var(--borderColor) 20px,
-         var(--borderColor) 21px,
-         var(--paper) 21px);
+         var(--paperlight) 20px,
+         var(--green) 20px,
+         var(--green) 21px,
+         transparent 21px);
 }
 
-.scoopedborder_2::before {
+.doublescooped::before {
    content: "";
    position: absolute;
    top: 50%;
@@ -765,11 +783,11 @@ h3 .shape {
    width: 100%;
    height: calc(100% - 40px);
    transform: translate(-50%, -50%);
-   border-left: 1px solid blue;
-   border-right: 1px solid blue;
+   border-left: 1px solid var(--green);
+   border-right: 1px solid var(--green);
 }
 
-.scoopedborder_2::after {
+.doublescooped::after {
    content: "";
    position: absolute;
    top: 50%;
@@ -777,11 +795,11 @@ h3 .shape {
    width: calc(100% - 40px);
    height: 100%;
    transform: translate(-50%, -50%);
-   border-top: 1px solid blue;
-   border-bottom: 1px solid blue;
+   border-top: 1px solid var(--green);
+   border-bottom: 1px solid var(--green);
 }
 
-.scoopedouter {
+.doublescoopedouter {
    z-index: 2;
    position: absolute;
    top: -8px;
@@ -791,29 +809,29 @@ h3 .shape {
    padding: 8px;
    background-image: radial-gradient(circle at 0 0,
          rgba(255, 0, 0, 0) 40px,
-         var(--borderColor) 40px,
-         var(--borderColor) 41px,
+         var(--green) 40px,
+         var(--green) 41px,
          transparent 41px),
       radial-gradient(circle at 100% 0,
          rgba(255, 0, 0, 0) 40px,
-         var(--borderColor) 40px,
-         var(--borderColor) 41px,
+         var(--green) 40px,
+         var(--green) 41px,
          transparent 41px),
       radial-gradient(circle at 0 100%,
          rgba(255, 0, 0, 0) 40px,
-         var(--borderColor) 40px,
-         var(--borderColor) 41px,
+         var(--green) 40px,
+         var(--green) 41px,
          transparent 41px),
       radial-gradient(circle at 100% 100%,
          rgba(255, 0, 0, 0) 40px,
-         var(--borderColor) 40px,
-         var(--borderColor) 41px,
+         var(--green) 40px,
+         var(--green) 41px,
          rgba(0, 0, 255, 0) 41px);
    /* display: grid;
    place-items: center; */
 }
 
-.scoopedouter::before {
+.doublescoopedouter::before {
    content: "";
    position: absolute;
    top: 50%;
@@ -825,7 +843,7 @@ h3 .shape {
    border-right: 1px solid var(--borderColor);
 }
 
-.scoopedouter::after {
+.doublescoopedouter::after {
    content: "";
    position: absolute;
    top: 50%;
@@ -837,18 +855,18 @@ h3 .shape {
    border-bottom: 1px solid var(--borderColor);
 }
 
-.cat-ooc-layout .scoopedouter {
+/* .cat-ooc-layout .doublescoopedouter {
    background-image: radial-gradient(circle at 0 0,
          rgba(255, 0, 0, 0) 40px,
-         var(--borderColor) 40px,
-         var(--borderColor) 41px,
+         var(--blackish) 40px,
+         var(--blackish) 41px,
          transparent 41px),
       radial-gradient(circle at 0 100%,
          rgba(255, 0, 0, 0) 40px,
-         var(--borderColor) 40px,
-         var(--borderColor) 41px,
+         var(--blackish) 40px,
+         var(--blackish) 41px,
          transparent 41px);
-}
+} */
 
 .frameshadow {
    border: 1px dotted var(--blackish);
@@ -861,6 +879,56 @@ h3 .shape {
 }
 
 
+
+.text60 {
+   font-size: 60px;
+   line-height: 1em;
+}
+
+.text52 {
+   font-size: 52px;
+   line-height: 1em;
+}
+
+.text40 {
+   font-size: 40px;
+   line-height: 1em;
+}
+
+.text36 {
+   font-size: 36px;
+   line-height: 1em;
+}
+
+.text32 {
+   font-size: 32px;
+   line-height: 1em;
+}
+
+.text28 {
+   font-size: 28px;
+   line-height: 1em
+}
+
+.text24 {
+   font-size: 24px;
+   line-height: 1em
+}
+
+.text20 {
+   font-size: 20px;
+   line-height: 1em;
+}
+
+
+
+
+
+
+
+
+
+
 /* CATEGORY DEFAULTS */
 
 .textured::after {
@@ -870,11 +938,9 @@ h3 .shape {
    height: calc(100% - var(--frameoffset));
    background: url('https://media.discordapp.net/attachments/683720444796338317/891394463040147607/textured-background-white-tone.jpg?width=1397&height=931');
    mix-blend-mode: multiply;
-   filter: brightness(1);
-   top: 9px;
-   opacity: .5;
+   opacity: 1;
    z-index: 0;
-
+   pointer-events: none;
    top: 0;
 }
 
@@ -886,7 +952,7 @@ h3 .shape {
 }
 
 .cat-outerwrapper .categoryLabel {
-   font: 36px/1em var(--fontHero);
+   font-family: var(--fontHero);
    text-transform: uppercase;
    letter-spacing: 2px;
    margin-bottom: 8px;
@@ -900,7 +966,7 @@ h3 .shape {
 }
 
 .cat-innerwrap {
-   background-color: var(--paper);
+   background-color: var(--paperlight);
    position: relative;
    width: 100%;
 }
@@ -976,73 +1042,8 @@ h3 .shape {
 /* CATEGORY: GET STARTED */
 
 .cat-getstarted .cat-innerwrap {
-   height: 588px;
    position: relative;
 }
-
-
-.handbookbg {
-   width: 50%;
-   height: 100%;
-   left: 0;
-
-   position: absolute;
-   width: 100%;
-}
-
-.handbookbg::before {
-   content: '';
-   position: absolute;
-   z-index: 0;
-   width: 45%;
-   height: calc(100% - var(--frameoffset));
-   background: linear-gradient(to bottom, #B6BDB9 60%, var(--paper) 61%);
-}
-
-.handbookbg::after {
-   content: '';
-   position: absolute;
-   top: 9px;
-   left: 9px;
-   width: calc(50% - 30px - var(--frameoffset));
-   width: 56%;
-   height: calc(100% - var(--frameoffset));
-   background: url('clouds-big.svg') right 10% bottom 160px / 600px;
-   background-repeat: no-repeat;
-
-   top: 0;
-   left: 0;
-}
-
-
-.cat-getstarted .cat-innerwrap::after {
-   content: '';
-   position: absolute;
-   bottom: 9px;
-   right: 9px;
-   width: calc(100% - var(--frameoffset));
-   height: 100%;
-   background: url('clouds.svg') right calc(189px + 55%) bottom -30px / 760px;
-   background-repeat: no-repeat;
-
-   right: -9px;
-   z-index: 20;
-}
-
-.handbookbg-tail {
-   position: absolute;
-   left: -49px;
-   bottom: 0;
-   width: 100%;
-   height: 100%;
-   background: url('tail.svg') right calc(149px + 55%) bottom -30px / 760px;
-   background-repeat: no-repeat;
-   z-index: 5;
-
-   width: calc(100% + 64px);
-   left: -64px;
-}
-
 
 .cat-getstarted .cat-getstarted-layout {
    position: absolute;
@@ -1054,28 +1055,121 @@ h3 .shape {
    grid-template-columns: 48% 52%;
    grid-template-areas: 'guidebook getstartedboards';
    grid-column-gap: 0;
-   padding: 32px 0;
    z-index: 10;
-
+   background: var(--paperlight);
    position: relative;
    top: 0;
    left: 0;
 }
 
 
+.cloudsbg {
+   grid-area: guidebook;
+   width: max(50%, 400px);
+   height: 100%;
+   left: 0;
+   position: absolute;
+   background: linear-gradient(to bottom, #B6BDB9 60%, var(--paper) 61%);
+
+   border-right: 1px dotted var(--borderColor);
+   box-shadow: 2px 0 var(--paper), 3px 0 var(--borderColor)
+      /*, 7px 0 var(--paperlight), 8px 0 var(--borderColor)*/
+   ;
+   width: max(100%, 400px);
+   /* border-radius: 0 0% 60% 0; */
+   /* border-radius: 0 30% 30% 0 / 90%; */
+   overflow: hidden;
+   z-index: -1;
+}
+
+/* 
+.cloudsbg::before {
+   content: '';
+   position: absolute;
+   z-index: 0;
+   width: 100%;
+   height: calc(100% - var(--frameoffset));
+   background: linear-gradient(to bottom, #B6BDB9 60%, var(--paper) 61%);
+} */
+
+.cloudsbg::after {
+   content: '';
+   position: absolute;
+   top: 9px;
+   left: 9px;
+   width: calc(50% - 30px - var(--frameoffset));
+   width: 100%;
+   height: calc(100% - var(--frameoffset));
+   background: url('clouds-big.svg') center bottom 120px / 600px;
+   background-repeat: no-repeat;
+   top: 0;
+   left: 0;
+}
+
+
+.clouds {
+   content: '';
+   position: absolute;
+   bottom: 9px;
+   right: 9px;
+   width: calc(100% - var(--frameoffset));
+   height: 284px;
+   background: url('clouds.svg') right calc(189px + 55%) bottom -50px / 760px;
+   background-repeat: no-repeat;
+   pointer-events: none;
+   right: 0;
+   bottom: 0;
+   z-index: 4;
+   overflow: hidden;
+}
+
+.clouds::before {
+   content: '';
+   position: absolute;
+   width: 760px;
+   height: 760px;
+   background: url('https://media.discordapp.net/attachments/683720444796338317/891394463040147607/textured-background-white-tone.jpg?width=1397&height=931');
+   mix-blend-mode: multiply;
+   opacity: .75;
+   z-index: 5;
+   pointer-events: none;
+   bottom: -438px;
+   right: calc(-234px + 55%);
+   -webkit-mask-image: url('clouds.svg');
+   mask-image: url('clouds.svg');
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+}
+
+.cloudstail {
+   position: absolute;
+   left: -49px;
+   bottom: 0;
+   width: 55%;
+   height: 100%;
+   background: url('tail.svg') right calc(149px + 55%) bottom -50px / 760px;
+   /* background-position: left bottom -30px; */
+   background-repeat: no-repeat;
+   z-index: 2;
+
+   width: calc(100% + 64px);
+   left: -64px;
+}
+
+
 .handbooktext {
    grid-area: guidebook;
    position: relative;
-   max-width: 380px;
-   margin: 20px auto 0;
-   margin-left: 64px;
+   width: min(85%, 372px);
+   margin-top: 52px;
+   margin-left: max(12%, 40px);
    padding: 32px 28px 32px;
    height: fit-content;
    background-color: var(--paper);
    display: block;
    border: 1px dotted var(--borderColor);
    box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--borderColor);
-
+   z-index: 3;
    /* lintel */
    /* background: url('lintel.svg') right -50px top -50px / cover, var(--paper);
    background-repeat: no-repeat;
@@ -1087,7 +1181,7 @@ h3 .shape {
 
 
 .handbook-title {
-   font: 60px/1em var(--fontHero);
+   font-family: var(--fontHero);
    margin-bottom: 2px;
    font-variation-settings: 'opsz' 72;
    color: var(--green);
@@ -1105,10 +1199,9 @@ h3 .shape {
    grid-area: getstartedboards;
    display: grid;
    height: 90%;
-   margin-top: 20px;
+   padding: 40px 56px 40px 16px;
    margin-left: 48px;
-   padding-left: 16px;
-   padding-right: 56px;
+   z-index: 2;
 }
 
 .cat-getstarted .forumrow {
@@ -1119,12 +1212,8 @@ h3 .shape {
    justify-content: space-between;
 }
 
-/* .cat-getstarted .forumrow:not(:last-child) {
-   border-bottom: 1px solid magenta;
-} */
-
 .cat-getstarted .forumname {
-   font: 28px/1em var(--fontHero);
+   font-family: var(--fontHero);
    margin-bottom: 6px;
 }
 
@@ -1152,8 +1241,7 @@ h3 .shape {
    grid-row-gap: 40px;
    padding: 48px;
    margin-left: auto;
-   width: 68%;
-   max-width: 660px;
+   width: min(68%, 660px);
 
    margin-left: unset;
    margin-right: auto;
@@ -1170,11 +1258,10 @@ h3 .shape {
    width: 300px;
    height: calc(100% - var(--frameoffset));
    z-index: 0;
-   right: 9px;
-   width: 40%;
-   background: linear-gradient(to right, var(--paper) 20%, #B6BDB9 21%);
-
    right: 0;
+   width: 40%;
+   background: linear-gradient(to right, var(--paperlight) 20%, #B6BDB9 21%);
+
 }
 
 .plottinghubbg {
@@ -1214,7 +1301,7 @@ h3 .shape {
 
 .forum-plottinghub .forumname {
    grid-area: name;
-   font: 52px/1em var(--fontHero);
+   font-family: var(--fontHero);
    margin-bottom: 8px;
 }
 
@@ -1224,19 +1311,28 @@ h3 .shape {
    display: flex;
    flex-direction: column;
    gap: 12px;
+   align-items: stretch;
 }
 
 .forum-plottinghub .forumrow-subs a {
    padding: 12px 40px 10px;
+   width: 170px;
    font: 400 16px var(--fontHero);
+   color: var(--greendark);
 }
-
-
 
 .forum-plottinghub .forumrow-subs a:hover {
-   color: var(--green)
+   color: var(--paper);
 }
 
+[id='scoopplot']+use {
+   fill: transparent;
+   transition: .5s ease;
+}
+
+a:hover [id='scoopplot']+use {
+   fill: var(--green);
+}
 
 .forum-plottinghub .lastpost-avi {
    margin-top: 4px;
@@ -1256,11 +1352,12 @@ h3 .shape {
    flex-direction: row;
    position: relative;
    justify-content: space-evenly;
+   background-color: #dcd6c890;
 }
 
 
 .forum-twocol .forumname {
-   font: 28px/1em var(--fontHero);
+   font-family: var(--fontHero);
    margin-bottom: 6px;
 }
 
@@ -1282,7 +1379,7 @@ h3 .shape {
    top: -8px;
    width: 1px;
    height: calc(100% + 16px);
-   background: var(--borderColor);
+   background: var(--green);
 }
 
 .forum-twocol .lastpost-avi {
@@ -1322,7 +1419,7 @@ h3 .shape {
 
 .location_info {
    grid-area: aboutplace;
-   /* width: 400px; */
+   max-width: 402px;
    padding: 52px 48px;
    padding-right: 0;
    opacity: 0;
@@ -1334,14 +1431,14 @@ h3 .shape {
 }
 
 .location_info .forumname a {
-   font: 40px/1em var(--fontHero);
+   font-family: var(--fontHero);
    margin-left: -2px;
    display: block;
 }
 
 .location_info .forumdesc {
    font: 16px/1.2em var(--fontBodySerif);
-   max-width: 360px;
+   line-height: normal;
    padding-right: 1.5ch;
    height: calc(100% + 4px);
    max-height: 110px;
@@ -1407,10 +1504,9 @@ h3 .shape {
    position: absolute;
    bottom: 0;
    left: 0;
-   width: 35%;
-   /* max-width: 448px; */
+   width: max(35%, 356px);
    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
+   grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
    display: flex;
    flex-wrap: wrap;
    gap: 12px;
@@ -1431,17 +1527,33 @@ h3 .shape {
    white-space: nowrap;
    padding: 10px 40px 12px;
    text-align: center;
-   transition: .5s ease;
-   /* margin: 6px 0; */
-   flex: 1 1 0px;
+   transition: .25s ease;
+   /* flex: 1 1 0px; */
    cursor: pointer;
+}
+
+.tab:hover {
+   color: var(--paper);
 }
 
 .tab.tabbedlocations_active {
    font-family: var(--fontBodySerif);
    font-weight: 700;
+   color: var(--paper);
 }
 
+.tab [id='scoopedtab']+use {
+   fill: transparent;
+   transition: .5s ease;
+}
+
+.tab:hover [id='scoopedtab']+use {
+   fill: var(--green);
+}
+
+.tab.tabbedlocations_active [id='scoopedtab']+use {
+   fill: var(--green);
+}
 
 .forumrow:nth-child(1) .location_photo {
    background-image: url(https://media.discordapp.net/attachments/683720444796338317/962457325392777317/250x400-fuwaminato-02.png);
@@ -1461,6 +1573,7 @@ h3 .shape {
 
 
 /* CATEGORY: OOC */
+
 /* 
 .cat-ooc-layout {
    position: relative;
@@ -1470,17 +1583,17 @@ h3 .shape {
    z-index: 5;
 }
 
-.cat-ooc-layout .scoopedborder_2 {
+.cat-ooc-layout .doublescooped {
    width: calc(100% - 400px + 120px);
    padding: 32px 40px;
 }
 
-.cat-ooc-layout .scoopedborder_2::before,
-.cat-ooc-layout .scoopedouter::before {
+.cat-ooc-layout .doublescooped::before,
+.cat-ooc-layout .doublescoopedouter::before {
    border-right: 0 !important;
 }
 
-.cat-ooc-layout .scoopedouter {
+.cat-ooc-layout .doublescoopedouter {
    top: calc(var(--frameoffset) * 1);
    left: calc(var(--frameoffset) * 1);
    height: calc(100% - (var(--frameoffset) * 2));
@@ -1530,7 +1643,7 @@ h3 .shape {
    color: var(--green)
 }
 
-.cat-ooc-layout .scoopedborder_2 {
+.cat-ooc-layout .doublescooped {
    background-image: radial-gradient(circle at 0 0,
          var(--paper) 20px,
          var(--borderColor) 20px,
@@ -1546,6 +1659,7 @@ h3 .shape {
 
 
 
+/* CATEGORY: OOC */
 
 .cat-ooc .twocolcat {
    margin: 0;
@@ -1555,23 +1669,20 @@ h3 .shape {
 }
 
 .twocolcat .cat-ooc-layout {
-   /* position: relative; */
+   position: relative;
    display: block;
-   padding: 90px 0 40px;
+   padding: 120px 0 40px;
    /* background: url('town-2.svg') left 0 top -40px/ contain;
    background-repeat: no-repeat; */
    z-index: 5;
    box-sizing: border-box;
    overflow: hidden;
-   /* padding: 40px 0 92px; */
-   /* padding: 68px 0 92px; */
+   padding-top: 80px;
 }
 
 .twocolcat .cat-ooc-layout .forumrow {
-   z-index: 5;
    display: grid;
-   grid-template-areas:
-      'boardinfo'
+   grid-template-areas: 'boardinfo'
       'subforums';
    grid-template-columns: 1fr;
    grid-row-gap: 20px;
@@ -1590,7 +1701,7 @@ h3 .shape {
    top: -4px;
    right: 0%;
 
-   background: url('clouds-low.svg') left -50px bottom -140px / 600px;
+   background: url('clouds-low.svg') left top -160px / 600px, var(--paperlight);
    background-repeat: no-repeat;
    top: unset;
    right: unset;
@@ -1598,13 +1709,13 @@ h3 .shape {
    left: 0;
    height: 100%;
    z-index: 0;
-   transform: scaleY(-1);
+   opacity: .5;
 }
 
 .forum-ooc-text {
    grid-area: boardinfo;
-   padding: 0 52px 0 48px;
-   z-index: 5;
+   padding: 0 48px;
+   /* z-index: 5; */
 }
 
 
@@ -1613,7 +1724,7 @@ h3 .shape {
 }
 
 .twocolcat .cat-ooc-layout .forumname {
-   font: 32px/1em var(--fontHero);
+   font-family: var(--fontHero);
    margin-left: -2px;
    margin-bottom: 4px;
 }
@@ -1634,20 +1745,84 @@ h3 .shape {
    flex-wrap: wrap;
    gap: 16px;
    padding: 0 52px 0 48px;
-   z-index: 5;
 }
 
 .twocolcat .cat-ooc-layout .forumrow-subs a {
    flex: 1 0 0px;
-   min-width: 100px;
+   min-width: 140px;
    padding: 12px 24px 10px;
    font: 400 16px var(--fontHero);
+   color: var(--greendark);
 }
 
 .twocolcat .cat-ooc-layout .forumrow-subs a:hover {
-   color: var(--green)
+   color: var(--paper);
 }
 
+[id='scoopooc']+use {
+   fill: transparent;
+   transition: .5s ease;
+}
+
+a:hover [id='scoopooc']+use {
+   fill: var(--green);
+}
+
+
+
+/* .cat-ooc-layout .scoopedbox {
+   background-image: radial-gradient(circle at 0 0,
+         rgba(0, 0, 0, 0) var(--r),
+         rgba(255, 100, 0, 1) var(--r),
+         rgba(255, 100, 0, 1) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px)),
+      radial-gradient(circle at 100% 0,
+         rgba(0, 0, 0, 0) var(--r),
+         rgba(255, 100, 0, 1) var(--r),
+         rgba(255, 100, 0, 1) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px)),
+      radial-gradient(circle at 0 100%,
+         rgba(0, 0, 0, 0) var(--r),
+         rgba(255, 100, 0, 1) var(--r),
+         rgba(255, 100, 0, 1) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px)),
+      radial-gradient(circle at 100% 100%,
+         rgba(0, 0, 0, 0) var(--r),
+         rgba(0, 0, 0, 1) var(--r),
+         rgba(255, 100, 0, 1) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px));
+}
+
+.cat-ooc-layout .scoopedbox::before {
+   border-color: cyan;
+}
+
+.cat-ooc-layout .scoopedbox::after {
+   border-color: cyan;
+}
+
+.cat-ooc-layout a.scoopedbox:hover {
+   background-image: radial-gradient(circle at 0 0,
+         var(--paper) var(--r),
+         rgba(255, 100, 0, 1) var(--r),
+         rgba(255, 100, 0, 1) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px)),
+      radial-gradient(circle at 100% 0,
+         var(--paper) var(--r),
+         rgba(255, 100, 0, 1) var(--r),
+         rgba(255, 100, 0, 1) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px)),
+      radial-gradient(circle at 0 100%,
+         var(--paper) var(--r),
+         rgba(255, 100, 0, 1) var(--r),
+         rgba(255, 100, 0, 1) calc(var(--r) + 1px),
+         transparent calc(var(--r) + 1px)),
+      radial-gradient(circle at 100% 100%,
+         rgba(0, 0, 0, 0) var(--r),
+         rgba(255, 100, 0, 1) var(--r),
+         rgba(255, 100, 0, 1) calc(var(--r) + 1px),
+         var(--paper) calc(var(--r) + 1px));
+} */
 
 
 /* CATEGORY: STATISTICS */
@@ -1656,7 +1831,7 @@ h3 .shape {
    display: grid;
    grid-template-areas: 'links free main recent';
    grid-template-columns: auto auto 2fr 300px;
-   height: 460px;
+   /* grid-template-rows: 1fr; */
    position: relative;
 }
 
@@ -1669,9 +1844,7 @@ h3 .shape {
    padding: 28px 16px 28px 20px;
    gap: 20px;
    z-index: 5;
-   /* background: #B6BDB9;
-   border-right: 1px dotted var(--borderColor); */
-
+   /*  border-right: 1px dotted var(--borderColor); */
    font: 400 16px var(--fontHero);
 }
 
@@ -1688,7 +1861,7 @@ h3 .shape {
 
 .infocenter-area-main {
    grid-area: main;
-   padding: 40px 12px 20px 24px;
+   padding: 40px 24px 20px;
    z-index: 5;
 }
 
@@ -1697,7 +1870,7 @@ h3 .shape {
    z-index: 5;
    position: relative;
    /* background: var(--greenlight); */
-   padding: 0 20px 0 24px;
+   padding: 0 20px 0 0;
 }
 
 /* .cat-infocenter-layout::before {
@@ -1717,18 +1890,21 @@ h3 .shape {
 }
 
 .infocenter-h1 {
-   font: 32px/1em var(--fontHero);
+   font-family: var(--fontHero);
    margin-bottom: 12px;
 }
 
 .infocenter-h3 {
-   font: bold 14px/1em var(--fontHero);
-   /* letter-spacing: .6px;
-   text-transform: uppercase; */
+   font: bold 14px/1em var(--fontBodySerif);
+   letter-spacing: .4px;
 }
 
 .divider+.infocenter-h3 {
    margin-top: -4px;
+}
+
+.cat-infocenter-layout .divider-content {
+   background: var(--greendark);
 }
 
 .onlinenowbox {
@@ -1746,7 +1922,7 @@ h3 .shape {
    font: bold 11px/18px var(--fontHero2);
    text-transform: uppercase;
    letter-spacing: .8px;
-   margin: 4px 0 20px;
+   margin: 4px 0 16px;
 
    /* border: 1px dotted var(--borderColor);
    box-shadow: 0 0 0 2px var(--paperdark), 0 0 0 3px var(--borderColor); */
@@ -1763,44 +1939,65 @@ h3 .shape {
 .onlinenowbox a,
 .onlinetodaybox a {
    display: inline-block;
-   margin-right: 10px;
+   margin-right: 12px;
    color: var(--membercolor);
 }
 
-.infocenter-statboxes {
-   position: relative;
-   display: flex;
-   /* grid-auto-flow: column;
-   grid-template-columns: 1fr 1fr 1fr; */
-   gap: 16px;
-   /* height: 84px; */
+.onlinetodaybox a {
+   display: inline-block;
+   margin-right: 8px;
+   color: var(--membercolor);
 }
 
-.infocenter-statbox {
-   padding: 18px 12px 14px;
+.cat-infocenter-layout .divider.arrowhead-2 {
+   margin: 0 0 4px;
+}
+
+.infocenter-census-box {
+   position: relative;
+   display: flex;
+   justify-content: space-evenly;
+   /* gap: 12px; */
+}
+
+.infocenter-census {
    flex: 2 1 0px;
    /* background-color: var(--paper);
    display: block;
    border: 1px dotted var(--borderColor);
    box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--borderColor); */
-   background-color: var(--paperdark);
+   text-align: center;
+   color: var(--membercolor);
 }
 
-.vertrule {
-   display: block;
-   height: 100%;
-   width: 1px;
-   background: var(--borderColor);
-   display: none;
+.infocenter-census:not(:last-child) {
+   border-right: 1px dotted var(--greendark);
+   padding-right: 8px;
 }
 
-.infocenter-stat-fig {
-   font: 32px/1em var(--fontHero);
+.census-fig {
+   font-family: var(--fontHero);
 }
 
-.infocenter-stat-label {
-   font: 14px/1em var(--fontBodySerif);
-   margin-bottom: 8px;
+.census-label {
+   font: bold 10px/1.4em var(--fontBodySerif);
+   text-transform: uppercase;
+   letter-spacing: .7px;
+   padding: 2px 0 4px;
+}
+
+.infocenter-totals {
+   margin-top: 10px;
+   padding-top: 8px;
+   justify-content: center;
+   align-items: center;
+   color: var(--greendark);
+   border-top: 1px dotted var(--greendark);
+}
+
+.infocenter-stat-total {
+   font-family: var(--fontHero);
+   padding-top: 6px;
 }
 
 .divider.arrowhead-2.vertical {
@@ -1822,13 +2019,12 @@ h3 .shape {
 }
 
 .recent-content {
-   background: #B6BDB9;
    background: var(--greendark);
-   width: calc(100% + 177px);
-   height: calc(100% + 119px);
+   width: calc(100% + 173px);
+   height: calc(100% + 106px);
    padding: 20px 12px 20px;
-   margin-top: -30.5px;
-   margin-left: -88.5px;
+   margin-top: -19.5px;
+   margin-left: -86.5px;
    display: grid;
    grid-template-rows: auto 1fr;
    align-items: flex-start;
@@ -1836,7 +2032,7 @@ h3 .shape {
 }
 
 .recent-title {
-   font: 20px/1em var(--fontHero);
+   font-family: var(--fontHero);
    text-align: center;
    text-transform: uppercase;
    letter-spacing: 1px;
@@ -1875,7 +2071,6 @@ h3 .shape {
    font: bold 12px var(--fontBodySerif);
    /* text-transform: uppercase; */
    color: var(--paperdark);
-   letter-spacing: 1px;
 }
 
 .recenttopic:not(:first-child) {
@@ -1897,14 +2092,15 @@ h3 .shape {
 a.recent-threadname {
    display: block;
    font: bold 14px var(--fontBodySerif);
+   letter-spacing: .5px;
    color: var(--paper);
 }
 
 a.recent-poster {
-   font: bold 14px var(--fontBodySerif);
+   font: normal 14px var(--fontBodySerif);
    /* text-transform: uppercase; */
+   letter-spacing: .5px;
    color: var(--paperdark);
-   letter-spacing: 1px;
    opacity: .8;
 }
 
@@ -1939,7 +2135,342 @@ a.recent-poster::before {
    } */
 }
 
+
+@media only screen and (max-width: 1100px) {
+   html {
+      background: slateblue;
+   }
+
+   .lastpost-avi {
+      display: none;
+   }
+
+
+   /* CATEGORY: CHARACTER */
+
+   .cat-character .cat-character-layout {
+      width: 68%;
+      padding: 32px 24px;
+      grid-row-gap: 20px
+   }
+
+   .plottinghubbgcolor {
+      background: linear-gradient(to right, var(--paperlight) 30%, #B6BDB9 31%)
+   }
+
+   .plottinghubbg {
+      right: -60px;
+   }
+
+   .forum-plottinghub {
+      grid-template-areas: 'name '
+         'lastpost'
+         'subforums';
+   }
+
+   .forum-plottinghub .forumrow-subs {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 16px;
+   }
+
+   .forum-twocol {
+      flex-direction: column;
+   }
+
+   .forum-twocol .forumrow,
+   .forum-twocol .forumrow:first-of-type {
+      padding: 24px 28px;
+   }
+
+   .forum-twocol .forumrow:first-of-type::after {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+   }
+
+
+   /* CATEGORY: RP PLACES */
+   .cat-locations-layout {
+      height: 460px;
+   }
+
+   .cat-locations-layout .forumrow {
+      grid-template-columns: calc(50vw - 70px) 1fr;
+
+      position: relative;
+   }
+
+   .windowgate {
+      width: 50vw;
+      height: 50vw;
+      /* margin-left: -70px; */
+
+      margin-top: unset;
+      top: calc(5% - 80px);
+   }
+
+   .location_photo {
+      width: calc(50vw - 160px);
+      height: calc(50vw - 160px);
+      /* margin-left: max(10%, 10px); */
+
+      margin-top: unset;
+      top: 5%;
+   }
+
+   .location_info {
+      padding: 32px;
+   }
+
+   .locationtabbox {
+      width: calc(100% - 48px);
+      margin: 16px 24px 0;
+      padding-bottom: 24px;
+
+      bottom: unset;
+      top: 0;
+      position: relative;
+   }
+
+   .divider.arrowhead-2 {
+      order: 10;
+   }
+
+
+   /* CATEGORY: OOC */
+   .twocolcat .cat-ooc-layout {
+      padding: 48px 0 32px;
+   }
+
+   .forum-ooc-text {
+      padding: 0 32px;
+   }
+
+   .twocolcat .cat-ooc-layout .forumrow-subs {
+      padding: 0 32px;
+   }
+
+
+   /* CATEGORY: STATISTICS */
+
+   .cat-infocenter-layout {
+      display: grid;
+      grid-template-areas: 'links free main'
+         'recent recent recent';
+      grid-template-columns: auto auto 2fr;
+      /* grid-template-rows: 1fr; */
+      position: relative;
+   }
+
+   .infocenter-area-recent {
+      padding: 8px 24px 24px;
+      height: fit-content;
+   }
+
+   .recent-frame {
+      all: unset;
+      height: fit-content;
+   }
+
+   .recent-content {
+      border: 1px solid var(--borderColor);
+      box-shadow: inset 0 0 0 2px var(--paper);
+      position: relative;
+      margin-top: 0;
+      margin-left: 0;
+      padding: 24px 16px;
+      width: 100%;
+      height: 240px;
+   }
+
+   .recent-title {
+      width: auto;
+   }
+
+
+
+   /* 
+   .recent-list {
+      display: flex;
+      gap: 12px;
+   }
+
+   #bodywrapper .recent-list::-webkit-scrollbar {
+      height: 0px !important;
+   }
+
+   .recenttopic {
+      min-width: 160px;
+      padding: 4px 0;
+      margin: 0;
+   }
+
+   .recenttopic:first-child {
+      margin-left: 16px;
+   }
+
+   .recenttopic:not(:first-child) {
+      border-top: none;
+      padding-top: unset;
+      border-left: 1px solid var(--green);
+      padding-left: 24px;
+   } */
+}
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+   html {
+      background: palevioletred;
+   }
+
+   .bodyinner {
+      padding: 20px 32px;
+   }
+
+
+   /* CATEGORY: CHARACTER */
+   .cat-character .cat-character-layout {
+      width: 100%
+   }
+
+   .plottinghubbg,
+   .plottinghubbgcolor {
+      display: none;
+   }
+
+
+   /* CATEGORY: RP PLACES */
+
+   .cat-locations-layout {
+      height: 460px;
+      height: fit-content;
+   }
+
+   .cat-locations-layout .forumrow {
+      grid-template-areas: "aboutplace";
+      grid-template-columns: 1fr;
+
+      grid-template-areas: 'aboutplace placeimage';
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      position: relative;
+      padding: 24px 0 32px 32px;
+      align-items: flex-start;
+      overflow-x: hidden;
+   }
+
+   .cat-locations-layout .forumrow:not(:last-child) {
+      border-bottom: 3.5px double var(--borderColor);
+   }
+
+   .location_info {
+      opacity: 1;
+   }
+
+   .windowgate {
+      display: none !important;
+   }
+
+   .location_photo {
+      width: 100%;
+      height: 200px;
+      margin: 0;
+      position: relative;
+      /* display: none; */
+
+      /* Keeping images */
+      top: unset;
+      border-radius: 150px 0 0 150px;
+      border-radius: 0;
+      width: 200px;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      transform: none;
+   }
+
+   .location_info {
+      max-width: unset;
+      width: 100%;
+      padding: 0;
+      padding-top: 12px;
+   }
+
+   .location_info .forumdesc {
+      max-width: unset;
+      max-height: 80px;
+      margin-bottom: .5em;
+   }
+
+   .locationtabbox {
+      display: none;
+      padding-bottom: 24px;
+   }
+
+
+
+   /* CATEGORY: OOC */
+
+   .cat-ooc .twocolcat {
+      flex-direction: column;
+   }
+
+   .forum-ooc-bg {
+      background-size: 655px;
+      background-position: right top -180px;
+   }
+
+   .twocolcat .cat-ooc-layout .forumrow-subs a {
+      min-width: 200px;
+   }
+
+
+
+   /* CATEGORY: STATISTICS */
+
+   .cat-infocenter-layout {
+      display: grid;
+      grid-template-areas: 'links'
+         'main'
+         'recent';
+      grid-template-columns: auto;
+   }
+
+
+   .infocenter-area-links {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 24px 16px;
+      gap: 20px;
+      z-index: 5;
+      /*  border-right: 1px dotted var(--borderColor); */
+      font: 400 16px var(--fontHero);
+      border-bottom: 1px solid var(--borderColor);
+   }
+
+   .divider-vert.arrowhead-2 {
+      display: none !important;
+   }
+
+   .infocenter-area-main {
+      padding-top: 32px;
+   }
+}
+
+
+
+
 @media only screen and (max-width: 600px) {
+   html {
+      background: green;
+   }
+
    #navbarline {
       left: 0;
       height: 60px;
@@ -1956,6 +2487,15 @@ a.recent-poster::before {
       margin-bottom: 14px;
    }
 
+
+   /* CATEGORY: RP PLACES */
+
+   .cat-locations-layout .forumrow {
+      grid-template-areas: "aboutplace";
+      grid-template-columns: 1fr;
+      padding: 16px 24px 24px;
+   }
+
    .location_photo,
    .windowgate {
       display: none;
@@ -1966,8 +2506,12 @@ a.recent-poster::before {
 
 
 
+
+
+
+
 .categoryLabel {
-   font: 36px/1em var(--fontHero);
+   font-family: var(--fontHero);
    text-transform: uppercase;
    letter-spacing: 2px;
    color: var(--brick);
