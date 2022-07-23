@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="../css-templates.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script> -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="corinthian.css" rel="stylesheet">
+
+</head>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+    /* @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap'); */
+    /* too fat */
+
+    @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap');
+    /* variable !!!  */
+
+    @import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,218;9..144,400&display=swap');
+    /* variable */
+
+    @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+    /* pirate */
+
+    /* @import url('https://fonts.googleapis.com/css2?family=Della+Respira&display=swap'); */
+    /* for header only — too round */
+
+    @import url('https://fonts.googleapis.com/css2?family=Katibeh&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Ramaraja&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+    /* variable */
+
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+    /* has extended fam */
+
+    @import url('https://fonts.googleapis.com/css2?family=Bigshot+One&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
+    /* for boards */
+
+    @import url('https://fonts.googleapis.com/css2?family=Buda&display=swap');
+    /* eh */
+
+    @import url('https://fonts.googleapis.com/css2?family=Almendra&display=swap');
+    /* for header only */
+
+    @import url('https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100;0,12..72,200;0,12..72,300;0,12..72,400;0,12..72,500;0,12..72,600;0,12..72,700;0,12..72,800;0,12..72,900;1,12..72,100;1,12..72,200;1,12..72,300;1,12..72,400;1,12..72,500;1,12..72,600;1,12..72,700;1,12..72,800;1,12..72,900&display=swap');
+    /* variable */
+
+    @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Jacques+Francois+Shadow&display=swap');
+</style>
+
+<body>
+    <div id="navbar" class="maxwidth">
+        <div class="flexrow">
+            <a href="#">Home</a>
+            <a href="#">Active Topics</a>
+            <!-- <a href="#">Control Panel</a> -->
+            <a href="#">Members</a>
+            <a href="#">Search</a>
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+        </div>
+        <div class="flexrow">
+            <a href="#">Inbox (1)</a>
+            <a href="#">Alerts (2)</a>
+            <a class="navbar-open">Menu</a>
+            <a class="navbar-close" style="display: none">Close</a>
+        </div>
+    </div>
+
+    <div id="navbarline" class="maxwidth"></div>
+
+    <div id="header" class="">
+        <div class="hero-text">
+            <h1>
+                Corinthian
+            </h1>
+            <h3>
+                A Witch Hat Atelier roleplay
+            </h3>
+        </div>
+
+        <div class="hero-img"></div>
+        <div class="hero-arches"></div>
+        <div class="hero-colorfield"></div>
+        <div class="hero-texture"></div>
+
+        <div id="navpanel">
+
+            <div class="navpanelinset">
+
+                <div class="navpanel-header flexrow">
+                    <div class="login-avi"><img src="../assets/1100x280-kashuu-01.jpg"></div>
+                    <div class="flexcolumn">
+                        <h5>Welcome back,</h5>
+                        <input class="accountswitchername" value="Name Here"></input>
+                    </div>
+                </div>
+
+                <div class="navpanel-quicklinks flexrow">
+                    <div class="flexcolumn">
+                        <div class="quicklinklabel">Get started</div>
+                        <a href="">Rules</a>
+                        <a href="">Premise</a>
+                        <a href="">Magic</a>
+                        <a href="">F.A.Q.</a>
+                    </div>
+
+                    <div class="flexcolumn">
+                        <div class="quicklinklabel">Characters</div>
+                        <a href="">Face Claims</a>
+                        <a href="">Canons</a>
+                        <a href="">Subfactions</a>
+                        <a href="">Wanted ads</a>
+                    </div>
+
+                    <div class="flexcolumn">
+                        <div class="quicklinklabel">Misc.</div>
+                        <a href="">Member Directory</a>
+                        <a href="">Development</a>
+                        <a href="">Templates</a>
+                        <a href="">Subfactions</a>
+                    </div>
+                </div>
+
+                <div class="navpanel-event"><a href=""><img src="https://images-ext-1.discordapp.net/external/PELuw1zsUA8aiS_c6NrgXa6sGBBTiWGUeGyLmEGy6vc/https/we-japan.com/wp-content/uploads/2021/09/Spirited-Away.kaonashi.jpg"></a></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="masterwrapper">
+
+        <div id="bodywrapper" class="maxwidth">
+            <div class="plinth"></div>
+
+            <div class="bodyinner frameshadow">
+
+
+                <!-- BREADCRUMBS -->
+                <div class="breadcrumbs">
+                    <a href="#">Corinthian</a>
+                    <a href="#">Category</a> <a href="#">Forum</a>
+                    <a href="#">Subforum</a>
+                    <a href="#">Viewing topic</a>
+                </div>
+
+
+
+                <div class="categoryLabel text36">
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+
+                    Get Started
+
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+                </div>
+
+
+
+                <!-- CATEGORY: GET STARTED -->
+                <div id="cat-1" class="cat-outerwrapper cat-getstarted">
+
+                    <div class="categoryLabel text36">Get Started</div>
+
+                    <div class="cat-innerwrap frameinset frameinset_1">
+                        <div class="frameinset frameinset_2">
+                            <div class="frameinset frameinset_3">
+                                <div class="frameinset frameinset_4 ">
+
+                                    <div class="cat-getstarted-layout textured">
+                                        <div class="cloudsbg">
+                                        </div>
+                                        <div class="cloudstail">
+                                        </div>
+                                        <div class="clouds"></div>
+
+                                        <div class="handbooktext">
+                                            <a class="handbook-title text60">Witch's Handbook</a>
+                                            <div class="handbook-desc">In a world where everyone takes wonders like magic spells and dragons for granted, Coco is a girl with a simple dream </div>
+                                        </div>
+
+                                        <div class="cat-getstarted-boards">
+                                            <div class="forumrow" id="">
+                                                <div class="flexcolumn">
+                                                    <div class="forumname text28"><a href="#">Announcements</a></div>
+
+                                                    <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                    <div class="lastpost-author">by <a href="#" class="grp-pointed">qifrey</a></div>
+                                                    <div class="lastpost-date">June 7, 2022</div>
+                                                </div>
+                                                <div class="lastpost-avi">
+                                                    <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="divider arrowhead-2">
+                                                <div class="divider-content"><span></span></div>
+                                            </div>
+
+                                            <div class="forumrow" id="">
+
+                                                <div class="flexcolumn">
+                                                    <div class="forumname text28"><a href="#">Claims</a></div>
+                                                    <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                    <div class="lastpost-author">by <a href="#" class="grp-brimmed">iguin</a></div>
+                                                    <div class="lastpost-date">June 7, 2022</div>
+                                                </div>
+                                                <div class="lastpost-avi">
+                                                    <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="divider arrowhead-2">
+                                                <div class="divider-content"><span></span></div>
+                                            </div>
+
+                                            <div class="forumrow" id="">
+                                                <div class="flexcolumn">
+                                                    <div class="forumname text28"><a href="#">Lounge</a></div>
+                                                    <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                    <div class="lastpost-author">by <a href="#" class="grp-unknowing">orugio</a></div>
+                                                    <div class="lastpost-date">June 7, 2022</div>
+                                                </div>
+                                                <div class="lastpost-avi">
+                                                    <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END CATEGORY: GET STARTED-->
+
+
+
+
+                <div class="categoryLabel text36">
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+
+                    Character
+
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- CATEGORY: CHARACTER -->
+                <div id="cat-2" class="cat-outerwrapper cat-character">
+
+                    <div class="categoryLabel text36">Character</div>
+
+                    <div class="cat-innerwrap frameinset frameinset_1">
+                        <div class="frameinset frameinset_2">
+                            <div class="frameinset frameinset_3">
+                                <div class="frameinset frameinset_4 textured">
+
+                                    <div class="plottinghubbgcolor">
+                                        <div class="plottinghubbg"></div>
+                                    </div>
+
+                                    <div class="cat-character-layout">
+
+                                        <div class="forumrow forum-plottinghub" id="">
+                                            <div class="forumname text52"><a href="#">Plotting Hub</a></div>
+                                            <div class="lastpost flexrow">
+                                                <div class="lastpost-avi">
+                                                    <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                </div>
+                                                <div class="flexcolumn">
+                                                    <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                    <div class="lastpost-author">by <a href="#" class="grp-brimmed">santino ravus</a></div>
+                                                    <div class="lastpost-date">June 7, 2022</div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="forumrow-subs flexcolumn">
+                                                <a href="#" class="scoopedbox">
+                                                    <svg>
+                                                        <mask id='scoopplot' fill='#fff'>
+                                                            <rect id='r' width='100%' height='100%' />
+                                                            <circle id='c' r='6' fill='#000' />
+                                                            <use xlink:href='#c' x='100%' />
+                                                            <use xlink:href='#c' y='100%' />
+                                                            <use xlink:href='#c' x='100%' y='100%' />
+                                                        </mask>
+                                                        <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopplot)' />
+                                                    </svg>
+                                                    Wanted Ads</a>
+                                                <a href="#" class="scoopedbox">
+                                                    <svg>
+                                                        <mask id='scoopplot' fill='#fff'>
+                                                            <rect id='r' width='100%' height='100%' />
+                                                            <circle id='c' r='6' fill='#000' />
+                                                            <use xlink:href='#c' x='100%' />
+                                                            <use xlink:href='#c' y='100%' />
+                                                            <use xlink:href='#c' x='100%' y='100%' />
+                                                        </mask>
+                                                        <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopplot)' />
+                                                    </svg>Trackers</a>
+                                                <a href="#" class="scoopedbox">
+                                                    <svg>
+                                                        <mask id='scoopplot' fill='#fff'>
+                                                            <rect id='r' width='100%' height='100%' />
+                                                            <circle id='c' r='6' fill='#000' />
+                                                            <use xlink:href='#c' x='100%' />
+                                                            <use xlink:href='#c' y='100%' />
+                                                            <use xlink:href='#c' x='100%' y='100%' />
+                                                        </mask>
+                                                        <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopplot)' />
+                                                    </svg>Subfactions</a>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="divider arrowhead-2">
+                                            <div class="divider-content"><span></span></div>
+                                        </div>
+
+                                        <div class="forum-twocol doublescooped">
+                                            <div class="forumrow" id="">
+                                                <div class="flexcolumn">
+                                                    <div class="forumname text28"><a href="#">Letters</a></div>
+
+                                                    <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                    <div class="lastpost-author">by <a href="#" class="grp-unknowing">santino ravus</a></div>
+                                                    <div class="lastpost-date">June 7, 2022</div>
+                                                </div>
+                                                <div class="lastpost-avi">
+                                                    <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                </div>
+                                            </div>
+                                            <div class="forumrow" id="">
+                                                <div class="flexcolumn">
+                                                    <div class="forumname text28"><a href="#">Development</a></div>
+
+                                                    <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                    <div class="lastpost-author">by <a href="#" class="grp-pointed">santino ravus</a></div>
+                                                    <div class="lastpost-date">June 7, 2022</div>
+                                                </div>
+                                                <div class="lastpost-avi">
+                                                    <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                </div>
+                                            </div>
+                                            <div class="doublescoopedouter">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END CATEGORY: CHARACTER -->
+
+
+
+                <div class="categoryLabel text36">
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+
+                    Zozah Peninsula
+
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- CATEGORY: LOCATIONS -->
+                <div id="cat-3" class="cat-outerwrapper cat-locations">
+
+                    <div class="categoryLabel text36">Zozah Peninsula</div>
+
+                    <div class="cat-innerwrap frameinset frameinset_1">
+                        <div class="frameinset frameinset_2">
+                            <div class="frameinset frameinset_3">
+                                <div class="frameinset frameinset_4 textured">
+
+                                    <div class="cat-locations-layout" id="tabbedlocations">
+
+                                        <div class="forumrow tabbedlocations_active" id="">
+                                            <div class="location_info flexcolumn">
+                                                <div class="forumname text40"><a href="#">Dadah Mountains</a></div>
+                                                <div class="forumdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque velit nec neque rutrum, vel sagittis diam sodales. Etiam a enim felis. Suspendisse vel odio eu velit ultricies vulputate venenatis vel leo.</div>
+                                                <div class="lastpost flexrow">
+                                                    <div class="lastpost-avi">
+                                                        <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                    </div>
+                                                    <div class="flexcolumn">
+                                                        <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                        <div class="lastpost-author">by <a href="#" class="grp-pointed">santino ravus</a></div>
+                                                        <div class="lastpost-date">June 7, 2022</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="location_photo"></div>
+                                            <div class="windowgate"></div>
+                                        </div>
+
+                                        <div class="forumrow" id="">
+                                            <div class="location_info flexcolumn">
+                                                <div class="forumname text40"><a href="#">The Assembly</a></div>
+                                                <div class="forumdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque velit nec neque rutrum, vel sagittis diam sodales. Etiam a enim felis. Suspendisse vel odio eu velit ultricies vulputate venenatis vel leo. Nullam justo est, consequat vel neque eu, sodales luctus nisi. Nunc quis nunc tellus. Nunc quis volutpat ligula. </div>
+                                                <div class="lastpost flexrow">
+                                                    <div class="lastpost-avi">
+                                                        <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                    </div>
+                                                    <div class="flexcolumn">
+                                                        <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                        <div class="lastpost-author">by <a href="#" class="grp-pointed">santino ravus</a></div>
+                                                        <div class="lastpost-date">June 7, 2022</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="location_photo"></div>
+                                            <div class="windowgate"></div>
+                                        </div>
+
+                                        <div class="forumrow" id="">
+                                            <div class="location_info flexcolumn">
+                                                <div class="forumname text40"><a href="#">Three</a></div>
+                                                <div class="forumdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque velit nec neque rutrum, vel sagittis diam sodales. Etiam a enim felis. Suspendisse vel odio eu velit ultricies vulputate venenatis vel leo. Nullam justo est, consequat vel neque eu, sodales luctus nisi. Nunc quis nunc tellus. Nunc quis volutpat ligula. </div>
+                                                <div class="lastpost flexrow">
+                                                    <div class="lastpost-avi">
+                                                        <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                    </div>
+                                                    <div class="flexcolumn">
+                                                        <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                        <div class="lastpost-author">by <a href="#" class="grp-pointed">santino ravus</a></div>
+                                                        <div class="lastpost-date">June 7, 2022</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="location_photo"></div>
+                                            <div class="windowgate"></div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="locationtabbox">
+                                        <div class="divider arrowhead-2">
+                                            <div class="divider-content"><span></span></div>
+                                        </div>
+                                        <div class="tab scoopedbox tabbedlocations_active">
+                                            <svg>
+                                                <mask id='scoopedtab' fill='#fff'>
+                                                    <rect id='r' width='100%' height='100%' />
+                                                    <circle id='c' r='6' fill='#000' />
+                                                    <use xlink:href='#c' x='100%' />
+                                                    <use xlink:href='#c' y='100%' />
+                                                    <use xlink:href='#c' x='100%' y='100%' />
+                                                </mask>
+                                                <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
+                                            </svg> Dadah Range
+                                        </div>
+                                        <div class="tab scoopedbox">
+                                            <svg>
+                                                <mask id='scoopedtab' fill='#fff'>
+                                                    <rect id='r' width='100%' height='100%' />
+                                                    <circle id='c' r='6' fill='#000' />
+                                                    <use xlink:href='#c' x='100%' />
+                                                    <use xlink:href='#c' y='100%' />
+                                                    <use xlink:href='#c' x='100%' y='100%' />
+                                                </mask>
+                                                <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
+                                            </svg> Assembly
+                                        </div>
+                                        <div class="tab scoopedbox">
+                                            <svg>
+                                                <mask id='scoopedtab' fill='#fff'>
+                                                    <rect id='r' width='100%' height='100%' />
+                                                    <circle id='c' r='6' fill='#000' />
+                                                    <use xlink:href='#c' x='100%' />
+                                                    <use xlink:href='#c' y='100%' />
+                                                    <use xlink:href='#c' x='100%' y='100%' />
+                                                </mask>
+                                                <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
+                                            </svg> Three
+                                        </div>
+                                        <div class="tab scoopedbox">
+                                            <svg>
+                                                <mask id='scoopedtab' fill='#fff'>
+                                                    <rect id='r' width='100%' height='100%' />
+                                                    <circle id='c' r='6' fill='#000' />
+                                                    <use xlink:href='#c' x='100%' />
+                                                    <use xlink:href='#c' y='100%' />
+                                                    <use xlink:href='#c' x='100%' y='100%' />
+                                                </mask>
+                                                <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
+                                            </svg> Four
+                                        </div>
+                                        <div class="tab scoopedbox">
+                                            <svg>
+                                                <mask id='scoopedtab' fill='#fff'>
+                                                    <rect id='r' width='100%' height='100%' />
+                                                    <circle id='c' r='6' fill='#000' />
+                                                    <use xlink:href='#c' x='100%' />
+                                                    <use xlink:href='#c' y='100%' />
+                                                    <use xlink:href='#c' x='100%' y='100%' />
+                                                </mask>
+                                                <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
+                                            </svg> Five
+                                        </div>
+                                        <div class="tab scoopedbox">
+                                            <svg>
+                                                <mask id='scoopedtab' fill='#fff'>
+                                                    <rect id='r' width='100%' height='100%' />
+                                                    <circle id='c' r='6' fill='#000' />
+                                                    <use xlink:href='#c' x='100%' />
+                                                    <use xlink:href='#c' y='100%' />
+                                                    <use xlink:href='#c' x='100%' y='100%' />
+                                                </mask>
+                                                <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
+                                            </svg> Six
+                                        </div>
+                                        <div class="tab scoopedbox">
+                                            <svg>
+                                                <mask id='scoopedtab' fill='#fff'>
+                                                    <rect id='r' width='100%' height='100%' />
+                                                    <circle id='c' r='6' fill='#000' />
+                                                    <use xlink:href='#c' x='100%' />
+                                                    <use xlink:href='#c' y='100%' />
+                                                    <use xlink:href='#c' x='100%' y='100%' />
+                                                </mask>
+                                                <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
+                                            </svg> Seven
+                                        </div>
+                                        <div class="tab scoopedbox">
+                                            <svg>
+                                                <mask id='scoopedtab' fill='#fff'>
+                                                    <rect id='r' width='100%' height='100%' />
+                                                    <circle id='c' r='6' fill='#000' />
+                                                    <use xlink:href='#c' x='100%' />
+                                                    <use xlink:href='#c' y='100%' />
+                                                    <use xlink:href='#c' x='100%' y='100%' />
+                                                </mask>
+                                                <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
+                                            </svg> Eight
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END CATEGORY: LOCATIONS -->
+
+
+                <div class="categoryLabel text36">
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+
+                    extra
+
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+                </div>
+
+
+                <!-- CATEGORY: OOC 2 -->
+                <div id="cat-4" class="cat-outerwrapper cat-ooc">
+
+                    <div class="categoryLabel text36">Extra</div>
+
+                    <div class="twocolcat">
+
+                        <div class="cat-innerwrap frameinset frameinset_1">
+                            <div class="frameinset frameinset_2">
+                                <div class="frameinset frameinset_3">
+                                    <div class="frameinset frameinset_4 textured">
+                                        <div class="forum-ooc-bg"></div>
+
+                                        <div class="cat-ooc-layout">
+
+                                            <div class="forumrow" id="">
+                                                <div class="forum-ooc-text">
+                                                    <div class="forumname text32"><a href="#">Archives</a></div>
+
+                                                    <div class="lastpost flexrow">
+                                                        <div class="flexcolumn">
+                                                            <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                            <div class="lastpost-author">by <a href="#" class="grp-pointed">santino ravus</a></div>
+                                                            <div class="lastpost-date">June 7, 2022</div>
+                                                        </div>
+                                                        <div class="lastpost-avi">
+                                                            <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="forumrow-subs">
+                                                    <a href="#" class="scoopedbox">
+                                                        <svg>
+                                                            <mask id='scoopooc' fill='#fff'>
+                                                                <rect id='r' width='100%' height='100%' />
+                                                                <circle id='c' r='6' fill='#000' />
+                                                                <use xlink:href='#c' x='100%' />
+                                                                <use xlink:href='#c' y='100%' />
+                                                                <use xlink:href='#c' x='100%' y='100%' />
+                                                            </mask>
+                                                            <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopooc)' />
+                                                        </svg> Announcements</a>
+                                                    <a href="#" class="scoopedbox">
+                                                        <svg>
+                                                            <mask id='scoopooc' fill='#fff'>
+                                                                <rect id='r' width='100%' height='100%' />
+                                                                <circle id='c' r='6' fill='#000' />
+                                                                <use xlink:href='#c' x='100%' />
+                                                                <use xlink:href='#c' y='100%' />
+                                                                <use xlink:href='#c' x='100%' y='100%' />
+                                                            </mask>
+                                                            <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopooc)' />
+                                                        </svg> Threads</a>
+                                                    <a href="#" class="scoopedbox">
+                                                        <svg>
+                                                            <mask id='scoopooc' fill='#fff'>
+                                                                <rect id='r' width='100%' height='100%' />
+                                                                <circle id='c' r='6' fill='#000' />
+                                                                <use xlink:href='#c' x='100%' />
+                                                                <use xlink:href='#c' y='100%' />
+                                                                <use xlink:href='#c' x='100%' y='100%' />
+                                                            </mask>
+                                                            <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopooc)' />
+                                                        </svg>Events</a>
+                                                    <a href="#" class="scoopedbox">
+                                                        <svg>
+                                                            <mask id='scoopooc' fill='#fff'>
+                                                                <rect id='r' width='100%' height='100%' />
+                                                                <circle id='c' r='6' fill='#000' />
+                                                                <use xlink:href='#c' x='100%' />
+                                                                <use xlink:href='#c' y='100%' />
+                                                                <use xlink:href='#c' x='100%' y='100%' />
+                                                            </mask>
+                                                            <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopooc)' />
+                                                        </svg>OOC</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cat-innerwrap frameinset frameinset_1">
+                            <div class="frameinset frameinset_2">
+                                <div class="frameinset frameinset_3">
+                                    <div class="frameinset frameinset_4 textured">
+                                        <div class="forum-ooc-bg"></div>
+
+                                        <div class="cat-ooc-layout">
+                                            <div class="forumrow" id="">
+                                                <div class="forum-ooc-text">
+                                                    <div class="forumname text32"><a href="#">Advertising</a></div>
+
+                                                    <div class="lastpost flexrow">
+                                                        <div class="flexcolumn">
+                                                            <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                                            <div class="lastpost-author">by <a href="#" class="grp-pointed">santino ravus</a></div>
+                                                            <div class="lastpost-date">June 7, 2022</div>
+                                                        </div>
+                                                        <div class="lastpost-avi">
+                                                            <a href="#"><img src="https://cdn.discordapp.com/attachments/683720444796338317/853439079328776192/disco-dazai-03b.jpg"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="forumrow-subs">
+                                                    <a href="#" class="scoopedbox">
+                                                        <svg>
+                                                            <mask id='scoopooc' fill='#fff'>
+                                                                <rect id='r' width='100%' height='100%' />
+                                                                <circle id='c' r='6' fill='#000' />
+                                                                <use xlink:href='#c' x='100%' />
+                                                                <use xlink:href='#c' y='100%' />
+                                                                <use xlink:href='#c' x='100%' y='100%' />
+                                                            </mask>
+                                                            <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopooc)' />
+                                                        </svg>First Links</a>
+                                                    <a href="#" class="scoopedbox">
+                                                        <svg>
+                                                            <mask id='scoopooc' fill='#fff'>
+                                                                <rect id='r' width='100%' height='100%' />
+                                                                <circle id='c' r='6' fill='#000' />
+                                                                <use xlink:href='#c' x='100%' />
+                                                                <use xlink:href='#c' y='100%' />
+                                                                <use xlink:href='#c' x='100%' y='100%' />
+                                                            </mask>
+                                                            <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopooc)' />
+                                                        </svg>Link Backs</a>
+                                                    <a href="#" class="scoopedbox">
+                                                        <svg>
+                                                            <mask id='scoopooc' fill='#fff'>
+                                                                <rect id='r' width='100%' height='100%' />
+                                                                <circle id='c' r='6' fill='#000' />
+                                                                <use xlink:href='#c' x='100%' />
+                                                                <use xlink:href='#c' y='100%' />
+                                                                <use xlink:href='#c' x='100%' y='100%' />
+                                                            </mask>
+                                                            <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopooc)' />
+                                                        </svg>Affiliates</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- END CATEGORY: OOC 2 -->
+
+
+
+
+                <!-- CATEGORY: OOC -->
+                <!-- <div id="cat-4" class="cat-outerwrapper cat-ooc">
+
+                    <div class="categoryLabel text36">Extra</div>
+
+                    <div class="cat-innerwrap frameinset frameinset_1">
+                        <div class="frameinset frameinset_2">
+                            <div class="frameinset frameinset_3">
+                                <div class="frameinset frameinset_4 textured">
+                                    <div class="cat-ooc-layout">
+
+                                        <div class="forumrow" id="">
+                                            <div class="flexrow">
+                                                <div class="forumname"><a href="#">Archives </a></div> /
+                                                <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                            </div>
+                                            <div class="forumrow-subs flexrow">
+                                                <a href="#" class="scoopedbox">Announcements</a>
+                                                <a href="#" class="scoopedbox">OOC</a>
+                                                <a href="#" class="scoopedbox">Threading</a>
+                                                <a href="#" class="scoopedbox">Events</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="forumrow" id="">
+                                            <div class="flexrow">
+                                                <div class="forumname"><a href="#">Advertising </a></div> /
+                                                <div class="lastpost-link"><a href="#">Once more, with feeling</a></div>
+                                            </div>
+                                            <div class="forumrow-subs flexrow">
+                                                <a href="#" class="scoopedbox">First Links</a>
+                                                <a href="#" class="scoopedbox">Link Backs</a>
+                                                <a href="#" class="scoopedbox">Affiliates</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="doublescoopedouter">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div> -->
+                <!-- END CATEGORY: OOC -->
+
+
+                <div class="categoryLabel text36">
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+
+                    Statistics
+
+                    <div class="divider arrowhead-1">
+                        <div class="divider-content"></div>
+                    </div>
+                </div>
+
+
+                <!-- INFO CENTER -->
+                <div id="infocenter" class="cat-outerwrapper cat-infocenter">
+
+                    <div class="categoryLabel text36">Stats</div>
+
+                    <div class="cat-innerwrap frameinset frameinset_1">
+                        <div class="frameinset frameinset_2">
+                            <div class="frameinset frameinset_3">
+                                <div class="frameinset frameinset_4 textured">
+                                    <div class="cat-infocenter-layout">
+
+                                        <div class="infocenter-area-links">
+
+                                            <a href="" class="flexcolumn"><img src="../assets/100x100-deku-83.jpg" class="infocenter-link-icon">Members</a>
+
+                                            <a href="" class="flexcolumn"><img src="../assets/100x100-deku-83.jpg" class="infocenter-link-icon">Active Topics</a>
+
+                                            <a href="" class="flexcolumn"><img src="../assets/100x100-deku-83.jpg" class="infocenter-link-icon">Last Click</a>
+
+                                            <a href="" class="flexcolumn"><img src="../assets/100x100-deku-83.jpg" class="infocenter-link-icon">Discord</a>
+
+                                        </div>
+
+                                        <div class="divider-vert arrowhead-2">
+                                            <div class="divider-content"><span></span></div>
+                                        </div>
+
+                                        <div class="infocenter-area-main">
+
+                                            <div class="infocenter-h1 text32">Welcome, <a href="">Easthies</a></div>
+
+
+                                            <!-- <div class="divider arrowhead-2">
+                                                <div class="divider-content"><span></span></div>
+                                            </div> -->
+
+                                            <div class="infocenter-h3">3 members, 2 guests, and 1 anonymous online</div>
+
+                                            <div class="onlinenowbox">
+                                                <a href="#" class="grp-pointed">santino Ravus</a><a href="#" class="grp-pointed">santino Ravus</a><a href="#" class="grp-pointed">santino Ravus</a><a href="#" class="grp-pointed">santino Ravus</a>
+                                                Bacon ipsum dolor amet shoulder tail jowl tongue strip steak short loin sausage sirloin cow frankfurter brisket chicken. Spare ribs picanha pork belly ball tip jowl ham chuck shank corned beef tri-tip shankle tenderloin sausage. Picanha capicola landjaeger tongue flank sirloin shankle rump alcatra turkey tri-tip
+                                            </div>
+
+                                            <div class="onlinetodaybox scoopedbox">
+                                                <div>
+                                                    <a href="#" class="grp-pointed">santino Ravus</a><a href="#" class="grp-pointed">santino Ravus</a><a href="#" class="grp-pointed">santino Ravus</a><a href="#" class="grp-pointed">santino Ravus</a>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="divider arrowhead-2">
+                                                <div class="divider-content"><span></span></div>
+                                            </div>
+
+
+
+                                            <div class="infocenter-census-box">
+
+                                                <!-- <div class="divider-vert arrowhead-2">
+                                                    <div class="divider-content"><span></span></div>
+                                                </div> -->
+                                                <div class="infocenter-census grp-pointed">
+                                                    <div class="census-label">Pointed Hats</div>
+                                                    <div class="census-fig text24">200</div>
+                                                </div>
+
+                                                <div class="infocenter-census grp-brimmed">
+                                                    <div class="census-label">Brimhats</div>
+                                                    <div class="census-fig text24">100</div>
+                                                </div>
+
+                                                <div class="infocenter-census grp-unknowing">
+                                                    <div class="census-label">Unknowing</div>
+                                                    <div class="census-fig text24">100</div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="infocenter-census-box infocenter-totals">
+
+                                                <div class="infocenter-census">
+                                                    <div class="infocenter-stat-total text28">99,000 posts</div>
+                                                </div>
+
+                                                <div class="infocenter-census">
+                                                    <div class="infocenter-stat-total text28">400 members</div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+
+                                        <div class="infocenter-area-recent">
+
+                                            <div class="recent-frame">
+                                                <div class="recent-content">
+                                                    <div class="recent-title text20">Recent topics</div>
+                                                    <div class="recent-list">
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+
+                                                        <div class="recenttopic"><a href="#" class="recent-threadname">Thread</a> <a href="#" class="recent-poster grp-unknowing">Poster</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END INFO CENTER -->
+
+            </div>
+            <div class="plinth upsidedown"></div>
+
+        </div>
+</body>
+
+
+
+
+
+
+
+<script src="https://codepen.io/breezescodes/pen/NWPyXNv.js"></script>
+<script>
+    LOCALT3('tabbedlocations', 'tab', 'forumrow');
+</script>
+
+<script>
+    // Change nav bar on scroll
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 580 || document.documentElement.scrollTop > 580) {
+            document.getElementById("navbarline").style.background = "linear-gradient(to right, var(--blackish) 60%, var(--blackish) 100%)";
+            // document.getElementById("navbarline").style.background = "var(--blackish)";
+            document.getElementById("navbarline").style.zIndex = "200";
+        } else {
+            document.getElementById("navbarline").style.background = "var(--navgradient)";
+            // document.getElementById("navbarline").style.background = "transparent";
+            document.getElementById("navbarline").style.zIndex = "130";
+        }
+    }
+</script>
+
+<script>
+    // Adapted from jQuery Modal Popups by Black
+    // http://code.jfbs.net/?showtopic=57
+
+    $(document).ready(function () {
+        $(".navbar-close").hide();
+
+        var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss")
+        $(document.body).append(clicktodismiss);
+
+        $(document).on("click", ".navbar-open", function (e) {
+            $("html, body").animate({ scrollTop: 0 }, "500");
+
+            if (window.scrollY > 0) {
+                setTimeout(function () {
+                    $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
+                    $('#header').addClass('openmenu');
+                    $(".navbar-close").show();
+                    $(".navbar-open").hide();
+
+                }, 400);
+            } else {
+                $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
+                $('#header').addClass('openmenu');
+                $(".navbar-close").show();
+                $(".navbar-open").hide();
+
+            }
+        });
+
+        $(document).on("click", "#clicktodismiss", function () {
+            $("#clicktodismiss").fadeOut("fast");
+            $('#header').removeClass('openmenu');
+            $(".navbar-close").hide();
+            $(".navbar-open").show();
+        });
+
+        $(document).on("click", ".navbar-close", function () {
+            $("#clicktodismiss").fadeOut("fast");
+            $('#header').removeClass('openmenu');
+            $(".navbar-close").hide();
+            $(".navbar-open").show();
+        });
+
+
+        $(window).scroll(function () {
+            var hT = $('#bodywrapper').offset().top,
+                hH = $('#bodywrapper').outerHeight(),
+                wH = $(window).height(),
+                wS = $(this).scrollTop();
+            if (wS > (hT + hH - wH)) {
+                console.log('H1 on the view!');
+            }
+        });
+
+    });
+</script>
+
+
+<script>
+    // < !--- BACK TO THE(TOP) FUTURE-- ->
+    var btn = $("#btp");
+
+    btn.on("click", function (e) {
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "300");
+    });
+</script>
+
+
+
+
+
+
+<script src="https://assets.codepen.io/2434198/JQueryModalPopups.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+<script src="https://files.jcink.net/uploads/vene/site/jquery_style_my_tooltips.js"></script>
