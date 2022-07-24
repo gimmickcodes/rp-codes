@@ -165,6 +165,7 @@ a {
 
 
 /* SCROLLBAR */
+
 #bodywrapper ::-webkit-scrollbar {
    width: 3px !important;
    height: 1px !important;
@@ -237,17 +238,18 @@ a {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
-   padding-top: 6px;
+   padding: 10px 0 2px;
    z-index: 230;
    margin-bottom: 0 !important;
+   /* border-bottom: 1px solid red; */
 }
 
 #navbarline {
    width: min(100%, 1200px);
    margin: auto;
-   margin-top: -42px;
+   margin-top: -48px;
 
-   height: 42px;
+   height: 46px;
    background: var(--navgradient);
    border-bottom: 1px solid var(--paper);
    position: sticky;
@@ -266,8 +268,13 @@ a {
    text-shadow: 0 0 2px var(--blackish), 0 0 2px var(--blackish), 0 0 2px var(--blackish), 0 0 2px var(--blackish), 0 0 3px var(--blackish), 0 0 3px var(--blackish), 0 0 3px var(--blackish), 0 0 3px var(--blackish);
 }
 
-#navbar .flexrow {
-   margin: 0 0 8px;
+.navlinks a {
+   display: inline-block;
+   margin-bottom: 10px;
+}
+
+.navlinks a:not(:last-child) {
+   margin-right: 12px;
 }
 
 a.navbar-open,
@@ -278,6 +285,43 @@ a.navbar-close {
    display: inline-block;
    padding: 6px 8px;
    letter-spacing: 1px;
+}
+
+a.mobilenav {
+   display: none;
+}
+
+a.mobilenav i {
+   margin-left: 4px;
+}
+
+@media only screen and (max-width: 600px) {
+   .navlinks a {
+      display: none;
+   }
+
+   a.mobilenav {
+      display: block;
+      margin-top: 4px;
+   }
+
+   .navlinks.responsive {
+      position: absolute;
+      top: 47px;
+      left: -5%;
+      width: 105%;
+      background: var(--blackish);
+   }
+
+   .navlinks.responsive a {
+      display: block;
+      text-align: left;
+      margin: 20px 0 0;
+      padding: 0 5% 20px;
+
+      border-bottom: 1px solid #00000050;
+   }
+
 }
 
 
@@ -503,7 +547,7 @@ h3 .shape {
    text-transform: uppercase;
 }
 
-input.accountswitchername {
+.accountswitchername {
    margin: 0;
    padding: 0;
    font: 32px var(--fontHero);
@@ -1080,7 +1124,6 @@ input.accountswitchername {
 [class*=divider][class*=arrowhead-2] {
    display: flex;
    align-items: center;
-   margin: 12px 0;
    width: calc(100% - 4px);
    text-align: center;
 }
@@ -1287,6 +1330,10 @@ input.accountswitchername {
 
 .cat-getstarted .lastpost-avi {
    margin-top: 36px;
+}
+
+.getstarteddivider[class*=divider][class*=arrowhead-2] {
+   margin: 12px 0;
 }
 
 .getstarteddivider[class*=divider][class*=arrowhead-2]::before,
@@ -1756,7 +1803,7 @@ a:hover [id='scoopplot']+use {
    z-index: 5;
    box-sizing: border-box;
    overflow: hidden;
-   padding-top: 80px;
+   padding: 80px 48px 40px;
 }
 
 .twocolcat .cat-ooc-layout .forumrow {
@@ -1793,7 +1840,6 @@ a:hover [id='scoopplot']+use {
 
 .forum-ooc-text {
    grid-area: boardinfo;
-   padding: 0 48px;
    /* z-index: 5; */
 }
 
@@ -1823,7 +1869,7 @@ a:hover [id='scoopplot']+use {
    flex-direction: row;
    flex-wrap: wrap;
    gap: 16px;
-   padding: 0 52px 0 48px;
+   padding-right: 4px;
 }
 
 .twocolcat .cat-ooc-layout .forumrow-subs a {
@@ -2237,10 +2283,6 @@ a.recent-poster::before {
       background: brown;
    }
 
-   .categoryLabel {
-      margin: 48px 0 12px;
-   }
-
    .text60 {
       font-size: 48px;
    }
@@ -2271,6 +2313,14 @@ a.recent-poster::before {
 
    .text20 {
       font-size: 20px;
+   }
+
+
+
+   /* BODY */
+
+   .categoryLabel {
+      margin: 48px 0 12px;
    }
 
 
@@ -2384,15 +2434,12 @@ a.recent-poster::before {
 
    /* CATEGORY: OOC */
    .twocolcat .cat-ooc-layout {
-      padding: 48px 0 32px;
+      padding: 48px 24px 24px;
    }
 
-   .forum-ooc-text {
-      padding: 0 32px;
-   }
 
    .twocolcat .cat-ooc-layout .forumrow-subs {
-      padding: 0 32px;
+      padding-right: 0;
    }
 
 
@@ -2407,8 +2454,16 @@ a.recent-poster::before {
       position: relative;
    }
 
+   .infocenter-area-main {
+      padding: 32px 24px 20px 24px;
+   }
+
+   .infocenter-area-links {
+      /* padding: 28px 20px 28px; */
+   }
+
    .infocenter-area-recent {
-      padding: 0 30px 32px;
+      padding: 0 22px 32px;
       height: fit-content;
    }
 
@@ -2468,46 +2523,26 @@ a.recent-poster::before {
 
 @media only screen and (max-width: 800px) {
    html {
-      background: maroon;
-   }
-
-   #navbar {
-      padding-top: 12px;
-   }
-
-   #navbarline {
-      left: 0;
-      height: 68px;
-      margin-top: -60px;
-   }
-
-   .bodyinner {
-      padding: 20px 32px;
+      background: var(--blackish);
    }
 
 
    .text60 {
-      font-size: 48px;
-   }
-
-   .text52 {
       font-size: 40px;
    }
 
-   .text40 {
-      font-size: 32px;
+   .text52 {
+      font-size: 36px;
    }
 
-   .text36 {
-      font-size: 32px;
-   }
-
+   .text40,
+   .text36,
    .text32 {
-      font-size: 32px;
+      font-size: 28px;
    }
 
    .text28 {
-      font-size: 28px;
+      font-size: 24px;
    }
 
    .text24 {
@@ -2518,13 +2553,57 @@ a.recent-poster::before {
       font-size: 20px;
    }
 
+
+
+   /* HEADER */
+
+   .hero-arches {
+      left: 0;
+      margin: 0 auto;
+      z-index: 40;
+      opacity: 0;
+   }
+
+   .hero-img {
+      left: calc(50% - 280px);
+      z-index: 50;
+      opacity: .3;
+      mix-blend-mode: overlay;
+   }
+
+   .hero-colorfield {
+      left: calc(50% - 360px);
+      opacity: 0;
+   }
+
+   .hero-text {
+      position: relative;
+      z-index: 60;
+      margin: 300px auto 0;
+      left: -2ch;
+   }
+
+   h1,
+   h3 {
+      text-align: center;
+   }
+
+
+
+
+   /* NAV PANEL */
+
    .navpanelinset {
       padding: 40px;
    }
 
+   .openmenu .hero-text {
+      transform: none;
+   }
+
    .openmenu .hero-img {
       z-index: 30;
-      /* background-position: 0 bottom; */
+      background-position: 0 bottom;
    }
 
    .navpanel-header.flexrow {
@@ -2540,7 +2619,16 @@ a.recent-poster::before {
    }
 
 
+
+   /* BODY */
+
+   .bodyinner {
+      padding: 20px 32px;
+   }
+
+
    /* CATEGORY: GET STARTED  */
+
    .cat-getstarted-layout {
       grid-template-areas: 'guidebook'
          'getstartedboards';
@@ -2551,7 +2639,7 @@ a.recent-poster::before {
 
    .cat-getstarted-handbook {
       background: url('clouds.svg') left bottom -100px / 860px, #B6BDB9;
-      padding: 32px;
+      padding: 24px;
       height: fit-content;
    }
 
@@ -2600,8 +2688,13 @@ a.recent-poster::before {
 
    .cat-getstarted-boards {
       margin: 0;
-      padding: 24px 32px;
+      padding: 8px 24px;
       border-top: 3px double var(--borderColor);
+   }
+
+
+   .getstarteddivider[class*=divider][class*=arrowhead-2] {
+      margin: 4px 0;
    }
 
    /* CATEGORY: CHARACTER */
@@ -2627,7 +2720,7 @@ a.recent-poster::before {
       grid-template-columns: 2fr 1fr;
       gap: 20px;
       position: relative;
-      padding: 24px 0 32px 32px;
+      padding: 16px 0 24px 24px;
       align-items: center;
       overflow: hidden;
    }
@@ -2707,17 +2800,12 @@ a.recent-poster::before {
       grid-template-columns: auto;
    }
 
-   .infocenter-area-main {
-      padding-top: 32px;
-      padding-bottom: 20px;
-   }
-
    .infocenter-area-links {
       flex-direction: row;
       justify-content: space-evenly;
       flex-wrap: wrap;
       padding: 24px 0 24px;
-      margin: 0 32px;
+      margin: 0 24px;
       gap: 16px;
       border-left: none;
       /* border-top: 3px double var(--borderColor); */
@@ -2738,20 +2826,16 @@ a.recent-poster::before {
 
    .infocenter-area-recent {
       background: var(--greendark);
-      margin: 0 32px 28px;
+      margin: 0 24px 28px;
       padding: 0;
       /* margin: 0; */
-   }
-
-   .recent-content {
-      padding: 20px;
    }
 
    .linksdivider[class*=divider] {
       display: flex;
       flex-direction: row;
-      margin: 8px 32px -12px !important;
-      width: calc(100% - 64px);
+      margin: 8px 24px -12px !important;
+      width: calc(100% - 48px);
    }
 
 
@@ -2781,6 +2865,24 @@ a.recent-poster::before {
       background: green;
    }
 
+
+   .text60,
+   .text52,
+   .text40,
+   .text36,
+   .text32,
+   .text28,
+   .text24 {
+      font-size: 24px;
+   }
+
+   .text20 {
+      font-size: 20px;
+   }
+
+
+   /* NAV PANEL */
+
    .navpanelinset {
       padding: 32px 24px;
    }
@@ -2793,18 +2895,67 @@ a.recent-poster::before {
       display: none;
    }
 
+
+   /* BODY */
+
+
+   .bodyinner {
+      padding: 20px 28px;
+   }
+
+
    .categoryLabel {
       font-size: 24px;
       margin-bottom: 14px;
    }
 
+   .lastpost-avi {
+      display: none;
+   }
+
+   .frameinset {
+      padding: 0;
+      border-width: 0;
+   }
+
+   .frameinset_4 {
+      border-width: 3px;
+      border-style: double;
+   }
+
+
+   /* CATEGORY: GET STARTED */
+
+   .cat-getstarted-handbook {
+      padding: 20px 16px;
+   }
+
+   .handbooktext {
+      padding: 16px;
+   }
+
+   .cat-getstarted-boards {
+      padding: 8px 16px 16px;
+   }
+
+
+
+   /* CATEGORY: CHARACTER */
+
+   .cat-character .cat-character-layout {
+      padding: 20px 16px;
+   }
+
+   .doublescoopedouter {
+      display: none;
+   }
 
    /* CATEGORY: RP PLACES */
 
    .cat-locations-layout .forumrow {
       grid-template-areas: "aboutplace";
       grid-template-columns: 1fr;
-      padding: 16px 24px 24px;
+      padding: 12px 16px 16px;
    }
 
    .windowcontent,
@@ -2812,7 +2963,30 @@ a.recent-poster::before {
       display: none;
    }
 
+   .location_info .forumdesc {
+      max-height: unset;
+   }
+
+
+   /* CATEGORY: OOC */
+
+   .twocolcat .cat-ooc-layout {
+      padding: 20px 16px;
+   }
+
    /* CATEGORY: STATISTICS */
+
+   .infocenter-area-main {
+      padding: 20px 16px
+   }
+
+   .infocenter-area-links {
+      margin: 0 16px;
+   }
+
+   .infocenter-area-recent {
+      margin: 0 16px 20px;
+   }
 
    .infocenter-totals {
       flex-direction: column;
@@ -2823,10 +2997,20 @@ a.recent-poster::before {
       margin-top: 24px;
    }
 
+   .linksdivider[class*=divider] {
+      margin: 8px 16px -12px !important;
+      width: calc(100% - 32px);
+   }
+
    .infocenter-totals .infocenter-census:not(:last-child) {
       border-right: 0;
       border-bottom: 1px dotted var(--green);
       padding-bottom: 10px;
       margin-bottom: 10px;
+   }
+
+
+   .recent-content {
+      padding: 20px 12px;
    }
 }
