@@ -280,11 +280,12 @@ a {
 a.navbar-open,
 a.navbar-close {
    font: inherit;
+   letter-spacing: 1px;
    background: var(--blackish);
    border: 1px solid var(--paperdark);
    display: inline-block;
    padding: 6px 8px;
-   letter-spacing: 1px;
+   margin-bottom: 10px;
 }
 
 a.mobilenav {
@@ -302,14 +303,14 @@ a.mobilenav i {
 
    a.mobilenav {
       display: block;
-      margin-top: 4px;
+      margin-top: 5px;
    }
 
    .navlinks.responsive {
       position: absolute;
       top: 47px;
       left: -5%;
-      width: 105%;
+      width: 100vw;
       background: var(--blackish);
    }
 
@@ -2565,14 +2566,15 @@ a.recent-poster::before {
    }
 
    .hero-img {
-      left: calc(50% - 280px);
+      width: 110%;
+      left: -50px;
+      background-position: center bottom;
       z-index: 50;
       opacity: .3;
       mix-blend-mode: overlay;
    }
 
    .hero-colorfield {
-      left: calc(50% - 360px);
       opacity: 0;
    }
 
@@ -2726,7 +2728,7 @@ a.recent-poster::before {
    }
 
    .cat-locations-layout .forumrow:not(:first-child) {
-      border-top: 3.5px double var(--borderColor);
+      border-top: 1px solid var(--borderColor);
    }
 
    .location_info {
@@ -2778,8 +2780,11 @@ a.recent-poster::before {
    }
 
    .forum-ooc-bg {
-      background-size: 655px;
-      background-position: right top -180px;
+      display: none;
+   }
+
+   .twocolcat .cat-ooc-layout {
+      padding: 24px;
    }
 
    .twocolcat .cat-ooc-layout .forumrow-subs a {
@@ -2965,6 +2970,7 @@ a.recent-poster::before {
 
    .location_info .forumdesc {
       max-height: unset;
+      padding-right: 0;
    }
 
 
