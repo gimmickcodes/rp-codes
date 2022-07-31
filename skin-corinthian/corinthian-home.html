@@ -969,7 +969,7 @@
         } else {
             document.getElementById("navbarline").style.background = "var(--navgradient)";
             // document.getElementById("navbarline").style.background = "transparent";
-            document.getElementById("navbarline").style.zIndex = "130";
+            document.getElementById("navbarline").style.zIndex = "140";
         }
     }
 </script>
@@ -994,6 +994,7 @@
         $("#clicktodismiss").fadeOut(300);
         document.getElementById("hamburger").className = "navlinks";
         $("#menubutton").fadeTo(300, 1);
+        x.className = "navlinks";
     });
 </script>
 
@@ -1012,13 +1013,13 @@
 
             if (window.scrollY > 0) {
                 setTimeout(function () {
-                    $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn("fast");
+                    // $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn(300);
                     $('#header').addClass('openmenu');
                     $(".navbar-close").show();
                     $(".navbar-open").hide();
                 }, 400);
             } else {
-                $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn("fast");
+                // $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn(300);
                 $('#header').addClass('openmenu');
                 $(".navbar-close").show();
                 $(".navbar-open").hide();
@@ -1026,14 +1027,18 @@
         });
 
         $(document).on("click", "#clicktodismiss", function () {
-            $("#clicktodismiss").fadeOut("fast");
+            $("#clicktodismiss").fadeOut(300);
             $('#header').removeClass('openmenu');
             $(".navbar-close").hide();
             $(".navbar-open").show();
+
+            $("#clicktodismiss").fadeOut(300);
+            document.getElementById("hamburger").className = "navlinks";
+            $("#menubutton").fadeTo(300, 1);
         });
 
         $(document).on("click", ".navbar-close", function () {
-            $("#clicktodismiss").fadeOut("fast");
+            // $("#clicktodismiss").fadeOut(300);
             $('#header').removeClass('openmenu');
             $(".navbar-close").hide();
             $(".navbar-open").show();
