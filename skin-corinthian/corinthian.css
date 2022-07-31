@@ -56,8 +56,7 @@
    --borderColor: var(--green);
    --linkaccent: var(--brick);
    --frameoffset: 0px;
-   --navgradient: linear-gradient(to right, var(--blackish) 30%, rgba(0, 0, 0, 0) 60%);
-
+   --navgradient: linear-gradient(to right, var(--blackish) 50%, rgba(0, 0, 0, 0) 80%);
    /* For hero */
    --fontHero: 'AcademyEngravedStd';
    /* --fontHero: 'Macondo Swash Caps', arial; */
@@ -158,8 +157,8 @@ a {
    left: 0;
    width: 100%;
    height: 100%;
-   background: #00000000;
-   z-index: 2;
+   background: #000000;
+   z-index: 100;
 }
 
 
@@ -268,9 +267,13 @@ a {
    text-shadow: 0 0 2px var(--blackish), 0 0 2px var(--blackish), 0 0 2px var(--blackish), 0 0 2px var(--blackish), 0 0 3px var(--blackish), 0 0 3px var(--blackish), 0 0 3px var(--blackish), 0 0 3px var(--blackish);
 }
 
+.navlinks {
+   margin-top: 2px;
+   margin-bottom: 10px;
+}
+
 .navlinks a {
    display: inline-block;
-   margin-bottom: 10px;
 }
 
 .navlinks a:not(:last-child) {
@@ -296,19 +299,24 @@ a.mobilenav i {
    margin-left: 4px;
 }
 
-@media only screen and (max-width: 600px) {
-   .navlinks a {
-      display: none;
-   }
+@media only screen and (max-width: 800px) {
 
    a.mobilenav {
       display: block;
       margin-top: 5px;
    }
 
+   .navlinks {
+      transition: .3s ease;
+   }
+
+   .navlinks a {
+      display: none;
+   }
+
    .navlinks.responsive {
       position: absolute;
-      top: 47px;
+      top: 45px;
       left: -5%;
       width: 100vw;
       background: var(--blackish);
@@ -956,7 +964,6 @@ h3 .shape {
 
 
 
-
 /* CATEGORY DEFAULTS */
 
 .textured::after {
@@ -1149,13 +1156,6 @@ h3 .shape {
 [class*=divider][class*=arrowhead-2] .divider-content {
    height: 1px;
 }
-
-
-
-
-
-
-
 
 
 
@@ -1436,7 +1436,7 @@ h3 .shape {
 }
 
 .forum-plottinghub .forumrow-subs a {
-   padding: 12px 40px 10px;
+   padding: 12px 20px 10px;
    width: 170px;
    font: 400 16px var(--fontHero);
    color: var(--greendark);
@@ -1504,6 +1504,17 @@ a:hover [id='scoopplot']+use {
 }
 
 .forum-twocol .lastpost-avi {
+   display: none;
+}
+
+
+.doublescooped {
+   background-image: none;
+}
+
+.doublescooped::before,
+.doublescooped::after,
+.doublescoopedouter {
    display: none;
 }
 
@@ -2104,6 +2115,7 @@ a:hover [id='scoopooc']+use {
    position: relative;
    display: flex;
    justify-content: space-evenly;
+   align-items: center;
 }
 
 .infocenter-census {
@@ -2115,6 +2127,7 @@ a:hover [id='scoopooc']+use {
 .infocenter-census:not(:last-child) {
    border-right: 1px dotted var(--greendark);
    padding-right: 8px;
+   margin-right: 8px;
 }
 
 .census-fig {
@@ -2366,15 +2379,21 @@ a.recent-poster::before {
    }
 
    .forum-plottinghub {
-      grid-template-areas: 'name '
-         'lastpost'
-         'subforums';
+      grid-template-areas: 'name subforums'
+         'lastpost subforums'
+      ;
+      grid-template-columns: 2fr 1fr;
+      grid-column-gap: 12px;
    }
 
    .forum-plottinghub .forumrow-subs {
       flex-direction: row;
       flex-wrap: wrap;
       margin-top: 20px;
+   }
+
+   .forum-plottinghub .forumrow-subs a {
+      width: unset;
    }
 
    .forum-twocol {
@@ -2481,7 +2500,7 @@ a.recent-poster::before {
       margin-left: 0;
       padding: 24px 16px;
       width: 100%;
-      height: 240px;
+      height: 148px;
    }
 
    .recent-title {
@@ -2490,10 +2509,11 @@ a.recent-poster::before {
 
 
 
-   /* 
+
    .recent-list {
       display: flex;
       gap: 12px;
+      align-items: center;
    }
 
    #bodywrapper .recent-list::-webkit-scrollbar {
@@ -2501,7 +2521,7 @@ a.recent-poster::before {
    }
 
    .recenttopic {
-      min-width: 160px;
+      min-width: 180px;
       padding: 4px 0;
       margin: 0;
    }
@@ -2512,10 +2532,10 @@ a.recent-poster::before {
 
    .recenttopic:not(:first-child) {
       border-top: none;
-      padding-top: unset;
+      padding-top: 4px;
       border-left: 1px solid var(--green);
       padding-left: 24px;
-   } */
+   }
 }
 
 
@@ -2524,7 +2544,11 @@ a.recent-poster::before {
 
 @media only screen and (max-width: 800px) {
    html {
-      background: var(--blackish);
+      background: mediumslateblue;
+   }
+
+   :root {
+      --navgradient: var(--blackish);
    }
 
 
@@ -2533,7 +2557,7 @@ a.recent-poster::before {
    }
 
    .text52 {
-      font-size: 36px;
+      font-size: 40px;
    }
 
    .text40,
@@ -2567,7 +2591,7 @@ a.recent-poster::before {
 
    .hero-img {
       width: 110%;
-      left: -50px;
+      left: -40px;
       background-position: center bottom;
       z-index: 50;
       opacity: .3;
@@ -2605,7 +2629,7 @@ a.recent-poster::before {
 
    .openmenu .hero-img {
       z-index: 30;
-      background-position: 0 bottom;
+      background-position: center bottom;
    }
 
    .navpanel-header.flexrow {
@@ -2648,7 +2672,15 @@ a.recent-poster::before {
    .handbooktext {
       width: min(100%, 480px);
       width: 100%;
+      padding: 32px 24px 24px;
+      /* background-color: var(--greendark); */
+
+      /* padding: 0;
+      border: none;
+      box-shadow: none;
+      background-color: transparent; */
    }
+
 
    .cloudsbg {
       width: 100%;
@@ -2699,15 +2731,51 @@ a.recent-poster::before {
       margin: 4px 0;
    }
 
+
    /* CATEGORY: CHARACTER */
+
    .cat-character .cat-character-layout {
-      width: 100%
+      width: 100%;
+
+      padding: 0;
+      grid-row-gap: 0;
+   }
+
+
+   .forum-plottinghub {
+      grid-template-areas: 'name'
+         'lastpost'
+         'subforums';
+      grid-template-columns: 1fr;
+      grid-column-gap: 12px;
+
+      padding: 28px 24px 20px;
+      border-bottom: 1px solid var(--borderColor);
    }
 
    .plottinghubbg,
    .plottinghubbgcolor {
       display: none;
    }
+
+
+   .forum-plottinghub .forumrow-subs {
+      flex-direction: column;
+   }
+
+   .plotdivider {
+      display: none !important;
+   }
+
+   .forum-twocol {
+      background-color: transparent;
+   }
+
+   .forum-twocol .forumrow,
+   .forum-twocol .forumrow:first-of-type {
+      padding: 20px 24px;
+   }
+
 
 
    /* CATEGORY: RP PLACES */
@@ -2771,6 +2839,9 @@ a.recent-poster::before {
       padding-bottom: 24px;
    }
 
+   .location_info .lastpost-avi {
+      display: none;
+   }
 
 
    /* CATEGORY: OOC */
@@ -2867,11 +2938,14 @@ a.recent-poster::before {
 
 @media only screen and (max-width: 600px) {
    html {
-      background: green;
+      background: violet;
    }
 
 
-   .text60,
+   .text60 {
+      font-size: 32px;
+   }
+
    .text52,
    .text40,
    .text36,
@@ -2932,28 +3006,52 @@ a.recent-poster::before {
    /* CATEGORY: GET STARTED */
 
    .cat-getstarted-handbook {
-      padding: 20px 16px;
+      padding: 28px 16px 24px;
+      background: var(--greendark);
    }
 
    .handbooktext {
-      padding: 16px;
+      padding: 24px 16px 16px;
+
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      background-color: transparent;
+   }
+
+   .handbook-title,
+   .handbook-desc {
+      color: var(--paperdark) !important;
    }
 
    .cat-getstarted-boards {
-      padding: 8px 16px 16px;
+      padding: 0px;
    }
 
+   .cat-getstarted .forumrow {
+      padding: 16px 16px;
+   }
+
+   .cat-getstarted .forumrow:not(:last-child) {
+      border-bottom: 1px solid var(--borderColor);
+   }
+
+   .getstarteddivider {
+      display: none !important;
+   }
 
 
    /* CATEGORY: CHARACTER */
 
-   .cat-character .cat-character-layout {
+   .forum-plottinghub {
       padding: 20px 16px;
    }
 
-   .doublescoopedouter {
-      display: none;
+   .forum-twocol .forumrow,
+   .forum-twocol .forumrow:first-of-type {
+      padding: 20px 16px;
    }
+
 
    /* CATEGORY: RP PLACES */
 
@@ -2983,29 +3081,38 @@ a.recent-poster::before {
    /* CATEGORY: STATISTICS */
 
    .infocenter-area-main {
-      padding: 20px 16px
+      padding: 20px 16px 0;
    }
 
    .infocenter-area-links {
       margin: 0 16px;
+      flex-direction: column;
    }
 
    .infocenter-area-recent {
       margin: 0 16px 20px;
    }
 
-   .infocenter-totals {
+
+   /* .infocenter-census-box {
       flex-direction: column;
-      align-items: stretch;
    }
+
+   .infocenter-census:not(:last-child) {
+      border-right: none;
+      padding-right: 0;
+      border-bottom: 1px dotted var(--greendark);
+      margin-bottom: 8px;
+   } */
 
    .censusdivider[class*=divider] {
       margin-top: 24px;
+      margin-bottom: 10px;
    }
 
-   .linksdivider[class*=divider] {
-      margin: 8px 16px -12px !important;
-      width: calc(100% - 32px);
+   .infocenter-totals {
+      flex-direction: column;
+      align-items: stretch;
    }
 
    .infocenter-totals .infocenter-census:not(:last-child) {
@@ -3015,6 +3122,23 @@ a.recent-poster::before {
       margin-bottom: 10px;
    }
 
+   .infocenter-totals {
+      margin-top: 14px;
+      padding-top: 12px;
+   }
+
+   .infocenter-stat-total {
+      padding: 0;
+   }
+
+   .linksdivider[class*=divider] {
+      margin: 12px 16px -12px !important;
+      width: calc(100% - 32px);
+   }
+
+   .infocenter-area-links .flexcolumn {
+      flex-direction: row;
+   }
 
    .recent-content {
       padding: 20px 12px;

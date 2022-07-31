@@ -958,30 +958,6 @@
 </script>
 
 <script>
-    // function checkViewport(x) {
-    //     if (x.matches) { // If media query matches
-    //         console.log("smaller")
-    //     } else {
-    //         console.log("bigger")
-    //     }
-    // }
-
-    // var x = window.matchMedia("(max-width: 600px)")
-    // checkViewport(x) // Call listener function at run time
-    // x.addListener(checkViewport)
-
-    function menuFunction() {
-        var x = document.getElementById("hamburger");
-        if (x.className === "navlinks") {
-            x.className += " responsive";
-        } else {
-            x.className = "navlinks";
-        }
-    }
-</script>
-
-
-<script>
     // Change nav bar on scroll
     window.onscroll = function () { scrollFunction() };
 
@@ -996,6 +972,29 @@
             document.getElementById("navbarline").style.zIndex = "130";
         }
     }
+</script>
+
+
+<script>
+    // Hamburger menu on mobile
+    function menuFunction() {
+        var x = document.getElementById("hamburger");
+        if (x.className === "navlinks") {
+            x.className += " responsive";
+            $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn("fast");
+            $("#menubutton").css({ "opacity": "0.5" }).fadeTo("fast");
+        } else {
+            x.className = "navlinks";
+            $("#clicktodismiss").fadeOut("fast");
+            $("#menubutton").css({ "opacity": "1" }).fadeTo("fast");
+        }
+    }
+
+    $(document).on("click", "#clicktodismiss", function () {
+        $("#clicktodismiss").fadeOut("fast");
+        document.getElementById("hamburger").className = "navlinks";
+        $("#menubutton").css({ "opacity": "1" }).fadeTo("fast");
+    });
 </script>
 
 <script>
@@ -1013,18 +1012,16 @@
 
             if (window.scrollY > 0) {
                 setTimeout(function () {
-                    $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
+                    $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn("fast");
                     $('#header').addClass('openmenu');
                     $(".navbar-close").show();
                     $(".navbar-open").hide();
-
                 }, 400);
             } else {
-                $("#clicktodismiss").css({ "opacity": "0.3" }).fadeIn("fast");
+                $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn("fast");
                 $('#header').addClass('openmenu');
                 $(".navbar-close").show();
                 $(".navbar-open").hide();
-
             }
         });
 
@@ -1042,7 +1039,7 @@
             $(".navbar-open").show();
         });
 
-
+        // Scroll to top when opening navpanel
         $(window).scroll(function () {
             var hT = $('#bodywrapper').offset().top,
                 hH = $('#bodywrapper').outerHeight(),
