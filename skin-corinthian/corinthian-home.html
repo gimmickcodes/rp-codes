@@ -981,19 +981,19 @@
         var x = document.getElementById("hamburger");
         if (x.className === "navlinks") {
             x.className += " responsive";
-            $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn("fast");
-            $("#menubutton").css({ "opacity": "0.5" }).fadeTo("fast");
+            $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn(300);
+            $("#menubutton").fadeTo(300, 0);
         } else {
             x.className = "navlinks";
-            $("#clicktodismiss").fadeOut("fast");
-            $("#menubutton").css({ "opacity": "1" }).fadeTo("fast");
+            $("#clicktodismiss").fadeOut(300);
+            $("#menubutton").fadeTo(300, 1);
         }
     }
 
     $(document).on("click", "#clicktodismiss", function () {
-        $("#clicktodismiss").fadeOut("fast");
+        $("#clicktodismiss").fadeOut(300);
         document.getElementById("hamburger").className = "navlinks";
-        $("#menubutton").css({ "opacity": "1" }).fadeTo("fast");
+        $("#menubutton").fadeTo(300, 1);
     });
 </script>
 

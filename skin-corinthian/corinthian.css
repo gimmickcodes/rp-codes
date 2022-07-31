@@ -299,39 +299,6 @@ a.mobilenav i {
    margin-left: 4px;
 }
 
-@media only screen and (max-width: 800px) {
-
-   a.mobilenav {
-      display: block;
-      margin-top: 5px;
-   }
-
-   .navlinks {
-      transition: .3s ease;
-   }
-
-   .navlinks a {
-      display: none;
-   }
-
-   .navlinks.responsive {
-      position: absolute;
-      top: 45px;
-      left: -5%;
-      width: 100vw;
-      background: var(--blackish);
-   }
-
-   .navlinks.responsive a {
-      display: block;
-      text-align: left;
-      margin: 20px 0 0;
-      padding: 0 5% 20px;
-
-      border-bottom: 1px solid #00000050;
-   }
-
-}
 
 
 /* HEADER */
@@ -2593,7 +2560,7 @@ a.recent-poster::before {
       width: 110%;
       left: -40px;
       background-position: center bottom;
-      z-index: 50;
+      z-index: 30;
       opacity: .3;
       mix-blend-mode: overlay;
    }
@@ -2618,6 +2585,9 @@ a.recent-poster::before {
 
 
    /* NAV PANEL */
+   #navpanel {
+      z-index: 100;
+   }
 
    .navpanelinset {
       padding: 40px;
@@ -2630,6 +2600,7 @@ a.recent-poster::before {
    .openmenu .hero-img {
       z-index: 30;
       background-position: center bottom;
+      mix-blend-mode: overlay;
    }
 
    .navpanel-header.flexrow {
@@ -3007,7 +2978,7 @@ a.recent-poster::before {
 
    .cat-getstarted-handbook {
       padding: 28px 16px 24px;
-      background: var(--greendark);
+      background: var(--paperlight);
    }
 
    .handbooktext {
@@ -3019,17 +2990,12 @@ a.recent-poster::before {
       background-color: transparent;
    }
 
-   .handbook-title,
-   .handbook-desc {
-      color: var(--paperdark) !important;
-   }
-
    .cat-getstarted-boards {
       padding: 0px;
    }
 
    .cat-getstarted .forumrow {
-      padding: 16px 16px;
+      padding: 20px 16px;
    }
 
    .cat-getstarted .forumrow:not(:last-child) {
@@ -3058,7 +3024,7 @@ a.recent-poster::before {
    .cat-locations-layout .forumrow {
       grid-template-areas: "aboutplace";
       grid-template-columns: 1fr;
-      padding: 12px 16px 16px;
+      padding: 12px 16px 20px;
    }
 
    .windowcontent,
@@ -3142,5 +3108,78 @@ a.recent-poster::before {
 
    .recent-content {
       padding: 20px 12px;
+      height: 240px;
    }
+
+   .recent-list {
+      flex-direction: column;
+      align-items: stretch;
+   }
+
+   .recenttopic,
+   .recenttopic:not(:first-child) {
+      border-left: none;
+      border-top: 1px solid var(--green);
+      padding: 0;
+      margin: 0 16px;
+      padding-top: 12px;
+   }
+
+
+   .recenttopic:first-child {
+      border-top: 0 solid var(--green);
+      padding-top: 0;
+   }
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+   #navbar.maxwidth {
+      padding-left: 2.5%;
+      padding-right: 2.5%;
+      margin: 0 0 50px;
+   }
+
+   a.mobilenav {
+      display: block;
+      margin-top: 5px;
+      z-index: 200;
+   }
+
+   .navlinks {
+      display: block;
+      position: absolute;
+      top: 44px;
+      left: 0;
+      width: 100%;
+      height: 0;
+      overflow-y: hidden;
+      background: var(--blackish);
+      border-top: 1px solid #00000000;
+      border-bottom: 1px solid white;
+
+      opacity: 1;
+      z-index: 200;
+      transition: .3s ease;
+   }
+
+   .navlinks a {
+      display: block;
+      text-align: left;
+      margin: 20px 0 0;
+      padding: 0 2.5% 20px;
+      border-bottom: 1px solid #00000050;
+   }
+
+   .navlinks.responsive {
+      opacity: 1;
+      height: 318px;
+      border-top: 1px solid #00000050;
+      border-bottom: 1px solid white;
+      transition: .3s ease;
+   }
+
+
 }
