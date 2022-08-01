@@ -118,6 +118,7 @@ html {
 
 body {
    all: unset;
+   min-width: 350px;
    line-height: 1.2em;
    color: #555;
    /* body text color */
@@ -255,7 +256,7 @@ a {
    top: 0px;
    transition: background .3s ease;
    box-shadow: -20px 0 0 var(--blackish), 20px 0 0 var(--blackish);
-   z-index: 130;
+   z-index: 135;
 }
 
 #navbar a {
@@ -330,7 +331,10 @@ h1 {
    width: 450px;
    text-align: right;
    margin: unset;
-   font: 120px/120px var(--fontHero);
+   font-size: min(28vw, 120px);
+   line-height: 1em;
+   font-family: var(--fontHero);
+   font-weight: normal;
    text-transform: uppercase;
    letter-spacing: 2px;
    color: var(--blackish);
@@ -342,14 +346,17 @@ h1 {
 h3 {
    margin: unset;
    margin-right: 8px;
-   font: 20px/1.25em var(--fontBodySerif);
+   font-size: min(4.5vw, 20px);
+   line-height: 1.25em;
    font-family: var(--fontHero2);
+   font-weight: normal;
+   text-transform: uppercase;
    letter-spacing: 3px;
    height: 336px;
    opacity: .5;
    white-space: nowrap;
-   text-transform: uppercase;
 }
+
 
 h3 .shape {
    margin-top: -50px;
@@ -414,6 +421,7 @@ h3 .shape {
 .openmenu #navpanel {
    opacity: 1;
    z-index: 125;
+   pointer-events: unset;
 }
 
 .openmenu .hero-img {
@@ -467,7 +475,7 @@ h3 .shape {
    padding: 16px;
    color: var(--paperdark);
    border: 1px solid #00000050;
-   /* transition-delay: .125s; */
+   pointer-events: none;
    transition: .5s ease;
 }
 
@@ -951,6 +959,10 @@ h3 .shape {
    display: flex;
    flex-direction: row-reverse;
    position: relative;
+}
+
+.cat-outerwrapper:last-child {
+   margin-bottom: 20px;
 }
 
 .cat-innerwrap {
@@ -1948,13 +1960,10 @@ a:hover [id='scoopooc']+use {
    flex-direction: column;
    align-items: center;
    justify-content: space-between;
-   padding: 28px 20px 28px;
    gap: 20px;
    z-index: 5;
    font: 400 16px var(--fontHero);
-
-   padding-top: 0;
-   padding-bottom: 0;
+   padding: 8px 16px 4px;
    margin: 24px 0 24px;
    border-left: 1px solid var(--borderColor);
 }
@@ -1996,7 +2005,8 @@ a:hover [id='scoopooc']+use {
 }
 
 .infocenter-link-icon {
-   width: 50px;
+   height: 56px;
+   margin-bottom: 4px;
    display: block;
 }
 
@@ -2232,7 +2242,7 @@ a.recent-poster::before {
    }
 
 
-   #navbar.maxwidth {
+   #navbar {
       width: 95%;
       margin: 0 auto 50px;
    }
@@ -2338,8 +2348,7 @@ a.recent-poster::before {
 
    .forum-plottinghub {
       grid-template-areas: 'name subforums'
-         'lastpost subforums'
-      ;
+         'lastpost subforums';
       grid-template-columns: 2fr 1fr;
       grid-column-gap: 12px;
    }
@@ -2437,7 +2446,7 @@ a.recent-poster::before {
    }
 
    .infocenter-area-links {
-      /* padding: 28px 20px 28px; */
+      padding-left: 20px;
    }
 
    .infocenter-area-recent {
@@ -2500,7 +2509,7 @@ a.recent-poster::before {
 
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 860px) {
    html {
       background: mediumslateblue;
    }
@@ -2564,14 +2573,17 @@ a.recent-poster::before {
       position: relative;
       z-index: 60;
       margin: 300px auto 0;
-      left: -2ch;
+      left: 0;
+      width: 90%;
+      min-width: unset;
+      align-items: center;
    }
 
    h1,
    h3 {
+      width: min(100%, 450px);
       text-align: center;
    }
-
 
 
 
@@ -2886,7 +2898,6 @@ a.recent-poster::before {
       width: calc(100% - 48px);
    }
 
-
    .linksdivider[class*=divider][class*=arrowhead-2]:after {
       transform: none;
       display: block;
@@ -2902,6 +2913,9 @@ a.recent-poster::before {
       width: calc(100% - 48px);
    }
 
+   .infocenter-link-icon {
+      height: 48px;
+   }
 
 }
 
@@ -3053,7 +3067,7 @@ a.recent-poster::before {
 
    .infocenter-area-links {
       margin: 0 16px;
-      flex-direction: column;
+      /* flex-direction: column; */
    }
 
    .infocenter-area-recent {
@@ -3137,7 +3151,7 @@ a.recent-poster::before {
 
 
 @media only screen and (max-width: 800px) {
-   #navbar.maxwidth {
+   #navbar {
       padding-left: 2.5%;
       padding-right: 2.5%;
       margin: 0 0 50px;
