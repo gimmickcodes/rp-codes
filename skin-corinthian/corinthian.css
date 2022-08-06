@@ -739,7 +739,6 @@ h3 .shape {
    border-width: 2px;
    padding: 0;
    background: transparent;
-   /* background: plum; */
 }
 
 
@@ -945,7 +944,7 @@ h3 .shape {
 /* CATEGORY DEFAULTS */
 
 .textured {
-   background-color: plum;
+   background-color: aquamarine;
 }
 
 .textured::after {
@@ -1951,7 +1950,7 @@ a:hover [id='scoopooc']+use {
 .infocenter-area-main {
    grid-area: main;
    padding: 40px 32px 20px 32px;
-   z-index: 5;
+   /* z-index: 5; */
 }
 
 .infocenter-area-recent {
@@ -2281,11 +2280,11 @@ a.recent-poster::before {
    }
 
    .text60 {
-      font-size: 48px;
+      font-size: 44px;
    }
 
    .text52 {
-      font-size: 48px;
+      font-size: 44px;
    }
 
    .text40 {
@@ -3099,7 +3098,7 @@ a.recent-poster::before {
 
    .infocenter-area-links {
       margin: 0 16px;
-      /* flex-direction: column; */
+      flex-direction: column;
    }
 
    .infocenter-area-recent {
@@ -3161,8 +3160,9 @@ a.recent-poster::before {
    }
 
    .infocenter-area-links .flexcolumn {
-      flex-direction: row;
-      min-width: 140px;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      width: 100%;
    }
 
    .recent-content {
