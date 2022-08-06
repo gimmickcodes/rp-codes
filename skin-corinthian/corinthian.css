@@ -333,7 +333,7 @@ h1 {
    width: 450px;
    text-align: right;
    margin: unset;
-   font-size: min(28vw, 120px);
+   font-size: min(18vw, 120px);
    line-height: 1em;
    font-family: var(--fontHero);
    font-weight: normal;
@@ -581,6 +581,8 @@ h3 .shape {
    font-weight: 500;
    letter-spacing: .5px;
    color: var(--paperdark);
+   display: block;
+   margin-bottom: 6px;
    transition: .5s ease;
 }
 
@@ -2970,7 +2972,16 @@ a.recent-poster::before {
    }
 
 
+   h3 {
+      white-space: normal;
+   }
+
    /* NAV PANEL */
+
+   #navpanel {
+      top: 90px;
+      padding: 8px;
+   }
 
    .navpanelinset {
       padding: 32px 24px;
@@ -2984,6 +2995,16 @@ a.recent-poster::before {
       display: none;
    }
 
+   .navpanel-quicklinks.flexrow {
+      flex-direction: column;
+      margin-bottom: 24px;
+   }
+
+   .navpanel-quicklinks .flexcolumn {
+      display: grid;
+      grid-template-columns: 30vw 1fr;
+      grid-column-gap: 16px;
+   }
 
    /* BODY */
 
