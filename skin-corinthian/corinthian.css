@@ -122,6 +122,8 @@ body {
    line-height: 1.2em;
    color: #555;
    /* body text color */
+   overflow-x: hidden;
+
 }
 
 #header>*,
@@ -150,7 +152,6 @@ a {
 .maxwidth {
    width: min(100%, 1200px);
    margin: 0 auto 50px;
-   overflow-x: hidden;
 }
 
 #clicktodismiss {
@@ -738,7 +739,7 @@ h3 .shape {
    border-width: 2px;
    padding: 0;
    background: var(--paperlight);
-   background: plum;
+   /* background: plum; */
 }
 
 
@@ -2080,20 +2081,23 @@ a:hover [id='scoopooc']+use {
    position: relative;
    display: flex;
    justify-content: space-evenly;
-   align-items: center;
+   align-items: stretch;
+   gap: 8px
 }
 
 .infocenter-census {
    flex: 2 1 0px;
    text-align: center;
    color: var(--membercolor);
+   min-width: 120px;
 }
 
-.infocenter-census:not(:last-child) {
+
+.censusvertrule {
+   display: block;
    border-right: 1px dotted var(--greendark);
-   padding-right: 8px;
-   margin-right: 8px;
 }
+
 
 .census-fig {
    font-family: var(--fontHero);
@@ -2113,6 +2117,12 @@ a:hover [id='scoopooc']+use {
    align-items: center;
    color: var(--greendark);
    border-top: 1px dotted var(--greendark);
+}
+
+.infocenter-totals .infocenter-census:not(:last-child) {
+   border-right: 1px dotted var(--greendark);
+   padding-right: 8px;
+   margin-right: 8px;
 }
 
 .infocenter-stat-total {
@@ -2698,7 +2708,7 @@ a.recent-poster::before {
    .cat-getstarted-boards {
       margin: 0;
       padding: 8px 24px;
-      border-top: 3px double var(--borderColor);
+      border-top: 1px solid var(--borderColor);
    }
 
 
@@ -3008,6 +3018,10 @@ a.recent-poster::before {
       background-color: transparent;
    }
 
+   .handbook-desc {
+      display: none;
+   }
+
    .cat-getstarted-boards {
       padding: 0px;
    }
@@ -3095,6 +3109,15 @@ a.recent-poster::before {
       margin-bottom: 10px;
    }
 
+   .infocenter-census-box {
+      align-items: center;
+      flex-wrap: wrap;
+   }
+
+   .censusvertrule {
+      display: none;
+   }
+
    .infocenter-totals {
       flex-direction: column;
       align-items: stretch;
@@ -3105,6 +3128,8 @@ a.recent-poster::before {
       border-bottom: 1px dotted var(--green);
       padding-bottom: 10px;
       margin-bottom: 10px;
+      padding-right: 0;
+      margin-right: 0;
    }
 
    .infocenter-totals {
@@ -3123,6 +3148,7 @@ a.recent-poster::before {
 
    .infocenter-area-links .flexcolumn {
       flex-direction: row;
+      min-width: 140px;
    }
 
    .recent-content {
