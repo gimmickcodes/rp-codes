@@ -738,8 +738,8 @@ h3 .shape {
 .frameinset_4 {
    border-width: 2px;
    padding: 0;
-   background: var(--paperlight);
-   background: plum;
+   background: transparent;
+   /* background: plum; */
 }
 
 
@@ -943,6 +943,10 @@ h3 .shape {
 
 
 /* CATEGORY DEFAULTS */
+
+.textured {
+   background-color: plum;
+}
 
 .textured::after {
    content: '';
@@ -1162,7 +1166,6 @@ h3 .shape {
    grid-template-areas: 'guidebook getstartedboards';
    grid-column-gap: 0;
    z-index: 10;
-   background: var(--paperlight);
    position: relative;
    top: 0;
    left: 0;
@@ -1201,8 +1204,6 @@ h3 .shape {
 .clouds {
    content: '';
    position: absolute;
-   bottom: 9px;
-   right: 9px;
    width: calc(100% - var(--frameoffset));
    height: 284px;
    background: url('clouds.svg') right calc(189px + 55%) bottom -50px / 760px;
@@ -1212,6 +1213,10 @@ h3 .shape {
    bottom: 0;
    z-index: 4;
    overflow: hidden;
+   /* no bleed */
+   width: max(48%, 460px);
+   left: 0;
+   background-position: right 80% bottom -50px;
 }
 
 .clouds::before {
@@ -1224,27 +1229,33 @@ h3 .shape {
    opacity: .75;
    z-index: 5;
    pointer-events: none;
-   bottom: -438px;
+   bottom: -436px;
    right: calc(-234px + 55%);
    -webkit-mask-image: url('clouds.svg');
    mask-image: url('clouds.svg');
    -webkit-mask-repeat: no-repeat;
    mask-repeat: no-repeat;
+   right: calc(-234px + 55%);
+   /* no bleed */
+   right: -42.8%;
+
+   display: none;
 }
 
 .cloudstail {
    position: absolute;
-   left: -49px;
+   left: -64px;
    bottom: 0;
-   width: 55%;
+   width: calc(100% + 64px);
    height: 100%;
    background: url('tail.svg') right calc(149px + 55%) bottom -50px / 760px;
-   /* background-position: left bottom -30px; */
    background-repeat: no-repeat;
    z-index: 2;
 
-   width: calc(100% + 64px);
-   left: -64px;
+   /* no bleed */
+   width: max(calc(48% + 120px), 460px);
+   left: -144px;
+   background-position: right calc(80% - 118px) bottom -50px;
 }
 
 
@@ -1278,7 +1289,7 @@ h3 .shape {
    font-family: var(--fontHero);
    margin-bottom: 2px;
    font-variation-settings: 'opsz' 72;
-   color: var(--green);
+   color: var(--brickdark);
    display: block;
    /* text-shadow: 0 0 1px var(--blackish), 2px 0 0px var(--blackish);
    color: var(--paper); */
@@ -1286,7 +1297,7 @@ h3 .shape {
 
 .handbook-desc {
    font: 500 16px/1.3em var(--fontBodySerif);
-   color: var(--greendark);
+   color: var(--blackish);
 }
 
 .cat-getstarted-boards {
@@ -1356,15 +1367,13 @@ h3 .shape {
 }
 
 .plottinghubbgcolor {
-   background: var(--paperdark);
    position: absolute;
    width: 300px;
    height: calc(100% - var(--frameoffset));
    z-index: 0;
    right: 0;
-   width: 40%;
-   background: linear-gradient(to right, var(--paperlight) 20%, #B6BDB9 21%);
-
+   width: 600px;
+   background: linear-gradient(to right, var(--paperlight) 50%, var(--greenlight) 51%);
 }
 
 .plottinghubbg {
@@ -1379,9 +1388,8 @@ h3 .shape {
    width: 100%;
    right: -20px;
    float: right;
-   background: url('horse.svg') left 0px center / 600px;
-   transform: scaleX(-1);
-   /* background-color: var(--paperdark); */
+   background: url('horse.svg') right center/ 450px;
+   background-repeat: no-repeat;
 }
 
 
@@ -2320,6 +2328,14 @@ a.recent-poster::before {
       width: 107%;
    }
 
+   .clouds {
+      width: calc(51% + 2px);
+   }
+
+   .cloudstail {
+      width: calc(51% + 120px);
+   }
+
    .cat-getstarted-handbook {
       grid-area: guidebook;
       padding-top: 32px;
@@ -2346,7 +2362,7 @@ a.recent-poster::before {
    }
 
    .plottinghubbgcolor {
-      background: linear-gradient(to right, var(--paperlight) 30%, #B6BDB9 31%)
+      background: linear-gradient(to right, var(--paperlight) 40%, #B6BDB9 41%)
    }
 
    .plottinghubbg {
@@ -2649,7 +2665,7 @@ a.recent-poster::before {
    }
 
    .cat-getstarted-handbook {
-      background: url('clouds.svg') left bottom -100px / 860px, #B6BDB9;
+      background: url('clouds.svg') left bottom -80px / 860px, var(--green);
       padding: 24px;
       height: fit-content;
    }
@@ -2673,7 +2689,6 @@ a.recent-poster::before {
       background: #B6BDB9;
       border: none;
       box-shadow: none;
-
       display: none;
    }
 
@@ -2941,10 +2956,7 @@ a.recent-poster::before {
    }
 
 
-   .text60 {
-      font-size: 32px;
-   }
-
+   .text60,
    .text52,
    .text40,
    .text36,
@@ -3010,12 +3022,14 @@ a.recent-poster::before {
    }
 
    .handbooktext {
-      padding: 24px 16px 16px;
-
       padding: 0;
       border: none;
       box-shadow: none;
       background-color: transparent;
+   }
+
+   .handbook-title {
+      color: var(--greendark);
    }
 
    .handbook-desc {
