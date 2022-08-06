@@ -946,7 +946,7 @@ h3 .shape {
 /* CATEGORY DEFAULTS */
 
 .textured {
-   background-color: aquamarine;
+   background-color: var(--paperlight);
 }
 
 .textured::after {
@@ -1947,6 +1947,7 @@ a:hover [id='scoopooc']+use {
    grid-template-columns: auto auto 2fr 300px;
    /* grid-template-rows: 1fr; */
    position: relative;
+   z-index: 5;
 }
 
 .infocenter-area-main {
@@ -1968,7 +1969,7 @@ a:hover [id='scoopooc']+use {
    align-items: center;
    justify-content: space-between;
    gap: 20px;
-   z-index: 5;
+   /* z-index: 5; */
    font: 400 16px var(--fontHero);
    padding: 8px 16px 4px;
    margin: 24px 0 24px;
@@ -2061,7 +2062,7 @@ a:hover [id='scoopooc']+use {
    position: relative;
    overflow: auto;
    height: 100%;
-   z-index: 5;
+   /* z-index: 5; */
 }
 
 .onlinenowbox a,
@@ -2155,7 +2156,7 @@ a:hover [id='scoopooc']+use {
    box-sizing: content-box;
    margin-top: -40px;
    position: relative;
-   z-index: 5;
+   z-index: 6;
 }
 
 .recent-content {
