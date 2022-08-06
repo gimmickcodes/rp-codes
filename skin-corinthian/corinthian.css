@@ -150,6 +150,7 @@ a {
 .maxwidth {
    width: min(100%, 1200px);
    margin: 0 auto 50px;
+   overflow-x: hidden;
 }
 
 #clicktodismiss {
@@ -737,6 +738,7 @@ h3 .shape {
    border-width: 2px;
    padding: 0;
    background: var(--paperlight);
+   background: plum;
 }
 
 
@@ -1172,7 +1174,7 @@ h3 .shape {
    height: 100%;
    left: 0;
    position: absolute;
-   background: linear-gradient(to bottom, var(--greenlight) 60%, var(--paper) 61%);
+   background: linear-gradient(to bottom, var(--greendark) 60%, var(--paper) 61%);
 
    border-right: 1px dotted var(--borderColor);
    box-shadow: 2px 0 var(--paper), 3px 0 var(--borderColor)
@@ -1496,6 +1498,7 @@ a:hover [id='scoopplot']+use {
    position: relative;
    height: 580px;
    /* width: 100%; */
+   padding: 0 48px;
 }
 
 
@@ -1510,26 +1513,23 @@ a:hover [id='scoopplot']+use {
    grid-template-areas: 'aboutplace placeimage';
    justify-content: space-between;
    align-items: flex-start;
-   width: 50%;
+   width: calc(50% - 0px);
    height: fit-content;
    position: absolute;
 
-   grid-template-areas: 'placeimage aboutplace';
-   width: 100%;
+   /* grid-template-areas: 'placeimage aboutplace'; */
 }
 
 
 .location_info {
    grid-area: aboutplace;
    max-width: 402px;
-   padding: 52px 48px;
+   max-width: 364px;
+   padding: 52px 0;
    padding-right: 0;
    opacity: 0;
    z-index: 0;
    transition: opacity 0.5s 0s ease;
-
-   padding-right: 40px;
-   padding-left: 0;
 }
 
 .location_info .forumname a {
@@ -1552,7 +1552,6 @@ a:hover [id='scoopplot']+use {
    z-index: 1;
    grid-area: placeimage;
    position: absolute;
-   /* right: 0; */
 
    display: block;
    width: 640px;
@@ -1561,16 +1560,14 @@ a:hover [id='scoopplot']+use {
    border: 80px solid cornflowerblue;
    background: rgba(0, 200, 20, 1);
    display: none;
-
-   margin-left: -40px;
+   margin-left: -120px;
    margin-top: -28px;
 }
 
 .windowcontent {
    position: absolute;
    grid-area: placeimage;
-   /* margin-right: 80px;
-   margin-top: 32px; */
+
    width: 640px;
    height: 640px;
    padding: 80px;
@@ -1580,7 +1577,7 @@ a:hover [id='scoopplot']+use {
    transform: rotate(-45deg);
    z-index: 2;
    transition: opacity 0.5s 0.25s ease, transform .75s 0s ease;
-   margin-left: -40px;
+   margin-left: -120px;
    margin-top: -28px;
 }
 
@@ -1623,10 +1620,10 @@ a:hover [id='scoopplot']+use {
    margin-left: 44px;
    z-index: 15;
 
-   left: unset;
+   /* left: unset;
    right: 0;
    margin-left: 0;
-   margin-right: 44px;
+   margin-right: 44px; */
 }
 
 .tab {
@@ -1803,13 +1800,13 @@ a:hover [id='scoopplot']+use {
    width: 100%;
    height: 110%;
    background: url('lintel.svg') right -20px top -5px / auto 180px, url('clouds-low.svg') left 10% bottom -100px / 110%;
+   background: url('lintel.svg') right -20px top -5px / auto 180px;
    background-repeat: no-repeat;
    position: absolute;
-   z-index: -2;
-   top: -4px;
+   top: -3px;
    right: 0%;
 
-   background: url('clouds-low.svg') left top -160px / 600px, var(--paperlight);
+   /* background: url('clouds-low.svg') left top -160px / 600px, var(--paperlight);
    background-repeat: no-repeat;
    top: unset;
    right: unset;
@@ -1817,7 +1814,7 @@ a:hover [id='scoopplot']+use {
    left: 0;
    height: 100%;
    z-index: 0;
-   opacity: .5;
+   opacity: .5; */
 }
 
 .forum-ooc-text {
@@ -1932,11 +1929,11 @@ a:hover [id='scoopooc']+use {
 } */
 
 
-/* CATEGORY: STATISTICS */
+/* INFOCENTER */
 
 .cat-infocenter-layout {
    display: grid;
-   grid-template-areas: 'main links rule recent';
+   grid-template-areas: 'links rule main recent';
    grid-template-columns: auto auto 2fr 300px;
    /* grid-template-rows: 1fr; */
    position: relative;
@@ -1965,7 +1962,7 @@ a:hover [id='scoopooc']+use {
    font: 400 16px var(--fontHero);
    padding: 8px 16px 4px;
    margin: 24px 0 24px;
-   border-left: 1px solid var(--borderColor);
+   border-right: 1px solid var(--borderColor);
 }
 
 .infocenter-area-links .flexcolumn {
@@ -2005,7 +2002,7 @@ a:hover [id='scoopooc']+use {
 }
 
 .infocenter-link-icon {
-   height: 56px;
+   height: 52px;
    margin-bottom: 4px;
    display: block;
 }
@@ -2344,6 +2341,7 @@ a.recent-poster::before {
 
    .plottinghubbg {
       right: -60px;
+      right: -4vw;
    }
 
    .forum-plottinghub {
@@ -2383,6 +2381,7 @@ a.recent-poster::before {
    /* CATEGORY: RP PLACES */
    .cat-locations-layout {
       height: calc(200px + calc(45vw - 70px));
+      padding: 0 32px;
    }
 
    .cat-locations-layout .forumrow {
@@ -2393,17 +2392,20 @@ a.recent-poster::before {
       width: 45vw;
       height: 45vw;
       border-width: 60px;
+      margin-left: -5vw;
+
    }
 
    .windowcontent {
       width: 45vw;
       height: 45vw;
       padding: 60px;
+      margin-left: -5vw;
    }
 
    .location_info {
-      padding: 32px;
       align-self: center;
+      padding: 32px 0;
    }
 
    .location_info .forumdesc {
@@ -2430,11 +2432,11 @@ a.recent-poster::before {
    }
 
 
-   /* CATEGORY: STATISTICS */
+   /* INFOCENTER */
 
    .cat-infocenter-layout {
       display: grid;
-      grid-template-areas: 'main links rule '
+      grid-template-areas: 'links rule main'
          'recent recent recent';
       grid-template-columns: auto auto 2fr;
       /* grid-template-rows: 1fr; */
@@ -2442,21 +2444,20 @@ a.recent-poster::before {
    }
 
    .infocenter-area-main {
-      padding: 32px 24px 20px 24px;
+      padding: 32px 24px 20px;
    }
 
    .infocenter-area-links {
-      padding-left: 20px;
+      padding-right: 20px;
    }
 
    .infocenter-area-recent {
       padding: 0 22px 32px;
-      height: fit-content;
+      /* height: fit-content; */
    }
 
    .recent-frame {
       all: unset;
-      height: fit-content;
    }
 
    .recent-content {
@@ -2767,6 +2768,7 @@ a.recent-poster::before {
    .cat-locations-layout {
       height: 460px;
       height: fit-content;
+      padding: 0;
    }
 
    .cat-locations-layout .forumrow {
@@ -2777,6 +2779,7 @@ a.recent-poster::before {
       padding: 16px 0 24px 24px;
       align-items: center;
       overflow: hidden;
+      width: 100%;
    }
 
    .cat-locations-layout .forumrow:not(:first-child) {
@@ -2848,14 +2851,14 @@ a.recent-poster::before {
 
 
 
-   /* CATEGORY: STATISTICS */
+   /* INFOCENTER */
 
    .cat-infocenter-layout {
       display: grid;
       grid-template-areas:
-         'main'
-         'rule'
          'links'
+         'rule'
+         'main'
          'recent';
       grid-template-columns: auto;
    }
@@ -2864,10 +2867,10 @@ a.recent-poster::before {
       flex-direction: row;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      padding: 24px 0 24px;
+      padding: 16px 0 12px;
       margin: 0 24px;
       gap: 16px;
-      border-left: none;
+      border-right: none;
       /* border-top: 3px double var(--borderColor); */
    }
 
@@ -2914,7 +2917,7 @@ a.recent-poster::before {
    }
 
    .infocenter-link-icon {
-      height: 48px;
+      height: 36px;
    }
 
 }
@@ -3050,6 +3053,7 @@ a.recent-poster::before {
    .location_info .forumdesc {
       max-height: unset;
       padding-right: 0;
+      display: none;
    }
 
 
@@ -3059,10 +3063,10 @@ a.recent-poster::before {
       padding: 20px 16px;
    }
 
-   /* CATEGORY: STATISTICS */
+   /* INFOCENTER */
 
    .infocenter-area-main {
-      padding: 20px 16px 0;
+      padding: 20px 16px 20px;
    }
 
    .infocenter-area-links {
