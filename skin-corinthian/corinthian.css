@@ -1179,12 +1179,10 @@ h3 .shape {
    height: 100%;
    left: 0;
    position: absolute;
-   background: linear-gradient(to bottom, var(--greendark) 60%, var(--paper) 61%);
+   background: linear-gradient(to bottom, var(--greenlight) 60%, var(--paper) 61%);
 
    border-right: 1px dotted var(--borderColor);
-   box-shadow: 2px 0 var(--paper), 3px 0 var(--borderColor)
-      /*, 7px 0 var(--paperlight), 8px 0 var(--borderColor)*/
-   ;
+   box-shadow: 2px 0 var(--paper), 3px 0 var(--borderColor);
    width: max(100%, 460px);
    overflow: hidden;
    z-index: -1;
@@ -1459,32 +1457,32 @@ a:hover [id='scoopplot']+use {
    border-radius: 100%;
 }
 
-.forum-twocol {
+.plotting-twocol {
    grid-area: dev;
    display: flex;
    flex-direction: row;
    position: relative;
    justify-content: space-evenly;
-   background-color: #dcd6c890;
+   background-color: var(--paper);
 }
 
 
-.forum-twocol .forumname {
+.plotting-twocol .forumname {
    font-family: var(--fontHero);
    margin-bottom: 6px;
 }
 
-.forum-twocol .forumrow {
+.plotting-twocol .forumrow {
    padding: 32px 24px;
    width: 100%;
    z-index: 10;
 }
 
-.forum-twocol .forumrow:first-of-type {
+.plotting-twocol .forumrow:first-of-type {
    padding-left: 40px;
 }
 
-.forum-twocol .forumrow:first-of-type::after {
+.plotting-twocol .forumrow:first-of-type::after {
    /* vertical rule */
    content: '';
    position: absolute;
@@ -1495,7 +1493,7 @@ a:hover [id='scoopplot']+use {
    background: var(--green);
 }
 
-.forum-twocol .lastpost-avi {
+.plotting-twocol .lastpost-avi {
    display: none;
 }
 
@@ -1507,8 +1505,8 @@ a:hover [id='scoopplot']+use {
 .cat-locations-layout {
    position: relative;
    height: 580px;
-   /* width: 100%; */
    padding: 0 48px;
+   z-index: 5;
 }
 
 
@@ -1534,9 +1532,8 @@ a:hover [id='scoopplot']+use {
 .location_info {
    grid-area: aboutplace;
    max-width: 402px;
-   max-width: 364px;
-   padding: 52px 0;
-   padding-right: 0;
+   width: min(35vw, 364px);
+   padding: 48px 0;
    opacity: 0;
    z-index: 0;
    transition: opacity 0.5s 0s ease;
@@ -1554,7 +1551,7 @@ a:hover [id='scoopplot']+use {
    padding-right: 1.5ch;
    height: calc(100% + 4px);
    max-height: 110px;
-   margin: 2px 0 1.2em;
+   margin: 4px 0 1.2em;
    overflow-y: auto;
 }
 
@@ -1638,9 +1635,9 @@ a:hover [id='scoopplot']+use {
 
 .tab {
    font: 14px var(--fontBodySerif);
-   min-width: 150px;
+   min-width: 120px;
    white-space: nowrap;
-   padding: 10px 40px 12px;
+   padding: 10px 20px 12px;
    text-align: center;
    transition: .25s ease;
    /* flex: 1 1 0px; */
@@ -1829,7 +1826,6 @@ a:hover [id='scoopplot']+use {
 
 .forum-ooc-text {
    grid-area: boardinfo;
-   /* z-index: 5; */
 }
 
 
@@ -1953,7 +1949,6 @@ a:hover [id='scoopooc']+use {
 .infocenter-area-main {
    grid-area: main;
    padding: 40px 32px 20px 32px;
-   /* z-index: 5; */
 }
 
 .infocenter-area-recent {
@@ -1969,7 +1964,6 @@ a:hover [id='scoopooc']+use {
    align-items: center;
    justify-content: space-between;
    gap: 20px;
-   /* z-index: 5; */
    font: 400 16px var(--fontHero);
    padding: 8px 16px 4px;
    margin: 24px 0 24px;
@@ -1982,10 +1976,9 @@ a:hover [id='scoopooc']+use {
 }
 
 .linksdivider[class*=divider] {
-   grid-area: rule;
+   /* grid-area: rule; */
    height: calc(100% - 68px) !important;
    margin: 36px -30px 0 0 !important;
-   opacity: .8;
    flex-direction: column;
    display: none;
 }
@@ -2024,7 +2017,7 @@ a:hover [id='scoopooc']+use {
 }
 
 .infocenter-h3 {
-   font: bold 14px/1em var(--fontBodySerif);
+   font: bold 14px/1.2em var(--fontBodySerif);
    letter-spacing: .4px;
 }
 
@@ -2062,7 +2055,6 @@ a:hover [id='scoopooc']+use {
    position: relative;
    overflow: auto;
    height: 100%;
-   /* z-index: 5; */
 }
 
 .onlinenowbox a,
@@ -2389,21 +2381,10 @@ a.recent-poster::before {
       width: unset;
    }
 
-   .forum-twocol {
-      flex-direction: column;
+   .plotting-twocol {
+      margin-left: 8px;
    }
 
-   .forum-twocol .forumrow,
-   .forum-twocol .forumrow:first-of-type {
-      padding: 24px 28px;
-   }
-
-   .forum-twocol .forumrow:first-of-type::after {
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 1px;
-   }
 
 
    /* CATEGORY: RP PLACES */
@@ -2414,6 +2395,7 @@ a.recent-poster::before {
 
    .cat-locations-layout .forumrow {
       grid-template-columns: calc(45vw - 70px) 1fr;
+      top: 160px;
    }
 
    .windowframe {
@@ -2421,7 +2403,6 @@ a.recent-poster::before {
       height: 45vw;
       border-width: 60px;
       margin-left: -5vw;
-
    }
 
    .windowcontent {
@@ -2437,21 +2418,25 @@ a.recent-poster::before {
    }
 
    .location_info .forumdesc {
-      /* max-height: none; */
+      max-height: unset;
+   }
+
+   .locationdivider {
+      order: 10;
    }
 
    .locationtabbox {
-      width: calc(100% - 48px);
-      margin: 16px 24px 0;
+      width: calc(100% - 0px);
+      margin: 16px 0 0;
       padding-bottom: 24px;
 
-      /* position: relative; */
+      position: relative;
    }
 
 
    /* CATEGORY: OOC */
    .twocolcat .cat-ooc-layout {
-      padding: 48px 24px 24px;
+      padding: 72px 24px 24px;
    }
 
 
@@ -2667,7 +2652,7 @@ a.recent-poster::before {
    }
 
    .cat-getstarted-handbook {
-      background: url('clouds.svg') left bottom -80px / 860px, var(--green);
+      background: url('clouds.svg') left bottom -80px / 860px, #B6BDB9;
       padding: 24px;
       height: fit-content;
    }
@@ -2769,12 +2754,31 @@ a.recent-poster::before {
       display: none !important;
    }
 
-   .forum-twocol {
+
+   .plotting-twocol {
+      flex-direction: column;
+      margin-left: 0;
+   }
+
+   .plotting-twocol .forumrow,
+   .plotting-twocol .forumrow:first-of-type {
+      padding: 24px 28px;
+   }
+
+   .plotting-twocol .forumrow:first-of-type::after {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+   }
+
+
+   .plotting-twocol {
       background-color: transparent;
    }
 
-   .forum-twocol .forumrow,
-   .forum-twocol .forumrow:first-of-type {
+   .plotting-twocol .forumrow,
+   .plotting-twocol .forumrow:first-of-type {
       padding: 20px 24px;
    }
 
@@ -2807,6 +2811,7 @@ a.recent-poster::before {
       align-items: center;
       overflow: hidden;
       width: 100%;
+      top: 0;
    }
 
    .cat-locations-layout .forumrow:not(:first-child) {
@@ -2883,10 +2888,11 @@ a.recent-poster::before {
    .cat-infocenter-layout {
       display: grid;
       grid-template-areas:
-         'links'
-         'rule'
          'main'
-         'recent';
+         'recentrule'
+         'recent'
+         'rule'
+         'links';
       grid-template-columns: auto;
    }
 
@@ -2894,11 +2900,10 @@ a.recent-poster::before {
       flex-direction: row;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      padding: 16px 0 12px;
+      padding: 16px 0;
       margin: 0 24px;
       gap: 16px;
       border-right: none;
-      /* border-top: 3px double var(--borderColor); */
    }
 
    .onlinenowbox {
@@ -2915,10 +2920,7 @@ a.recent-poster::before {
    }
 
    .infocenter-area-recent {
-      background: var(--greendark);
-      margin: 0 24px 28px;
-      padding: 0;
-      /* margin: 0; */
+      padding: 20px 24px 16px;
    }
 
    .linksdivider[class*=divider] {
@@ -2957,15 +2959,18 @@ a.recent-poster::before {
       background: violet;
    }
 
+   .text60 {
+      font-size: 24px;
+   }
 
-   .text60,
    .text52,
    .text40,
    .text36,
    .text32,
    .text28,
    .text24 {
-      font-size: 24px;
+      font-size: 20px;
+      margin-bottom: 6px !important;
    }
 
    .text20 {
@@ -2980,16 +2985,20 @@ a.recent-poster::before {
    /* NAV PANEL */
 
    #navpanel {
-      top: 90px;
+      top: 110px;
       padding: 8px;
    }
 
    .navpanelinset {
-      padding: 32px 24px;
+      padding: 24px;
    }
 
    .navpanel-header.flexrow {
       justify-content: start;
+   }
+
+   .accountswitchername {
+      font-size: 28px;
    }
 
    .login-avi {
@@ -2998,6 +3007,7 @@ a.recent-poster::before {
 
    .navpanel-quicklinks.flexrow {
       flex-direction: column;
+      gap: 12px;
       margin-bottom: 24px;
    }
 
@@ -3038,7 +3048,7 @@ a.recent-poster::before {
    /* CATEGORY: GET STARTED */
 
    .cat-getstarted-handbook {
-      padding: 28px 16px 24px;
+      padding: 20px 16px 20px;
       background: var(--paperlight);
    }
 
@@ -3053,9 +3063,6 @@ a.recent-poster::before {
       color: var(--greendark);
    }
 
-   .handbook-desc {
-      display: none;
-   }
 
    .cat-getstarted-boards {
       padding: 0px;
@@ -3080,8 +3087,8 @@ a.recent-poster::before {
       padding: 20px 16px;
    }
 
-   .forum-twocol .forumrow,
-   .forum-twocol .forumrow:first-of-type {
+   .plotting-twocol .forumrow,
+   .plotting-twocol .forumrow:first-of-type {
       padding: 20px 16px;
    }
 
@@ -3091,7 +3098,7 @@ a.recent-poster::before {
    .cat-locations-layout .forumrow {
       grid-template-areas: "aboutplace";
       grid-template-columns: 1fr;
-      padding: 12px 16px 20px;
+      padding: 8px 16px 20px;
    }
 
    .windowcontent,
@@ -3124,7 +3131,7 @@ a.recent-poster::before {
    }
 
    .infocenter-area-recent {
-      margin: 0 16px 20px;
+      padding: 20px 16px;
    }
 
 
