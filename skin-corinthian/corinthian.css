@@ -57,6 +57,7 @@
    --linkaccent: var(--brick);
    --frameoffset: 0px;
    --navgradient: linear-gradient(to right, var(--blackish) 50%, rgba(0, 0, 0, 0) 80%);
+   --navgradient: var(--blackish);
    /* For hero */
    --fontHero: 'AcademyEngravedStd';
    /* --fontHero: 'Macondo Swash Caps', arial; */
@@ -634,8 +635,8 @@ h3 .shape {
    background-size: contain;
 }
 
-.plinth:before,
-.plinth:after {
+.plinth::before,
+.plinth::after {
    content: '';
    position: relative;
    width: 15px;
@@ -646,7 +647,7 @@ h3 .shape {
    background-repeat: no-repeat;
 }
 
-.plinth:after {
+.plinth::after {
    transform: scaleX(-1);
    margin-left: 0;
    margin-right: -8px;
@@ -691,7 +692,7 @@ h3 .shape {
    white-space: nowrap;
 }
 
-.breadcrumbs a:first-child:after {
+.breadcrumbs a:first-child::after {
    content: '';
    height: 14px;
    width: 1px;
@@ -745,15 +746,13 @@ h3 .shape {
 
 
 
-.scoopedbox {
+/* svg for scooped borders */
+/* .scoopedbox {
    --r: 6px;
    box-sizing: border-box;
    position: relative;
    padding: var(--r);
-   /* width: calc(100% - 2*var(--r)); */
    flex: 1 1 0px;
-   /* max-width: 47em;
-   min-height: 10em; */
    color: #000;
    background-image: radial-gradient(circle at 0 0,
          rgba(0, 0, 0, 0) var(--r),
@@ -784,6 +783,7 @@ h3 .shape {
    z-index: -1;
    width: 100%;
    height: 100%;
+   display: none;
 }
 
 .scoopedbox::before {
@@ -808,6 +808,43 @@ h3 .shape {
    transform: translate(-50%, -50%);
    border-top: 1px solid var(--green);
    border-bottom: 1px solid var(--green);
+} */
+
+.scoopedbox svg {
+   display: none;
+}
+
+a.scoopedbox {
+   position: relative;
+}
+
+.scoopedbox {
+   /* border color */
+   position: relative;
+   box-sizing: border-box;
+   background: var(--borderColor);
+   clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 6px), 0% 6px);
+}
+
+.scoopedbox::before {
+   /* "transparent" */
+   content: '';
+   position: absolute;
+   top: 1px;
+   left: 1px;
+   width: calc(100% - 2px);
+   height: calc(100% - 2px);
+   background-color: var(--paperlight);
+   background-image: url('https://media.discordapp.net/attachments/683720444796338317/891394463040147607/textured-background-white-tone.jpg?width=1397&height=931');
+   background-blend-mode: multiply;
+   z-index: -1;
+   clip-path: polygon(9px 0%, calc(100% - 9px) 0%, 100% 5px, 100% calc(100% - 5px), calc(100% - 9px) 100%, 9px 100%, 0% calc(100% - 5px), 0% 5px);
+   transition: .5s ease;
+}
+
+a.scoopedbox:hover::before,
+.tab.scoopedbox:hover::before {
+   background-color: var(--green);
 }
 
 
@@ -1075,8 +1112,8 @@ h3 .shape {
 }
 
 
-.arrowhead-1:after,
-.arrowhead-1:before {
+.arrowhead-1::after,
+.arrowhead-1::before {
    content: "";
    background: url('arrowhead-1.svg') center / contain;
    background-repeat: no-repeat;
@@ -1086,7 +1123,7 @@ h3 .shape {
    display: block;
 }
 
-.categoryLabel .arrowhead-1:after {
+.categoryLabel .arrowhead-1::after {
    display: none;
 }
 
@@ -1123,8 +1160,8 @@ h3 .shape {
    text-align: center;
 }
 
-[class*=arrowhead-2]:before,
-[class*=arrowhead-2]:after {
+[class*=arrowhead-2]::before,
+[class*=arrowhead-2]::after {
    content: "";
    background: url('arrowhead-2.svg') center / contain;
    background-repeat: no-repeat;
@@ -1135,7 +1172,7 @@ h3 .shape {
    transform: scale(-1);
 }
 
-[class*=arrowhead-2]:after {
+[class*=arrowhead-2]::after {
    transform: scale(1);
 }
 
@@ -1288,7 +1325,7 @@ h3 .shape {
    font-family: var(--fontHero);
    margin-bottom: 2px;
    font-variation-settings: 'opsz' 72;
-   color: var(--brickdark);
+   color: var(--greendark);
    display: block;
    /* text-shadow: 0 0 1px var(--blackish), 2px 0 0px var(--blackish);
    color: var(--paper); */
@@ -1296,7 +1333,6 @@ h3 .shape {
 
 .handbook-desc {
    font: 500 16px/1.3em var(--fontBodySerif);
-   color: var(--blackish);
 }
 
 .cat-getstarted-boards {
@@ -1539,8 +1575,9 @@ a:hover [id='scoopplot']+use {
    transition: opacity 0.5s 0s ease;
 }
 
-.location_info .forumname a {
+.location_info .forumname {
    font-family: var(--fontHero);
+   margin-bottom: 4px;
    margin-left: -2px;
    display: block;
 }
@@ -1551,7 +1588,7 @@ a:hover [id='scoopplot']+use {
    padding-right: 1.5ch;
    height: calc(100% + 4px);
    max-height: 110px;
-   margin: 4px 0 1.2em;
+   margin-bottom: 1.2em;
    overflow-y: auto;
 }
 
@@ -1640,7 +1677,7 @@ a:hover [id='scoopplot']+use {
    padding: 10px 20px 12px;
    text-align: center;
    transition: .25s ease;
-   /* flex: 1 1 0px; */
+   flex: 1 1 0px;
    cursor: pointer;
 }
 
@@ -1652,6 +1689,10 @@ a:hover [id='scoopplot']+use {
    font-family: var(--fontBodySerif);
    font-weight: 700;
    color: var(--paper);
+}
+
+.scoopedbox.tabbedlocations_active::before {
+   background: var(--green);
 }
 
 .tab [id='scoopedtab']+use {
@@ -1789,7 +1830,7 @@ a:hover [id='scoopplot']+use {
    z-index: 5;
    box-sizing: border-box;
    overflow: hidden;
-   padding: 80px 48px 40px;
+   padding: 88px 48px 40px;
 }
 
 .twocolcat .cat-ooc-layout .forumrow {
@@ -1810,7 +1851,7 @@ a:hover [id='scoopplot']+use {
    background: url('lintel.svg') right -20px top -5px / auto 180px;
    background-repeat: no-repeat;
    position: absolute;
-   top: -3px;
+   top: -0px;
    right: 0%;
 
    /* background: url('clouds-low.svg') left top -160px / 600px, var(--paperlight);
@@ -1988,7 +2029,7 @@ a:hover [id='scoopooc']+use {
    margin-right: -1px;
 }
 
-.linksdivider[class*=divider][class*=arrowhead-2]:after {
+.linksdivider[class*=divider][class*=arrowhead-2]::after {
    transform: rotate(90deg);
    margin-right: 0;
    display: none;
@@ -2071,7 +2112,7 @@ a:hover [id='scoopooc']+use {
 }
 
 .censusdivider[class*=divider] {
-   margin-bottom: 6px;
+   margin-bottom: 8px;
 }
 
 
@@ -2436,7 +2477,7 @@ a.recent-poster::before {
 
    /* CATEGORY: OOC */
    .twocolcat .cat-ooc-layout {
-      padding: 72px 24px 24px;
+      padding: 80px 24px 24px;
    }
 
 
@@ -2690,7 +2731,6 @@ a.recent-poster::before {
       background-size: 860px;
       background-position: left bottom -100px;
       z-index: 0;
-
       display: none;
    }
 
@@ -2847,6 +2887,10 @@ a.recent-poster::before {
       padding-top: 12px;
    }
 
+   .location_info .forumname {
+      margin-left: 0;
+   }
+
    .location_info .forumdesc {
       max-width: unset;
       max-height: 80px;
@@ -2912,7 +2956,7 @@ a.recent-poster::before {
 
    .censusdivider[class*=divider] {
       margin-top: 24px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
    }
 
    .infocenter-totals .infocenter-census:last-child {
@@ -2930,12 +2974,12 @@ a.recent-poster::before {
       width: calc(100% - 48px);
    }
 
-   .linksdivider[class*=divider][class*=arrowhead-2]:after {
+   .linksdivider[class*=divider][class*=arrowhead-2]::after {
       transform: none;
       display: block;
    }
 
-   .linksdivider[class*=divider][class*=arrowhead-2]:before {
+   .linksdivider[class*=divider][class*=arrowhead-2]::before {
       transform: rotate(0) scaleX(-1);
       display: block;
    }
@@ -2969,8 +3013,7 @@ a.recent-poster::before {
    .text32,
    .text28,
    .text24 {
-      font-size: 20px;
-      margin-bottom: 6px !important;
+      font-size: 22px;
    }
 
    .text20 {
@@ -2980,6 +3023,10 @@ a.recent-poster::before {
 
    h3 {
       white-space: normal;
+   }
+
+   .forumname {
+      margin-bottom: 6px !important;
    }
 
    /* NAV PANEL */
