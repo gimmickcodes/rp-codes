@@ -38,20 +38,20 @@
 :root {
    /* --paper: #faf5ed;
    --paperdark: #E9E4D7; */
-   --paperlight: #EEEAE0;
-   --paper: #E9E4D7;
-   --paperdark: #dcd6c8;
+   --paperlight: #D6D3CA;
+   --paper: #D2CDC2;
+   --paperdark: #C6C1B5;
    --blackish: #413737;
 
-   --green: #6D8076;
-   --greendark: #54635B;
-   --greenlight: #96A29B;
-   --purple: #83849A;
-   --purpledark: #746D8C;
-   --purplelight: #AEAFBF;
-   --brick: #9E8382;
-   --brickdark: #8D7574;
-   --bricklight: #B6A4A3;
+   --green: #62736A;
+   --greendark: #4C5952;
+   --greenlight: #87928B;
+   --purple: #76778A;
+   --purpledark: #68637D;
+   --purplelight: #9D9DAB;
+   --brick: #8D7675;
+   --brickdark: #7E6968;
+   --bricklight: #A49493;
 
    --borderColor: var(--green);
    --linkaccent: var(--brick);
@@ -88,6 +88,7 @@
 
 html {
    background: var(--blackish);
+   background: #a9a59c;
 }
 
 .grp-pointed {
@@ -1011,7 +1012,6 @@ a.scoopedbox:hover::before,
 }
 
 .cat-innerwrap {
-   background-color: var(--paperlight);
    position: relative;
    width: 100%;
 }
@@ -1830,12 +1830,13 @@ a:hover [id='scoopplot']+use {
    z-index: 5;
    box-sizing: border-box;
    overflow: hidden;
-   padding: 88px 48px 40px;
+   padding: 100px 48px 40px;
 }
 
 .twocolcat .cat-ooc-layout .forumrow {
    display: grid;
    grid-template-areas: 'boardinfo'
+      '.'
       'subforums';
    grid-template-columns: 1fr;
    grid-row-gap: 20px;
@@ -1843,6 +1844,8 @@ a:hover [id='scoopplot']+use {
    align-items: flex-start;
    width: 100%;
 }
+
+.cat-ooc-layout [class*=divider][class*=arrowhead-2] {}
 
 .forum-ooc-bg {
    width: 100%;
@@ -2919,6 +2922,12 @@ a.recent-poster::before {
 
    .twocolcat .cat-ooc-layout {
       padding: 24px;
+   }
+
+   .twocolcat .cat-ooc-layout .forumrow {
+      grid-template-areas:
+         'boardinfo'
+         'subforums'
    }
 
    .twocolcat .cat-ooc-layout .forumrow-subs a {
