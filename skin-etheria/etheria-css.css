@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 :root {
    /* low number dark, high number light */
    --htmlbg: 195 5% 15%;
@@ -45,12 +47,12 @@
    --hero: url(assets-final/hero.png);
 
    /* fonts */
-   --norman: "norman-variable", sans-serif;
-   --norman-feature-settings: 'ss01' on;
-   --stencil: "norman-stencil", sans-serif;
-   --stencil-feature-settings: 'swsh' on;
+   --norman: "norman-variable", serif;
+   --norman-feature-settings: 'ss01' on, 'ss12' on;
+   --stencil: "norman-stencil", serif;
    --fontserif: 'Cormorant', serif;
-   --fontserifSC: 'Cormorant SC', serif;
+   --fontSC: 'Cormorant SC', serif;
+   --fontsans: 'Lato', sans-serif;
 
    /* blend modes */
    --lighten: lighten;
@@ -166,13 +168,14 @@ body::after {
    padding: 0 28px;
    background: hsl(var(--darkgray) / .4);
    backdrop-filter: blur(7.5px);
+   -webkit-backdrop-filter: blur(7.5px);
    border-bottom: 1px solid var(--bordercolor);
    gap: 20px;
    color: hsl(var(--gray3));
 }
 
 .topnav a {
-   font: 700 10px/1em sans-serif;
+   font: 700 10px/1em var(--fontsans);
    letter-spacing: .2em;
    text-transform: uppercase;
    color: hsl(var(--gray3));
@@ -245,7 +248,7 @@ body::after {
 
 .hero-text h3 {
    margin-top: -12px;
-   font: 500 20px/24px var(--fontserifSC);
+   font: 500 20px/24px var(--fontSC);
    letter-spacing: 0.15em;
    color: hsl(var(--gray3));
    opacity: .8;
@@ -286,7 +289,7 @@ body::after {
 .bp-nav-label {
    display: flex;
    gap: 12px;
-   font: 300 8px/1em sans-serif;
+   font: 300 8px/1em var(--fontsans);
    text-transform: uppercase;
    letter-spacing: .25em;
    color: hsl(var(--gray3));
@@ -335,6 +338,7 @@ body::after {
    grid-area: bpheader;
    background: hsl(var(--darkgray) / .7);
    backdrop-filter: blur(12.5px);
+   -webkit-backdrop-filter: blur(12.5px);
    border: 1px solid hsl(var(--gray1) / .3);
    border-bottom-color: hsl(var(--darkgray));
    display: flex;
@@ -347,8 +351,9 @@ body::after {
    grid-area: bpbody;
    background: hsl(var(--gray1) / .3);
    backdrop-filter: blur(12.5px);
+   -webkit-backdrop-filter: blur(12.5px);
    overflow: hidden;
-   font: 13px/1.4em sans-serif;
+   font: 13px/1.4em var(--fontsans);
 }
 
 [class*=bp-slide] {
@@ -384,7 +389,7 @@ body::after {
    display: block;
    width: fit-content;
    margin-bottom: 16px;
-   font: 700 10px/1em sans-serif;
+   font: 700 10px/1em var(--fontsans);
    letter-spacing: .2em;
    text-transform: uppercase;
    color: hsl(var(--accent2-light));
@@ -421,7 +426,7 @@ body::after {
    padding: 8px;
    background: hsl(var(--black) / .2);
    border: 1px solid var(--bordercolor);
-   font: 700 8px/1em sans-serif;
+   font: 700 8px/1em var(--fontsans);
    letter-spacing: .2em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -454,7 +459,7 @@ body::after {
 }
 
 #navstrip a {
-   font: 10px/1em sans-serif;
+   font: 10px/1em var(--fontsans);
    letter-spacing: .2em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -507,8 +512,7 @@ body::after {
 .category-header,
 .topic-list-header {
    margin-bottom: 24px;
-   padding-bottom: .4em;
-   font: 32px/1em var(--norman);
+   font: 32px/1.5em var(--norman);
    font-variation-settings: "wght" 540;
    font-feature-settings: var(--norman-feature-settings);
    letter-spacing: 0.15em;
@@ -537,7 +541,7 @@ body::after {
 
 .guidebook-forum {
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: 1fr .9fr;
    grid-template-areas: '. forum';
    height: 570px;
    background: url(assets-final/guidebookbg.png) top left / contain no-repeat, hsl(var(--main1));
@@ -558,13 +562,13 @@ body::after {
 .gb-desc {
    width: min(100%, 400px);
    margin: 0 0 24px;
-   font-family: sans-serif;
+   font: 15px/1.5em var(--fontsans);
    color: hsl(var(--gray2));
 }
 
 
 .gb-links a {
-   font: 700 10px/1em sans-serif;
+   font: 700 10px/1em var(--fontsans);
    letter-spacing: .2em;
    text-transform: uppercase;
    color: hsl(var(--accent2-med));
@@ -649,7 +653,7 @@ a.topic-title {
 }
 
 .factions-forum .forum-desc {
-   font: 15px / 1.5em sans-serif;
+   font: 15px / 1.5em var(--fontsans);
    color: hsl(var(--gray2));
 }
 
@@ -666,7 +670,7 @@ a.topic-title {
    justify-content: center;
    height: 78px;
    border: 1px solid var(--bordercolor);
-   font: 11px/1.2em sans-serif;
+   font: 11px/1.2em var(--fontsans);
    letter-spacing: 0.2em;
    text-transform: uppercase;
    background: hsl(var(--grp-med));
@@ -698,7 +702,8 @@ a.topic-title {
 
 .locations-forum {
    display: grid;
-   grid-template: 'tabwrap' 110px
+   grid-template:
+      'tabwrap' 110px
       'slideswrap' 620px;
 }
 
@@ -713,7 +718,7 @@ a.topic-title {
 
 .location-tab {
    width: fit-content;
-   font: 20px/1.2em var(--fontserifSC);
+   font: 20px/1.2em var(--fontSC);
    letter-spacing: 0.1em;
    text-transform: lowercase;
    color: hsl(var(--white));
@@ -777,7 +782,7 @@ a.topic-title {
 }
 
 a.loc-title {
-   font: 500 20px/1.2em var(--fontserifSC);
+   font: 500 20px/1.2em var(--fontSC);
    letter-spacing: 0.15em;
    text-transform: lowercase;
    color: hsl(var(--accent1-med));
@@ -791,7 +796,7 @@ a.loc-title div {
 }
 
 .loc-desc {
-   font: 15px/1.5em sans-serif;
+   font: 15px/1.5em var(--fontsans);
    color: hsl(var(--gray2))
 }
 
@@ -935,7 +940,7 @@ a.loc-title div {
 .archivesubboards a {
    display: inline-block;
    padding: 10px 12px 9px;
-   font: 800 10px/1.5em sans-serif;
+   font: 800 10px/1.5em var(--fontsans);
    letter-spacing: 0.2em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -964,7 +969,7 @@ a.loc-title div {
 
 .forumdefault .forum-desc {
    padding: 20px 20px 0;
-   font: 15px/1.5em sans-serif;
+   font: 15px/1.5em var(--fontsans);
    color: hsl(var(--gray2));
 }
 
@@ -975,7 +980,7 @@ a.loc-title div {
 
 [class*=lastpost] span b {
    margin-right: 8px;
-   font: 700 9px/1.5em sans-serif;
+   font: 700 9px/1.5em var(--fontsans);
    letter-spacing: .1em;
    text-transform: uppercase;
 }
@@ -989,7 +994,7 @@ a.lp-thread {
 }
 
 .lp {
-   font: 12px/1.5em sans-serif;
+   font: 12px/1.5em var(--fontsans);
    text-transform: uppercase;
    letter-spacing: .1em;
    color: hsl(var(--gray2));
@@ -1033,7 +1038,7 @@ a.lp-user {
 .forumfooter a {
    display: inline-block;
    padding: 8px 12px;
-   font: 800 10px/1.5em sans-serif;
+   font: 800 10px/1.5em var(--fontsans);
    letter-spacing: 0.2em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -1076,11 +1081,12 @@ a.lp-user {
    position: absolute;
    right: 32px;
    bottom: 24px;
-   font: 300 10px/1.5em sans-serif;
+   font: 300 10px/1.5em var(--fontsans);
    text-transform: uppercase;
    letter-spacing: .1em;
    background: hsl(var(--darkgray) / .9);
    backdrop-filter: blur(2px);
+   -webkit-backdrop-filter: blur(2px);
    color: hsl(var(--gray3));
 }
 
@@ -1100,7 +1106,7 @@ a.lp-user {
 }
 
 .sc-welcome {
-   font: 500 20px/1.2em var(--fontserifSC);
+   font: 500 20px/1.2em var(--fontSC);
    text-transform: lowercase;
    letter-spacing: .15em;
    color: hsl(var(--accent1-med));
@@ -1120,7 +1126,7 @@ a.lp-user {
 .sc-linkbox a {
    display: inline-block;
    padding: 6px 10px 5px;
-   font: 800 10px/1.5em sans-serif;
+   font: 800 10px/1.5em var(--fontsans);
    letter-spacing: 0.2em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -1167,7 +1173,7 @@ a.lp-user {
 }
 
 .onlinepast span {
-   font: 400 10px/1.8em sans-serif;
+   font: 400 10px/1.8em var(--fontsans);
    text-transform: uppercase;
    letter-spacing: .1em;
    color: hsl(var(--grp-light));
@@ -1192,19 +1198,28 @@ a.lp-user {
    font-variation-settings: "wght" 520;
 }
 
+
 .sc-footer {
+   width: 100%;
    grid-area: rt;
-   padding: 28px 48px 36px;
-   align-items: center;
+   padding: var(--insetgap);
    background: hsl(var(--darkgray)/.95);
+   overflow: hidden;
+}
+
+.sc-footer .flexrow {
    overflow: auto;
    width: 100%;
+   height: 100%;
+   padding: 12px 40px 20px;
+   align-items: center;
+   margin-bottom: var(--insetgap);
 }
 
 .sc-footer h3 {
    all: unset;
    display: block;
-   font: 500 17px/1em var(--fontserifSC);
+   font: 500 17px/1em var(--fontSC);
    letter-spacing: 0.1em;
    text-transform: lowercase;
    white-space: nowrap;
@@ -1253,7 +1268,7 @@ a.lp-user {
 }
 
 .rt-thread {
-   font: 400 10px/1.5em sans-serif;
+   font: 400 10px/1.5em var(--fontsans);
    text-transform: uppercase;
    letter-spacing: .1em;
    color: hsl(var(--white) / .4);
@@ -1310,7 +1325,7 @@ a.lp-user {
    align-items: center;
    gap: 8px;
    margin-bottom: 2em;
-   font: 700 12px/1em sans-serif;
+   font: 700 12px/1em var(--fontsans);
    letter-spacing: .2em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -1361,7 +1376,7 @@ a.lp-user {
 .topic-main .small {
    display: block;
    margin-left: 1em;
-   font: 700 10px/1em sans-serif;
+   font: 700 10px/1em var(--fontsans);
    letter-spacing: .2em;
    text-transform: uppercase;
    color: hsl(var(--gray2)/ .5);
@@ -1378,7 +1393,7 @@ a.topic-title {
 }
 
 .topic-desc {
-   font: 700 10px/1em sans-serif;
+   font: 700 10px/1em var(--fontsans);
    letter-spacing: .2em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -1393,7 +1408,7 @@ a.topic-title {
    grid-template-columns: 1fr 3fr;
    gap: 32px;
    padding: 0 0 0 30px;
-   font: 11px/1.5em sans-serif;
+   font: 11px/1.5em var(--fontsans);
    text-transform: uppercase;
    letter-spacing: .1em;
    color: hsl(var(--gray2));
@@ -1412,7 +1427,7 @@ a.topic-title {
    display: flex;
    align-items: center;
    padding-right: 40px;
-   padding-left: 32px;
+   padding-left: 36px;
    border-left: 1px solid var(--bordercolor);
 }
 
@@ -1433,7 +1448,7 @@ a.topic-title {
    display: flex;
    border-top: 2px solid hsl(var(--main1));
    border-bottom: 1px solid hsl(var(--main1));
-   font: 400 12px/1.5em sans-serif;
+   font: 400 12px/1.5em var(--fontsans);
    color: hsl(var(--gray2) / .75);
 }
 
@@ -1459,7 +1474,7 @@ input.forminput.memberlist-namesearch {
    border: 1px solid hsl(var(--htmlbg));
    text-transform: none;
    letter-spacing: 0;
-   font: 12px/1em sans-serif;
+   font: 12px/1em var(--fontsans);
 }
 
 input.forminput.memberlist-namesearch::placeholder {
@@ -1473,7 +1488,7 @@ input.forminput.memberlist-namesearch::placeholder {
 
 .member-sidebar-header {
    margin-bottom: 1.5em;
-   font: 600 17px/1.2em var(--fontserifSC);
+   font: 600 17px/1.2em var(--fontSC);
    letter-spacing: .15em;
    text-transform: lowercase;
    color: hsl(var(--accent1-med));
@@ -1497,7 +1512,7 @@ input.forminput.memberlist-namesearch::placeholder {
 }
 
 .member-filter-title {
-   font: 600 17px/1.2em var(--fontserifSC);
+   font: 600 17px/1.2em var(--fontSC);
    letter-spacing: .15em;
    text-transform: lowercase;
    color: hsl(var(--accent1-med));
@@ -1538,7 +1553,7 @@ input.forminput.memberlist-namesearch::placeholder {
 
 .member-filter-list a {
    margin-right: 2px;
-   font: 600 10px/2em sans-serif;
+   font: 600 10px/2em var(--fontsans);
    letter-spacing: 0.1em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -1629,7 +1644,7 @@ input.forminput.memberlist-namesearch::placeholder {
    display: grid;
    grid-template-rows: auto 1fr 76px;
    height: 100%;
-   font: 400 10px/1.5em sans-serif;
+   font: 400 10px/1.5em var(--fontsans);
    letter-spacing: 0.1em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -1688,7 +1703,7 @@ input.forminput.memberlist-namesearch::placeholder {
    margin: 0 0 1em;
    max-height: 150px;
    overflow: auto;
-   font: 13px/1.4em sans-serif;
+   font: 13px/1.4em var(--fontsans);
    letter-spacing: .02em;
    text-transform: none;
 }
@@ -1727,7 +1742,7 @@ input.forminput.memberlist-namesearch::placeholder {
 }
 
 .app-intro {
-   padding: 96px 90px 48px;
+   padding: 96px 90px 64px;
    display: grid;
    grid-template: auto / auto 1fr;
    grid-column-gap: 64px;
@@ -1740,6 +1755,7 @@ input.forminput.memberlist-namesearch::placeholder {
    width: 100%;
    height: 100%;
    background: linear-gradient(to right, hsl(var(--grp-med) / .95) 254px, hsl(var(--darkgray) / .95) 254px);
+   filter: saturate(.5);
 }
 
 .app-intro-bg::after {
@@ -1755,6 +1771,7 @@ input.forminput.memberlist-namesearch::placeholder {
    width: 250px;
    height: 450px;
    object-fit: cover;
+   box-shadow: 0 20px 40px #00000050;
 }
 
 .app-basics {
@@ -1767,15 +1784,21 @@ input.forminput.memberlist-namesearch::placeholder {
 .app-side-info {
    margin-top: 16px;
    text-align: right;
-   font: 700 10px/1.5em sans-serif;
+}
+
+.app-side-info span {
+   margin-left: 1em;
+   font: 700 10px/1.5em var(--fontsans);
    letter-spacing: 0.1em;
    text-transform: uppercase;
    color: hsl(var(--accent1-med));
 }
 
 .app-side-info b {
+   margin-right: 2px;
    font-size: 20px;
-   font-weight: 400;
+   font-weight: 300;
+   letter-spacing: 0;
    color: hsl(var(--gray2));
 }
 
@@ -1791,8 +1814,8 @@ input.forminput.memberlist-namesearch::placeholder {
 .app-basics h3 {
    all: unset;
    font: italic 600 24px/1.2em var(--fontserif);
-   color: var(--bordercolor);
-   margin: -4px 0 24px;
+   color: hsl(var(--gray2) / .3);
+   margin: -4px 0 32px;
 }
 
 .app-statsgrid {
@@ -1803,7 +1826,7 @@ input.forminput.memberlist-namesearch::placeholder {
 }
 
 .app-stat {
-   font: 12px/1.5em sans-serif;
+   font: 12px/1.5em var(--fontsans);
    letter-spacing: 0.05em;
    color: hsl(var(--gray2));
    margin-bottom: 16px;
@@ -1823,31 +1846,38 @@ input.forminput.memberlist-namesearch::placeholder {
    text-align: right;
 }
 
+.app-fc .app-stat {
+   margin-bottom: 0;
+}
+
 .app_body {
    display: grid;
-   grid-template: 500px / 1fr 250px;
+   grid-template: 'maincontent tabs' 500px / 1fr 250px;
    border-top: 1px solid var(--bordercolor);
    border-bottom: 1px solid var(--bordercolor);
    padding: 0;
 }
 
 .app_maincontent {
+   grid-area: maincontent;
    border-right: 1px solid var(--bordercolor);
-   font: 15px/1.5em sans-serif;
+   font: 400 14px/1.5em var(--fontsans);
    color: hsl(var(--gray2) / .7);
 }
 
 .app_tabcontent {
    position: absolute;
+   width: 100%;
    height: calc(100% - 8px);
    margin: 4px 4px 4px 0;
    overflow: auto;
-   padding: 60px 90px;
+   padding: 40px 80px 60px 90px;
    opacity: 0;
    transition: .25s;
 }
 
 .app_tabwrap {
+   grid-area: tabs;
    position: relative;
    padding-left: 68px;
    align-items: flex-start;
@@ -1919,6 +1949,195 @@ input.forminput.memberlist-namesearch::placeholder {
    z-index: 10;
 }
 
+.sectdivider {
+   display: block;
+   width: calc(100% + 170px);
+   margin: 3em -90px;
+   border: 0;
+   border-top: 1px solid var(--bordercolor)
+}
+
+
+.sectdivider:first-child {
+   display: none;
+}
+
+.app-snapshot {
+   background: hsl(var(--grp-med) / .5);
+   padding: 1.5em;
+   margin: 0 0 44px;
+   border: 1px solid hsl(var(--grp-med) / .5);
+   font: 700 18px/1.3em var(--fontserif);
+   box-shadow: inset 0 0 0 2px hsl(var(--darkgray));
+}
+
+.app-snapshot h4 {
+   all: unset;
+   display: block;
+   margin-bottom: 4px;
+   font: 700 12px/1.5em var(--fontsans);
+   text-transform: uppercase;
+   letter-spacing: .1em;
+   color: hsl(var(--grp-light));
+}
+
+.elements {
+   margin: 0 0 24px;
+   text-align: center;
+   font: 16px var(--fontsans);
+}
+
+.elements span {
+   display: block;
+   font: 40px/1em var(--fontSC);
+   letter-spacing: 0.15em;
+   text-transform: lowercase;
+   color: hsl(var(--grp-light));
+   font-feature-settings: var(--norman-feature-settings);
+   gap: 12px
+      /* font-variation-settings: "wght" 540; */
+}
+
+/* .elements span:last-child::before {
+   content: '&';
+   display: block;
+   font-size: 120px;
+   color: hsl(var(--gray2) / .2);
+} */
+
+.app_tabcontent h1 {
+   width: fit-content;
+   margin: 1.5em 0 0;
+   font: italic 30px/1.2em var(--fontserif);
+   font-feature-settings: var(--norman-feature-settings);
+   font-variation-settings: "wght" 540;
+   color: hsl(var(--grp-light) / .5);
+}
+
+.app_tabcontent h1::after {
+   content: '';
+   display: block;
+   width: 100%;
+   margin: .1em 0 .75em;
+   border-bottom: 2px solid hsl(var(--accent2-light));
+   opacity: .2;
+}
+
+.sectdivider:first-child+h1 {
+   margin-top: 0;
+}
+
+.trackergrid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 40px;
+}
+
+.tracker-col {}
+
+.tracker-title {}
+
+.tracker-item {
+   margin: 1em 0;
+}
+
+.status {
+   position: absolute;
+   font-size: 24px;
+   color: hsl(var(--grp-med));
+   opacity: .75;
+}
+
+.status.myturn {
+   color: hsl(var(--grp-light));
+   animation: pulse 2.5s ease infinite;
+}
+
+.status.locked {
+   color: hsl(var(--gray1));
+   opacity: .5;
+}
+
+@-webkit-keyframes pulse {
+
+   0%,
+   15% {
+      -webkit-transform: scale(1);
+   }
+
+   20%,
+   35% {
+      -webkit-transform: scale(1.1);
+   }
+
+   45% {
+      -webkit-transform: scale(1.1) rotate(-10deg);
+   }
+
+   50% {
+      -webkit-transform: scale(1.1) rotate(12deg);
+   }
+
+   55% {
+      -webkit-transform: scale(1.1) rotate(-8deg);
+   }
+
+   60% {
+      -webkit-transform: scale(1.1) rotate(6deg);
+   }
+
+   65%,
+   70% {
+      -webkit-transform: scale(1.1) rotate(-4deg);
+   }
+
+   75% {
+      -webkit-transform: scale(1.1) rotate(8deg);
+   }
+
+   80% {
+      -webkit-transform: scale(1.1) rotate(-4deg);
+   }
+
+   85%,
+   90%,
+   95% {
+      -webkit-transform: scale(1.1) rotate(4deg);
+   }
+
+   100% {
+      -webkit-transform: scale(1) rotate(0);
+   }
+
+}
+
+.tracker-item a {
+   margin-left: 28px;
+   font: 700 15px/1.3em var(--fontserif);
+   text-transform: uppercase;
+   letter-spacing: .1em;
+}
+
+.tracker-item hr {
+   display: block;
+   margin: 1em 0;
+   margin-left: 28px;
+   border: 0;
+   border-top: 1px solid var(--bordercolor)
+}
+
+.tracker-desc {
+   margin-left: 28px;
+   font: 400 12px/1.5em var(--fontsans);
+}
+
+.tracker-location {
+   font: 400 10px/1.5em var(--fontsans);
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   color: hsl(var(--grp-light));
+}
+
 .app-footer {
    display: grid;
    grid-template: 150px / 340px 1fr 250px;
@@ -1931,6 +2150,7 @@ input.forminput.memberlist-namesearch::placeholder {
    content: '';
    position: absolute;
    top: 0;
+   left: 0;
    width: 100%;
    height: 100%;
    background: var(--texture);
@@ -1969,7 +2189,7 @@ input.forminput.memberlist-namesearch::placeholder {
 }
 
 .app-oocstat {
-   font: 700 10px/1.5em sans-serif;
+   font: 700 10px/1.5em var(--fontsans);
    letter-spacing: 0.1em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -2007,7 +2227,7 @@ input.forminput.memberlist-namesearch::placeholder {
 
 .pagination {
    margin-left: -2px;
-   font: 700 12px/1.5em sans-serif;
+   font: 700 12px/1.5em var(--fontsans);
    letter-spacing: 0.1em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -2023,7 +2243,7 @@ input.forminput.memberlist-namesearch::placeholder {
    display: inline-flex;
    align-items: center;
    height: 32px;
-   padding: 2px 10px 0;
+   padding: 0 10px;
    background: hsl(var(--accent2-light) / .1);
    border: 1px solid var(--bordercolor);
    color: hsl(var(--gray2));
@@ -2048,11 +2268,11 @@ input.forminput.memberlist-namesearch::placeholder {
    display: inline-flex;
    align-items: center;
    height: 32px;
-   padding: 2px 10px 0;
+   padding: 0 10px;
    margin-left: 4px;
    background: hsl(var(--accent2-light) / .25);
    border: 1px solid var(--bordercolor);
-   font: 700 10px/1.5em sans-serif;
+   font: 700 10px/1.5em var(--fontsans);
    letter-spacing: 0.1em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -2068,7 +2288,7 @@ input[class*=forminput] {
    margin-left: .5em;
    background: var(--bordercolor);
    border: 1px solid var(--bordercolor);
-   font: 700 10px/1.5em sans-serif;
+   font: 700 10px/1.5em var(--fontsans);
    letter-spacing: 0.1em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -2084,6 +2304,7 @@ select[class*=foruminput] {
 
 ::-webkit-scrollbar {
    width: 8px !important;
+   height: 2px;
    border: 0;
 }
 
