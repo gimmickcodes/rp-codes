@@ -419,7 +419,7 @@ body::after {
    position: absolute;
    top: 0;
    height: 100%;
-   width: 1200px;
+   width: 100%;
    z-index: 70;
 }
 
