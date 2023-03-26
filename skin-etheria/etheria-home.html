@@ -23,27 +23,37 @@
 
    <div class="masterwrapper">
 
-      <div class="topnav sans-10 caps">
-         <div id="hamburger" class="topnavlinks"><a href="">Home</a>
+      <div id="hamburger" class="topnav sans-10 caps">
+         <div class="topnav-sun">
+            <i class="ph ph-sun"></i>
+         </div>
+
+         <div class="topnav-main">
+            <a href="">Home</a>
             <a href="">Members</a>
             <a href="">UCP</a>
             <a href="">Recent Topics</a>
             <a href="">Recent Clicks</a>
             <a href="">Logout</a>
-            <div class="topnav-quicklinks">
-               <a href="">Guidebook</a>
-               <a href="">Face Claims</a>
-               <a href="">Factions</a>
-               <a href="">Magic</a>
-               <a href="">Map</a>
-               <a href="">Site Codes</a>
-               <a href="">Shop</a>
-               <a href="">Discord</a>
-            </div>
          </div>
-
+         <div class="topnav-quicklinks">
+            <a href="">Guidebook</a>
+            <a href="">Face Claims</a>
+            <a href="">Factions</a>
+            <a href="">Magic</a>
+            <a href="">Map</a>
+            <a href="">Site Codes</a>
+            <a href="">Shop</a>
+            <a href="">Discord</a>
+         </div>
+         <div class="topnav-userbox">
+            <div>You're logged in as <a href="">username</a></div>
+            <a href=""><i class="ph ph-bell"></i>Alerts</a>
+            <a href=""><i class="ph ph-envelope-simple"></i>Messages</a>
+         </div>
          <a href="javascript:void(0);" class="mobilenav" onclick="menuFunction()">
             <i class="ph ph-list"></i>
+            <i class="ph ph-x"></i>
          </a>
       </div>
 
@@ -160,7 +170,7 @@
             <div class="postrow-wrap grp-5">
                <div class="insetborder"></div>
 
-               <div class="postrow-header showinfo">
+               <div class="postrow-header">
                   <div class="pr-toggle"><i class="ph ph-baby"></i></div>
                   <div class="pr-header-wrap">
                      <div class="pr-header-base">
@@ -979,7 +989,7 @@
                            <div class="gbf">
                               <a href="" class="gbf-title serif-64">Handbook</a>
                               <div class="gbf-desc sans-15">Tincidunt porttitor in a aliquam tellus cum imperdiet dolor. A neque adipiscing neque id commodo id non proin quis. Tincidunt porttitor in a aliquam tellus cum imperdiet dolor. </div>
-                              <div class="gbf-links sans-10 caps">
+                              <div class="gbf-links sans-11 caps">
                                  <a href="">Link</a>
                                  <a href="">Link</a>
                                  <a href="">Link</a>
@@ -1362,7 +1372,6 @@
 
                   </div>
 
-                  <div id="clicktodismiss"> </div>
 </body>
 
 
@@ -1474,26 +1483,29 @@
 
 
 <script>
+   var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss")
+   $(document.body).append(clicktodismiss);
+
    // Hamburger menu on mobile
    function menuFunction() {
       var x = document.getElementById("hamburger");
 
-      if (x.className === "topnavlinks") {
+      if (x.className === "topnav sans-10 caps") {
          x.className += " responsive";
-         $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn(300);
-         $("#menubutton").fadeTo(300, 0);
+         $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn(250);
+         $("#menubutton").fadeTo(250, 0);
       } else {
-         x.className = "topnavlinks";
-         $("#clicktodismiss").fadeOut(300);
-         $("#menubutton").fadeTo(300, 1);
+         x.className = "topnav sans-10 caps";
+         $("#clicktodismiss").fadeOut(250);
+         $("#menubutton").fadeTo(250, 1);
       }
    }
 
 
    $(document).on("click", "#clicktodismiss", function () {
-      $("#clicktodismiss").fadeOut(300);
-      document.getElementById("hamburger").className = "topnavlinks";
-      $("#menubutton").fadeTo(300, 1);
+      $("#clicktodismiss").fadeOut(250);
+      document.getElementById("hamburger").className = "topnav sans-10 caps";
+      $("#menubutton").fadeTo(250, 1);
       // x.className = "topnavlinks";
    });
 </script>
