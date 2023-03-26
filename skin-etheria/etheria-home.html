@@ -24,15 +24,29 @@
    <div class="masterwrapper">
 
       <div class="topnav sans-10 caps">
-         <a href="">Home</a>
-         <a href="">Members</a>
-         <a href="">UCP</a>
-         <a href="">Recent Topics</a>
-         <a href="">Recent Clicks</a>
-         <a href="">Logout</a>
+         <div id="hamburger" class="topnavlinks"><a href="">Home</a>
+            <a href="">Members</a>
+            <a href="">UCP</a>
+            <a href="">Recent Topics</a>
+            <a href="">Recent Clicks</a>
+            <a href="">Logout</a>
+            <div class="topnav-quicklinks">
+               <a href="">Guidebook</a>
+               <a href="">Face Claims</a>
+               <a href="">Factions</a>
+               <a href="">Magic</a>
+               <a href="">Map</a>
+               <a href="">Site Codes</a>
+               <a href="">Shop</a>
+               <a href="">Discord</a>
+            </div>
+         </div>
 
-         <div id="hamburger"><i class="ph ph-list"></i></div>
+         <a href="javascript:void(0);" class="mobilenav" onclick="menuFunction()">
+            <i class="ph ph-list"></i>
+         </a>
       </div>
+
 
       <div class="sidenav">
          <div class="">
@@ -54,11 +68,11 @@
          <div class="flexrow">
             <div class="bp-nav-label sans-8 caps welcome active">
                <span>Welcome</span>
-               <span class="marker welcome active"> </span>
+               <span class="marker active"> </span>
             </div>
             <span class="markerhighlight"> </span>
             <div class="bp-nav-label sans-8 caps news">
-               <span class="marker news"> </span>
+               <span class="marker"> </span>
                <span>News</span>
             </div>
          </div>
@@ -146,11 +160,11 @@
             <div class="postrow-wrap grp-5">
                <div class="insetborder"></div>
 
-               <div class="postrow-header">
+               <div class="postrow-header showinfo">
                   <div class="pr-toggle"><i class="ph ph-baby"></i></div>
                   <div class="pr-header-wrap">
                      <div class="pr-header-base">
-                        <a href="" class="pr-username">name mcname</a>
+                        <a href="" class="pr-username norman-36">name mcname</a>
                         <div class="pr-arcana sans-10 caps">arcana of faction</div>
                      </div>
                      <div class="pr-header-overlay">
@@ -181,10 +195,10 @@
                                  <div class="miniprof-avatar"><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></div>
                                  <div class="miniprof-textwrap serif-18">
                                     “Quote”
-                                    <div class="miniprof-stat">
+                                    <div class="miniprof-stat sans-20">
                                        <b>Posts</b>3232
                                     </div>
-                                    <div class="miniprof-stat">
+                                    <div class="miniprof-stat sans-20">
                                        <b>Gold</b>3232
                                     </div>
                                  </div>
@@ -270,7 +284,7 @@
                </div>
 
                <div class="app-basics">
-                  <div class="app-name">Roman Torrano</div>
+                  <div class="app-name norman-56">Roman Torrano</div>
                   <div class="app-arcana serif-24">arcana of faction</div>
                   <div class="app-statsgrid sans-12">
                      <div class="app-stat"><span>Full Name</span> Field</div>
@@ -321,7 +335,7 @@
                   <div class="app_tabcontent">
                      <div class="elements">
                         <div class="elementslabel serif-14">MAGIC</div>
-                        <div class="flexrow">Element
+                        <div class="flexrow ">Element
                            <span>&</span>
                            Element
                         </div>
@@ -458,7 +472,7 @@
          <div class="member-wrapper">
             <div class="member-sidebar">
                <div class="member-sidebar-header serif-17 caps">
-                  Denizens of <div>Etheria</div>
+                  Denizens of <div class="norman-28">Etheria</div>
                </div>
                <div>
                   <input class="forminput memberlist-namesearch" type="text" name="name" value="" placeholder="Search">
@@ -568,7 +582,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">sapphire</a>
+                        <a href="" class="norman-30">sapphire</a>
                         <div class="mem-stats"><span>27</span><span>male</span><span>kingsblood</span></div>
                      </div>
                      <div class="mem-body">
@@ -589,7 +603,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">amethyst</a>
+                        <a href="" class="norman-30">amethyst</a>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
@@ -610,7 +624,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">diamond</a>
+                        <a href="" class="norman-30">diamond</a>
                         <div class="mem-stats"><span>27</span><span>male</span><span>kingsblood</span></div>
                      </div>
                      <div class="mem-body">
@@ -631,7 +645,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">jade</a>
+                        <a href="" class="norman-30">jade</a>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
@@ -652,7 +666,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">onyx</a>
+                        <a href="" class="norman-30">onyx</a>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
@@ -673,7 +687,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">pearl</a>
+                        <a href="" class="norman-30">pearl</a>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
@@ -694,7 +708,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">ruby</a>
+                        <a href="" class="norman-30">ruby</a>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
@@ -715,7 +729,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">corlucet</a>
+                        <a href="" class="norman-30">corlucet</a>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
@@ -737,7 +751,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">staff</a>
+                        <a href="" class="norman-30">staff</a>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
@@ -759,7 +773,7 @@
                   <div class="insetborder"></div>
                   <div class="mem-cover sans-10 caps">
                      <div class="mem-header">
-                        <a href="">unsorted</a>
+                        <a href="" class="norman-30">unsorted</a>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
@@ -828,7 +842,7 @@
                   </table>
                </div>
 
-               <div class="topic-list-header">Board Name</div>
+               <div class="topic-list-header norman-32">Board Name</div>
 
                <!-- Macro: Topic list subheaders -->
                <div class="topic-list-sub sans-12 caps">Announcements</div>
@@ -836,7 +850,7 @@
 
                <div class="topic-row">
                   <div class="topic-main">
-                     <div class="flexrow"><a href="" class="topic-title">thread title</a> <span class="small">( Pages <a href="">1 </a><a href="">2</a> )</span></div>
+                     <div class="flexrow"><a href="" class="topic-title  serif-28">thread title</a> <span class="small">( Pages <a href="">1 </a><a href="">2</a> )</span></div>
                      <div class="topic-desc sans-10 caps">description of indeterminate length</div>
                      <input type="checkbox">
                   </div>
@@ -952,7 +966,7 @@
                <!-- <% CATEGORY HEADER %> -->
 
                <div class="categorywrap" id="cat-1">
-                  <div class="category-header">Get Started</div>
+                  <div class="category-header norman-32">Get Started</div>
 
                   <!-- <% FORUM ROWS %> -->
 
@@ -964,7 +978,7 @@
                         <div class="gbf-inner flexcol">
                            <div class="gbf">
                               <a href="" class="gbf-title serif-64">Handbook</a>
-                              <div class="gbf-desc sans-15">Tincidunt porttitor in a aliquam tellus cum imperdiet dolor. A neque adipiscing neque id commodo id non proin quis. </div>
+                              <div class="gbf-desc sans-15">Tincidunt porttitor in a aliquam tellus cum imperdiet dolor. A neque adipiscing neque id commodo id non proin quis. Tincidunt porttitor in a aliquam tellus cum imperdiet dolor. </div>
                               <div class="gbf-links sans-10 caps">
                                  <a href="">Link</a>
                                  <a href="">Link</a>
@@ -1015,7 +1029,7 @@
                         <div class="factions-inner flexcol">
                            <div>
                               <a href=#" class="forum-title serif-48">Factions</a>
-                              <div class="forum-desc">Census and rosters for each faction. Faction claims and available positions are listed here.</div>
+                              <div class="forum-desc sans-15">Census and rosters for each faction. Faction claims and available positions are listed here.</div>
                            </div>
                            <div class="factionstats">
                               <a class="faction-statbox sans-11 caps amethyst"> <span>90</span> amethyst </a>
@@ -1188,7 +1202,7 @@
 
          <!-- <% STATS CENTER %> -->
 
-         <div class=" category-header">Site Statistics</div>
+         <div class=" category-header norman-32">Site Statistics</div>
 
                         <div class="statscenterwrap">
                            <div class="insetborder"> </div>
@@ -1214,7 +1228,7 @@
                                     <a href=""><span class="ruby">gary stu</span></a>,
                                     <a href=""><span class="corlucet">jane doe</span></a>, <a href=""><span class="staff">staff account</span></a>
 
-                                    <div class="onlinepast-total"><em>23</em>online today</div>
+                                    <div class="onlinepast-total serif-20"><em class="norman-48">23</em>online today</div>
                                  </div>
                               </div>
 
@@ -1339,10 +1353,16 @@
 
                      <div class="footer" id="bottom">
                         <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
                      </div>
 
 
                   </div>
+
+                  <div id="clicktodismiss"> </div>
 </body>
 
 
@@ -1353,14 +1373,16 @@
 
    $(document).on("click", ".bp-navwrap .news", function () {
       if (!$(this).hasClass('active')) {
-         var panelnav = $(this).parent().parent()
+         var panelnav = $(this).parent().parent().parent()
          var panel = $(this).parent().parent().parent()
 
          panelnav.find('.welcome').removeClass('active')
-         panel.find('.bp-body sans-13').removeClass('welcome')
+         panelnav.find('.welcome').find('.marker').removeClass('active')
+         panel.find('.bp-body').removeClass('welcome')
 
          panelnav.find('.news').addClass('active')
-         panel.find('.bp-body sans-13').addClass('news')
+         panelnav.find('.news').find('.marker').addClass('active')
+         panel.find('.bp-body').addClass('news')
 
          panelnav.find('.markerhighlight').addClass('news')
       }
@@ -1368,14 +1390,16 @@
 
    $(document).on("click", ".bp-navwrap .welcome", function () {
       if (!$(this).hasClass('active')) {
-         var panelnav = $(this).parent().parent()
+         var panelnav = $(this).parent().parent().parent()
          var panel = $(this).parent().parent().parent()
 
          panelnav.find('.news').removeClass('active')
-         panel.find('.bp-body sans-13').removeClass('news')
+         panelnav.find('.news').find('.marker').removeClass('active')
+         panel.find('.bp-body').removeClass('news')
 
          panelnav.find('.welcome').addClass('active')
-         panel.find('.bp-body sans-13').addClass('welcome')
+         panelnav.find('.welcome').find('.marker').addClass('active')
+         panel.find('.bp-body').addClass('welcome')
 
          panelnav.find('.markerhighlight').removeClass('news')
       }
@@ -1446,4 +1470,30 @@
       console.log('hi')
    });
    // }
+</script>
+
+
+<script>
+   // Hamburger menu on mobile
+   function menuFunction() {
+      var x = document.getElementById("hamburger");
+
+      if (x.className === "topnavlinks") {
+         x.className += " responsive";
+         $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn(300);
+         $("#menubutton").fadeTo(300, 0);
+      } else {
+         x.className = "topnavlinks";
+         $("#clicktodismiss").fadeOut(300);
+         $("#menubutton").fadeTo(300, 1);
+      }
+   }
+
+
+   $(document).on("click", "#clicktodismiss", function () {
+      $("#clicktodismiss").fadeOut(300);
+      document.getElementById("hamburger").className = "topnavlinks";
+      $("#menubutton").fadeTo(300, 1);
+      // x.className = "topnavlinks";
+   });
 </script>
