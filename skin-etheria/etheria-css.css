@@ -414,6 +414,16 @@ body::after {
    opacity: 0;
 }
 
+.topnav-loggedin a {
+   display: inline-flex;
+   align-items: center;
+}
+
+.topnav-loggedin .ph {
+   margin-right: 4px;
+   font-size: 16px;
+}
+
 #clicktodismiss {
    position: absolute;
    top: 0;
@@ -1790,7 +1800,8 @@ a.topic-title {
 
 
 
-select.forminput {
+.topic-rows-footer select.forminput,
+.topnav-userbox select.forminput {
    padding: .25em;
    font: 500 12px/1.5em var(--fontsans);
    letter-spacing: .1em;
@@ -1813,7 +1824,7 @@ select.forminput {
    text-transform: uppercase;
    border: 0;
    border-bottom: 1px solid var(--bordercolor);
-   /* color: hsl(var(--gray2)); */
+   color: hsl(var(--gray2));
 }
 
 .bp-username #subaccounts_menu form {
