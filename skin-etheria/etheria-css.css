@@ -91,7 +91,8 @@
 }
 
 .sapphire,
-.grp-5 {
+.g-ID,
+.mgroup-ID {
    --grp-med: var(--sapphire1, var(--accent2-med));
    --grp-light: var(--sapphire2, var(--accent2-light));
 }
@@ -113,6 +114,10 @@
 
 .sans-8 {
    font: 8px/1em var(--fontsans)
+}
+
+.sans-9 {
+   font: 9px/1em var(--fontsans)
 }
 
 .sans-10 {
@@ -252,8 +257,13 @@ body {
 
 body a {
    text-decoration: none;
-   color: hsl(var(--grp-light));
+   color: hsl(var(--accent2-light));
    transition: .25s;
+}
+
+.postrow-wrap a,
+#appwrap a {
+   color: hsl(var(--grp-light))
 }
 
 body a:hover {
@@ -283,7 +293,7 @@ body::after {
    z-index: 100;
    top: 0;
    display: grid;
-   grid-template: 'sun mainlinks quicklinks userbox' 50px / 0 auto auto 0;
+   grid-template: 'acc mainlinks quicklinks userbox' 50px / 0 auto auto 0;
    align-items: center;
    width: 100%;
    height: 50px;
@@ -292,8 +302,15 @@ body::after {
    backdrop-filter: blur(7.5px);
    -webkit-backdrop-filter: blur(7.5px);
    border-bottom: 1px solid var(--bordercolor);
+   transition: .4s;
+}
+
+.topnav a {
    color: hsl(var(--gray3));
-   transition: .25s;
+}
+
+.topnav>div {
+   transition: opacity .2s .2s;
 }
 
 .topnav-main {
@@ -302,10 +319,11 @@ body::after {
 
 .topnav-quicklinks {
    grid-area: quicklinks;
+   justify-content: flex-end;
 }
 
-.topnav-sun {
-   grid-area: sun;
+.topnav-loggedin {
+   grid-area: acc;
 }
 
 .topnav-userbox {
@@ -317,7 +335,6 @@ body::after {
    display: inline-flex;
    align-items: center;
    gap: 16px 20px;
-   transition: .25s;
 }
 
 .topnav-main a,
@@ -327,33 +344,33 @@ body::after {
 }
 
 .responsive.topnav {
-   justify-content: flex-end;
+   grid-template: 'acc mainlinks quicklinks userbox' 50px / 1fr 0 auto 0;
 }
 
 .responsive .topnav-main,
 .topnav-quicklinks,
-.topnav-userbox {
+.topnav-userbox,
+.topnav-loggedin {
    width: 0;
    opacity: 0;
    overflow: hidden;
 }
 
+.responsive .topnav-loggedin,
 .responsive .topnav-quicklinks {
    opacity: 1;
    width: auto;
 }
 
-.topnav-quicklinks a {
+.topnav-quicklinks a,
+.topnav-userbox a {
    color: hsl(var(--accent2-light));
 }
 
-.topnav-userbox div {
-   margin-bottom: 1.5em;
+.topnav-currentacc {
+   margin-bottom: 1em;
 }
 
-.topnav-userbox div a {
-   display: inline !important;
-}
 
 .mobilenav {
    position: absolute;
@@ -389,30 +406,12 @@ body::after {
    opacity: 1;
 }
 
-.topnav-sun {
+.topnav-loggedin {
    width: 0;
    height: 50px;
    display: flex;
    align-items: center;
    opacity: 0;
-   transition: .25s;
-}
-
-.topnav-sun .ph {
-   height: 50px;
-   overflow: hidden;
-   margin-right: .5em;
-   display: inline-flex;
-   align-items: center;
-   justify-content: center;
-   font-size: 18px;
-   color: hsl(var(--gray3));
-   cursor: pointer;
-   transition: .25s;
-}
-
-.topnav-sun .ph:hover {
-   color: hsl(var(--accent1-light))
 }
 
 #clicktodismiss {
@@ -429,7 +428,7 @@ body::after {
       height: 50px;
       display: grid;
       grid-template:
-         'sun'
+         'acc'
          'mainlinks'
          'quicklinks'
          'userbox' / 1fr;
@@ -438,7 +437,6 @@ body::after {
       justify-content: flex-start;
       align-content: flex-start;
       overflow: hidden;
-      transition: .25s;
    }
 
    .mobilenav {
@@ -446,6 +444,11 @@ body::after {
    }
 
    .responsive.topnav {
+      grid-template:
+         'acc'
+         'mainlinks'
+         'quicklinks'
+         'userbox' / 1fr;
       height: 100vh;
       overflow: auto;
       flex-direction: column;
@@ -454,7 +457,7 @@ body::after {
       opacity: 1;
    }
 
-   .topnav-sun {
+   .topnav-loggedin {
       width: auto;
       opacity: 1;
    }
@@ -466,11 +469,12 @@ body::after {
       width: 100%;
       opacity: 0;
       align-items: center;
+      justify-content: unset;
    }
 
    .responsive .topnav-main,
    .responsive .topnav-quicklinks,
-   .topnav-userbox {
+   .responsive .topnav-userbox {
       width: 100%;
       opacity: 1;
    }
@@ -494,7 +498,8 @@ body::after {
    }
 
    .topnav-main a:hover,
-   .topnav-quicklinks a:hover {
+   .topnav-quicklinks a:hover,
+   .topnav-userbox a:hover {
       margin-left: 1em;
    }
 
@@ -731,11 +736,11 @@ body::after {
 }
 
 .bp-username {
-   margin-bottom: 8px;
+   margin-bottom: 4px;
    display: block;
    font-weight: 700;
-   letter-spacing: .1em;
-   color: hsl(var(--grp-light));
+   letter-spacing: .1em !important;
+   color: hsl(var(--accent2-med));
 }
 
 .bp-userlink {
@@ -750,13 +755,13 @@ body::after {
 .bp-avatar {
    border: 1px solid hsl(var(--gray1) / .5);
    padding: 4px;
-   width: fit-content;
-   height: fit-content;
+   width: 60px;
+   height: 60px;
 }
 
 .bp-avatar img {
    display: block;
-   width: 55px;
+   width: 100%;
 }
 
 .wrapper {
@@ -1160,8 +1165,9 @@ a.loc-title div {
    transition: 1s opacity, .5s transform;
 }
 
-.location .lp-avatar img {
+.location .lp-avatar {
    width: 85px;
+   height: 85px;
 }
 
 .location-imgcol {
@@ -1340,19 +1346,19 @@ a.lp-thread {
 
 a.lp-user {
    font-weight: 700;
-   color: hsl(var(--grp-med));
+   color: hsl(var(--accent2-med));
 }
 
 .lp-avatar {
    border: 1px solid var(--bordercolor);
    padding: 4px;
-   width: fit-content;
-   height: fit-content;
+   width: 64px;
+   height: 64px;
 }
 
 .lp-avatar img {
    display: block;
-   width: 60px;
+   width: 100%;
    opacity: .8;
 }
 
@@ -1447,7 +1453,7 @@ a.lp-user {
    color: hsl(var(--accent1-med));
 }
 
-.sc-welcomename {
+.sc-welcomename a {
    display: block;
    font-style: italic;
    font-weight: 600;
@@ -1495,13 +1501,9 @@ a.lp-user {
    overflow: auto;
    padding-top: 12px;
    color: hsl(var(--white) / .4);
-}
-
-.onlinenow span {
    font-style: italic;
    font-weight: 600;
    color: hsl(var(--grp-light));
-   /* opacity: .6; */
 }
 
 .onlinepast {
@@ -1562,6 +1564,10 @@ a.lp-user {
    letter-spacing: 0.1em;
    white-space: nowrap;
    color: hsl(var(--white) / .4)
+}
+
+#recent-topics {
+   display: none;
 }
 
 #recents {
@@ -1631,10 +1637,10 @@ a.lp-user {
 }
 
 .affiliateslot {
-   padding: 4px;
+   padding: 2px;
    border: 1px solid var(--bordercolor);
    width: fit-content;
-   min-width: 110px;
+   min-width: 106px;
    cursor: pointer;
 }
 
@@ -1684,7 +1690,7 @@ a.lp-user {
 
 .topic-row {
    display: grid;
-   grid-template: 'main info lastpost' 140px / 45% 1fr auto;
+   grid-template: 'main info lastpost' 140px / 420px 1fr auto;
    align-items: center;
    background: hsl(var(--main));
 }
@@ -1708,8 +1714,8 @@ a.topic-title {
 
 .topic-row input[type="checkbox"] {
    position: absolute;
-   top: calc(50% - 14px);
-   left: 18px;
+   top: 5px;
+   right: 5px;
    background: var(--bordercolor);
    background-color: red;
 }
@@ -1749,18 +1755,27 @@ a.topic-title {
 .topic-info {
    grid-area: info;
    display: grid;
-   grid-template-columns: 1fr 3fr;
-   gap: 32px;
-   padding: 0 0 0 30px;
+   grid-template-columns: 1fr 4fr;
+   gap: 24px;
+   padding: 0 20px;
    color: hsl(var(--gray2));
 }
 
 .topic-info .flexcol {
-   gap: 4px;
+   gap: 6px;
 }
 
+.topic-info .flexcol>div {
+   display: -webkit-box;
+   -webkit-line-clamp: 1;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+
+.topic-info a,
 .topic-info b {
    color: hsl(var(--accent2-med));
+   font-weight: 700;
 }
 
 .topic-avatar {
@@ -1775,11 +1790,53 @@ a.topic-title {
 
 
 
+select.forminput {
+   padding: .25em;
+   font: 500 12px/1.5em var(--fontsans);
+   letter-spacing: .1em;
+   color: hsl(var(--accent2-light));
+   background: transparent;
+   border-color: var(--bordercolor);
+}
+
+.topnav-userbox #subaccounts_menu form {
+   margin: 0 0 2em;
+   display: inline-block;
+}
+
+.topnav-userbox #subaccounts_menu select.forminput {
+   display: inline-block;
+   width: min-content;
+   padding: 0 0 .3em 0;
+   font: 700 11px/1.5em var(--fontsans);
+   letter-spacing: .1em;
+   text-transform: uppercase;
+   border: 0;
+   border-bottom: 1px solid var(--bordercolor);
+   /* color: hsl(var(--gray2)); */
+}
+
+.bp-username #subaccounts_menu form {
+   display: inline-block;
+}
+
+.bp-username #subaccounts_menu select.forminput {
+   max-width: 160px;
+   font: 700 18px/1.5em var(--fontSC);
+   padding: 0 1em 0 0;
+   text-transform: lowercase;
+   border: 0;
+   color: hsl(var(--grp-light));
+}
+
+[name*=mod_topics]+table+br {
+   display: none;
+}
+
 .topic-rows-footer,
 .activeuserstrip {
-   margin: 2em 0 1em;
+   margin: 2em 0 0;
    padding: 1em 0;
-   display: flex;
    border-top: 2px solid hsl(var(--main));
    border-bottom: 1px solid hsl(var(--main));
    font: 400 12px/1.5em var(--fontsans);
@@ -1804,7 +1861,26 @@ a.topic-title {
 }
 
 .darkrow2 {
+   padding-left: 0 !important;
    text-align: left !important;
+}
+
+
+input.forminput.memberlist-namesearch {
+   width: 100%;
+   height: 38px;
+   padding: 0 1em;
+   margin: 0;
+   background: hsl(var(--darkgray));
+   border: 1px solid hsl(var(--htmlbg));
+   text-transform: none;
+   letter-spacing: 0;
+   font: 12px/1.5em var(--fontsans);
+   color: hsl(var(--gray2));
+}
+
+input.forminput.memberlist-namesearch::placeholder {
+   opacity: .75;
 }
 
 /* MEMBERS PAGE */
@@ -1819,21 +1895,6 @@ a.topic-title {
    border-right: 1px solid var(--bordercolor);
 }
 
-input.forminput.memberlist-namesearch {
-   width: 100%;
-   height: 38px;
-   padding: 0 1em;
-   margin: 0;
-   background: hsl(var(--darkgray));
-   border: 1px solid hsl(var(--htmlbg));
-   text-transform: none;
-   letter-spacing: 0;
-   font: 12px/1.5em var(--fontsans);
-}
-
-input.forminput.memberlist-namesearch::placeholder {
-   opacity: .75;
-}
 
 .member-sidebar-header+div {
    position: sticky;
@@ -1895,24 +1956,36 @@ input.forminput.memberlist-namesearch::placeholder {
    display: block;
 }
 
-.member-filter-list li {
-   display: inline-block;
-   margin-bottom: .5em;
+.member-filter-list button {
+   all: unset;
+   position: relative;
 }
 
-.member-filter-list a {
+.member-filter-list li,
+.member-filter-list button {
+   display: inline-block;
+   margin-bottom: .5em;
+   cursor: pointer;
+}
+
+
+.member-filter-list li,
+.member-filter-list button {
+   width: fit-content;
    margin-right: 3px;
    font-weight: 700;
    letter-spacing: 0.1em;
    color: hsl(var(--gray2));
 }
 
-.member-filter-list a.selected {
+.member-filter-list li.selected,
+.member-filter-list button.selected {
    font-weight: 700 !important;
    color: hsl(var(--accent2-light));
 }
 
-.member-filter-list a::after {
+.member-filter-list li::after,
+.member-filter-list button::after {
    content: '';
    position: absolute;
    bottom: -1px;
@@ -1923,8 +1996,10 @@ input.forminput.memberlist-namesearch::placeholder {
    transition: .25s;
 }
 
-.member-filter-list a.selected::after,
-.member-filter-list a:hover::after {
+.member-filter-list li.selected::after,
+.member-filter-list li:hover::after,
+.member-filter-list button.selected::after,
+.member-filter-list button:hover::after {
    width: 100%;
 }
 
@@ -1966,6 +2041,9 @@ input.forminput.memberlist-namesearch::placeholder {
    background-position: center;
    overflow: hidden;
    background: hsl(var(--grp-med));
+
+   margin-right: 14px;
+   margin-bottom: 32px;
 }
 
 .mem-image {
@@ -2033,7 +2111,7 @@ input.forminput.memberlist-namesearch::placeholder {
 }
 
 .mem-header a {
-   display: block;
+   display: inline-block;
    text-transform: lowercase;
    color: hsl(var(--accent1-med));
 }
@@ -2089,6 +2167,30 @@ input.forminput.memberlist-namesearch::placeholder {
 
 #appwrap .insetborder {
    border-color: var(--bordercolor);
+}
+
+.app-editbutton {
+   position: absolute;
+   top: 32px;
+   right: 32px;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   padding-left: 2px;
+   gap: 4px;
+   z-index: 5;
+   width: 48px;
+   height: 48px;
+   border: 1px solid var(--bordercolor);
+   border-radius: 100%;
+}
+
+.app-editbutton .ph {
+   font-size: 20px;
+}
+
+.user-ID .user-ID .app-editbutton {
+   display: flex;
 }
 
 .app-intro {
@@ -2158,6 +2260,7 @@ input.forminput.memberlist-namesearch::placeholder {
 .app-arcana {
    font-style: italic;
    font-weight: 600;
+   text-transform: lowercase;
    color: hsl(var(--gray2) / .4);
    margin: -4px 0 32px;
 }
@@ -2167,12 +2270,9 @@ input.forminput.memberlist-namesearch::placeholder {
    display: grid;
    grid-template: repeat(4, auto) / repeat(3, 1fr);
    grid-auto-flow: column;
+   gap: 1.2em 1em;
    letter-spacing: 0.05em;
    color: hsl(var(--gray2));
-}
-
-.app-stat {
-   margin-bottom: 16px;
 }
 
 .app-stat span {
@@ -2330,26 +2430,13 @@ input.forminput.memberlist-namesearch::placeholder {
 }
 
 .elementslabel {
-   margin: 0 auto 1em;
    font-weight: 700;
    letter-spacing: 0.2em;
    text-align: center;
    width: fit-content;
    color: hsl(var(--grp-light) / .5);
-
-   background: hsl(var(--gray1) / 0.1);
-   border: 1px solid hsl(var(--black) / 0.25);
-   padding: 5px 4px 4px 10px;
 }
 
-.elements>.flexrow {
-   align-items: center;
-   justify-content: center;
-   font: 40px/1em var(--fontSC);
-   letter-spacing: 0.15em;
-   text-transform: lowercase;
-   color: hsl(var(--grp-light));
-}
 
 .elements span {
    font: 16px var(--fontsans);
@@ -2379,7 +2466,8 @@ input.forminput.memberlist-namesearch::placeholder {
    opacity: .2;
 }
 
-.sectdivider:first-child+h1 {
+.sectdivider:first-child+h1,
+h1:first-child {
    margin-top: 0;
 }
 
@@ -2455,6 +2543,7 @@ input.forminput.memberlist-namesearch::placeholder {
    border: 1px solid hsl(var(--black) / 0.25);
    padding: 3px 8px 2px;
    border-radius: 2px;
+   color: hsl(var(--grp-light));
 }
 
 .tracker-item hr {
@@ -2479,7 +2568,9 @@ input.forminput.memberlist-namesearch::placeholder {
 
 .app-footer {
    display: grid;
-   grid-template: 'oocname stats avatar' 150px / 340px 1fr 250px;
+   grid-template:
+      'oocname stats avatar' 150px
+      'links links avatar' auto / 340px 1fr 250px;
    align-items: center;
    background: hsl(var(--black) / .2);
 }
@@ -2506,14 +2597,15 @@ input.forminput.memberlist-namesearch::placeholder {
 .app-oocstats {
    grid-area: stats;
    height: 100%;
-   padding: 40px 48px 48px 56px;
+   padding: 44px 40px 0;
    border-left: 1px solid var(--bordercolor);
-   border-right: 1px solid var(--bordercolor);
    display: grid;
-   grid-template: repeat(3, auto) / repeat(2, 1fr);
+   grid-template: repeat(3, auto) / repeat(2, auto);
    grid-auto-flow: column;
-   align-items: center;
-   font-weight: 700;
+   gap: 4px 12px;
+   align-items: flex-start;
+   align-content: flex-start;
+   font-weight: 400;
    letter-spacing: .1em;
    color: hsl(var(--gray2));
 }
@@ -2521,12 +2613,36 @@ input.forminput.memberlist-namesearch::placeholder {
 .app-oocstat span {
    font-weight: 800;
    color: hsl(var(--grp-light));
+   margin-bottom: 1em;
+}
+
+.app-links {
+   grid-area: links;
+   gap: 2em 4em;
+   border-top: 1px solid var(--bordercolor);
+   padding: 20px 0 calc(24px + var(--insetgap)) 90px;
+}
+
+.app-links a {
+   display: inline-flex;
+   flex-direction: column;
+   align-items: center;
+   gap: .8em;
+   color: hsl(var(--gray2)) !important;
+}
+
+.app-links .ph {
+   font-size: 18px;
+   color: hsl(var(--grp-light));
 }
 
 .app-avatar {
    grid-area: avatar;
+   height: 100%;
    justify-content: center;
+   align-items: center;
    padding: 0 8px 8px 0;
+   border-left: 1px solid var(--bordercolor);
 }
 
 .app-avatar img {
@@ -2534,6 +2650,8 @@ input.forminput.memberlist-namesearch::placeholder {
    padding: 4px;
    display: block;
    width: 80px;
+   height: 80px;
+   margin: 0 0 var(--insetgap) var(--insetgap);
 }
 
 
@@ -2680,7 +2798,7 @@ input.forminput.memberlist-namesearch::placeholder {
 .pr-header-overlay {
    width: 100%;
    height: 100%;
-   padding: 40px;
+   padding: calc(40px + var(--insetgap)) 40px 40px;
    display: flex;
    flex-direction: column;
    transition: .25s;
@@ -2720,7 +2838,7 @@ input.forminput.memberlist-namesearch::placeholder {
    display: grid;
    grid-template: repeat(2, auto) / repeat(3, 1fr);
    grid-auto-flow: column;
-   grid-column-gap: 12px;
+   gap: 1em;
    letter-spacing: .05em;
 }
 
@@ -2756,7 +2874,7 @@ input.forminput.memberlist-namesearch::placeholder {
 .postrow-dateband {
    grid-area: dateband;
    padding: var(--insetgap);
-   padding-left: 40px;
+   padding-left: 28px;
    background: hsl(var(--darkgray));
    border-top: 1px solid var(--bordercolor);
    border-bottom: 1px solid var(--bordercolor);
@@ -2771,7 +2889,7 @@ input.forminput.memberlist-namesearch::placeholder {
 .postrow-dateband .ph {
    font-size: 16px;
    line-height: 15px;
-   margin-right: .5em;
+   margin: 0 .5em;
    opacity: .5;
 }
 
@@ -2985,6 +3103,10 @@ input.forminput.memberlist-namesearch::placeholder {
 
 /* JCINK DEFAULTS */
 
+.newstext {
+   display: none;
+}
+
 .pagination-wrap {
    border-spacing: 0 !important;
    margin-bottom: 36px;
@@ -3048,7 +3170,7 @@ input.forminput.memberlist-namesearch::placeholder {
    background: hsl(var(--accent2-med) / .2);
 }
 
-input[class*=forminput] {
+.topic-rows-footer input[type=submit] {
    padding: .25em .5em 0;
    margin-left: .5em;
    background: var(--bordercolor);
@@ -3240,13 +3362,22 @@ body ::-webkit-scrollbar-thumb {
       margin: 30px auto 0;
    }
 
+   .bp-navwrap>div {
+      gap: 12px;
+   }
+
+   .bp-nav-label {
+      padding: 1em 0;
+      font-weight: 400;
+   }
+
    .marker,
    .markerhighlight {
       display: none;
    }
 
    .bannerpanel {
-      padding: 20px 12px 0;
+      padding: 12px 12px 0;
       width: 100%;
       grid-template: 'bpbody' 1fr;
       margin-bottom: 50px;
@@ -3472,8 +3603,9 @@ body ::-webkit-scrollbar-thumb {
       display: none;
    }
 
-   .lp-avatar img {
+   .lp-avatar {
       width: 40px;
+      height: 40px;
    }
 
    .statscenterwrap {
@@ -3538,7 +3670,7 @@ body ::-webkit-scrollbar-thumb {
    }
 
    .footer {
-      padding: 24px;
+      padding: 14px 14px 120px;
    }
 
 
@@ -3553,39 +3685,42 @@ body ::-webkit-scrollbar-thumb {
       grid-template:
          'main lastpost' 1fr
          'info lastpost' 1fr/ 4fr 1fr;
-      grid-template: 'main';
+      grid-template:
+         'main'
+         'info' / 1fr;
    }
 
    .topic-main {
-      padding: 20px 24px;
+      padding: 20px 24px 8px;
       border: 0;
    }
 
-   .topic-info,
-   .topic-avatar {
-      display: none;
+   .topic-desc {
+      margin-top: .2em;
    }
 
    .topic-info {
       grid-template-columns: 1fr;
-      padding: 10px 20px 10px 36px;
-      gap: 4px;
-      border-top: 1px solid var(--bordercolor);
+      padding: 0 0 0 10px;
+      margin: 8px 0 24px 24px;
+      gap: 0;
+      border-left: 2px solid hsl(var(--accent2-med) / .2);
    }
 
    .topic-info .flexcol:first-of-type {
       flex-direction: row;
       gap: 12px;
+      display: none;
    }
 
    .topic-row input[type="checkbox"] {
       left: unset;
-      top: 16px;
+      top: 50px;
       right: 16px;
    }
 
    .topic-avatar {
-      padding: 0;
+      display: none;
    }
 
    /* MEMBERS PAGE */
@@ -3637,9 +3772,6 @@ body ::-webkit-scrollbar-thumb {
 
    .app-intro {
       grid-template-columns: 1fr;
-   }
-
-   .app-intro {
       padding: 24px;
    }
 
@@ -3675,6 +3807,7 @@ body ::-webkit-scrollbar-thumb {
 
    .app-statsgrid {
       grid-template: repeat(6, auto) / repeat(2, 1fr);
+      gap: 1em 1em;
    }
 
    .app-fc {
@@ -3686,7 +3819,7 @@ body ::-webkit-scrollbar-thumb {
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      gap: .5em;
+      gap: 1em;
       overflow-x: auto;
       flex-wrap: wrap;
    }
@@ -3729,16 +3862,27 @@ body ::-webkit-scrollbar-thumb {
    }
 
    .app-footer {
-      padding: 1.5em 24px;
-      grid-template: 'oocname'
-         'stats' / 1fr;
+      grid-template:
+         'oocname'
+         'stats'
+         'links' / 1fr;
    }
 
-   .app-oocname,
-   .app-oocstats,
-   .app-avatar {
-      padding: 0;
+   .app-oocname {
+      padding: 1.5em 20px 0;
       border: 0;
+   }
+
+   .app-oocstats {
+      padding: 0 20px 1.5em;
+      border: 0;
+   }
+
+   .app-links {
+      gap: 2em 3em;
+      flex-wrap: wrap;
+      padding: 2em 24px calc(2em + var(--insetgap));
+      justify-content: center;
    }
 
    .app-avatar {
@@ -3818,11 +3962,12 @@ body ::-webkit-scrollbar-thumb {
    }
 
    .postrow-dateband {
-      padding: var(--insetgap) 12px;
+      padding: var(--insetgap) 8px;
    }
 
    .postrow-dateband .flexrow {
-      justify-content: flex-end;
+      justify-content: flex-start;
+      flex-direction: row-reverse;
    }
 
    .miniprofwrap {
@@ -3836,7 +3981,7 @@ body ::-webkit-scrollbar-thumb {
    }
 
    .postrow-footer {
-      padding: 8px calc(10px + var(--insetgap)) 18px;
+      padding: 12px calc(10px + var(--insetgap)) 18px;
       flex-wrap: wrap;
       row-gap: .75em;
    }
