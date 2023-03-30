@@ -372,7 +372,8 @@ body::after {
 }
 
 
-.mobilenav {
+.mobilenav,
+.mobilehome {
    position: absolute;
    top: 0;
    right: 0;
@@ -388,6 +389,12 @@ body::after {
 
 .mobilenav:hover {
    color: hsl(var(--accent1-light))
+}
+
+.mobilehome {
+   display: none;
+   width: 30px;
+   right: 50px;
 }
 
 .ph-list,
@@ -420,8 +427,8 @@ body::after {
 }
 
 .topnav-loggedin .ph {
-   margin-right: 4px;
-   font-size: 16px;
+   margin-right: 12px;
+   font-size: 18px;
 }
 
 #clicktodismiss {
@@ -449,8 +456,8 @@ body::after {
       overflow: hidden;
    }
 
-   .mobilenav {
-      top: 0 !important;
+   .mobilehome {
+      display: flex;
    }
 
    .responsive.topnav {
@@ -2598,7 +2605,7 @@ h1:first-child {
    display: inline-block;
 }
 
-.app-oocname i {
+.app-oocname em {
    margin-top: -.25em;
    display: block;
    font-size: 19px;
@@ -3579,8 +3586,7 @@ body ::-webkit-scrollbar-thumb {
    }
 
    .archives-bg {
-      /* background: linear-gradient(to bottom, transparent, hsl(var(--main)) 180px), url(assets-final/archivesbg.png) top center / 100% no-repeat, hsl(var(--main)); */
-      background: linear-gradient(to bottom left, transparent, hsl(var(--main)) 70%), url(assets-final/archivesbg.png) top right -60vw / cover no-repeat, hsl(var(--main));
+      background: linear-gradient(to bottom left, transparent, hsl(var(--main)) 70%), url(assets-final/archivesbg.png) top right -20vw / cover no-repeat, hsl(var(--main));
       opacity: 1;
    }
 
@@ -3677,7 +3683,7 @@ body ::-webkit-scrollbar-thumb {
    }
 
    #recents {
-      grid-auto-columns: 100%;
+      grid-auto-columns: 200px;
    }
 
    .footer {
