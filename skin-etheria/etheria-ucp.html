@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+
+<head>
+   <title>Etheria: Home</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <link href="etheria-default-css.css" rel="stylesheet">
+
+   <link href="etheria-css.css" rel="stylesheet">
+
+   <!-- font icons -->
+   <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+   <!-- fonts -->
+   <link rel="stylesheet" href="https://use.typekit.net/zbl1ihd.css">
+
+
+</head>
+
+<body class="user-ID g-5">
+
+   <div class="masterwrapper">
+
+      <div id="hamburger" class="topnav sans-10 caps">
+         <div class="topnav-toggled">
+            <a href="/index.php?" class="mobilehome"><i class="ph ph-house"></i></a>
+            <a href="/index.php?showuser=<!-- |id| -->" class="mobilenav-avatar"><!-- |avatar| --></a>
+         </div>
+
+         <div class="topnav-main">
+            <a href="/index.php?">Home</a>
+            <a href="/index.php?act=Members&max_results=1000">Members</a>
+            <a href="admin.php" class="acp-<!-- |g_access_cp| -->">ACP</a>
+            <a href="/index.php?act=UserCP&CODE=01">UCP</a>
+            <a href="/?act=Search&CODE=getactive">Recent Topics</a>
+            <a href="/?act=Online&CODE=listall&sort_key=click">Recent Clicks</a>
+            <a href="/?act=Login&CODE=03&key=<!-- |auth_key| -->">Logout</a>
+         </div>
+         <div class="topnav-quicklinks">
+            <a href="">Guidebook</a>
+            <a href="">Face Claims</a>
+            <a href="">Factions</a>
+            <a href="">Magic</a>
+            <a href="">Map</a>
+            <a href="">Site Codes</a>
+            <a href="">Shop</a>
+            <a href="">Discord</a>
+         </div>
+         <div class="topnav-userbox">
+            <div class="topnav-currentacc sans-8">Switch account from:</div>
+            <span id="subaccounts_menu">
+               <form>
+                  <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                     <option value="------------" selected="selected">Switch account</option>
+                     <option value="31">&nbsp;&nbsp;» andin andilet </option>
+                  </select>
+               </form>
+            </span>
+            <a href="index.php?act=UserCP&CODE=alerts"><i class="ph ph-bell"></i>Alerts</a>
+            <a href="index.php?act=Msg&CODE=01"><i class="ph ph-envelope-simple"></i>Messages</a>
+            <a><i class="ph ph-sun"></i> Toggle skin</a>
+         </div>
+
+
+         <a href="javascript:void(0);" class="mobilenav" onclick="menuFunction()">
+            <i class="ph ph-list"></i>
+            <i class="ph ph-x"></i>
+         </a>
+      </div>
+
+
+      <div class="sidenav">
+         <div class="">
+            <a href="#top"><i class="ph ph-arrow-up"></i></a>
+            <i class="ph ph-sun"></i>
+            <a href="#bottom"><i class="ph ph-arrow-down"></i></a>
+         </div>
+      </div>
+
+      <div class="banner">
+         <div class="hero">
+         </div>
+      </div>
+      <div class="hero-text">
+         <a href="/index.php?">
+            <h1>Etheria</h1>
+         </a>
+         <div class=" serif-20 caps">a middle fantasy roleplay
+         </div>
+      </div>
+      <div class="bp-navwrap">
+         <div class="flexrow">
+            <div class="bp-nav-label sans-8 caps welcome active">
+               <span>Welcome</span>
+               <span class="marker active"> </span>
+            </div>
+            <span class="markerhighlight"> </span>
+            <div class="bp-nav-label sans-8 caps news">
+               <span class="marker"> </span>
+               <span>News</span>
+            </div>
+         </div>
+      </div>
+
+      <div class="bannerpanel">
+         <div class="bp-header">
+            <div class="bp-userbox">
+               <div class="bp-username serif-18 caps">
+                  Username
+                  <div class="bp-accswitch"><i class="ph ph-caret-down"></i></div>
+                  <div class="bp-accswitch-dropdown"><span id="subaccounts_menu">
+                        <form>
+                           <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                              <option value="------------" selected="selected">Switch account</option>
+                              <option value="31">&nbsp;&nbsp;» andin andilet </option>
+                           </select>
+                        </form>
+                     </span>
+                  </div>
+               </div>
+
+               <a href="" class="bp-userlink sans-8 caps caps">0 alerts</a>
+               <a href="" class="bp-userlink sans-8 caps caps">0 msgs</a>
+            </div>
+            <div class="bp-avatar"><a href=""><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></a></div>
+         </div>
+
+         <div class="bp-body sans-13 welcome">
+            <div class="bp-slide">
+               <div class="bp-infobox">You are either descended from a First Monarch or are one of the undeity's champion. Either way, you can manipulate ether and produce magic. But magic seems so minute when the Eight Jeweled Courts are at odds.
+                  Etheria focuses on middle magic and court intrigue.</div>
+               <div class="bp-linksbox sans-10 caps">
+                  <a href="">Guidebook</a>
+                  <a href="">Face Claims</a>
+                  <a href="">Factions</a>
+                  <a href="">Magic</a>
+                  <a href="">Map</a>
+                  <a href="">Site Codes</a>
+                  <a href="">Shop</a>
+                  <a href="">Discord</a>
+               </div>
+            </div>
+
+            <div class="bp-slide">
+               <div class="bp-newsbox">
+                  <b>March 14 </b>/ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut quam risus. Duis a euismod dolor, sed gravida purus. Ut at turpis lobortis, lobortis lacus id. <p>
+                     <b>March 14 </b>/ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut quam risus. Duis a euismod dolor, sed gravida purus. Ut at turpis lobortis, lobortis lacus id.
+               </div>
+               <div class="bp-eventbox">Events</div>
+            </div>
+         </div>
+      </div>
+
+
+
+
+      <!-- <% BOARD %> -->
+
+
+      <div class="wrapper">
+         <div class="sans-10 caps">
+            <!-- <% NAVIGATION %> -->
+            <div id="navstrip">
+               <a href="">Etheria</a>
+               <a href="">Category</a>
+               <a href="">Board</a>
+               <a href="">Topic</a>
+            </div>
+         </div>
+
+
+
+
+
+         <!-- SEARCH -->
+         <form action="https://xmortala.jcink.net/index.php?act=Search&amp;CODE=01" method="post" name="sForm" onsubmit="document.getElementById('perf_search').disabled='true';">
+
+            <div class="tableborder">
+               <table cellpadding="4" cellspacing="0" border="0" width="100%">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" class="maintitle" align="center">Search Keywords</td>
+                     </tr>
+                     <tr>
+                        <td class="pformstrip" width="50%">Search by Keywords</td>
+                        <td class="pformstrip" width="50%">Filter by Member Name (optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="row1" valign="top">
+                           <input type="text" maxlength="100" size="40" name="keywords" id="keywords" class="forminput">
+                           <br><br>
+                           <label for="keywords">Enter a keyword or phrase to search by.</label> [ <a href="#" title="Find out how to improve your search with boolean operators" onclick="win_pop()">Advanced Usage Help</a> ]
+                        </td>
+                        <td class="row1" valign="top">
+                           <table width="100%" cellpadding="4" cellspacing="0" border="0" align="center">
+                              <tbody>
+                                 <tr>
+                                    <td><input type="text" maxlength="100" size="50" name="namesearch" class="forminput"></td>
+                                 </tr>
+                                 <tr>
+                                    <td width="40%"><input type="checkbox" name="matchtopics" id="matchtopics" value="1" class="checkbox"><label for="matchtopics">Search topics started by this member only</label></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <br>
+            <div class="tableborder">
+               <table cellpadding="4" cellspacing="0" border="0" width="100%">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" class="maintitle" align="center">Search Options</td>
+                     </tr>
+
+                     <tr>
+                        <td class="pformstrip" width="50%" valign="middle">Search Where</td>
+                        <td class="pformstrip" width="50%" valign="middle">Refine Search</td>
+                     </tr>
+
+                     <tr>
+                        <td class="row1" valign="middle">
+                           <select name="forums[]" class="forminput" size="10" multiple="multiple">
+                              <option value="all" selected="selected">» All Forums</option>
+                              <option value="c_1" class="cat">registry</option>
+                              <option value="1" class="sub">··&nbsp;Imperatives (Sub Category)</option>
+                              <option value="35">···· Staff</option>
+                              <option value="13">··&nbsp;Announcements</option>
+                              <option value="c_3" class="cat">Development</option>
+                              <option value="3" class="sub">··&nbsp;Quest Board (Sub Category)</option>
+                              <option value="64">···· Old Quests</option>
+                              <option value="4" class="sub">··&nbsp;Development (Sub Category)</option>
+                              <option value="37">···· Ads</option>
+                              <option value="5">···· Trackers</option>
+                              <option value="6">···· Dev Boards</option>
+                              <option value="38">······ Shogunate</option>
+                              <option value="7">··&nbsp;Missives</option>
+                              <option value="c_4" class="cat">Empyrea</option>
+                              <option value="10" class="sub">··&nbsp;Astoria (Sub Category)</option>
+                              <option value="25">···· Peningtham</option>
+                              <option value="26">···· Hidden Valley</option>
+                              <option value="27">···· No Man's Tribe</option>
+                              <option value="9" class="sub">··&nbsp;Ballentine (Sub Category)</option>
+                              <option value="44">···· City of the Dead</option>
+                              <option value="22">···· Holworth</option>
+                              <option value="23">···· Ruins of Osford</option>
+                              <option value="24">···· Axbrish District</option>
+                              <option value="8" class="sub">··&nbsp;Rusa (Sub Category)</option>
+                              <option value="17">···· Dalmond</option>
+                              <option value="19">···· Forsaken Forests</option>
+                              <option value="21">···· Kinden</option>
+                              <option value="60">···· Avalon</option>
+                              <option value="11" class="sub">··&nbsp;Thramdin (Sub Category)</option>
+                              <option value="45">···· Throne of the Cinder King</option>
+                              <option value="28">···· Portscast</option>
+                              <option value="63">···· The Imperative</option>
+                              <option value="50" class="sub">··&nbsp;Valencia (Sub Category)</option>
+                              <option value="29">···· Coroughbird</option>
+                              <option value="30">···· Deadlands</option>
+                              <option value="47">······ Yawgmoth's Castle</option>
+                              <option value="46">···· Valencia Castle Fort</option>
+                              <option value="61">···· Qliphoth Tree</option>
+                              <option value="c_6" class="cat">Taiyōkuni</option>
+                              <option value="16" class="sub">··&nbsp;Nazo no Shima (Sub Category)</option>
+                              <option value="34">···· Morgrave, College of Magic</option>
+                              <option value="49">···· Nemura</option>
+                              <option value="14" class="sub">··&nbsp;Hokkyoku no Taiyō (Sub Category)</option>
+                              <option value="18">···· Higashi Chaya District</option>
+                              <option value="31">···· Nagamachi</option>
+                              <option value="48">···· Setsuka Province of Shimoyama</option>
+                              <option value="58">···· Yomi no Kuni</option>
+                              <option value="15" class="sub">··&nbsp;Minami no Taiyō (Sub Category)</option>
+                              <option value="32">···· Imperial City</option>
+                              <option value="33">···· Kanazawa</option>
+                              <option value="c_7" class="cat">Dendera</option>
+                              <option value="51" class="sub">··&nbsp;Lower Dendera (Sub Category)</option>
+                              <option value="55">···· Qara</option>
+                              <option value="57">···· Free Cities</option>
+                              <option value="52" class="sub">··&nbsp;Higher Dendera (Sub Category)</option>
+                              <option value="56">···· Thebes</option>
+                              <option value="c_2" class="cat">Out of Character</option>
+                              <option value="54">··&nbsp;Alt Universes</option>
+                              <option value="2" class="sub">··&nbsp;Archives (Sub Category)</option>
+                              <option value="39">···· Fest of Strangers</option>
+                              <option value="40">······ Masquerade</option>
+                              <option value="41">······ Tournament</option>
+                              <option value="42">······ Open Colloquium</option>
+                              <option value="43">······ Rapid Exchange</option>
+                              <option value="59">···· Missives</option>
+                              <option value="36">···· Deleted</option>
+                              <option value="12">··&nbsp;Advertising</option>
+                           </select>
+                           <br>
+                           <input type="checkbox" name="searchsubs" value="1" id="searchsubs" checked="checked">&nbsp;<label for="searchsubs">Search in child forums if sub category is chosen?</label>
+                        </td>
+                        <td class="row1" valign="top">
+                           <table cellspacing="4" cellpadding="0" width="100%" align="center" border="0">
+                              <tbody>
+                                 <tr>
+                                    <td valign="top">
+                                       <fieldset class="search">
+                                          <legend><strong>Search posts from...</strong></legend>
+                                          <select name="prune" class="forminput">
+                                             <option value="1">Today</option>
+                                             <option value="7">7 days ago and...</option>
+                                             <option value="30">30 days ago and...</option>
+                                             <option value="60">60 days ago and...</option>
+                                             <option value="90">90 days ago and...</option>
+                                             <option value="180">180 days ago and...</option>
+                                             <option value="365">365 days ago and...</option>
+                                             <option value="0" selected="selected">Any date</option>
+                                          </select>
+                                          <br>
+                                          <input type="radio" name="prune_type" id="prune_older" value="older" class="radiobutton">&nbsp;<label for="prune_older">Older</label>
+                                          <br>
+                                          <input type="radio" name="prune_type" id="prune_newer" value="newer" class="radiobutton" checked="checked">&nbsp;<label for="prune_newer">Newer</label>
+                                       </fieldset>
+                                    </td>
+                                    <td valign="top">
+                                       <fieldset class="search">
+                                          <legend><strong>Sort results by...</strong></legend>
+                                          <select name="sort_key" class="forminput">
+                                             <option value="last_post">Last Posting Date</option>
+                                             <option value="posts">Number of Replies</option>
+                                             <option value="starter_name">Poster Name</option>
+                                             <option value="forum_id">Forum Name</option>
+                                          </select>
+                                          <br><input type="radio" name="sort_order" id="sort_desc" class="radiobutton" value="desc" checked="checked"><label for="sort_desc">descending order</label>
+                                          <br><input type="radio" name="sort_order" id="sort_asc" class="radiobutton" value="asc"><label for="sort_asc">ascending order</label>
+                                       </fieldset>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td nowrap="nowrap">
+                                       <fieldset class="search">
+                                          <legend><strong>Search Where</strong></legend>
+                                          <input type="radio" name="search_in" class="radiobutton" id="search_in_posts" value="posts" checked="checked"><label for="search_in_posts">Search entire post</label>
+                                          <br>
+                                          <input type="radio" name="search_in" class="radiobutton" id="search_in_titles" value="titles"><label for="search_in_titles">Search titles only</label>
+                                       </fieldset>
+                                    </td>
+                                    <td>
+                                       <fieldset class="search">
+                                          <legend><strong>Result Type</strong></legend>
+                                          <input type="radio" name="result_type" class="radiobutton" value="topics" id="result_topics" checked="checked"><label for="result_topics">Show results as topics</label>
+                                          <br>
+                                          <input type="radio" name="result_type" class="radiobutton" value="posts" id="result_posts"><label for="result_posts">Show results as posts</label>
+                                       </fieldset>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="pformstrip" colspan="2" align="center"><input type="submit" value="Perform the search" class="forminput" id="perf_search" onclick="document.getElementById('perf_search').value='Peforming search... please wait';"></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </form>
+
+
+
+
+
+         <br><br><br><br><br>
+
+
+
+
+         <!-- POST REPLY -->
+         <table class="tableborder" cellpadding="0" cellspacing="0" width="100%" id="posting-form">
+            <tbody>
+               <tr>
+                  <td class="maintitle" colspan="2">&nbsp;&nbsp;Replying to Questing Overview</td>
+               </tr>
+
+
+               <!--TOPIC TITLE-->
+               <!--POLL BOX-->
+               <tr id="code-buttons-header">
+                  <td class="pformstrip" colspan="2">Code Buttons</td>
+               </tr>
+               <tr id="code-buttons">
+                  <td class="pformleft">
+                     <input type="radio" class="radiobutton" name="bbmode" value="ezmode" onclick="setmode(this.value)">&nbsp;<b>Guided Mode</b><br>
+                     <input type="radio" class="radiobutton" name="bbmode" value="normal" onclick="setmode(this.value)" checked="checked">&nbsp;<b>Normal Mode</b>
+                     <script type="text/javascript" src="//files.jcink.net/html/jbfcode.js"></script>
+                  </td>
+                  <td class="pformright">
+                     <span id="bbcode-buttons">
+                        <input type="button" accesskey="b" value=" B " onclick="simpletag(&quot;B&quot;)" class="codebuttons" name="B" style="font-weight:bold" onmouseover="hstat('bold')">
+                        <input type="button" accesskey="i" value=" I " onclick="simpletag(&quot;I&quot;)" class="codebuttons" name="I" style="font-style:italic" onmouseover="hstat('italic')">
+                        <input type="button" accesskey="u" value=" U " onclick="simpletag(&quot;U&quot;)" class="codebuttons" name="U" style="text-decoration:underline" onmouseover="hstat('under')">
+
+                        <select name="ffont" class="codebuttons" onchange="alterfont(this.options[this.selectedIndex].value, 'FONT')" onmouseover="hstat('font')">
+                           <option value="0">FONT</option>
+                           <option value="Arial" style="font-family:Arial">Arial</option>
+                           <option value="Times" style="font-family:Times">Times</option>
+                           <option value="Courier" style="font-family:Courier">Courier</option>
+                           <option value="Impact" style="font-family:Impact">Impact</option>
+                           <option value="Geneva" style="font-family:Geneva">Geneva</option>
+                           <option value="Optima" style="font-family:Optima">Optima</option>
+                        </select><select name="fsize" class="codebuttons" onchange="alterfont(this.options[this.selectedIndex].value, 'SIZE')" onmouseover="hstat('size')">
+                           <option value="0">SIZE</option>
+                           <option value="1">Small</option>
+                           <option value="7">Large</option>
+                           <option value="14">Largest</option>
+                        </select><select name="fcolor" class="codebuttons" onchange="alterfont(this.options[this.selectedIndex].value, 'COLOR')" onmouseover="hstat('color')">
+                           <option value="0">COLOR</option>
+                           <option value="blue" style="color:blue">Blue</option>
+                           <option value="red" style="color:red">Red</option>
+                           <option value="purple" style="color:purple">Purple</option>
+                           <option value="orange" style="color:orange">Orange</option>
+                           <option value="yellow" style="color:yellow">Yellow</option>
+                           <option value="gray" style="color:gray">Gray</option>
+                           <option value="green" style="color:green">Green</option>
+                        </select>
+                        <select name="talign" class="codebuttons" onchange="alterfont(this.options[this.selectedIndex].value, 'ALIGN')" onmouseover="hstat('ALIGN')">
+                           <option value="">ALIGN</option>
+                           <option value="left">Left</option>
+                           <option value="center">Center</option>
+                           <option value="right">Right</option>
+                        </select>
+                        &nbsp; <a href="javascript:closeall();" onmouseover="hstat('close')">Close all Tags</a>
+                        <br>
+                        <input type="button" accesskey="h" value=" LINK " onclick="tag_url()" class="codebuttons" name="url" onmouseover="hstat('url')">
+                        <input type="button" accesskey="g" value=" IMG " onclick="tag_image()" class="codebuttons" name="img" onmouseover="hstat('img')">
+                        <input type="button" accesskey="e" value=" @TAG  " onclick="tag_username()" class="codebuttons" name="taguser" onmouseover="hstat('taguser')">
+                        <input type="button" accesskey="q" value=" QUOTE " onclick="simpletag(&quot;QUOTE&quot;)" class="codebuttons" name="QUOTE" onmouseover="hstat('quote')">
+                        <input type="button" accesskey="p" value=" CODE " onclick="simpletag(&quot;CODE&quot;)" class="codebuttons" name="CODE" onmouseover="hstat('code')">
+                        <input type="button" accesskey="l" value=" LIST " onclick="tag_list()" class="codebuttons" name="LIST" onmouseover="hstat('list')">
+                        <!--<input type='button' accesskey='l' value=' SQL '     onclick='simpletag("SQL")'     class='codebuttons' name='SQL'>
+         <input type='button' accesskey='t' value=' HTML '    onclick='simpletag("HTML")'    class='codebuttons' name='HTML'>-->
+                        <input type="button" accesskey="d" value=" DOHTML " onclick="simpletag(&quot;DOHTML&quot;)" class="codebuttons" name="DOHTML" onmouseover="hstat('dohtml')">
+
+                     </span>
+                     <br>
+                     Open Tags:&nbsp;<input type="text" name="tagcount" size="3" maxlength="3" style="font-size:10px;font-family:verdana,arial;border:0px;font-weight:bold;" readonly="readonly" class="row1" value="0">
+                     &nbsp;<input type="text" name="helpbox" size="50" maxlength="120" style="width:auto;font-size:10px;font-family:verdana,arial;border:0px" readonly="readonly" class="row1" value="Hint: Use Guided Mode for helpful prompts">
+                  </td>
+               </tr>
+               <tr id="enter-your-post-header">
+                  <td colspan="2" class="pformstrip">Enter your Post</td>
+               </tr>
+               <tr id="enter-your-post">
+                  <td class="pformleft" align="center">
+                     <table class="tablefill" cellpadding="4" align="center" id="smilies-table">
+                        <tbody>
+                           <tr>
+                              <td align="center" colspan="3"><b>Clickable Smilies</b></td>
+                           </tr>
+                           <tr align="center">
+                              <td><a href="javascript:emoticon(':huh:')"><img src="//files.jcink.net/html/emoticons/huh.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon(':o')"><img src="//files.jcink.net/html/emoticons/ohmy.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon(';)')"><img src="//files.jcink.net/html/emoticons/wink.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                           </tr>
+
+                           <tr align="center">
+                              <td><a href="javascript:emoticon(':P')"><img src="//files.jcink.net/html/emoticons/tongue.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon(':D')"><img src="//files.jcink.net/html/emoticons/biggrin.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon(':lol:')"><img src="//files.jcink.net/html/emoticons/laugh.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                           </tr>
+
+                           <tr align="center">
+                              <td><a href="javascript:emoticon('B)')"><img src="//files.jcink.net/html/emoticons/cool.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon(':rolleyes:')"><img src="//files.jcink.net/html/emoticons/rolleyes.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon('<_<')"><img src="//files.jcink.net/html/emoticons/dry.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                           </tr>
+
+                           <tr align="center">
+                              <td><a href="javascript:emoticon(':)')"><img src="//files.jcink.net/html/emoticons/smile.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon(':angry:')"><img src="//files.jcink.net/html/emoticons/mad.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon(':(')"><img src="//files.jcink.net/html/emoticons/sad.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                           </tr>
+
+                           <tr align="center">
+                              <td><a href="javascript:emoticon(':unsure:')"><img src="//files.jcink.net/html/emoticons/unsure.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon(':blink:')"><img src="//files.jcink.net/html/emoticons/blink.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                              <td><a href="javascript:emoticon(':ph34r:')"><img src="//files.jcink.net/html/emoticons/ph34r.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                           </tr>
+
+                           <tr align="center">
+                              <td>&nbsp;</td>
+                              <td>&nbsp;</td>
+                              <td>&nbsp;</td>
+                           </tr>
+                           <tr>
+                              <td align="center" colspan="3"><b><a href="javascript:emo_pop()">Show All</a></b></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <br>
+                     <div class="desc"><strong><a href="javascript:CheckLength()">Check Post Length</a> · <a href="javascript:bbc_pop()">BB Code Help</a></strong></div>
+                  </td>
+                  <td class="pformright" valign="top">
+
+                     <textarea cols="80" rows="20" name="Post" tabindex="3" class="textinput"></textarea>
+
+                  </td>
+               </tr>
+               <tr id="post-options">
+                  <td class="pformleft"><b>Post Options</b></td>
+                  <td class="pformright">
+                     <input type="checkbox" name="enableemo" class="checkbox" value="yes" checked="checked">&nbsp;<b>Enable</b> emoticons?
+                     <br><input type="checkbox" name="enablesig" class="checkbox" value="yes" checked="checked">&nbsp;<b>Enable</b> signature?
+                     <br><input type="checkbox" name="enabletrack" class="checkbox" value="1">&nbsp;<strong>Enable</strong> <acronym title="Notifications are delivered via alerts and emails depending on your preferences.">notification</acronym> of replies?
+                  </td>
+               </tr>
+               <!--QUOTE BOX-->
+               <tr id="post-icon-options">
+                  <td class="pformleft"><b>Post Icons</b></td>
+                  <td class="pformright">
+                     <input type="radio" class="radiobutton" name="iconid" value="1">&nbsp;&nbsp;<img src="style_images/1/icon1.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="2">&nbsp;&nbsp;<img src="style_images/1/icon2.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="3">&nbsp;&nbsp;<img src="style_images/1/icon3.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="4">&nbsp;&nbsp;<img src="style_images/1/icon4.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="5">&nbsp;&nbsp;<img src="style_images/1/icon5.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="6">&nbsp;&nbsp;<img src="style_images/1/icon6.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="7">&nbsp;&nbsp;<img src="style_images/1/icon7.gif" align="middle" alt=""><br>
+                     <input type="radio" class="radiobutton" name="iconid" value="8">&nbsp;&nbsp;<img src="style_images/1/icon8.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="9">&nbsp;&nbsp;<img src="style_images/1/icon9.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="10">&nbsp;&nbsp;<img src="style_images/1/icon10.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="11">&nbsp;&nbsp;<img src="style_images/1/icon11.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="12">&nbsp;&nbsp;<img src="style_images/1/icon12.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="13">&nbsp;&nbsp;<img src="style_images/1/icon13.gif" align="middle" alt="">&nbsp;&nbsp;&nbsp;<input type="radio" class="radiobutton" name="iconid" value="14">&nbsp;&nbsp;<img src="style_images/1/icon14.gif" align="middle" alt=""><br>
+                     <input type="radio" class="radiobutton" name="iconid" value="0" checked="checked">&nbsp;&nbsp;[ Use None ]
+                  </td>
+               </tr>
+
+               <tr id="post-as-header">
+                  <td colspan="2" class="pformstrip">Post as user</td>
+               </tr>
+               <tr id="post-as">
+                  <td class="pformleft">Select sub-account author...</td>
+                  <td width="100%" class="pformright">
+
+                     <script>
+                        function edit_sub_user() {
+                           if (document.getElementById('post_as_menu').value == -1) {
+                              document.getElementById('post_as_selector').innerHTML = "<input type='text' class='forminput' name='post_as_username' size='40' placeholder='Enter username of any member here...'>";
+                           }
+                        }
+                     </script>
+
+                     <span id="post_as_selector">
+                        <select id="post_as_menu" name="post_as" class="forminput" onchange="edit_sub_user()">
+                           <option value="0">-- Current account --</option>
+                           <option value="31">&nbsp;&nbsp;» andin andilet </option>
+                           <option value="-1">Enter username...</option>
+                        </select>
+                     </span>
+                  </td>
+               </tr>
+
+               <tr>
+                  <td class="pformstrip" colspan="2">Options</td>
+               </tr>
+               <tr>
+                  <td class="pformleft">After posting...</td>
+                  <td class="pformright"><select id="forminput" name="mod_options" class="forminput">
+                        <option value="nowt">( Do Nothing )</option>
+                        <option value="pin">Pin this topic</option>
+                        <option value="close">Close this topic</option>
+                        <option value="pinclose">Pin &amp; Close this topic</option>
+                        <option value="move">Move this topic</option>
+                     </select></td>
+               </tr>
+
+               <tr>
+                  <td class="pformstrip" align="center" style="text-align:center" colspan="2">
+                     <input type="submit" name="submit" value="Add Reply" tabindex="4" class="forminput" accesskey="s" onclick="editor.switchModes()">&nbsp;
+                     <input type="submit" name="preview" value="Preview Post" tabindex="5" class="forminput">
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+
+
+
+
+
+
+         <br><br><br><br><br>
+
+
+
+         <!-- COMPOSE NEW MESSAGE -->
+         <table cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+               <tr>
+                  <td id="ucpmenu" valign="top">
+                     <div class="maintitle">Menu</div>
+                     <!--IBF.TSLLINKS-->
+                     <!-- Messenger -->
+                     <div class="pformstrip">Messenger</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=04"><strong>Compose New Message</strong></a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01"><strong>Go to Inbox</strong></a><br>
+                        &nbsp; '— <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01&amp;VID=sent">Sent Items</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=delete">Empty PM Folders</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=07">Edit Storage Folders</a><br>
+                        · <a href="javascript:window.open('index.php?showuser=2&amp;CODE=friends','Friends','width=620,height=460,resizable=yes,scrollbars=yes');void(0);">My Friends/Contacts</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=14">Archive Messages</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=20">Saved (Unsent) PMs</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=30">Message Tracker</a><br>
+                     </p>
+                     <!-- End Messenger -->
+                     <!-- Topic Tracker -->
+                     <div class="pformstrip">Subscriptions</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=26">View Topics</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=50">View Forums</a><br>
+                     </p>
+                     <!-- Profile -->
+                     <div class="pformstrip">Personal Profile</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=01">Edit Profile info</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=22">Edit Signature</a><br>
+                        <!--JFB.SUB_ACCOUNTS-->
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=24">Edit Avatar Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=52">Change Username</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=photo">Change Personal Photo</a><br>
+                     </p>
+                     <!-- Options -->
+                     <div class="pformstrip">Options</div>
+                     <p>
+                        <!--IBF.OPTION_LINKS-->
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=alerts_settings">Alert Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=02">Email Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=04">Board Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=40">Shoutbox Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=06">Skin and Languages</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=08">Change Email Address</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=28">Change Password</a>
+                     </p>
+                  </td>
+                  <td style="padding:2px"><!-- --></td>
+                  <!-- Start main CP area -->
+                  <td id="ucpcontent" valign="top">
+                     <div class="maintitle">Welcome to your control panel </div>
+                     <script language="javascript1.2" type="text/javascript">
+                        < !-
+                        var MessageMax = "";
+                        var Override = "";
+                        MessageMax = parseInt(MessageMax);
+
+                        if (MessageMax < 0) {
+                           MessageMax = 0;
+                        }
+
+                        function emo_pop() {
+                           window.open('index.php?act=legends&CODE=emoticons&s=', 'Legends', 'width=250,height=500,resizable=yes,scrollbars=yes');
+                        }
+                        function bbc_pop() {
+                           window.open('index.php?act=legends&CODE=bbcode&s=', 'Legends', 'width=700,height=500,resizable=yes,scrollbars=yes');
+                        }
+                        function CheckLength() {
+
+                           p = document.REPLIER.Post.value;
+                           word_count = p.split(" ").length;
+
+                           MessageLength = document.REPLIER.Post.value.length;
+
+                           message = "";
+                           if (MessageMax > 0) {
+                              message = "Post: The maximum allowed length is " + MessageMax + " characters.";
+                           } else {
+                              message = "";
+                           }
+
+                           alert(message + MessageLength + " characters, " + word_count + " words");
+                        }
+
+                        function ValidateForm(isMsg) {
+                           MessageLength = document.REPLIER.Post.value.length;
+                           errors = "";
+
+                           if (isMsg == 1) {
+                              if (document.REPLIER.msg_title.value.length < 2) {
+                                 errors = "You must enter a message title";
+                              }
+                           }
+
+                           if (MessageLength < 2) {
+                              errors = "You must enter a message to post!";
+                           }
+                           if (MessageMax != 0) {
+                              if (MessageLength > MessageMax) {
+                                 errors = "The maximum allowed length is " + MessageMax + " characters. Current Characters: " + MessageLength;
+                              }
+                           }
+                           if (errors != "" && Override == "") {
+                              alert(errors);
+                              return false;
+                           } else {
+                              document.REPLIER.submit.disabled = true;
+                              return true;
+                           }
+                        }
+
+                        // IBC Code stuff
+
+                        var text_enter_url = "Enter the complete URL for the hyperlink";
+                        var text_enter_url_name = "Enter the title of the webpage";
+                        var text_enter_image = "Enter the complete URL for the image";
+                        var text_enter_email = "Enter the email address";
+                        var text_enter_flash = "Enter the URL to the Flash movie.";
+                        var text_code = "Usage: [CODE] Your Code Here.. [/CODE]";
+                        var text_quote = "Usage: [QUOTE] Your Quote Here.. [/QUOTE]";
+                        var error_no_url = "You must enter a URL";
+                        var error_no_title = "You must enter a title";
+                        var error_no_email = "You must enter an email address";
+                        var error_no_width = "You must enter a width";
+                        var error_no_height = "You must enter a height";
+                        var prompt_start = "Enter the text to be formatted";
+
+                        var help_bold = "Insert Bold Text (alt + b)";
+                        var help_italic = "Insert Italic Text (alt + i)";
+                        var help_under = "Insert Underlined Text (alt + u)";
+                        var help_font = "Insert Font Face tags";
+                        var help_size = "Insert Font Size tags";
+                        var help_color = "Insert Font Color tags";
+                        var help_close = "Close all open tags";
+                        var help_url = "Insert Hyperlink (alt+ h)";
+                        var help_img = "Image (alt + g) [img]http://www.dom.com/img.gif[/img]";
+                        var help_email = "Insert Email Address (alt + e)";
+                        var help_quote = "Insert Quoted Text (alt + q)";
+                        var help_list = "Create a list (alt + l)";
+                        var help_code = "Insert Monotype Text (alt + p)";
+                        var help_click_close = "Click button again to close";
+                        var list_prompt = "Enter a list item. Click 'cancel' or leave blank to end the list";
+
+
+                           //-->
+                     </script>
+
+
+                     <script language="javascript" type="text/javascript">
+                        < !-
+                           function find_users() {
+                              url = "index.php?act=legends&CODE=finduser_one&s=&entry=textarea&name=carbon_copy&sep=line";
+                              window.open(url, 'FindUsers', 'width=400,height=250,resizable=yes,scrollbars=yes');
+                           }
+                        //-->
+                     </script>
+                     <form action="https://xmortala.jcink.net/index.php?" method="post" name="REPLIER" onsubmit="return ValidateForm(1)">
+                        <input type="hidden" name="act" value="Msg">
+                        <input type="hidden" name="CODE" value="04">
+                        <input type="hidden" name="MODE" value="01">
+                        <input type="hidden" name="OID" value="">
+                        <input type="hidden" name="auth_key" value="4ce9e3bd60fcc5427477caed78c2c427">
+                        <input type="hidden" name="auth_key" value="4ce9e3bd60fcc5427477caed78c2c427">
+                        <table width="100%" cellspacing="0">
+                           <tbody>
+                              <tr>
+                                 <td colspan="2" class="pformstrip">Recipients Name</td>
+                              </tr>
+                              <tr>
+                                 <td class="pformleft"><b>Choose from your address book</b></td>
+                                 <td class="pformright">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                 <td class="pformleft"><b><u>OR</u> Enter the members name here</b></td>
+                                 <td class="pformright"><input type="text" name="entered_name" size="50" value="" tabindex="1" class="forminput"></td>
+                              </tr>
+
+                              <tr>
+                                 <td colspan="2" class="pformstrip">Carbon copy to other members</td>
+                              </tr>
+                              <tr>
+                                 <td class="pformleft"><b>You may enter up to 6 names in the carbon copy box</b>.<br><br>One line per name.</td>
+                                 <td class="pformright">
+                                    <textarea name="carbon_copy" rows="5" cols="40" class="textinput"></textarea><br>
+                                    <input type="button" class="forminput" name="findusers" onclick="find_users()" value="Search for user names">
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td colspan="2" class="pformstrip">Enter your message. (Privacy Warning: PM contents may be logged or monitored)</td>
+                              </tr>
+                              <tr>
+                                 <td class="pformleft"><b>Message Title</b></td>
+                                 <td class="pformright"><input type="text" name="msg_title" size="40" tabindex="2" maxlength="40" value="" class="forminput"></td>
+                              </tr>
+                              <tr id="code-buttons-header">
+                                 <td class="pformstrip" colspan="2">Code Buttons</td>
+                              </tr>
+                              <tr id="code-buttons">
+                                 <td class="pformleft">
+                                    <input type="radio" name="bbmode" class="radiobutton" value="ezmode" onclick="setmode(this.value)">&nbsp;<b>Guided Mode</b><br>
+                                    <input type="radio" name="bbmode" class="radiobutton" value="normal" onclick="setmode(this.value)" checked="checked">&nbsp;<b>Normal Mode</b>
+                                    <script type="text/javascript" src="//files.jcink.net/html/jbfcode.js"></script>
+                                 </td>
+                                 <td class="pformright">
+                                    <span id="bbcode-buttons">
+                                       <input type="button" accesskey="b" value=" B " onclick="simpletag(&quot;B&quot;)" class="codebuttons" name="B" style="font-weight:bold" onmouseover="hstat('bold')">
+                                       <input type="button" accesskey="i" value=" I " onclick="simpletag(&quot;I&quot;)" class="codebuttons" name="I" style="font-style:italic" onmouseover="hstat('italic')">
+                                       <input type="button" accesskey="u" value=" U " onclick="simpletag(&quot;U&quot;)" class="codebuttons" name="U" style="text-decoration:underline" onmouseover="hstat('under')">
+
+                                       <select name="ffont" class="codebuttons" onchange="alterfont(this.options[this.selectedIndex].value, 'FONT')" onmouseover="hstat('font')">
+                                          <option value="0">FONT</option>
+                                          <option value="Arial" style="font-family:Arial">Arial</option>
+                                          <option value="Times" style="font-family:Times">Times</option>
+                                          <option value="Courier" style="font-family:Courier">Courier</option>
+                                          <option value="Impact" style="font-family:Impact">Impact</option>
+                                          <option value="Geneva" style="font-family:Geneva">Geneva</option>
+                                          <option value="Optima" style="font-family:Optima">Optima</option>
+                                       </select><select name="fsize" class="codebuttons" onchange="alterfont(this.options[this.selectedIndex].value, 'SIZE')" onmouseover="hstat('size')">
+                                          <option value="0">SIZE</option>
+                                          <option value="1">Small</option>
+                                          <option value="7">Large</option>
+                                          <option value="14">Largest</option>
+                                       </select><select name="fcolor" class="codebuttons" onchange="alterfont(this.options[this.selectedIndex].value, 'COLOR')" onmouseover="hstat('color')">
+                                          <option value="0">COLOR</option>
+                                          <option value="blue" style="color:blue">Blue</option>
+                                          <option value="red" style="color:red">Red</option>
+                                          <option value="purple" style="color:purple">Purple</option>
+                                          <option value="orange" style="color:orange">Orange</option>
+                                          <option value="yellow" style="color:yellow">Yellow</option>
+                                          <option value="gray" style="color:gray">Gray</option>
+                                          <option value="green" style="color:green">Green</option>
+                                       </select>
+                                       &nbsp; <a href="javascript:closeall();" onmouseover="hstat('close')">Close all Tags</a>
+                                       <br>
+                                       <input type="button" accesskey="h" value=" LINK " onclick="tag_url()" class="codebuttons" name="url" onmouseover="hstat('url')">
+                                       <input type="button" accesskey="g" value=" IMG " onclick="tag_image()" class="codebuttons" name="img" onmouseover="hstat('img')">
+                                       <input type="button" accesskey="q" value=" QUOTE " onclick="simpletag(&quot;QUOTE&quot;)" class="codebuttons" name="QUOTE" onmouseover="hstat('quote')">
+                                       <input type="button" accesskey="p" value=" CODE " onclick="simpletag(&quot;CODE&quot;)" class="codebuttons" name="CODE" onmouseover="hstat('code')">
+                                       <input type="button" accesskey="l" value=" LIST " onclick="tag_list()" class="codebuttons" name="LIST" onmouseover="hstat('list')">
+                                       <!--<input type='button' accesskey='l' value=' SQL '     onclick='simpletag("SQL")'     class='codebuttons' name='SQL'>
+         <input type='button' accesskey='t' value=' HTML '    onclick='simpletag("HTML")'    class='codebuttons' name='HTML'>-->
+                                    </span>
+                                    <br>
+                                    Open Tags:&nbsp;<input type="text" name="tagcount" size="3" maxlength="3" style="font-size:10px;font-family:verdana,arial;border:0px;font-weight:bold;" readonly="readonly" class="row1" value="0">
+                                    &nbsp;<input type="text" name="helpbox" size="50" maxlength="120" style="width:auto;font-size:10px;font-family:verdana,arial;border:0px" readonly="readonly" class="row1" value="Hint: Use Guided Mode for helpful prompts">
+                                 </td>
+                              </tr>
+                              <tr id="enter-your-post-header">
+                                 <td colspan="2" class="pformstrip">Enter your Post</td>
+                              </tr>
+                              <tr>
+                                 <td class="pformleft">
+                                    <table class="tablefill" cellpadding="4" align="center" id="smilies-table">
+                                       <tbody>
+                                          <tr>
+                                             <td align="center" colspan="3"><b>Clickable Smilies</b></td>
+                                          </tr>
+                                          <tr align="center">
+                                             <td><a href="javascript:emoticon(':huh:')"><img src="//files.jcink.net/html/emoticons/huh.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon(':o')"><img src="//files.jcink.net/html/emoticons/ohmy.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon(';)')"><img src="//files.jcink.net/html/emoticons/wink.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                          </tr>
+
+                                          <tr align="center">
+                                             <td><a href="javascript:emoticon(':P')"><img src="//files.jcink.net/html/emoticons/tongue.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon(':D')"><img src="//files.jcink.net/html/emoticons/biggrin.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon(':lol:')"><img src="//files.jcink.net/html/emoticons/laugh.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                          </tr>
+
+                                          <tr align="center">
+                                             <td><a href="javascript:emoticon('B)')"><img src="//files.jcink.net/html/emoticons/cool.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon(':rolleyes:')"><img src="//files.jcink.net/html/emoticons/rolleyes.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon('<_<')"><img src="//files.jcink.net/html/emoticons/dry.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                          </tr>
+
+                                          <tr align="center">
+                                             <td><a href="javascript:emoticon(':)')"><img src="//files.jcink.net/html/emoticons/smile.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon(':angry:')"><img src="//files.jcink.net/html/emoticons/mad.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon(':(')"><img src="//files.jcink.net/html/emoticons/sad.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                          </tr>
+
+                                          <tr align="center">
+                                             <td><a href="javascript:emoticon(':unsure:')"><img src="//files.jcink.net/html/emoticons/unsure.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon(':blink:')"><img src="//files.jcink.net/html/emoticons/blink.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                             <td><a href="javascript:emoticon(':ph34r:')"><img src="//files.jcink.net/html/emoticons/ph34r.gif" alt="smilie" border="0"></a>&nbsp;</td>
+                                          </tr>
+
+                                          <tr align="center">
+                                             <td>&nbsp;</td>
+                                             <td>&nbsp;</td>
+                                             <td>&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                             <td align="center" colspan="3"><b><a href="javascript:emo_pop()">Show All</a></b></td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <br>
+                                    (<a href="javascript:CheckLength()">Check Post Length</a>)
+                                 </td>
+                                 <td class="pformright" valign="top"><textarea cols="70" rows="15" name="Post" tabindex="3" class="textinput"></textarea></td>
+                              </tr>
+                              <tr>
+                                 <td colspan="2" class="pformstrip">Options</td>
+                              </tr>
+                              <tr>
+                                 <td class="pformleft">&nbsp;</td>
+                                 <td class="pformright">
+                                    <input type="checkbox" name="add_sent" value="yes">&nbsp;<b>Add a copy of this message to my sent items folder</b>
+                                    <br><input type="checkbox" name="add_tracking" value="1">&nbsp;<b>Track this message?</b>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="pformstrip" align="center" colspan="2">
+                                    <input type="submit" value="Send Message" tabindex="4" accesskey="s" class="forminput" name="submit">
+                                    <input type="submit" value="Preview Message" tabindex="5" class="forminput" name="preview">
+                                    <input type="submit" value="Save (Send later)" tabindex="6" class="forminput" name="save">
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </form>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+
+         <br><br><br><br><br>
+
+
+         <!-- GO TO INBOX -->
+         <table cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+               <tr>
+                  <td id="ucpmenu" valign="top">
+                     <div class="maintitle">Menu</div>
+                     <!--IBF.TSLLINKS-->
+                     <!-- Messenger -->
+                     <div class="pformstrip">Messenger</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=04"><strong>Compose New Message</strong></a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01"><strong>Go to Inbox</strong></a><br>
+                        &nbsp; '— <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01&amp;VID=sent">Sent Items</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=delete">Empty PM Folders</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=07">Edit Storage Folders</a><br>
+                        · <a href="javascript:window.open('index.php?showuser=2&amp;CODE=friends','Friends','width=620,height=460,resizable=yes,scrollbars=yes');void(0);">My Friends/Contacts</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=14">Archive Messages</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=20">Saved (Unsent) PMs</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=30">Message Tracker</a><br>
+                     </p>
+                     <!-- End Messenger -->
+                     <!-- Topic Tracker -->
+                     <div class="pformstrip">Subscriptions</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=26">View Topics</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=50">View Forums</a><br>
+                     </p>
+                     <!-- Profile -->
+                     <div class="pformstrip">Personal Profile</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=01">Edit Profile info</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=22">Edit Signature</a><br>
+                        <!--JFB.SUB_ACCOUNTS-->
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=24">Edit Avatar Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=52">Change Username</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=photo">Change Personal Photo</a><br>
+                     </p>
+                     <!-- Options -->
+                     <div class="pformstrip">Options</div>
+                     <p>
+                        <!--IBF.OPTION_LINKS-->
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=alerts_settings">Alert Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=02">Email Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=04">Board Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=40">Shoutbox Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=06">Skin and Languages</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=08">Change Email Address</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=28">Change Password</a>
+                     </p>
+                  </td>
+                  <td style="padding:2px"><!-- --></td>
+                  <!-- Start main CP area -->
+                  <td id="ucpcontent" valign="top">
+                     <div class="maintitle">Welcome to your control panel </div>
+                     <!-- inbox folder -->
+                     <script language="JavaScript" type="text/javascript">
+                           < !-
+                        
+                        var ie = document.all ? 1 : 0;
+                        //var ns4 = document.layers ? 1 : 0;
+
+                        function hl(cb) {
+                           if (ie) {
+                              while (cb.tagName != "TR") {
+                                 cb = cb.parentElement;
+                              }
+                           }
+                           else {
+                              while (cb.tagName != "TR") {
+                                 cb = cb.parentNode;
+                              }
+                           }
+                           cb.className = 'hlight';
+                        }
+
+                        function dl(cb) {
+                           if (ie) {
+                              while (cb.tagName != "TR") {
+                                 cb = cb.parentElement;
+                              }
+                           }
+                           else {
+                              while (cb.tagName != "TR") {
+                                 cb = cb.parentNode;
+                              }
+                           }
+                           cb.className = 'dlight';
+                        }
+
+                        function cca(cb) {
+                           if (cb.checked) {
+                              hl(cb);
+                           }
+                           else {
+                              dl(cb);
+                           }
+                        }
+
+                        function CheckAll(cb) {
+                           var fmobj = document.mutliact;
+                           for (var i = 0; i < fmobj.elements.length; i++) {
+                              var e = fmobj.elements[i];
+                              if ((e.name != 'allbox') && (e.type == 'checkbox') && (!e.disabled)) {
+                                 e.checked = fmobj.allbox.checked;
+                                 if (fmobj.allbox.checked) {
+                                    hl(e);
+                                 }
+                                 else {
+                                    dl(e);
+                                 }
+                              }
+                           }
+                        }
+                        function CheckCheckAll(cb) {
+                           var fmobj = document.mutliact;
+                           var TotalBoxes = 0;
+                           var TotalOn = 0;
+                           for (var i = 0; i < fmobj.elements.length; i++) {
+                              var e = fmobj.elements[i];
+                              if ((e.name != 'allbox') && (e.type == 'checkbox')) {
+                                 TotalBoxes++;
+                                 if (e.checked) {
+                                    TotalOn++;
+                                 }
+                              }
+                           }
+                           if (TotalBoxes == TotalOn) { fmobj.allbox.checked = true; }
+                           else { fmobj.allbox.checked = false; }
+                        }
+
+                        function select_read() {
+                           var fmobj = document.mutliact;
+                           for (var i = 0; i < fmobj.elements.length; i++) {
+                              var e = fmobj.elements[i];
+                              if ((e.type == 'hidden') && (e.value == 1) && (!isNaN(e.name))) {
+                                 eval("fmobj.msgid_" + e.name + ".checked=true;");
+                                 hl(e);
+                              }
+                           }
+                        }
+
+                        function unselect_all() {
+                           var fmobj = document.mutliact;
+                           for (var i = 0; i < fmobj.elements.length; i++) {
+                              var e = fmobj.elements[i];
+                              if (e.type == 'checkbox') {
+                                 e.checked = false;
+                                 dl(e);
+                              }
+                           }
+                        }
+
+                        //-->
+                     </script>
+                     <div class="pformstrip">Inbox</div>
+                     <table width="100%" style="padding:6px">
+                        <tbody>
+                           <tr>
+                              <td valign="middle">
+                                 <!-- LEFT -->
+                                 <table style="width:250px" cellspacing="1" class="tableborder">
+                                    <tbody>
+                                       <tr>
+                                          <td class="row1" align="left" colspan="3">Your folders are 0% full</td>
+                                       </tr>
+                                       <tr>
+                                          <td align="left" valign="middle" class="row2" colspan="3"><img src="style_images/1/bar_left.gif" border="0" width="4" height="11" align="middle" alt=""><img src="style_images/1/bar.gif" border="0" width="1" height="11" align="middle" alt=""><img src="style_images/1/bar_right.gif" border="0" width="4" height="11" align="middle" alt=""></td>
+                                       </tr>
+                                       <tr>
+                                          <td class="row1" width="33%" align="left" valign="middle">0%</td>
+                                          <td class="row1" width="33%" align="center" valign="middle">50%</td>
+                                          <td class="row1" width="33%" align="right" valign="middle">100%</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <!-- RIGHT -->
+                              <td align="right" valign="bottom" style="line-height:100%;">
+                                 Pages: <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;&amp;CODE=1&amp;&amp;st=0&amp;VID=in&amp;sort=">View all</a><br><br>
+                                 <a href="javascript:select_read()">Select read messages</a> :: <a href="javascript:unselect_all()">Unselect all</a><br><br>
+                                 <form action="https://xmortala.jcink.net/index.php?CODE=01&amp;act=Msg" name="jump" method="post">
+                                    <b>Jump to folder: </b>&nbsp; <select name="VID" class="forminput">
+                                       <option value="in" selected="selected">Inbox</option>
+                                       <option value="sent">Sent Items</option>
+                                       <!--EXTRA-->
+                                    </select>
+
+                                    <input type="submit" name="submit" value="Go!" class="forminput">
+                                 </form>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+
+                     <!-- INBOX TABLE -->
+
+                     <form action="https://xmortala.jcink.net/index.php?CODE=06&amp;act=Msg" name="mutliact" method="post">
+                        <div class="tableborder">
+                           <table cellpadding="4" cellspacing="1" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <th width="5%" class="titlemedium">&nbsp;</th>
+                                    <th width="35%" class="titlemedium"><a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01&amp;VID=in&amp;sort=title&amp;st="><b>Message Title</b></a></th>
+                                    <th width="30%" class="titlemedium"><a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01&amp;VID=in&amp;sort=name&amp;st="><b>Sender</b></a></th>
+                                    <th width="25%" class="titlemedium"><a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01&amp;VID=in&amp;sort=msg_date&amp;st="><b>Date</b></a></th>
+                                    <th width="5%" class="titlemedium"><input name="allbox" type="checkbox" value="Check All" onclick="CheckAll();"></th>
+                                 </tr>
+                                 <tr>
+                                    <td class="row1" colspan="5" align="center"><b>No messages found</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td align="right" class="titlemedium" colspan="5">
+                                       <div style="float: left;"><input type="text" name="search" placeholder="Search this folder..." size="20" maxlength="60" class="textinput" onfocus="this.value=''">&nbsp;<input type="submit" name="go_search_folder" value="Go" class="forminput"></div>
+                                       <input type="submit" name="move" value="move to" class="forminput"> <select name="VID" class="forminput">
+                                          <option value="in" selected="selected">Inbox</option>
+                                          <option value="sent">Sent Items</option>
+                                          <!--EXTRA-->
+                                       </select>
+
+                                       or <input type="submit" name="delete" value="delete" class="forminput"> the selected messages
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </form>
+                     <div class="wrapmini" style="padding:6px"><img alt="Read Message" title="Read Message" src="//files.jcink.net/themes/default/white-cube-small.png">&nbsp;Read messages<br><img alt="Unread Message" title="Unread Message" src="//files.jcink.net/themes/default/red-cube-small.png">&nbsp;Unread messages</div>
+                     <div align="right" style="padding:6px">Pages: <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;&amp;CODE=1&amp;&amp;st=0&amp;VID=in&amp;sort=">View all</a><br><i>You have 0 messages out of 50 maximum storable messages</i></div>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+
+
+         <br><br><br><br><br>
+
+         <!-- EMPTY PM FOLDERS -->
+         <table cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+               <tr>
+                  <td id="ucpmenu" valign="top">
+                     <div class="maintitle">Menu</div>
+                     <!--IBF.TSLLINKS-->
+                     <!-- Messenger -->
+                     <div class="pformstrip">Messenger</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=04"><strong>Compose New Message</strong></a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01"><strong>Go to Inbox</strong></a><br>
+                        &nbsp; '— <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01&amp;VID=sent">Sent Items</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=delete">Empty PM Folders</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=07">Edit Storage Folders</a><br>
+                        · <a href="javascript:window.open('index.php?showuser=2&amp;CODE=friends','Friends','width=620,height=460,resizable=yes,scrollbars=yes');void(0);">My Friends/Contacts</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=14">Archive Messages</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=20">Saved (Unsent) PMs</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=30">Message Tracker</a><br>
+                     </p>
+                     <!-- End Messenger -->
+                     <!-- Topic Tracker -->
+                     <div class="pformstrip">Subscriptions</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=26">View Topics</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=50">View Forums</a><br>
+                     </p>
+                     <!-- Profile -->
+                     <div class="pformstrip">Personal Profile</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=01">Edit Profile info</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=22">Edit Signature</a><br>
+                        <!--JFB.SUB_ACCOUNTS-->
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=24">Edit Avatar Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=52">Change Username</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=photo">Change Personal Photo</a><br>
+                     </p>
+                     <!-- Options -->
+                     <div class="pformstrip">Options</div>
+                     <p>
+                        <!--IBF.OPTION_LINKS-->
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=alerts_settings">Alert Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=02">Email Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=04">Board Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=40">Shoutbox Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=06">Skin and Languages</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=08">Change Email Address</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=28">Change Password</a>
+                     </p>
+                  </td>
+                  <td style="padding:2px"><!-- --></td>
+                  <!-- Start main CP area -->
+                  <td id="ucpcontent" valign="top">
+                     <div class="maintitle">Welcome to your control panel </div>
+                     <form action="https://xmortala.jcink.net/index.php?" method="post">
+                        <input type="hidden" name="act" value="Msg">
+                        <input type="hidden" name="CODE" value="dofolderdelete">
+                        <div class="pformstrip">Empty PM Folders</div>
+                        <p>You may remove your stored personal messages - simply choose which folders you wish to empty and click on the continue button.<br>Note: There is no undo - please double check before continuing.</p>
+                        <div class="tableborder">
+                           <table cellpadding="4" cellspacing="1" width="100%">
+                              <tbody>
+                                 <tr>
+                                    <th class="titlemedium">Folder</th>
+                                    <th class="titlemedium">No. PMs</th>
+                                    <th class="titlemedium">Empty?</th>
+                                 </tr>
+                                 <tr>
+                                    <td class="row1"><strong>Unsent PMs</strong></td>
+                                    <td class="row1" align="center">0</td>
+                                    <td class="row1" align="center"><input type="checkbox" class="checkbox" name="its_unsent" value="1"></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="row1"><strong>Inbox</strong></td>
+                                    <td class="row1" align="center">0</td>
+                                    <td class="row1" align="center"><input type="checkbox" class="checkbox" name="its_in" value="1"></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="row1"><strong>Sent Items</strong></td>
+                                    <td class="row1" align="center">0</td>
+                                    <td class="row1" align="center"><input type="checkbox" class="checkbox" name="its_sent" value="1"></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="row2" colspan="3" align="center"><input type="checkbox" class="checkbox" name="save_unread" value="1" checked="checked"> <strong>Keep Unread PMs?</strong></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <div class="pformstrip" align="center"><input type="submit" value="Continue" class="forminput"></div>
+                        </div>
+                     </form>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+
+
+         <br><br><br><br><br>
+
+
+         <!-- UCP -->
+
+         <table cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+               <tr>
+                  <td id="ucpmenu" valign="top">
+                     <div class="maintitle">Menu</div>
+                     <!--IBF.TSLLINKS-->
+                     <!-- Messenger -->
+                     <div class="pformstrip">Messenger</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=04"><strong>Compose New Message</strong></a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01"><strong>Go to Inbox</strong></a><br>
+                        &nbsp; '— <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=01&amp;VID=sent">Sent Items</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=delete">Empty PM Folders</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=07">Edit Storage Folders</a><br>
+                        · <a href="javascript:window.open('index.php?showuser=2&amp;CODE=friends','Friends','width=620,height=460,resizable=yes,scrollbars=yes');void(0);">My Friends/Contacts</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=14">Archive Messages</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=20">Saved (Unsent) PMs</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=Msg&amp;CODE=30">Message Tracker</a><br>
+                     </p>
+                     <!-- End Messenger -->
+                     <!-- Topic Tracker -->
+                     <div class="pformstrip">Subscriptions</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=26">View Topics</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=50">View Forums</a><br>
+                     </p>
+                     <!-- Profile -->
+                     <div class="pformstrip">Personal Profile</div>
+                     <p>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=01">Edit Profile info</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=22">Edit Signature</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=54">Edit Sub-accounts</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=24">Edit Avatar Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=52">Change Username</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=photo">Change Personal Photo</a><br>
+                     </p>
+                     <!-- Options -->
+                     <div class="pformstrip">Options</div>
+                     <p>
+                        <!--IBF.OPTION_LINKS-->
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=alerts_settings">Alert Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=02">Email Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=04">Board Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=40">Shoutbox Settings</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=06">Skin and Languages</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=08">Change Email Address</a><br>
+                        · <a href="https://xmortala.jcink.net/index.php?act=UserCP&amp;CODE=28">Change Password</a>
+                     </p>
+                  </td>
+                  <td style="padding:2px"><!-- --></td>
+                  <!-- Start main CP area -->
+                  <td id="ucpcontent" valign="top">
+                     <div class="maintitle">Welcome to your control panel </div>
+                     <script language="javascript" type="text/javascript">
+                        < !-
+                        
+                        var LocationMax = "50000";
+                        var InterestMax = "50000";
+
+                        function CheckLength(Type) {
+                           LocationLength = document.theForm.Location.value.length;
+                           InterestLength = document.theForm.Interests.value.length;
+                           message = "";
+
+                           if (Type == "location") {
+                              if (LocationMax != 0) {
+                                 message = "Location: The maximum allowed length is " + LocationMax + " characters.";
+                              } else {
+                                 message = "";
+                              }
+                              alert(message + "  You have used " + LocationLength + " characters so far.");
+                           }
+                           if (Type == "interest") {
+                              if (InterestMax != 0) {
+                                 message = "Interests: The maximum allowed length is " + InterestMax + " characters.";
+                              } else {
+                                 message = "";
+                              }
+                              alert(message + "  You have used " + InterestLength + " characters so far.");
+                           }
+
+                        }
+
+                        function ValidateProfile() {
+
+                           LocationLength = document.theForm.Location.value.length;
+                           InterestLength = document.theForm.Interests.value.length;
+
+                           errors = "";
+
+                           if (LocationMax != 0) {
+                              if (LocationLength > LocationMax) {
+                                 errors = "Location:  The maximum allowed length is " + LocationMax + " characters.  You have used: " + LocationLength;
+                              }
+                           }
+                           if (InterestMax != 0) {
+                              if (InterestLength > InterestMax) {
+                                 errors = errors + "  Interests:  The maximum allowed length is " + InterestMax + " characters.  You have used: " + InterestLength;
+                              }
+                           }
+
+                           if (errors != "") {
+                              alert(errors);
+                              return false;
+                           } else {
+                              return true;
+                           }
+                        }
+                        //-->
+                     </script>
+                     <form action="https://xmortala.jcink.net/index.php?auth_key=4ce9e3bd60fcc5427477caed78c2c427" method="post" name="theForm" onsubmit="return ValidateProfile()">
+                        <input type="hidden" name="act" value="UserCP">
+                        <input type="hidden" name="CODE" value="21">
+
+                        <!--{REQUIRED.FIELDS}-->
+                        <div class="pformstrip" style="display: none;">Your personal profile, this section is optional</div>
+                        <table width="100%">
+                           <!--{MEMBERTITLE}-->
+                           <tbody>
+                              <tr id="field-birthday">
+                                 <td class="pformleft"><b>Date of Birth</b></td>
+                                 <td class="pformright">
+                                    <select name="day" class="forminput">
+                                       <option value="0">--</option>
+                                       <option value="1">1</option>
+                                       <option value="2">2</option>
+                                       <option value="3">3</option>
+                                       <option value="4">4</option>
+                                       <option value="5">5</option>
+                                       <option value="6">6</option>
+                                       <option value="7">7</option>
+                                       <option value="8">8</option>
+                                       <option value="9">9</option>
+                                       <option value="10">10</option>
+                                       <option value="11">11</option>
+                                       <option value="12">12</option>
+                                       <option value="13">13</option>
+                                       <option value="14">14</option>
+                                       <option value="15">15</option>
+                                       <option value="16">16</option>
+                                       <option value="17">17</option>
+                                       <option value="18">18</option>
+                                       <option value="19">19</option>
+                                       <option value="20">20</option>
+                                       <option value="21">21</option>
+                                       <option value="22">22</option>
+                                       <option value="23">23</option>
+                                       <option value="24">24</option>
+                                       <option value="25">25</option>
+                                       <option value="26">26</option>
+                                       <option value="27">27</option>
+                                       <option value="28">28</option>
+                                       <option value="29">29</option>
+                                       <option value="30">30</option>
+                                       <option value="31">31</option>
+                                    </select>
+                                    <select name="month" class="forminput">
+                                       <option value="0">--</option>
+                                       <option value="1">January</option>
+                                       <option value="2">February</option>
+                                       <option value="3">March</option>
+                                       <option value="4">April</option>
+                                       <option value="5">May</option>
+                                       <option value="6">June</option>
+                                       <option value="7">July</option>
+                                       <option value="8">August</option>
+                                       <option value="9">September</option>
+                                       <option value="10">October</option>
+                                       <option value="11">November</option>
+                                       <option value="12">December</option>
+                                    </select>
+                                    <select name="year" class="forminput">
+                                       <option value="0">--</option>
+                                       <option value="2022">2022</option>
+                                       <option value="2021">2021</option>
+                                       <option value="2020">2020</option>
+                                       <option value="2019">2019</option>
+                                       <option value="2018">2018</option>
+                                       <option value="2017">2017</option>
+                                       <option value="2016">2016</option>
+                                       <option value="2015">2015</option>
+                                       <option value="2014">2014</option>
+                                       <option value="2013">2013</option>
+                                       <option value="2012">2012</option>
+                                       <option value="2011">2011</option>
+                                       <option value="2010">2010</option>
+                                       <option value="2009">2009</option>
+                                       <option value="2008">2008</option>
+                                       <option value="2007">2007</option>
+                                       <option value="2006">2006</option>
+                                       <option value="2005">2005</option>
+                                       <option value="2004">2004</option>
+                                       <option value="2003">2003</option>
+                                       <option value="2002">2002</option>
+                                       <option value="2001">2001</option>
+                                       <option value="2000">2000</option>
+                                       <option value="1999">1999</option>
+                                       <option value="1998">1998</option>
+                                       <option value="1997">1997</option>
+                                       <option value="1996">1996</option>
+                                       <option value="1995">1995</option>
+                                       <option value="1994">1994</option>
+                                       <option value="1993">1993</option>
+                                       <option value="1992">1992</option>
+                                       <option value="1991">1991</option>
+                                       <option value="1990">1990</option>
+                                       <option value="1989">1989</option>
+                                       <option value="1988">1988</option>
+                                       <option value="1987">1987</option>
+                                       <option value="1986">1986</option>
+                                       <option value="1985">1985</option>
+                                       <option value="1984">1984</option>
+                                       <option value="1983">1983</option>
+                                       <option value="1982">1982</option>
+                                       <option value="1981">1981</option>
+                                       <option value="1980">1980</option>
+                                       <option value="1979">1979</option>
+                                       <option value="1978">1978</option>
+                                       <option value="1977">1977</option>
+                                       <option value="1976">1976</option>
+                                       <option value="1975">1975</option>
+                                       <option value="1974">1974</option>
+                                       <option value="1973">1973</option>
+                                       <option value="1972">1972</option>
+                                       <option value="1971">1971</option>
+                                       <option value="1970">1970</option>
+                                       <option value="1969">1969</option>
+                                       <option value="1968">1968</option>
+                                       <option value="1967">1967</option>
+                                       <option value="1966">1966</option>
+                                       <option value="1965">1965</option>
+                                       <option value="1964">1964</option>
+                                       <option value="1963">1963</option>
+                                       <option value="1962">1962</option>
+                                       <option value="1961">1961</option>
+                                       <option value="1960">1960</option>
+                                       <option value="1959">1959</option>
+                                       <option value="1958">1958</option>
+                                       <option value="1957">1957</option>
+                                       <option value="1956">1956</option>
+                                       <option value="1955">1955</option>
+                                       <option value="1954">1954</option>
+                                       <option value="1953">1953</option>
+                                       <option value="1952">1952</option>
+                                       <option value="1951">1951</option>
+                                       <option value="1950">1950</option>
+                                       <option value="1949">1949</option>
+                                       <option value="1948">1948</option>
+                                       <option value="1947">1947</option>
+                                       <option value="1946">1946</option>
+                                       <option value="1945">1945</option>
+                                       <option value="1944">1944</option>
+                                       <option value="1943">1943</option>
+                                       <option value="1942">1942</option>
+                                       <option value="1941">1941</option>
+                                       <option value="1940">1940</option>
+                                       <option value="1939">1939</option>
+                                       <option value="1938">1938</option>
+                                       <option value="1937">1937</option>
+                                       <option value="1936">1936</option>
+                                       <option value="1935">1935</option>
+                                       <option value="1934">1934</option>
+                                       <option value="1933">1933</option>
+                                       <option value="1932">1932</option>
+                                       <option value="1931">1931</option>
+                                       <option value="1930">1930</option>
+                                       <option value="1929">1929</option>
+                                       <option value="1928">1928</option>
+                                       <option value="1927">1927</option>
+                                       <option value="1926">1926</option>
+                                       <option value="1925">1925</option>
+                                       <option value="1924">1924</option>
+                                       <option value="1923">1923</option>
+                                       <option value="1922">1922</option>
+                                       <option value="1921">1921</option>
+                                       <option value="1920">1920</option>
+                                       <option value="1919">1919</option>
+                                       <option value="1918">1918</option>
+                                       <option value="1917">1917</option>
+                                       <option value="1916">1916</option>
+                                       <option value="1915">1915</option>
+                                       <option value="1914">1914</option>
+                                       <option value="1913">1913</option>
+                                       <option value="1912">1912</option>
+                                       <option value="1911">1911</option>
+                                       <option value="1910">1910</option>
+                                       <option value="1909">1909</option>
+                                    </select>
+                                 </td>
+                              </tr>
+                              <tr id="field-website">
+                                 <td class="pformleft"><b>Website URL</b></td>
+                                 <td class="pformright"><input type="text" size="40" maxlength="1200" name="WebSite" value="http://" class="forminput"></td>
+                              </tr>
+                              <tr id="field-location">
+                                 <td class="pformleft"><b>Location</b></td>
+                                 <td class="pformright"><input type="text" size="40" name="Location" value="" class="forminput"></td>
+                              </tr>
+                              <tr id="field-interests">
+                                 <td class="pformleft" valign="top"><b>Interests</b><br>(<a href="javascript:CheckLength(&quot;interest&quot;);">Check Length</a>)</td>
+                                 <td class="pformright"><textarea cols="60" rows="10" wrap="soft" name="Interests" class="forminput"></textarea></td>
+                              </tr>
+
+                              <tr id="field_17">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_17_input" style="font-weight: bold;">Player Name</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_17" value="" class="forminput" id="field_17_input"></td>
+                              </tr>
+                              <tr id="field_18">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_18_input" style="font-weight: bold;">Player Pronouns</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_18" value="" class="forminput" id="field_18_input"></td>
+                              </tr>
+                              <tr id="field_19">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_19_input" style="font-weight: bold;">Player Timezone</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_19" value="" class="forminput" id="field_19_input"></td>
+                              </tr>
+                              <tr id="field_20">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_20_input" style="font-weight: bold;">Mature Threads?</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <select name="field_20" class="forminput" id="field_20_input">
+                                       <option value="a" selected="">ask first</option>
+                                       <option value="y">yes</option>
+                                       <option value="n">no</option>
+                                    </select></td>
+                              </tr>
+                              <tr id="field_21">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_21_input" style="font-weight: bold;">Please avoid</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_21" value="" class="forminput" id="field_21_input"></td>
+                              </tr>
+                              <tr id="field_22">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_22_input" style="font-weight: bold;">Discord Preference</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <select name="field_22" class="forminput" id="field_22_input">
+                                       <option value="c">DM</option>
+                                       <option value="d">Tag on server</option>
+                                       <option value="e">Tag or DM</option>
+                                    </select></td>
+                              </tr>
+                              <tr id="field_9">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_9_input" style="font-weight: bold;">Banner</label>
+                                    <br>855x160
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_9" value="https://i.ibb.co/JsXpNRV/CoM.png" class="forminput" id="field_9_input"></td>
+                              </tr>
+                              <tr id="field_6">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_6_input" style="font-weight: bold;">Icon</label>
+                                    <br>100x100
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_6" value="" class="forminput" id="field_6_input"></td>
+                              </tr>
+                              <tr id="field_8">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_8_input" style="font-weight: bold;">Hover</label>
+                                    <br>255x450
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_8" value="" class="forminput" id="field_8_input"></td>
+                              </tr>
+                              <tr id="field_7">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_7_input" style="font-weight: bold;">Icon #2</label>
+                                    <br>For font icons, format it as &lt;i class=""&gt;&lt;/i&gt;. For images, use &lt;img src=""&gt;
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_7" value="<i class=&quot;cp cp-cog-o&quot;></i>" class="forminput" id="field_7_input"></td>
+                              </tr>
+                              <tr id="field_10">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_10_input" style="font-weight: bold;">Character Alias</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_10" value="" class="forminput" id="field_10_input"></td>
+                              </tr>
+                              <tr id="field_2">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_2_input" style="font-weight: bold;">Character Pronouns</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_2" value="" class="forminput" id="field_2_input"></td>
+                              </tr>
+                              <tr id="field_1">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_1_input" style="font-weight: bold;">Character Age</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_1" value="" class="forminput" id="field_1_input"></td>
+                              </tr>
+                              <tr id="field_3">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_3_input" style="font-weight: bold;">Character Occupation</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_3" value="" class="forminput" id="field_3_input"></td>
+                              </tr>
+                              <tr id="field_11">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_11_input" style="font-weight: bold;">Character Orientation</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_11" value="" class="forminput" id="field_11_input"></td>
+                              </tr>
+                              <tr id="field_12">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_12_input" style="font-weight: bold;">Character Lineage</label>
+                                    <br>Human, beastman, orc, etc.
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_12" value="" class="forminput" id="field_12_input"></td>
+                              </tr>
+                              <tr id="field_16">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_16_input" style="font-weight: bold;">Character Relationship</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_16" value="" class="forminput" id="field_16_input"></td>
+                              </tr>
+                              <tr id="field_37">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_37_input" style="font-weight: bold;">Character Kingdom</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <select name="field_37" class="forminput" id="field_37_input">
+                                       <option value="z">&nbsp;</option>
+                                       <option value="a" selected="">Empyrea</option>
+                                       <option value="b">Taiyokuni</option>
+                                       <option value="d">Dendera</option>
+                                       <option value="f">None</option>
+                                    </select></td>
+                              </tr>
+                              <tr id="field_33">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_33_input" style="font-weight: bold;">Character Location</label>
+                                    <br>For specific location if desired. E.g. Thramdin, Rusa, Morgrave, Forsaken Forest, etc. For wanderers, put 'Wanderer'. Do NOT repeat kingdom.
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_33" value="" class="forminput" id="field_33_input"></td>
+                              </tr>
+                              <tr id="field_13">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_13_input" style="font-weight: bold;">Face Claim</label>
+                                    <br>SERIES IN CAPS, lowercase character name
+                                 </td>
+                                 <td class="pformright"> <textarea cols="60" rows="5" wrap="soft" name="field_13" class="forminput" id="field_13_input"></textarea></td>
+                              </tr>
+                              <tr id="field_15">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_15_input" style="font-weight: bold;">Character Blurb</label>
+                                    <br>Just a snapshot description. Max 2 lines.
+                                 </td>
+                                 <td class="pformright"> <textarea cols="60" rows="5" wrap="soft" name="field_15" class="forminput" id="field_15_input"></textarea></td>
+                              </tr>
+                              <tr id="field_4">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_4_input" style="font-weight: bold;">Class</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <select name="field_4" class="forminput" id="field_4_input">
+                                       <option value="z">&nbsp;</option>
+                                       <option value="a" selected="">Arrow</option>
+                                       <option value="b">Blade</option>
+                                       <option value="c">Crown</option>
+                                       <option value="d">Gauntlet</option>
+                                       <option value="e">Glove</option>
+                                       <option value="f">Hammer</option>
+                                       <option value="g">Rune</option>
+                                       <option value="h">Scroll</option>
+                                       <option value="i">Seal</option>
+                                       <option value="j">Shield</option>
+                                    </select></td>
+                              </tr>
+                              <tr id="field_25">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_25_input" style="font-weight: bold;">Magic Overview</label>
+                                    <br>Please describe your magic (at least one sentence). Magic should be thematic in nature.
+                                 </td>
+                                 <td class="pformright"> <textarea cols="60" rows="5" wrap="soft" name="field_25" class="forminput" id="field_25_input"></textarea></td>
+                              </tr>
+                              <tr id="field_32">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_32_input" style="font-weight: bold;">Magic Inventory</label>
+                                    <br>Characters can only have 1 custom item. All others must be purchased in the store.
+                                 </td>
+                                 <td class="pformright"> <textarea cols="60" rows="5" wrap="soft" name="field_32" class="forminput" id="field_32_input"></textarea></td>
+                              </tr>
+                              <tr id="field_23">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_23_input" style="font-weight: bold;">Reputation</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <textarea cols="60" rows="5" wrap="soft" name="field_23" class="forminput" id="field_23_input"></textarea></td>
+                              </tr>
+                              <tr id="field_24">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_24_input" style="font-weight: bold;">Background</label>
+                                    <br>
+                                 </td>
+                                 <td class="pformright"> <textarea cols="60" rows="5" wrap="soft" name="field_24" class="forminput" id="field_24_input"></textarea></td>
+                              </tr>
+                              <tr id="field_27">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_27_input" style="font-weight: bold;">Plot Hooks</label>
+                                    <br>Anything you're interested in plot-wise can be described here.
+                                 </td>
+                                 <td class="pformright"> <textarea cols="60" rows="5" wrap="soft" name="field_27" class="forminput" id="field_27_input"></textarea></td>
+                              </tr>
+                              <tr id="field_26">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_26_input" style="font-weight: bold;">Additional Information</label>
+                                    <br>Add anything you'd like here. See the freeform tab here for available text styles: https://xmortala.jcink.net/index.php?showuser=2
+                                 </td>
+                                 <td class="pformright"> <textarea cols="60" rows="5" wrap="soft" name="field_26" class="forminput" id="field_26_input">&lt;h1&gt;Heading 1 &lt; h1 &gt;&lt;/h1&gt;
+   &lt;b&gt;Bold.&lt;/b&gt; &lt;i&gt;Italic.&lt;/i&gt; &lt;u&gt;Underline.&lt;/u&gt; &lt;a href="#"&gt;Hyperlinked.&lt;/a&gt; &lt;color&gt; &lt; Color &gt;. &lt;/color&gt;
+   @ [name ] tagging. Each tag must be on its own line.
+   
+   Lorem ipsum dolor sit amet consectetur adipiscing elit. Vivamus non erat dapibus, feugiat sapien eget, condimentum elit. Ut lorem elit, egestas at odio ut, aliquet condimentum neque. Proin efficitur eget elit quis interdum. Nullam eget dapibus ante. Curabitur ultrices mollis placerat. Mauris eget rhoncus tellus. Proin quis blandit nibh. Donec id dolor sodales, blandit orci sed, vulputate nulla. Duis a sapien hendrerit, imperdiet metus at, rhoncus nisi. 
+   &lt;h2&gt;Heading 2 &lt; h2 &gt;&lt;/h2&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non erat dapibus, feugiat sapien eget, condimentum elit. Ut lorem elit, egestas at odio ut, aliquet condimentum neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non erat dapibus, feugiat sapien eget, condimentum elit. Ut lorem elit, egestas at odio ut, aliquet condimentum neque. 
+   
+   &lt;h3&gt;Heading 3 &lt; h3 &gt;&lt;/h3&gt;
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non erat dapibus, feugiat sapien eget, condimentum elit. Ut lorem elit, egestas at odio ut, aliquet condimentum neque. 
+   
+   &lt;blockquote&gt;&lt; blockquote &gt; 
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non erat dapibus, feugiat sapien eget, condimentum elit. Ut lorem elit, egestas at odio ut, aliquet condimentum neque. 
+   &lt;/blockquote&gt;
+   
+   &lt; hr  &gt;
+   &lt;hr&gt;
+   &lt;b&gt;Stats grid w. customizable number of columns:&lt;/b&gt;
+   
+   &lt;div class="statsgrid" style="--columns: 4;"&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;/div&gt;
+   
+   Adjust --columns: 4 to your desired number of columns
+   
+   &lt;textarea&gt;Delete &lt;br /s&gt; when pasting
+   &lt;div class="statsgrid" style="--columns: 4;"&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;div&gt;&lt;h3&gt;Field&lt;/h3&gt; Content &lt;/div&gt;
+   &lt;/div&gt;</textarea>
+
+                                    <hr>
+                                    <b>Stats sidebar:</b>
+                                    <div class="statsgrid sidebar">
+                                       <div>
+                                          <h3>Field</h3> Content
+                                          <h3>Field</h3> Content
+                                          <h3>Field</h3> Content
+                                       </div>
+                                       <div>
+                                          Lorem ipsum dolor sit amet consectetur adipiscing elit. Vivamus non erat dapibus, feugiat sapien eget, condimentum elit. Ut lorem elit, egestas at odio ut, aliquet condimentum neque. Proin efficitur eget elit quis interdum. Nullam eget dapibus ante. Curabitur ultrices mollis placerat. Mauris eget rhoncus tellus. Proin quis blandit nibh. Donec id dolor sodales, blandit orci sed, vulputate nulla. Duis a sapien hendrerit, imperdiet metus at, rhoncus nisi.
+                                       </div>
+                                    </div>
+
+                                    <textarea>Delete &lt;br /s&gt; when pasting
+   &lt;div class="statsgrid sidebar"&gt;
+   &lt;div&gt;
+   &lt;h3&gt;Field&lt;/h3&gt; Content 
+   &lt;h3&gt;Field&lt;/h3&gt; Content 
+   &lt;h3&gt;Field&lt;/h3&gt; Content 
+   &lt;/div&gt;
+   &lt;div&gt;
+   Use &lt;p&gt; for line breaks. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non erat dapibus, feugiat sapien eget, condimentum elit. Ut lorem elit, egestas at odio ut, aliquet condimentum neque. 
+   &lt;/div&gt;
+   &lt;/div&gt;</textarea>
+                                 </td>
+                              </tr>
+                              <tr id="field_28">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_28_input" style="font-weight: bold;">Development</label>
+                                    <br>Link to any development board or thread you have.
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_28" value="" class="forminput" id="field_28_input"></td>
+                              </tr>
+                              <tr id="field_29">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_29_input" style="font-weight: bold;">Tracker</label>
+                                    <br>Link to any thread or relationship tracker
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_29" value="" class="forminput" id="field_29_input"></td>
+                              </tr>
+                              <tr id="field_30">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_30_input" style="font-weight: bold;">Music</label>
+                                    <br>Link a song if you'd like.
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_30" value="" class="forminput" id="field_30_input"></td>
+                              </tr>
+                              <tr id="field_31">
+                                 <td class="pformleft" valign="top">
+                                    <label for="field_31_input" style="font-weight: bold;">Directory</label>
+                                    <br>Link to your directory post.
+                                 </td>
+                                 <td class="pformright"> <input type="text" size="50" name="field_31" value="" class="forminput" id="field_31_input"></td>
+                              </tr>
+                              <tr>
+                                 <td class="pformstrip" align="center" colspan="2"><input type="submit" value="Amend my profile" class="forminput"></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </form>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+
+
+
+
+
+
+
+
+         <div class="footer" id="bottom">
+            <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+            <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+            <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+            <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+            <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+         </div>
+
+
+      </div>
+
+</body>
+
+
+
+
+
+<script>
+   // Replace account switcher placeholder name with current account name
+   document.getElementsByName('sub_id')[0].options[0].innerHTML = "name";
+</script>
+
+
+
+<script>
+   // Banner panel toggle
+
+   $(document).on("click", ".bp-navwrap .news", function () {
+      if (!$(this).hasClass('active')) {
+         var panelnav = $(this).parent().parent().parent()
+         var panel = $(this).parent().parent().parent()
+
+         panelnav.find('.welcome').removeClass('active')
+         panelnav.find('.welcome').find('.marker').removeClass('active')
+         panel.find('.bp-body').removeClass('welcome')
+
+         panelnav.find('.news').addClass('active')
+         panelnav.find('.news').find('.marker').addClass('active')
+         panel.find('.bp-body').addClass('news')
+
+         panelnav.find('.markerhighlight').addClass('news')
+      }
+   });
+
+   $(document).on("click", ".bp-navwrap .welcome", function () {
+      if (!$(this).hasClass('active')) {
+         var panelnav = $(this).parent().parent().parent()
+         var panel = $(this).parent().parent().parent()
+
+         panelnav.find('.news').removeClass('active')
+         panelnav.find('.news').find('.marker').removeClass('active')
+         panel.find('.bp-body').removeClass('news')
+
+         panelnav.find('.welcome').addClass('active')
+         panelnav.find('.welcome').find('.marker').addClass('active')
+         panel.find('.bp-body').addClass('welcome')
+
+         panelnav.find('.markerhighlight').removeClass('news')
+      }
+   });
+</script>
+
+<script>
+   // Toggle locations
+
+   var locationtab = document.getElementsByClassName('location-tab');
+
+   for (var i = 0; i < locationtab.length; i++) {
+      locationtab[i].addEventListener("click", toggleLocation);
+   }
+
+   function toggleLocation() {
+      // removes active class from every tab except the one clicked 
+      const othertabs = Array.from(locationtab).filter(el => el !== this)
+      othertabs.forEach(el => $(el).removeClass('active'))
+      $(this).addClass('active')
+
+      // Toggle slides to match clicked tab 
+      var selected = $(this).attr('id')
+      $(this).parent().parent().find('#locations-slideswrap').removeAttr('class').addClass(selected);
+
+   }
+
+</script>
+
+<script>
+   // remove ' -' from recent topics timestamp
+
+   document.addEventListener('DOMContentLoaded', function () {
+      $(".rt-thread").each(function () {
+         $(this).html($(this).html().replace('- by ', "by "));
+      });
+   });
+
+</script>
+
+<script>
+   // Resize member card to fit name length
+   var membercard = document.getElementsByClassName('membercard');
+   for (var i = 0; i < membercard.length; i++) {
+      var nameheight = membercard[i].querySelector('.mem-header').offsetHeight
+      var test = ''
+      var str = test.concat('calc(100% - ', nameheight, 'px)')
+      console.log(str)
+
+      membercard[i].querySelector('.mem-cover').style.top = str;
+   }
+</script>
+
+
+<script>
+   // post row header info
+
+   $(".pr-toggle").mouseenter(function () {
+      $(this).parent().addClass('showinfo');
+   });
+
+   $(".postrow-header").mouseleave(function () {
+      $(this).removeClass('showinfo');
+      console.log('hi')
+   });
+// }
+</script>
+
+
+<script>
+   var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss")
+   $(document.body).append(clicktodismiss);
+
+   // Hamburger menu on mobile
+   function menuFunction() {
+      var x = document.getElementById("hamburger");
+
+      if (x.className === "topnav sans-10 caps") {
+         x.className += " responsive";
+         $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn(250);
+         $("#menubutton").fadeTo(250, 0);
+      } else {
+         x.className = "topnav sans-10 caps";
+         $("#clicktodismiss").fadeOut(250);
+         $("#menubutton").fadeTo(250, 1);
+      }
+   }
+
+   $(document).on("click", "#clicktodismiss", function () {
+      $("#clicktodismiss").fadeOut(250);
+      document.getElementById("hamburger").className = "topnav sans-10 caps";
+      $("#menubutton").fadeTo(250, 1);
+   });
+</script>
