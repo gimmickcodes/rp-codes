@@ -50,6 +50,7 @@ td.darkrow2 {
 } */
 
 .wrapmini {
+   display: none;
    float: left;
    margin-right: 24px;
    margin-bottom: 16px;
@@ -445,11 +446,17 @@ input {
 .forminput,
 .codebuttons,
 .textinput {
+   border-radius: 0;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+
+   vertical-align: middle;
    min-height: 32px;
-   padding: .5em .75em;
-   margin: 0;
+   padding: 0 .75em;
+   margin: 0 0 0 2px;
    background: hsl(var(--darkgray) / .85);
-   border: 1px solid hsl(var(--darkgray));
+   border: 1px solid var(--bordercolor);
    font: 400 13px/1.5em var(--fontsans);
    text-transform: none;
    letter-spacing: .05em;
@@ -473,27 +480,27 @@ input {
    border-color: hsl(var(--htmlbg));
 }
 
-.topic-rows-footer .forminput {
-   padding: .25em;
-   color: hsl(var(--accent2-light));
-   background: transparent;
+.topic-rows-footer [type="submit"].forminput {
+   padding: .25em 8px;
    border-color: var(--bordercolor);
 }
 
 input[type=submit],
 input[type=button],
 input[type=reset] {
+   vertical-align: middle;
    display: inline-flex;
    align-items: center;
    justify-content: center;
    height: 32px;
    padding: 0 8px;
+   margin: 0 0 0 2px;
    background: hsl(var(--accent2-light) / .25);
    border: 1px solid var(--bordercolor);
    font: 700 10px/1.5em var(--fontsans);
    letter-spacing: 0.1em;
    text-transform: uppercase;
-   color: hsl(var(--gray2));
+   color: hsl(var(--gray2) / .7);
    transition: .25s;
 }
 
@@ -754,7 +761,7 @@ label {
 .copyrightwrap {
    background: hsl(var(--darkgray));
    border-top: 1px solid var(--bordercolor);
-   padding: 2em 0 3em;
+   padding: 2em 0 6em;
 }
 
 .skincred {
