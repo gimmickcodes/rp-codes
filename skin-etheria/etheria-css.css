@@ -11,7 +11,7 @@
    --accent1-med: 32 16% 52%;
    --accent1-light: 36 20% 67%;
    --accent2-med: 180 25% 30%;
-   --accent2-light: 180 25% 34%;
+   --accent2-light: 180 25% 44%;
    --darkgray: 190 8% 9%;
    --gray1: 190 10% 30%;
    --gray2: 190 1% 66%;
@@ -3339,7 +3339,7 @@ div.maintitle {
 
 .gb-nav {
    grid-area: gbnav;
-   padding: calc(40px + var(--insetgap));
+   padding: 40px calc(32px + var(--insetgap));
    padding-right: 32px;
    border-right: 1px solid var(--bordercolor);
    background: hsl(var(--black) / .1);
@@ -3358,33 +3358,22 @@ div.maintitle {
 }
 
 .gb-nav-section {
-   /* border-top: 1px solid var(--bordercolor); */
    padding-top: 1em;
    margin-bottom: 1em;
 }
 
-/* .gb-nav-section:not(:nth-child(2))::before {
-   content: '';
-   display: block;
-   margin: 1em 0;
-   height: 1px;
-   width: 100%;
-   background: var(--bordercolor);
-} */
-
-
-.gb-nav-header {
-   font-weight: 600;
+.gb-nav-head {
+   padding: 0 0 12px;
+   margin-bottom: 8px;
+   border-bottom: 1px solid var(--bordercolor);
    color: hsl(var(--accent1-med));
-   margin-bottom: .5em;
+   font-weight: 600;
 }
 
-.gb-nav-header>div {
-   margin: 0.25em 0 0.5em;
-   text-transform: capitalize;
+.gb-nav-title {
+   margin-top: .25em;
    text-transform: none;
 }
-
 
 .gb-nav {
    counter-reset: item;
@@ -3395,12 +3384,12 @@ div.maintitle {
    margin: 0 0 .5em;
    color: hsl(var(--gray2) / .75);
    counter-increment: item;
+   letter-spacing: .05em;
 }
 
 .gb-nav a::before {
    content: counter(item, decimal-leading-zero) ' ';
    font-weight: 400;
-   letter-spacing: .05em;
    margin-right: .25em;
    color: hsl(var(--accent2-light));
 }
@@ -3425,12 +3414,21 @@ div.maintitle {
 }
 
 .gb-content h1 {
-   font-variation-settings: "wght" 400;
    font-style: italic;
 }
 
 .gb-content h2 {
+   font-weight: 600;
    font-style: italic;
+}
+
+.gb-tab {
+   display: none;
+}
+
+.gb-nav a.is-active {
+   color: hsl(var(--accent2-light));
+   font-weight: 700;
 }
 
 
@@ -4276,9 +4274,13 @@ body ::-webkit-scrollbar-thumb {
 
       border-right: 0;
       border-bottom: 1px solid var(--bordercolor);
-      padding: 32px calc(24px + var(--insetgap));
-      padding-bottom: 24px;
+      padding: 24px calc(24px + var(--insetgap));
+      padding-bottom: 16px;
       overflow-x: auto;
+   }
+
+   .gb-nav-head {
+      border: 0;
    }
 
    .gb-nav-section {

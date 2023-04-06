@@ -1,68 +1,38 @@
-<div class="member-wrapper">
-   <div class="member-sidebar">
-      <div class="member-sidebar-header serif-17 caps">
-         Denizens of <div class="norman-28">Etheria</div>
-      </div>
-      <div>
-         <input class="forminput memberlist-namesearch" type="text" name="name" value="" placeholder="Search">
+<script>
+   $('div.guide-nav').each(function () {
+      // For each set of tabs, we want to keep track of
+      // which tab is active and its associated content
+      var $active, $content, $links = $(this).find('a');
 
-         <div class="member-filter-wrap">
-            <div class="member-filter-title serif-17 caps">Sort by</div>
-            <ul class="member-filter-list sans-10 caps">
-               <button type="button" data-filter-value="" class="filter-reset selected">A–Z</button>
-               <button type="button" data-sort-by="memnamereverse">Z-A</button>
-               <button type="button" data-sort-by="memposts">Posts</button>
-               <button type="button" data-sort-by="memID">Newest</button>
-               <button type="button" data-sort-by="memIDold">Oldest</button>
-               <button type="button" data-sort-by="memmoney">Money</button>
-            </ul>
-         </div>
+      // If the location.hash matches one of the links, use that as the active tab.
+      // If no match is found, use the first link as the initial active tab.
+      $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]);
+      $active.addClass('active');
 
-         <div class="member-filter-wrap">
-            <div class="member-filter-title serif-17 caps">Players</div>
-            <ul class="member-filter-list sans-10 caps ooc filter option-set exclusive" data-filter-group="members">
-               <li data-filter-value="" class="filter-reset selected">All</li>
-            </ul>
-         </div>
+      $content = $($active[0].hash);
 
-         <div class="member-filter-wrap">
-            <div class="member-filter-title serif-17 caps">Factions</div>
-            <ul class="member-filter-list sans-10 caps factions">
-               <li data-filter-value="" class="filter-reset selected">All</li>
-               <li class="unsorted">Unsorted</li>
-               <li class="amethyst selected">Amethyst</li>
-               <li class="diamond">diamond</li>
-               <li class="jade selected">Jade</li>
-               <li class="onyx">Onyx</li>
-               <li class="pearl">Pearl</li>
-               <li class="ruby">Ruby</li>
-               <li class="sapphire">Sapphire</li>
-               <li class="corlucet">Corlucet</li>
-            </ul>
-         </div>
+      // Hide the remaining content
+      $links.not($active).each(function () {
+         $(this.hash).hide();
+      });
 
-         <div class="member-filter-wrap">
-            <div class="member-filter-title serif-17 caps">Arcana</div>
-            <ul class="member-filter-list sans-10 caps arcana">
-               <li data-filter-value="" class="filter-reset selected">All</li>
-               <li>Chariot</li>
-               <li>Death</li>
-               <li>Fool</li>
-               <li>Hierophant</li>
-               <li>Justice</li>
-               <li>Lover</li>
-               <li>Moon</li>
-               <li>Star</li>
-               <li>Sun</li>
-               <li>Temperance</li>
-               <li>Tower</li>
-            </ul>
-         </div>
+      // Bind the click event handler
+      $(this).on('click', 'a', function (e) {
+         // Make the old tab inactive.
+         $active.removeClass('active');
+         $content.hide();
 
-      </div>
-   </div>
+         // Update the variables with the new link and content
+         $active = $(this);
+         $content = $(this.hash);
 
-   <div class="member-rows">
-      <% MEMBERLIST_ROWS %>
-   </div>
-</div>
+         // Make the tab active.
+         $active.addClass('active');
+         $content.show();
+
+         // Prevent the anchor's default click action
+         e.preventDefault();
+         history.pushState({}, "", this.href);
+      });
+   });
+</script>
