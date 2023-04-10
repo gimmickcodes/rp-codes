@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="user-ID g-5">
+<body class="user-ID perms_g-ID">
 
 
 
@@ -31,7 +31,7 @@
 
    <div class="masterwrapper">
 
-      <div id="hamburger" class="topnav sans-10 caps">
+      <div id="hamburger" class="topnav">
          <div class="topnav-toggled">
             <a href="/index.php?" class="mobilehome"><i class="ph ph-house"></i></a>
             <a href="/index.php?showuser=<!-- |id| -->" class="mobilenav-avatar"><!-- |avatar| --></a>
@@ -40,11 +40,13 @@
          <div class="topnav-main">
             <a href="/index.php?">Home</a>
             <a href="/index.php?act=Members&max_results=1000">Members</a>
-            <a href="admin.php" class="acp-<!-- |g_access_cp| -->">ACP</a>
-            <a href="/index.php?act=UserCP&CODE=01">UCP</a>
+            <a href="admin.php" class="perms-admin">ACP</a>
+            <a href="/index.php?act=UserCP&CODE=01" class="perms-logged">UCP</a>
             <a href="/?act=Search&CODE=getactive">Recent Topics</a>
             <a href="/?act=Online&CODE=listall&sort_key=click">Recent Clicks</a>
-            <a href="/?act=Login&CODE=03&key=<!-- |auth_key| -->">Logout</a>
+            <a href="/index.php?act=Login&CODE=00" class="perms-guest">Log in</a>
+            <a href="/index.php?act=Reg&CODE=00" class="perms-guest">Register</a>
+            <a href="/?act=Login&CODE=03" class="perms-logged">Logout</a>
          </div>
          <div class="topnav-quicklinks">
             <a href="">Guidebook</a>
@@ -57,7 +59,7 @@
             <a href="">Discord</a>
          </div>
          <div class="topnav-userbox">
-            <div class="topnav-currentacc sans-8">Switch account from:</div>
+            <div class="topnav-currentacc">Switch account from:</div>
             <span id="subaccounts_menu">
                <form>
                   <select class="forminput" name="sub_id" onchange="this.form.submit()">
@@ -66,8 +68,10 @@
                   </select>
                </form>
             </span>
-            <a href="index.php?act=UserCP&CODE=alerts"><i class="ph ph-bell"></i>Alerts</a>
-            <a href="index.php?act=Msg&CODE=01"><i class="ph ph-envelope-simple"></i>Messages</a>
+            <a href="index.php?act=UserCP&CODE=alerts" class="perms-logged"><i class="ph ph-bell"></i>Alerts</a>
+            <a href="index.php?act=Msg&CODE=01" class="perms-logged"><i class="ph ph-envelope-simple"></i>Messages</a>
+            <a href="/index.php?act=Login&CODE=00" class="perms-guest"><i class="ph ph-bell"></i>Log in</a>
+            <a href="/index.php?act=Reg&CODE=00" class="perms-guest"><i class="ph ph-envelope-simple"></i>Register</a>
             <a><i class="ph ph-sun"></i> Toggle skin</a>
          </div>
 
@@ -95,17 +99,17 @@
          <a href="/index.php?">
             <h1>Etheria</h1>
          </a>
-         <div class=" serif-20 caps">a middle fantasy roleplay
+         <div>a middle fantasy roleplay
          </div>
       </div>
       <div class="bp-navwrap">
          <div class="flexrow">
-            <div class="bp-nav-label sans-8 caps welcome active">
+            <div class="bp-nav-label welcome active">
                <span>Welcome</span>
                <span class="marker active"> </span>
             </div>
             <span class="markerhighlight"> </span>
-            <div class="bp-nav-label sans-8 caps news">
+            <div class="bp-nav-label news">
                <span class="marker"> </span>
                <span>News</span>
             </div>
@@ -115,9 +119,9 @@
       <div class="bannerpanel">
          <div class="bp-header">
             <div class="bp-userbox">
-               <div class="bp-username serif-18 caps">
+               <div class="bp-username">
                   Username
-                  <div class="bp-accswitch"><i class="ph ph-caret-down"></i></div>
+                  <div class="bp-accswitch perms-logged"><i class="ph ph-caret-down"></i></div>
                   <div class="bp-accswitch-dropdown">
                      <span id="subaccounts_menu">
                         <form>
@@ -130,17 +134,19 @@
                   </div>
                </div>
 
-               <a href="" class="bp-userlink sans-8 caps caps">0 alerts</a>
-               <a href="" class="bp-userlink sans-8 caps caps">0 msgs</a>
+               <a href="" class="perms-logged bp-userlink">0 alerts</a>
+               <a href="" class="perms-logged bp-userlink">0 msgs</a>
+               <a href="/index.php?act=Login&CODE=00" class="perms-guest bp-userlink">log in</a>
+               <a href="/index.php?act=Reg&CODE=00" class="perms-guest bp-userlink">register</a>
             </div>
-            <div class="bp-avatar" title="Go to profile" class="tooltip"><a href=""><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></a></div>
+            <a class="bp-avatar" title="Go to profile" class="tooltip" href=""><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></a>
          </div>
 
-         <div class="bp-body sans-13 welcome">
+         <div class="bp-body welcome">
             <div class="bp-slide">
                <div class="bp-infobox">You are either descended from a First Monarch or are one of the undeity's champion. Either way, you can manipulate ether and produce magic. But magic seems so minute when the Eight Jeweled Courts are at odds.
                   Etheria focuses on middle magic and court intrigue.</div>
-               <div class="bp-linksbox sans-10 caps">
+               <div class="bp-linksbox">
                   <a href="">Guidebook</a>
                   <a href="">Face Claims</a>
                   <a href="">Factions</a>
@@ -170,12 +176,15 @@
       <div class="wrapper">
 
 
-         <div class="sans-10 caps">
+         <div class="caps">
             <!-- <% NAVIGATION %> -->
             <div id="navstrip">
                <a href="">Etheria</a>
+               <span style="opacity:.5; padding: 0 2px;"> · </span>
                <a href="">Category</a>
+               <span style="opacity:.5; padding: 0 2px;"> · </span>
                <a href="">Board</a>
+               <span style="opacity:.5; padding: 0 2px;"> · </span>
                <a href="">Topic</a>
             </div>
             <br><br>
@@ -186,27 +195,28 @@
 
          <div class="guidebookwrap">
             <div class="insetborder"> </div>
-            <div class="gb-nav sans-13">
-               <div class="gb-nav-head serif-17 caps">
+            <div class="gb-nav">
+               <div class="gb-nav-head">
                   Guide to
-                  <div class="gb-nav-title norman-28">Etheria</div>
+                  <div class="gb-nav-title">Etheria</div>
                </div>
 
                <div class="gb-nav-section">
                   <a href="#premise">Premise</a>
                   <a href="#rules">Rules</a>
+                  <a href="#setting">Setting</a>
                   <a href="#charcreation">Character Creation</a>
+                  <a>Magic</a>
                </div>
 
                <div class="gb-nav-section">
                   <a href="#history">History</a>
                   <a href="#factions">Factions</a>
-                  <a>Magic</a>
                   <a>Religions</a>
+                  <a>Map</a>
                </div>
 
                <div class="gb-nav-section">
-                  <a>Map</a>
                   <a>Timeline</a>
                   <a>Journals</a>
                   <a>Accent Lore</a>
@@ -217,36 +227,84 @@
                   <a>Credits</a>
                </div>
             </div>
-            <div class="gb-content sans-14">
+            <div class="gb-content">
 
                <section id="premise" class="gb-tab">
-                  <h1 class="serif-48">Premise</h1>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis ultricies lorem eu bibendum. Curabitur quis sem velit. Quisque iaculis tortor lorem, a pretium turpis tincidunt at. In ullamcorper porttitor elit sed tempus. Proin viverra purus id pellentesque placerat. Donec sed lobortis enim, sit amet accumsan eros. Donec hendrerit lacinia leo ut mollis. Nulla turpis ligula, porta hendrerit dignissim ac, egestas facilisis purus.<br><br>
-                  <h2 class="serif-24">Introduction</h2>
-                  Phasellus finibus quis erat eget tincidunt. Donec eget volutpat ante. Nunc egestas pharetra mollis. Nunc metus urna, lacinia sed ultricies a, congue sed libero. V<br><br>
+                  <h1>Premise</h1>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis ultricies lorem eu bibendum. Curabitur quis sem velit. Quisque iaculis tortor lorem, a pretium turpis tincidunt at. In ullamcorper porttitor elit sed tempus. Proin viverra purus id pellentesque placerat. Donec sed lobortis enim, sit amet accumsan eros. Donec hendrerit lacinia leo ut mollis. Nulla turpis ligula, porta hendrerit dignissim ac, egestas facilisis purus.<p>
+                  <h2>Introduction</h2>
+                  Phasellus finibus quis erat eget tincidunt. Donec eget volutpat ante. Nunc egestas pharetra mollis. Nunc metus urna, lacinia sed ultricies a, congue sed libero. <p>
 
-                  ivamus fringilla tristique nulla, ut blandit velit mollis in. Morbi vitae tortor nec eros pharetra ultrices. Praesent orci tortor, faucibus nec sapien ac, lobortis fringilla quam. Donec molestie ornare metus sit amet pharetra. Donec ut facilisis tortor, ut commodo justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent sit amet quam hendrerit, accumsan metus in, condimentum lacus. Aenean vitae justo nec ante porttitor finibus ut ut turpis. Cras sit amet sagittis velit, quis convallis nulla.<br><br>
+                  <blockquote>Fringilla tristique nulla, ut blandit velit mollis in. Morbi vitae tortor nec eros pharetra ultrices. Praesent orci tortor, faucibus nec sapien ac, lobortis fringilla quam. Donec molestie ornare metus sit amet pharetra. Donec ut facilisis tortor, ut commodo justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent sit amet quam hendrerit, accumsan metus in, condimentum lacus. Aenean vitae justo nec ante porttitor finibus ut ut turpis. Cras sit amet sagittis velit, quis convallis nulla.</blockquote>
+                  <p>
 
-                  Etiam imperdiet velit lobortis elit vehicula, non sagittis elit commodo. Fusce venenatis velit in magna euismod feugiat. Etiam sagittis, enim sed fringilla tempor, eros ante viverra enim, sit amet sagittis urna ligula ac urna.<br><br>
+                     Etiam imperdiet velit lobortis elit vehicula, non sagittis elit commodo. Fusce venenatis velit in magna euismod feugiat. Etiam sagittis, enim sed fringilla tempor, eros ante viverra enim, sit amet sagittis urna ligula ac urna.
+                  <h2>General</h2>
+                  <ul>
+                     <li>Rule</li>
+                     <li>Rule</li>
+                     <li>Rule</li>
+                     <li>Rule</li>
+                  </ul>
+                  <h2>Roleplay</h2>
+                  <ul>
+                     <li>Rule</li>
+                     <li>Rule</li>
+                     <li>Rule</li>
+                     <li>Rule</li>
+                  </ul>
 
                   Curabitur ultrices venenatis dui, non feugiat mauris aliquet vel. In ex libero, blandit eu diam quis, aliquet ultrices justo. Nullam sapien urna, euismod sed eros eu, consequat ornare diam. Sed posuere velit et ante luctus scelerisque. Praesent maximus pellentesque lorem, pretium hendrerit urna pharetra vitae. In et sapien vitae sapien dapibus facilisis nec et nisl. Praesent id mollis lectus. Vivamus rutrum in orci ut mattis. Maecenas sodales nisl a turpis porttitor dignissim. Vestibulum tristique ullamcorper justo, at ornare tortor consequat mollis. Morbi in dictum tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+
+                  <div class="gb-timeline">
+                     <div class="gb-event">
+                        <div class="gb-event-time">Marchose, 200BC </div>
+                        <div class="gb-event-desc"> Curabitur ultrices venenatis dui, non feugiat mauris aliquet vel. In ex libero, blandit eu diam quis, aliquet ultrices justo. Nullam sapien urna, euismod sed eros eu, consequat ornare diam. Sed posuere velit et ante luctus scelerisque. Praesent maximus pellentesque lorem, pretium hendrerit urna pharetra vitae. In et sapien vitae sapien dapibus facilisis nec et nisl. Praesent id mollis lectus. Vivamus rutrum in orci ut mattis. </div>
+                     </div>
+
+                     <div class="gb-event">
+                        <div class="gb-event-time">Mayose, 2BC </div>
+                        <div class="gb-event-desc"> Curabitur ultrices venenatis dui, non feugiat mauris aliquet vel. In ex libero, blandit eu diam quis, aliquet ultrices justo. Nullam sapien urna, euismod sed eros eu, consequat ornare diam. Sed posuere velit et ante luctus scelerisque. Praesent maximus pellentesque lorem, pretium hendrerit urna pharetra vitae. In et sapien vitae sapien dapibus facilisis nec et nisl. Praesent id mollis lectus. Vivamus rutrum in orci ut mattis. </div>
+                     </div>
+                  </div>
+
 
                </section>
 
                <section id="rules" class="gb-tab">
-                  <h1 class="serif-48">rules</h1>
+                  <h1>Rules</h1>
+                  When are you going to learn your actions have consequences.
+
                </section>
 
                <section id="charcreation" class="gb-tab">
-                  <h1 class="serif-48">Character Creation</h1>
+                  <h1>Character Creation</h1>
                </section>
 
                <section id="history" class="gb-tab">
-                  <h1 class="serif-48">History</h1>
+                  <h1>History</h1>
                </section>
 
                <section id="factions" class="gb-tab">
-                  <h1 class="serif-48">Factions</h1>
+                  <h1>Factions</h1>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis ultricies lorem eu bibendum. Curabitur quis sem velit. Quisque iaculis tortor lorem, a pretium turpis tincidunt at. In ullamcorper porttitor elit sed tempus. Proin viverra purus id pellentesque placerat. Donec sed lobortis enim, sit amet accumsan eros. Donec hendrerit lacinia leo ut mollis. Nulla turpis ligula, porta hendrerit dignissim ac, egestas facilisis purus.<p>
+
+                  <h2><a>The Court of Sapphire ›</a></h2>
+                  <blockquote>Split from the same mainland as Diamond and was always the more devout of the two. The usurpation of the old ruling family in Diamond resulted in the death of a saint’s daughter, adding fuel to a centuries-old flame. Tensions were further exacerbated when Diamond disavowed Adornism. Sapphire boasts many river cities sprung up around the beautiful fjords within its borders. Home to Adornism, white marble cathedrals are all over, and many come to marvel at its art and architecture. Sapphire is ruled by a theocratic council of four Saints, and its main focus is spreading Adornism through the seven courts. <br><a>Read more</a>
+                     <ul>
+                        <li><b>People:</b> Sapphirian</li>
+                        <li><b>Religion:</b> Adornism</li>
+                        <li><b>Main resources:</b> Glassworks, stained glass, arts</li>
+                     </ul>
+                  </blockquote>
+
+                  <h2>The Court of Diamond</h2>
+                  Sapphire was split from the same mainland as Diamond and was always the more devout of the two. The usurpation of the old ruling family in Diamond resulted in the death of a saint’s daughter, adding fuel to a centuries-old flame. Tensions were further exacerbated when Diamond disavowed Adornism. Sapphire boasts many river cities sprung up around the beautiful fjords within its borders. Home to Adornism, white marble cathedrals are all over, and many come to marvel at its art and architecture. Sapphire is ruled by a theocratic council of four Saints, and its main focus is spreading Adornism through the seven courts.
+                  <ul>
+                     <li><b>People:</b> Sapphirian</li>
+                     <li><b>Religion:</b> Adornism</li>
+                     <li><b>Main resources:</b> Glassworks, stained glass, arts</li>
+                  </ul>
                </section>
 
             </div>
@@ -274,7 +332,7 @@
          <div class="tableborder">
             <div class="maintitle"><span class="topic-title-space">&nbsp;</span>
                <span class="topic-title">Questing Overview</span>
-               <span class="topic-desc sans-10 caps">description here</span>
+               <span class="topic-desc">description here</span>
             </div>
             <div align="right" class="postlinksbar">
                <strong> <a href="">Attach New Poll</a> |&nbsp;<a href="">Track This Topic</a> | <a href="">Email This Topic</a> | <a href="">Print This Topic</a></strong>
@@ -290,11 +348,11 @@
                   <div class="pr-toggle"><i class="ph ph-baby"></i></div>
                   <div class="pr-header-wrap">
                      <div class="pr-header-base">
-                        <a href="" class="pr-username norman-36">name mcname</a>
-                        <div class="pr-arcana sans-10 caps">arcana of faction</div>
+                        <a href="" class="pr-username">name mcname</a>
+                        <div class="pr-arcana">arcana of faction</div>
                      </div>
                      <div class="pr-header-overlay">
-                        <div class="pr-header-stats sans-12">
+                        <div class="pr-header-stats">
                            <div class="app-stat"><span>Aliases</span> Field</div>
                            <div class="app-stat"><span>Age</span> Field</div>
                            <div class="app-stat"><span>Gender</span> Field</div>
@@ -303,13 +361,13 @@
                            <div class="app-stat"><span>Orientation</span> Field</div>
                         </div>
                         <div class="pr-header-blurb">
-                           <b class="sans-12 caps">In a sentence</b>
-                           <div class="serif-18">Corlucet – Give a man a fish and you feed him for a day. Give a man a kingdom and he wants to rule the world.</div>
+                           <b class="caps">In a sentence</b>
+                           Corlucet – Give a man a fish and you feed him for a day. Give a man a kingdom and he wants to rule the world.
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="postrow-dateband sans-10 caps"><a href="" class="flexrow"><i class="ph ph-link-simple-horizontal"></i> March 24 2023, 1:37 PM</a></div>
+               <div class="postrow-dateband"><a href="" class="flexrow"><i class="ph ph-link-simple-horizontal"></i> March 24 2023, 1:37 PM</a></div>
                <div class="postrow-body">
                   <div class="miniprofwrap">
                      <div>
@@ -319,12 +377,12 @@
                            <div class="miniprof-overlay">
                               <div class="flexcol">
                                  <div class="miniprof-avatar"><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></div>
-                                 <div class="miniprof-textwrap serif-18">
+                                 <div class="miniprof-textwrap">
                                     “Quote”
-                                    <div class="miniprof-stat sans-20">
+                                    <div class="miniprof-stat">
                                        <b>Posts</b>3232
                                     </div>
-                                    <div class="miniprof-stat sans-20">
+                                    <div class="miniprof-stat">
                                        <b>Gold</b>3232
                                     </div>
                                  </div>
@@ -335,15 +393,15 @@
                            </div>
                         </div>
                         <div class="miniprof-links flexrow">
-                           <a href="" class="tooltip" title="All posts"><i class="ph ph-file"></i></a>
-                           <a href="" class="tooltip" title="All threads"><i class="ph ph-books"></i></a>
-                           <a href="" class="tooltip" title="Tracker"><i class="ph ph-map-pin-line"></i></a>
-                           <a href="" class="tooltip" title="Development"><i class="ph ph-pencil"></i></a>
-                           <a href="" class="tooltip" title="Custom"><i class="ph ph-binoculars"></i></a>
+                           <a href="" title="All posts"><i class="ph ph-file"></i></a>
+                           <a href="" title="All threads"><i class="ph ph-books"></i></a>
+                           <a href="" title="Tracker"><i class="ph ph-map-pin-line"></i></a>
+                           <a href="" title="Development"><i class="ph ph-pencil"></i></a>
+                           <a href="" title="Custom"><i class="ph ph-binoculars"></i></a>
                         </div>
                      </div>
                   </div>
-                  <div id="pid_ID" class="postcontent sans-14">
+                  <div id="pid_ID" class="postcontent">
 
                      <!-- QUOTE -->
                      <table border="0" align="center" width="95%" cellpadding="3" cellspacing="1" id="QUOTE-WRAP">
@@ -401,7 +459,7 @@
                   </div>
 
                </div>
-               <div class="postrow-footer sans-10 caps flexrow">
+               <div class="postrow-footer flexrow">
                   <b>OOC Name</b>
                   <b class="pipe"></b>
                   <span><b>Pronouns</b> field</span>
@@ -418,7 +476,7 @@
             <div class="row2" style="padding:6px">1 Members:
                <a href=""><span class="npc">tinkerer</span></a>
             </div>
-            <div class="activeuserstrip" align="center"><!--SOCIAL_BOOKMARKS--> « <a href="">Next Oldest</a> | <strong><a href="">Staff</a></strong> | <a href="">Next Newest</a> »</div>
+            <div class="activeuserstrip" align="center"><!--SOCIAL_BOOKMARKS--> « <a href="">Next Oldest</a> | <strong><a href="">QA</a></strong> | <a href="">Next Newest</a> »</div>
 
          </div>
          <!-- END THREAD -->
@@ -431,23 +489,23 @@
 
 
          <!-- PROFILE -->
-         <div id="appwrap" class="user-ID sapphire">
+         <div id="appwrap" class="user-ID Sapphire">
             <div class="insetborder"></div>
-            <a class="app-editbutton sans-10 caps tooltip" href="" title="Edit profile"><i class="ph ph-pencil-simple"></i> </a>
+            <a class="app-editbutton tooltip" href="/index.php?act=UserCP&CODE=01" title="Edit profile"><i class="ph ph-pencil-simple"></i> </a>
             <div class="app-intro">
                <div class="app-intro-bg"> </div>
                <div class="app-side">
                   <img class="app-hover" src="https://imglf6.lf127.net/img/39e869ffba01f2bf/MFA1clRGZW1MVjhkVDhGK1BQT0RhUDJzcTRZN1c3THd1TkZieEhRVDRNdz0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0">
-                  <div class="app-side-info sans-10 caps">
+                  <div class="app-side-info">
                      <span><b>123</b> posts</span>
                      <span><b>12,300</b> gold</span>
                   </div>
                </div>
 
                <div class="app-basics">
-                  <div class="app-name norman-56">Roman Torrano</div>
-                  <div class="app-arcana serif-24">arcana of faction</div>
-                  <div class="app-statsgrid sans-12">
+                  <div class="app-name">Roman Torrano</div>
+                  <div class="app-arcana">arcana of faction</div>
+                  <div class="app-statsgrid">
                      <div class="app-stat"><span>Aliases</span> Field</div>
                      <div class="app-stat"><span>Age</span> Field</div>
                      <div class="app-stat"><span>Gender</span> Field</div>
@@ -463,39 +521,39 @@
                      <div class="app-stat"><span>Hair Color</span> Field</div>
                      <div class="app-stat"><span>Eye Color</span> Field</div>
                   </div>
-                  <div class="app-fc sans-12">
+                  <div class="app-fc">
                      <div class="app-stat"><span>Face Claim</span> Field</div>
                   </div>
                </div>
             </div>
             <div class="app_body">
-               <div class="app_maincontent sans-15">
+               <div class="app_maincontent">
 
                   <div class="app_tabcontent appwrap_active">
                      <div class="app-snapshot">
-                        <b class="serif-17 caps">In a sentence</b>
-                        <div class="serif-20">Corlucet – Give a man a fish and you feed him for a day. Give a man a kingdom and he wants to rule the world.</div>
+                        <b>In a sentence</b>
+                        <div>Corlucet – Give a man a fish and you feed him for a day. Give a man a kingdom and he wants to rule the world.</div>
                      </div>
 
-                     <h1 class="serif-30">Reputation</h1>
+                     <h1>Reputation</h1>
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar neque eget tempus viverra. Etiam ac orci erat. Nulla interdum justo et urna pulvinar, quis consectetur massa rhoncus. Proin laoreet sed urna in maximus. Pellentesque mattis sapien rhoncus ex egestas blandit. Maecenas vel sem varius, pretium ipsum ut, placerat dui. Aliquam luctus velit nec felis mattis, id sodales enim lobortis. In arcu erat, mattis ac euismod vitae, hendrerit id elit. Maecenas sollicitudin neque quis porta molestie. Phasellus non porta eros. Vivamus semper magna velit, vitae placerat massa gravida eu.
                      <br><br>
                      Vestibulum pretium nisl nec justo molestie, id volutpat elit mollis. Praesent a mi augue. Curabitur nec urna lorem. Duis maximus tempor ex sed placerat. Pellentesque eros felis, faucibus quis ligula eu, ornare pulvinar purus. Mauris pulvinar lacus at elit lobortis, sit amet auctor sapien rhoncus. Vestibulum pretium nisl nec justo molestie, id volutpat elit mollis. Praesent a mi augue. Curabitur nec urna lorem. Duis maximus tempor ex sed placerat. Pellentesque eros felis, faucibus quis ligula eu, ornare pulvinar purus. Mauris pulvinar lacus at elit lobortis, sit amet auctor sapien rhoncus.
 
 
                      <hr class="sectdivider">
-                     <h1 class="serif-30">Background</h1>
+                     <h1>Background</h1>
                      <p></p>Etiam viverra nisl sed tortor placerat rhoncus. Fusce eu leo est. Sed molestie arcu eget ex feugiat, sed auctor dui efficitur. Etiam ac diam mollis, interdum odio nec, tincidunt odio. Vivamus porttitor venenatis magna. Fusce nec nisl a felis tincidunt rutrum. Pellentesque neque magna, dignissim a ultrices interdum, feugiat sed quam. Fusce iaculis tortor dui, nec bibendum enim gravida sodales. Ut eu pellentesque odio.
 
                      <hr class="sectdivider">
-                     <h1 class="serif-30">Plot Hooks</h1>
+                     <h1>Plot Hooks</h1>
                      <p></p>Etiam viverra nisl sed tortor placerat rhoncus. Fusce eu leo est.
 
                   </div>
 
                   <div class="app_tabcontent">
                      <div class="app-magic">
-                        <div class="elementswrap serif-12 caps flexrow fire water">
+                        <div class="elementswrap flexrow fire water">
                            <div class="element">
                               <span class="ether">
                                  <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -614,8 +672,8 @@
                               </span>
                            </div>
                         </div>
-                        <h1 class="serif-30">Subtitle about magic</h1>
-                        <p>Etiam viverra nisl sed tortor placerat rhoncus. Fusce eu leo est. Sed molestie arcu eget ex feugiat, sed auctor dui efficitur. Etiam ac diam mollis, interdum odio nec, tincidunt odio. Vivamus porttitor venenatis magna. Fusce nec nisl a felis tincidunt rutrum. Pellentesque neque magna, dignissim a ultrices interdum, feugiat sed quam. Fusce iaculis tortor dui, nec bibendum enim gravida sodales. Ut eu pellentesque odio.</p>
+                        <h1>Subtitle about magic</h1>
+                        <div class="app-magic-writeup">Etiam viverra nisl sed tortor placerat rhoncus. Fusce eu leo est. Sed molestie arcu eget ex feugiat, sed auctor dui efficitur. Etiam ac diam mollis, interdum odio nec, tincidunt odio. Vivamus porttitor venenatis magna. Fusce nec nisl a felis tincidunt rutrum. Pellentesque neque magna, dignissim a ultrices interdum, feugiat sed quam. Fusce iaculis tortor dui, nec bibendum enim gravida sodales. Ut eu pellentesque odio.</div>
 
                         <div class="svg-defs">
                            <svg>
@@ -626,18 +684,18 @@
                         </div>
                      </div>
 
-                     <h1 class="serif-30">Inventory</h1>
+                     <h1>Inventory</h1>
                      <p></p>Etiam viverra nisl sed tortor placerat rhoncus. Fusce eu leo est. Sed molestie arcu eget ex feugiat, sed auctor dui efficitur. Etiam ac diam mollis, interdum odio nec, tincidunt odio. Vivamus porttitor venenatis magna. Fusce nec nisl a felis tincidunt rutrum. Pellentesque neque magna, dignissim a ultrices interdum, feugiat sed quam. Fusce iaculis tortor dui, nec bibendum enim gravida sodales. Ut eu pellentesque odio.
 
                      <hr class="sectdivider">
-                     <h1 class="serif-30">Other Skills</h1>
+                     <h1>Other Skills</h1>
 
 
                   </div>
 
                   <div class="app_tabcontent">
                      <hr class="sectdivider">
-                     <h1 class="serif-30">Art Credits</h1>
+                     <h1>Art Credits</h1>
                   </div>
 
                   <div class="app_tabcontent">
@@ -722,7 +780,7 @@
 
 
                </div>
-               <div class="app_tabwrap serif-24 flexcol">
+               <div class="app_tabwrap flexcol">
                   <div class="app_tab appwrap_active">Background</div>
                   <div class="app_tab">Abilities</div>
                   <div class="app_tab">Miscellaneous</div>
@@ -731,8 +789,8 @@
 
             </div>
             <div class="app-footer">
-               <div class="app-oocname serif-28">Played by <span>Name</span> <em>contact by discord dm</em></div>
-               <div class="app-oocstats sans-10 caps">
+               <div class="app-oocname">Played by <span>Name</span> <em>contact by discord dm</em></div>
+               <div class="app-oocstats">
                   <div class="app-oocstat"><span>Pronouns</span> Field</div>
                   <div class="app-oocstat"><span>Mature threads</span> Field</div>
                   <div class="app-oocstat"><span>Please tag</span> Field</div>
@@ -740,13 +798,13 @@
                   <div class="app-oocstat"><span>Joined</span> 17-August 22</div>
                   <div class="app-oocstat"><span>Last active</span> 4 minutes ago</div>
                </div>
-               <div class="app-links flexrow sans-9 caps">
+               <div class="app-links flexrow">
                   <a href=""><i class="ph ph-file"></i> All posts</a>
                   <a href=""><i class="ph ph-books"></i> All threads</a>
                   <a href=""><i class="ph ph-map-pin-line"></i> Message</a>
                   <a href=""><i class="ph ph-pencil"></i> Development</a>
                   <a href=""><i class="ph ph-file"></i> Tracker</a>
-                  <a href=""><i class="ph ph-file"></i> Custom</a>
+                  <a href="" class="custom-link"><i class="wanted ph ph-binoculars"></i><i class="muse ph ph-music-notes"></i> Custom</a>
                </div>
 
                <div class="app-avatar flexrow"><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></div>
@@ -769,15 +827,15 @@
 
          <div class="member-wrapper">
             <div class="member-sidebar">
-               <div class="member-sidebar-header serif-17 caps">
-                  Denizens of <div class="norman-28">Etheria</div>
+               <div class="member-sidebar-header">
+                  Denizens of <div>Etheria</div>
                </div>
                <div>
                   <input class="forminput memberlist-namesearch" type="text" name="name" value="" placeholder="Search">
 
                   <div class="member-filter-wrap">
-                     <div class="member-filter-title serif-17 caps">Sort by</div>
-                     <ul class="member-filter-list sans-10 caps">
+                     <div class="member-filter-title">Sort by</div>
+                     <ul class="member-filter-list">
                         <li class="selected">A–Z</li>
                         <button type="button" data-sort-by="memnamereverse">Z-A</button>
                         <button type="button" data-sort-by="memposts">Posts</button>
@@ -788,8 +846,8 @@
                   </div>
 
                   <div class="member-filter-wrap">
-                     <div class="member-filter-title serif-17 caps">Players</div>
-                     <ul class="member-filter-list sans-10 caps ooc">
+                     <div class="member-filter-title">Players</div>
+                     <ul class="member-filter-list ooc">
                         <li class="selected">All</li>
                         <li>Aerie</li>
                         <li>Hellsy</li>
@@ -837,24 +895,24 @@
                   </div>
 
                   <div class="member-filter-wrap">
-                     <div class="member-filter-title serif-17 caps">Factions</div>
-                     <ul class="member-filter-list sans-10 caps factions">
+                     <div class="member-filter-title">Factions</div>
+                     <ul class="member-filter-list factions">
                         <li class="">All</li>
                         <li class="unsorted">Unsorted</li>
-                        <li class="amethyst selected">Amethyst</li>
-                        <li class="diamond">diamond</li>
-                        <li class="jade selected">Jade</li>
-                        <li class="onyx">Onyx</li>
-                        <li class="pearl">Pearl</li>
-                        <li class="ruby">Ruby</li>
-                        <li class="sapphire">Sapphire</li>
-                        <li class="corlucet">Corlucet</li>
+                        <li class="Amethyst selected">Amethyst</li>
+                        <li class="Diamond">diamond</li>
+                        <li class="Jade selected">Jade</li>
+                        <li class="Onyx">Onyx</li>
+                        <li class="Pearl">Pearl</li>
+                        <li class="Ruby">Ruby</li>
+                        <li class="Sapphire">Sapphire</li>
+                        <li class="Corlucet">Corlucet</li>
                      </ul>
                   </div>
 
                   <div class="member-filter-wrap">
-                     <div class="member-filter-title serif-17 caps">Arcana</div>
-                     <ul class="member-filter-list sans-10 caps arcana">
+                     <div class="member-filter-title">Arcana</div>
+                     <ul class="member-filter-list arcana">
                         <li class="selected">All</li>
                         <li>Chariot</li>
                         <li>Death</li>
@@ -873,18 +931,18 @@
                </div>
             </div>
             <div class="member-rows">
-               <div class="membercard OOC mem-ID g-5">
+               <div class="membercard OOC mem-ID Sapphire arcana- faction-">
                   <div class="mem-image">
                      <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   </div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">sapphire</a></div>
+                        <div class="mem-name"><a href="">sapphire</a></div>
                         <div class="mem-stats"><span>27</span><span>male</span><span>kingsblood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> <!-- |group| --> </div>
                         <div class="mem-stat"><b>Posts</b> <span class="mem-postcount"><!-- |posts| --> </span></div>
                         <div class="mem-stat"><b>Last post</b> Timestamp</div>
@@ -894,176 +952,176 @@
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">quartz</div>
+                        <div class="mem-ooc">quartz</div>
                      </div>
                   </div>
                </div>
 
-               <div class="membercard mem-id amethyst">
+               <div class="membercard mem-id Amethyst">
                   <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">amethyst</a></div>
+                        <div class="mem-name"><a href="">amethyst</a></div>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> Sapphire</div>
                         <div class="mem-stat mem-postcount"><b>Posts</b> 123</div>
                         <div class="mem-stat"><b>Last post</b> March 21, 2023</div>
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">ooc</div>
+                        <div class="mem-ooc">ooc</div>
                      </div>
                   </div>
                </div>
 
-               <div class="membercard mem-id diamond">
+               <div class="membercard mem-id Diamond">
                   <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">diamond</a></div>
+                        <div class="mem-name"><a href="">diamond</a></div>
                         <div class="mem-stats"><span>27</span><span>male</span><span>kingsblood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> Sapphire</div>
                         <div class="mem-stat mem-postcount"><b>Posts</b> 123</div>
                         <div class="mem-stat"><b>Last post</b> March 21, 2023</div>
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">quartz</div>
+                        <div class="mem-ooc">quartz</div>
                      </div>
                   </div>
                </div>
 
-               <div class="membercard mem-id jade">
+               <div class="membercard mem-id Jade">
                   <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">jade</a></div>
+                        <div class="mem-name"><a href="">jade</a></div>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> Sapphire</div>
                         <div class="mem-stat mem-postcount"><b>Posts</b> 123</div>
                         <div class="mem-stat"><b>Last post</b> March 21, 2023</div>
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">ooc</div>
+                        <div class="mem-ooc">ooc</div>
                      </div>
                   </div>
                </div>
 
-               <div class="membercard mem-id onyx">
+               <div class="membercard mem-id Onyx">
                   <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">onyx</a></div>
+                        <div class="mem-name"><a href="">onyx</a></div>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> Sapphire</div>
                         <div class="mem-stat mem-postcount"><b>Posts</b> 123</div>
                         <div class="mem-stat"><b>Last post</b> March 21, 2023</div>
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">ooc</div>
+                        <div class="mem-ooc">ooc</div>
                      </div>
                   </div>
                </div>
 
-               <div class="membercard mem-id pearl">
+               <div class="membercard mem-id Pearl">
                   <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">pearl</a></div>
+                        <div class="mem-name"><a href="">pearl</a></div>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> Sapphire</div>
                         <div class="mem-stat mem-postcount"><b>Posts</b> 123</div>
                         <div class="mem-stat"><b>Last post</b> March 21, 2023</div>
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">ooc</div>
+                        <div class="mem-ooc">ooc</div>
                      </div>
                   </div>
                </div>
 
-               <div class="membercard mem-id ruby">
+               <div class="membercard mem-id Ruby">
                   <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">ruby</a></div>
+                        <div class="mem-name"><a href="">ruby</a></div>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> Sapphire</div>
                         <div class="mem-stat mem-postcount"><b>Posts</b> 123</div>
                         <div class="mem-stat"><b>Last post</b> March 21, 2023</div>
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">ooc</div>
+                        <div class="mem-ooc">ooc</div>
                      </div>
                   </div>
                </div>
 
-               <div class="membercard mem-id corlucet">
+               <div class="membercard mem-id Corlucet">
                   <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">corlucet</a></div>
+                        <div class="mem-name"><a href="">corlucet</a></div>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> Sapphire</div>
                         <div class="mem-stat"><b>Posts</b> <span class="mem-postcount">123</span></div>
                         <div class="mem-stat"><b>Last post</b> March 21, 2023</div>
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">ooc</div>
+                        <div class="mem-ooc">ooc</div>
                      </div>
                   </div>
                </div>
 
 
-               <div class="membercard mem-id staff">
+               <div class="membercard mem-id QA">
                   <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">staff</a></div>
+                        <div class="mem-name"><a href="">QA</a></div>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> Sapphire</div>
                         <div class="mem-stat"><b>Posts</b> <span class="mem-postcount">123</span></div>
                         <div class="mem-stat"><b>Last post</b> March 21, 2023</div>
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">ooc</div>
+                        <div class="mem-ooc">ooc</div>
                      </div>
                   </div>
                </div>
@@ -1072,20 +1130,20 @@
                <div class="membercard mem-id unsorted">
                   <div class="mem-image" style="background-image: url(https://images-ext-1.discordapp.net/external/FFETTMx4UtRvw6bB7nRXeolotFjAUk8UrRro-mEL_Fg/https/pbs.twimg.com/media/FrWYFBwacAcoHvy.jpg?width=546&height=864);"></div>
                   <div class="insetborder"></div>
-                  <div class="mem-cover sans-10 caps">
+                  <div class="mem-cover">
                      <div class="mem-header">
-                        <div class="mem-name norman-30"><a href="">unsorted</a></div>
+                        <div class="mem-name"><a href="">unsorted</a></div>
                         <div class="mem-stats"><span>age</span><span>gender</span><span>blood</span></div>
                      </div>
                      <div class="mem-body">
-                        <div class="mem-blurb sans-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
+                        <div class="mem-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at sodales quam. Nunc eget arcu convallis, sollicitudin tortor in, cursus augue. </div>
                         <div class="mem-stat"><b>Faction</b> Sapphire</div>
                         <div class="mem-stat mem-postcount"><b>Posts</b> 123</div>
                         <div class="mem-stat"><b>Last post</b> March 21, 2023</div>
                      </div>
                      <div class="mem-footer">
                         <div class="mem-contact">Contact by discord dm</div>
-                        <div class="mem-ooc serif-24">ooc</div>
+                        <div class="mem-ooc">ooc</div>
                      </div>
                   </div>
                </div>
@@ -1106,18 +1164,17 @@
          <div class="subforumsgrid">
 
             <div class="forumrow forumdefault">
-               <a href=#" class="forum-title serif-36">Sub-board</a>
-               <div class="forum-desc sans-15">Cras varius orci orci placerat consectetur turpis mus arcu. Ipsum odio ultricies malesuada faucibus et scelerisque ac enim odio.</div>
+               <a href=#" class="forum-title">Sub-board</a>
+               <div class="forum-desc">Cras varius orci orci placerat consectetur turpis mus arcu. Ipsum odio ultricies malesuada faucibus et scelerisque ac enim odio.</div>
                <div class="forum-lastpost flexrow">
-                  <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a>
-                  </div>
+                  <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                   <div class="flexcol">
-                     <a href="" class="lp-thread serif-16">Thread title here</a>
-                     <div class="lp sans-10 caps">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
+                     <a href="" class="lp-thread">Thread title here</a>
+                     <div class="lp">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
                      <span><b>0 threads</b> <b>0 posts</b></span>
                   </div>
                </div>
-               <div class="forumfooter sans-10 caps"">
+               <div class="forumfooter"">
                   <a href="">subboard</a>
                </div>
             </div>
@@ -1144,18 +1201,18 @@
                   </table>
                </div>
 
-               <div class="topic-list-header norman-32">Board Name</div>
+               <div class="topic-list-header">Board Name</div>
 
                <!-- Macro: Topic list subheaders -->
-               <div class="topic-list-sub sans-12 caps">Announcements</div>
+               <div class="topic-list-sub">Announcements</div>
                <!-- End Macro: Topic list subheaders -->
 
                <div class="topic-row">
                   <div class="topic-main">
-                     <div class="flexrow"><a href="" class="topic-title  serif-28">thread title</a> <span class="small">( Pages <a href="">1 </a><a href="">2</a> )</span></div>
-                     <div class="topic-desc sans-10 caps">description of indeterminate length</div>
+                     <div class="flexrow"><a href="" class="topic-title">thread title</a> <span class="small">( Pages <a href="">1 </a><a href="">2</a> )</span></div>
+                     <div class="topic-desc">description of indeterminate length</div>
                   </div>
-                  <div class="topic-info sans-9 caps">
+                  <div class="topic-info">
                      <div class="flexcol">
                         <div><b>100</b> views</div>
                         <div><b>10</b> replies</div>
@@ -1166,7 +1223,7 @@
                      </div>
                   </div>
                   <div class="topic-avatar">
-                     <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a></div>
+                     <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                   </div>
                   <div class="insetborder"> </div>
                   <input type="checkbox">
@@ -1176,10 +1233,10 @@
                <div class="topic-row">
                   <div class="insetborder"> </div>
                   <div class="topic-main">
-                     <a href="" class="topic-title serif-28">thread title</a>
-                     <div class="topic-desc sans-10 caps">description of indeterminate length</div>
+                     <a href="" class="topic-title">thread title</a>
+                     <div class="topic-desc">description of indeterminate length</div>
                   </div>
-                  <div class="topic-info sans-9 caps">
+                  <div class="topic-info">
                      <div class="flexcol">
                         <div><b>100</b> views</div>
                         <div><b>10</b> replies</div>
@@ -1190,19 +1247,19 @@
                      </div>
                   </div>
                   <div class="topic-avatar">
-                     <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a></div>
+                     <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                   </div>
                </div>
 
-               <div class="topic-list-sub sans-12 caps">Topics</div>
+               <div class="topic-list-sub">Topics</div>
 
                <div class="topic-row">
                   <div class="insetborder"> </div>
                   <div class="topic-main">
-                     <a href="" class="topic-title serif-28">thread title</a>
-                     <div class="topic-desc sans-10 caps">description of indeterminate length</div>
+                     <a href="" class="topic-title">thread title</a>
+                     <div class="topic-desc">description of indeterminate length</div>
                   </div>
-                  <div class="topic-info sans-9 caps">
+                  <div class="topic-info">
                      <div class="flexcol">
                         <div><b>100</b> views</div>
                         <div><b>10</b> replies</div>
@@ -1213,7 +1270,7 @@
                      </div>
                   </div>
                   <div class="topic-avatar">
-                     <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a></div>
+                     <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                   </div>
                </div>
 
@@ -1319,7 +1376,7 @@
                         <optgroup label="Forum Jump">
                            <option value="-1">registry</option>
                            <option value="1" selected="selected">&nbsp;&nbsp;- Imperatives </option><!--fx:1-->
-                           <option value="35"> ---- Staff</option>
+                           <option value="35"> ---- QA</option>
                            <option value="13">&nbsp;&nbsp;- Announcements </option><!--fx:13-->
                            <option value="-1">Development</option>
                            <option value="3">&nbsp;&nbsp;- Quest Board </option><!--fx:3-->
@@ -1403,7 +1460,7 @@
                <!-- <% CATEGORY HEADER %> -->
 
                <div class="categorywrap" id="cat-1">
-                  <div class="category-header norman-32">Get Started</div>
+                  <div class="category-header">Get Started</div>
 
                   <!-- <% FORUM ROWS %> -->
 
@@ -1414,9 +1471,9 @@
                         <div class="insetborder"> </div>
                         <div class="gbf-inner flexcol">
                            <div class="gbf">
-                              <a href="" class="gbf-title serif-64">Handbook</a>
-                              <div class="gbf-desc sans-15">Tincidunt porttitor in a aliquam tellus cum imperdiet dolor. A neque adipiscing neque id commodo id non proin quis. Tincidunt porttitor in a aliquam tellus cum imperdiet dolor. </div>
-                              <div class="gbf-links sans-11 caps">
+                              <a href="" class="gbf-title">Handbook</a>
+                              <div class="gbf-desc">Tincidunt porttitor in a aliquam tellus cum imperdiet dolor. A neque adipiscing neque id commodo id non proin quis. Tincidunt porttitor in a aliquam tellus cum imperdiet dolor. </div>
+                              <div class="gbf-links">
                                  <a href="">Link</a>
                                  <a href="">Link</a>
                                  <a href="">Link</a>
@@ -1428,22 +1485,22 @@
                               <div class="forumrow" id="for-1">
                                  <div class="flexrow">
                                     <div class="flexcol">
-                                       <a href="" class="forum-title serif-28">Announcements</a>
-                                       <a href="" class="lp-thread serif-16">Thread title here</a>
-                                       <div class="lp sans-10 caps">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
+                                       <a href="" class="forum-title">Announcements</a>
+                                       <a href="" class="lp-thread">Thread title here</a>
+                                       <div class="lp">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
                                     </div>
-                                    <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a></div>
+                                    <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                                  </div>
                               </div>
 
                               <div class="forumrow" id="for-2">
                                  <div class="flexrow">
                                     <div class="flexcol">
-                                       <a href="" class="forum-title serif-28">Front Desk</a>
-                                       <a href="" class="lp-thread serif-16">Thread title here</a>
-                                       <div class="lp sans-10 caps">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
+                                       <a href="" class="forum-title">Front Desk</a>
+                                       <a href="" class="lp-thread">Thread title here</a>
+                                       <div class="lp">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
                                     </div>
-                                    <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a></div>
+                                    <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                                  </div>
                               </div>
                            </div>
@@ -1465,36 +1522,35 @@
 
                         <div class="factions-inner flexcol">
                            <div>
-                              <a href=#" class="forum-title serif-48">Factions</a>
-                              <div class="forum-desc sans-15">Census and rosters for each faction. Faction claims and available positions are listed here.</div>
+                              <a href="#" class="forum-title">Factions</a>
+                              <div class="forum-desc">Census and rosters for each faction. Faction claims and available positions are listed here.</div>
                            </div>
                            <div class="factionstats">
-                              <a class="faction-statbox sans-11 caps amethyst"> <span>90</span> amethyst </a>
-                              <a class="faction-statbox sans-11 caps diamond"> <span>90</span> diamond </a>
-                              <a class="faction-statbox sans-11 caps jade"> <span>90</span> jade </a>
-                              <a class="faction-statbox sans-11 caps onyx"> <span>90</span> onyx </a>
-                              <a class="faction-statbox sans-11 caps pearl"> <span>90</span> pearl </a>
-                              <a class="faction-statbox sans-11 caps ruby"> <span>90</span> ruby </a>
-                              <a class="faction-statbox sans-11 caps sapphire"> <span>90</span> sapphire </a>
-                              <a class="faction-statbox sans-11 caps corlucet"> <span>90</span> corlucet </a>
+                              <a class="faction-statbox Amethyst"> <span>90</span> amethyst </a>
+                              <a class="faction-statbox Diamond"> <span>90</span> diamond </a>
+                              <a class="faction-statbox Jade"> <span>90</span> jade </a>
+                              <a class="faction-statbox Onyx"> <span>90</span> onyx </a>
+                              <a class="faction-statbox Pearl"> <span>90</span> pearl </a>
+                              <a class="faction-statbox Ruby"> <span>90</span> ruby </a>
+                              <a class="faction-statbox Sapphire"> <span>90</span> sapphire </a>
+                              <a class="faction-statbox Corlucet"> <span>90</span> corlucet </a>
                            </div>
                         </div>
 
                      </div>
 
                      <div class="forumrow quests-forum forumdefault">
-                        <a href=#" class="forum-title serif-36">Quests</a>
-                        <div class="forum-desc sans-15">Cras varius orci orci placerat consectetur turpis mus arcu. Ipsum odio ultricies malesuada faucibus et scelerisque ac enim odio.</div>
+                        <a href=#" class="forum-title">Quests</a>
+                        <div class="forum-desc">Cras varius orci orci placerat consectetur turpis mus arcu. Ipsum odio ultricies malesuada faucibus et scelerisque ac enim odio.</div>
                         <div class="forum-lastpost flexrow">
-                           <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a>
-                           </div>
+                           <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                            <div class="flexcol">
-                              <a href="" class="lp-thread serif-16">Thread title here</a>
-                              <div class="lp sans-10 caps">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
+                              <a href="" class="lp-thread">Thread title here</a>
+                              <div class="lp">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
                               <span><b>0 threads</b> <b>0 posts</b></span>
                            </div>
                         </div>
-                        <div class="forumfooter sans-10 caps" button">
+                        <div class="forumfooter button">
                            <a href="">subboard</a>
                         </div>
                      </div>
@@ -1510,14 +1566,14 @@
 
                      <div class="locations-forum">
                         <div class="location-tabwrap">
-                           <div class="location-tab serif-20 caps  active" id="amethysttab">Amethyst</div>
-                           <div class="location-tab serif-20 caps" id="diamondtab">Diamond</div>
-                           <div class="location-tab serif-20 caps" id="jadetab">Jade</div>
-                           <div class="location-tab serif-20 caps" id="onyxtab">Onyx</div>
-                           <div class="location-tab serif-20 caps" id="pearltab">Pearl</div>
-                           <div class="location-tab serif-20 caps" id="rubytab">Ruby</div>
-                           <div class="location-tab serif-20 caps" id="sapphiretab">Sapphire</div>
-                           <div class="location-tab serif-20 caps" id="corlucettab">Corlucet</div>
+                           <div class="location-tab active" id="amethysttab">Amethyst</div>
+                           <div class="location-tab" id="diamondtab">Diamond</div>
+                           <div class="location-tab" id="jadetab">Jade</div>
+                           <div class="location-tab" id="onyxtab">Onyx</div>
+                           <div class="location-tab" id="pearltab">Pearl</div>
+                           <div class="location-tab" id="rubytab">Ruby</div>
+                           <div class="location-tab" id="sapphiretab">Sapphire</div>
+                           <div class="location-tab" id="corlucettab">Corlucet</div>
                         </div>
                         <div id="locations-slideswrap" class="amethysttab">
                            <div class="insetborder"></div>
@@ -1526,8 +1582,8 @@
 
                               <div class="location" id="for-20">
                                  <div class="loc-info">
-                                    <a href="" class="loc-title serif-20 caps">The Court of <div class="serif-48">Amethyst</div></a>
-                                    <div class="loc-desc sans-15">You are either descended from a First Monarch or are one of the undeity's champion. Either way, you can manipulate ether and produce magic. But magic seems so minute when the Eight Jeweled Courts are at odds. Etheria focuses on middle magic and court intrigue.
+                                    <a href="" class="loc-title">The Court of <div>Amethyst</div></a>
+                                    <div class="loc-desc">You are either descended from a First Monarch or are one of the undeity's champion. Either way, you can manipulate ether and produce magic. But magic seems so minute when the Eight Jeweled Courts are at odds. Etheria focuses on middle magic and court intrigue.
                                        <ul>
                                           <li>Landmark</li>
                                           <li>Landmark</li>
@@ -1538,12 +1594,11 @@
                                  <div class="loc-lastpostbox">
                                     <div class="flexrow">
                                        <div class="flexcol">
-                                          <a href="" class="lp-thread serif-16">Thread title here</a>
-                                          <div class="lp sans-10 caps">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
+                                          <a href="" class="lp-thread">Thread title here</a>
+                                          <div class="lp">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
                                           <span><b>0 threads</b> <b>0 posts</b></span>
                                        </div>
-                                       <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a>
-                                       </div>
+                                       <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                                     </div>
                                  </div>
                               </div>
@@ -1551,8 +1606,8 @@
 
                               <div class="location" id="for-21">
                                  <div class="loc-info">
-                                    <a href="" class="loc-title serif-20 caps">The Court of <div class="serif-48">Diamond</div></a>
-                                    <div class="loc-desc sans-15">You are either descended from a First Monarch or are one of the undeity's champion. Either way, you can manipulate ether and produce magic. But magic seems so minute when the Eight Jeweled Courts are at odds. Etheria focuses on middle magic and court intrigue.
+                                    <a href="" class="loc-title">The Court of <div>Diamond</div></a>
+                                    <div class="loc-desc">You are either descended from a First Monarch or are one of the undeity's champion. Either way, you can manipulate ether and produce magic. But magic seems so minute when the Eight Jeweled Courts are at odds. Etheria focuses on middle magic and court intrigue.
                                        <ul>
                                           <li>Landmark</li>
                                        </ul>
@@ -1561,12 +1616,11 @@
                                  <div class="loc-lastpostbox">
                                     <div class="flexrow">
                                        <div class="flexcol">
-                                          <a href="" class="lp-thread serif-16">Thread title here</a>
-                                          <div class="lp sans-10 caps">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
+                                          <a href="" class="lp-thread">Thread title here</a>
+                                          <div class="lp">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
                                           <span><b>0 threads</b> <b>0 posts</b></span>
                                        </div>
-                                       <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a>
-                                       </div>
+                                       <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                                     </div>
                                  </div>
                               </div>
@@ -1604,8 +1658,8 @@
 
                         <div class="archives-inner flexcol">
                            <div class="flexcol">
-                              <a href=#" class="forum-title serif-48">Archives</a>
-                              <div class="archivesubboards sans-10 caps button">
+                              <a href=#" class="forum-title">Archives</a>
+                              <div class="archivesubboards button">
                                  <a href="">Subboard</a>
                                  <a href="">Subboard</a>
                                  <a href="">Subboard</a>
@@ -1617,203 +1671,202 @@
 
                      <div class="forumrow quests-forum forumdefault">
                         <a href=#" class="forum-title serif-36">Community</a>
-                        <div class="forum-desc sans-15">Cras varius orci orci placerat consectetur turpis mus arcu. Ipsum odio ultricies malesuada faucibus et scelerisque ac enim odio.</div>
+                        <div class="forum-desc">Cras varius orci orci placerat consectetur turpis mus arcu. Ipsum odio ultricies malesuada faucibus et scelerisque ac enim odio.</div>
                         <div class="forum-lastpost flexrow">
-                           <div class="lp-avatar"><a href=""><img src="https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400"></a>
-                           </div>
+                           <div class="lp-avatar"><a href="#" style="background-image: url(https://media.discordapp.net/attachments/683720444796338317/904237787635679232/juNYaqG.png?width=400&height=400)"></a></div>
                            <div class="flexcol">
-                              <a href="" class="lp-thread serif-16">Thread title here</a>
-                              <div class="lp sans-10 caps">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
+                              <a href="" class="lp-thread">Thread title here</a>
+                              <div class="lp">By <a href="" class="lp-user">Username</a> on March 15, 2023</div>
                               <span><b>0 threads</b> <b>0 posts</b></span>
                            </div>
                         </div>
-                        <div class="forumfooter sans-10 caps"">
-                     <a href="">subboard</a>
+                        <div class="forumfooter">
+                           <a href="">subboard</a>
+                        </div>
+                     </div>
+
+
+                  </div>
+                  <!-- <% END FORUM ROWS %> -->
+               </div>
+               <!-- <% END CATEGORY HEADER %> -->
+
+
+               <!-- <% BOARD STATS %> -->
+               <div class="category-header">Site Statistics</div>
+
+               <div class="statscenterwrap">
+                  <div class="insetborder"> </div>
+                  <div class="statscenter">
+
+                     <div class="sc-contentarea">
+                        <div class="sc-welcome">Welcome to Etheria,</div>
+                        <div class="sc-welcomename"><a href="">Username</a></div>
+                        <div class="sc-linkbox flexrow">
+                           <a href="">Last Click</a>
+                           <a href="">Members</a>
+                           <a href="">Active Topics</a>
+                           <a href="">Search</a>
+                        </div>
+                        <div class="onlinestats flexrow">
+                           2 members, 2 guests, 1 anonymous online now
+                        </div>
+                        <div class="onlinenow">
+                           <a href=""><span class="Diamond">john doe</span></a>,
+                           <a href=""><span class="Onyx">mary sue</span></a>
+                        </div>
+                        <div class="onlinepast">
+                           <a href=""><span class="Ruby">gary stu</span></a>,
+                           <a href=""><span class="Corlucet">jane doe</span></a>, <a href=""><span class="QA">QA account</span></a>
+
+                           <div class="onlinepast-total"><em>23</em>online today</div>
+                        </div>
+                     </div>
+
+
+                     <div class="sc-art"> </div>
+                     <div class="sc-recordbox">Our <b>1233 members</b><br> have made <b>24,776 posts</b> <br> since <b>May 2023</b>.</div>
+
+                  </div>
+
+                  <div class="sc-footer">
+                     <div class="flexrow">
+                        <b>recent topics</b>
+                        <div id="recents">
+
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+
+                           <div class="holdrec">
+                              <div class="rt-thread">
+                                 <a href=""><strong>Blinded in Chains</strong></a>
+                                 - by <a href="">evangeline rolston</a>
+                                 <a href=""></a>
+                              </div>
+                              <div class="rt-date">Mar 3 2023, 05:19 AM
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
                   </div>
                </div>
+               <!-- <% END BOARDSTATS %> -->
 
+
+               <br>
+               <div align="right" id="delcookiesrow"><a href="https://xmortala.jcink.net/index.php?act=Login&amp;CODE=06">Delete cookies set by this board</a> · <a href="https://xmortala.jcink.net/index.php?act=Login&amp;CODE=05">Mark all posts as read</a></div>
+            </div>
+            <!-- END <% BOARD %> -->
+
+
+
+            <div class="footer" id="bottom">
+               <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+               <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+               <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+               <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+               <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
+               <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
 
             </div>
-            <!-- <% END FORUM ROWS %> -->
-         </div>
-            <!-- <% END CATEGORY HEADER %> -->
 
 
-         <!-- <% BOARD STATS %> -->
-         <div class=" category-header norman-32">Site Statistics</div>
-
-                        <div class="statscenterwrap">
-                           <div class="insetborder"> </div>
-                           <div class="statscenter">
-
-                              <div class="sc-contentarea">
-                                 <div class="sc-welcome serif-20 caps">Welcome to Etheria,</div>
-                                 <div class="sc-welcomename serif-48"><a href="">Username</a></div>
-                                 <div class="sc-linkbox sans-10 caps flexrow">
-                                    <a href="">Last Click</a>
-                                    <a href="">Members</a>
-                                    <a href="">Active Topics</a>
-                                    <a href="">Search</a>
-                                 </div>
-                                 <div class="onlinestats serif-20 flexrow">
-                                    2 members, 2 guests, 1 anonymous online now
-                                 </div>
-                                 <div class="onlinenow serif-24">
-                                    <a href=""><span class="diamond">john doe</span></a>,
-                                    <a href=""><span class="onyx">mary sue</span></a>
-                                 </div>
-                                 <div class="onlinepast sans-10 caps">
-                                    <a href=""><span class="ruby">gary stu</span></a>,
-                                    <a href=""><span class="corlucet">jane doe</span></a>, <a href=""><span class="staff">staff account</span></a>
-
-                                    <div class="onlinepast-total serif-20"><em class="norman-48">23</em>online today</div>
-                                 </div>
-                              </div>
-
-
-                              <div class="sc-art"> </div>
-                              <div class="sc-recordbox sans-10 caps">Our <b>1233 members</b><br> have made <b>24,776 posts</b> <br> since <b>May 2023</b>.</div>
-
-                           </div>
-
-                           <div class="sc-footer">
-                              <div class="flexrow">
-                                 <b class="serif-17 caps">Recent Topics</b>
-                                 <div id="recents" class="">
-
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-
-                                    <div class="holdrec">
-                                       <div class="rt-thread sans-10 caps">
-                                          <a href=""><strong>Blinded in Chains</strong></a>
-                                          - by <a href="">evangeline rolston</a>
-                                          <a href=""></a>
-                                       </div>
-                                       <div class="rt-date">Mar 3 2023, 05:19 AM
-                                       </div>
-                                    </div>
-
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- <% END BOARDSTATS %> -->
-
-
-                        <br>
-                        <div align="right" id="delcookiesrow"><a href="https://xmortala.jcink.net/index.php?act=Login&amp;CODE=06">Delete cookies set by this board</a> · <a href="https://xmortala.jcink.net/index.php?act=Login&amp;CODE=05">Mark all posts as read</a></div>
-                     </div>
-                     <!-- END <% BOARD %> -->
-
-
-
-                     <div class="footer" id="bottom">
-                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
-                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
-                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
-                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
-                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
-                        <div class="affiliateslot"><a href=""><img src="https://i.ibb.co/dWb46fk/woaff3.png"></a></div>
-
-                     </div>
-
-
-                     <div class="copyrightwrap">
-                        <div class="skincred serif-18 caps">Skin coded exclusively for Etheria</div>
-                        <br>
-                        <!-- Copyright Information -->
-                        <div align="center" class="tableborder">
-                           <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
-                              <div align="center" class="copyright">Powered by <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a> (<a href="http://jcink.com" target="_blank">Jcink.com </a> <a href="https://jcink.com" target="_blank">Forum Hosting</a>) © 2022 &nbsp;<a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a> <br>Page creation time: 0.0138 <!-- http://xmortala.b1.jcink.com --> · <a href="index.php?act=Mobile">Mobile Version</a> · <a href="index.php?act=privacy">Privacy Policy</a></div>
-                           </div>
-                        </div>
-                     </div>
-
+            <div class="copyrightwrap">
+               <div class="skincred">Skin coded exclusively for Etheria</div>
+               <br>
+               <!-- Copyright Information -->
+               <div align="center" class="tableborder">
+                  <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                     <div align="center" class="copyright">Powered by <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a> (<a href="http://jcink.com" target="_blank">Jcink.com </a> <a href="https://jcink.com" target="_blank">Forum Hosting</a>) © 2022 &nbsp;<a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a> <br>Page creation time: 0.0138 <!-- http://xmortala.b1.jcink.com --> · <a href="index.php?act=Mobile">Mobile Version</a> · <a href="index.php?act=privacy">Privacy Policy</a></div>
                   </div>
+               </div>
+            </div>
+
+         </div>
 </body>
 
 
@@ -1931,12 +1984,12 @@
    function menuFunction() {
       var x = document.getElementById("hamburger");
 
-      if (x.className === "topnav sans-10 caps") {
+      if (x.className === "topnav") {
          x.className += " responsive";
          $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn(250);
          $("#menubutton").fadeTo(250, 0);
       } else {
-         x.className = "topnav sans-10 caps";
+         x.className = "topnav";
          $("#clicktodismiss").fadeOut(250);
          $("#menubutton").fadeTo(250, 1);
       }
@@ -1944,7 +1997,7 @@
 
    $(document).on("click", "#clicktodismiss", function () {
       $("#clicktodismiss").fadeOut(250);
-      document.getElementById("hamburger").className = "topnav sans-10 caps";
+      document.getElementById("hamburger").className = "topnav";
       $("#menubutton").fadeTo(250, 1);
    });
 </script>
@@ -2024,6 +2077,7 @@
 
          // prevent default behavior of jumping to anchor point
          e.preventDefault();
+         history.pushState({}, "", this.href);
 
       })
    };

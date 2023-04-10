@@ -7,12 +7,12 @@
 .row4,
 .row2 {
    padding: 0 !important;
-   font: 400 13px/1.5em var(--fontsans);
+   font: 400 var(--sans13);
    color: hsl(var(--gray2) / .7);
 }
 
 .activeuserstrip+.row2 {
-   font: 400 12px/1.5em var(--fontsans);
+   font: 400 var(--sans12);
 }
 
 .row2+.activeuserstrip {
@@ -98,7 +98,7 @@ td.maintitle {
    color: hsl(var(--accent2-med));
    opacity: 0.7;
    border-bottom: 4px solid hsl(var(--accent2-light) / .2);
-   font: 28px/1.5em var(--norman);
+   font: var(--norman28);
    font-variation-settings: "wght" 540;
    font-feature-settings: 'ss01' off;
    letter-spacing: 0.05em;
@@ -109,7 +109,7 @@ td.maintitle {
    color: hsl(var(--accent2-med));
    opacity: 0.7;
    border-bottom: 4px solid hsl(var(--accent2-light) / .2);
-   font: 28px/1.5em var(--norman);
+   font: var(--norman28);
    font-variation-settings: "wght" 540;
    font-feature-settings: 'ss01' off;
    letter-spacing: 0.05em;
@@ -134,7 +134,7 @@ td.maintitle {
 }
 
 #ucpmenu a {
-   font: 13px/1.5em var(--fontsans);
+   font: var(--sans13);
    letter-spacing: .05em;
    color: hsl(var(--accent2-med));
 }
@@ -158,13 +158,13 @@ td.maintitle {
    opacity: 0.7;
    border-bottom: 0px solid hsl(var(--accent2-light) / .2);
 
-   font: 20px/1.2em var(--fontserif);
-   font-weight: 600;
-   color: hsl(var(--accent1-med));
-   opacity: .8;
+   font: 600 var(--serif20);
    font-family: var(--fontSC);
    text-transform: lowercase;
    letter-spacing: .1em;
+   color: hsl(var(--accent1-med));
+   opacity: .8;
+
 }
 
 #ucpmenu .maintitle {
@@ -191,7 +191,7 @@ td.maintitle {
 }
 
 #ucpcontent {
-   font: 400 13px/1.5em var(--fontsans);
+   font: 400 var(--sans13);
 }
 
 #ucpcontent>form {
@@ -202,7 +202,7 @@ td.maintitle {
 #ucpcontent p {
    padding: 10px 16px;
    margin: 0px;
-   font: 14px/1.4em var(--fontsans);
+   font: var(--sans14);
    color: hsl(var(--gray2) / 0.7);
 }
 
@@ -245,12 +245,33 @@ td.maintitle {
 }
 
 
+.ucpdivider {
+   background: hsl(var(--htmlbg));
+   color: hsl(var(--accent1-med));
+   padding: 20px 0 15px;
+   border-bottom: 1px solid hsl(var(--darkgray));
+}
+
+.ucpdivider h2,
+.ucpdivider h3 b {
+   margin: 1em 0;
+   font: 700 var(--sans12);
+   letter-spacing: 2px;
+   text-transform: uppercase;
+}
+
+.ucpdivider h3 {
+   margin: 1em 0;
+   font: 700 var(--sans12);
+}
+
+
 /****************************************
   Bar directly below the maintitles 
 *****************************************/
 
 .titlemedium {
-   font: 12px/1.5em var(--fontsans);
+   font: var(--sans12);
    /* font-weight: 700;
    text-transform: uppercase;
    letter-spacing: .1em; */
@@ -325,7 +346,7 @@ table {
 }
 
 #QUOTE-WRAP tr:first-child {
-   font: 12px/1.5em var(--fontsans);
+   font: var(--sans12);
    letter-spacing: 0.1em;
    text-transform: uppercase;
 }
@@ -336,7 +357,7 @@ table {
    margin: 0;
    background: hsl(var(--gray1) / .3);
    border: 1px solid hsl(var(--darkgray));
-   font: 400 13px/1.5em var(--fontsans);
+   font: 400 var(--sans13);
    text-transform: none;
    letter-spacing: .05em;
    color: hsl(var(--gray2));
@@ -367,7 +388,7 @@ table {
 
 .code-highlight {
    color: hsl(var(--accent2-light));
-   font: 400 9px var(--fontsans);
+   font: 400 var(--sans9);
    letter-spacing: 0.2em;
    text-transform: uppercase;
    border: 1px solid hsl(var(--accent2-med) / .2);
@@ -380,7 +401,7 @@ table {
    padding: 16px;
    background: hsl(var(--gray1) / .3);
    border: 1px solid hsl(var(--darkgray));
-   font: 400 13px/1.5em var(--fontsans);
+   font: 400 var(--sans13);
    text-transform: none;
    letter-spacing: .05em;
    color: hsl(var(--gray2));
@@ -400,7 +421,7 @@ table {
    margin-left: 4px;
    background: hsl(var(--accent2-light) / .25);
    border: 1px solid var(--bordercolor);
-   font: 700 10px/1.5em var(--fontsans);
+   font: 700 var(--sans10);
    letter-spacing: 0.1em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -447,9 +468,9 @@ input {
 .codebuttons,
 .textinput {
    border-radius: 0;
-   -webkit-appearance: none;
+   /* -webkit-appearance: none;
    -moz-appearance: none;
-   appearance: none;
+   appearance: none; */
 
    vertical-align: middle;
    min-height: 32px;
@@ -457,7 +478,7 @@ input {
    margin: 0 0 0 2px;
    background: hsl(var(--darkgray) / .85);
    border: 1px solid var(--bordercolor);
-   font: 400 13px/1.5em var(--fontsans);
+   font: 400 var(--sans13);
    text-transform: none;
    letter-spacing: .05em;
    color: hsl(var(--gray2));
@@ -497,10 +518,10 @@ input[type=reset] {
    margin: 0 0 0 2px;
    background: hsl(var(--accent2-light) / .25);
    border: 1px solid var(--bordercolor);
-   font: 700 10px/1.5em var(--fontsans);
+   font: 700 var(--sans10);
    letter-spacing: 0.1em;
    text-transform: uppercase;
-   color: hsl(var(--gray2) / .7);
+   color: hsl(var(--gray2) / 1);
    transition: .25s;
 }
 
@@ -538,8 +559,7 @@ input[type=reset]:hover {
 *****************************************/
 
 .pformstrip {
-   font: 11px/1.5em var(--fontsans);
-   font-weight: 700;
+   font: 700 var(--sans11);
    text-transform: uppercase;
    letter-spacing: .1em;
    color: hsl(var(--gray2) / .75);
@@ -548,7 +568,7 @@ input[type=reset]:hover {
 
 
 .pformleftw {
-   background-color: #EFEFEF;
+   background-color: hsl(var(--main));
    padding: 6px;
    margin-top: 1px;
    width: 40%;
@@ -560,8 +580,8 @@ input[type=reset]:hover {
 .pformright {
    border-bottom: 1px solid hsl(var(--darkgray));
    vertical-align: top;
-   font: 12px/1.4em var(--fontsans);
-   color: hsl(var(--gray2) / 1);
+   font: var(--sans12);
+   color: hsl(var(--gray2) / .75);
 }
 
 .pformleft {
@@ -575,8 +595,7 @@ input[type=reset]:hover {
 }
 
 .pformleft label {
-   font: 11px/1.5em var(--fontsans);
-   font-weight: 700;
+   font: 700 var(--sans11);
    text-transform: uppercase;
    letter-spacing: .1em;
    color: hsl(var(--gray2));
@@ -671,7 +690,7 @@ td.right a {
 
 .pagination {
    margin-left: -2px;
-   font: 700 12px/1.5em var(--fontsans);
+   font: 700 var(--sans12);
    letter-spacing: 0.1em;
    text-transform: uppercase;
    color: hsl(var(--gray2));
@@ -767,11 +786,13 @@ label {
 .skincred {
    text-align: center;
    margin-bottom: -.5em;
-   font-weight: 800;
+   font: 800 var(--serif16);
+   font-family: var(--fontSC);
+   letter-spacing: .2em;
+   text-transform: lowercase;
    color: hsl(var(--accent1-med));
 }
 
 .copyright {
-   font-size: 10px;
-   line-height: 15px;
+   font: var(--sans10)
 }

@@ -1,38 +1,17 @@
 <script>
-   $('div.guide-nav').each(function () {
-      // For each set of tabs, we want to keep track of
-      // which tab is active and its associated content
-      var $active, $content, $links = $(this).find('a');
+   // Hide affiliates if not on home
 
-      // If the location.hash matches one of the links, use that as the active tab.
-      // If no match is found, use the first link as the initial active tab.
-      $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]);
-      $active.addClass('active');
+   window.onload = function () {
 
-      $content = $($active[0].hash);
+      var test = window.location.href
 
-      // Hide the remaining content
-      $links.not($active).each(function () {
-         $(this.hash).hide();
-      });
+      if (test == "https://jewelsofetheria.jcink.net/index.php?") {
+         //Hide the element.
+         console.log('hi')
 
-      // Bind the click event handler
-      $(this).on('click', 'a', function (e) {
-         // Make the old tab inactive.
-         $active.removeClass('active');
-         $content.hide();
-
-         // Update the variables with the new link and content
-         $active = $(this);
-         $content = $(this.hash);
-
-         // Make the tab active.
-         $active.addClass('active');
-         $content.show();
-
-         // Prevent the anchor's default click action
-         e.preventDefault();
-         history.pushState({}, "", this.href);
-      });
-   });
+         var test2 = document.getElementsByClassName('footer')
+         console.log(test2)
+         test2.style.display = "none"
+      }
+   };
 </script>
