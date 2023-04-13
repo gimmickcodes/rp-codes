@@ -136,7 +136,7 @@ td.maintitle {
 #ucpmenu a {
    font: var(--sans13);
    letter-spacing: .05em;
-   color: hsl(var(--accent2-med));
+   color: hsl(var(--accent2-light) / .7);
 }
 
 
@@ -226,16 +226,17 @@ td.maintitle {
 }
 
 #ucpcontent .row2 {
-   /* background-color: blue; */
+   background: hsl(var(--main));
 }
 
 #ucpcontent .row3 {
-   background-color: green;
+   background: hsl(var(--main));
 }
 
 #ucpcontent .row4 {
-   background-color: yellow;
+   background: hsl(var(--main));
    padding: 4px 16px !important;
+   text-align: left;
 }
 
 .pformstrip input[type="submit"],
@@ -271,12 +272,12 @@ td.maintitle {
 *****************************************/
 
 .titlemedium {
-   font: var(--sans12);
-   /* font-weight: 700;
+   font: 700 var(--sans12);
+   /* 
    text-transform: uppercase;
    letter-spacing: .1em; */
    color: hsl(var(--gray2) / .75);
-   padding: 4px 0;
+   padding: 0 8px;
    background: hsl(var(--darkgray) / .5);
 }
 
@@ -538,6 +539,10 @@ input[type=reset]:hover {
    padding: 0.2rem;
 }
 
+#subaccounts_menu select option {
+   padding: 2px 0;
+   background-color: hsl(var(--darkgray));
+}
 
 .codebuttons {
    font-size: 10px;
@@ -602,7 +607,7 @@ input[type=reset]:hover {
 }
 
 #ucpcontent td.pformright textarea {
-   width: 500px;
+   max-width: 500px;
 }
 
 #ucpcontent table td {
@@ -780,7 +785,7 @@ label {
 .copyrightwrap {
    background: hsl(var(--darkgray));
    border-top: 1px solid var(--bordercolor);
-   padding: 2em 0 6em;
+   padding: 2em 20px 6em;
 }
 
 .skincred {
@@ -796,3 +801,29 @@ label {
 .copyright {
    font: var(--sans10)
 }
+
+/* 
+@media only screen and (max-width: 800px) {
+   table,
+   thead,
+   tbody,
+   tr {
+      display: block;
+   }
+
+   #ucpmenu {
+      width: 100%;
+      margin-bottom: 32px;
+      padding: 0 40px 16px 0;
+      display: grid;
+      grid-auto-flow: column;
+      gap: 0 32px;
+      overflow: auto;
+      grid-template-rows: auto auto;
+      grid-auto-columns: 200px;
+   }
+
+   #ucpmenu .maintitle {
+      display: none;
+   }
+} */
