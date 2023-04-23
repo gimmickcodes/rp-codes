@@ -249,7 +249,6 @@ td.maintitle {
 .ucpdivider {
    background: hsl(var(--htmlbg));
    color: hsl(var(--accent1-med));
-   padding: 20px 0 15px;
    border-bottom: 1px solid hsl(var(--darkgray));
 }
 
@@ -337,6 +336,11 @@ table {
    border-collapse: collapse;
 }
 
+.tablebasic .row1 {
+   padding: 12px 0 !important;
+   border-bottom: 1px solid var(--bordercolor);
+}
+
 /****************************************
   QUOTE and CODE BBCode boxes
 *****************************************/
@@ -376,8 +380,8 @@ table {
    align-items: center;
    justify-content: space-between;
    padding: 0 16px;
-   border: 1px solid var(--darkgray);
-   border-bottom: 1px solid var(--darkgray);
+   border: 1px solid var(--bordercolor);
+   border-bottom: 0;
 }
 
 .code-title {
@@ -434,12 +438,10 @@ table {
 }
 
 .button-large.closed {
-   background: url(//files.jcink.net/themes/default/white-gradient.png);
+   background: hsl(var(--accent2-med) / .2);
    padding: 7px 12px;
    text-align: center;
    margin: 0px 5px 0px 5px;
-   border: 1px solid #d8d8d8;
-   color: #660000;
    font-weight: bold;
 }
 
@@ -802,12 +804,15 @@ label {
    font: var(--sans10)
 }
 
-/* 
+
+
+
 @media only screen and (max-width: 800px) {
-   table,
-   thead,
-   tbody,
-   tr {
+
+   table.ucptable,
+   .ucptable :where(thead, tbody, tr),
+   #posting-form,
+   #posting-form :where(thead, tbody, tr) {
       display: block;
    }
 
@@ -826,4 +831,26 @@ label {
    #ucpmenu .maintitle {
       display: none;
    }
-} */
+
+   #ucpcontent {
+      max-width: calc(100vw - 24px);
+   }
+
+   #ucpcontent table td,
+   #posting-form td {
+      display: block;
+   }
+
+   .pformleft {
+      width: 100%;
+      border-bottom: 0;
+      padding-bottom: 0;
+   }
+
+   #ucpcontent input[type="text" i],
+   #ucpcontent textarea,
+   #posting-form input[type="text" i],
+   #posting-form textarea {
+      width: 100%;
+   }
+}

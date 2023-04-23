@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+
+<head>
+   <title>Etheria: Home</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <link href="etheria-default-css.css" rel="stylesheet">
+   <link href="etheria-css.css" rel="stylesheet">
+
+   <!-- font icons -->
+   <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+   <!-- fonts -->
+   <link rel="stylesheet" href="https://use.typekit.net/zbl1ihd.css">
+
+
+</head>
+
+<body class="user-ID perms_g-ID">
+
+
+
+
+
+
+
+
+   <div class="masterwrapper">
+
+      <div id="hamburger" class="topnav">
+         <div class="topnav-toggled">
+            <a href="/index.php?" class="mobilehome"><i class="ph ph-house"></i></a>
+            <a href="/index.php?showuser=<!-- |id| -->" class="mobilenav-avatar"><!-- |avatar| --></a>
+         </div>
+
+         <div class="topnav-main">
+            <a href="/index.php?">Home</a>
+            <a href="/index.php?act=Members&max_results=1000">Members</a>
+            <a href="admin.php" class="perms-admin">ACP</a>
+            <a href="/index.php?act=UserCP&CODE=01" class="perms-logged">UCP</a>
+            <a href="/?act=Search&CODE=getactive">Recent Topics</a>
+            <a href="/?act=Online&CODE=listall&sort_key=click">Recent Clicks</a>
+            <a href="/index.php?act=Login&CODE=00" class="perms-guest">Log in</a>
+            <a href="/index.php?act=Reg&CODE=00" class="perms-guest">Register</a>
+            <a href="/?act=Login&CODE=03" class="perms-logged">Logout</a>
+         </div>
+         <div class="topnav-quicklinks">
+            <a href="">Guidebook</a>
+            <a href="">Face Claims</a>
+            <a href="">Factions</a>
+            <a href="">Magic</a>
+            <a href="">Map</a>
+            <a href="">Site Codes</a>
+            <a href="">Shop</a>
+            <a href="">Discord</a>
+         </div>
+         <div class="topnav-userbox">
+            <div class="topnav-currentacc">Switch account from:</div>
+            <span id="subaccounts_menu">
+               <form>
+                  <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                     <option value="------------" selected="selected">Switch account</option>
+                     <option value="31">&nbsp;&nbsp;» andin andilet </option>
+                  </select>
+               </form>
+            </span>
+            <a href="index.php?act=UserCP&CODE=alerts" class="perms-logged"><i class="ph ph-bell"></i>Alerts</a>
+            <a href="index.php?act=Msg&CODE=01" class="perms-logged"><i class="ph ph-envelope-simple"></i>Messages</a>
+            <a href="/index.php?act=Login&CODE=00" class="perms-guest"><i class="ph ph-bell"></i>Log in</a>
+            <a href="/index.php?act=Reg&CODE=00" class="perms-guest"><i class="ph ph-envelope-simple"></i>Register</a>
+            <a><i class="ph ph-sun"></i> Toggle skin</a>
+         </div>
+
+
+         <a href="javascript:void(0);" class="mobilenav" onclick="menuFunction()">
+            <i class="ph ph-list"></i>
+            <i class="ph ph-x"></i>
+         </a>
+      </div>
+
+
+      <div class="sidenav">
+         <div class="">
+            <a href="#top"><i class="ph ph-arrow-up"></i></a>
+            <i class="ph ph-sun"></i>
+            <a href="#bottom"><i class="ph ph-arrow-down"></i></a>
+         </div>
+      </div>
+
+      <div class="banner">
+         <div class="hero">
+         </div>
+      </div>
+      <div class="hero-text">
+         <a href="/index.php?">
+            <h1>Etheria</h1>
+         </a>
+         <div>a middle fantasy roleplay
+         </div>
+      </div>
+      <div class="bp-navwrap">
+         <div class="flexrow">
+            <div class="bp-nav-label welcome active">
+               <span>Welcome</span>
+               <span class="marker active"> </span>
+            </div>
+            <span class="markerhighlight"> </span>
+            <div class="bp-nav-label news">
+               <span class="marker"> </span>
+               <span>News</span>
+            </div>
+         </div>
+      </div>
+
+      <div class="bannerpanel">
+         <div class="bp-header">
+            <div class="bp-userbox">
+               <div class="bp-username">
+                  Username
+                  <div class="bp-accswitch perms-logged"><i class="ph ph-caret-down"></i></div>
+                  <div class="bp-accswitch-dropdown">
+                     <span id="subaccounts_menu">
+                        <form>
+                           <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                              <option value="------------" selected="selected">Switch account</option>
+                              <option value="31">&nbsp;&nbsp;» andin andilet </option>
+                           </select>
+                        </form>
+                     </span>
+                  </div>
+               </div>
+
+               <a href="" class="perms-logged bp-userlink">0 alerts</a>
+               <a href="" class="perms-logged bp-userlink">0 msgs</a>
+               <a href="/index.php?act=Login&CODE=00" class="perms-guest bp-userlink">log in</a>
+               <a href="/index.php?act=Reg&CODE=00" class="perms-guest bp-userlink">register</a>
+            </div>
+            <a class="bp-avatar" title="Go to profile" class="tooltip" href=""><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></a>
+         </div>
+
+         <div class="bp-body welcome">
+            <div class="bp-slide">
+               <div class="bp-infobox">You are either descended from a First Monarch or are one of the undeity's champion. Either way, you can manipulate ether and produce magic. But magic seems so minute when the Eight Jeweled Courts are at odds.
+                  Etheria focuses on middle magic and court intrigue.</div>
+               <div class="bp-linksbox">
+                  <a href="">Guidebook</a>
+                  <a href="">Face Claims</a>
+                  <a href="">Factions</a>
+                  <a href="">Magic</a>
+                  <a href="">Map</a>
+                  <a href="">Site Codes</a>
+                  <a href="">Shop</a>
+                  <a href="">Discord</a>
+               </div>
+            </div>
+
+            <div class="bp-slide">
+               <div class="bp-newsbox">
+                  <b>March 14 </b>/ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut quam risus. Duis a euismod dolor, sed gravida purus. Ut at turpis lobortis, lobortis lacus id. <p>
+                     <b>March 14 </b>/ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut quam risus. Duis a euismod dolor, sed gravida purus. Ut at turpis lobortis, lobortis lacus id.
+               </div>
+               <div class="bp-eventbox">Events</div>
+            </div>
+         </div>
+      </div>
+
+
+
+
+
+      <!-- <% BOARD %> -->
+      <div class="wrapper">
+
+
+         <div class="caps">
+            <!-- <% NAVIGATION %> -->
+            <div id="navstrip">
+               <a href="">Etheria</a>
+               <span style="opacity:.5; padding: 0 2px;"> · </span>
+               <a href="">Category</a>
+               <span style="opacity:.5; padding: 0 2px;"> · </span>
+               <a href="">Board</a>
+               <span style="opacity:.5; padding: 0 2px;"> · </span>
+               <a href="">Topic</a>
+            </div>
+            <br><br>
+            <!-- END <% NAVIGATION %> -->
+         </div>
+
+
+         <div class="postrow-wrap g-4">
+            <div class="insetborder"></div>
+
+            <div class="postrow-header">
+               <div class="pr-toggle"><i class="ph ph-baby"></i></div>
+               <div class="pr-header-wrap">
+                  <div class="pr-header-base">
+                     <a href="" class="pr-username">name mcname</a>
+                     <div class="pr-arcana">arcana of faction</div>
+                  </div>
+                  <div class="pr-header-overlay">
+                     <div class="pr-header-stats">
+                        <div class="app-stat"><span>Aliases</span> Field</div>
+                        <div class="app-stat"><span>Age</span> Field</div>
+                        <div class="app-stat"><span>Gender</span> Field</div>
+                        <div class="app-stat"><span>Blood</span> Field</div>
+                        <div class="app-stat"><span>Height</span> Field</div>
+                        <div class="app-stat"><span>Orientation</span> Field</div>
+                     </div>
+                     <div class="pr-header-blurb">
+                        <b class="caps">In a sentence</b>
+                        Corlucet – Give a man a fish and you feed him for a day. Give a man a kingdom and he wants to rule the world.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="postrow-dateband"><a href="" class="flexrow"><i class="ph ph-link-simple-horizontal"></i> March 24 2023, 1:37 PM</a></div>
+            <div class="postrow-body">
+               <div class="miniprofwrap">
+                  <div>
+                     <div class="miniprof">
+                        <div class="miniprof-bg" style="background-image: url(https://imglf6.lf127.net/img/39e869ffba01f2bf/MFA1clRGZW1MVjhkVDhGK1BQT0RhUDJzcTRZN1c3THd1TkZieEhRVDRNdz0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0)">
+                        </div>
+                        <div class="miniprof-overlay">
+                           <div class="flexcol">
+                              <div class="miniprof-avatar"><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></div>
+                              <div class="miniprof-textwrap">
+                                 “Quote”
+                                 <div class="miniprof-stat">
+                                    <b>Posts</b>3232
+                                 </div>
+                                 <div class="miniprof-stat">
+                                    <b>Gold</b>3232
+                                 </div>
+                              </div>
+                              <div class="miniprof-badges flexrow">
+                                 <img src="https://images-ext-2.discordapp.net/external/v5_U51aVCw3bGJsT8nhniOxIAbY2861kyM7NaQ_uQgM/%3Fsize%3D60/https/cdn.discordapp.com/emojis/824349716438712340.png?width=120&height=120" title="The #1 Shogun.">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="miniprof-links flexrow">
+                        <a href="" title="All posts"><i class="ph ph-file"></i></a>
+                        <a href="" title="All threads"><i class="ph ph-books"></i></a>
+                        <a href="" title="Tracker"><i class="ph ph-map-pin-line"></i></a>
+                        <a href="" title="Development"><i class="ph ph-pencil"></i></a>
+                        <a href="" title="Custom"><i class="ph ph-binoculars"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div id="pid_ID" class="postcontent">
+
+                  <!-- QUOTE -->
+                  <table border="0" align="center" width="95%" cellpadding="3" cellspacing="1" id="QUOTE-WRAP">
+                     <tbody>
+                        <tr>
+                           <td><b>QUOTE</b> (tinkerer @ Oct 21 2022, 10:00 PM)</td>
+                        </tr>
+                        <tr>
+                           <td id="QUOTE"><!--QuoteEBegin-->Testing quote styling <b>bolded</b><!--QuoteEnd--></td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin enim id mi fringilla luctus. Ut a accumsan dolor, a aliquam odio. Sed ex nisi, semper et arcu eu, sagittis porta nulla. Integer iaculis, sem non feugiat mollis, velit neque scelerisque purus, quis imperdiet nunc mauris et turpis. Aliquam nec vestibulum ligula. Sed sed libero vel metus mollis rhoncus. Ut efficitur sollicitudin convallis. Aliquam erat volutpat. Quisque in porttitor tellus. Donec dapibus libero at euismod blandit.
+
+                  <!-- CODE BOX -->
+                  <table border="0" align="center" width="95%" cellpadding="0" cellspacing="1" id="CODE-WRAP" class="nicole-code">
+                     <tbody>
+                        <tr>
+                           <td>
+                              <div class="code-top">
+                                 <div class="code-title">Code <span class="code-toggle" style="display: none;">toggle height</span></div>
+                                 <div class="code-highlight">click to highlight</div>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td id="CODE">
+                              <div class="code-scroll"><!--ec1-->[post1]Text[/post1]<!--c2--></div>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+
+                  <div class="stafftemp wide">
+                     <div class="insetborder"></div>
+                     <div class="header">
+                        <h1>Claims Listings</h1>
+                     </div>
+                     <div class="maincol">Below you'll find the list of face claims currently in use as well as the occupations of each character. Listings update automatically for all approved apps based on their profile fields. <br><br>Click the table headings to sort by that field.
+                        <ul>
+                           <li>Face claims may come from any media, but images must be animanga in style.</li>
+                           <li>Members may only make one reservation at a time.</li>
+                           <li>Reservations last X time and have a X time cooldown before it can be re-reserv
+                        </ul>
+                     </div>
+                     <div id="claims-table-headers">
+                        <div id="faceclaim" class="alpha">FC</div>
+                        <div id="name" class="alpha">Name</div>
+                        <div id="occupation" class="alpha">Job</div>
+                        <div id="ooc" class="alpha">Player</div>
+                     </div>
+                     <div id="claims-table">
+                        <div class="claims-table-item g_12 mem-539" style="order: 5016;">
+                           <div class="faceclaim">LORD OF MYSTERIES, yung audrey hall</div>
+                           <div class="name"><a href=""><span class="sapphire">ace wolfe</span></a></div>
+                           <div class="occupation">saint of devotion</div>
+                           <div class="ooc">quartz</div>
+                        </div>
+                        <div class="claims-table-item g_12 mem-539" style="order: 5016;">
+                           <div class="faceclaim">LORD OF MYSTERIES, yung audrey hall</div>
+                           <div class="name"><a href=""><span class="pearl">ace wolfe</span></a></div>
+                           <div class="occupation">saint of devotion</div>
+                           <div class="ooc">quartz</div>
+                        </div>
+                     </div>
+
+                  </div>
+
+
+                  <div class="stafftemp small">
+                     <div class="insetborder"></div>
+                     <div class="header">
+                        <h1>Reservations</h1>
+                     </div>
+                     Hi
+                     <hr>
+                     <div id="outer-reserve">
+                        <div class="res-row">
+                           <span class="res-item"></span>
+                           <span class="res-deadline">
+                              <div class="res-header">4/19<div style="display: none;">2023</div>
+                              </div>
+                           </span>
+                        </div>
+                        <div class="res-row">
+                           <span class="res-item">SERIES, character for <b>ooc</b></span> <span class="res-deadline">4/19<div style="display: none;">2023</div>, <span class="res-time">04:12</span></span>
+                        </div>
+                        <div class="res-row">
+                           <span class="res-item">SERIES, character for <b>ooc</b></span>
+                           <span class="res-deadline">4/19<div style="display: none;">2023</div>, <span class="res-time">04:12</span></span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <p></p>
+
+                  Sed semper luctus elementum. Nunc bibendum diam sed enim suscipit sodales. Donec hendrerit laoreet nisi, non imperdiet nunc pretium faucibus. Pellentesque ut nibh sit amet lorem egestas ullamcorper. Mauris laoreet ex id sollicitudin finibus. Pellentesque tincidunt purus non risus hendrerit volutpat. Morbi in eleifend quam. Proin eu purus id magna ornare vehicula. Vivamus sed metus et mauris gravida hendrerit a id magna. Duis in sem eu velit venenatis condimentum malesuada non nisi. Fusce consequat laoreet odio sit amet dapibus.
+                  <p></p>
+
+                  Suspendisse commodo tortor nisl, vitae fringilla dolor dapibus eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla nec nisl quis sem semper semper. Proin ut dictum risus. Sed magna ipsum, mollis ac leo ultrices, condimentum lacinia purus. Vivamus at ultricies urna. Duis nulla eros, dignissim at iaculis non, imperdiet et nisl. Suspendisse eget erat fringilla, aliquet ex vitae, convallis neque.
+                  <p></p>
+
+                  Phasellus felis nisi, auctor sagittis bibendum in, porttitor ac velit. Sed sed metus aliquet, ultricies purus ut, varius leo. Integer eget tristique justo, eu iaculis massa. Donec scelerisque dictum odio nec gravida. Sed in tristique lectus, a cursus risus. Mauris mattis interdum leo ac lobortis. In ut posuere eros.
+
+
+
+
+                  <div class="stafftemp wide amethyst">
+                     <div class="insetborder"></div>
+                     <div class="header"><a class="anchor" id="temptitle"></a>
+                        <h1>The Court of Amethyst</h1>
+                        <h4>Of monsters, Gilded, and forests</h4>
+                     </div>
+                     <div class="sidenavgrid">
+                        <div class="maincol"><a class="anchor" id="history"></a>The Amethyst Kingdom was a land rich with forestry and personality before Concordia. Guilds of all kinds existed: for thieves, adventurers, scribes, finesmiths, crafters, and more. The disposition of the average Amethysian was quite cheery and it was typical for many young adults to leave the home and find their own path in life, even if it took them outside the kingdom. Amethyst saw many nomadic groups and immigration throughout the land, mostly because Amethyst was always seen as the kingdom of adventure—but also because it offered natural sights of beauty like no other.
+
+                           <br><br> When Concordia occurred, Amethyst’s land suffered the most of the seven courts. A massive fissure split down the middle of the land, cratering almost the entire kingdom. Many lives and structures were lost. By the time the seven courts came together, the only guild left standing was the Adventurer’s Guild who were quite the resilient people. House Drystan partnered with the guild to rebuild the nation as a forested canyon, but when the undeity was captured by Jade, Amethysians discovered soon after that many of them had come down with a unique condition: their blood turned gold and was rich with ether.
+
+                           <br><br> They became known as Gilded, and the rate of affliction varied from person to person. Those with blood as gold as the sun suffered from other symptoms such as a weakness to iron and the inability to tell an outright lie. The occasional pointed ears or glowing skin accompanied their condition as well. More frighteningly, they learned that they were perfect prey for the Harrowed of Ruby who needed to feast on ether-rich blood to survive. This volatile history has led to many new guilds and guild-like groups coming together.
+
+                           <br><br>The land still retains a lot of its fantastical qualities: monsters, enchanted forests, and even the occasional curse. Its Adventurers Guild remains a source of pride for the court, conducting lots of international travel and hunting—of monsters, treasures, people, flowers, and more. House Drystan and its military partner frequently with the guild, as they often have a lot on their plate between village attacks by monsters and Rubians licking their lips. Within the canyon-laden Court of Amethyst are lush grasslands, forests, and many rebuilt towns. Several pulley systems are employed around the canyons to allow in-and-out travel. Amethyst offers many artful sights worth visiting: bubbling ravines, cascading waterfalls, and plains dotted with asters—all surrounded by enormous rock walls.
+
+                           <a class="anchor" id="religion"></a>
+                           <h3>Religion</h3> Amethyst brought over its deity, Shina (Divine of Discovery) and has since adapted to Adornism to worship all Four Divines. However, the face of Shina is prevalent all over: from the architecture to the military cloak pins to tree trunk carvings. Because ether is so prevalent in the land, they are firm believers that it is a blessing by the divines. Most Amethystians revere what Shina represents: adventure, exploration, and spontaneity.
+
+                           <a class="anchor" id="culture"></a>
+                           <h3>Culture</h3>The people of Amethyst are hearty and free-spirited. They enjoy adventure, danger, and freedom. Because most citizens are quite resourceful, poverty is rarely an issue. Many hunt, craft, and barter on their own without the government needing to involve themselves. Deviations from normal bodies are commonplace here as a side effect of being Gilded. Denizens of Amethyst won’t bat an eye at animal ears, claws, glowing skin, cat eyes, and so on. Towns are pretty small, and forest communities are even smaller, creating a strong kinship all around.
+
+                           <a class="anchor" id="resources"></a>
+                           <h3>Resources</h3> Amethyst is known for its supreme hunting weapons and traps. They also produce special leather used by many militaries in other courts. Typical resources include forest products like fur, lumber, and monster products.
+
+                           <a class="anchor" id="plothooks"></a>
+                           <h3>Plot Hooks</h3>
+                           <ul>
+                              <li>Amethyst is known for its supreme hunting weapons and traps. They also produce special leather used by many militaries in other courts. Typical resources include forest products like fur, lumber, and monster products.</li>
+                           </ul>
+
+
+                        </div>
+
+                        <div class="sidecol">
+                           <div class="factionjump" style="position: sticky; top: 60px">
+                              <span>Jump to</span><br>
+                              <a href="#history">History</a><br>
+                              <a href="#religion">Religion</a><br>
+                              <a href="#culture">Culture</a><br>
+                              <a href="#resources">Resources</a><br>
+                              <a href="#plothooks">Plot Hooks</a><br>
+                              <a href="#positions">Positions</a>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+
+
+
+
+
+                  <div class="stafftemp wide amethyst">
+                     <div class="insetborder"></div>
+                     <div class="header"><a class="anchor" id="temptitle"></a>
+                        <h1>Positions in Amethyst</h1>
+                        <h4>Led by House Drystan</h4>
+                     </div>
+                     <a class="anchor" id="positions"></a>
+
+                     <div class="maincol">
+                        <h2>Amethysian Council</h2>House Drystan has ruled as a council for the past two hundred years. Since the change from monarchy to council was instated per the old monarch’s command, the council has always voted in Drystan members to replace vacant spots, with stalemates deferring to the longest tenured. The council of five votes on all matters, though certain jobs and areas are often taken up by specific Grand Princes or Princesses. House Drystan does not have a “main line” due to the nature of its setup, so all those bearing the Drystan surname are referred to as Princess and Prince. House Drystan, the military, and the Adventurer’s Guild partner frequently on matters. Sample positions in Amethyst include but are not limited to: dukes/duchesses, captains, knights, adventurers, and hunters.
+                     </div>
+
+                     <div class="positions-table">
+                        <div class="positions-table-item">
+                           <div>Grand Prince/ss</div>
+                           <div><span class="sapphire">hemlocke drystan</span></div>
+                           <div>37</div>
+                           <div>vessie</div>
+                        </div>
+                        <div class="positions-table-item">
+                           <div>Grand Prince/ss</div>
+                           <div><span class="onyx">hemlocke drystan</span></div>
+                           <div>37</div>
+                           <div>vessie</div>
+                        </div>
+                     </div>
+
+                     <div class="maincol">
+                        <h2>House Drystan</h2>Non-council members. Need not be direct parents or siblings. Please discuss relations with other claimants.
+                     </div>
+                     <div class="positions-table">
+                        <div class="positions-table-item">
+                           <div>Grand Prince/ss</div>
+                           <div><a><span class="sapphire">hemlocke drystan</span></a></div>
+                           <div>37</div>
+                           <div>vessie</div>
+                        </div>
+                        <div class="positions-table-item">
+                           <div>Grand Prince/ss</div>
+                           <div><span class="sapphire">hemlocke drystan</span></a></div>
+                           <div>37</div>
+                           <div>vessie</div>
+                        </div>
+                     </div>
+
+                     <div class="maincol">
+                        <h2>Military</h2>The Amethystian military is on the smaller side, with its Lord Commander at the helm. This unit partners with the Adventurer’s Guild when needed. Ranks include Captains and knights.
+                     </div>
+                     <div class="positions-table">
+                        <div class="positions-table-item">
+                           <div>Lord Commander</div>
+                           <div>Open</div>
+                           <div></div>
+                           <div></div>
+                        </div>
+
+                     </div>
+
+
+                     <div class="maincol">
+                        <h2>Adventurer's Guild</h2>The Adventurer’s Guild is the only guild that survived Concordia, though others have risen since. Its members tackle all sorts of adventures around the seven courts including monster hunting, treasure-seeking, bounty-hunting, exploration, and more. It is led by a single Guild Master.
+                     </div>
+                     <div class="positions-table">
+                        <div class="positions-table-item">
+                           <div>Lord Commander</div>
+                           <div>Open</div>
+                           <div></div>
+                           <div></div>
+                        </div>
+                     </div>
+
+                  </div>
+
+
+
+
+
+
+
+                  <div class="stafftemp small">
+                     <div class="insetborder"></div>
+                     <div class="header">
+                        <h1>It's All Politics</h1>
+                     </div>
+                     Relations are volatile among all the courts. We need a better understanding of citizen perception, relationship temperature, and stances on key issues. Thread must be completed to count toward major quest progress however need not be complete to collect reward. A thread cannot count as more than one minor quest.
+
+                     <h3>I. Minor Quest (3/5)</h3>
+                     <blockquote>Visit a different court and thread with at least one character from there.<br><br>
+                        <b>Requirements:</b> 2+ thread participants, completed missive <br>
+                        <b>Reward:</b> 200 gold
+                     </blockquote>
+                     <blockquote2>
+                        <ul>
+                           <li><a>Pleasure to Meet You, Mr. Wick</a> - name, name, name</li>
+                           <li><a>Something tells me I'm Drnuk</a> - name, name, name</li>
+                        </ul>
+                     </blockquote2>
+
+                     <h3>II. Minor Quest (0/5)</h3>
+                     <blockquote>Visit a different court and thread with at least one character from there.<br><br>
+                        <b>Requirements:</b> 2+ thread participants, completed missive <br>
+                        <b>Reward:</b> 200 gold
+                     </blockquote>
+                     <blockquote2>
+                        <ul>
+                           <li><a>Pleasure to Meet You, Mr. Wick</a> - <a><span class="sapphire">hemlocke drystan</span></a>, name, name</li>
+                           <li><a>Something tells me I'm Drnuk</a> - name, name, name</li>
+                        </ul>
+                     </blockquote2>
+                  </div>
+
+                  <div class="stafftemp small">
+                     <div class="insetborder"></div>
+                     Post with the form when done. Members may only receive the award once.<br><br>
+                     <!-- CODE BOX -->
+                     <table border="0" align="center" width="95%" cellpadding="0" cellspacing="1" id="CODE-WRAP" class="nicole-code">
+                        <tbody>
+                           <tr>
+                              <td>
+                                 <div class="code-top">
+                                    <div class="code-title">Code <span class="code-toggle" style="display: none;">toggle height</span></div>
+                                    <div class="code-highlight">click to highlight</div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="CODE">
+                                 <div class="code-scroll"><!--ec1-->[post1]Text[/post1]<!--c2--></div>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+
+                  </div>
+
+
+
+
+
+
+
+               </div>
+               <div class="postcontrols">
+                  <div class="flexcol">
+                     <a href=""><i class="ph ph-pencil-simple"></i></a>
+                     <a href=""><i class="ph ph-quotes"></i></a>
+                     <a href=""><i class="ph ph-trash"></i></a>
+                     <a href=""><i class="ph ph-flag"></i></a>
+                  </div>
+               </div>
+
+            </div>
+            <div class="postrow-footer flexrow">
+               <b>OOC Name</b>
+               <b class="pipe"></b>
+               <span><b>Pronouns</b> field</span>
+               <span><b>Time Zone</b> field</span>
+               <span><b>Mature Threads</b> field</span>
+               <span><b>Please tag</b> field</span>
+
+            </div>
+         </div>
+
+
+
+
+
+
+         <div class="postrow-wrap g-11">
+            <div class="insetborder"></div>
+
+            <div class="postrow-header">
+               <div class="pr-toggle"><i class="ph ph-baby"></i></div>
+               <div class="pr-header-wrap">
+                  <div class="pr-header-base">
+                     <a href="" class="pr-username">name mcname</a>
+                     <div class="pr-arcana">arcana of faction</div>
+                  </div>
+                  <div class="pr-header-overlay">
+                     <div class="pr-header-stats">
+                        <div class="app-stat"><span>Aliases</span> Field</div>
+                        <div class="app-stat"><span>Age</span> Field</div>
+                        <div class="app-stat"><span>Gender</span> Field</div>
+                        <div class="app-stat"><span>Blood</span> Field</div>
+                        <div class="app-stat"><span>Height</span> Field</div>
+                        <div class="app-stat"><span>Orientation</span> Field</div>
+                     </div>
+                     <div class="pr-header-blurb">
+                        <b class="caps">In a sentence</b>
+                        Corlucet – Give a man a fish and you feed him for a day. Give a man a kingdom and he wants to rule the world.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="postrow-dateband"><a href="" class="flexrow"><i class="ph ph-link-simple-horizontal"></i> March 24 2023, 1:37 PM</a></div>
+            <div class="postrow-body">
+               <div class="miniprofwrap">
+                  <div>
+                     <div class="miniprof">
+                        <div class="miniprof-bg" style="background-image: url(https://imglf6.lf127.net/img/39e869ffba01f2bf/MFA1clRGZW1MVjhkVDhGK1BQT0RhUDJzcTRZN1c3THd1TkZieEhRVDRNdz0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0)">
+                        </div>
+                        <div class="miniprof-overlay">
+                           <div class="flexcol">
+                              <div class="miniprof-avatar"><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></div>
+                              <div class="miniprof-textwrap">
+                                 “Quote”
+                                 <div class="miniprof-stat">
+                                    <b>Posts</b>3232
+                                 </div>
+                                 <div class="miniprof-stat">
+                                    <b>Gold</b>3232
+                                 </div>
+                              </div>
+                              <div class="miniprof-badges flexrow">
+                                 <img src="https://images-ext-2.discordapp.net/external/v5_U51aVCw3bGJsT8nhniOxIAbY2861kyM7NaQ_uQgM/%3Fsize%3D60/https/cdn.discordapp.com/emojis/824349716438712340.png?width=120&height=120" title="The #1 Shogun.">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="miniprof-links flexrow">
+                        <a href="" title="All posts"><i class="ph ph-file"></i></a>
+                        <a href="" title="All threads"><i class="ph ph-books"></i></a>
+                        <a href="" title="Tracker"><i class="ph ph-map-pin-line"></i></a>
+                        <a href="" title="Development"><i class="ph ph-pencil"></i></a>
+                        <a href="" title="Custom"><i class="ph ph-binoculars"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div id="pid_ID" class="postcontent">
+
+                  <div class="posttemp1">
+                     <div class="insetborder"></div>
+                     Sed semper luctus elementum. Nunc bibendum diam sed enim suscipit sodales. Donec hendrerit laoreet nisi, non imperdiet nunc pretium faucibus. Pellentesque ut nibh sit amet lorem egestas ullamcorper. Mauris laoreet ex id sollicitudin finibus. Pellentesque tincidunt purus non risus hendrerit volutpat. Morbi in eleifend quam. Proin eu purus id magna ornare vehicula. Vivamus sed metus et mauris gravida hendrerit a id magna. Duis in sem eu velit venenatis condimentum malesuada non nisi. Fusce consequat laoreet odio sit amet dapibus.<br><br>
+                     Suspendisse commodo tortor nisl, vitae fringilla dolor dapibus eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla nec nisl quis sem semper semper. Proin ut dictum risus. Sed magna ipsum, mollis ac leo ultrices, condimentum lacinia purus. Vivamus at ultricies urna. Duis nulla eros, dignissim at iaculis non, imperdiet et nisl. Suspendisse eget erat fringilla, aliquet ex vitae, convallis neque.
+                  </div>
+
+
+
+
+               </div>
+               <div class="postcontrols">
+                  <div class="flexcol">
+                     <a href=""><i class="ph ph-pencil-simple"></i></a>
+                     <a href=""><i class="ph ph-quotes"></i></a>
+                     <a href=""><i class="ph ph-trash"></i></a>
+                     <a href=""><i class="ph ph-flag"></i></a>
+                  </div>
+               </div>
+
+            </div>
+            <div class="postrow-footer flexrow">
+               <b>OOC Name</b>
+               <b class="pipe"></b>
+               <span><b>Pronouns</b> field</span>
+               <span><b>Time Zone</b> field</span>
+               <span><b>Mature Threads</b> field</span>
+               <span><b>Please tag</b> field</span>
+
+            </div>
+         </div>
+
+
+
+
+
+
+
+
+
+      </div>
+   </div>
+</body>
