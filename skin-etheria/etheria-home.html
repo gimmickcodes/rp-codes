@@ -86,11 +86,33 @@
       <div class="sidenav">
          <div class="">
             <a href="#top"><i class="ph ph-arrow-up"></i></a>
-            <i class="ph ph-sun"></i>
+            <button class="colortoggle" title="Toggle light mode"><i class="ph ph-moon"></i> <i class="ph ph-sun"></i></button>
+
             <a href="#bottom"><i class="ph ph-arrow-down"></i></a>
          </div>
       </div>
 
+      <script>
+         const btntoggle = document.querySelector(".colortoggle");
+         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+         const currentTheme = localStorage.getItem("theme");
+         if (currentTheme == "dark") {
+            document.body.classList.toggle("dark-theme");
+         } else if (currentTheme == "light") {
+            document.body.classList.toggle("light-theme");
+         }
+
+         btntoggle.addEventListener("click", function () {
+            document.body.classList.toggle("light-theme");
+            document.body.classList.toggle("dark-theme");
+            var theme = document.body.classList.contains("dark-theme")
+               ? "dark"
+               : "light";
+            localStorage.setItem("theme", theme);
+         });
+
+      </script>
       <div class="banner">
          <div class="hero">
          </div>
@@ -340,7 +362,7 @@
 
 
             <!--  POST ROW -->
-
+            <a name="entry<!-- |pid| -->"></a>
             <div class="postrow-wrap g-4">
                <div class="insetborder"></div>
 
@@ -449,24 +471,26 @@
                               <li>Reservations last X time and have a X time cooldown before it can be re-reserv
                            </ul>
                         </div>
-                        <div id="claims-table-headers">
-                           <div id="faceclaim" class="alpha">FC</div>
-                           <div id="name" class="alpha">Name</div>
-                           <div id="occupation" class="alpha">Job</div>
-                           <div id="ooc" class="alpha">Player</div>
-                        </div>
-                        <div id="claims-table">
-                           <div class="claims-table-item g_12 mem-539" style="order: 5016;">
-                              <div class="faceclaim">LORD OF MYSTERIES, yung audrey hall</div>
-                              <div class="name"><a href=""><span class="Sapphire">ace wolfe</span></a></div>
-                              <div class="occupation">saint of devotion</div>
-                              <div class="ooc">quartz</div>
+                        <div class="claims-table-wrap">
+                           <div id="claims-table-headers">
+                              <div id="faceclaim" class="alpha">FC</div>
+                              <div id="name" class="alpha">Name</div>
+                              <div id="occupation" class="alpha">Job</div>
+                              <div id="ooc" class="alpha">Player</div>
                            </div>
-                           <div class="claims-table-item g_12 mem-539" style="order: 5016;">
-                              <div class="faceclaim">LORD OF MYSTERIES, yung audrey hall</div>
-                              <div class="name"><a href=""><span class="Pearl">ace wolfe</span></a></div>
-                              <div class="occupation">saint of devotion</div>
-                              <div class="ooc">quartz</div>
+                           <div id="claims-table">
+                              <div class="claims-table-item g_12 mem-539" style="order: 5016;">
+                                 <div class="faceclaim">LORD OF MYSTERIES, yung audrey hall</div>
+                                 <div class="name"><a href=""><span class="Sapphire">ace wolfe</span></a></div>
+                                 <div class="occupation">saint of devotion</div>
+                                 <div class="ooc">quartz</div>
+                              </div>
+                              <div class="claims-table-item g_12 mem-539" style="order: 5016;">
+                                 <div class="faceclaim">LORD OF MYSTERIES, yung audrey hall</div>
+                                 <div class="name"><a href=""><span class="Pearl">ace wolfe</span></a></div>
+                                 <div class="occupation">saint of devotion</div>
+                                 <div class="ooc">quartz</div>
+                              </div>
                            </div>
                         </div>
 
@@ -524,7 +548,7 @@
                   <span><b>Pronouns</b> field</span>
                   <span><b>Time Zone</b> field</span>
                   <span><b>Mature Threads</b> field</span>
-                  <span><b>Please tag</b> field</span>
+                  <span><b>Please tag</b> <span class="cwredacted">field</span></span>
 
                </div>
             </div>
@@ -554,7 +578,7 @@
             <div class="app-intro">
                <div class="app-intro-bg"> </div>
                <div class="app-side">
-                  <img class="app-hover" src="https://imglf6.lf127.net/img/39e869ffba01f2bf/MFA1clRGZW1MVjhkVDhGK1BQT0RhUDJzcTRZN1c3THd1TkZieEhRVDRNdz0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0">
+                  <div class="app-hover" style="background-image:url(https://media.discordapp.net/attachments/683720444796338317/1094662428517748896/250x450-custom-01.png?width=492&height=886);"> </div>
                   <div class="app-side-info">
                      <span><b>123</b> posts</span>
                      <span><b>12,300</b> gold</span>
@@ -562,7 +586,7 @@
                </div>
 
                <div class="app-basics">
-                  <div class="app-name">Roman Torrano</div>
+                  <div class="app-name">Osolde Torrano</div>
                   <div class="app-arcana">arcana of faction</div>
                   <div class="app-statsgrid">
                      <div class="app-stat"><span>Aliases</span> Field</div>
@@ -916,7 +940,9 @@
                <div class="app-oocstats">
                   <div class="app-oocstat"><span>Pronouns</span> Field</div>
                   <div class="app-oocstat"><span>Mature threads</span> Field</div>
-                  <div class="app-oocstat"><span>Please tag</span> Field</div>
+                  <div class="app-oocstat cw"><span>Please tag</span>
+                     <div class="cwredacted" style="display:inline">Field</div>
+                  </div>
                   <div class="app-oocstat"><span>Time zone</span> Mar 27 2023, 10:25 PM</div>
                   <div class="app-oocstat"><span>Joined</span> 17-August 22</div>
                   <div class="app-oocstat"><span>Last active</span> 4 minutes ago</div>

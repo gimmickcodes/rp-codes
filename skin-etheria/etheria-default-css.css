@@ -412,6 +412,10 @@ table {
    color: hsl(var(--gray2));
 }
 
+.code-scroll {
+   max-height: 120px;
+   overflow: auto;
+}
 
 /**********************************************
   Input buttons, e.g. submit, text input, etc
@@ -677,7 +681,18 @@ td.right a {
    display: inline-block;
 }
 
+#smilies-table {
+   display: none;
+}
 
+#editpost_custombuttons {
+   text-align: left;
+   margin-top: -55px;
+}
+
+#enter-your-post .desc {
+   text-align: left;
+}
 
 
 
@@ -812,7 +827,9 @@ label {
    table.ucptable,
    .ucptable :where(thead, tbody, tr),
    #posting-form,
-   #posting-form :where(thead, tbody, tr) {
+   #posting-form :where(thead, tbody, tr),
+   table.store,
+   .store :where(thead, tbody, tr) {
       display: block;
    }
 
@@ -841,6 +858,10 @@ label {
       display: block;
    }
 
+   #ucpcontent .store td {
+      display: table-cell;
+   }
+
    .pformleft {
       width: 100%;
       border-bottom: 0;
@@ -850,7 +871,13 @@ label {
    #ucpcontent input[type="text" i],
    #ucpcontent textarea,
    #posting-form input[type="text" i],
-   #posting-form textarea {
+   #posting-form textarea,
+   #qr_open textarea {
       width: 100%;
    }
+
+   .store-menu>.row4 {
+      display: none;
+   }
+
 }

@@ -1,247 +1,40 @@
-<script>
+[dohtml]
+<div class="stafftemp small">
+   <div class="insetborder"></div>
+   <div class="header">
+      <h1>It's All Politics</h1>
+   </div>
+   Relations are volatile among all the courts. We need a better understanding of citizen perception, relationship temperature, and stances on key issues. Thread must be completed to count toward major quest progress however need not be complete to collect reward. A thread cannot count as more than one minor quest.
 
-   /** auto-tracker code by FizzyElf - https://fizzyelf.jcink.net **/
-   async function FillTracker(username, params = {}) {
+   <h3>I. Minor Quest (3/5)</h3>
+   <blockquote>Visit a different court and thread with at least one character from there.<br><br>
+      <b>Requirements:</b> 2+ thread participants, completed missive <br>
+      <b>Reward:</b> 200 gold
+   </blockquote>
+   <blockquote2>
+      <ul>
+         <li><a>Pleasure to Meet You, Mr. Wick</a> - name, name, name</li>
+         <li><a>Something tells me I'm Drnuk</a> - name, name, name</li>
+      </ul>
+   </blockquote2>
 
-      /***  CONFIGURATION AREA ***/
-      const config = {
-         includedforums: (params.includeCategoryIds || []).map(x => "c_" + x).concat(params.includeForumIds || []),
-         historyforums: params.historyForumNames || [],
-         historyforumids: params.historyForumIds || [],
-         missivesforums: params.missivesForumNames || [],
-         missivesforumids: params.missivesForumIds || [],
-         missiveshistoryforums: params.missivesHistoryForumNames || [],
-         missiveshistoryforumids: params.missivesHistoryForumIds || [],
-         altforums: params.altForumNames || [],
-         altforumids: params.altForumIds || [],
-         althistoryforums: params.altHistoryForumNames || [],
-         althistoryforumids: params.altHistoryForumIds || [],
-         incompforums: params.incompForumNames || [],
-         incompforumids: params.incompForumIds || [],
-         incomphistoryforums: params.incompHistoryForumNames || [],
-         incomphistoryforumids: params.incompHistoryForumIds || [],
-         ignoreforums: params.ignoreForumNames || [],
-         ignoreforumids: params.ignoreForumIds || [],
-         lockedclass: params.lockedMacroIdentifier || "[title=Closed]",
-         lockedforums: params.archiveForumNames || [],
-         lockedforumids: params.archiveForumIds || [],
-         indicators: params.indicators || ['<span style="font-family: roboto, verdana, arial, sans">✓</span>', '<span style="font-family: roboto, verdana, arial, sans">➤</span>'],
-         separator: params.separator || "|",
-         username: username.replace(/&#([0-9]+);/g, (m, p1) => String.fromCharCode(p1)),
-         trackerwrap: params.thisTracker || $('#trackerwrap'),
-         historywrap: params.thisHistory || $('#historywrap'),
-         missiveswrap: params.thisMissivesTracker || $('#missiveswrap'),
-         altwrap: params.thisAltTracker || $('#altwrap'),
-         incompwrap: params.thisIncompTracker || $('#incompwrap'),
-         pagelimit: params.pageLimit || 5,
-         previousposters: params.previousPosters || {},
-         lockedregex: (params.archiveForumRegex) ? RegExp(params.archiveForumRegex) : /archive/i,
-         closedthreads: (params.completedThreads) || []
-      }
-      if (!config.includedforums.length) config.includedforums.push("all");
-      /*** END CONFIGURATION ***/
-      if (/^[-\w _\d]+$/.test(params.indicators[0])) {
-         params.indicators[0] = `<i class="${params.indicators[0]}"></i>`
-      }
-      if (/^[-\w _\d]+$/.test(params.indicators[1])) {
-         params.indicators[1] = `<i class="${params.indicators[1]}"></i>`
-      }
-      if (/^[-\w _\d]+$/.test(params.indicators[2])) {
-         params.indicators[2] = `<i class="${params.indicators[2]}"></i>`
-      }
+   <h3>II. Minor Quest (0/5)</h3>
+   <blockquote>Visit a different court and thread with at least one character from there.<br><br>
+      <b>Requirements:</b> 2+ thread participants, completed missive <br>
+      <b>Reward:</b> 200 gold
+   </blockquote>
+   <blockquote2>
+      <ul>
+         <li><a>Pleasure to Meet You, Mr. Wick</a> - <a><span class="sapphire">hemlocke drystan</span></a>, name, name</li>
+         <li><a>Something tells me I'm Drnuk</a> - name, name, name</li>
+      </ul>
+   </blockquote2>
+</div>
 
-      /***  RUN THE SEARCH ***/
+<div class="stafftemp small">
+   <div class="insetborder"></div>
+   Post with the form when done. Members may only receive the award once.<br><br>
+   [CODE]submission form[/CODE]
 
-      let href = `/index.php?act=Search&CODE=01&nomobile=1`;
-      let data = '';
-      try {
-         //console.log(`fetching ${href}`);
-         data = await $.post(href, {
-            keywords: "",
-            namesearch: config.username,
-            forums: config.includedforums,
-            searchsubs: "1",
-            prune: "0",
-            prune_type: "newer",
-            sort_key: "last_post",
-            sort_order: "desc",
-            search_in: "posts",
-            result_type: "topics",
-         });
-         //console.log('success.');
-      } catch (err) {
-         console.log(`Ajax error loading page: ${href} - ${err.status} ${err.statusText}`);
-         config.trackerwrap.append('<div class="profile--nothreads">Search Failed</div>');
-         return;
-      }
-      doc = new DOMParser().parseFromString(data, 'text/html');
-
-      let meta = $('meta[http-equiv="refresh"]', doc);
-      if (meta.length) {
-         href = meta.attr('content').substr(meta.attr('content').indexOf('=') + 1) + '&st=0';
-         //.log('sessionid = ' + href.match(/&searchid=([a-zA-Z0-9]+)&/)[1]);
-         //console.log('search = ' + href);
-      } else {
-         let boardmessage = $('#board-message .tablefill .postcolor', doc).text();
-         config.trackerwrap.append(`<div class="profile--nothreads">${boardmessage}</div>`);
-         config.historywrap.append(`<div class="profile--nothreads">${boardmessage}</div>`);
-         config.missiveswrap.append(`<div class="profile--nothreads">${boardmessage}</div>`);
-         config.missiveshistorywrap.append(`<div class="profile--nothreads">${boardmessage}</div>`);
-         config.altwrap.append(`<div class="profile--nothreads">${boardmessage}</div>`);
-         config.incompwrap.append(`<div class="profile--nothreads">${boardmessage}</div>`);
-         return;
-      }
-
-      await parseResults(href, config, 0);
-
-   }
-
-
-
-   parseResults = async (searchlink, config, page) => {
-      let doc;
-      searchlink = searchlink.replace(/&st=\d+/, `&st=${page * 25}`);
-      let data = '';
-      try {
-         //console.log(`fetching ${searchlink}`);
-         data = await $.get(searchlink);
-         //console.log('success.');
-      } catch (err) {
-         console.log(`Ajax error loading page: ${searchlink} - ${err.status} ${err.statusText}`);
-         console.log(err)
-         config.trackerwrap.append('<div class="profile--nothreads">Search Failed</div>');
-         return;
-      }
-      doc = new DOMParser().parseFromString(data, 'text/html');
-
-      $('#search-topics .tablebasic > tbody > tr', doc).each(function (i, e) {
-         if (i > 0) {
-            const cells = $(e).children('td');
-            const location = $(cells[3]).text();
-            const location_id = $(cells[3]).find('a').attr('href').match(/showforum=([^&]+)&?/)[1]
-            const threadLink = $(cells[7]).children('a').attr('href');
-            const thread_id = threadLink.match(/showtopic=([^&]+)&?/)[1];
-            if (!config.ignoreforums.includes(location) && !config.ignoreforumids.includes(location_id)) {
-               const locked = $(cells[0]).find(`${config.lockedclass}`).length
-                  || config.lockedforums.includes(location)
-                  || config.lockedforumids.includes(location_id)
-                  || config.lockedregex.test(location)
-                  || config.closedthreads.includes(thread_id);
-               const title = $(cells[2]).find('td:nth-child(2) > a').first().text();
-               const threadDesc = $(cells[2]).find('.desc').text();
-               const history = config.historyforums.includes(location) || config.historyforumids.includes(location_id);
-               const missives = config.missivesforums.includes(location) || config.missivesforumids.includes(location_id);
-               const missiveshistory = config.missiveshistoryforums.includes(location) || config.missiveshistoryforumids.includes(location_id);
-               const alt = config.altforums.includes(location) || config.altforumids.includes(location_id);
-               const althistory = config.althistoryforums.includes(location) || config.althistoryforumids.includes(location_id);
-               const incomp = config.incompforums.includes(location) || config.incompforumids.includes(location_id);
-               const incomphistory = config.incomphistoryforums.includes(location) || config.incomphistoryforumids.includes(location_id);
-               const lastPoster = $(cells[7]).find('a[href*=showuser]').text().trim().replace(/&#([0-9]+);/g, (m, p1) => String.fromCharCode(p1));
-               const lastPosterId = $(cells[7]).find('a[href*=showuser]').attr('href');
-               let myturn = (config.username == lastPoster) ? 'Caught Up' : 'Owing';
-               if (config.previousposters[thread_id]) {
-                  myturn = (lastPoster == config.previousposters[thread_id].replace(/&#([0-9]+);/g, (m, p1) => String.fromCharCode(p1))) ? 'Owing' : 'Caught Up';
-               }
-               const symbol = (myturn == 'Caught Up') ? config.indicators[0] : config.indicators[1];
-
-               let postDate = $(cells[7]).html();
-               postDate = postDate.substr(0, postDate.indexOf('<br>'));
-               const sep = (threadDesc) ? config.separator : '';
-
-               if (history) {
-                  config.historywrap.append($(`<div class="tracker-item">
-                      <b><span class="status locked" aria-described-by="${myturn}">${config.indicators[2]}</span>
-                      <a href="${threadLink}">${title}</a></b>
-                      <div class="tracker-desc"> <span class="tracker-location">${location}</span> <span class="tracker-threaddesc">${sep} ${threadDesc}</span> <br> <span class="tracker-lastpost">Last by <span style="text-transform: capitalize">${lastPoster}</span>, ${postDate}</span></div><hr></div>`));
-               } else if (missives) {
-                  config.missiveswrap.append($(`<div class="tracker-item">
-                      <b><span class="status ${myturn.replace(/ /g, '').toLowerCase()}" aria-described-by="${myturn}">${symbol}</span>
-                      <a href="${threadLink}">${title}</a></b>
-                      <div class="tracker-desc"> <span class="tracker-location">${location}</span> <span class="tracker-threaddesc">${sep} ${threadDesc}</span> <br> <span class="tracker-lastpost">Last by <span style="text-transform: capitalize">${lastPoster}</span>, ${postDate}</span></div><hr></div>`));
-               } else if (missiveshistory) {
-                  config.missiveswrap.append($(`<div class="tracker-item">
-                      <b><span class="status ${myturn.replace(/ /g, '').toLowerCase()}" aria-described-by="${myturn}">${symbol}</span>
-                      <a href="${threadLink}">${title}</a></b>
-                      <div class="tracker-desc"> <span class="tracker-location">${location}</span> <span class="tracker-threaddesc">${sep} ${threadDesc}</span> <br> <span class="tracker-lastpost">Last by <span style="text-transform: capitalize">${lastPoster}</span>, ${postDate}</span></div><hr></div>`));
-               } else if (alt) {
-                  config.altwrap.append($(`<div class="tracker-item">
-                      <b><span class="status ${myturn.replace(/ /g, '').toLowerCase()}" aria-described-by="${myturn}">${symbol}</span>
-                      <a href="${threadLink}">${title}</a></b>
-                      <div class="tracker-desc"> <span class="tracker-location">${location}</span> <span class="tracker-threaddesc">${sep} ${threadDesc}</span> <br> <span class="tracker-lastpost">Last by <span style="text-transform: capitalize">${lastPoster}</span>, ${postDate}</span></div><hr></div>`));
-               } else if (althistory) {
-                  config.altwrap.append($(`<div class="tracker-item">
-                      <b><span class="status ${myturn.replace(/ /g, '').toLowerCase()}" aria-described-by="${myturn}">${symbol}</span>
-                      <a href="${threadLink}">${title}</a></b>
-                      <div class="tracker-desc"> <span class="tracker-location">${location}</span> <span class="tracker-threaddesc">${sep} ${threadDesc}</span> <br> <span class="tracker-lastpost">Last by <span style="text-transform: capitalize">${lastPoster}</span>, ${postDate}</span></div><hr></div>`));
-               } else if (incomphistory) {
-                  config.incompwrap.append($(`<div class="tracker-item">
-                      <b><span class="status ${myturn.replace(/ /g, '').toLowerCase()}" aria-described-by="${myturn}">${symbol}</span>
-                      <a href="${threadLink}">${title}</a></b>
-                      <div class="tracker-desc"> <span class="tracker-location">${location}</span> <span class="tracker-threaddesc">${sep} ${threadDesc}</span> <br> <span class="tracker-lastpost">Last by <span style="text-transform: capitalize">${lastPoster}</span>, ${postDate}</span></div><hr></div>`));
-               } else {
-                  config.trackerwrap.append($(`<div class="tracker-item">
-                      <b><span class="status ${myturn.replace(/ /g, '').toLowerCase()}" aria-described-by="${myturn}">${symbol}</span>
-                      <a href="${threadLink}">${title}</a></b>
-                      <div class="tracker-desc"> <span class="tracker-location">${location}</span> <span class="tracker-threaddesc">${sep} ${threadDesc}</span> <br> <span class="tracker-lastpost">Last by <span style="text-transform: capitalize">${lastPoster}</span>, ${postDate}</span></div><hr></div>`));
-               }
-            }
-         }
-
-      });
-
-      if ($('#search-topics .tablebasic > tbody > tr', doc).length == 26 && page < config.pagelimit) {
-         page = page + 1;
-         await parseResults(searchlink, config, page)
-      } else {
-         if (!config.trackerwrap.children().length) {
-            config.trackerwrap.append($('<div class="tracker-item" style="text-indent:0">None</div>'));
-         }
-         if (!config.historywrap.children().length) {
-            config.historywrap.append($('<div class="tracker-item" style="text-indent:0">None</div>'));
-         }
-         if (!config.missiveswrap.children().length) {
-            config.missiveswrap.append($('<div class="tracker-item" style="text-indent:0">None</div>'));
-         }
-         if (!config.altwrap.children().length) {
-            config.altwrap.append($('<div class="tracker-item" style="text-indent:0">None</div>'));
-         }
-         if (!config.incompwrap.children().length) {
-            config.incompwrap.append($('<div class="tracker-item" style="text-indent:0">None</div>'));
-         }
-         if (!config.missiveshistorywrap.children().length) {
-            config.missiveshistorywrap.append($('<div class="tracker-item" style="text-indent:0">None</div>'));
-         }
-         if (!config.althistorywrap.children().length) {
-            config.althistorywrap.append($('<div class="tracker-item" style="text-indent:0">None</div>'));
-         }
-      }
-   }
-
-</script>
-
-
-
-
-
-
-<script> /** auto-tracker code by FizzyElf - https://fizzyelf.jcink.net **/
-   trackerParams = {
-      //include
-      includeCategoryIds: ['3'],
-      includeForumIds: ['15', '17'],
-      ignoreForumIds: ['24', '25', '26', '29'],
-
-      //define au, missives, incomp, archive forums
-      historyForumIds: ['15'], //history
-      missivesForumIds: ['6'], //missives
-      missivesHistoryForumIds: ['23'], //missives history
-      altForumIds: ['17'], //alt
-      altHistoryForumIds: [], //alt history
-      //  incompForumIds: ['7', '37', '78', '79', '80', '81', '82', '83', '84'], //incomp
-      incompHistoryForumIds: ['22'], //incomp history
-
-      //set indicators
-      indicators: ['ph ph-pen-nib', 'ph ph-pen-nib', 'ph ph-pen-nib-straight'],
-   }
-   FillTracker(`<!-- |name| -->`, trackerParams);
-</script>
+</div>
+[/dohtml]
