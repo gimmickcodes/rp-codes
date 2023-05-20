@@ -243,7 +243,7 @@ g-14 {
    --grp2: var(--corlucet2, var(--accent2-light));
 }
 
-.postrow-wrap span:where(.QA, .amethyst, .diamond, .jade, .onyx, .pearl, .ruby, .sapphire, .corlucet) {
+span:where(.QA, .amethyst, .diamond, .jade, .onyx, .pearl, .ruby, .sapphire, .corlucet) {
    color: hsl(var(--grp2));
 }
 
@@ -421,7 +421,7 @@ button.colortoggle {
 }
 
 .responsive.topnav {
-   grid-template: 'toggled mainlinks quicklinks userbox' 50px / 1fr 0 auto 0;
+   grid-template: 'mainlinks quicklinks toggled userbox' 50px / 1fr auto auto 0;
 }
 
 .responsive .topnav-main,
@@ -459,6 +459,7 @@ button.colortoggle {
    width: 40px;
    height: 40px;
    border-radius: 100%;
+   margin-left: 20px;
 }
 
 .mobilenav-avatar img {
@@ -944,9 +945,14 @@ button.colortoggle {
    object-fit: cover;
 }
 
+
+.bp-eventbox {
+   max-height: 160px;
+}
+
 .eventcard {
    width: 100%;
-   height: min(100%, 100px);
+   height: min(100%, 120px);
    background: hsl(var(--darkgray));
 }
 
@@ -961,8 +967,8 @@ button.colortoggle {
    font: 700 var(--sans8);
    letter-spacing: .25em;
    text-transform: uppercase;
-   color: hsl(var(--gray2));
-   padding: 6px 8px 8px;
+   color: hsl(var(--accent2-light));
+   padding: 6px 12px 8px;
 }
 
 .wrapper {
@@ -4171,7 +4177,8 @@ body ::-webkit-scrollbar {
    width: 3px !important;
 }
 
-body ::-webkit-scrollbar-track {
+body ::-webkit-scrollbar-track,
+body ::-webkit-scrollbar-corner {
    border-left: 0;
 }
 
