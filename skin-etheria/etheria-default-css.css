@@ -829,7 +829,9 @@ label {
    #posting-form,
    #posting-form :where(thead, tbody, tr),
    table.store,
-   .store :where(thead, tbody, tr) {
+   .store :where(thead, tbody, tr),
+   table.threadfunctions,
+   .threadfunctions :where(td) {
       display: block;
    }
 
@@ -880,4 +882,12 @@ label {
       display: none;
    }
 
+
+   .threadfunctions td {
+      width: calc(100vw - 24px) !important;
+   }
+
+   .threadfunctions td:first-of-type {
+      margin-bottom: 20px;
+   }
 }
