@@ -72,7 +72,8 @@
             <a href="index.php?act=Msg&CODE=01" class="perms-logged"><i class="ph ph-envelope-simple"></i>Messages</a>
             <a href="/index.php?act=Login&CODE=00" class="perms-guest"><i class="ph ph-bell"></i>Log in</a>
             <a href="/index.php?act=Reg&CODE=00" class="perms-guest"><i class="ph ph-envelope-simple"></i>Register</a>
-            <a><i class="ph ph-sun"></i> Toggle skin</a>
+            <!-- <a><i class="ph ph-sun"></i> Toggle skin</a> -->
+            <button class="colortoggle" title="Toggle light mode"><i class="ph ph-moon"></i> <i class="ph ph-sun"></i> Toggle skin</button>
          </div>
 
 
@@ -86,10 +87,33 @@
       <div class="sidenav">
          <div class="">
             <a href="#top"><i class="ph ph-arrow-up"></i></a>
-            <i class="ph ph-sun"></i>
+            <button class="colortoggle" title="Toggle light mode"><i class="ph ph-moon"></i> <i class="ph ph-sun"></i></button>
             <a href="#bottom"><i class="ph ph-arrow-down"></i></a>
          </div>
       </div>
+
+      <script>
+         const btntoggle = document.querySelectorAll(".colortoggle");
+         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+         const currentTheme = localStorage.getItem("theme");
+         if (currentTheme == "dark") {
+            document.body.classList.toggle("dark-theme");
+         } else if (currentTheme == "light") {
+            document.body.classList.toggle("light-theme");
+         }
+
+         btntoggle.forEach(function (btntoggle) {
+            btntoggle.addEventListener("click", function () {
+               document.body.classList.toggle("light-theme");
+               document.body.classList.toggle("dark-theme");
+               var theme = document.body.classList.contains("dark-theme")
+                  ? "dark"
+                  : "light";
+               localStorage.setItem("theme", theme);
+            });
+         })
+      </script>
 
       <div class="banner">
          <div class="hero">
@@ -678,7 +702,10 @@
                      Suspendisse commodo tortor nisl, vitae fringilla dolor dapibus eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla nec nisl quis sem semper semper. Proin ut dictum risus. Sed magna ipsum, mollis ac leo ultrices, condimentum lacinia purus. Vivamus at ultricies urna. Duis nulla eros, dignissim at iaculis non, imperdiet et nisl. Suspendisse eget erat fringilla, aliquet ex vitae, convallis neque.
                   </div>
 
-
+                  <div class="posttemp3">
+                     <div class="insetborder"></div><b>[ grid ]</b> <br>3-column image grid. No minimum or maximum number of images required. Works in any post template<br><br>
+                     <div class="imggrid 3"><img src="https://placehold.co/200/333333/333333.png" border="0" alt="user posted image"><br><img src="https://placehold.co/200/333333/333333.png" border="0" alt="user posted image"><br><img src="https://placehold.co/200/333333/333333.png" border="0" alt="user posted image"> <br><img src="https://placehold.co/200/333333/333333.png" border="0" alt="user posted image"> <br><img src="https://placehold.co/200/333333/333333.png" border="0" alt="user posted image"> <br><br><img src="https://placehold.co/200/333333/333333.png" border="0" alt="user posted image"> <br><img src="https://placehold.co/200/333333/333333.png" border="0" alt="user posted image"> <br><img src="https://placehold.co/200/333333/333333.png" border="0" alt="user posted image"> <br><img src="https://placehold.co/200/333333/333333.png" border="0" alt="user posted image"></div>
+                  </div>
 
 
                </div>
@@ -705,6 +732,127 @@
 
 
 
+
+
+
+
+
+
+         <div class="postrow-wrap corlucet">
+            <div class="insetborder"></div>
+
+            <div class="postrow-header">
+               <div class="pr-toggle"><i class="ph ph-baby"></i></div>
+               <div class="pr-header-wrap">
+                  <div class="pr-header-base">
+                     <a href="" class="pr-username">name mcname</a>
+                     <div class="pr-arcana">arcana of faction</div>
+                  </div>
+                  <div class="pr-header-overlay">
+                     <div class="pr-header-stats">
+                        <div class="app-stat"><span>Aliases</span> Field</div>
+                        <div class="app-stat"><span>Age</span> Field</div>
+                        <div class="app-stat"><span>Gender</span> Field</div>
+                        <div class="app-stat"><span>Blood</span> Field</div>
+                        <div class="app-stat"><span>Height</span> Field</div>
+                        <div class="app-stat"><span>Orientation</span> Field</div>
+                     </div>
+                     <div class="pr-header-blurb">
+                        <b class="caps">In a sentence</b>
+                        Corlucet – Give a man a fish and you feed him for a day. Give a man a kingdom and he wants to rule the world.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="postrow-dateband"><a href="" class="flexrow"><i class="ph ph-link-simple-horizontal"></i> March 24 2023, 1:37 PM</a></div>
+            <div class="postrow-body">
+               <div class="miniprofwrap">
+                  <div>
+                     <div class="miniprof">
+                        <div class="miniprof-bg" style="background-image: url(https://imglf6.lf127.net/img/39e869ffba01f2bf/MFA1clRGZW1MVjhkVDhGK1BQT0RhUDJzcTRZN1c3THd1TkZieEhRVDRNdz0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0)">
+                        </div>
+                        <div class="miniprof-overlay">
+                           <div class="flexcol">
+                              <div class="miniprof-avatar"><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></div>
+                              <div class="miniprof-textwrap">
+                                 “Quote”
+                                 <div class="miniprof-stat">
+                                    <b>Posts</b>3232
+                                 </div>
+                                 <div class="miniprof-stat">
+                                    <b>Gold</b>3232
+                                 </div>
+                              </div>
+                              <div class="miniprof-badges flexrow">
+                                 <img src="https://images-ext-2.discordapp.net/external/v5_U51aVCw3bGJsT8nhniOxIAbY2861kyM7NaQ_uQgM/%3Fsize%3D60/https/cdn.discordapp.com/emojis/824349716438712340.png?width=120&height=120" title="The #1 Shogun.">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="miniprof-links flexrow">
+                        <a href="" title="All posts"><i class="ph ph-file"></i></a>
+                        <a href="" title="All threads"><i class="ph ph-books"></i></a>
+                        <a href="" title="Tracker"><i class="ph ph-map-pin-line"></i></a>
+                        <a href="" title="Development"><i class="ph ph-pencil"></i></a>
+                        <a href="" title="Custom"><i class="ph ph-binoculars"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div id="pid_ID" class="postcontent">
+
+
+
+                  <div class="posttemp1">
+                     <h2>Timeline</h2><br>
+                     <div class="post-timeline">
+
+
+                        <div class="event">
+                           <div class="event-time">Date</div>
+                           <div class="event-desc">
+                              Use <b>&lt; br &gt;</b> to add line breaks within the timeline template itself.<br><br>
+                              <a href="">Thread</a> — Description, participants <br>
+                              <b><a href="">Thread</a></b> — Description, participants
+                           </div>
+                        </div>
+
+                        <div class="event">
+                           <div class="event-time">Date</div>
+                           <div class="event-desc">
+                              <ul>
+                                 <li>Item</li>
+                                 <li>Item</li>
+                                 <li>Item</li>
+                              </ul>
+                           </div>
+                        </div>
+
+
+                     </div>
+                  </div>
+
+
+               </div>
+               <div class="postcontrols">
+                  <div class="flexcol">
+                     <a href=""><i class="ph ph-pencil-simple"></i></a>
+                     <a href=""><i class="ph ph-quotes"></i></a>
+                     <a href=""><i class="ph ph-trash"></i></a>
+                     <a href=""><i class="ph ph-flag"></i></a>
+                  </div>
+               </div>
+
+            </div>
+            <div class="postrow-footer flexrow">
+               <b>OOC Name</b>
+               <b class="pipe"></b>
+               <span><b>Pronouns</b> field</span>
+               <span><b>Time Zone</b> field</span>
+               <span><b>Mature Threads</b> field</span>
+               <span><b>Please tag</b> field</span>
+
+            </div>
+         </div>
 
 
 

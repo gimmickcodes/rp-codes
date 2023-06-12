@@ -377,7 +377,7 @@ table {
 }
 
 .code-top {
-   background: linear-gradient(to right, hsl(var(--darkgray)/.95), hsl(var(--darkgray)/.95)), var(--texture) right / cover no-repeat;
+   background: linear-gradient(to right, hsl(var(--darkgray)/.95), hsl(var(--darkgray)/.95)), var(--texture-h) right / cover no-repeat;
    height: 50px;
    display: flex;
    align-items: center;

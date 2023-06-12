@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+<head>
+   <title>Etheria: Home</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+   <link href="etheria-default-css.css" rel="stylesheet">
+   <link href="etheria-css.css" rel="stylesheet">
+
+   <!-- font icons -->
+   <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+   <!-- fonts -->
+   <link rel="stylesheet" href="https://use.typekit.net/zbl1ihd.css">
+
+   <script>
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme == "dark") {
+         document.documentElement.classList.toggle("dark-theme");
+      } else if (currentTheme == "light") {
+         document.documentElement.classList.toggle("light-theme");
+      }
+   </script>
+
+</head>
+
+<body class="user-ID perms_g-ID">
+
+
+
+
+
+
+
+
+   <div class="masterwrapper">
+
+      <div id="hamburger" class="topnav">
+         <div class="topnav-toggled">
+            <a href="/index.php?" class="mobilehome"><i class="ph ph-house"></i></a>
+            <a href="/index.php?showuser=<!-- |id| -->" class="mobilenav-avatar"><!-- |avatar| --></a>
+         </div>
+
+         <div class="topnav-main">
+            <a href="/index.php?">Home</a>
+            <a href="/index.php?act=Members&max_results=1000">Members</a>
+            <a href="admin.php" class="perms-admin">ACP</a>
+            <a href="/index.php?act=UserCP&CODE=01" class="perms-logged">UCP</a>
+            <a href="/?act=Search&CODE=getactive">Recent Topics</a>
+            <a href="/?act=Online&CODE=listall&sort_key=click">Recent Clicks</a>
+            <a href="/index.php?act=Login&CODE=00" class="perms-guest">Log in</a>
+            <a href="/index.php?act=Reg&CODE=00" class="perms-guest">Register</a>
+            <a href="/?act=Login&CODE=03" class="perms-logged">Logout</a>
+         </div>
+         <div class="topnav-quicklinks">
+            <a href="">Guidebook</a>
+            <a href="">Face Claims</a>
+            <a href="">Factions</a>
+            <a href="">Magic</a>
+            <a href="">Map</a>
+            <a href="">Site Codes</a>
+            <a href="">Shop</a>
+            <a href="">Discord</a>
+         </div>
+         <div class="topnav-userbox">
+            <div class="topnav-currentacc">Switch account from:</div>
+            <span id="subaccounts_menu">
+               <form>
+                  <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                     <option value="------------" selected="selected">Switch account</option>
+                     <option value="31">&nbsp;&nbsp;» andin andilet </option>
+                  </select>
+               </form>
+            </span>
+            <a href="index.php?act=UserCP&CODE=alerts" class="perms-logged"><i class="ph ph-bell"></i>Alerts</a>
+            <a href="index.php?act=Msg&CODE=01" class="perms-logged"><i class="ph ph-envelope-simple"></i>Messages</a>
+            <a href="/index.php?act=Login&CODE=00" class="perms-guest"><i class="ph ph-bell"></i>Log in</a>
+            <a href="/index.php?act=Reg&CODE=00" class="perms-guest"><i class="ph ph-envelope-simple"></i>Register</a>
+            <!-- <a><i class="ph ph-sun"></i> Toggle skin</a> -->
+            <button class="colortoggle" title="Toggle light mode"><i class="ph ph-moon"></i> <i class="ph ph-sun"></i> Toggle skin</button>
+         </div>
+
+
+         <a href="javascript:void(0);" class="mobilenav" onclick="menuFunction()">
+            <i class="ph ph-list"></i>
+            <i class="ph ph-x"></i>
+         </a>
+      </div>
+
+
+      <div class="sidenav">
+         <div class="">
+            <a href="#top"><i class="ph ph-arrow-up"></i></a>
+            <button class="colortoggle" title="Toggle light mode"><i class="ph ph-moon"></i> <i class="ph ph-sun"></i></button>
+            <a href="#bottom"><i class="ph ph-arrow-down"></i></a>
+         </div>
+      </div>
+
+
+
+      <div class="banner">
+         <div class="hero">
+         </div>
+      </div>
+      <div class="hero-text">
+         <a href="/index.php?">
+            <h1>Etheria</h1>
+         </a>
+         <div>a middle fantasy roleplay
+         </div>
+      </div>
+      <div class="bp-navwrap">
+         <div class="flexrow">
+            <div class="bp-nav-label welcome active">
+               <span>Welcome</span>
+               <span class="marker active"> </span>
+            </div>
+            <span class="markerhighlight"> </span>
+            <div class="bp-nav-label news">
+               <span class="marker"> </span>
+               <span>News</span>
+            </div>
+         </div>
+      </div>
+
+      <div class="bannerpanel">
+         <div class="bp-header">
+            <div class="bp-userbox">
+               <div class="bp-username">
+                  Username
+                  <div class="bp-accswitch perms-logged"><i class="ph ph-caret-down"></i></div>
+                  <div class="bp-accswitch-dropdown">
+                     <span id="subaccounts_menu">
+                        <form>
+                           <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                              <option value="------------" selected="selected">Switch account</option>
+                              <option value="31">&nbsp;&nbsp;» andin andilet </option>
+                           </select>
+                        </form>
+                     </span>
+                  </div>
+               </div>
+
+               <a href="" class="perms-logged bp-userlink">0 alerts</a>
+               <a href="" class="perms-logged bp-userlink">0 msgs</a>
+               <a href="/index.php?act=Login&CODE=00" class="perms-guest bp-userlink">log in</a>
+               <a href="/index.php?act=Reg&CODE=00" class="perms-guest bp-userlink">register</a>
+            </div>
+            <a class="bp-avatar" title="Go to profile" class="tooltip" href=""><img src="https://cdn.discordapp.com/attachments/683720444796338317/1064073738997481573/275x275-okita-01.png"></a>
+         </div>
+
+         <div class="bp-body welcome">
+            <div class="bp-slide">
+               <div class="bp-infobox">You are either descended from a First Monarch or are one of the undeity's champion. Either way, you can manipulate ether and produce magic. But magic seems so minute when the Eight Jeweled Courts are at odds.
+                  Etheria focuses on middle magic and court intrigue.</div>
+               <div class="bp-linksbox">
+                  <a href="">Guidebook</a>
+                  <a href="">Face Claims</a>
+                  <a href="">Factions</a>
+                  <a href="">Magic</a>
+                  <a href="">Map</a>
+                  <a href="">Site Codes</a>
+                  <a href="">Shop</a>
+                  <a href="">Discord</a>
+               </div>
+            </div>
+
+            <div class="bp-slide">
+               <div class="bp-newsbox">
+                  <b>March 14 </b>/ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut quam risus. Duis a euismod dolor, sed gravida purus. Ut at turpis lobortis, lobortis lacus id. <p>
+                     <b>March 14 </b>/ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut quam risus. Duis a euismod dolor, sed gravida purus. Ut at turpis lobortis, lobortis lacus id.
+               </div>
+               <div class="bp-eventbox">
+                  <a href="" class="eventcard">
+                     <img src="https://media.discordapp.net/attachments/683720444796338317/1094320365725032548/statscenterbg.png?width=808&height=822">
+                     <div class="eventcard-label">Event 1: Onyxian Masquerade</div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+
+
+
+      <!-- <% BOARD %> -->
+      <div class="wrapper">
+
+
+         <div class="caps">
+            <!-- <% NAVIGATION %> -->
+            <div id="navstrip">
+               <a href="">Etheria</a>
+               <span style="opacity:.5; padding: 0 2px;"> · </span>
+               <a href="">Category</a>
+               <span style="opacity:.5; padding: 0 2px;"> · </span>
+               <a href="">Board</a>
+               <span style="opacity:.5; padding: 0 2px;"> · </span>
+               <a href="">Topic</a>
+            </div>
+            <br><br>
+            <!-- END <% NAVIGATION %> -->
+         </div>
+
+
+
+         <div id="bestiarywrap">
+            <div class="insetborder"> </div>
+
+            <div class="bestiaryheader flexcol">
+               <div class="besheader-intro ">
+                  <div class="besheader-title">Bestiary <small>of</small> Etheria</div>
+                  <div class="besheader-desc">The Seven Jeweled Courts are home to many kinds of flora of fauna. From small animals to large beasts, beautiful flowers to deadly fungi—there is a lot to research and explore. Below is what you might find as you travel the continent.</div>
+                  <div class="besheader-legend">
+                     <div>★ <b>Common</b></div>
+                     <div>★★ <b>Uncommon</b></div>
+                     <div>★★★ <b>Rare</b></div>
+                     <div>★★★★ <b>Very rare</b></div>
+                     <div>★★★★★ <b>Mythical</b></div>
+                  </div>
+               </div>
+
+
+               <div class="bes-filters flexrow">
+                  <div class="bes-filters-title">Sort by:</div>
+                  <ul class="bes-filter-list sort-by-button-group flexrow">
+                     <button type="button" data-sort-by="beastname" class="selected">A-Z</button>
+                     <button type="button" data-sort-by="beastnamereverse">Z-A</button>
+                     <button type="button" data-sort-by="mostcommon">Most common</button>
+                     <button type="button" data-sort-by="mostrare">Most rare</button>
+                  </ul>
+               </div>
+
+               <div class="bes-filters flexrow">
+                  <div class="bes-filters-title">Filter by:</div>
+                  <ul class="bes-filter-list option-set bes-rarity flexrow" data-filter-group="rarity">
+                     <li data-filter-value="" class="filter-reset selected">Show all</li>
+                     <span>|</span>
+                     <li data-filter-value=".rarity1">★</li>
+                     <li data-filter-value=".rarity2">★★</li>
+                     <li data-filter-value=".rarity3">★★★</li>
+                     <li data-filter-value=".rarity4">★★★★</li>
+                     <li data-filter-value=".rarity5">★★★★★</li>
+                     <span>|</span>
+                     <li data-filter-value=".nativeAmethyst">Amethyst</li>
+                     <li data-filter-value=".nativeDiamond">Diamond</li>
+                     <li data-filter-value=".nativeJade">Jade</li>
+                     <li data-filter-value=".nativeOnyx">Onyx</li>
+                     <li data-filter-value=".nativePearl">Pearl</li>
+                     <li data-filter-value=".nativeRuby">Ruby</li>
+                     <li data-filter-value=".nativeSapphire">Sapphire</li>
+                  </ul>
+
+               </div>
+
+            </div>
+            <div class="bestiarybody">
+
+               <div class="bes-pages">
+
+                  <section class="beastpage bestiarywrap_active rarity1 nativeJade">
+                     <div class="beast-info">
+                        <div class="beast-info-title">Name</div>
+                        <div class="beast-info-stat rarity"><b>Rarity</b><span class="beastrarity">1</span></div>
+                        <div class="beast-info-stat native"><b>habitat</b> </div>
+                        <div class="beast-info-stat"><b>Products</b> item item item</div>
+                        <div class="beast-info-desc">
+                           The Amethian Phoenix, a sacred bird in the eyes of Shina, adorns itself with resplendent feathers of gold and purple. Revered for its ethereal allure, this mythical creature has eluded capture for years. Its golden feathers and eggs hint at its Gilded nature, possibly imbued with extraordinary etherial potential. With a mere flap of its wings, the Amethian Phoenix invokes waves of purple flames, mysteriously sparing the forest it calls home while reducing perceived threats to ash. Remarkably resilient, it appears impervious to physical harm, regenerating swiftly from any injuries inflicted upon it. Coveted and sought after, only feathers and egg shells have been retrieved from this elusive creature. Its feathers possess unparalleled regenerative properties, offering rejuvenation and vitality. Similarly, the egg shells found in an abandoned nest were found to have wondrous potential for regeneration.
+                        </div>
+                     </div>
+                     <div class="beast-img"><img src="https://media.discordapp.net/attachments/1115792718958960731/1116206158626164756/paxpaxpaxpax_salamander_monster_newt_monster_tentacles_swamp_in_56a28560-4f7e-497a-ac6f-2b8eb588ddd5.png?width=874&height=874"></div>
+                  </section>
+
+
+                  <section class="beastpage rarity3 nativeRuby">
+                     <div class="beast-info">
+                        <div class="beast-info-title">john</div>
+                        <div class="beast-info-rarity">Rating: <span class="beastrarity">1</span></div>
+                        <div class="beast-info-native">Native to: </div>
+                        <div class="beast-info-desc">Hi</div>
+                        <div class="beast-info-products">Products</div>
+                     </div>
+                     <div class="beast-img"><img src="https://media.discordapp.net/attachments/1115792718958960731/1116206158626164756/paxpaxpaxpax_salamander_monster_newt_monster_tentacles_swamp_in_56a28560-4f7e-497a-ac6f-2b8eb588ddd5.png?width=874&height=874"></div>
+                  </section>
+
+
+                  <section class="beastpage rarity5 nativeSapphire">
+                     <div class="beast-info">
+                        <div class="beast-info-title">Name 3</div>
+                        <div class="beast-info-rarity">Rating: <span class="beastrarity">1</span></div>
+                        <div class="beast-info-native">Native to: </div>
+                        <div class="beast-info-desc">Hi</div>
+                        <div class="beast-info-products">Products</div>
+                     </div>
+                     <div class="beast-img"><img src="https://media.discordapp.net/attachments/1115792718958960731/1116206158626164756/paxpaxpaxpax_salamander_monster_newt_monster_tentacles_swamp_in_56a28560-4f7e-497a-ac6f-2b8eb588ddd5.png?width=874&height=874"></div>
+                  </section>
+
+
+
+               </div>
+
+               <div class="bes_tabbox">
+                  <div class="bes_isotope">
+
+                     <div class="beasttab bestiarywrap_active rarity1 nativeJade">
+                        <img src="https://media.discordapp.net/attachments/1115792718958960731/1116206158626164756/paxpaxpaxpax_salamander_monster_newt_monster_tentacles_swamp_in_56a28560-4f7e-497a-ac6f-2b8eb588ddd5.png?width=874&height=874">
+                        <div class="beasttab-title">
+                           <div>Name</div>
+                           <div class="beasttab-desc">
+                              <span class="beastrarity">1</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="beasttab rarity3 nativeRuby">
+                        <img src="https://media.discordapp.net/attachments/1115792350313201815/1116782298453528726/280x280_River_Serpent.png?width=560&height=560">
+                        <div class="beasttab-title">
+                           john
+                           <div class="beasttab-desc">
+                              <span class="beastrarity">3</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="beasttab rarity5 nativeSapphire">
+                        <img src="https://media.discordapp.net/attachments/1115792350313201815/1116782298453528726/280x280_River_Serpent.png?width=560&height=560">
+                        <div class="beasttab-title">
+                           Name 3
+                           <div class="beasttab-desc">
+                              <span class="beastrarity">5</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="beasttab rarity3 nativeSapphire">
+                        <img src="https://media.discordapp.net/attachments/1115792350313201815/1116782298453528726/280x280_River_Serpent.png?width=560&height=560">
+                        <div class="beasttab-title">
+                           Name 4
+                           <div class="beasttab-desc">
+                              <span class="beastrarity">3</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="beasttab rarity2 nativeSapphire">
+                        <img src="https://media.discordapp.net/attachments/1115792350313201815/1116782298453528726/280x280_River_Serpent.png?width=560&height=560">
+                        <div class="beasttab-title">
+                           Name 5
+                           <div class="beasttab-desc">
+                              <span class="beastrarity">2</span>
+                           </div>
+                        </div>
+                     </div>
+
+
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+
+
+
+      <div class="copyrightwrap">
+         <div class="skincred">Skin coded exclusively for Etheria</div>
+         <br>
+         <!-- Copyright Information -->
+         <div align="center" class="tableborder">
+            <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+               <div align="center" class="copyright">Powered by <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a> (<a href="http://jcink.com" target="_blank">Jcink.com </a> <a href="https://jcink.com" target="_blank">Forum Hosting</a>) © 2022 &nbsp;<a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a> <br>Page creation time: 0.0138 <!-- http://xmortala.b1.jcink.com --> · <a href="index.php?act=Mobile">Mobile Version</a> · <a href="index.php?act=privacy">Privacy Policy</a></div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+</body>
+
+
+<script src='https://codepen.io/breezescodes/pen/NWPyXNv.js'></script>
+<script>
+   LOCALT3('bestiarywrap', 'beasttab', 'beastpage');
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.5/isotope.pkgd.js"></script>
+
+<script>
+   /****** isotope filtering ******/
+
+
+   $(document).ready(function () {
+      var $container = $(".bes_isotope"); // the container with all the elements to filter inside
+      var filters = {};
+
+      /* --- read the documentation on isotope.metafizzy.co for more options --- */
+      var $grid = $container.isotope({
+         itemSelector: ".beasttab", // the elements to filter
+         percentPosition: false, // true if you use percentage widths
+
+         getSortData: {
+            // make all lowercase, so uppercase does not come first
+            beastname: function (itemElem) {
+               var beastname = $(itemElem).find(".beasttab-title").text();
+               return beastname.toLowerCase();
+            },
+            beastnamereverse: function (itemElem) {
+               var beastnamereverse = $(itemElem).find(".beasttab-title").text();
+               return beastnamereverse.toLowerCase();
+            },
+            mostrare: ".beastrarity parseInt",
+            mostcommon: ".beastrarity parseInt",
+
+         },
+
+         // True is the default order
+         // Sort in ascending order 1,2,3 = true
+         // Sort in descending order 3,2,1 = false
+         sortAscending: {
+            beastname: true,
+            beastnamereverse: false,
+            rarity: true,
+            mostrare: false,
+         }
+
+      });
+
+      // sort items on button click
+      $('.sort-by-button-group').on('click', 'button', function () {
+         $(".sort-by-button-group").find(".selected").removeClass("selected");
+         $(this).addClass("selected");
+         var sortByValue = $(this).attr('data-sort-by');
+         $grid.isotope({ sortBy: sortByValue });
+      });
+
+
+
+      // save some classes for later usage
+      /* ---
+      activeClass: adds this class to filters that are selected (active)
+      comboClass: the class that indicates that the filter group is a chain filter, i.e. if you select two filters, only items with BOTH filters will be shown
+      exclClass: the class that indicates that the filter group is an exclusion filter, i.e. you can only select one filter from that group at a time
+      resetClass: the class for the overall reset button
+      --- */
+      var activeClass = "selected",
+         comboClass = "combine",
+         exclClass = "exclusive",
+         resetClass = "reset";
+
+      var $defaults = $("li." + activeClass + '[data-filter-value=""]');
+      $(".option-set li").click(function (e) {
+         // insert your link selector where it says '.option-set a'
+         var $this = $(this); // cache the clicked link
+         var comboFilter,
+            filterAttr = "data-filter-value";
+         if (resetClass && !$this.hasClass(resetClass)) {
+            // defining variables
+            var filterValue = $this.attr(filterAttr); // cache the filter
+            var $optionSet = $this.parents(".option-set"); // cache the parent element
+            var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+            var filterGroup = filters[group]; // make new variable for the property being filtered
+            if (!filterGroup) {
+               // if the property doesn't exist
+               filterGroup = filters[group] = []; // make a new empty array
+            }
+            var $selectAll = $optionSet.find("li[" + filterAttr + '=""]'); // cache the 'select all' button in the current group
+            $("." + resetClass).removeClass(activeClass);
+            comboFiltering(
+               $this,
+               filters,
+               filterAttr,
+               filterValue,
+               $optionSet,
+               group,
+               $selectAll,
+               activeClass,
+               comboClass,
+               exclClass
+            );
+            comboFilter = getComboFilter(filters); // join all the filters
+            if (!comboFilter.length) $("li." + resetClass).addClass(activeClass);
+            $this.toggleClass(activeClass);
+         } else {
+            filters = {};
+            comboFilter = "";
+            $(".option-set li").removeClass(activeClass);
+            $(this).addClass(activeClass);
+            $defaults.addClass(activeClass);
+         }
+         $grid.isotope({
+            filter: comboFilter
+         });
+         e.preventDefault();
+      });
+   });
+
+   function comboFiltering(
+      $this,
+      filters,
+      filterAttr,
+      filterValue,
+      $optionSet,
+      group,
+      $selectAll,
+      activeClass,
+      comboClass,
+      exclClass
+   ) {
+      // for non-exclusive groups of filters
+      if (!$optionSet.hasClass(exclClass)) {
+         // replace 'exclusive' with the class of your exclusive filter groups
+         // if link is a filter that isn't selected
+         if (!$this.hasClass(activeClass) && filterValue.length) {
+            filters[group].push(filterValue); // add filter to array
+            $selectAll.removeClass(activeClass); // remove the selected class from the 'select all' button
+         } else if (filterValue.length) {
+            // if link is a selected filter
+            // remove filter from array
+            // check if the filter group we're concerned with is a combination filter (.one.two instead of .one,.two)
+            if ($optionSet.hasClass(comboClass)) {
+               filters[group][0] = filters[group][0].replace(filterValue, ""); // delete the filter from the combined string
+               if (!filters[group][0].length)
+                  // check if there is anything left in the string after deletion
+                  filters[group].splice(0, 1); // if no, remove the empty string
+            } else {
+               // if filter group is not a combo filter
+               var curIndex = filters[group].indexOf(filterValue); // get index of filter string in array
+               if (curIndex > -1) filters[group].splice(curIndex, 1); // remove the filter
+            }
+            if (!$optionSet.find("li." + activeClass).not($this).length)
+               // if there are no remaining filters
+               $selectAll.addClass(activeClass); // add the active class to the 'select all' button
+         } else {
+            // if link is the show all button for that group
+            $optionSet.find("li." + activeClass).removeClass(activeClass); // remove the active class from all other buttons
+            filters[group] = []; // clear the array of all filters
+         }
+         // join everything to a single string for the combined filtering groups
+         if ($optionSet.hasClass(comboClass) && filters[group].length)
+            filters[group] = [filters[group].join("")];
+      } else {
+         // for exclusive groups
+         // if link is a filter that isn't selected
+         if (!$this.hasClass(activeClass) && filterValue.length) {
+            // run a loop for all active filters
+            $optionSet.find("li." + activeClass).each(function (k, filterLink) {
+               // remove all active filters in the same group from the array
+               var removeFilter = $(filterLink).attr(filterAttr);
+               var removeIndex = filters[group].indexOf(removeFilter);
+               filters[group].splice(removeIndex, 1);
+            });
+            filters[group].push(filterValue); // add selected filter to array
+            $optionSet.find("li." + activeClass).removeClass(activeClass); // remove the active class from all other links in the group
+         } else if (filterValue.length) {
+            // if link is a selected filter
+            // remove filter from array
+            var curIndex = filters[group].indexOf(filterValue);
+            if (curIndex > -1) filters[group].splice(curIndex, 1);
+            if (!$optionSet.find("li." + activeClass).not($this).length)
+               // if there are no remaining filters
+               $selectAll.addClass(activeClass); // add active class to 'select all' button
+         } else {
+            // if link is the show all button for that group
+            $optionSet.find("li." + activeClass).removeClass(activeClass); // remove active class from all other buttons
+            filters[group] = []; // reset all filters for this group
+         }
+      }
+   }
+   /* --- concat filters --- */
+   function getComboFilter(filters) {
+      // pass the entire array of filters to the function
+      var i = 0; // set counter variable as zero
+      var comboFilters = []; // make a new array to save the string of filters
+
+      for (var prop in filters) {
+         // loop through all the properties in the filter array passed to the function
+         var filterGroup = filters[prop]; // define variable
+         // skip to next filter group if it doesn't have any values
+         if (!filterGroup.length) {
+            continue; // exit loop and move on with next iteration
+         }
+         if (i === 0) {
+            // copy to new array
+            comboFilters = filterGroup.slice(0);
+         } else {
+            var filterSelectors = [];
+            // copy to fresh array
+            var groupCombo = comboFilters.slice(0);
+            // merge filter Groups
+            for (var k = 0, len3 = filterGroup.length; k < len3; k++) {
+               for (var j = 0, len2 = groupCombo.length; j < len2; j++) {
+                  filterSelectors.push(groupCombo[j] + filterGroup[k]);
+               }
+            }
+            // apply filter selectors to combo filters for next group
+            comboFilters = filterSelectors;
+         }
+         i++; // increment
+      }
+
+      var comboFilter = comboFilters.join(", ");
+      return comboFilter;
+   }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+   const btntoggle = document.querySelectorAll(".colortoggle");
+   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+   btntoggle.forEach(function (btntoggle) {
+      btntoggle.addEventListener("click", function () {
+         console.log("Theme")
+         document.documentElement.classList.toggle("light-theme");
+         document.documentElement.classList.toggle("dark-theme");
+         var theme = document.documentElement.classList.contains("dark-theme")
+            ? "dark"
+            : "light";
+         localStorage.setItem("theme", theme);
+      });
+   })
+</script>
+
+
+
+
+<script>
+   // Replace account switcher placeholder name with current account name
+   document.getElementsByName('sub_id')[0].options[0].innerHTML = "Name";
+</script>
+
+
+
+<script>
+   // Banner panel toggle
+
+   $(document).on("click", ".bp-navwrap .news", function () {
+      if (!$(this).hasClass('active')) {
+         var panelnav = $(this).parent().parent().parent()
+         var panel = $(this).parent().parent().parent()
+
+         panelnav.find('.welcome').removeClass('active')
+         panelnav.find('.welcome').find('.marker').removeClass('active')
+         panel.find('.bp-body').removeClass('welcome')
+
+         panelnav.find('.news').addClass('active')
+         panelnav.find('.news').find('.marker').addClass('active')
+         panel.find('.bp-body').addClass('news')
+
+         panelnav.find('.markerhighlight').addClass('news')
+      }
+   });
+
+   $(document).on("click", ".bp-navwrap .welcome", function () {
+      if (!$(this).hasClass('active')) {
+         var panelnav = $(this).parent().parent().parent()
+         var panel = $(this).parent().parent().parent()
+
+         panelnav.find('.news').removeClass('active')
+         panelnav.find('.news').find('.marker').removeClass('active')
+         panel.find('.bp-body').removeClass('news')
+
+         panelnav.find('.welcome').addClass('active')
+         panelnav.find('.welcome').find('.marker').addClass('active')
+         panel.find('.bp-body').addClass('welcome')
+
+         panelnav.find('.markerhighlight').removeClass('news')
+      }
+   });
+</script>
+
+<script>
+   // Toggle locations
+   var locationtab = document.getElementsByClassName('location-tab');
+
+   for (var i = 0; i < locationtab.length; i++) {
+      locationtab[i].addEventListener("click", toggleLocation);
+   }
+
+   function toggleLocation() {
+      // removes active class from every tab except the one clicked 
+      const othertabs = Array.from(locationtab).filter(el => el !== this)
+      othertabs.forEach(el => $(el).removeClass('active'))
+      $(this).addClass('active')
+
+      // Toggle slides to match clicked tab 
+      var selected = $(this).attr('id')
+      $(this).parent().parent().find('#locations-slideswrap').removeAttr('class').addClass(selected);
+   }
+
+</script>
+
+<script>
+   // Remove ' -' from recent topics timestamp
+   document.addEventListener('DOMContentLoaded', function () {
+      $(".rt-thread").each(function () {
+         $(this).html($(this).html().replace('- by ', "by "));
+      });
+   });
+
+</script>
+
+<script>
+   // Resize member card to fit name length
+   var membercard = document.getElementsByClassName('membercard');
+   for (var i = 0; i < membercard.length; i++) {
+      var nameheight = membercard[i].querySelector('.mem-header').offsetHeight
+      var test = ''
+      var str = test.concat('calc(100% - ', nameheight, 'px)')
+      console.log(str)
+
+      membercard[i].querySelector('.mem-cover').style.top = str;
+   }
+</script>
+
+
+<script>
+   // post row header info
+   $(".pr-toggle").mouseenter(function () {
+      $(this).parent().addClass('showinfo');
+   });
+
+   $(".postrow-header").mouseleave(function () {
+      $(this).removeClass('showinfo');
+      console.log('hi')
+   });
+</script>
+
+
+<script>
+   var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss")
+   $(document.body).append(clicktodismiss);
+
+   // Hamburger menu on mobile
+   function menuFunction() {
+      var x = document.getElementById("hamburger");
+
+      if (x.className === "topnav") {
+         x.className += " responsive";
+         $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn(250);
+         $("#menubutton").fadeTo(250, 0);
+      } else {
+         x.className = "topnav";
+         $("#clicktodismiss").fadeOut(250);
+         $("#menubutton").fadeTo(250, 1);
+      }
+   }
+
+   $(document).on("click", "#clicktodismiss", function () {
+      $("#clicktodismiss").fadeOut(250);
+      document.getElementById("hamburger").className = "topnav";
+      $("#menubutton").fadeTo(250, 1);
+   });
+</script>
+
+
+
+
+
+<script>
+   // Account switch dropdown toggle on desktop 
+   // https://stackoverflow.com/questions/24174353/addeventlistener-to-all-but-one-element
+
+   function manageDrop() {
+      var btn = document.querySelector('.bp-accswitch'),
+         view = document.querySelector('.bp-accswitch-dropdown'),
+         body = document.body;
+
+      btn.addEventListener('click', function (e) {
+         e.stopPropagation();
+         view.classList.toggle('is_active');
+      }); // open menu
+
+      body.addEventListener('click', function () {
+         if (view.classList.contains('is_active')) {
+            view.classList.remove('is_active');
+         }
+      }, false); // close after click outside
+
+      view.addEventListener('click', function (e) {
+         e.stopPropagation();
+      }, true); // keep it open if clicking drowndown contents
+
+   };
+   manageDrop();
+</script>
+
+
+
+
+<script>
+   // Javascript to enable link to tab
+   // Adapted from https://codepen.io/ciprian/pen/WEwPop
+
+   // find page hash
+   var hash = document.location.hash;
+   var hashString = hash.replace('#', '');
+   var tabLinks = document.querySelectorAll('.gb-nav a');
+   var sections = document.querySelectorAll('.gb-tab');
+
+   for (var i = 0; i < tabLinks.length; i++) {
+      // if hash matches guidebook a tab link, mark tab active
+      // if has is empty, make first tab active
+      if (tabLinks[i].getAttribute('href') == hash) {
+         $(tabLinks[i]).addClass('is-active')
+         $(document.getElementById(hashString)).show()
+      } if (hash == '') {
+         $(tabLinks[0]).addClass('is-active')
+         $(sections[0]).show()
+      }
+
+      // add click toggle to each links
+      tabLinks[i].addEventListener('click', function (e) {
+         // Remove active class from all links then add it to the one clicked
+         tabLinks.forEach(el => el.removeAttribute('class'))
+
+         // Hide all content tabs by default
+         for (var j = 0; j < sections.length; j++) {
+            sections[j].style.display = 'none';
+         }
+
+         // mark clicked link active
+         // return href value of clicked link as a string
+         // then show the tab content with matching ID
+         $(this).addClass('is-active')
+         var tabID = this.getAttribute('href').replace('#', '');
+         $(document.getElementById(tabID)).show()
+
+         // prevent default behavior of jumping to anchor point
+         e.preventDefault();
+         history.pushState({}, "", this.href);
+
+      })
+   };
+</script>
