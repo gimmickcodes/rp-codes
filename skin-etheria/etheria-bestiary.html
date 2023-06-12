@@ -226,7 +226,7 @@
                </div>
 
 
-               <div class="bes-filters flexrow">
+               <div class="bes-filters">
                   <div class="bes-filters-title">Sort by:</div>
                   <ul class="bes-filter-list sort-by-button-group flexrow">
                      <button type="button" data-sort-by="beastname" class="selected">A-Z</button>
@@ -397,13 +397,13 @@
 
 
    $(document).ready(function () {
-      var $container = $(".bes_isotope"); // the container with all the elements to filter inside
+      var $containerOne = $(".bes_isotope"); // the $container with all the elements to filter inside
       var filters = {};
 
       /* --- read the documentation on isotope.metafizzy.co for more options --- */
-      var $grid = $container.isotope({
+      var $grid = $containerOne.isotope({
          itemSelector: ".beasttab", // the elements to filter
-         percentPosition: false, // true if you use percentage widths
+         percentPosition: true, // true if you use percentage widths
 
          getSortData: {
             // make all lowercase, so uppercase does not come first
@@ -432,12 +432,21 @@
 
       });
 
+
+
+
+
+
+
+
+
       // sort items on button click
       $('.sort-by-button-group').on('click', 'button', function () {
          $(".sort-by-button-group").find(".selected").removeClass("selected");
          $(this).addClass("selected");
          var sortByValue = $(this).attr('data-sort-by');
          $grid.isotope({ sortBy: sortByValue });
+         $gridTwo.isotope({ sortBy: sortByValue });
       });
 
 
@@ -495,6 +504,9 @@
             $defaults.addClass(activeClass);
          }
          $grid.isotope({
+            filter: comboFilter
+         });
+         $gridTwo.isotope({
             filter: comboFilter
          });
          e.preventDefault();

@@ -5762,8 +5762,6 @@ a.anchor {
 
 .bes_tabbox::-webkit-scrollbar {
    width: var(--insetgap) !important;
-   height: 4px;
-   border: 0;
 }
 
 .bes_tabbox::-webkit-scrollbar-thumb {
@@ -5894,8 +5892,8 @@ a.anchor {
 
    .bestiarybody {
       grid-template:
+         'beastnav'
          'beast'
-         'beastnav' 200px
          / 1fr;
    }
 
@@ -5907,16 +5905,9 @@ a.anchor {
       width: 100%;
    }
 
-   .beastpage {
-      grid-template:
-         'img'
-         'info' / 1fr;
-      border-right: 0;
-   }
 
    .besheader-intro {
-      margin: 0;
-      padding: 20px;
+      padding: 56px 20px;
    }
 
    .bes-pages {
@@ -5924,7 +5915,11 @@ a.anchor {
    }
 
    .beastpage {
-      padding: 20px 24px;
+      grid-template:
+         'img'
+         'info' / 1fr;
+      border-right: 0;
+      padding: 32px 24px;
       overflow: auto;
       height: calc(100% - var(--insetgap));
    }
@@ -5946,16 +5941,41 @@ a.anchor {
    }
 
    .beast-img img {
-      max-height: 300px;
+      height: unset;
+      aspect-ratio: 3/2;
    }
 
    .bes_tabbox {
-      border-top: 1px solid var(--bordercolor);
+      border-bottom: 4px solid hsl(var(--accent2-med) / .4);
       height: 100%;
+      max-height: 200px;
    }
 
    .beasttab {
       padding: 16px calc(16px + var(--insetgap));
+      width: 50%;
+   }
+
+   .beasttab,
+   .beasttab:not(:first-child) {
+      padding: 16px 24px;
+   }
+
+   .beasttab:nth-child(odd) {
+      border-right: 1px solid var(--bordercolor);
+   }
+
+   .beasttab:nth-child(even) {
+      padding-left: 16px;
+   }
+
+   .beasttab img {
+      width: 40px;
+      height: 40px;
+   }
+
+   .bes_tabbox::-webkit-scrollbar {
+      width: 4px !important;
    }
 }
 
