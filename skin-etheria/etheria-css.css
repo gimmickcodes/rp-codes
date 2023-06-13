@@ -5520,6 +5520,7 @@ a.anchor {
       'bestiarybody' / 1fr;
    overflow: hidden;
    border: 1px solid var(--bordercolor);
+   margin-bottom: 40px;
 }
 
 
@@ -5547,7 +5548,7 @@ a.anchor {
 .bestiarybody {
    grid-area: bestiarybody;
    display: grid;
-   grid-template: 'beast beastnav' 436px / 1fr 280px;
+   grid-template: 'beast beastnav' 432px / 1fr 280px;
 }
 
 .besheader-intro {
@@ -5597,7 +5598,7 @@ a.anchor {
    align-items: center;
    gap: 8px 12px;
    border-top: 1px solid var(--bordercolor);
-   padding: 12px calc(32px + var(--insetgap)) 14px;
+   padding: 12px calc(24px + var(--insetgap)) 14px;
    font: var(--sans10);
    letter-spacing: .2em;
    text-transform: uppercase;
@@ -5652,6 +5653,10 @@ a.anchor {
    color: hsl(var(--accent2-light));
 }
 
+#bes-anchor {
+   top: -160px
+}
+
 .bes-pages {
    grid-area: beast;
 }
@@ -5659,7 +5664,7 @@ a.anchor {
 .beastpage {
    position: absolute;
    display: grid;
-   grid-template: 'info img' / 50% 50%;
+   grid-template: 'info img' / 1fr 1fr;
    height: calc(100%);
    opacity: 0;
    z-index: 0;
@@ -5673,19 +5678,34 @@ a.anchor {
 
 .beast-info {
    grid-area: info;
-   padding: 32px 32px calc(24px + var(--insetgap));
-   overflow: auto;
-   height: calc(100% - var(--insetgap));
    border-right: 1px solid var(--bordercolor);
+   height: calc(100% - var(--insetgap));
+   overflow: hidden;
+}
+
+.beast-infoinner {
+   padding: 32px 32px calc(24px + var(--insetgap));
+   height: 100%;
+   overflow-y: auto;
+   overflow-x: hidden;
+   transform: translateY(-200px);
+   opacity: 0;
+   transition: .5s ease;
+}
+
+.bestiarywrap_active .beast-infoinner {
+   transform: translateX(0);
+   opacity: 1;
 }
 
 .beast-info-title {
    font: italic var(--serif30);
    color: hsl(var(--accent1-med));
+   margin-bottom: .25em;
 }
 
 .beast-info-stat {
-   margin: 1em 0;
+   margin: .75em 0;
    font: 400 var(--sans10);
    text-transform: uppercase;
    letter-spacing: .1em;
@@ -5693,6 +5713,7 @@ a.anchor {
 
 .beast-info-stat b {
    font-weight: 700;
+   color: hsl(var(--accent1-med));
 }
 
 .beast-info-desc {
@@ -5705,11 +5726,11 @@ a.anchor {
    color: hsl(var(--accent1-med));
 }
 
-
 .beast-img {
    grid-area: img;
    padding: 32px 32px calc(32px + var(--insetgap));
    background: hsl(var(--black) / .1);
+   overflow: hidden;
 }
 
 .beast-img::before {
@@ -5731,6 +5752,16 @@ a.anchor {
    height: 100%;
    object-fit: cover;
    object-position: center;
+   box-shadow: 0 20px 40px #00000050;
+
+   transform: translateY(200px);
+   opacity: 0;
+   transition: .5s ease;
+}
+
+.bestiarywrap_active .beast-img img {
+   transform: translateY(0);
+   opacity: 1;
 }
 
 .bes_tabbox {
@@ -5738,6 +5769,10 @@ a.anchor {
    height: calc(100% - var(--insetgap));
    overflow: auto;
    border-left: 1px solid var(--bordercolor);
+}
+
+.bestiarybody ::-webkit-scrollbar-thumb {
+   background: hsl(var(--accent2-med) / .25);
 }
 
 .bestiarybody ::-webkit-scrollbar-track {
@@ -5761,6 +5796,7 @@ a.anchor {
    border-bottom: 1px solid var(--bordercolor);
    transition: .3s ease;
    cursor: pointer;
+   height: 101px;
 }
 
 .beasttab:not(:first-child) {
@@ -5782,111 +5818,99 @@ a.anchor {
    margin-bottom: 2px;
 }
 
-.beasttab-desc {
-   font: var(--sans10);
-   text-transform: uppercase;
-   letter-spacing: .1em;
-   color: hsl(var(--gray2));
-}
-
 .beasttab.bestiarywrap_active {
-   content: '';
-   background: hsl(var(--accent2-med) / .1);
-   background: hsl(var(--main) / 1);
-   box-shadow: inset 0 0 2px 0px hsl(var(--accent2-med));
+   background: hsl(var(--gray1) / .5);
+   box-shadow: inset 4px 0 0 0px hsl(var(--accent2-med));
 }
 
 .beasttab-colorband {
+   position: absolute;
    bottom: 0;
    right: 0;
-   width: 80%;
-   position: absolute;
-   height: 30%;
-   background: linear-gradient(to left, hsl(var(--grp1) / .5), transparent);
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(140deg, transparent, transparent 80%, hsl(var(--grp1) / 0) 80%, hsl(var(--grp1) / 0.5) 100%);
    z-index: 0;
-   /* clip-path: polygon(100% 0%, 100% 50px, calc(100% - 50px) 100px); */
 }
 
-.beasttab-colorband::before {
+.beasttab-colorband::after {
    position: absolute;
-   /* left: 94px; */
    right: 10px;
    bottom: 16px;
-   font-size: 18px;
+   font-size: 17px;
+   color: hsl(var(--accent1-med));
+   opacity: .5;
 }
 
-.beastrarity {
+.beast-filter-rarity {
    display: none;
 }
 
-.rarity1 .beasttab-colorband::before,
-.rarity1 .rarity::after {
+.beast-info-title::after {
+   position: absolute;
+   text-align: right;
+   right: -50px;
+   z-index: 20;
+   font-size: 48px;
+   font-style: normal;
+   color: hsl(var(--accent1-med));
+   opacity: .1;
+}
+
+.rarity1 :where(.beast-info-title, .beasttab-colorband)::after {
    content: '☆';
-   margin-right: 4px;
 }
 
-.rarity2 .beasttab-colorband::before,
-.rarity2 .rarity::after {
+.rarity2 :where(.beast-info-title, .beasttab-colorband)::after {
    content: '☆☆';
-   margin-right: 4px;
 }
 
-.rarity3 .beasttab-colorband::before,
-.rarity3 .rarity::after {
+.rarity3 :where(.beast-info-title, .beasttab-colorband)::after {
    content: '☆☆☆';
-   margin-right: 4px;
 }
 
-.rarity4 .beasttab-colorband::before,
-.rarity4 .rarity::after {
+.rarity4 :where(.beast-info-title, .beasttab-colorband)::after {
    content: '☆☆☆☆';
-   margin-right: 4px;
 }
 
-.rarity5 .beasttab-colorband::before,
-.rarity5 .rarity::after {
+.rarity5 :where(.beast-info-title, .beasttab-colorband)::after {
    content: '☆☆☆☆☆';
-   margin-right: 4px;
 }
 
 
-
-.nativeAmethyst .beasttab-desc::before,
-.nativeAmethyst .native::after {
-   content: 'Amethyst';
+.amethyst :where(.native)::after {
+   content: ' Amethyst';
 }
 
-.nativeDiamond .beasttab-desc::before,
-.nativeDiamond .native::after {
-   content: 'Diamond';
+.diamond :where(.native)::after {
+   content: ' Diamond';
 }
 
-.Jade .beasttab-desc::before,
-.Jade .native::after {
-   content: 'Jade';
+.jade :where(.native)::after {
+   content: ' Jade';
 }
 
-.nativeOnyx .beasttab-desc::before,
-.nativeOnyx .native::after {
-   content: 'Onyx';
+.onyx :where(.native)::after {
+   content: ' Onyx';
 }
 
-.nativePearl .beasttab-desc::before,
-.nativePearl .native::after {
-   content: 'Pearl';
+.pearl :where(.native)::after {
+   content: ' Pearl';
 }
 
-.nativeRuby .beasttab-desc::before,
-.nativeRuby .native::after {
-   content: 'Ruby';
+.ruby :where(.native)::after {
+   content: ' Ruby';
 }
 
-.nativeSapphire .beasttab-desc::before,
-.nativeSapphire .native::after {
-   content: 'Sapphire';
+.sapphire :where(.native)::after {
+   content: ' Sapphire';
 }
 
 @media only screen and (max-width: 800px) {
+   #bes-anchor {
+      top: -200px;
+   }
+
    #bestiarywrap {
       grid-template:
          "bestiaryheader" auto
@@ -5908,18 +5932,18 @@ a.anchor {
       width: 100%;
    }
 
-
    .besheader-intro {
-      padding: 56px 20px;
+      padding: 56px 20px 40px;
    }
 
    .bes-pages {
       height: 400px;
+      background: hsl(var(--main));
    }
 
    .beastpage {
       grid-template:
-         'img'
+         'img' auto
          'info' / 1fr;
       border-right: 0;
       padding: 32px 24px;
@@ -5928,15 +5952,23 @@ a.anchor {
    }
 
    .beast-info {
-      border-right: 0;
-      padding: 0;
-      height: unset;
-      overflow: unset;
+      all: unset;
+   }
+
+   .beast-info-title::after {
+      top: 0;
+      right: 0;
+      font-size: 32px;
+   }
+
+   .beast-infoinner {
+      all: unset;
    }
 
    .beast-img {
       padding: 0 0 16px;
       background: unset;
+      overflow: unset;
    }
 
    .beast-img::before {
@@ -5946,35 +5978,34 @@ a.anchor {
    .beast-img img {
       height: unset;
       aspect-ratio: 3/2;
+      transform: none;
    }
 
    .bes_tabbox {
-      border-bottom: 4px solid hsl(var(--accent2-med) / .4);
+      border-bottom: 2px solid hsl(var(--accent2-med) / .4);
+      border-bottom: 2px solid var(--bordercolor);
       height: 100%;
       max-height: 200px;
-   }
-
-   .beasttab {
-      padding: 16px calc(16px + var(--insetgap));
-      width: 50%;
+      background: hsl(var(--darkgray));
    }
 
    .beasttab,
    .beasttab:not(:first-child) {
-      padding: 16px 24px;
+      height: 73px;
+      padding: 16px calc(16px + var(--insetgap));
    }
 
-   .beasttab:nth-child(odd) {
-      border-right: 1px solid var(--bordercolor);
-   }
-
-   .beasttab:nth-child(even) {
-      padding-left: 16px;
+   .beasttab.bestiarywrap_active {
+      box-shadow: inset var(--insetgap) 0 0 0px hsl(var(--accent2-med));
    }
 
    .beasttab img {
       width: 40px;
       height: 40px;
+   }
+
+   .beasttab-colorband::after {
+      right: 20px;
    }
 
    .bes_tabbox::-webkit-scrollbar {

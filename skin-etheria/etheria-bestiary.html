@@ -215,24 +215,24 @@
             <div class="bestiaryheader flexcol">
                <div class="besheader-intro ">
                   <div class="besheader-title">Bestiary <small>of</small> Etheria</div>
-                  <div class="besheader-desc">The Seven Jeweled Courts are home to many kinds of flora of fauna. From small animals to large beasts, beautiful flowers to deadly fungi—there is a lot to research and explore. Below is what you might find as you travel the continent.</div>
+                  <div class="besheader-desc">The Seven Jeweled Courts are home to many kinds of unique fauna. From small animals to large beasts, beautiful flowers to deadly fungi—there is much to research and explore. Below is what you might find as you travel the continent.</div>
                   <div class="besheader-legend">
-                     <div>★ <b>Common</b></div>
-                     <div>★★ <b>Uncommon</b></div>
-                     <div>★★★ <b>Rare</b></div>
-                     <div>★★★★ <b>Very rare</b></div>
-                     <div>★★★★★ <b>Mythical</b></div>
+                     <div>☆ <b>Common</b></div>
+                     <div>☆☆ <b>Uncommon</b></div>
+                     <div>☆☆☆ <b>Rare</b></div>
+                     <div>☆☆☆☆ <b>Very rare</b></div>
+                     <div>☆☆☆☆☆ <b>Mythical</b></div>
                   </div>
                </div>
-
 
                <div class="bes-filters">
                   <div class="bes-filters-title">Sort by:</div>
                   <ul class="bes-filter-list sort-by-button-group flexrow">
-                     <button type="button" data-sort-by="beastname" class="selected">A-Z</button>
+                     <button type="button" data-sort-by="" class="selected">Default</button>
+                     <button type="button" data-sort-by="beastname">A-Z</button>
                      <button type="button" data-sort-by="beastnamereverse">Z-A</button>
-                     <button type="button" data-sort-by="mostcommon">Most common</button>
                      <button type="button" data-sort-by="mostrare">Most rare</button>
+                     <button type="button" data-sort-by="mostcommon">Most common</button>
                   </ul>
                </div>
 
@@ -241,132 +241,141 @@
                   <ul class="bes-filter-list option-set bes-rarity flexrow" data-filter-group="rarity">
                      <li data-filter-value="" class="filter-reset selected">Show all</li>
                      <span>|</span>
-                     <li data-filter-value=".rarity1">★</li>
-                     <li data-filter-value=".rarity2">★★</li>
-                     <li data-filter-value=".rarity3">★★★</li>
-                     <li data-filter-value=".rarity4">★★★★</li>
-                     <li data-filter-value=".rarity5">★★★★★</li>
+                     <li data-filter-value=".rarity1">☆</li>
+                     <li data-filter-value=".rarity2">☆☆</li>
+                     <li data-filter-value=".rarity3">☆☆☆</li>
+                     <li data-filter-value=".rarity4">☆☆☆☆</li>
+                     <li data-filter-value=".rarity5">☆☆☆☆☆</li>
                      <span>|</span>
-                     <li data-filter-value=".Amethyst">Amethyst</li>
-                     <li data-filter-value=".Diamond">Diamond</li>
-                     <li data-filter-value=".Jade">Jade</li>
-                     <li data-filter-value=".Onyx">Onyx</li>
-                     <li data-filter-value=".Pearl">Pearl</li>
-                     <li data-filter-value=".Ruby">Ruby</li>
-                     <li data-filter-value=".Sapphire">Sapphire</li>
+                     <li data-filter-value=".amethyst">Amethyst</li>
+                     <li data-filter-value=".diamond">Diamond</li>
+                     <li data-filter-value=".jade">Jade</li>
+                     <li data-filter-value=".onyx">Onyx</li>
+                     <li data-filter-value=".pearl">Pearl</li>
+                     <li data-filter-value=".ruby">Ruby</li>
+                     <li data-filter-value=".sapphire">Sapphire</li>
                   </ul>
-
                </div>
 
             </div>
+
+
             <div class="bestiarybody">
 
                <div class="bes-pages">
+                  <div id="bes-anchor"></div>
 
-                  <section class="beastpage bestiarywrap_active rarity1 nativeJade">
+                  <!-------------------- START OF BEAST INFO. MUST BE IN THE SAME ORDER AS TABS -------------------->
+
+                  <section class="beastpage rarity5 jade bestiarywrap_active">
                      <div class="beast-info">
-                        <div class="beast-info-title">Name</div>
-                        <div class="beast-info-stat rarity"><b>Rarity</b><span class="beastrarity">1</span></div>
-                        <div class="beast-info-stat native"><b>habitat</b> </div>
-                        <div class="beast-info-stat"><b>Products</b> item item item</div>
-                        <div class="beast-info-desc">
-                           The Amethian Phoenix, a sacred bird in the eyes of Shina, adorns itself with resplendent feathers of gold and purple. Revered for its ethereal allure, this mythical creature has eluded capture for years. Its golden feathers and eggs hint at its Gilded nature, possibly imbued with extraordinary etherial potential. With a mere flap of its wings, the Amethian Phoenix invokes waves of purple flames, mysteriously sparing the forest it calls home while reducing perceived threats to ash. Remarkably resilient, it appears impervious to physical harm, regenerating swiftly from any injuries inflicted upon it. Coveted and sought after, only feathers and egg shells have been retrieved from this elusive creature. Its feathers possess unparalleled regenerative properties, offering rejuvenation and vitality. Similarly, the egg shells found in an abandoned nest were found to have wondrous potential for regeneration.
+                        <div class="beast-infoinner">
+                           <div class="beast-stars"></div>
+                           <div class="beast-info-title">Name</div>
+                           <div class="beast-info-stat native"><b>Habitat:</b></div>
+                           <div class="beast-info-stat"><b>Products:</b> item item item</div>
+                           <div class="beast-info-desc">
+                              The Amethian Phoenix, a sacred bird in the eyes of Shina, adorns itself with resplendent feathers of gold and purple. Revered for its ethereal allure, this mythical creature has eluded capture for years. Its golden feathers and eggs hint at its Gilded nature, possibly imbued with extraordinary etherial potential. With a mere flap of its wings, the Amethian Phoenix invokes waves of purple flames, mysteriously sparing the forest it calls home while reducing perceived threats to ash. Remarkably resilient, it appears impervious to physical harm, regenerating swiftly from any injuries inflicted upon it. Coveted and sought after, only feathers and egg shells have been retrieved from this elusive creature. Its feathers possess unparalleled regenerative properties, offering rejuvenation and vitality. Similarly, the egg shells found in an abandoned nest were found to have wondrous potential for regeneration.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="beast-img">
+                        <img src="https://media.discordapp.net/attachments/1115792718958960731/1116206158626164756/paxpaxpaxpax_salamander_monster_newt_monster_tentacles_swamp_in_56a28560-4f7e-497a-ac6f-2b8eb588ddd5.png?width=874&height=874">
+                     </div>
+                  </section>
+
+                  <section class="beastpage rarity3 ruby">
+                     <div class="beast-info">
+                        <div class="beast-infoinner">
+                           <div class="beast-stars"></div>
+                           <div class="beast-info-title">Name 2</div>
+                           <div class="beast-info-stat native"><b>Habitat:</b></div>
+                           <div class="beast-info-stat"><b>Products:</b> item item item</div>
+                           <div class="beast-info-desc">
+                              Description
+                           </div>
                         </div>
                      </div>
                      <div class="beast-img"><img src="https://media.discordapp.net/attachments/1115792718958960731/1116206158626164756/paxpaxpaxpax_salamander_monster_newt_monster_tentacles_swamp_in_56a28560-4f7e-497a-ac6f-2b8eb588ddd5.png?width=874&height=874"></div>
                   </section>
 
 
-                  <section class="beastpage rarity3 nativeRuby">
+                  <section class="beastpage rarity5 sapphire">
                      <div class="beast-info">
-                        <div class="beast-info-title">john</div>
-                        <div class="beast-info-rarity">Rating: <span class="beastrarity">1</span></div>
-                        <div class="beast-info-native">Native to: </div>
-                        <div class="beast-info-desc">Hi</div>
-                        <div class="beast-info-products">Products</div>
+                        <div class="beast-infoinner">
+                           <div class="beast-stars"></div>
+                           <div class="beast-info-title">Name 3</div>
+                           <div class="beast-info-stat native"><b>Habitat:</b></div>
+                           <div class="beast-info-stat"><b>Products:</b> item item item</div>
+                           <div class="beast-info-desc">
+                              Description
+                           </div>
+                        </div>
                      </div>
                      <div class="beast-img"><img src="https://media.discordapp.net/attachments/1115792718958960731/1116206158626164756/paxpaxpaxpax_salamander_monster_newt_monster_tentacles_swamp_in_56a28560-4f7e-497a-ac6f-2b8eb588ddd5.png?width=874&height=874"></div>
                   </section>
 
-
-                  <section class="beastpage rarity5 nativeSapphire">
-                     <div class="beast-info">
-                        <div class="beast-info-title">Name 3</div>
-                        <div class="beast-info-rarity">Rating: <span class="beastrarity">1</span></div>
-                        <div class="beast-info-native">Native to: </div>
-                        <div class="beast-info-desc">Hi</div>
-                        <div class="beast-info-products">Products</div>
-                     </div>
-                     <div class="beast-img"><img src="https://media.discordapp.net/attachments/1115792718958960731/1116206158626164756/paxpaxpaxpax_salamander_monster_newt_monster_tentacles_swamp_in_56a28560-4f7e-497a-ac6f-2b8eb588ddd5.png?width=874&height=874"></div>
-                  </section>
-
-
+                  <!-------------------- END OF BEAST INFO -------------------->
 
                </div>
 
                <div class="bes_tabbox">
                   <div class="bes_isotope">
 
-                     <div class="beasttab bestiarywrap_active rarity4 Jade">
+                     <!-------------------- START OF BEAST TABS. MUST BE IN THE SAME ORDER AS INFO -------------------->
+
+                     <a class="beasttab rarity5 jade bestiarywrap_active" href="#bes-anchor">
                         <img src="https://media.discordapp.net/attachments/1115792718958960731/1116206158626164756/paxpaxpaxpax_salamander_monster_newt_monster_tentacles_swamp_in_56a28560-4f7e-497a-ac6f-2b8eb588ddd5.png?width=874&height=874">
                         <div class="beasttab-title">
                            <div>Name</div>
-                           <div class="beasttab-desc">
-                              <span class="beastrarity">4</span>
-                           </div>
+                           <span class="beast-filter-rarity">5</span>
                         </div>
                         <div class="beasttab-colorband"></div>
-                     </div>
+                     </a>
 
-                     <div class="beasttab rarity3 Ruby">
+                     <a class="beasttab rarity3 ruby" href="#bes-anchor">
                         <img src="https://media.discordapp.net/attachments/1115792350313201815/1116782298453528726/280x280_River_Serpent.png?width=560&height=560">
                         <div class="beasttab-title">
-                           john
-                           <div class="beasttab-desc">
-                              <span class="beastrarity">3</span>
-                           </div>
+                           Name 2
+                           <span class="beast-filter-rarity">3</span>
                         </div>
                         <div class="beasttab-colorband"></div>
-                     </div>
+                     </a>
 
-                     <div class="beasttab rarity5 Sapphire">
+                     <a class="beasttab rarity5 sapphire" href="#bes-anchor">
                         <img src="https://media.discordapp.net/attachments/1115792350313201815/1116782298453528726/280x280_River_Serpent.png?width=560&height=560">
                         <div class="beasttab-title">
                            Name 3
-                           <div class="beasttab-desc">
-                              <span class="beastrarity">5</span>
-                           </div>
+                           <span class="beast-filter-rarity">5</span>
                         </div>
                         <div class="beasttab-colorband"></div>
-                     </div>
+                     </a>
 
-                     <div class="beasttab rarity3 Sapphire">
+                     <a class="beasttab rarity1 amethyst" href="#bes-anchor">
                         <img src="https://media.discordapp.net/attachments/1115792350313201815/1116782298453528726/280x280_River_Serpent.png?width=560&height=560">
                         <div class="beasttab-title">
                            Name 4
-                           <div class="beasttab-desc">
-                              <span class="beastrarity">3</span>
-                           </div>
+                           <span class="beast-filter-rarity">1</span>
                         </div>
                         <div class="beasttab-colorband"></div>
-                     </div>
+                     </a>
 
-                     <div class="beasttab rarity2 Sapphire">
+                     <a class="beasttab rarity2 pearl" href="#bes-anchor">
                         <img src="https://media.discordapp.net/attachments/1115792350313201815/1116782298453528726/280x280_River_Serpent.png?width=560&height=560">
                         <div class="beasttab-title">
                            Name 5
-                           <div class="beasttab-desc">
-                              <span class="beastrarity">2</span>
-                           </div>
+                           <span class="beast-filter-rarity">2</span>
                         </div>
                         <div class="beasttab-colorband"></div>
-                     </div>
+                     </a>
 
+                     <!-------------------- END OF BEAST TABS -------------------->
 
                   </div>
-
                </div>
+
             </div>
+
          </div>
 
 
@@ -422,8 +431,8 @@
                var beastnamereverse = $(itemElem).find(".beasttab-title").text();
                return beastnamereverse.toLowerCase();
             },
-            mostrare: ".beastrarity parseInt",
-            mostcommon: ".beastrarity parseInt",
+            mostrare: ".beast-filter-rarity parseInt",
+            mostcommon: ".beast-filter-rarity parseInt",
 
          },
 
