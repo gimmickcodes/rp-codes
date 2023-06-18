@@ -71,6 +71,10 @@ td.darkrow2 {
    height: 4px;
 }
 
+.small a:not(:first-of-type) {
+   margin: 0 3px;
+}
+
 /****************************************
    Top table bars / gradient holders 
 *****************************************/

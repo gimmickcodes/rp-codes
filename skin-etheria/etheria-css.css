@@ -3453,6 +3453,8 @@ div.maintitle {
 .maintitle+.postlinksbar {
    margin-top: -56px;
    margin-bottom: 3em;
+   width: fit-content;
+   float: right;
 }
 
 .postrow-header {
@@ -4886,6 +4888,7 @@ body ::-webkit-scrollbar-thumb {
       margin-top: .5em;
       margin-bottom: 1em;
       text-align: left !important;
+      float: none;
    }
 
    .postrow-body {
@@ -5701,20 +5704,34 @@ a.anchor {
 .beast-info-title {
    font: italic var(--serif30);
    color: hsl(var(--accent1-med));
-   margin-bottom: .25em;
+   margin-bottom: .5em;
 }
 
-.beast-info-stat {
+.beast-info-stat,
+.beast-info-stat.native::after {
    margin: .75em 0;
    font: 400 var(--sans10);
    text-transform: uppercase;
    letter-spacing: .1em;
 }
 
-.beast-info-stat b {
+.beast-info-stat b,
+.beast-info-stat.native::before {
    font-weight: 700;
    color: hsl(var(--accent1-med));
 }
+
+.beast-info-stat.native::before {
+   content: 'Habitat:';
+}
+
+/* .beast-info-stat.native::after {
+   display: inline-block;
+   border-radius: 2px;
+   padding: 1px 4px;
+   margin-left: 4px;
+   background: hsl(var(--grp2) / .5);
+} */
 
 .beast-info-desc {
    margin-top: 1em;
@@ -5835,7 +5852,7 @@ a.anchor {
 
 .beasttab-colorband::after {
    position: absolute;
-   right: 10px;
+   right: 16px;
    bottom: 16px;
    font-size: 17px;
    color: hsl(var(--accent1-med));
@@ -5849,12 +5866,12 @@ a.anchor {
 .beast-info-title::after {
    position: absolute;
    text-align: right;
-   right: -50px;
+   right: -44px;
    z-index: 20;
    font-size: 48px;
    font-style: normal;
-   color: hsl(var(--accent1-med));
-   opacity: .1;
+   color: hsl(var(--grp2));
+   opacity: .2;
 }
 
 .rarity1 :where(.beast-info-title, .beasttab-colorband)::after {
@@ -5876,7 +5893,6 @@ a.anchor {
 .rarity5 :where(.beast-info-title, .beasttab-colorband)::after {
    content: '☆☆☆☆☆';
 }
-
 
 .amethyst :where(.native)::after {
    content: ' Amethyst';
@@ -5952,7 +5968,8 @@ a.anchor {
    }
 
    .beast-info {
-      all: unset;
+      overflow: unset;
+      border-right: none;
    }
 
    .beast-info-title::after {
@@ -5979,6 +5996,7 @@ a.anchor {
       height: unset;
       aspect-ratio: 3/2;
       transform: none;
+      opacity: 1;
    }
 
    .bes_tabbox {
