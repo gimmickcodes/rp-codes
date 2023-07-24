@@ -43,7 +43,8 @@
    --paperdark: #C6C1B5;
    --blackish: #413737;
 
-   --blackishnav: #413737;
+   --blackish: #3c4a42;
+   --blackishnav: #3c4a42;
 
    --green: #62736A;
    --greendark: #4C5952;
@@ -90,7 +91,7 @@
 
 html {
    background: var(--blackish);
-   background: #a9a59c;
+   /* background: #a9a59c; */
 }
 
 .grp-pointed {
@@ -632,6 +633,9 @@ h3 .shape {
 .plinth {
    width: calc(100%);
    height: 30px;
+   margin-bottom: -30px;
+   z-index: 10;
+   position: relative;
    display: flex;
    justify-content: space-between;
    background: url('plinth_repeat.png') center;
@@ -658,6 +662,7 @@ h3 .shape {
 
 .upsidedown {
    transform: scale(-1);
+   margin-top: -30px;
 }
 
 .bodyinner {
