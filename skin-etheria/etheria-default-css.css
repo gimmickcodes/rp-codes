@@ -831,13 +831,13 @@ label {
 
 @media only screen and (max-width: 800px) {
 
-   table.ucptable,
-   .ucptable :where(thead, tbody, tr),
+   :is(#UserCP, #Msg) table,
+   :is(#UserCP, #Msg) :where(thead, tbody, tr),
    #posting-form,
    #posting-form :where(thead, tbody, tr),
-   table.store,
-   .store :where(thead, tbody, tr),
-   table.threadfunctions,
+   #store table,
+   #store :where(thead, tbody, tr),
+   .threadfunctions,
    .threadfunctions :where(td) {
       display: block;
    }
@@ -867,7 +867,7 @@ label {
       display: block;
    }
 
-   #ucpcontent .store td {
+   #store #ucpcontent td {
       display: table-cell;
    }
 
@@ -889,12 +889,50 @@ label {
       display: none;
    }
 
-
    .threadfunctions td {
       width: calc(100vw - 24px) !important;
    }
 
    .threadfunctions td:first-of-type {
       margin-bottom: 20px;
+   }
+
+   /* Registration page styling for mobile */
+   #Reg .tablepad {
+      padding: 0;
+   }
+
+   #Reg tbody tr {
+      display: flex;
+      flex-flow: column nowrap;
+      width: 100%;
+      line-height: 150%;
+   }
+
+   #Reg fieldset table tr {
+      flex-flow: row nowrap;
+   }
+
+   #Reg fieldset table tr td {
+      display: flex;
+   }
+
+   #Reg fieldset table tr td input {
+      width: 100%;
+   }
+
+   #Reg td,
+   #Reg select {
+      width: 100% !important;
+   }
+
+   #Reg fieldset {
+      box-sizing: border-box;
+      border: 0px;
+      border-bottom: 1px solid;
+   }
+
+   #Reg td[width='12'] {
+      display: none;
    }
 }

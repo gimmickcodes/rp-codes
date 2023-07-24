@@ -2647,7 +2647,7 @@ a.topic-title {
    color: hsl(var(--grp2))
 }
 
-.app-name::first-letter {
+.app-name span {
    font-feature-settings: 'ss01' off, 'ss12' on;
 }
 

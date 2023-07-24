@@ -43,6 +43,8 @@
    --paperdark: #C6C1B5;
    --blackish: #413737;
 
+   --blackishnav: #413737;
+
    --green: #62736A;
    --greendark: #4C5952;
    --greenlight: #87928B;
@@ -56,8 +58,8 @@
    --borderColor: var(--green);
    --linkaccent: var(--brick);
    --frameoffset: 0px;
-   --navgradient: linear-gradient(to right, var(--blackish) 50%, rgba(0, 0, 0, 0) 80%);
-   --navgradient: var(--blackish);
+   --navgradient: linear-gradient(to right, var(--blackishnav) 50%, rgba(0, 0, 0, 0) 80%);
+   --navgradient: var(--blackishnav);
    /* For hero */
    --fontHero: 'AcademyEngravedStd';
    /* --fontHero: 'Macondo Swash Caps', arial; */
@@ -289,7 +291,7 @@ a.navbar-open,
 a.navbar-close {
    font: inherit;
    letter-spacing: 1px;
-   background: var(--blackish);
+   background: var(--blackishnav);
    border: 1px solid var(--paperdark);
    display: inline-block;
    padding: 6px 8px;
@@ -324,7 +326,7 @@ a.mobilenav i {
    min-width: 480px;
    height: 100%;
    text-align: right;
-   color: var(--paper);
+   color: var(--blackish);
    display: flex;
    flex-direction: column;
    align-items: flex-end;
@@ -1709,15 +1711,15 @@ a:hover [id='scoopplot']+use {
 }
 
 .forumrow:nth-child(1) .location_photo {
-   background-image: url(https://media.discordapp.net/attachments/683720444796338317/962457325392777317/250x400-fuwaminato-02.png);
+   background-image: url(https://media.discordapp.net/attachments/1027906385847009280/1095441314520236032/size-1.jpg?width=1702&height=794);
 }
 
 .forumrow:nth-child(2) .location_photo {
-   background-image: url(https://media.discordapp.net/attachments/683720444796338317/957773562943524914/250x400-fuwaminato-03.png);
+   background-image: url(https://images-ext-1.discordapp.net/external/9kyOtVtI1kuSlHq7nRriz8kcsd6mThzbQbE_YIJkn5U/%3F1636132525/https/cdna.artstation.com/p/assets/images/images/043/044/170/large/-433333.jpg?width=1906&height=794);
 }
 
 .forumrow:nth-child(3) .location_photo {
-   background-image: url(https://media.discordapp.net/attachments/683720444796338317/944687216062509157/250x400-fuwaminato-01.png?width=546&height=872);
+   background-image: url(https://images-ext-2.discordapp.net/external/9qm1SNu8GBaXc6Dhog3XIL4NvpMFLuTitRIpm85sy4o/%3F1615965568/https/cdnb.artstation.com/p/assets/images/images/035/811/343/large/wei-z-.jpg?width=1412&height=794);
 }
 
 
