@@ -53,11 +53,11 @@
    /* images */
    --texture-h: url(assets-final/texture-h.png);
    --texture-v: url(assets-final/texture-v.png);
-   --hero-bg: url(assets-final/d-hero-bg.png);
-   --hero: url(assets-final/hero.png);
-   --archivesbg: url(assets-final/archivesbg.png);
-   --gbfbg: url(assets-final/guidebookbg.png);
-   --factionsbg: url(assets-final/factionsbg.png);
+   --hero-bg: url(assets-final/Teal/archivesbg.png);
+   --hero: url(assets-final/Teal/hero.png);
+   --gbfbg: url(assets-final/Teal/guidebookbg.png);
+   --factionsbg: url(assets-final/Teal/factionsbg.png);
+   --archivesbg: url(assets-final/Teal/archivesbg.png);
 
    /* blend modes */
    --lighten: lighten;
@@ -1469,9 +1469,6 @@ a.loc-title div {
    transition: .5s;
 }
 
-.location-imgcol a:hover {
-   /* opacity: 0; */
-}
 
 .amethysttab .location:nth-child(1),
 .amethysttab .location:nth-child(1) .loc-info,
@@ -3129,8 +3126,6 @@ biogrid.sidebar :where(h3, h4):first-child {
    margin-left: -24px;
 }
 
-.tracker-col {}
-
 .tracker-title {
    font: italic 600 var(--serif24);
    color: hsl(var(--grp2));
@@ -3140,7 +3135,6 @@ biogrid.sidebar :where(h3, h4):first-child {
    margin: 1em 0;
 }
 
-.tracker-item.empty {}
 
 .status {
    position: absolute;
@@ -3159,9 +3153,9 @@ biogrid.sidebar :where(h3, h4):first-child {
 .status.locked {}
 
 
-@-webkit-keyframes ping {
+@keyframes ping {
 
-   0,
+   0%,
    50% {
       transform: scale(.8);
    }
@@ -4378,7 +4372,7 @@ body ::-webkit-scrollbar-thumb {
       height: auto;
       grid-template: '.' 200px
          'forum' /1fr;
-      background: linear-gradient(to bottom, transparent, hsl(var(--main)) 300px), var(--gbfbg) top -200px center / cover no-repeat, hsl(var(--main));
+      background: linear-gradient(to bottom, transparent, hsl(var(--main)) 300px), var(--gbfbg) top -200px left 20% / cover no-repeat, hsl(var(--main));
    }
 
    .gbf-inner {
@@ -4748,8 +4742,6 @@ body ::-webkit-scrollbar-thumb {
       margin: 20px auto 40px;
       width: fit-content;
    }
-
-   .app-hover {}
 
    .app-side-info {
       display: none;
@@ -5461,6 +5453,10 @@ a.anchor {
    #claims-table-headers,
    .positions-table {
       width: calc(100vw - 108px);
+   }
+
+   .positions-table-item {
+      width: 100vw;
    }
 
    .claims-table-item {
