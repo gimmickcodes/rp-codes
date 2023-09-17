@@ -5083,8 +5083,7 @@ body ::-webkit-scrollbar-thumb {
 }
 
 .postcontent img {
-   display: block;
-   width: 100%;
+   max-width: 100%;
 }
 
 [class*="temp"] h2 {
@@ -5534,7 +5533,6 @@ a.anchor {
    background: hsl(var(--grp2));
    opacity: 0.5;
    mix-blend-mode: hue;
-   z-index: 3;
 }
 
 .post6-inner {
