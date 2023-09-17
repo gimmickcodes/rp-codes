@@ -5050,7 +5050,6 @@ body ::-webkit-scrollbar-thumb {
       padding: 28px 28px;
    }
 
-
    .journaldate {
       flex-direction: column;
       gap: 4px;
@@ -5409,7 +5408,7 @@ a.anchor {
 
 .post4-header {
    height: 80px;
-   background: hsl(var(--grp1)/.2);
+   background: hsl(var(--grp2)/.1);
    overflow: hidden;
 }
 
