@@ -12,6 +12,10 @@
    border-bottom: 1px solid var(--bordercolor);
 }
 
+#post-preview .row1 {
+   background: hsl(var(--main));
+}
+
 .activeuserstrip+.row2 {
    font: 400 var(--sans12);
 }
