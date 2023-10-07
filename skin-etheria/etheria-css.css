@@ -5498,7 +5498,7 @@ a.anchor {
    background: url(https://images-ext-1.discordapp.net/external/aqI3HwTDHQk8yOvbj9DoFPy8JFDHB451csUiPyZZrvM/https/i.imgur.com/hfcSool.png?width=1410&height=264);
    background-position: center;
    background-size: cover;
-   filter: grayscale(1);
+   filter: grayscale(.7);
    opacity: .6;
 }
 
@@ -5569,7 +5569,7 @@ a.anchor {
    background: url(https://images-ext-1.discordapp.net/external/aqI3HwTDHQk8yOvbj9DoFPy8JFDHB451csUiPyZZrvM/https/i.imgur.com/hfcSool.png?width=1410&height=264);
    background-position: center;
    background-size: cover;
-   filter: grayscale(1);
+   filter: grayscale(.7);
    opacity: .6;
 }
 
