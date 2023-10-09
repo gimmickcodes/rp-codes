@@ -5473,19 +5473,7 @@ a.anchor {
    margin: 0 auto 28px;
    width: calc(100% - 0*var(--insetgap));
    height: 130px;
-   background: hsl(var(--darkgray));
-}
-
-.post5-banner::after {
-   content: '';
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: hsl(var(--grp1));
-   opacity: .05;
-   mix-blend-mode: color;
+   background: hsl(var(--gray1));
 }
 
 .post5-banner::before {
@@ -5498,9 +5486,32 @@ a.anchor {
    background: url(https://images-ext-1.discordapp.net/external/aqI3HwTDHQk8yOvbj9DoFPy8JFDHB451csUiPyZZrvM/https/i.imgur.com/hfcSool.png?width=1410&height=264);
    background-position: center;
    background-size: cover;
-   filter: grayscale(.7);
-   opacity: .6;
+   mix-blend-mode: multiply;
 }
+
+.post5-banner::after,
+.post6-banner::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: hsl(var(--grp2));
+   opacity: .1;
+   mix-blend-mode: color;
+}
+
+.light-theme .post5-banner,
+.light-theme .post6-banner {
+   background: hsl(var(--darkgray));
+}
+
+.light-theme .post5-banner::before,
+.light-theme .post6-banner::before {
+   opacity: .8;
+}
+
 
 .post5-body {
    padding: calc(32px + var(--insetgap)) calc(32px + var(--insetgap)) calc(40px + var(--insetgap));
@@ -5508,7 +5519,8 @@ a.anchor {
 
 .posttemp6 {
    z-index: 0;
-   padding: 0 64px 0 16px;
+   display: grid;
+   grid-template: 'gap1 inner gap2' auto / 16px 1fr 64px;
    border: 1px solid var(--bordercolor);
    background: hsl(var(--darkgray));
 }
@@ -5541,6 +5553,7 @@ a.anchor {
 }
 
 .post6-inner {
+   grid-area: inner;
    z-index: 10;
    background: linear-gradient(to bottom, hsl(var(--grp1) / 0.1) 80%, hsl(var(--grp1) / .1)), linear-gradient(to top, hsl(var(--darkgray)), hsl(var(--darkgray)));
    background: hsl(var(--darkgray));
@@ -5556,7 +5569,7 @@ a.anchor {
 .post6-banner {
    width: 100%;
    height: 130px;
-   background: hsl(var(--darkgray));
+   background: hsl(var(--gray1));
 }
 
 .post6-banner::before {
@@ -5570,7 +5583,7 @@ a.anchor {
    background-position: center;
    background-size: cover;
    filter: grayscale(.7);
-   opacity: .6;
+   mix-blend-mode: multiply;
 }
 
 .post6-body {
@@ -5888,7 +5901,16 @@ a.anchor {
    }
 
    .posttemp6 {
-      padding: 0 8px;
+      grid-template:
+         'inner' auto
+         'gap2' 64px
+         / 1fr;
+   }
+
+   .post6-inner {
+      border: 0;
+      border-top: 1px solid var(--bordercolor);
+      border-bottom: 1px solid var(--bordercolor);
    }
 
    .post6-header {
@@ -5903,8 +5925,20 @@ a.anchor {
       padding: 16px 16px 28px;
    }
 
-   .posttemp6 .flavortext,
-   .posttemp7 .flavortext {
+   .posttemp6 .flavortext {
+      writing-mode: unset;
+      text-orientation: mixed;
+      white-space: unset;
+      right: 0;
+      bottom: -64px;
+      width: 100%;
+      min-width: 0;
+      height: 64px;
+      padding: 0 24px;
+      justify-content: flex-end;
+   }
+
+   .posttemp6 .flavortext::before {
       display: none;
    }
 
@@ -5925,6 +5959,10 @@ a.anchor {
    .post7-body {
       width: 100%;
       padding: 24px 24px 32px;
+   }
+
+   .posttemp7 .flavortext {
+      display: none;
    }
 
    .imggrid {
