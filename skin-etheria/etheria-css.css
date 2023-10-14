@@ -5082,9 +5082,12 @@ body ::-webkit-scrollbar-thumb {
    padding: 48px 48px;
 }
 
-.postcontent img {
+.postcontent img,
+[class*="temp"] img {
+   display: block;
    max-width: 100%;
 }
+
 
 [class*="temp"] h2 {
    margin: 1.5em 0 0px;
@@ -5122,6 +5125,10 @@ body ::-webkit-scrollbar-thumb {
 
 [class*='temp'] blockquote2 :where(ul, ol) {
    padding-left: 1.25em;
+}
+
+[class*='temp'] blockquote :where(ul, ol) {
+   padding-left: calc(1.25em - 2px);
 }
 
 [class*=temp] ul {
@@ -5824,23 +5831,20 @@ a.anchor {
    text-decoration-style: dotted;
 }
 
-.accordion {
-   margin-top: -10px;
-   margin-bottom: 20px;
-}
-
 .accordion-label,
 [class*=posttemp] .accordion-label {
    display: flex;
    position: relative;
+   padding: 12px 0 14px;
    justify-content: space-between;
-   margin: 24px 0 0;
-   padding-bottom: 12px;
-   border-bottom: 1px solid var(--bordercolor);
    color: hsl(var(--grp2));
    font-weight: 600;
    transition: .3s ease;
    cursor: pointer;
+}
+
+.accordion+.accordion .accordion-label {
+   border-top: 1px solid var(--bordercolor);
 }
 
 .accordion.active .accordion-label,
@@ -5850,8 +5854,10 @@ a.anchor {
 
 .accordion-content {
    height: 0;
+   padding: 12px 16px;
+   margin-bottom: 1em;
    box-sizing: border-box;
-   margin-bottom: 30px;
+   background: hsl(var(--grp2)/.05);
    overflow: hidden;
    display: none;
 }
@@ -5859,8 +5865,6 @@ a.anchor {
 .accordion.active .accordion-content {
    height: fit-content;
    display: block;
-   background: hsl(var(--grp1)/.1);
-   padding: 12px 16px;
 }
 
 .accordion .accordion-label::after {
