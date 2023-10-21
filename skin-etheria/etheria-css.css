@@ -5426,6 +5426,10 @@ a.anchor {
    color: hsl(var(--grp2)/ .5);
 }
 
+.light-theme .post4-tarot::before {
+   background: hsl(var(--permwhite)/.5);
+}
+
 .post4-tarot {
    position: absolute;
    right: -5%;
@@ -5534,7 +5538,8 @@ a.anchor {
 }
 
 .posttemp6::before,
-.post7-sidebar::before {
+.post7-sidebar::before,
+.post8-sidebar::before {
    content: '';
    position: absolute;
    width: 100%;
@@ -5548,7 +5553,8 @@ a.anchor {
 }
 
 .posttemp6::after,
-.post7-sidebar::after {
+.post7-sidebar::after,
+.post8-sidebar::after {
    content: '';
    position: absolute;
    width: 100%;
@@ -5606,7 +5612,8 @@ a.anchor {
    display: none;
 }
 
-.posttemp6 .flavortext {
+.posttemp6 .flavortext,
+.posttemp8 .flavortext {
    position: absolute;
    bottom: 0;
    right: -64px;
@@ -5628,12 +5635,17 @@ a.anchor {
    min-width: 0;
 }
 
+.posttemp8 .flavortext {
+   height: 100%;
+}
+
 .flavortext a {
    display: inline;
    color: hsl(var(--grp2)) !important;
 }
 
-.posttemp6 .flavortext::before {
+.posttemp6 .flavortext::before,
+.posttemp8 .flavortext::before {
    content: '';
    flex: 1 0 auto;
    width: .5px;
@@ -5751,6 +5763,28 @@ a.anchor {
    background: hsl(var(--black)/ .25);
    padding: 6px 10px;
 }
+
+.posttemp8 {
+   display: grid;
+   grid-template:
+      'body sidebar' auto / 1fr 64px;
+   background: hsl(var(--darkgray));
+   border: 1px solid var(--bordercolor);
+   overflow: hidden;
+}
+
+.post8-body {
+   grid-area: body;
+   padding: 40px 48px 40px 40px;
+}
+
+.post8-sidebar {
+   grid-area: sidebar;
+   border-left: 1px solid var(--bordercolor);
+   padding: 40px 0;
+}
+
+
 
 [class*=posttemp] :is(b, color, em, h1, h2, h3, h4, h5) {
    color: hsl(var(--grp2));
@@ -5949,7 +5983,7 @@ a.anchor {
    }
 
    .post5-body {
-      padding: calc(12px + var(--insetgap)) 24px 32px;
+      padding: calc(16px + var(--insetgap)) 24px 32px;
    }
 
    .posttemp6 {
@@ -5976,7 +6010,8 @@ a.anchor {
       padding: 16px 16px 28px;
    }
 
-   .posttemp6 .flavortext {
+   .posttemp6 .flavortext,
+   .posttemp8 .flavortext {
       writing-mode: unset;
       text-orientation: mixed;
       white-space: unset;
@@ -5989,7 +6024,8 @@ a.anchor {
       justify-content: flex-end;
    }
 
-   .posttemp6 .flavortext::before {
+   .posttemp6 .flavortext::before,
+   .posttemp8 .flavortext::before {
       display: none;
    }
 
@@ -6014,6 +6050,23 @@ a.anchor {
 
    .posttemp7 .flavortext {
       display: none;
+   }
+
+   .posttemp8 {
+      grid-template:
+         'body'
+         'sidebar';
+   }
+
+   .post8-body {
+      padding: 24px;
+   }
+
+   .post8-sidebar {
+      height: 64px;
+      padding: 0 24px;
+      border-left: 0;
+      border-top: 1px solid var(--bordercolor)
    }
 
    .imggrid {
