@@ -705,7 +705,9 @@ td.right a {
    text-align: left;
 }
 
-
+#topic_open+.bar>div:first-child {
+   z-index: 5;
+}
 
 /****************************************
   PAGINATION

@@ -737,11 +737,10 @@ button.colortoggle {
 .bp-nav-label {
    display: flex;
    gap: 12px;
-   font: 300 var(--sans8);
+   font: 400 var(--sans8);
    letter-spacing: .25em;
    text-transform: uppercase;
    color: hsl(var(--gray3));
-   opacity: .5;
    cursor: pointer;
    transition: opacity .25s;
 }
@@ -798,7 +797,7 @@ button.colortoggle {
 
 .bp-body {
    grid-area: bpbody;
-   background: hsl(var(--gray1) / .3);
+   background: hsl(var(--gray1) / .4);
    backdrop-filter: blur(12.5px);
    -webkit-backdrop-filter: blur(12.5px);
    overflow: hidden;
@@ -980,7 +979,6 @@ button.colortoggle {
    margin-top: -32px;
 }
 
-
 #navstrip {
    border-top: 1px solid var(--bordercolor);
    padding: 8px 0 24px;
@@ -1001,6 +999,27 @@ button.colortoggle {
    padding-right: 8px; */
 }
 
+a.mobile-jump-bottom {
+   display: none;
+}
+
+@media only screen and (max-width: 800px) {
+   a.mobile-jump-bottom {
+      position: fixed;
+      z-index: 50;
+      bottom: 60px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      background: hsl(var(--darkgray));
+      border: 1px solid var(--bordercolor);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: hsl(var(--gray3));
+   }
+}
 
 /***********************************
  HOME FUNDAMENTALS
@@ -2626,6 +2645,16 @@ a.topic-title {
    color: hsl(var(--gray2));
 }
 
+.app-badges {
+   gap: 8px;
+}
+
+.app-badges img {
+   margin-top: 16px;
+   width: 18px;
+   object-fit: cover;
+}
+
 .app-name {
    font: var(--norman56);
    font-variation-settings: "wght" 520;
@@ -3604,8 +3633,7 @@ div.maintitle {
 
 .postrow-dateband {
    grid-area: dateband;
-   padding: var(--insetgap);
-   padding-left: 28px;
+   padding: var(--insetgap) 28px;
    background: hsl(var(--darkgray));
    border-top: 1px solid var(--bordercolor);
    border-bottom: 1px solid var(--bordercolor);
@@ -3613,6 +3641,9 @@ div.maintitle {
    font: var(--sans10);
    letter-spacing: .1em;
    text-transform: uppercase;
+
+   display: flex;
+   justify-content: space-between;
 }
 
 .postrow-dateband a {
@@ -4957,7 +4988,7 @@ body ::-webkit-scrollbar-thumb {
    }
 
    .postrow-dateband {
-      padding: var(--insetgap) 8px;
+      padding: var(--insetgap) calc(10px + var(--insetgap));
    }
 
    .postrow-dateband .flexrow {
@@ -6007,7 +6038,7 @@ a.anchor {
    }
 
    .post6-body {
-      padding: 16px 16px 28px;
+      padding: 24px 16px 28px;
    }
 
    .posttemp6 .flavortext,
