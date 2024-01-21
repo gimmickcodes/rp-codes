@@ -4473,45 +4473,54 @@ TEMPLATES
 
                     <!-- PRINCIPAL TABLE USER -->
                     <section tag="principal_tablon" class="flex_row">
-                        <img src="./UN_MASKED_files/thekoswog-20-4.jpg">
-                        <h1>Welcome, <a href="https://unmskd.jcink.net/index.php?showuser=0" style="border: none; animation: none; background: none;">
-                                <t>Guest</t>
-                            </a></h1>
-                        <resume><a href="https://unmskd.jcink.net/index.php?showuser=0" style="background: none; border: none; animation: none;"></a> </resume>
-                        <div><a href="https://unmskd.jcink.net/index.php">home</a> <a href="https://unmskd.jcink.net/?act=Pages&amp;pid=2">guidebook</a> <a href="https://unmskd.jcink.net/index.php?act=UserCP&amp;CODE=01">ucp</a> <a href="https://unmskd.jcink.net/index.php?act=UserCP&amp;CODE=alerts" data-new="0" class="group-2"> notifications</a> <a href="http://discord.gg/Unmasked">discord</a></div>
-                    </section>
+                        <img src="https://cdna.artstation.com/p/assets/images/images/066/065/550/large/thekoswog-20-4.jpg">
+                        <h1>Welcome, <a href="/index.php?showuser=130" style="border: none; animation: none; background: none;">
+                                <t>John Doe</t>
+                            </a><span id="subaccounts_menu">
+                                <form action="https://unmskd.jcink.net/index.php?&amp;act=Login&amp;CODE=01&amp;CookieDate=1" name="subswitch" method="POST">
+                                    <input type="hidden" name="auth_key" value="3192be60cc513584e7e8614accd7659b">
+                                    <input type="hidden" name="UserName" value="subacct">
+                                    <input type="hidden" name="PassWord" value="subacct">
+                                    <input type="hidden" name="referer" value="">
+                                    <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                                        <option value="------------" selected="selected">Switch Account</option>
 
+                                    </select>
+                                </form>
+                            </span></h1>
+                        <resume><a href="/index.php?showuser=130" style="background: none; border: none; animation: none;"><img src="https://i.ibb.co/gRg1tKq/Default-Ac.png" border="0" width="800" height="800" alt=""></a> </resume>
+                        <div><a href="https://unmskd.jcink.net/index.php">home</a> <a href="?act=Pages&amp;pid=2">guidebook</a> <a href="https://unmskd.jcink.net/index.php?act=UserCP&amp;CODE=01">ucp</a> <a href="/index.php?act=UserCP&amp;CODE=alerts" data-new="0" class="group-4">0 notifications</a> <a href="http://discord.gg/Unmasked">discord</a></div>
+                    </section>
                     <div style="display:none">
                         <script language="JavaScript" type="text/javascript">
-                            <!-
-                            function buddy_pop() { window.open('index.php?act=buddy&s=d0fa197bf5dd280eae86a13c5aabf8be','BrowserBuddy','width=250,height=500,resizable=yes,scrollbars=yes'); }
-                            function chat_pop(cw,ch)  { window.open('index.php?s=d0fa197bf5dd280eae86a13c5aabf8be&act=chat&pop=1','Chat','width='+cw+',height='+ch+',resizable=yes,scrollbars=yes'); }
-                            function multi_page_jump( url_bit, total_posts, per_page )
-                            {
-                            pages = 1; cur_st = parseInt(""); cur_page  = 1;
-                            if ( total_posts % per_page == 0 ) { pages = total_posts / per_page; }
-                             else { pages = Math.ceil( total_posts / per_page ); }
-                            msg = "Please enter a page number to jump to between 1 and" + " " + pages;
-                            if ( cur_st > 0 ) { cur_page = cur_st / per_page; cur_page = cur_page -1; }
-                            show_page = 1;
-                            if ( cur_page < pages )  { show_page = cur_page + 1; }
-                            if ( cur_page >= pages ) { show_page = cur_page - 1; }
-                             else { show_page = cur_page + 1; }
-                            userPage = prompt( msg, show_page );
-                            if ( userPage > 0  ) {
-                                if ( userPage < 1 )     {    userPage = 1;  }
-                                if ( userPage > pages ) { userPage = pages; }
-                                if ( userPage == 1 )    {     start = 0;    }
-                                else { start = (userPage - 1) * per_page; }
-                                window.location = url_bit + "&st=" + start;
+                            < !-
+                                function buddy_pop() { window.open('index.php?act=buddy&s=d0fa197bf5dd280eae86a13c5aabf8be', 'BrowserBuddy', 'width=250,height=500,resizable=yes,scrollbars=yes'); }
+                            function chat_pop(cw, ch) { window.open('index.php?s=d0fa197bf5dd280eae86a13c5aabf8be&act=chat&pop=1', 'Chat', 'width=' + cw + ',height=' + ch + ',resizable=yes,scrollbars=yes'); }
+                            function multi_page_jump(url_bit, total_posts, per_page) {
+                                pages = 1; cur_st = parseInt(""); cur_page = 1;
+                                if (total_posts % per_page == 0) { pages = total_posts / per_page; }
+                                else { pages = Math.ceil(total_posts / per_page); }
+                                msg = "Please enter a page number to jump to between 1 and" + " " + pages;
+                                if (cur_st > 0) { cur_page = cur_st / per_page; cur_page = cur_page - 1; }
+                                show_page = 1;
+                                if (cur_page < pages) { show_page = cur_page + 1; }
+                                if (cur_page >= pages) { show_page = cur_page - 1; }
+                                else { show_page = cur_page + 1; }
+                                userPage = prompt(msg, show_page);
+                                if (userPage > 0) {
+                                    if (userPage < 1) { userPage = 1; }
+                                    if (userPage > pages) { userPage = pages; }
+                                    if (userPage == 1) { start = 0; }
+                                    else { start = (userPage - 1) * per_page; }
+                                    window.location = url_bit + "&st=" + start;
+                                }
                             }
-                            }
-                            
-                            Collapse="<img alt='Collapse' title='Collapse' src='//files.jcink.net/themes/default/cat-collapse.png' />"
-                            Expand="<img alt='Expand' title='Expand' src='//files.jcink.net/themes/default/cat-expand.png' />"
-                            
-                            
-                            
+
+                            Collapse = "<img alt='Collapse' title='Collapse' src='//files.jcink.net/themes/default/cat-collapse.png' />"
+                            Expand = "<img alt='Expand' title='Expand' src='//files.jcink.net/themes/default/cat-expand.png' />"
+
+
+
                             //-->
                         </script>
 
