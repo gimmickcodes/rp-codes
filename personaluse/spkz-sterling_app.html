@@ -1,0 +1,1735 @@
+<!--------------------------------
+	SPEAKEASY
+	Skinned by Ninelie9s 
+	Please do not rip, copy, or steal
+---------------------------------->
+
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,700,0,200" />
+
+<body id="theme">
+
+   <!-- FORUM -->
+   <forum>
+      <boards style="padding: 50px 0;">
+         <profilemenu>
+            <input type="checkbox" name="lightmode" id="lightmode" onchange="toggleLightMode();">
+            <label for="lightmode">Toggle Light/Dark Mode</label>
+            <input type="checkbox" name="fontmode" id="fontmode" onchange="toggleFontMode();">
+            <label for="fontmode">Toggle Serif/Sans Serif</label>
+            <input type="radio" id="profile-unsorted" name="profile-group" checked />
+            <label id="profile-unsorted" for="profile-unsorted">Preview Unsorted Group</label>
+            <input type="radio" id="profile-pawn" name="profile-group" />
+            <label id="profile-pawn" for="profile-pawn">Preview Pawn Group</label>
+            <input type="radio" id="profile-knight" name="profile-group" />
+            <label id="profile-knight" for="profile-knight">Preview Knight Group</label>
+            <input type="radio" id="profile-bishop" name="profile-group" />
+            <label id="profile-bishop" for="profile-bishop">Preview Bishop Group</label>
+            <input type="radio" id="profile-rook" name="profile-group" />
+            <label id="profile-rook" for="profile-rook">Preview Rook Group</label>
+            <input type="radio" id="profile-queen" name="profile-group" />
+            <label id="profile-queen" for="profile-queen">Preview Queen Group</label>
+         </profilemenu>
+
+         <mainprofile class="profile-serif profile-unsorted">
+            <corners></corners>
+            <div class="main-profile-header">
+               <div class="header-topper">
+                  <div class="header-links">
+                     <a href="#" title="send message"><i class="ph-bold ph-telegram-logo"></i></a>
+                     <a href="#" title="find topics"><i class="ph-bold ph-article"></i></a>
+                     <a href="#" title="search posts"><i class="ph-bold ph-files"></i></a>
+                     <a href="#" title="view plotter"><i class="ph-bold ph-plant"></i></a>
+                     <a href="#" title="view development"><i class="ph-bold ph-potted-plant"></i></a>
+                     <a href="#" title="view wanted ad"><i class="ph-bold ph-binoculars"></i></a>
+                  </div>
+               </div>
+               <div class="overview-header">
+                  <div class="overview-icon"><img src="https://i.ibb.co/WDz7Hjq/image.png"></div>
+                  <div>
+                     <div class="overview-name">Inés Ortega-Cortez</div>
+                     <div class="overview-quote">For whom does the anthem sing? For whom does the music sound? hear the knell ofd</div>
+                     <div class="overview-info">
+                        <span>played by <b>ooc alias</b></span>
+                        <span>joined <b>21st dec 2023</b></span>
+                        <span>last seen <b>2nd may 2024 at 2:23pm</b></span>
+                        <span>currently <b>offline</b></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="main-profile-sidebar">
+               <div class="profile-sidebar-bg"></div>
+               <div class="main-profile-group">
+                  <small>player group</small>
+                  <big>
+                     <hr>Group
+                  </big>
+               </div>
+               <div class="main-profile-hover">
+                  <div class="hover-image" style="background-image:url('https://i.ibb.co/481xXX3/image.png');"></div>
+                  <div class="hover-overlay"></div>
+               </div>
+               <div class="main-profile-tabs">
+                  <input type="radio" id="profiletab1" name="profiletabs" checked />
+                  <label id="profiletab1" for="profiletab1" class="profile-tab">overview</label>
+                  <input type="radio" id="profiletab2" name="profiletabs" />
+                  <label id="profiletab2" for="profiletab2" class="profile-tab">background</label>
+                  <input type="radio" id="profiletab3" name="profiletabs" />
+                  <label id="profiletab3" for="profiletab3" class="profile-tab">freeform</label>
+                  <input type="radio" id="profiletab4" name="profiletabs" />
+                  <label id="profiletab4" for="profiletab4" class="profile-tab">player</label>
+                  <input type="radio" id="profiletab5" name="profiletabs" />
+                  <label id="profiletab5" for="profiletab5" class="profile-tab">tracker</label>
+               </div>
+            </div>
+            <div class="main-profile-wrap">
+               <profile class="profile-overview">
+                  <div class="overview-table">
+                     <overquery>
+                        <h1>Name</h1>Inés Valeria Ortega-Cortez
+                     </overquery>
+                     <overquery>
+                        <h1>Age</h1>34 years old
+                     </overquery>
+                     <overquery>
+                        <h1>Birthdate</h1>15th June, 2109
+                     </overquery>
+                     <overquery>
+                        <h1>Aliases / Nicknames</h1>Valerie
+                     </overquery>
+                     <overquery>
+                        <h1>Pronouns</h1>Feminine
+                     </overquery>
+                     <overquery>
+                        <h1>Sexuality</h1>Bisexual
+                     </overquery>
+                     <overquery>
+                        <h1>Residency</h1>Regent Hill
+                     </overquery>
+                     <overquery>
+                        <h1>Hometown</h1>Elysium City
+                     </overquery>
+                     <overquery>
+                        <h1>Citizenship</h1>New Delstan Empire
+                     </overquery>
+                     <overquery>
+                        <h1>Build</h1>5'4" / Willowy
+                     </overquery>
+                     <overquery>
+                        <h1>Occupation</h1>Celloist
+                     </overquery>
+                     <overquery>
+                        <h1>Organization</h1>The New Delstan Philharmonic Symphony
+                     </overquery>
+                  </div>
+                  <div class="overview-footer">
+                     <overquery>
+                        <h1>Posts</h1>23
+                     </overquery>
+                     <overquery>
+                        <h1>Réal</h1>✤250
+                     </overquery>
+                     <overquery>
+                        <h1>Face Claim</h1><b>Hildegar Aelius</b> from <i>The Spark In Your Eyes</i>
+                     </overquery>
+                  </div>
+                  <div class="overview-heading">Awards & Inventory</div>
+                  <div class="overview-awards">
+                     <img src="https://assets.codepen.io/2434198/skill_bundle_1.svg" title="Skill Bundle #1">
+                     <img src="https://assets.codepen.io/2434198/event_1.svg" title="Airway to Heaven (Site Event #1)">
+                  </div>
+               </profile>
+               <profile class="profile-background">
+
+                  <vr></vr><br>
+                  <h0>Reputation</h0><br>
+                  <br><br>
+
+
+                  <p>Something about the man.
+                  </p><br>
+
+                  <br>
+                  <h2>Businesses</h2><br>
+                  <p>To know the name Savoy is to invariably know their enterprises. Profit is their driving ethos, lifestyle their currency. Members are expected to xyz and Sterling is no different.</p><br>
+                  <quote>
+                     <h3>HOTEL [ KINGDOM] </h3>
+                     <p>Colloquially known as the Grand Savoy. What began as modest inn, a fortuitous proximity to the first transport hubs allowed to flourish and scale into one of Elysium City's premier luxury hotels. Outfitted with a ballroom, restaurants and stores, it’s a miniature world unto itself and serves as a popular venue for events. Patrons can come from anywhere provided they can afford it.
+                     </p><br>
+
+                     <h3>MAGAZINE [ TASTEMAKER ] </h3>
+                     <p>Take the Grand Savoy Hotel, colloquially known as the Grand Savoy. What began as modest inn, a fortuitous proximity to the first transport hubs allowed to flourish and scale into one of Elysium City's premier luxury hotels. Outfitted with a ballroom, restaurants and stores, it’s a miniature world unto itself and serves as a popular venue for events. Patrons can come from anywhere provided they can afford it.
+                     </p><br>
+                  </quote>
+
+
+                  <hr class="plain vertical" style="width: 1px; height: 100px; mask: none; background: var(--bordercolor);">
+
+                  <hr>
+                  <br>
+                  <h0>History</h0>
+
+                  <br><br>
+
+                  <p>Your mother was a rising star: a lounge singer in the days when stardom is a concept still in adolescence, her career ascending in parallel with the phrase 'celebrity culture'. Endowed with the looks, poise, and voice to make it big, she sought more glamor than countryside origins could provide; finds it in Elysium City in an succession of suitors, the sorts who fall in love at one glance, one song, and who make good on it with favors and flings.</p>
+                  <br>
+                  <p>Her popularity—their gifts—whet an appetite for luxury beyond the family's means—certainly beyond her willingness to moderate spendings or admit the fickleness upon which she depends.</p>
+                  <br>
+                  <p>In this way do you grow up at wealth's fringes, close enough to finger its trappings, see the spotlight gleaming off brooches and silver-gilt words; yet have as home everything the stage is not: close walls with crooked doorframes, shared hallways bleak as any other tenement housing.</p>
+                  <br>
+                  <p>By day you're another public school whelp in a system over full. Come evening, you accompany your mother as she tours lounges exclusive to the rich. You sit in bar corners and backstage of music halls while she gallivants and flirts and fritters away her prizes. More than once you return to the slums alone. This is what passes for supervision beside a starlet's knee, and you spend it with one eye on opulence out of reach even as necessity compels you to start managing her accounts.</p>
+                  <br>
+
+                  <p style="text-align: right;"><i>It didn't arrive easy, your keenness for numbers. But, perforce, it did come young.</i></p><br>
+
+                  <p>In time, she lands a recurring booking at the — Hotel, where her nightly shows draw nightly crowds. They draw, too, the eye of its hotelier until a rapturous affair, then freak accident, drops the building under her name. That she has no taste for management is no barrier. Enter X Savoy, who snaps it up eagerly in a whirlwind romance meets marriage of convenience.</p>
+                  <br>
+                  <p>From rags to riches, gutter to glamor. you'll do your damndest to fit in, but you’ll never lose your striver's sensibilities. Nowadays, while old-blood nobles make rounds through rarefied circles, it's your magazines that bring their customs and their fashions to the common forum, dictating the trends of the day. Raised by an aspirant yourself, you know what they crave: glimpses of wealth, visions for their ambition. You print these into dreams they can moonlight in with the turning of a page. You turn it into gold.</p><br>
+
+                  <br>
+                  <h2>Timeline</h2><br>
+                  <ul>
+                     <li>NAME Savoy — stepfather turned father by adoption. Family patriarch, hospitality titan.
+                     <li>NAME Savoy, née Silvas — mother. Famed lounge singer. XYZ's second and current wife.</li>
+                     <li>Sylvia Savoy — sister by adoption</li>
+                  </ul>
+
+
+                  <hr class="plain vertical" style="width: 1px; height: 100px; mask: none; background: var(--bordercolor);">
+
+                  <hr>
+                  <br>
+                  <h0>Family</h0>
+
+                  <br><br>
+                  <ul>
+                     <li>NAME Savoy — stepfather turned father by adoption. Family patriarch, hospitality titan.</li>
+                     <li>NAME Savoy, née Silvas — mother. Famed lounge singer. XYZ's second and current wife.</li>
+                     <li>Sylvia Savoy — sister by adoption</li>
+                  </ul><br>
+
+                  <br>
+                  <h2>Other Relations</h2><br>
+                  <ul>
+                     <li>Contacts</li>
+                  </ul>
+
+                  <br>
+
+                  <vr class="end"></vr>
+                  <br><br><br><br>
+
+
+
+
+                  <!-- DEFAULT -->
+                  <vr></vr><br>
+                  <h0>Title</h0><br>
+                  <hr><br>
+                  <hr class="end"><br>
+                  <hr class="plain"></br>
+                  <h1>Heading (h1)</h1><br>
+                  <h2>Subheading (h2)</h2><br>
+                  <h3>Caption (h3)</h3><br>
+                  <blockquote>Life is too short to be alone, too precious. Share it with a friend. Maybe there's a happy little bush that lives right there. Nothing wrong with washing your brush. Just go out and talk to a tree. Make friends with it. This is an example of what you can do with just a few things, a little imagination and a happy dream in your heart. Even the worst thing we can do here is good.</blockquote><br>
+                  <p>You're meant to have fun in life. Isn't it fantastic that you can change your mind and create all these happy things? If what you're doing doesn't make you happy - you're doing the wrong thing. With something so strong, a little bit can go a long way. If we're gonna walk though the woods, we need a little path.</p><br>
+                  <quote>And I will hypnotize that just a little bit. All you need is a dream in your heart, and an almighty knife. Now we'll take the almighty fan brush.</quote><br>
+                  <ol><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                  </ol><br>
+                  <ul><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                  </ul>
+                  <vr class="end"></vr>
+               </profile>
+               <profile class="profile-freeform">
+
+
+
+                  <vr></vr><br>
+                  <h0>Plots & Prompts</h0>
+                  <br><br>
+
+                  <ul><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                  </ul><br>
+
+                  <br>
+                  <h2>Places Frequented</h2><br>
+                  <p>Grand Savoy Hotel, district, district</p>
+
+                  <br>
+                  <hr class="plain vertical" style="width: 1px; height: 100px; mask: none; background: var(--bordercolor);">
+
+                  <hr>
+                  <br>
+                  <h0>Miscellany</h0>
+                  <br><br>
+
+                  <p>Tk</p>
+
+
+                  <br>
+                  <vr class="end"></vr>
+                  <br><br><br><br>
+
+
+
+                  <!-- DEFAULT -->
+
+                  <vr class="start"></vr><br>
+                  <h0>Title</h0><br>
+                  <hr><br>
+                  <hr class="end"><br>
+                  <h1>Heading (h1)</h1><br>
+                  <h2>Subheading (h2)</h2><br>
+                  <h3>Caption (h3)</h3><br>
+                  <blockquote>Life is too short to be alone, too precious. Share it with a friend. Maybe there's a happy little bush that lives right there. Nothing wrong with washing your brush. Just go out and talk to a tree. Make friends with it. This is an example of what you can do with just a few things, a little imagination and a happy dream in your heart. Even the worst thing we can do here is good.</blockquote><br>
+                  <p>You're meant to have fun in life. Isn't it fantastic that you can change your mind and create all these happy things? If what you're doing doesn't make you happy - you're doing the wrong thing. With something so strong, a little bit can go a long way. If we're gonna walk though the woods, we need a little path.</p><br>
+                  <quote>And I will hypnotize that just a little bit. All you need is a dream in your heart, and an almighty knife. Now we'll take the almighty fan brush.</quote><br>
+                  <ol><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                  </ol><br>
+                  <ul><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                     <li>List item</li><br>
+                  </ul>
+                  <vr class="end"></vr>
+               </profile>
+               <profile class="profile-player">
+                  <div class="player-alias">about <b>player</b></div>
+                  <div class="player-info">
+                     <overquery class="player-plotting">
+                        <h1>Plotting</h1>
+                        <pref class="yes">
+                           <p>Post in my shipper on-site</p>
+                        </pref>
+                        <pref class="yes">
+                           <p>Post in the Discord plotting channels</p>
+                        </pref>
+                        <pref class="no">
+                           <p>Don't contact me via DMs</p>
+                        </pref>
+                     </overquery>
+                     <overquery class="player-tagging">
+                        <h1>Tagging</h1>
+                        <pref class="yes">
+                           <p>Tag me on-site with <span class="tag-coded">@[Inés Ortega-Cortez]</span></p>
+                        </pref>
+                        <pref class="yes">
+                           <p>Tag me on the Discord's tagging channel</p>
+                        </pref>
+                     </overquery>
+                     <overquery class="player-content">
+                        <h1>Content</h1>
+                        <pref class="ask">
+                           <p>Please ask for mature threads</p>
+                        </pref>
+                        <pref class="no">
+                           <p>Please avoid the following topics: spiders, explicit violence, etc.</p>
+                        </pref>
+                     </overquery>
+                  </div>
+                  <div class="player-alias">Artwork <b>Credits</b></div>
+                  <div class="player-credits">
+                     <overquery>
+                        <h1>Icon Credit</h1>
+                        Answer Here
+                     </overquery>
+                     <overquery>
+                        <h1>Hover Credit</h1>
+                        Answer Here
+                     </overquery>
+                     <overquery>
+                        <h1>Other Credits</h1>
+                        n/a
+                     </overquery>
+                  </div>
+               </profile>
+               <profile class="profile-tracker">
+                  <div class="active">
+                     <h3>Ongoing</h3>
+                     <div id="tracker-wrap">
+                        <div class="tracker-item">
+                           <b>
+                              <span class="status caughtup" aria-described-by="Caught Up"><i class="ph-bold ph-check"></i></span>
+                              <a href="#">Thread topic</a>
+                           </b>
+                           <div class="tracker-desc">
+                              <span class="tracker-location">Entertainment District</span> <span class="tracker-threaddesc">Feat. Player Name</span><br><span class="tracker-lastpost">Last Post by <b>Inés Ortega-Cortez</b> on <u>May 21 2024, 11:05 PM</u></span>
+                           </div>
+                        </div>
+
+                        <div class="tracker-item">
+                           <b>
+                              <span class="status myturn" aria-described-by="My Turn"><i class="ph-bold ph-exclamation-mark"></i></span>
+                              <a href="#">Thread topic</a>
+                           </b>
+                           <div class="tracker-desc">
+                              <span class="tracker-location">Entertainment District</span> <span class="tracker-threaddesc">Feat. Player Name</span><br><span class="tracker-lastpost">Last Post by <b>Inés Ortega-Cortez</b> on <u>May 21 2024, 11:05 PM</u></span>
+                           </div>
+                        </div>
+
+                        <div class="tracker-item">
+                           <b>
+                              <span class="status caughtup" aria-described-by="Caught Up"><i class="ph-bold ph-check"></i></span>
+                              <a href="#">Thread topic</a>
+                           </b>
+                           <div class="tracker-desc">
+                              <span class="tracker-location">Entertainment District</span> <span class="tracker-threaddesc">Feat. Player Name</span><br><span class="tracker-lastpost">Last Post by <b>Inés Ortega-Cortez</b> on <u>May 21 2024, 11:05 PM</u></span>
+                           </div>
+                        </div>
+
+                        <div class="tracker-item">
+                           <b>
+                              <span class="status caughtup" aria-described-by="Caught Up"><i class="ph-bold ph-check"></i></span>
+                              <a href="#">Thread topic</a>
+                           </b>
+                           <div class="tracker-desc">
+                              <span class="tracker-location">Entertainment District</span> <span class="tracker-threaddesc">Feat. Player Name</span><br><span class="tracker-lastpost">Last Post by <b>Inés Ortega-Cortez</b> on <u>May 21 2024, 11:05 PM</u></span>
+                           </div>
+                        </div>
+
+                        <div class="tracker-item">
+                           <b>
+                              <span class="status caughtup" aria-described-by="Caught Up"><i class="ph-bold ph-check"></i></span>
+                              <a href="#">Thread topic</a>
+                           </b>
+                           <div class="tracker-desc">
+                              <span class="tracker-location">Entertainment District</span> <span class="tracker-threaddesc">Feat. Player Name</span><br><span class="tracker-lastpost">Last Post by <b>Inés Ortega-Cortez</b> on <u>May 21 2024, 11:05 PM</u></span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="archives">
+                     <h3>Archived</h3>
+                     <div id="tracker-wrap">
+                        <div class="tracker-item">
+                           <b>
+                              <span class="status locked" aria-described-by="Closed Thread"><i class="ph-bold ph-lock"></i></span>
+                              <a href="#">Thread topic</a>
+                           </b>
+                           <div class="tracker-desc">
+                              <span class="tracker-location">Entertainment District</span> <span class="tracker-threaddesc">Feat. Player Name</span><br><span class="tracker-lastpost">Last Post by <b>Inés Ortega-Cortez</b> on <u>May 21 2024, 11:05 PM</u></span>
+                           </div>
+                        </div>
+                        <div class="tracker-item">
+                           <b>
+                              <span class="status locked" aria-described-by="Closed Thread"><i class="ph-bold ph-lock"></i></span>
+                              <a href="#">Thread topic</a>
+                           </b>
+                           <div class="tracker-desc">
+                              <span class="tracker-location">Entertainment District</span> <span class="tracker-threaddesc">Feat. Player Name</span><br><span class="tracker-lastpost">Last Post by <b>Inés Ortega-Cortez</b> on <u>May 21 2024, 11:05 PM</u></span>
+                           </div>
+                        </div>
+                        <div class="tracker-item">
+                           <b>
+                              <span class="status locked" aria-described-by="Closed Thread"><i class="ph-bold ph-lock"></i></span>
+                              <a href="#">Thread topic</a>
+                           </b>
+                           <div class="tracker-desc">
+                              <span class="tracker-location">Entertainment District</span> <span class="tracker-threaddesc">Feat. Player Name</span><br><span class="tracker-lastpost">Last Post by <b>Inés Ortega-Cortez</b> on <u>May 21 2024, 11:05 PM</u></span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </profile>
+            </div>
+            <div title="go to skillsheet" class="skillsheet-link"><i class="ph ph-compass-rose"></i></div>
+            <div class="group-icon"></div>
+         </mainprofile>
+
+      </boards>
+   </forum>
+</body>
+
+<script>
+   //light/dark toggle code by FizzyElf - <a href="https://fizzyelf.jcink.net/" rel="nofollow noopener" target="_blank">https://fizzyelf.jcink.net/</a>
+   $("body").attr('data-lightmode', localStorage.getItem("lightmodeon"));
+   $("#lightmode").prop('checked', localStorage.getItem("lightmodeon"));
+
+   function toggleLightMode() {
+      localStorage.setItem("lightmodeon", $("#lightmode").prop('checked'));
+      $("body").attr('data-lightmode', localStorage.getItem("lightmodeon"));
+   }
+</script>
+
+<script>
+   $("mainprofile").attr("data-fontmode", localStorage.getItem("fontmodeon"));
+   $("#fontmode").prop("checked", localStorage.getItem("fontmodeon"));
+
+   function toggleFontMode() {
+      localStorage.setItem("fontmodeon", $("#fontmode").prop("checked"));
+      $("mainprofile").attr("data-fontmode", localStorage.getItem("fontmodeon"));
+   }
+</script>
+
+
+
+
+
+
+
+
+
+
+<style>
+   /* CUSTOM FONT */
+   @font-face {
+      font-family: "rosie_brown_serifregular";
+      src: url("https://assets.codepen.io/2434198/rosie_brown_serif-webfont.woff2") format("woff2"),
+         url("https://assets.codepen.io/2434198/rosie_brown_serif-webfont.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+   }
+
+   :root {
+      --bgimg: url("https://assets.codepen.io/2434198/background_dark_hires.png");
+      --banner: url("https://assets.codepen.io/2434198/dark_banner+image.png");
+
+      /* MAIN COLOURS */
+      --raisin: 42 42 42;
+      --bloodorange: 201 78 49;
+      --mandarin: 219 111 57;
+      --taupegrey: 183 175 159;
+      --seasalt: 231 219 203;
+
+      /* SECONDARY COLOURS */
+      --shadow: 29 29 29;
+      --copper: 153 121 94;
+      --slate: 115 115 114;
+      --struckgold: 250 179 59;
+      --glacier: 252 247 238;
+
+      --bordercolor: rgba(var(--slate) / 0.3);
+
+      /* MEMBER GROUP CLASSES */
+      --pawn: 153 121 94;
+      --knight: 149 59 46;
+      --bishop: 78 107 150;
+      --rook: 89 119 112;
+      --queen: 154 116 160;
+
+      /* FONTS */
+      --bodyserif: "Artifex CF", serif;
+      --bodysans: "Arimo", sans-serif;
+      --display: "rosie_brown_serifregular", serif;
+      --heading: "DM Serif Display", serif;
+      --subheading: "IBM Plex Serif", serif;
+      --condensed: "Roboto Condensed", sans-serif;
+      --mono: "IBM Plex Mono", monospace;
+      --geometric: "Jost", sans-serif;
+
+      /* TEXTURE */
+      --noise: url("https://assets.codepen.io/2434198/noise.png");
+      --wavy: url("https://assets.codepen.io/2434198/just-waves_black.png");
+      --wavyinv: url("https://assets.codepen.io/2434198/just-waves_white.png");
+
+      /* BOARD IMAGES */
+      --redirectbg: url("https://assets.codepen.io/2434198/dark_redirect_row_1.png");
+      --plotterbg: url("https://assets.codepen.io/2434198/plotterbg.png");
+      --factionbg: url("https://assets.codepen.io/2434198/factionbg_darkmode.png");
+   }
+
+   body#theme[data-lightmode="true"] {
+      --bgimg: url("https://assets.codepen.io/2434198/background_light_hires.png");
+      --banner: url("https://assets.codepen.io/2434198/light_banner+image.png");
+      --redirectbg: url("https://assets.codepen.io/2434198/light_redirect_row_1.png");
+      --plotterbg: url("https://assets.codepen.io/2434198/plotterbg_lightmode.png");
+      --factionbg: url("https://assets.codepen.io/2434198/factionbg_lightmode.png");
+   }
+
+   /* MEMBER GROUP CLASSES */
+   .pawn {
+      color: rgba(var(--pawn) / 1);
+   }
+
+   .knight {
+      color: rgba(var(--knight) / 1);
+   }
+
+   .bishop {
+      color: rgba(var(--bishop) / 1);
+   }
+
+   .rook {
+      color: rgba(var(--rook) / 1);
+   }
+
+   .queen {
+      color: rgba(var(--queen) / 1);
+   }
+
+   *,
+   *::before,
+   *::after {
+      box-sizing: border-box;
+   }
+
+   ::selection {
+      background: rgba(var(--bloodorange) / 0.25);
+      color: rgba(var(--seasalt));
+   }
+
+   body {
+      background-color: rgba(var(--raisin) / 1);
+      background-image: var(--bgimg);
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      font-family: var(--bodyserif);
+      color: rgba(var(--taupegrey) / 1);
+      font-size: 16px;
+   }
+
+   a:link,
+   a:visited {
+      color: rgba(var(--mandarin) / 1);
+      text-decoration: none;
+   }
+
+   a:hover {
+      color: rgba(var(--copper) / 1);
+   }
+
+   ::-webkit-scrollbar {
+      width: 9px;
+      background-color: rgba(var(--shadow) / 1);
+      border: 4px solid rgba(var(--shadow) / 1);
+   }
+
+   ::-webkit-scrollbar-track {
+      border: 4px solid rgba(var(--shadow) / 1);
+      background-color: rgba(var(--copper) / 0.25);
+   }
+
+   ::-webkit-scrollbar-thumb {
+      border-left: 4px solid rgba(var(--shadow) / 1);
+      border-right: 4px solid rgba(var(--shadow) / 1);
+      background-color: rgba(var(--bloodorange) / 0.5);
+   }
+
+   /* MAIN FORUMS */
+   boards {
+      display: block;
+      position: relative;
+      width: 1200px;
+      margin: 0 auto;
+   }
+
+   profilemenu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 0 50px 0;
+   }
+
+   profilemenu input {
+      display: none;
+   }
+
+   profilemenu label {
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 100%;
+      text-align: center;
+      margin-right: 20px;
+      background: rgba(var(--shadow));
+      padding: 5px;
+      color: rgba(var(--taupegrey) / 0.5);
+      border: 1px solid rgba(var(--bloodorange) / 0.25);
+   }
+
+   profilemenu input:checked+label {
+      border: 1px solid rgba(var(--bloodorange) / 0.5);
+      color: rgba(var(--seasalt));
+   }
+
+   profilemenu label:last-child {
+      margin: 0;
+   }
+
+   /* MAIN PROFILE STYLES */
+
+   .profile-unsorted {
+      --accent: 125 115 112;
+   }
+
+   .profile-pawn {
+      --accent: 153 121 94;
+   }
+
+   .profile-knight {
+      --accent: 149 59 46;
+   }
+
+   .profile-bishop {
+      --accent: 78 107 150;
+   }
+
+   .profile-rook {
+      --accent: 89 119 112;
+   }
+
+   .profile-queen {
+      --accent: 154 116 160;
+   }
+
+   .profile-serif {
+      --selectedfont: "Artifex CF", serif;
+   }
+
+   .profile-sans {
+      --selectedfont: "Arimo", sans-serif;
+   }
+
+   mainprofile {
+      position: relative;
+      display: grid;
+      grid-template-columns: 270px auto;
+      grid-template-rows: 360px 600px;
+      gap: 0px 0px;
+      grid-template-areas:
+         "main-profile-sidebar main-profile-header"
+         "main-profile-sidebar main-profile-wrap";
+      width: 100%;
+      background-color: rgba(var(--raisin));
+      background-image: var(--noise);
+      background-blend-mode: multiply;
+      border: 1px solid var(--bordercolor);
+      font-family: var(--selectedfont);
+      font-size: 16px;
+      line-height: 150%;
+      overflow: hidden;
+   }
+
+   mainprofile[data-fontmode="true"] {
+      --selectedfont: "Arimo", sans-serif;
+      font-size: 15px;
+   }
+
+   mainprofile {
+
+      a:link,
+      a:visited {
+         color: rgba(var(--accent));
+         transition: all ease 0.4s;
+      }
+
+      a:hover {
+         color: rgba(var(--taupegrey));
+      }
+   }
+
+   mainprofile::before {
+      content: "";
+      position: absolute;
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
+      border: 1px solid var(--bordercolor);
+      top: 20px;
+      left: 20px;
+      pointer-events: none;
+      z-index: 3;
+   }
+
+   corners {
+      position: absolute;
+      pointer-events: none;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+   }
+
+   corners::before,
+   corners::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-color: rgba(var(--accent) / 1) !important;
+   }
+
+   corners::before {
+      top: 18px;
+      left: 18px;
+      border-left: 5px solid;
+      border-top: 5px solid;
+   }
+
+   corners::after {
+      bottom: 18px;
+      right: 18px;
+      border-right: 5px solid;
+      border-bottom: 5px solid;
+   }
+
+   .group-icon {
+      position: absolute;
+      z-index: 1;
+      top: 125px;
+      left: 275px;
+      color: rgba(var(--accent));
+      opacity: 0.15;
+   }
+
+   .group-icon::before {
+      font-family: 'Speakeasy Icons';
+      font-size: 300px;
+   }
+
+   .profile-pawn .group-icon::before {
+      content: "\e906";
+   }
+
+   .profile-knight .group-icon::before {
+      content: "\e905";
+   }
+
+   .profile-bishop .group-icon::before {
+      content: "\e904";
+   }
+
+   .profile-rook .group-icon::before {
+      content: "\e908";
+   }
+
+   .profile-queen .group-icon::before {
+      content: "\e907";
+   }
+
+   .skillsheet-link {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      background: rgba(var(--raisin));
+      border: 1px solid var(--bordercolor);
+      backdrop-filter: blur(3px);
+      transition: all ease 0.4s;
+      z-index: 4;
+      cursor: pointer;
+   }
+
+   .skillsheet-link i {
+      font-size: 28px;
+      color: rgba(var(--accent) / 0.5);
+      transform: rotate(45deg);
+      transition: all ease 0.4s;
+   }
+
+   .skillsheet-link:hover {
+      background: rgba(var(--shadow) / 0.25);
+   }
+
+   .skillsheet-link:hover i {
+      color: rgba(var(--accent));
+   }
+
+   .main-profile-header {
+      position: relative;
+      grid-area: main-profile-header;
+      background-color: rgba(var(--shadow) / 0.25);
+      background-image: url('');
+      backgorund-size: cover;
+      padding: 20px 70px 50px 0px;
+      overflow: hidden;
+   }
+
+   .main-profile-header::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      top: 0px;
+      background: radial-gradient(circle at top left, rgba(var(--accent) / 0.2) 0, rgba(var(--accent) / 0) 50%, rgba(var(--accent) / 0) 100%);
+      pointer-events: none;
+   }
+
+   .header-topper {
+      position: relative;
+      z-index: 2;
+      height: 50px;
+      display: flex;
+      justify-content: flex-end;
+   }
+
+   .header-links {
+      display: inline-flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: rgba(var(--shadow) / 0.75);
+      border-radius: 0 0 0 30px;
+      padding-left: 10px;
+   }
+
+   .header-links a:link,
+   .header-links a:visited {
+      font-size: 20px;
+      display: grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      color: var(--bordercolor);
+      transition: all ease 0.4s;
+   }
+
+   .header-links a:hover {
+      color: rgba(var(--accent));
+   }
+
+   .overview-header {
+      display: grid;
+      grid-template-columns: 80px auto;
+      align-items: flex-start;
+      gap: 30px;
+      position: relative;
+      z-index: 2;
+      padding: 30px 50px 30px 90px;
+   }
+
+   .overview-icon {
+      position: relative;
+      display: block;
+      width: 80px;
+      height: 80px;
+      border: 7px solid rgba(var(--shadow));
+      border-radius: 50%;
+      box-shadow: 0px 0px 40px rgba(var(--accent) / 0.7);
+      background-size: cover !important;
+      background-color: rgba(var(--shadow));
+      overflow: hidden;
+   }
+
+   .overview-icon img {
+      position: relative;
+      width: 66px;
+      height: 66px;
+      filter: grayscale(1) contrast(1.5);
+      mix-blend-mode: lighten;
+   }
+
+   .overview-icon::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(var(--accent) / 0.75);
+      z-index: 2;
+      mix-blend-mode: multiply;
+   }
+
+   .overview-name {
+      color: rgba(var(--accent));
+      font-family: var(--display);
+      font-size: 72px;
+      line-height: 80%;
+      text-transform: lowercase;
+      padding-top: 15px;
+   }
+
+   .overview-name:first-letter {
+      text-transform: uppercase;
+   }
+
+   .overview-quote {
+      position: relative;
+      margin-top: 20px;
+      font-family: var(--subheading);
+      font-style: italic;
+      font-size: 16px;
+      color: rgba(var(--taupegrey) / 0.7);
+   }
+
+   .overview-quote::before {
+      content: "“";
+      font-style: normal !important;
+      font-size: 36px;
+      font-family: Times New Roman;
+      font-weight: 700;
+      line-height: 16px;
+      position: relative;
+      margin: 0 5px 0 0;
+      top: 10px;
+      color: rgba(var(--accent));
+   }
+
+   .overview-info {
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+   }
+
+   .overview-info span {
+      background: rgba(var(--shadow));
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 1px 7px 0px 8px;
+   }
+
+   .overview-info span b {
+      color: rgba(var(--accent));
+   }
+
+   .main-profile-sidebar {
+      grid-area: main-profile-sidebar;
+      position: relative;
+      background-color: rgba(var(--accent) / 0.1);
+      padding: 50px 30px 50px 70px;
+   }
+
+   .profile-sidebar-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      mask: url("https://assets.codepen.io/2434198/transparency_gradient.svg#Layer_2-2");
+      opacity: 0.2;
+   }
+
+   .profile-sidebar-bg::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      mask: url("https://assets.codepen.io/2434198/art_deco_bg.svg#Layer_2");
+      background: rgba(var(--accent));
+   }
+
+   .main-profile-group {
+      position: relative;
+      margin: 30px 0;
+   }
+
+   .main-profile-group>* {
+      display: block;
+      text-align: right;
+   }
+
+   .main-profile-group small {
+      font-family: var(--geometric);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: rgba(var(--accent));
+   }
+
+   .main-profile-group big {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px;
+      font-family: var(--heading);
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+   }
+
+   .main-profile-group big hr {
+      flex: 1;
+      border: 0;
+      border-bottom: 2px dashed rgba(var(--accent) / 0.5);
+   }
+
+   .main-profile-hover {
+      position: relative;
+      width: 250px;
+      height: 400px;
+      background-color: rgba(var(--shadow));
+      filter: grayscale(0) contrast(1) brightness(1);
+      opacity: 1;
+      z-index: 2;
+      margin: 0 0 50px 0;
+      transition: all ease 0.4s;
+      box-shadow: 10px 10px 30px rgba(var(--shadow));
+      outline: 1px dotted rgba(var(--accent) / 0.5);
+   }
+
+   .hover-image {
+      position: absolute;
+      width: 250px;
+      height: 400px;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      transition: all ease 0.4s;
+   }
+
+   .hover-overlay {
+      position: absolute;
+      width: 250px;
+      height: 400px;
+      top: 0;
+      left: 0;
+      background: rgba(var(--accent));
+      mix-blend-mode: multiply;
+      opacity: 0;
+      transition: all ease 0.4s;
+   }
+
+   .main-profile-tabs {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+      gap: 10px;
+      z-index: 3;
+   }
+
+   .main-profile-tabs input {
+      display: none;
+   }
+
+   .profile-tab {
+      font-family: var(--geometric);
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 1px;
+      line-height: 100%;
+      text-transform: uppercase;
+      display: grid;
+      place-items: center;
+      height: 30px;
+      padding: 1px 8px 0 10px;
+      background: rgba(var(--shadow) / 0.75);
+      color: rgba(var(--slate));
+      border: 1px solid var(--bordercolor);
+      cursor: pointer;
+      user-select: none;
+      transition: all ease 0.4s;
+   }
+
+   .main-profile-tabs input:checked+label,
+   .profile-tab:hover {
+      background: rgba(var(--accent));
+      color: rgba(var(--taupegrey));
+      border-color: rgba(var(--taupegrey) / 0.5);
+   }
+
+   .main-profile-wrap {
+      grid-area: main-profile-wrap;
+      position: relative;
+      padding 20px 20px 20px 0;
+      z-index: 1;
+      overflow: hidden;
+   }
+
+   profile {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      overflow-y: scroll;
+      display: block;
+      padding: 50px 90px 50px 120px;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      transition: all ease 0.4s;
+      transform: translate(-500px, 0)
+   }
+
+   .main-profile-wrap::before,
+   .main-profile-wrap::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      pointer-events: none;
+      left: 0;
+      z-index: 3;
+   }
+
+   .main-profile-wrap::before {
+      top: 0;
+      height: 50px;
+      background: linear-gradient(0deg, rgba(var(--raisin) / 0) 0%, rgba(var(--raisin) / 1) 100%);
+   }
+
+   .main-profile-wrap::after {
+      bottom: 0;
+      height: 70px;
+      background: linear-gradient(0deg, rgba(var(--raisin) / 1) 0%, rgba(var(--raisin) / 0) 100%);
+   }
+
+   profile::-webkit-scrollbar {
+      width: 0;
+   }
+
+   .main-profile-sidebar:has(input#profiletab1:checked)+.main-profile-wrap>.profile-overview,
+   .main-profile-sidebar:has(input#profiletab2:checked)+.main-profile-wrap>.profile-background,
+   .main-profile-sidebar:has(input#profiletab3:checked)+.main-profile-wrap>.profile-freeform,
+   .main-profile-sidebar:has(input#profiletab4:checked)+.main-profile-wrap>.profile-player,
+   .main-profile-sidebar:has(input#profiletab5:checked)+.main-profile-wrap>.profile-tracker {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+      transform: translate(0, 0)
+   }
+
+   .main-profile-hover:has(+ .main-profile-tabs > input#profiletab1:not(:checked))>.hover-image {
+      filter: grayscale(0.7) contrast(0.8) brightness(1.5);
+      opacity: 0.7;
+   }
+
+   .main-profile-hover:has(+ .main-profile-tabs > input#profiletab1:not(:checked))>.hover-overlay {
+      opacity: 0.5;
+   }
+
+   .overview-table {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+   }
+
+   .overview-footer {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 15% 20% auto;
+      gap: 10px;
+   }
+
+   overquery {
+      text-align: right;
+      display: block;
+      font-size: 14px;
+      line-height: 120%;
+      background: rgba(var(--shadow) / 0.25);
+      padding: 20px;
+      border: 1px solid rgba(var(--slate) / 0.15);
+      transition: all ease 0.4s;
+   }
+
+   overquery:hover {
+      border-color: rgba(var(--accent) / 0.35);
+   }
+
+   overquery h1 {
+      text-align: left;
+      font-family: var(--heading);
+      font-size: 13px;
+      font-weight: 600;
+      font-style: italic;
+      color: rgba(var(--accent));
+      margin: 0 0 7px 0;
+   }
+
+   overquery b {
+      color: rgba(var(--accent));
+   }
+
+   overquery i {
+      padding-bottom: 2px;
+      border-bottom: 1px solid rgba(var(--accent) / 0.5);
+   }
+
+   vr {
+      display: block;
+      margin: 30px auto;
+      height: 150px;
+      width: 55.8459px;
+      background: rgba(var(--copper) / 0.5);
+      mask: url(https://assets.codepen.io/2434198/art_deco_vert_hr.svg#vr);
+   }
+
+   vr.end {
+      transform: rotate(180deg);
+   }
+
+   profile hr {
+      margin: 30px auto;
+      height: 24.4579px;
+      width: 200px;
+      border: 0;
+      background: rgba(var(--copper) / 0.5);
+      mask: url(https://assets.codepen.io/2434198/art_deco_horz_hr.svg#hr);
+   }
+
+   profile hr.end {
+      mask: url(https://assets.codepen.io/2434198/art_deco_horz_hr_end.svg#hrend);
+      mask-repeat: no-repeat;
+   }
+
+   profile hr.plain {
+      width: 300px;
+      height: 1px;
+      mask: none;
+      background: var(--bordercolor);
+   }
+
+   .profile-background h0,
+   .profile-freeform h0 {
+      display: block;
+      font-family: var(--display);
+      font-size: 36px;
+      text-transform: lowercase;
+      text-align: center;
+      color: rgba(var(--accent));
+      margin: 0;
+   }
+
+   .profile-background h1,
+   .profile-freeform h1 {
+      margin: 0;
+      padding: 0;
+      font-family: var(--heading);
+      font-size: 28px;
+      font-weight: 400;
+      color: rgba(var(--accent));
+   }
+
+   .profile-background h2,
+   .profile-freeform h2 {
+      margin: 0;
+      padding: 0;
+      font-family: var(--subheading);
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(var(--slate));
+   }
+
+   .profile-background h3,
+   .profile-freeform h3 {
+      margin: 0;
+      font-family: var(--geometric);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(var(--accent));
+   }
+
+   .profile-background h1:has(~ h2, h3, blockquote, p, ol, ul),
+   .profile-freeform h1:has(~ h2, h3, blockquote, p, ol, ul),
+   .profile-background h2:has(~ h1, h3, blockquote, p, ol, ul),
+   .profile-freeform h2:has(~ h1, h3, blockquote, p, ol, ul),
+   .profile-background h3:has(~ h1, h2, blockquote, p, ol, ul),
+   .profile-freeform h3:has(~ h1, h2, blockquote, p, ol, ul),
+   .profile-background blockquote:has(~ h1, h2, h3, p, ol, ul),
+   .profile-freeform blockquote:has(~ h1, h2, h3, p, ol, ul),
+   .profile-background p:has(~ h1, h2, h3, blockquote, ol, ul),
+   .profile-freeform p:has(~ h1, h2, h3, blockquote, ol, ul) {
+      margin: 0 0 -10px 0;
+   }
+
+   profile blockquote {
+      margin: 0px 60px 0px 0;
+      padding: 0 0 0 30px;
+      border-left: 2px dotted var(--bordercolor);
+   }
+
+   profile p {
+      margin: 0;
+   }
+
+   profile quote {
+      position: relative;
+      display: block;
+      padding: 40px;
+      background: rgba(var(--accent) / 0.1);
+   }
+
+   profile quote::before,
+   profile quote::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-color: rgba(var(--accent)) !important;
+   }
+
+   profile quote::before {
+      top: 0;
+      left: 0;
+      border-left: 3px solid;
+      border-top: 3px solid;
+   }
+
+   profile quote::after {
+      bottom: 0;
+      right: 0;
+      border-right: 3px solid;
+      border-bottom: 3px solid;
+   }
+
+   profile ol,
+   profile ul {
+      position: relative;
+      padding-inline-start: 32px;
+      list-style-type: none;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   profile ol br,
+   profile ul br {
+      display: none;
+   }
+
+   profile li {
+      position: relative;
+   }
+
+   profile ol {
+      counter-reset: list;
+   }
+
+   profile ol li {
+      counter-increment: list;
+   }
+
+   profile ol li:before {
+      content: counter(list, decimal-leading-zero);
+      position: absolute;
+      left: -32px;
+      top: -1px;
+      font-family: var(--condensed);
+      font-weight: 700;
+      color: rgba(var(--accent));
+   }
+
+   profile ul li:before {
+      content: "";
+      position: absolute;
+      left: -29px;
+      top: 4.5px;
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: rgba(var(--accent) / 0.8);
+   }
+
+   .player-alias,
+   .overview-heading {
+      margin: 10px 0 0 0;
+      border-bottom: 1px solid var(--bordercolor);
+      padding-bottom: 20px;
+      font-family: var(--heading);
+      font-size: 30px;
+      text-transform: uppercase;
+   }
+
+   .player-alias b,
+   .overview-heading {
+      color: rgba(var(--accent));
+   }
+
+   .player-info {
+      margin: 30px 0 50px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      grid-template-areas:
+         ". ."
+         "player-content player-content";
+      gap: 10px;
+   }
+
+   .profile-player overquery {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13px;
+      text-align: left;
+   }
+
+   .profile-player overquery h1 {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: var(--heading);
+   }
+
+   .player-info pref {
+      display: flex;
+   }
+
+   .tag-coded {
+      display: inline;
+      font-family: var(--mono);
+      background: rgba(var(--accent) / 0.5);
+      color: rgba(var(--seasalt));
+      font-size: 11px;
+   }
+
+   pref::before {
+      font-family: "Phosphor-Bold";
+      font-size: 18px;
+      margin-right: 7px;
+   }
+
+   pref.yes::before {
+      content: "\E182";
+      color: #428E36;
+   }
+
+   pref.no::before {
+      content: "\E3DE";
+      color: #D12C2C;
+   }
+
+   pref.ask::before {
+      content: "\E3E9";
+      color: #F19E39;
+   }
+
+   .player-content {
+      grid-area: player-content;
+   }
+
+   .player-credits {
+      margin: 30px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+   }
+
+   .profile-tracker>* {
+      display: block;
+      border: 1px solid rgba(var(--accent) / 0.25);
+      padding: 30px;
+      background: rgba(var(--shadow) / 0.2);
+   }
+
+   .profile-tracker .active {
+      margin-bottom: 30px;
+   }
+
+   .profile-tracker h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 30px 0;
+      font-family: var(--heading);
+      font-size: 28px;
+      font-weight: 400;
+      color: rgba(var(--accent));
+   }
+
+   .profile-tracker h3::before {
+      content: "";
+      flex: 1;
+      border-bottom: 1px dotted var(--bordercolor);
+   }
+
+   #tracker-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   #tracker-wrap hr {
+      margin: 0;
+      width: 100%;
+   }
+
+   .tracker-item {
+      font-size: 12px;
+      padding: 20px;
+   }
+
+   .tracker-item>b {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 10px;
+   }
+
+   span.status {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      place-items: center;
+      background: rgba(var(--shadow));
+      border: 1px dotted rgba(var(--accent) / 0.2);
+      color: rgba(var(--accent));
+   }
+
+   span.status.caughtup,
+   span.status.locked {
+      color: rgba(var(--accent) / 0.25);
+   }
+
+   span.status.myturn {
+      background: rgba(var(--accent) / 0.35);
+      color: rgba(var(--seasalt));
+   }
+
+   .tracker-item:has(span.status.myturn) {
+      background: rgba(var(--accent) / 0.1);
+      background: linear-gradient(330deg, rgba(var(--accent) / 0.2) 0%, rgba(var(--shadow) / 0.5) 70%);
+   }
+
+   .tracker-item b a {
+      font-family: var(--heading);
+      font-weight: 400;
+      font-size: 20px;
+      border-bottom: 1px solid var(--bordercolor);
+      padding-bottom: 3px;
+   }
+
+   .tracker-desc {
+      margin: 0 0 0 50px;
+      line-height: 150%;
+   }
+
+   .tracker-location {
+      font-family: var(--geometric);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(var(--accent));
+      margin: 5px 10px 5px 0;
+      background: rgba(var(--shadow) / 0.75);
+      padding: 2px 4px 1px 5px;
+   }
+
+   .tracker-lastpost {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: var(--condensed);
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1px;
+   }
+
+   .tracker-lastpost b {
+      color: rgba(var(--accent));
+   }
+
+   .tracker-lastpost u {
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(var(--accent) / 0.5);
+   }
+
+   .overview-heading {
+      font-size: 24px;
+      margin: 30px 0 20px 0;
+      padding-bottom: 10px;
+   }
+
+   .overview-awards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 20px;
+   }
+
+   .overview-awards img {
+      width: 50px;
+      height: 50px;
+      opacity: 0.5;
+      filter: grayscale(0.75);
+      transition: all ease 0.4s;
+      box-shadow: 0 0 10px rgba(var(--shadow) / 0.1);
+   }
+
+   .overview-awards img:hover {
+      opacity: 1;
+      filter: grayscale(0);
+      box-shadow: 0 0 10px rgba(var(--shadow) / 0.2);
+   }
+
+   .overview-footer+.overview-heading {
+      margin-top: 40px;
+   }
+</style>
+
+
+
+
+
+
+
+
+
+
+<script>$("label#profile-unsorted").click(function () {
+      $("mainprofile").addClass("profile-unsorted");
+      $("mainprofile").removeClass("profile-pawn");
+      $("mainprofile").removeClass("profile-knight");
+      $("mainprofile").removeClass("profile-bishop");
+      $("mainprofile").removeClass("profile-rook");
+      $("mainprofile").removeClass("profile-queen");
+   });
+
+   $("label#profile-pawn").click(function () {
+      $("mainprofile").addClass("profile-pawn");
+      $("mainprofile").removeClass("profile-unsorted");
+      $("mainprofile").removeClass("profile-knight");
+      $("mainprofile").removeClass("profile-bishop");
+      $("mainprofile").removeClass("profile-rook");
+      $("mainprofile").removeClass("profile-queen");
+   });
+
+   $("label#profile-knight").click(function () {
+      $("mainprofile").addClass("profile-knight");
+      $("mainprofile").removeClass("profile-unsorted");
+      $("mainprofile").removeClass("profile-pawn");
+      $("mainprofile").removeClass("profile-bishop");
+      $("mainprofile").removeClass("profile-rook");
+      $("mainprofile").removeClass("profile-queen");
+   });
+
+   $("label#profile-bishop").click(function () {
+      $("mainprofile").addClass("profile-bishop");
+      $("mainprofile").removeClass("profile-unsorted");
+      $("mainprofile").removeClass("profile-pawn");
+      $("mainprofile").removeClass("profile-knight");
+      $("mainprofile").removeClass("profile-rook");
+      $("mainprofile").removeClass("profile-queen");
+   });
+
+   $("label#profile-rook").click(function () {
+      $("mainprofile").addClass("profile-rook");
+      $("mainprofile").removeClass("profile-unsorted");
+      $("mainprofile").removeClass("profile-pawn");
+      $("mainprofile").removeClass("profile-knight");
+      $("mainprofile").removeClass("profile-bishop");
+      $("mainprofile").removeClass("profile-queen");
+   });
+
+   $("label#profile-queen").click(function () {
+      $("mainprofile").addClass("profile-queen");
+      $("mainprofile").removeClass("profile-unsorted");
+      $("mainprofile").removeClass("profile-pawn");
+      $("mainprofile").removeClass("profile-knight");
+      $("mainprofile").removeClass("profile-rook");
+      $("mainprofile").removeClass("profile-bishop");
+   });
+</script>
