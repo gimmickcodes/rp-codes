@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<head>
+   <title>Guidebook Shell</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+
+
+   <h3>Sidenav becomes a dropdown below 600px </h3>
+
+   <div class="guidebookwrap">
+
+
+      <div class="gb-sidebar">
+
+         <div class="gb-sidebar-head">
+            Guidebook
+         </div>
+
+         <div class="gb-nav">
+            <div class="gb-nav-toggle">
+               <span class="gb-nav-toggle-placehold"></span>
+            </div>
+
+            <div class="gb-nav-links">
+               <div class="gb-nav-section">
+                  Heading
+                  <a href="#tab1">Tab1</a>
+                  <a href="#tab2">Tab2</a>
+               </div>
+               <div class="gb-nav-section">
+                  Heading
+                  <a href="#tab3">Tab3</a>
+                  <a href="#tab4">Tab4</a>
+               </div>
+            </div>
+
+         </div>
+
+      </div>
+
+
+      <div class="gb-content">
+
+         <section id="tab1" class="gb-tabpane">
+            Tab1 content
+         </section>
+
+         <section id="tab2" class="gb-tabpane">
+            Tab2 content
+         </section>
+
+         <section id="tab3" class="gb-tabpane">
+            Tab3 content
+         </section>
+
+         <section id="tab4" class="gb-tabpane">
+            Tab4 content
+         </section>
+
+      </div>
+
+   </div>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+   :root * {
+      position: relative;
+      box-sizing: border-box;
+      transition: .2s ease;
+   }
+
+   .guidebookwrap {
+      background: lightgray;
+      width: 100%;
+      display: grid;
+      grid-template: 'gbsidebar gbcontent' 100vh / 1fr 3fr;
+      overflow: hidden;
+   }
+
+   .gb-sidebar {
+      grid-area: gbsidebar;
+      background: darkgray;
+   }
+
+   .gb-nav-links {
+      counter-reset: item;
+   }
+
+   .gb-nav-links a {
+      display: block;
+      counter-increment: item;
+   }
+
+   /* .gb-nav-links a::before {
+      content: counter(item) ' ';
+   } */
+
+   /* .gb-nav-links a:hover {} */
+
+   .gb-nav-links a.is-selected {
+      color: blue;
+      font-weight: 700;
+   }
+
+   .gb-nav-toggle {
+      display: none;
+   }
+
+
+   .gb-content {
+      overflow: auto;
+      grid-area: gbcontent;
+      scroll-behavior: smooth;
+   }
+
+   .gb-tabpane {
+      display: none;
+   }
+
+   .gb-tabpane.active,
+   .gb-tabpane#map.active {
+      display: block
+   }
+
+
+   @media only screen and (max-width: 600px) {
+      .guidebookwrap {
+         grid-template:
+            'gbsidebar' auto
+            'gbcontent' 100vh / 1fr;
+      }
+
+      .gb-nav {
+         background: cyan;
+         box-shadow: inset 0 0 0 1px black;
+         margin: .5rem;
+      }
+
+      .gb-nav-toggle {
+         display: flex;
+         justify-content: space-between;
+         cursor: pointer;
+      }
+
+      .gb-nav-toggle:after {
+         content: '↓';
+      }
+
+      .gb-nav-toggle.-is-open:after {
+         content: '↑';
+      }
+
+      .gb-nav-links {
+         position: absolute;
+         z-index: 10;
+         width: 100%;
+         height: 0;
+         overflow: hidden;
+         background: aquamarine;
+      }
+
+      .gb-nav-links.-is-open {
+         height: auto;
+      }
+
+      .gb-nav-links a {
+         padding: .5rem 0;
+      }
+   }
+</style>
+
+
+<script>
+   // Guidebook tabs
+   // Javascript to enable link to tab
+   // Adapted from https://codepen.io/ciprian/pen/WEwPop
+
+   // find page hash
+   var hash = document.location.hash;
+   var hashString = hash.replace('#', '');
+   var tabLinks = document.querySelectorAll('.gb-nav-links a');
+   var sections = document.querySelectorAll('.gb-tabpane');
+
+   for (var i = 0; i < tabLinks.length; i++) {
+      // if hash matches guidebook a tab link, mark tab active
+      // if hash is empty, make first tab active
+      if (tabLinks[i].getAttribute('href') == hash) {
+         $(tabLinks[i]).addClass('is-selected')
+         $(document.getElementById(hashString)).show()
+         $(document.getElementById(hashString)).addClass('active')
+
+      } if (hash == '') {
+         $(tabLinks[0]).addClass('is-selected')
+         $(sections[0]).show()
+         $(sections[0]).addClass('active')
+
+      }
+
+      // add click toggle to each links
+      tabLinks[i].addEventListener('click', function (e) {
+         // Remove active class from all links then add it to the one clicked
+         tabLinks.forEach(el => el.removeAttribute('class'))
+
+         // Hide all content tabs by default
+         for (var j = 0; j < sections.length; j++) {
+            sections[j].style.display = 'none';
+            $(sections[j]).removeClass('active');
+         }
+
+         // mark clicked link active
+         // return href value of clicked link as a string
+         // then show the tab content with matching ID
+         $(this).addClass('is-selected')
+         var tabID = this.getAttribute('href').replace('#', '');
+         $(document.getElementById(tabID)).show()
+         $(document.getElementById(tabID)).addClass('active')
+
+         // prevent default behavior of jumping to anchor point
+         e.preventDefault();
+         history.pushState({}, "", this.href);
+
+      })
+   };
+</script>
+
+
+
+
+<script>
+   var gbTabsToggle = document.querySelector('.gb-nav-toggle');
+   var gbTabsToggleFiller = document.querySelector('.gb-nav-toggle-placehold');
+   var gbNavTabs = document.querySelectorAll('.gb-nav-links a');
+
+   // Populate dropdown toggle with the name of the selected tab
+   gbTabsToggleFiller.innerHTML = document.getElementsByClassName('is-selected')[0].innerHTML;
+
+   // Open dropdown menu on clicking toggle
+   gbTabsToggle.addEventListener('click', function (e) {
+      document.querySelector('.gb-nav-links').classList.toggle('-is-open')
+
+      $(this).toggleClass('-is-open')
+   });
+
+   for (var i = 0; i < gbNavTabs.length; i++) {
+      gbNavTabs[i].addEventListener('click', function (e) {
+
+         // Close dropdown menu when clicking another tab
+         $(this).parent().parent().removeClass('-is-open')
+
+         // Re-populate dropdown toggle with name of newly selected tab
+         var selectedTabName = document.getElementsByClassName('is-selected')[0].innerHTML
+         gbTabsToggleFiller.innerHTML = selectedTabName;
+
+         $(gbTabsToggle).toggleClass('-is-open')
+
+
+      });
+   }
+
+</script>
