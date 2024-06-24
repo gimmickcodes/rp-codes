@@ -158,15 +158,18 @@
       }
 
       .gb-nav {
-         background: cyan;
-         box-shadow: inset 0 0 0 1px black;
+         position: relative;
          margin: .5rem;
       }
 
       .gb-nav-toggle {
+         z-index: 10;
          display: flex;
          justify-content: space-between;
+         align-items: center;
          cursor: pointer;
+         background: cyan;
+         box-shadow: inset 0 0 0 1px black;
       }
 
       .gb-nav-toggle:after {
@@ -181,18 +184,34 @@
          position: absolute;
          z-index: 10;
          width: 100%;
-         height: 0;
          overflow: hidden;
          background: aquamarine;
+         /*  display: none;
+         opacity: 0;
+         */
+         max-height: 0;
+         transition: opacity .25s, display .25s, max-height .5s;
+         transition-timing-function: ease-in-out;
+         transition-behavior: allow-discrete;
       }
 
       .gb-nav-links.-is-open {
-         height: auto;
+         display: block;
+         opacity: 1;
+         max-height: 100vh;
+      }
+
+      @starting-style {
+         .gb-nav-links.-is-open {
+            opacity: 0;
+            max-height: 0;
+         }
       }
 
       .gb-nav-links a {
          padding: .5rem 0;
       }
+
    }
 </style>
 
