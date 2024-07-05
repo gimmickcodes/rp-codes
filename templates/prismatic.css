@@ -27,7 +27,7 @@ div.postcolor {
    --outerborder: white;
    --accent1: rgb(52 95 189);
    --accent1rgb: 52, 95, 189;
-   --bannerimg: url(https://media.discordapp.net/attachments/683720444796338317/906228336991285348/unknown.png);
+   --bannerimg: url(prismatic-bg.png);
 }
 
 .prismatic a.credits {
@@ -286,14 +286,16 @@ div.postcolor {
    border: 0;
 }
 
-.prismatic ::-webkit-scrollbar-track, .prismatic ::-webkit-scrollbar-track-piece {
+.prismatic ::-webkit-scrollbar-track,
+.prismatic ::-webkit-scrollbar-track-piece {
    background: var(--bgcolor);
    border: 0;
 }
 
 /* DARK THEME */
 
-.d-theme.prismatic, .d-theme .prismatic {
+.d-theme.prismatic,
+.d-theme .prismatic {
    --outerborder: #111;
    --bgcolor: #222;
    --accent1: rgb(124 84 208);
@@ -324,13 +326,15 @@ div.postcolor {
    opacity: .15;
 }
 
-.d-theme.prismatic i, .d-theme .prismatic i {
+.d-theme.prismatic i,
+.d-theme .prismatic i {
    opacity: 1;
    color: rgb(var(--accent1rgb), .75);
    text-shadow: 0 0 0 rgba(255, 255, 255, .6);
 }
 
-.d-theme.prismatic b, .d-theme .prismatic b {
+.d-theme.prismatic b,
+.d-theme .prismatic b {
    color: rgb(var(--accent1rgb), 1) !important;
    opacity: .9;
 }
@@ -387,7 +391,8 @@ div.postcolor {
       padding: 40px 20px 0;
    }
 
-   .prismcol-body, .prism-onebody {
+   .prismcol-body,
+   .prism-onebody {
       padding: 20px !important;
    }
 

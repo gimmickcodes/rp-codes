@@ -24,7 +24,6 @@
         --serif: 'Source Serif Pro', serif;
         --sansserif: 'Varla', sans-serif;
     }
-
 </style>
 
 
@@ -733,7 +732,7 @@
         left: 0;
         z-index: 5;
         position: absolute;
-        background: url(https://cdn.discordapp.com/attachments/683720444796338317/876529579425169438/unknown.png) center center / cover;
+        background: url(inkstone-bg.png) center center / cover;
         opacity: .95;
         mix-blend-mode: color-burn;
     }
@@ -844,7 +843,6 @@
         background: #333 !important;
         border: 0;
     }
-
 </style>
 
 
@@ -874,7 +872,7 @@
     // Toggle one page at a time and scroll to active page
     // https://stackoverflow.com/questions/28969592/scroll-to-element-inside-scrollable-div
 
-    $("button.inkpagetoggle").on('click', function() {
+    $("button.inkpagetoggle").on('click', function () {
         var activePage = $(this).parent() // selects target page
         var overflowBox = activePage.parent() // selects the scrolling container
 
@@ -893,7 +891,7 @@
             // animates scroll to target's position
             overflowBox.animate({
                 scrollTop: scrollPos
-            }, 300).promise().done(setTimeout(function() {
+            }, 300).promise().done(setTimeout(function () {
                 activePage.toggleClass('activeinkpage').siblings().removeClass('activeinkpage');
             }, 500)); //500ms delay after scroll
         }

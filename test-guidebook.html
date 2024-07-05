@@ -31,12 +31,12 @@
 
             <div class="gb-nav-links">
                <div class="gb-nav-section">
-                  Heading
+                  <h3>Heading</h3>
                   <a href="#tab1">Tab1</a>
                   <a href="#tab2">Tab2</a>
                </div>
                <div class="gb-nav-section">
-                  Heading
+                  <h3>Heading</h3>
                   <a href="#tab3">Tab3</a>
                   <a href="#tab4">Tab4</a>
                </div>
@@ -94,6 +94,14 @@
       position: relative;
       box-sizing: border-box;
       transition: .2s ease;
+   }
+
+   h1,
+   h2,
+   h3,
+   h4,
+   h5 {
+      all: unset;
    }
 
    .guidebookwrap {
@@ -189,9 +197,14 @@
          /*  display: none;
          opacity: 0;
          */
-         max-height: 0;
-         transition: opacity .25s, display .25s, max-height .5s;
-         transition-timing-function: ease-in-out;
+
+         /* max-height: 0;
+         transition: opacity .25s, display .25s, max-height .5s; */
+
+         transform: scaleY(0);
+         transform-origin: top center;
+         transition: opacity .4s, transform .4s;
+         transition-timing-function: ease;
          transition-behavior: allow-discrete;
       }
 
@@ -199,13 +212,24 @@
          display: block;
          opacity: 1;
          max-height: 100vh;
+         transform: scaleY(1);
       }
 
       @starting-style {
          .gb-nav-links.-is-open {
             opacity: 0;
-            max-height: 0;
+            /* max-height: 0; */
          }
+      }
+
+      .gb-nav-section * {
+         opacity: 0;
+         transition: .1s ease;
+      }
+
+      .gb-nav-links.-is-open .gb-nav-section * {
+         opacity: 1;
+         transition: .3s ease .2s;
       }
 
       .gb-nav-links a {
