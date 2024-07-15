@@ -1,0 +1,314 @@
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+   <h3>Slider Tabs</h3>
+   Behaves like CSS input/labels. Can animate container for all content to achieve sliding transitions <br><br>
+
+   <div class="tabgroup1">
+      <div id="navwrap">
+         <div class="tab" id="tab-0">One</div>
+         <div class="tab" id="tab-1">Two</div>
+         <div class="tab" id="tab-2">Three</div>
+         <div class="tab" id="tab-3">Four</div>
+
+      </div>
+
+      <div id="slideswrapper">
+         <section name="tab-0">First tab content</section>
+         <section name="tab-1">Second tab content</section>
+         <section name="tab-2">Third tab content</section>
+         <section name="tab-3">Fourth tab content</section>
+
+      </div>
+
+
+      <div class="prev">Previous</div>
+      <div class="next">Forward</div>
+   </div>
+
+   <hr>
+
+   <h3>Independent Tabs</h3>
+   Animate each slide individally <br><br>
+
+   <div class="tabgroup2">
+
+      <div id="navwrap">
+         <div class="tab" id="tab-0">Alpha</div>
+         <div class="tab" id="tab-1">Beta</div>
+         <div class="tab" id="tab-2">Charlie</div>
+         <div class="tab" id="tab-4">Delta</div>
+
+      </div>
+
+      <div id="slideswrap">
+         <section>Alpha tab content</section>
+         <section>Beta tab content</section>
+         <section>Charlie tab content</section>
+         <section>Delta tab content</section>
+      </div>
+
+      <div class="prev">Previous</div>
+      <div class="next">Next</div>
+
+   </div>
+
+
+
+
+
+</body>
+
+
+
+<style>
+   * {
+      position: relative;
+      box-sizing: border-box;
+      transition: .4s;
+   }
+
+   .active-tab {
+      color: red;
+   }
+
+   section {
+      padding: 1rem;
+   }
+
+
+
+   .tabgroup1 {
+      width: 100%;
+      border: 1px solid black;
+      overflow: hidden;
+
+      --numOfSlides: 4;
+
+      #slideswrapper {
+         width: calc(var(--numOfSlides) * 100%);
+         display: flex;
+         flex-wrap: nowrap;
+      }
+
+      #slideswrapper[class="active-tab-0"] {
+         transform: translateX(0);
+      }
+
+      #slideswrapper[class="active-tab-1"] {
+         transform: translateX(calc(-100% / var(--numOfSlides) * 1));
+      }
+
+      #slideswrapper[class="active-tab-2"] {
+         transform: translateX(calc(-100% / var(--numOfSlides) * 2));
+      }
+
+      #slideswrapper[class="active-tab-3"] {
+         transform: translateX(calc(-100% / var(--numOfSlides) * 3));
+      }
+
+      section {
+         width: 100%;
+      }
+
+
+   }
+
+
+
+   .tabgroup2 {
+      border: 1px solid black;
+
+      section {
+         display: none;
+      }
+
+      section.active-slide {
+         display: block;
+      }
+
+   }
+</style>
+
+
+
+
+
+<script>
+   // Slider Tabs 
+   // Applies a class to the container of tab content based on active tab. Allows for carousel type transitions
+
+   function tabsSlider(outerWrapper, tabName, tabContentWrap) {
+      // Find all things with tab class inside outerWrapper
+      var tabs = document.querySelector(outerWrapper).getElementsByClassName(tabName);
+      for (var i = 0; i < tabs.length; i++) {
+         tabs[i].addEventListener("click", toggleTab);
+         tabs[i].dataset.index = i;
+      }
+
+      // Apply active class to first tab automatically
+      tabs[0].classList.add('active-tab')
+      $(outerWrapper).find(tabContentWrap).addClass('active-tab-0');
+
+      // Create indexable array from tabs
+      const alltabs = Array.from(tabs)
+
+      function toggleTab() {
+         activeTabIndex = parseInt(this.dataset.index);
+
+         // removes active class from every tab except the one clicked 
+         alltabs.forEach(el => $(el).removeClass('active-tab'))
+
+         $(this).addClass('active-tab')
+
+         // Toggle slides to match clicked tab 
+
+         // get ID of the selected tab
+         var selectedTabID = 'active-' + $(this).attr('id')
+         var selectedTabID = 'active-tab-' + parseInt(this.dataset.index);
+
+         // ARCHIVE: If using only 1 parameter, tab menu wrapper and slide wrapper should have the same prefix. 
+         // get the slides wrapper that corresponds with the tab menu being navigated
+         // tabContentWrap = '#' + $(this).parent().attr('id').split('-')[0] + '-slideswrap'
+
+         // Find tab content area and swap its ID to match selectedTab
+         $(outerWrapper).find(tabContentWrap).removeAttr('class').addClass(selectedTabID);
+      }
+
+
+      // FOR BACK AND FORWARD BUTTONS. CAN REMOVE IF NOT APPLICABLE
+
+      // if outerwrapper contains a next button, apply back/forward scripts
+      if (document.querySelector(outerWrapper).querySelector('.next')) {
+
+         numOfTabs = alltabs.length - 1; // Generate index numbers based on number of tabs
+         activeTabIndex = 0; // Index of active tab
+
+         // When clicking prev, decrease index by 1. If index goes below number of tabs, loop from the end
+         document.querySelector(outerWrapper + ' .prev').addEventListener('click', function (e) {
+            activeTabIndex = activeTabIndex - 1;
+            if (+activeTabIndex < 0) {
+               activeTabIndex = numOfTabs;
+            }
+            prevnextTab(activeTabIndex)
+         });
+
+         // When clicking next, increase index by 1. If index exceeds number of tabs, loop from the beginning
+         document.querySelector(outerWrapper + ' .next').addEventListener('click', function (e) {
+            activeTabIndex = activeTabIndex + 1;
+            if (+activeTabIndex > numOfTabs) {
+               activeTabIndex = 0;
+            }
+            prevnextTab(activeTabIndex)
+         });
+
+         function prevnextTab() {
+            selectedTabID = 'active-tab-' + activeTabIndex;
+
+            alltabs.forEach(el => $(el).removeClass('active-tab'))
+            $(alltabs[activeTabIndex]).addClass('active-tab')
+
+            $(outerWrapper).find(tabContentWrap).removeAttr('class').addClass(selectedTabID);
+         }
+      }
+      // END ADD-ON FOR BACK AND FORWARD BUTTONS
+
+   }
+
+</script>
+
+
+
+<script>
+   // Individual Tabs
+   // Applies a class to individual tab content slides
+
+   function tabsIndividual(outerWrapper, tabClassName) {
+      // find tabs within the designated container
+      var tabs = document.querySelector(outerWrapper).getElementsByClassName(tabClassName);
+      for (var i = 0; i < tabs.length; i++) {
+         tabs[i].addEventListener('click', toggleTab);
+         tabs[i].dataset.index = i;
+      }
+
+      // find slides within the designated container
+      var tabContents = document.querySelector(outerWrapper).getElementsByTagName('section');
+      for (var i = 0; i < tabContents.length; i++) {
+         tabContents[i].dataset.index = i;
+      }
+
+      // Apply active class to first tab automatically
+      tabs[0].classList.add('active-tab')
+      tabContents[0].classList.add('active-slide')
+
+      // Create indexable array from tabs and slides
+      const alltabs = Array.from(tabs)
+      const alltabContents = Array.from(tabContents)
+
+      function toggleTab() {
+         removeActive()
+         // Get index of clicked tab
+         activeTabIndex = parseInt(this.dataset.index);
+         // Apply active class to selected tab
+         $(this).addClass('active-tab')
+         // Apply active class to slide with matching index
+         $(alltabContents[activeTabIndex]).addClass('active-slide')
+      }
+
+      function removeActive() {
+         // removes active class from every tab except the one clicked 
+         alltabs.forEach(el => $(el).removeClass('active-tab'))
+         // removes active class from every slide except the one clicked 
+         alltabContents.forEach(el => $(el).removeClass('active-slide'))
+      }
+
+
+      // FOR BACK AND FORWARD BUTTONS. CAN REMOVE IF NOT APPLICABLE
+
+      // if outerwrapper contains a next button, apply back/forward scripts
+      if (document.querySelector(outerWrapper).querySelector('.next')) {
+
+         numOfTabs = alltabs.length - 1; // Generate index numbers based on number of tabs
+         activeTabIndex = 0; // Index of active tab
+
+         // When clicking prev, decrease index by 1. If index goes below number of tabs, loop from the end
+         document.querySelector(outerWrapper + ' .prev').addEventListener('click', function (e) {
+            activeTabIndex = activeTabIndex - 1;
+            if (+activeTabIndex < 0) {
+               activeTabIndex = numOfTabs;
+            }
+            prevnextTab(activeTabIndex)
+         });
+
+         // When clicking next, increase index by 1. If index exceeds number of tabs, loop from the beginning
+         document.querySelector(outerWrapper + ' .next').addEventListener('click', function (e) {
+            activeTabIndex = activeTabIndex + 1;
+            if (+activeTabIndex > numOfTabs) {
+               activeTabIndex = 0;
+            }
+            prevnextTab(activeTabIndex)
+         });
+
+         function prevnextTab() {
+            removeActive();
+            $(alltabs[activeTabIndex]).addClass('active-tab')
+            $(alltabContents[activeTabIndex]).addClass('active-slide')
+         }
+      }
+
+      // END ADD-ON FOR BACK AND FORWARD BUTTONS
+
+   }
+
+</script>
+
+
+
+
+
+<script>
+   tabsSlider('.tabgroup1', 'tab', '#slideswrapper')
+   tabsIndividual('.tabgroup2', 'tab')
+</script>
