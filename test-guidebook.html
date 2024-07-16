@@ -194,42 +194,43 @@
          width: 100%;
          overflow: hidden;
          background: aquamarine;
-         /*  display: none;
-         opacity: 0;
-         */
 
+         display: none;
+         transform: scaleY(0);
          /* max-height: 0;
          transition: opacity .25s, display .25s, max-height .5s; */
-
-         transform: scaleY(0);
          transform-origin: top center;
-         transition: opacity .4s, transform .4s;
-         transition-timing-function: ease;
+         transition: .2s;
+         transition-timing-function: ease-in-out;
          transition-behavior: allow-discrete;
       }
 
       .gb-nav-links.-is-open {
          display: block;
          opacity: 1;
-         max-height: 100vh;
          transform: scaleY(1);
-      }
+         /* max-height: 100vh; */
 
-      @starting-style {
-         .gb-nav-links.-is-open {
-            opacity: 0;
-            /* max-height: 0; */
+         @starting-style {
+            transform: scaleY(0);
          }
       }
 
       .gb-nav-section * {
+         display: none;
          opacity: 0;
-         transition: .1s ease;
+         transition: .2s ease;
+         transition-behavior: allow-discrete;
       }
 
       .gb-nav-links.-is-open .gb-nav-section * {
+         display: block;
          opacity: 1;
-         transition: .3s ease .2s;
+         transition-delay: .2s;
+
+         @starting-style {
+            opacity: 0;
+         }
       }
 
       .gb-nav-links a {

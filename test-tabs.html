@@ -1,4 +1,8 @@
 <head>
+   <title>Tabs Shell</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
@@ -12,7 +16,6 @@
          <div class="tab" id="tab-1">Two</div>
          <div class="tab" id="tab-2">Three</div>
          <div class="tab" id="tab-3">Four</div>
-
       </div>
 
       <div id="slideswrapper">
@@ -20,27 +23,27 @@
          <section name="tab-1">Second tab content</section>
          <section name="tab-2">Third tab content</section>
          <section name="tab-3">Fourth tab content</section>
-
       </div>
-
 
       <div class="prev">Previous</div>
       <div class="next">Forward</div>
    </div>
 
-   <hr>
+
+
+
+
+
 
    <h3>Independent Tabs</h3>
    Animate each slide individally <br><br>
 
    <div class="tabgroup2">
-
       <div id="navwrap">
-         <div class="tab" id="tab-0">Alpha</div>
-         <div class="tab" id="tab-1">Beta</div>
-         <div class="tab" id="tab-2">Charlie</div>
-         <div class="tab" id="tab-4">Delta</div>
-
+         <div class="tab">Alpha</div>
+         <div class="tab">Beta</div>
+         <div class="tab">Charlie</div>
+         <div class="tab">Delta</div>
       </div>
 
       <div id="slideswrap">
@@ -52,7 +55,6 @@
 
       <div class="prev">Previous</div>
       <div class="next">Next</div>
-
    </div>
 
 
@@ -71,11 +73,16 @@
    }
 
    .active-tab {
-      color: red;
+      color: green;
+      font-weight: bold;
    }
 
    section {
       padding: 1rem;
+   }
+
+   :where(.prev, .next):hover {
+      color: green;
    }
 
 
@@ -113,7 +120,6 @@
          width: 100%;
       }
 
-
    }
 
 
@@ -121,12 +127,34 @@
    .tabgroup2 {
       border: 1px solid black;
 
+      #slideswrap {
+         height: 3rem;
+      }
+
       section {
+         /* dictates how it exits */
+         position: absolute;
          display: none;
+         opacity: 0;
+         transform: translate(0, 40%);
+
+         transition-property: display opacity transform;
+         transition-duration: .4s;
+         transition-behavior: allow-discrete;
       }
 
       section.active-slide {
+         /* dictates what it looks like once open */
          display: block;
+         opacity: 1;
+         transform: translate(0);
+
+         @starting-style {
+            /* starting style dictates where it starts from */
+            opacity: 0;
+            transform: translate(0, -40%);
+         }
+
       }
 
    }
@@ -140,9 +168,9 @@
    // Slider Tabs 
    // Applies a class to the container of tab content based on active tab. Allows for carousel type transitions
 
-   function tabsSlider(outerWrapper, tabName, tabContentWrap) {
+   function tabsSlider(outerWrapper, tabs, tabSlidesWrap) {
       // Find all things with tab class inside outerWrapper
-      var tabs = document.querySelector(outerWrapper).getElementsByClassName(tabName);
+      var tabs = document.querySelector(outerWrapper).querySelectorAll(tabs);
       for (var i = 0; i < tabs.length; i++) {
          tabs[i].addEventListener("click", toggleTab);
          tabs[i].dataset.index = i;
@@ -150,7 +178,7 @@
 
       // Apply active class to first tab automatically
       tabs[0].classList.add('active-tab')
-      $(outerWrapper).find(tabContentWrap).addClass('active-tab-0');
+      $(outerWrapper).find(tabSlidesWrap).addClass('active-tab-0');
 
       // Create indexable array from tabs
       const alltabs = Array.from(tabs)
@@ -171,10 +199,10 @@
 
          // ARCHIVE: If using only 1 parameter, tab menu wrapper and slide wrapper should have the same prefix. 
          // get the slides wrapper that corresponds with the tab menu being navigated
-         // tabContentWrap = '#' + $(this).parent().attr('id').split('-')[0] + '-slideswrap'
+         // tabContentsWrap = '#' + $(this).parent().attr('id').split('-')[0] + '-slideswrap'
 
          // Find tab content area and swap its ID to match selectedTab
-         $(outerWrapper).find(tabContentWrap).removeAttr('class').addClass(selectedTabID);
+         $(outerWrapper).find(tabSlidesWrap).removeAttr('class').addClass(selectedTabID);
       }
 
 
@@ -210,7 +238,7 @@
             alltabs.forEach(el => $(el).removeClass('active-tab'))
             $(alltabs[activeTabIndex]).addClass('active-tab')
 
-            $(outerWrapper).find(tabContentWrap).removeAttr('class').addClass(selectedTabID);
+            $(outerWrapper).find(tabSlidesWrap).removeAttr('class').addClass(selectedTabID);
          }
       }
       // END ADD-ON FOR BACK AND FORWARD BUTTONS
@@ -225,16 +253,16 @@
    // Individual Tabs
    // Applies a class to individual tab content slides
 
-   function tabsIndividual(outerWrapper, tabClassName) {
+   function tabsIndividual(outerWrapper, tabs, tabSlides) {
       // find tabs within the designated container
-      var tabs = document.querySelector(outerWrapper).getElementsByClassName(tabClassName);
+      var tabs = document.querySelector(outerWrapper).querySelectorAll(tabs);
       for (var i = 0; i < tabs.length; i++) {
          tabs[i].addEventListener('click', toggleTab);
          tabs[i].dataset.index = i;
       }
 
       // find slides within the designated container
-      var tabContents = document.querySelector(outerWrapper).getElementsByTagName('section');
+      var tabContents = document.querySelector(outerWrapper).querySelectorAll(tabSlides);
       for (var i = 0; i < tabContents.length; i++) {
          tabContents[i].dataset.index = i;
       }
@@ -309,6 +337,6 @@
 
 
 <script>
-   tabsSlider('.tabgroup1', 'tab', '#slideswrapper')
-   tabsIndividual('.tabgroup2', 'tab')
+   tabsSlider('.tabgroup1', '.tab', '#slideswrapper')
+   tabsIndividual('.tabgroup2', '.tab', 'section')
 </script>
