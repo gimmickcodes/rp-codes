@@ -37,15 +37,23 @@
 
 :root {
    --htmlbase: hsl(205, 8%, 48%);
+
    --strokePrimary: hsl(205, 8%, 30%);
    --strokeSecondary: hsl(205, 8%, 42%);
+
    --textPrimary: hsl(206, 8%, 35%);
+   --textSecondary: hsl(205, 8%, 42%);
+
    --bgPrimary: hsl(45, 4%, 78%);
    --bgSecondary: hsl(45, 3%, 75%);
    --bgTertiary: hsl(45, 3%, 72%);
    --bgOverlay: hsl(45, 4%, 81%);
+
    --accent1: hsl(6, 27%, 39%);
    --accent2: hsl(206, 16%, 44%);
+
+   --toggleBlack: hsl(207, 7%, 24%);
+   --toggleWhite: hsl(60, 3%, 85%);
    --permBlack: hsl(207, 7%, 24%);
    --permWhite: hsl(60, 3%, 85%);
 
@@ -132,21 +140,18 @@ html {
 body {
    all: unset;
    min-width: 350px;
+   min-width: 1100px;
    font: 18px/1.3em var(--fontBodySerif);
    color: var(--textPrimary);
    overflow-x: hidden;
-
 }
 
 * {
    position: relative;
+   box-sizing: border-box;
+
 }
 
-#header>*,
-#masterwrapper>*,
-#bodywrapper div {
-   box-sizing: border-box;
-}
 
 a {
    cursor: pointer;
@@ -315,8 +320,7 @@ h1 {
    text-transform: uppercase;
    letter-spacing: 2px;
    color: var(--htmlbase);
-   opacity: .75;
-   text-shadow: 0 0 2px var(--permWhite), 0 0 1px var(--permWhite), 0 0 1px var(--permWhite), 0px 0 1px var(--bgPrimary);
+   text-shadow: 0 0 2px var(--permWhite), 0 0 1px var(--permWhite), 0 0 1px var(--permWhite), 0px 0 1px var(--htmlbase);
    overflow-wrap: break-word;
 }
 
@@ -509,7 +513,7 @@ h3 .shape {
 .accountswitchername {
    margin: 0;
    padding: 0;
-   font: 32px var(--fontHero);
+   font: var(--textHero32);
    color: var(--bgTertiary);
    box-shadow: none;
    background: transparent;
@@ -526,7 +530,7 @@ h3 .shape {
    font-family: var(--fontHero2);
    letter-spacing: 2px;
    padding: 0 0 6px;
-   color: var(--accent2);
+   color: var(--htmlbase);
 }
 
 .quicklinklabel::after {
@@ -535,7 +539,7 @@ h3 .shape {
    margin-top: 8px;
    width: 40px;
    height: 1px;
-   border-bottom: 1px dotted var(--accent1);
+   border-bottom: 1px dotted var(--accent2);
 }
 
 .navpanel-quicklinks.flexrow {
@@ -909,7 +913,7 @@ a.scoopedbox:hover::before,
 
 .lastpost-avi img {
    width: 54px;
-   height: 54px;
+   aspect-ratio: 1;
    object-fit: cover;
    display: block;
    border-radius: 100%;
@@ -917,9 +921,9 @@ a.scoopedbox:hover::before,
 }
 
 .lastpost-avi {
-   box-shadow: 0 0 0px 1px var(--bgPrimary), 0 0 0px 2px var(--borderColor);
-   padding: 2px;
-   border: 1px dotted var(--borderColor);
+   box-shadow: 0 0 0px 2px var(--bgOverlay), 0 0 0px 3px var(--strokeSecondary);
+   padding: 1px;
+   border: 1px dotted var(--strokePrimary);
    border-radius: 100%;
    width: fit-content;
    height: fit-content;
@@ -930,7 +934,7 @@ a.scoopedbox:hover::before,
 }
 
 .forumrow-subs a {
-   font: 700 14px var(--fontBodySerif);
+   font: 700 14px var(--fontHero);
    font-weight: 300;
    text-align: center;
    transition: .5s ease;
@@ -952,11 +956,9 @@ a.scoopedbox:hover::before,
    font: var(--textHero36);
    text-transform: uppercase;
    letter-spacing: 2px;
-   color: var(--accent2);
-   margin: 64px 0 24px;
-   /* display: flex;
-   flex-direction: column; */
-   text-align: right;
+   color: var(--textSecondary);
+   margin: 64px 0 0;
+   text-align: left;
 }
 
 [class*=divider] {
@@ -1054,7 +1056,8 @@ a.scoopedbox:hover::before,
    border-top: 1px solid var(--strokePrimary);
    border-bottom: 1px solid var(--strokePrimary);
    display: grid;
-   grid-template: 'tabs body' / 292px 1fr;
+   grid-template: 'tabs body' 224px / 292px 1fr;
+   overflow: hidden;
 }
 
 .welcomecenter-section-tabs {
@@ -1068,25 +1071,47 @@ a.scoopedbox:hover::before,
 .welcomecenter-tab {
    width: 172px;
    height: 56px;
+   padding-top: 4px;
    display: flex;
    align-items: center;
    justify-content: center;
    background: var(--bgPrimary);
+   font: var(--textHero20);
+   color: var(--textSecondary);
+}
+
+.welcomecenter-tab.active-tab {
+   /* text-shadow: 0 0 1px var(--textPrimary), 0 0 1px var(--textPrimary), 0 0 1px var(--textPrimary), 0px 0 1px var(--bgPrimary); */
+   -webkit-text-stroke: 1px var(--textPrimary);
+}
+
+#welcomecenter-section-tabscontent {
+   height: 100%;
+   transition: .4s ease-out;
+}
+
+#welcomecenter-section-tabscontent[class="active-tab-1"] {
+   transform: translateY(calc(-100% / 2 * 2));
 }
 
 .welcomecenter-section-body {
    display: flex;
    gap: 24px;
+   padding: 40px 64px 40px 40px;
+   height: 100%;
+   box-sizing: border-box;
 }
 
 .welcomecenter-blurb {
-   padding: 40px 0 40px 40px;
+   overflow: auto;
 }
 
 .welcomecenter-linkbox.doubleframe {
+   /* display: flex; */
+   align-items: center;
    min-width: 280px;
    padding: 20px 24px;
-   margin: 40px 64px 40px 0;
+   /* margin: 40px 64px 40px 0; */
    columns: 2;
    background: var(--bgTertiary);
    border: 1px solid var(--borderColor);
@@ -1108,7 +1133,7 @@ a.scoopedbox:hover::before,
    width: calc(100% - var(--frameoffset));
    top: 0;
    left: 0;
-   padding: 60px 32px 40px;
+   padding: 60px 40px 40px;
    display: grid;
    grid-template: 'guidebook getstartedboards' / 1fr 450px;
    grid-column-gap: 24px;
@@ -1124,18 +1149,27 @@ a.scoopedbox:hover::before,
 .getstarted-hero-img {
    width: 100%;
    height: 232px;
-   background: var(--bgSecondary);
+   background: var(--bgTertiary);
 }
 
-.getstarted-hero-img::before {
+.getstarted-hero-img::before,
+.getstarted-hero-img::after {
    content: '';
    position: absolute;
    top: 0;
    left: 0;
    width: 100%;
    height: 100%;
+}
+
+.getstarted-hero-img::before {
+   background: var(--bgSecondary);
+   mask: url(assets/hero-parade-fill.png) center / cover;
+}
+
+.getstarted-hero-img::after {
    background: var(--strokeSecondary);
-   mask: url(assets/hero-parade.png) center / cover;
+   mask: url(assets/hero-parade-stroke.png) center / cover;
 }
 
 .cat-getstarted-handbook {
@@ -1175,15 +1209,19 @@ a.scoopedbox:hover::before,
    padding: 8px 20px 10px;
 }
 
+.handbook-quicklinks a:hover {
+   color: var(--toggleWhite);
+}
+
 .cat-getstarted-boards {
    grid-area: getstartedboards;
    background: var(--bgOverlay);
-   padding: 32px 28px;
+   padding: 40px 28px;
    z-index: 2;
 }
 
 .cat-getstarted .forumrow:not(:last-child) {
-   margin: 0 0 28px;
+   margin: 0 0 48px;
 }
 
 .cat-getstarted .forumrow {
@@ -1199,7 +1237,11 @@ a.scoopedbox:hover::before,
 }
 
 .cat-getstarted .lastpost-avi {
-   margin-top: 36px;
+   margin-top: 20px;
+}
+
+.cat-getstarted .lastpost-avi img {
+   width: 64px;
 }
 
 .getstarteddivider[class*=divider][class*=arrowhead-2] {
@@ -1232,7 +1274,7 @@ a.scoopedbox:hover::before,
       'rule'
       'dev';
    grid-row-gap: 40px;
-   padding: 48px;
+   padding: 48px 40px;
    padding-right: 320px;
    z-index: 6;
 }
@@ -1269,17 +1311,7 @@ img.cat-character-hero {
    z-index: 4;
 }
 
-.cat-character-imgsizer::before {
-   content: '';
-   position: absolute;
-   right: -46px;
-   bottom: 0;
-   width: 400px;
-   height: calc(100% + 211.5px);
-   background: var(--bgSecondary);
-   mask: url(assets/final-richeh-custas-fill.png) right bottom / cover;
-}
-
+.cat-character-imgsizer::before,
 .cat-character-imgsizer::after {
    content: '';
    position: absolute;
@@ -1287,9 +1319,16 @@ img.cat-character-hero {
    bottom: 0;
    width: 400px;
    height: calc(100% + 211.5px);
+}
+
+.cat-character-imgsizer::before {
+   background: var(--bgSecondary);
+   mask: url(assets/final-richeh-custas-fill.png) right bottom / cover;
+}
+
+.cat-character-imgsizer::after {
    background: var(--strokeSecondary);
    mask: url(assets/final-richeh-custas-stroke.png) right bottom / cover;
-
 }
 
 .cat-character [class*=divider] {
@@ -1339,7 +1378,7 @@ img.cat-character-hero {
 }
 
 .forum-plottinghub .forumrow-subs a:hover {
-   color: var(--permWhite);
+   color: var(--toggleWhite);
 }
 
 [id='scoopplot']+use {
@@ -1409,9 +1448,8 @@ a:hover [id='scoopplot']+use {
 /* CATEGORY: RP PLACES */
 
 .cat-locations-layout {
-
    height: 580px;
-   padding: 0 48px;
+   padding: 0 40px;
    z-index: 5;
 }
 
@@ -1531,7 +1569,7 @@ a:hover [id='scoopplot']+use {
    gap: 12px;
    padding-top: 16px;
    padding-bottom: 40px;
-   margin-left: 44px;
+   margin-left: 40px;
    z-index: 15;
 
    /* left: unset;
@@ -1552,13 +1590,13 @@ a:hover [id='scoopplot']+use {
 }
 
 .tab:hover {
-   color: var(--permWhite);
+   color: var(--toggleWhite);
 }
 
 .tab.tabbedlocations_active {
    font-family: var(--fontBodySerif);
    font-weight: 700;
-   color: var(--permWhite);
+   color: var(--toggleWhite);
 }
 
 .scoopedbox.tabbedlocations_active::before {
@@ -1594,17 +1632,18 @@ a:hover [id='scoopplot']+use {
 
 
 
+/* CATEGORY: OOC */
 
+#cat-3+.categoryLabel {
+   text-align: right;
+}
 
-
-
-
-.cat-oocV2-layout {
+.cat-ooc-layout {
    padding: 48px;
    padding-left: 33%;
 }
 
-.oocV2-hero {
+.ooc-hero {
    position: absolute;
    bottom: 0;
    left: -20px;
@@ -1666,6 +1705,10 @@ a:hover [id='scoopplot']+use {
    text-align: center;
 }
 
+.ooc-forumrow-subs a:hover {
+   color: var(--toggleWhite);
+}
+
 .ooc-forumrow-subs .scoopedbox::before {
    background-color: var(--bgOverlay);
 }
@@ -1690,8 +1733,7 @@ a:hover [id='scoopplot']+use {
    width: 50%;
 }
 
-.twocolcat .cat-ooc-layout {
-
+.twocolcat .cat-default-layout {
    z-index: 5;
    width: 100%;
    height: 100%;
@@ -1707,9 +1749,9 @@ a:hover [id='scoopplot']+use {
    align-items: flex-start;
 }
 
-.cat-ooc-layout [class*=divider][class*=arrowhead-2] {}
+.cat-default-layout [class*=divider][class*=arrowhead-2] {}
 
-.forum-ooc-bg {
+.forum-default-bg {
    position: absolute;
    top: -0px;
    right: 0%;
@@ -1730,12 +1772,12 @@ a:hover [id='scoopplot']+use {
    opacity: .5; */
 }
 
-.forum-ooc-text {
+.forum-default-text {
    grid-area: boardinfo;
 }
 
 
-.cat-ooc-layout .lastpost.flexrow {
+.cat-default-layout .lastpost.flexrow {
    justify-content: space-between;
 }
 
@@ -1772,15 +1814,15 @@ a:hover [id='scoopplot']+use {
 }
 
 .twocolcat .forumrow-subs a:hover {
-   color: var(--permWhite);
+   color: var(--toggleWhite);
 }
 
-[id='scoopooc']+use {
+[id='scoopdefault']+use {
    fill: transparent;
    transition: .5s ease;
 }
 
-a:hover [id='scoopooc']+use {
+a:hover [id='scoopdefault']+use {
    fill: var(--strokePrimary);
 }
 
@@ -1846,8 +1888,7 @@ a:hover [id='scoopooc']+use {
 .cat-infocenter-layout {
    display: grid;
    grid-template:
-      'links rule main recent' 500px / auto auto 2fr 300px;
-
+      'links rule main recent' 500px / auto auto 2fr 310px;
    z-index: 5;
 }
 
@@ -1858,10 +1899,7 @@ a:hover [id='scoopooc']+use {
 
 .infocenter-area-recent {
    grid-area: recent;
-
-   margin: 20px 32px 20px 0;
-   background: var(--bgOverlay);
-
+   margin: 28px 32px 0 0;
 }
 
 .infocenter-area-links {
@@ -1996,7 +2034,6 @@ a:hover [id='scoopooc']+use {
    min-width: 120px;
 }
 
-
 .censusvertrule {
    display: block;
    border-right: 1px dotted var(--strokePrimary);
@@ -2041,13 +2078,13 @@ a:hover [id='scoopooc']+use {
 
 
 .recent-content {
-
-   height: 100%;
-   padding: 28px 12px;
+   height: calc(100% - 60px);
+   padding: 28px 12px 4px;
    box-sizing: content-box;
    display: grid;
    grid-template-rows: auto 1fr;
    align-items: flex-start;
+   background: var(--bgOverlay);
    z-index: 6;
 }
 
@@ -2072,6 +2109,7 @@ a:hover [id='scoopooc']+use {
 .recent-list {
    overflow: auto;
    height: 100%;
+   padding-bottom: 90px;
 }
 
 #bodywrapper .recent-list::-webkit-scrollbar {
@@ -2084,7 +2122,6 @@ a:hover [id='scoopooc']+use {
 }
 
 .recenttopic {
-
    margin: 0 16px;
    padding-bottom: 12px;
    font: bold 12px var(--fontBodySerif);
@@ -2100,12 +2137,12 @@ a:hover [id='scoopooc']+use {
 .recent-threadname::before {
    counter-increment: rt;
    content: counter(rt, decimal-leading-zero);
-   content: '❧';
+   content: '';
    font-size: 14px;
    /* font-family: var(--fontHero2); */
    margin-left: -14px;
    float: left;
-   color: var(--htmlbase);
+   color: var(--textPrimary);
 }
 
 a.recent-threadname {
@@ -2125,10 +2162,80 @@ a.recent-poster {
 
 a.recent-poster::before {
    content: 'by ';
+   color: var(--textPrimary);
+}
+
+.infocenter-img {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   width: 505px;
+   height: 208px;
+   z-index: 7;
+   pointer-events: none;
+   overflow: hidden;
+}
+
+.infocenter-img::before,
+.infocenter-img::after {
+   content: '';
+   position: absolute;
+   right: -80px;
+   bottom: -30px;
+   width: 100%;
+   height: 100%;
+}
+
+.infocenter-img::before {
+   background: var(--bgPrimary);
+   mask: url(assets/hero-running-fill.png) center / cover no-repeat;
+}
+
+.infocenter-img::after {
+   background: var(--strokePrimary);
+   mask: url(assets/hero-running-stroke.png) center / cover no-repeat;
 }
 
 
-@media only screen and (max-width: 860px) {
+
+
+
+
+.affiliatesection-rule {
+   height: 4px;
+   border-bottom: 2px dotted var(--strokeSecondary);
+   margin-bottom: 3px;
+}
+
+.affiliatesection {
+   padding: 24px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 13px;
+   background: var(--strokePrimary);
+}
+
+.affiliateslot img {
+   display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 0) {
    html {
       background: mediumslateblue;
    }
@@ -2239,11 +2346,7 @@ a.recent-poster::before {
       overflow-y: hidden;
    }
 
-   .cat-getstarted-handbook {
-      background: url('clouds.svg') left bottom -80px / 860px, #B6BDB9;
-      padding: 24px;
-      height: fit-content;
-   }
+
 
    .handbooktext {
       width: min(100%, 480px);
@@ -2255,43 +2358,6 @@ a.recent-poster::before {
       border: none;
       box-shadow: none;
       background-color: transparent; */
-   }
-
-
-   .cloudsbg {
-      width: 100%;
-      height: 240px;
-      background: #B6BDB9;
-      border: none;
-      box-shadow: none;
-      display: none;
-   }
-
-   .cloudsbg::after {
-      display: none;
-   }
-
-   .clouds {
-      bottom: unset;
-      top: -44px;
-      opacity: .75;
-      background-size: 860px;
-      background-position: left bottom -100px;
-      z-index: 0;
-      display: none;
-   }
-
-   .clouds::before {
-      display: none;
-   }
-
-   .cloudstail {
-      display: none;
-      bottom: unset;
-      top: 16px;
-      height: 440px;
-      background-size: 860px;
-      background-position: left 64px bottom;
    }
 
    .cat-getstarted-boards {
@@ -2310,7 +2376,6 @@ a.recent-poster::before {
 
    .cat-character .cat-character-layout {
       width: 100%;
-
       padding: 0;
       grid-row-gap: 0;
    }
@@ -2517,7 +2582,7 @@ a.recent-poster::before {
    }
 
    .infocenter-area-recent {
-      margin: 20px 24px 16px;
+      margin: 32px 24px 32px;
    }
 
    .linksdivider[class*=divider] {
