@@ -93,7 +93,14 @@
    /* --fontBodySerif: 'Texturina', arial !important; */
    --fontBodySerif: 'Ibarra Real Nova', arial;
 
+   --textSerif12: 12px/1.4em var(--fontBodySerif);
+   --textSerif14: 14px/1.4em var(--fontBodySerif);
+   --textSerif16: 16px/1.3em var(--fontBodySerif);
+   --textSerif18: 18px/1.3em var(--fontBodySerif);
 
+   --textHero14: 14px/1em var(--fontHero);
+   --textHero16: 16px/1em var(--fontHero);
+   --textHero18: 18px/1em var(--fontHero);
    --textHero20: 20px/1em var(--fontHero);
    --textHero24: 24px/1em var(--fontHero);
    --textHero28: 28px/1em var(--fontHero);
@@ -139,17 +146,81 @@ html {
 
 body {
    all: unset;
-   min-width: 350px;
    min-width: 1100px;
-   font: 18px/1.3em var(--fontBodySerif);
+   font: var(--textSerif18);
    color: var(--textPrimary);
-   overflow-x: hidden;
 }
+
+.bodybg {
+   position: fixed;
+   bottom: -10vh;
+   width: 100vw;
+   height: 100vh;
+   z-index: -1;
+   mix-blend-mode: color-burn;
+   opacity: .1;
+   transform: scaleX(-1);
+}
+
+.cloudsbg {
+   display: none;
+   width: max(50%, 400px);
+   height: 100%;
+   left: 0;
+   position: absolute;
+   background: linear-gradient(to bottom, var(--greenlight) 60%, var(--paper) 61%);
+
+   border-right: 1px dotted var(--borderColor);
+   box-shadow: 2px 0 var(--paper), 3px 0 var(--borderColor);
+   width: max(100%, 460px);
+   overflow: hidden;
+   z-index: -1;
+}
+
+.cloudsbg::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: url('clouds-big.svg') center bottom / cover;
+   background-repeat: no-repeat;
+}
+
+
+.clouds {
+   content: '';
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   background: url('clouds.svg') right bottom / cover;
+   background-repeat: no-repeat;
+   pointer-events: none;
+   z-index: 4;
+   overflow: hidden;
+}
+
+
+.cloudstail {
+   display: none;
+   position: absolute;
+   left: -64px;
+   bottom: 0;
+   width: calc(100% + 64px);
+   height: 100%;
+   background: url('tail.svg') -115px 50px / cover;
+   background-repeat: no-repeat;
+   z-index: 2;
+}
+
+
 
 * {
    position: relative;
    box-sizing: border-box;
-
 }
 
 
@@ -174,7 +245,6 @@ a {
    width: min(100%, 1200px);
    min-width: 1000px;
    max-width: 1200px;
-   margin: 0 auto 50px;
 }
 
 #clicktodismiss {
@@ -501,9 +571,7 @@ h3 .shape {
 
 .navpanel-header h5 {
    margin: unset;
-   font: unset;
-   font-size: 14px;
-   font-family: var(--fontHero);
+   font: var(--textHero14);
    letter-spacing: 1px;
    color: var(--bgTertiary);
    margin-bottom: 6px;
@@ -518,8 +586,6 @@ h3 .shape {
    box-shadow: none;
    background: transparent;
    border: unset;
-
-   /* border: 1px dotted var(--bgTertiary); */
    width: 75%;
 }
 
@@ -554,7 +620,7 @@ h3 .shape {
 }
 
 .navpanel-quicklinks a {
-   font: 14px var(--fontBodySerif);
+   font: var(--textSerif14);
    font-weight: 500;
    letter-spacing: .5px;
    color: var(--bgTertiary);
@@ -893,20 +959,18 @@ a.scoopedbox:hover::before,
 .lastpost-link,
 .lastpost-author,
 .lastpost-date {
-   font: 14px/18px var(--fontBodySerif);
+   font: var(--textSerif14);
 }
 
 .lastpost-link a {
    margin-top: 2px;
-   font-size: 14px;
-   font-weight: bold;
+   font: 700 var(--textSerif14);
    text-transform: uppercase;
    color: var(--accent2);
 }
 
 .lastpost-author a {
-   font-size: 12px;
-   font-weight: bold;
+   font: 700 var(--textSerif12);
    text-transform: uppercase;
    color: var(--membercolor);
 }
@@ -1206,7 +1270,8 @@ a.scoopedbox:hover::before,
 }
 
 .handbook-quicklinks a {
-   padding: 8px 20px 10px;
+   padding: 8px 20px;
+   font: var(--textSerif16)
 }
 
 .handbook-quicklinks a:hover {
@@ -1372,7 +1437,7 @@ img.cat-character-hero {
 .forum-plottinghub .forumrow-subs a {
    padding: 12px 20px 10px;
    min-width: 140px;
-   font: 400 16px var(--fontHero);
+   font: var(--textHero18);
    color: var(--accent1);
    white-space: nowrap;
 }
@@ -1395,18 +1460,13 @@ a:hover [id='scoopplot']+use {
 }
 
 .forum-plottinghub .lastpost-avi img {
-   width: 50px;
-   height: 50px;
-   object-fit: cover;
-   display: block;
-   border-radius: 100%;
+   width: 60px;
 }
 
 .plotting-twocol {
    grid-area: dev;
    display: flex;
    flex-direction: row;
-
    justify-content: space-evenly;
    background-color: var(--bgOverlay);
 }
@@ -1448,8 +1508,13 @@ a:hover [id='scoopplot']+use {
 /* CATEGORY: RP PLACES */
 
 .cat-locations-layout {
-   height: 580px;
-   padding: 0 40px;
+   height: 590px;
+   padding: 0 0 0 40px;
+   display: grid;
+   grid-template:
+      'aboutplace placeimage' auto
+      'tabbox placeimage' 1fr;
+   align-items: flex-start;
    z-index: 5;
 }
 
@@ -1457,19 +1522,12 @@ a:hover [id='scoopplot']+use {
 .forum_locations {
    background: red;
    height: 100%;
-   /* width: 100%; */
 }
 
 .cat-locations-layout .forumrow {
-   display: grid;
-   grid-template-areas: 'aboutplace placeimage';
-   justify-content: space-between;
-   align-items: flex-start;
-   width: calc(50% - 0px);
+   grid-area: aboutplace;
+   width: 50%;
    height: fit-content;
-   position: absolute;
-
-   /* grid-template-areas: 'placeimage aboutplace'; */
 }
 
 
@@ -1477,7 +1535,7 @@ a:hover [id='scoopplot']+use {
    grid-area: aboutplace;
    max-width: 402px;
    width: min(35vw, 364px);
-   padding: 48px 0;
+   padding: 48px 0 24px;
    opacity: 0;
    z-index: 0;
    transition: opacity 0.5s 0s ease;
@@ -1491,95 +1549,27 @@ a:hover [id='scoopplot']+use {
 }
 
 .location_info .forumdesc {
-   font: 16px/1.2em var(--fontBodySerif);
+   font: var(--textSerif16);
    line-height: normal;
    padding-right: 1.5ch;
    height: calc(100% + 4px);
-   max-height: 110px;
-   margin-bottom: 1.2em;
+   max-height: 120px;
+   margin-bottom: 20px;
    overflow-y: auto;
 }
 
-.windowframe {
-   z-index: 1;
-   grid-area: placeimage;
-   position: absolute;
-
-   display: block;
-   width: 640px;
-   height: 640px;
-   border-radius: 100%;
-   border: 80px solid cornflowerblue;
-   background: rgba(0, 200, 20, 1);
-   display: none;
-   margin-left: -120px;
-   margin-top: -28px;
-}
-
-.windowcontent {
-   position: absolute;
-   grid-area: placeimage;
-
-   width: 640px;
-   height: 640px;
-   padding: 80px;
-   border-radius: 100%;
-   overflow: hidden;
-   opacity: 0;
-   transform: rotate(-45deg);
-   z-index: 2;
-   transition: opacity 0.5s 0.25s ease, transform .75s 0s ease;
-   margin-left: -120px;
-   margin-top: -28px;
-}
-
-.location_photo {
-   width: 100%;
-   height: 100%;
-   border-radius: 100%;
-   background-position: top center;
-   background-size: cover;
-   background-repeat: no-repeat;
-}
-
-.tabbedlocations_active .windowcontent,
-.tabbedlocations_active .location_info {
-   opacity: 1;
-   transform: rotate(0);
-   z-index: 10;
-}
-
-.tabbedlocations_active .location_info {
-   transition-delay: .25s;
-}
-
-.tabbedlocations_active .windowframe {
-   display: block;
-}
-
 .locationtabbox {
-   position: absolute;
-   bottom: 0;
-   left: 0;
    width: max(35%, 356px);
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
    display: flex;
    flex-wrap: wrap;
    gap: 12px;
-   padding-top: 16px;
-   padding-bottom: 40px;
-   margin-left: 40px;
    z-index: 15;
-
-   /* left: unset;
-   right: 0;
-   margin-left: 0;
-   margin-right: 44px; */
 }
 
-.tab {
-   font: 14px var(--fontBodySerif);
+.locationtabbox .tab {
+   font: var(--textSerif14);
    min-width: 120px;
    white-space: nowrap;
    padding: 10px 20px 12px;
@@ -1589,7 +1579,7 @@ a:hover [id='scoopplot']+use {
    cursor: pointer;
 }
 
-.tab:hover {
+.locationtabbox .tab:hover {
    color: var(--toggleWhite);
 }
 
@@ -1603,12 +1593,12 @@ a:hover [id='scoopplot']+use {
    background: var(--strokePrimary);
 }
 
-.tab [id='scoopedtab']+use {
+.locationtabbox .tab [id='scoopedtab']+use {
    fill: transparent;
    transition: .5s ease;
 }
 
-.tab:hover [id='scoopedtab']+use {
+.locationtabbox .tab:hover [id='scoopedtab']+use {
    fill: var(--strokePrimary);
 }
 
@@ -1616,15 +1606,91 @@ a:hover [id='scoopplot']+use {
    fill: var(--strokePrimary);
 }
 
-.forumrow:nth-child(1) .location_photo {
-   background-image: url(https://media.discordapp.net/attachments/1027906385847009280/1095441314520236032/size-1.jpg?width=1702&height=794);
+
+.windowframe {
+   grid-area: placeimage;
+   top: -40px;
+   right: -29px;
+   width: 640px;
+   aspect-ratio: 1;
+   display: block;
+   border-radius: 100%;
+   background: var(--bgSecondary);
+   z-index: 1;
 }
 
-.forumrow:nth-child(2) .location_photo {
+.windowframe::after {
+   content: '';
+   top: 0;
+   left: 0;
+   width: 640px;
+   aspect-ratio: 1;
+   border-radius: 100%;
+   display: block;
+   background: var(--strokeSecondary);
+   mask: url(assets/final-windowgate-stroke.png) center / cover;
+}
+
+#windowcontent {
+   position: absolute;
+   width: 640px;
+   aspect-ratio: 1;
+   overflow: hidden;
+   padding: 60px;
+   border-radius: 100%;
+}
+
+.windowbricks {
+   grid-area: placeimage;
+   width: 100%;
+   height: 100%;
+   background: var(--strokeSecondary);
+   mask: url(assets/final-windowgate-bricks.png) bottom right / 85% no-repeat;
+}
+
+[class*='location_photo'] {
+   position: absolute;
+   width: calc(100% - 120px);
+   height: calc(100% - 120px);
+   margin: 1px 0 0 1px;
+   border: 2px solid var(--strokePrimary);
+   border-radius: 100%;
+   background-position: top center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   opacity: 0;
+   transform: rotate(-45deg);
+   transition: opacity 0.5s 0.25s ease, transform .75s 0s ease;
+   z-index: 10;
+}
+
+.tabbedlocations_active .location_info,
+.active-tab-0 .location_photo-0,
+.active-tab-1 .location_photo-1,
+.active-tab-2 .location_photo-2,
+.active-tab-3 .location_photo-3,
+.active-tab-4 .location_photo-4,
+.active-tab-5 .location_photo-5,
+.active-tab-6 .location_photo-6,
+.active-tab-7 .location_photo-7 {
+   opacity: 1;
+   transform: rotate(0);
+   z-index: 10;
+}
+
+.tabbedlocations_active .location_info {
+   transition-delay: .25s;
+}
+
+.location_photo-0 {
+   background-image: url(https://cdnb.artstation.com/p/assets/images/images/051/291/973/large/sebastian-luca-daily-25.jpg?1656942804);
+}
+
+.location_photo-1 {
    background-image: url(https://images-ext-1.discordapp.net/external/9kyOtVtI1kuSlHq7nRriz8kcsd6mThzbQbE_YIJkn5U/%3F1636132525/https/cdna.artstation.com/p/assets/images/images/043/044/170/large/-433333.jpg?width=1906&height=794);
 }
 
-.forumrow:nth-child(3) .location_photo {
+.location_photo-2 {
    background-image: url(https://images-ext-2.discordapp.net/external/9qm1SNu8GBaXc6Dhog3XIL4NvpMFLuTitRIpm85sy4o/%3F1615965568/https/cdnb.artstation.com/p/assets/images/images/035/811/343/large/wei-z-.jpg?width=1412&height=794);
 }
 
@@ -1702,6 +1768,7 @@ a:hover [id='scoopplot']+use {
 .ooc-forumrow-subs a {
    flex: 1 0 0;
    padding: 8px 20px 10px;
+   font: var(--textSerif14);
    text-align: center;
 }
 
@@ -1793,7 +1860,6 @@ a:hover [id='scoopplot']+use {
 
 .twocolcat .lastpost-avi img {
    width: 56px;
-   height: 56px;
 }
 
 .twocolcat .forumrow-subs {
@@ -1809,7 +1875,7 @@ a:hover [id='scoopplot']+use {
    flex: 1 0 0px;
    min-width: 140px;
    padding: 12px 24px 10px;
-   font: 400 16px var(--fontHero);
+   font: var(--textHero16);
    color: var(--accent1);
 }
 
@@ -1957,8 +2023,9 @@ a:hover [id='scoopdefault']+use {
 }
 
 .infocenter-h1 {
-   font: var(--textHero32);
    margin-bottom: 12px;
+   font: var(--textHero32);
+   color: var(--accent1);
 }
 
 .infocenter-h3 {
@@ -1971,7 +2038,7 @@ a:hover [id='scoopdefault']+use {
 }
 
 .onlinenowbox {
-   height: 100px;
+   height: 120px;
    overflow: auto;
    font: bold 14px/21px var(--fontHero2);
    text-transform: uppercase;
@@ -2138,8 +2205,7 @@ a:hover [id='scoopdefault']+use {
    counter-increment: rt;
    content: counter(rt, decimal-leading-zero);
    content: '';
-   font-size: 14px;
-   /* font-family: var(--fontHero2); */
+   font: var(--textSerif14);
    margin-left: -14px;
    float: left;
    color: var(--textPrimary);
@@ -2235,7 +2301,7 @@ a.recent-poster::before {
 
 
 
-@media only screen and (max-width: 0) {
+@media only screen and (max-width: 1100px) {
    html {
       background: mediumslateblue;
    }
@@ -2252,6 +2318,17 @@ a.recent-poster::before {
       --textHero52: 40px/1em var(--fontHero);
       --textHero60: 40px/1em var(--fontHero);
       --textHero64: 40px/1em var(--fontHero);
+   }
+
+   body,
+   .maxwidth {
+      width: 100%;
+      min-width: 350px;
+      max-width: unset;
+   }
+
+   .cat-outerwrapper:not(:where(.cat-getstarted)) {
+      display: none;
    }
 
 
@@ -2278,7 +2355,6 @@ a.recent-poster::before {
    }
 
    .hero-text {
-
       z-index: 60;
       margin: 300px auto 0;
       left: 0;
@@ -2330,42 +2406,56 @@ a.recent-poster::before {
 
    /* BODY */
 
-   .bodyinner {
-      padding: 20px 32px;
+   :root {
+      --mobileinset: 16px;
    }
 
+   .bodyinner {
+      padding: 10px;
+   }
+
+
+   .welcomecenter-grid {
+      grid-template:
+         'tabs'
+         'body' / auto;
+   }
+
+   .welcomecenter-section-tabs {
+      flex-direction: row;
+      justify-content: center;
+      padding: var(--mobileinset);
+   }
+
+   .welcomecenter-section-body {
+      flex-direction: column;
+      padding: var(--mobileinset);
+   }
 
    /* CATEGORY: GET STARTED  */
 
    .cat-getstarted-layout {
-      grid-template-areas:
+      grid-template:
          'guidebook'
          'getstartedboards';
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr auto;
-      overflow-y: hidden;
+      grid-template-rows: auto;
+      padding: 280px var(--mobileinset) var(--mobileinset);
    }
 
-
-
    .handbooktext {
-      width: min(100%, 480px);
       width: 100%;
-      padding: 32px 24px 24px;
-      /* background-color: var(--accent1); */
-
-      /* padding: 0;
-      border: none;
-      box-shadow: none;
-      background-color: transparent; */
    }
 
    .cat-getstarted-boards {
-      margin: 0;
-      padding: 8px 24px;
+      margin: 24px 0 0;
+      padding: 28px var(--mobileinset);
       border-top: 1px solid var(--borderColor);
    }
 
+   .cat-getstarted .forumrow:not(:last-child) {
+      margin-bottom: 24px;
+   }
 
    .getstarteddivider[class*=divider][class*=arrowhead-2] {
       margin: 4px 0;
@@ -2478,7 +2568,7 @@ a.recent-poster::before {
       display: none !important;
    }
 
-   .windowcontent {
+   #windowcontent {
       border-radius: 50% 0 0 50% / 50% 0 0 50%;
       width: 100%;
       height: calc(100% + 64px);
