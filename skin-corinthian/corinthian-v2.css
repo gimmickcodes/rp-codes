@@ -245,6 +245,7 @@ a {
    width: min(100%, 1200px);
    min-width: 1000px;
    max-width: 1200px;
+   margin: 0 auto 50px;
 }
 
 #clicktodismiss {
@@ -2325,6 +2326,7 @@ a.recent-poster::before {
       width: 100%;
       min-width: 350px;
       max-width: unset;
+      margin: 0;
    }
 
    .cat-outerwrapper:not(:where(.cat-getstarted)) {
@@ -2455,10 +2457,6 @@ a.recent-poster::before {
 
    .cat-getstarted .forumrow:not(:last-child) {
       margin-bottom: 24px;
-   }
-
-   .getstarteddivider[class*=divider][class*=arrowhead-2] {
-      margin: 4px 0;
    }
 
 
