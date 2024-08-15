@@ -2090,7 +2090,6 @@ a:hover [id='scoopdefault']+use {
    flex: 2 1 0px;
    text-align: center;
    color: var(--accentMain-1);
-   min-width: 120px;
 }
 
 .censusvertrule {
