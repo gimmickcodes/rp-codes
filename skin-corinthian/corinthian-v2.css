@@ -33,38 +33,35 @@
 }
 
 
-
-
 :root {
+   /* COLORS */
    --htmlbase: hsl(205, 8%, 48%);
+   --accentMain-1: hsl(206, 16%, 44%);
+   --accentCont-1: hsl(6, 27%, 39%);
+   --accentCont-2: hsl(6, 29%, 48%);
 
    --strokePrimary: hsl(205, 8%, 30%);
    --strokeSecondary: hsl(205, 8%, 42%);
-
-   --textPrimary: hsl(206, 8%, 35%);
+   --textPrimary: hsl(205, 8%, 30%);
    --textSecondary: hsl(205, 8%, 42%);
 
    --bgPrimary: hsl(45, 4%, 78%);
    --bgSecondary: hsl(45, 3%, 75%);
    --bgTertiary: hsl(45, 3%, 72%);
    --bgOverlay: hsl(45, 4%, 81%);
-
-   --accent1: hsl(6, 27%, 39%);
-   --accent2: hsl(206, 16%, 44%);
-
    --toggleBlack: hsl(207, 7%, 24%);
    --toggleWhite: hsl(60, 3%, 85%);
    --permBlack: hsl(207, 7%, 24%);
    --permWhite: hsl(60, 3%, 85%);
 
-
    --purple: red;
 
-   --borderColor: var(--strokePrimary);
-   --linkaccent: var(--accent2);
+
    --frameoffset: 0px;
    --navgradient: linear-gradient(to right, var(--htmlbase) 50%, rgba(0, 0, 0, 0) 80%);
    --navgradient: var(--htmlbase);
+
+   /* TYPOGRAPHY */
 
    /* For hero */
    --fontHero: 'AcademyEngravedStd';
@@ -112,22 +109,31 @@
    --textHero64: 64px/1em var(--fontHero);
 }
 
-html {
+:root {
    background: var(--htmlbase);
+   font: var(--textSerif18);
+   color: var(--textPrimary);
 }
 
+.grp-staff {
+   --membercolor: var(--pointed, var(--accentCont-1));
+
+}
+
+.grp-unsorted {
+   --membercolor: var(--pointed, var(--accentMain-1));
+}
 
 .grp-pointed {
-   --membercolor: var(--pointed, var(--accent2));
+   --membercolor: var(--pointed, var(--accentMain-1));
 }
 
 .grp-brimmed {
-   --membercolor: var(--brimmed, var(--accent2));
+   --membercolor: var(--brimmed, var(--accentMain-1));
 }
 
-
 .grp-unknowing {
-   --membercolor: var(--unknowing, var(--accent2));
+   --membercolor: var(--unknowing, var(--accentMain-1));
 }
 
 /* html::after {
@@ -146,14 +152,11 @@ html {
 
 body {
    all: unset;
-   min-width: 1100px;
-   font: var(--textSerif18);
-   color: var(--textPrimary);
 }
 
 .bodybg {
    position: fixed;
-   bottom: -10vh;
+   bottom: 0;
    width: 100vw;
    height: 100vh;
    z-index: -1;
@@ -170,8 +173,8 @@ body {
    position: absolute;
    background: linear-gradient(to bottom, var(--greenlight) 60%, var(--paper) 61%);
 
-   border-right: 1px dotted var(--borderColor);
-   box-shadow: 2px 0 var(--paper), 3px 0 var(--borderColor);
+   border-right: 1px dotted var(--strokePrimary);
+   box-shadow: 2px 0 var(--paper), 3px 0 var(--strokePrimary);
    width: max(100%, 460px);
    overflow: hidden;
    z-index: -1;
@@ -236,15 +239,13 @@ a {
    text-decoration: none;
 }
 
-#masterwrapper {
-   width: min(100%, 1200px);
-   margin: 0 auto 50px;
-}
+#masterwrapper {}
 
 .maxwidth {
-   width: min(100%, 1200px);
-   min-width: 1000px;
-   max-width: 1200px;
+   width: 100%;
+   min-width: 1200px;
+   max-width: 1232px;
+   padding: 0 16px;
    margin: 0 auto 50px;
 }
 
@@ -292,29 +293,28 @@ a {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
-   padding: 10px 0 2px;
+   padding: 10px 0;
    z-index: 230;
    margin-bottom: 0 !important;
    /* border-bottom: 1px solid red; */
 }
 
 #navbarline {
+   position: sticky;
+   top: 0;
    width: min(100%, 1200px);
+   height: 51px;
    margin: auto;
-   margin-top: -48px;
-
-   height: 46px;
+   margin-top: -50px;
    background: var(--navgradient);
    border-bottom: 1px solid var(--bgPrimary);
-   position: sticky;
-   top: 0px;
    transition: background .3s ease;
-   box-shadow: -20px 0 0 var(--htmlbase), 20px 0 0 var(--htmlbase);
+   /* box-shadow: -20px 0 0 var(--htmlbase), 20px 0 0 var(--htmlbase); */
    z-index: 135;
 }
 
 #navbar a {
-   font: 12px/1em var(--fontBodySerif);
+   font: var(--textSerif12);
    color: var(--permWhite);
    text-transform: uppercase;
    letter-spacing: 2px;
@@ -324,7 +324,6 @@ a {
 
 .navlinks {
    margin-top: 2px;
-   margin-bottom: 10px;
 }
 
 .navlinks a {
@@ -343,7 +342,6 @@ a.navbar-close {
    border: 1px solid var(--bgTertiary);
    display: inline-block;
    padding: 6px 8px;
-   margin-bottom: 10px;
 }
 
 a.mobilenav {
@@ -597,7 +595,7 @@ h3 .shape {
    font-family: var(--fontHero2);
    letter-spacing: 2px;
    padding: 0 0 6px;
-   color: var(--htmlbase);
+   color: var(--accentMain-1);
 }
 
 .quicklinklabel::after {
@@ -606,7 +604,7 @@ h3 .shape {
    margin-top: 8px;
    width: 40px;
    height: 1px;
-   border-bottom: 1px dotted var(--accent2);
+   border-bottom: 1px dotted var(--accentCont-1);
 }
 
 .navpanel-quicklinks.flexrow {
@@ -644,8 +642,8 @@ h3 .shape {
    margin-left: 2.5px;
    width: calc(100% - 12px);
    height: 80px;
-   border: 1px dotted var(--accent1);
-   box-shadow: 0 0 0 2px var(--htmlbase), 0 0 0 2.5px var(--accent1);
+   border: 1px dotted var(--accentCont-1);
+   box-shadow: 0 0 0 2px var(--htmlbase), 0 0 0 2.5px var(--accentCont-1);
    padding: 4px;
 }
 
@@ -677,8 +675,8 @@ h3 .shape {
 
 .breadcrumbs {
    padding: 0px 0 12px;
-   /* border-bottom: 1px dotted var(--borderColor);
-   box-shadow: inset 0 -3px 0 0 var(--bgTertiary), inset 0 -4px 0 0 var(--borderColor); */
+   /* border-bottom: 1px dotted var(--strokePrimary);
+   box-shadow: inset 0 -3px 0 0 var(--bgTertiary), inset 0 -4px 0 0 var(--strokePrimary); */
    width: calc(100% - 0px);
    margin: 16px auto 16px;
    display: flex;
@@ -695,7 +693,7 @@ h3 .shape {
    text-decoration: none;
    text-transform: uppercase;
    letter-spacing: 1px;
-   color: var(--accent2);
+   color: var(--accentMain-1);
    margin-bottom: 8px;
 }
 
@@ -732,7 +730,7 @@ h3 .shape {
 .frameinset_1 {
    padding: 3px 0;
    background: var(--bgTertiary);
-   border: 1px solid var(--borderColor);
+   border: 1px solid var(--strokePrimary);
 }
 
 .frameinset_2 {
@@ -745,8 +743,8 @@ h3 .shape {
 }
 
 .doubleframe {
-   border: 1px solid var(--borderColor);
-   box-shadow: inset 0 0 0 4px var(--bgOverlay), inset 0 0 0 5px var(--borderColor);
+   border: 1px solid var(--strokePrimary);
+   box-shadow: inset 0 0 0 4px var(--bgOverlay), inset 0 0 0 5px var(--strokePrimary);
 }
 
 .scoopedbox svg {
@@ -760,7 +758,7 @@ a.scoopedbox {
 .scoopedbox {
    /* border color */
    box-sizing: border-box;
-   background: var(--borderColor);
+   background: var(--strokePrimary);
    clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 8px), 0% 8px);
 }
 
@@ -936,7 +934,7 @@ a.scoopedbox:hover::before,
 .cat-innerwrap {
    width: 100%;
    background: var(--bgPrimary);
-   border: 1px solid var(--borderColor);
+   border: 1px solid var(--strokePrimary);
    border-left: 0;
    border-right: 0;
 }
@@ -954,7 +952,7 @@ a.scoopedbox:hover::before,
 
 .forumname {
    font: var(--textHero28);
-   color: var(--accent1);
+   color: var(--accentCont-1);
 }
 
 .lastpost-link,
@@ -967,7 +965,7 @@ a.scoopedbox:hover::before,
    margin-top: 2px;
    font: 700 var(--textSerif14);
    text-transform: uppercase;
-   color: var(--accent2);
+   color: var(--accentMain-1);
 }
 
 .lastpost-author a {
@@ -1179,8 +1177,8 @@ a.scoopedbox:hover::before,
    /* margin: 40px 64px 40px 0; */
    columns: 2;
    background: var(--bgTertiary);
-   border: 1px solid var(--borderColor);
-   box-shadow: inset 0 0 0 4px var(--bgTertiary), inset 0 0 0 5px var(--borderColor);
+   border: 1px solid var(--strokePrimary);
+   box-shadow: inset 0 0 0 4px var(--bgTertiary), inset 0 0 0 5px var(--strokePrimary);
 }
 
 .welcomecenter-linkbox a {
@@ -1190,8 +1188,8 @@ a.scoopedbox:hover::before,
 
 /* CATEGORY: GET STARTED */
 
-.cat-getstarted {
-   z-index: 1;
+.cat-outerwrapper {
+   z-index: 2;
 }
 
 .cat-getstarted-layout {
@@ -1257,7 +1255,7 @@ a.scoopedbox:hover::before,
    margin-bottom: 2px;
    font: var(--textHero64);
    font-variation-settings: 'opsz' 72;
-   color: var(--accent1);
+   color: var(--accentCont-1);
    /* text-shadow: 0 0 1px var(--htmlbase), 2px 0 0px var(--htmlbase);
    color: var(--permWhite); */
 }
@@ -1328,11 +1326,7 @@ a.scoopedbox:hover::before,
    z-index: 0;
 }
 
-.cat-character .cat-character-layout {
-   display: flex;
-}
-
-.cat-character-boards {
+.cat-character-layout {
    width: 100%;
    display: grid;
    grid-template-areas:
@@ -1439,7 +1433,7 @@ img.cat-character-hero {
    padding: 12px 20px 10px;
    min-width: 140px;
    font: var(--textHero18);
-   color: var(--accent1);
+   color: var(--accentCont-1);
    white-space: nowrap;
 }
 
@@ -1560,6 +1554,7 @@ a:hover [id='scoopplot']+use {
 }
 
 .locationtabbox {
+   grid-area: tabbox;
    width: max(35%, 356px);
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
@@ -1642,11 +1637,13 @@ a:hover [id='scoopplot']+use {
 }
 
 .windowbricks {
-   grid-area: placeimage;
-   width: 100%;
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 600px;
    height: 100%;
    background: var(--strokeSecondary);
-   mask: url(assets/final-windowgate-bricks.png) bottom right / 85% no-repeat;
+   mask: url(assets/final-windowgate-bricks.png) bottom right / cover;
 }
 
 [class*='location_photo'] {
@@ -1720,6 +1717,7 @@ a:hover [id='scoopplot']+use {
    mask: url(assets/euni.png) center / cover;
    transform: scaleX(-100%);
    z-index: 5;
+   pointer-events: none;
 }
 
 .ooc-twocol {
@@ -1733,7 +1731,6 @@ a:hover [id='scoopplot']+use {
 
 
 .ooc-twocol .forumname {
-   font-family: var(--fontHero);
    margin-bottom: 6px;
 }
 
@@ -1801,7 +1798,7 @@ a:hover [id='scoopplot']+use {
    width: 50%;
 }
 
-.twocolcat .cat-default-layout {
+.cat-default-layout {
    z-index: 5;
    width: 100%;
    height: 100%;
@@ -1877,7 +1874,7 @@ a:hover [id='scoopplot']+use {
    min-width: 140px;
    padding: 12px 24px 10px;
    font: var(--textHero16);
-   color: var(--accent1);
+   color: var(--accentCont-1);
 }
 
 .twocolcat .forumrow-subs a:hover {
@@ -1979,7 +1976,7 @@ a:hover [id='scoopdefault']+use {
    font: 400 16px var(--fontHero);
    padding: 8px 16px 4px;
    margin: 24px 0 24px;
-   border-right: 1px solid var(--borderColor);
+   border-right: 1px solid var(--strokePrimary);
 }
 
 .infocenter-area-links .flexcolumn {
@@ -2008,7 +2005,7 @@ a:hover [id='scoopdefault']+use {
 
 
 .linksdivider[class*=divider] .divider-content {
-   background: var(--accent1);
+   background: var(--accentCont-1);
    width: 1.5px;
    height: 100%;
 }
@@ -2026,7 +2023,7 @@ a:hover [id='scoopdefault']+use {
 .infocenter-h1 {
    margin-bottom: 12px;
    font: var(--textHero32);
-   color: var(--accent1);
+   color: var(--accentCont-1);
 }
 
 .infocenter-h3 {
@@ -2054,14 +2051,12 @@ a:hover [id='scoopdefault']+use {
    text-transform: uppercase;
    letter-spacing: .8px;
    margin-bottom: 16px;
-
-   /* border: 1px dotted var(--borderColor);
-   box-shadow: 0 0 0 2px var(--bgTertiary), 0 0 0 3px var(--borderColor); */
+   /* border: 1px dotted var(--strokePrimary);
+   box-shadow: 0 0 0 2px var(--bgTertiary), 0 0 0 3px var(--strokePrimary); */
    padding: 12px;
 }
 
 .onlinetodaybox>div {
-
    overflow: auto;
    height: 100%;
 }
@@ -2069,13 +2064,7 @@ a:hover [id='scoopdefault']+use {
 .onlinenowbox a,
 .onlinetodaybox a {
    display: inline-block;
-   margin-right: 12px;
-   color: var(--membercolor);
-}
-
-.onlinetodaybox a {
-   display: inline-block;
-   margin-right: 8px;
+   margin-right: 1ch;
    color: var(--membercolor);
 }
 
@@ -2098,7 +2087,7 @@ a:hover [id='scoopdefault']+use {
 .infocenter-census {
    flex: 2 1 0px;
    text-align: center;
-   color: var(--accent2);
+   color: var(--accentMain-1);
    min-width: 120px;
 }
 
@@ -2124,7 +2113,7 @@ a:hover [id='scoopdefault']+use {
    padding-top: 12px;
    justify-content: center;
    align-items: center;
-   color: var(--accent1);
+   color: var(--accentCont-1);
    border-top: 1px dotted var(--strokePrimary);
 }
 
@@ -2162,7 +2151,7 @@ a:hover [id='scoopdefault']+use {
    text-transform: uppercase;
    letter-spacing: 1px;
    margin: auto;
-   color: var(--accent1);
+   color: var(--accentCont-1);
 }
 
 .recent-title::after {
@@ -2216,7 +2205,7 @@ a.recent-threadname {
    display: block;
    font: bold 14px var(--fontBodySerif);
    letter-spacing: .5px;
-   color: var(--accent1);
+   color: var(--accentCont-1);
 }
 
 a.recent-poster {
@@ -2302,10 +2291,7 @@ a.recent-poster::before {
 
 
 
-@media only screen and (max-width: 1100px) {
-   html {
-      background: mediumslateblue;
-   }
+@media only screen and (max-width: 900px) {
 
    :root {
       --navgradient: var(--htmlbase);
@@ -2321,16 +2307,13 @@ a.recent-poster::before {
       --textHero64: 40px/1em var(--fontHero);
    }
 
-   body,
-   .maxwidth {
-      width: 100%;
-      min-width: 350px;
-      max-width: unset;
-      margin: 0;
+   html {
+      background: mediumslateblue;
    }
 
-   .cat-outerwrapper:not(:where(.cat-getstarted)) {
-      display: none;
+
+   .maxwidth {
+      min-width: 350px;
    }
 
 
@@ -2429,10 +2412,34 @@ a.recent-poster::before {
       padding: var(--mobileinset);
    }
 
+   #welcomecenter-section-tabscontent {
+      display: flex;
+      flex-direction: row;
+   }
+
+   #welcomecenter-section-tabscontent[class="active-tab-1"] {
+      transform: translateX(calc(-100% / 2* 2));
+   }
+
    .welcomecenter-section-body {
       flex-direction: column;
+      min-width: 100%;
       padding: var(--mobileinset);
    }
+
+   .welcomecenter-blurb {
+      max-height: 160px;
+   }
+
+
+
+
+
+   /* CATEGORY DEFAULTS */
+   .lastpost-avi {
+      display: none;
+   }
+
 
    /* CATEGORY: GET STARTED  */
 
@@ -2452,7 +2459,7 @@ a.recent-poster::before {
    .cat-getstarted-boards {
       margin: 24px 0 0;
       padding: 28px var(--mobileinset);
-      border-top: 1px solid var(--borderColor);
+      border-top: 1px solid var(--strokePrimary);
    }
 
    .cat-getstarted .forumrow:not(:last-child) {
@@ -2462,31 +2469,21 @@ a.recent-poster::before {
 
    /* CATEGORY: CHARACTER */
 
-   .cat-character .cat-character-layout {
-      width: 100%;
-      padding: 0;
+   .cat-character-layout {
+      padding: 30px 16px;
       grid-row-gap: 0;
    }
 
-
    .forum-plottinghub {
-      grid-template-areas: 'name'
+      grid-template: 'name'
          'lastpost'
-         'subforums';
-      grid-template-columns: 1fr;
+         'subforums' / 1fr;
       grid-column-gap: 12px;
-
-      padding: 28px 24px 20px;
-      border-bottom: 1px solid var(--borderColor);
+      border-bottom: 1px solid var(--strokePrimary);
    }
-
-   .plottinghubbg,
-   .plottinghubbgcolor {
-      display: none;
-   }
-
 
    .forum-plottinghub .forumrow-subs {
+      padding: 24px 0;
       flex-direction: column;
    }
 
@@ -2498,29 +2495,44 @@ a.recent-poster::before {
    .plotting-twocol {
       flex-direction: column;
       margin-left: 0;
-   }
-
-   .plotting-twocol .forumrow,
-   .plotting-twocol .forumrow:first-of-type {
-      padding: 24px 28px;
-   }
-
-   .plotting-twocol .forumrow:first-of-type::after {
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 1px;
-   }
-
-
-   .plotting-twocol {
       background-color: transparent;
    }
 
    .plotting-twocol .forumrow,
    .plotting-twocol .forumrow:first-of-type {
-      padding: 20px 24px;
+      padding: 24px 0 0;
    }
+
+   .plotting-twocol .forumrow:first-of-type::after {
+      display: none;
+   }
+
+   .cat-character-img {
+      grid-area: plottinghub;
+      top: 0;
+      right: -16px;
+      height: 100%;
+   }
+
+   .cat-character-img::before {
+      display: none;
+      height: 100%;
+   }
+
+   .cat-character-imgsizer::before,
+   .cat-character-imgsizer::after {
+      top: -210px;
+      mask-position: 0 30px;
+   }
+
+   .cat-character-imgsizer::before {
+      background: var(--bgPrimary);
+   }
+
+   .cat-character-imgsizer::after {
+      opacity: .3;
+   }
+
 
    .doublescooped {
       background-image: none;
@@ -2540,51 +2552,55 @@ a.recent-poster::before {
       height: 460px;
       height: fit-content;
       padding: 0;
+      grid-template:
+         'placeimage' 200px
+         'aboutplace'
+         'tabbox';
    }
 
    .cat-locations-layout .forumrow {
-      grid-template-areas: 'aboutplace placeimage';
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-
-      padding: 16px 0 24px 24px;
-      align-items: center;
-      overflow: hidden;
       width: 100%;
-      top: 0;
    }
 
    .cat-locations-layout .forumrow:not(:first-child) {
-      border-top: 1px solid var(--borderColor);
+      border-top: 1px solid var(--strokePrimary);
    }
 
-   .location_info {
-      opacity: 1;
+   .windowframe,
+   #windowcontent,
+   [class*='location_photo'] {
+      border-radius: 0;
+      aspect-ratio: unset;
+      width: 100%;
+      height: 100%;
    }
 
    .windowframe {
-      display: none !important;
+      top: 0;
+      right: 0;
+      height: 200px;
+   }
+
+   .windowframe::after {
+      display: none;
+   }
+
+   .windowbricks {
+      display: none;
    }
 
    #windowcontent {
-      border-radius: 50% 0 0 50% / 50% 0 0 50%;
+      position: relative;
       width: 100%;
-      height: calc(100% + 64px);
+      height: 100%;
       padding: 0;
-      margin: 8px 0 0;
-      opacity: 1;
       transform: none;
-   }
-
-   .location_photo {
-      border-radius: 0;
    }
 
    .location_info {
       max-width: unset;
       width: 100%;
-      padding: 0;
-      padding-top: 12px;
+      padding: 30px 16px;
    }
 
    .location_info .forumname {
@@ -2594,40 +2610,85 @@ a.recent-poster::before {
    .location_info .forumdesc {
       max-width: unset;
       max-height: 80px;
-      margin-bottom: .5em;
+      margin-bottom: 1em;
    }
 
    .locationtabbox {
-      display: none;
-      padding-bottom: 24px;
+      width: 100%;
+      padding: 0 16px 24px;
    }
 
-   .location_info .lastpost-avi {
-      display: none;
+   .locationtabbox .tab {
+      min-width: 40%;
+   }
+
+   [class*=location_photo] {
+      transform: none;
    }
 
 
    /* CATEGORY: OOC */
 
-   .cat-ooc .twocolcat {
-      flex-direction: column;
+   .cat-ooc-layout {
+      padding: 30px 16px;
    }
 
-   .forum-ooc-bg {
+   .ooc-twocol {
+      flex-direction: column;
+      gap: 24px;
+      background: none;
+   }
+
+   .ooc-twocol .forumrow,
+   .ooc-twocol .forumrow:first-of-type {
+      padding: 0;
+   }
+
+   .ooc-twocol .forumrow:first-of-type::after {
       display: none;
    }
 
-   .twocolcat .cat-ooc-layout {
-      padding: 24px;
+   .ooc-hero {
+      aspect-ratio: 410/440;
+      width: auto;
+      height: 150px;
+      top: -170px;
+      left: 0;
+      bottom: unset;
+      z-index: 0;
    }
 
-   .twocolcat .cat-ooc-layout .forumrow {
+
+   /* CATEGORY: GENERIC */
+
+   .cat-default .twocolcat {
+      flex-direction: column;
+   }
+
+   .twocolcat .forumrow {
+      width: 100%;
+   }
+
+   .forum-default-bg {
+      display: none;
+   }
+
+   .twocolcat .cat-default-layout {
+      padding: 30px 16px 24px;
+      grid-row-gap: 8px;
+   }
+
+   .twocolcat .cat-default-layout .forumrow {
       grid-template-areas:
          'boardinfo'
          'subforums'
    }
 
-   .twocolcat .cat-ooc-layout .forumrow-subs a {
+   .twocolcat .forumname {
+      font: var(--textHero28)
+   }
+
+   .twocolcat .cat-default-layout .forumrow-subs a {
       min-width: 200px;
    }
 
@@ -2698,5 +2759,23 @@ a.recent-poster::before {
    .infocenter-link-icon {
       height: 36px;
    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .cat-outerwrapper:not(:where(.cat-getstarted, .cat-character, .cat-locations, .cat-ooc, .cat-default, .cat-infocenter)) {
+      display: none;
+   }
+
 
 }
