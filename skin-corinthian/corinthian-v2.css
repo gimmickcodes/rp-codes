@@ -1973,9 +1973,11 @@ a:hover [id='scoopdefault']+use {
    align-items: center;
    justify-content: space-between;
    gap: 20px;
-   font: 400 16px var(--fontHero);
    padding: 8px 16px 4px;
    margin: 24px 0 24px;
+   font: 400 16px var(--fontHero);
+   color: var(--textPrimary);
+   -webkit-text-stroke: .25px var(--textPrimary);
    border-right: 1px solid var(--strokePrimary);
 }
 
@@ -2005,7 +2007,7 @@ a:hover [id='scoopdefault']+use {
 
 
 .linksdivider[class*=divider] .divider-content {
-   background: var(--accentCont-1);
+   background: var(--strokePrimary);
    width: 1.5px;
    height: 100%;
 }
@@ -2704,6 +2706,7 @@ a.recent-poster::before {
          'recent'
          'rule'
          'links';
+      grid-template-rows: auto;
       grid-template-columns: auto;
    }
 
@@ -2711,10 +2714,14 @@ a.recent-poster::before {
       flex-direction: row;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      padding: 16px 0;
+      padding: 16px 0 24px;
       margin: 0 24px;
       gap: 16px;
       border-right: none;
+   }
+
+   .infocenter-area-main {
+      padding: 30px 16px;
    }
 
    .onlinenowbox {
@@ -2731,14 +2738,27 @@ a.recent-poster::before {
    }
 
    .infocenter-area-recent {
-      margin: 32px 24px 32px;
+      margin: 30px 16px;
+   }
+
+   .recent-content {
+      height: auto;
+   }
+
+   .recent-list {
+      height: 320px;
+      padding-bottom: 16px;
+   }
+
+   .infocenter-img {
+      display: none;
    }
 
    .linksdivider[class*=divider] {
       display: flex;
       flex-direction: row;
-      margin: 8px 24px -12px !important;
-      width: calc(100% - 48px);
+      margin: 8px 16px -12px !important;
+      width: calc(100% - 32px);
    }
 
    .linksdivider[class*=divider][class*=arrowhead-2]::after {
@@ -2752,8 +2772,8 @@ a.recent-poster::before {
    }
 
    .linksdivider[class*=divider] .divider-content {
-      height: 1.5px;
-      width: calc(100% - 48px);
+      height: 1px;
+      width: calc(100% - 32px);
    }
 
    .infocenter-link-icon {
