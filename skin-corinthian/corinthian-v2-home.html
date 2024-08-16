@@ -7,6 +7,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="//Vithgorhaxam.github.io/font-icons/Cappuccicons.css" rel="stylesheet">
+
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,11 +72,24 @@
 </style>
 
 <body>
+
+    <div class="mobilenavbar">
+        <div id="navstrip" align="left">&nbsp;
+            <a href="#">Home</a>
+            <!-- macro: nav seperator  -->
+            <a href="#">Category</a>
+            <!-- macro: nav seperator  -->
+            <a href="#">Board</a>
+            <!-- macro: nav seperator  -->
+            Thread of Really Long Title
+        </div>
+        <div class="navstrip-iconbox" onclick="menuFunction()">
+            <i class="ph ph-list"></i>
+        </div>
+    </div>
+
     <div class="maxwidth">
         <div id="navbar">
-            <a href="javascript:void(0);" class="mobilenav" onclick="menuFunction()">
-                <div>Navigation <i class="fas fa-angle-down"></i></div>
-            </a>
 
             <div class="navlinks" id="hamburger">
                 <a href="#">Home</a>
@@ -1048,7 +1064,6 @@
             <div class="clouds"></div>
         </div>
 
-
     </div>
 </body>
 
@@ -1071,7 +1086,7 @@
 
 
 <script>
-    // Slider Tabs 
+    // Quartz Slider Tabs 
     // Applies a class to the container of tab content based on active tab. Allows for carousel type transitions
 
     function tabsSlider(outerWrapper, tabs, tabSlidesWrap) {
