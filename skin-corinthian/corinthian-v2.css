@@ -110,6 +110,9 @@
 }
 
 html {
+   -webkit-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -ms-text-size-adjust: 100%;
    background: var(--htmlbase);
    font: var(--textSerif18);
    color: var(--textPrimary);
@@ -235,7 +238,7 @@ a {
    color: inherit;
 }
 
-#navbar a,
+#topnav a,
 #header a,
 .forumrow a,
 .cat-outerwrapper a {
@@ -257,62 +260,9 @@ a {
    width: 100%;
    height: 100%;
    background: #000000;
-   z-index: 130;
-}
-
-.mobilenavbar {
-   position: fixed;
-   bottom: 0;
-   width: 100%;
-   display: grid;
-   align-items: center;
-   grid-template: 'breadcrumbs iconwell' / 1fr auto;
-   background: var(--strokePrimary);
-   border-top: 1px solid var(--permWhite);
-   color: var(--permWhite);
    z-index: 200;
-   display: none;
 }
 
-#navstrip,
-.navstrip-iconbox {
-   display: flex;
-   align-items: center;
-   height: 56px;
-}
-
-#navstrip {
-   width: 100%;
-   padding: 0 24px 0 16px;
-   white-space: nowrap;
-   overflow: auto;
-   font: var(--textSerif12);
-   text-transform: uppercase;
-   letter-spacing: 2px;
-}
-
-#navstrip::-webkit-scrollbar {
-   display: none;
-}
-
-#navstrip a:first-child {
-   margin-left: -1ch;
-}
-
-#navstrip a {
-   margin-right: 2ch;
-   font-weight: 700;
-   text-decoration: none;
-}
-
-.navstrip-iconbox {
-   padding: 0 16px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border-left: 1px solid var(--permWhite);
-   cursor: pointer;
-}
 
 
 /* SCROLLBAR */
@@ -341,33 +291,50 @@ a {
 
 /* TOP NAV */
 
-#navbar {
+/* hero-img 250
+navpanel 230 
+clicktodismiss 200
+topnav 150
+topnavline 140 */
+
+#topnav {
    position: sticky;
    top: 0;
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   padding: 10px 0;
-   z-index: 230;
-   margin-bottom: 0 !important;
-   /* border-bottom: 1px solid red; */
+   margin-bottom: 0;
+   display: grid;
+   align-items: center;
+   grid-template: 'linksrow buttonwell' 48px / 1fr auto;
+   background: var(--htmlbase);
+   font: var(--textSerif12);
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   white-space: nowrap;
+   color: var(--permWhite);
+   z-index: 150;
 }
 
-#navbarline {
+#topnavline {
    position: sticky;
    top: 0;
    width: min(100%, 1200px);
-   height: 51px;
+   height: 49px;
    margin: auto;
-   margin-top: -50px;
+   margin-top: -48px;
    background: var(--navgradient);
    border-bottom: 1px solid var(--bgPrimary);
    transition: background .3s ease;
-   /* box-shadow: -20px 0 0 var(--htmlbase), 20px 0 0 var(--htmlbase); */
    z-index: 135;
 }
 
-#navbar a {
+.topnav-links,
+#topnav #navstrip {
+   grid-area: linksrow;
+   display: flex;
+   align-items: center;
+   gap: 2ch;
+}
+
+#topnav a {
    font: var(--textSerif12);
    color: var(--permWhite);
    text-transform: uppercase;
@@ -376,35 +343,73 @@ a {
    text-shadow: 0 0 2px var(--htmlbase), 0 0 2px var(--htmlbase), 0 0 2px var(--htmlbase), 0 0 2px var(--htmlbase), 0 0 3px var(--htmlbase), 0 0 3px var(--htmlbase), 0 0 3px var(--htmlbase), 0 0 3px var(--htmlbase);
 }
 
-.navlinks {
-   margin-top: 2px;
-}
-
-.navlinks a {
+.topnav-textbutton {
    display: inline-block;
-}
-
-.navlinks a:not(:last-child) {
-   margin-right: 12px;
-}
-
-a.navbar-open,
-a.navbar-close {
+   padding: 6px 8px;
    font: inherit;
    letter-spacing: 1px;
    background: var(--htmlbase);
    border: 1px solid var(--bgTertiary);
-   display: inline-block;
-   padding: 6px 8px;
 }
 
-a.mobilenav {
+#topnav #navstrip {
+   width: 100%;
+   overflow: auto;
+}
+
+#navstrip::-webkit-scrollbar {
    display: none;
 }
 
-a.mobilenav i {
-   margin-left: 4px;
+#navstrip a:first-child {
+   margin-left: -.5ch;
 }
+
+.topnav-iconbutton {
+   grid-area: buttonwell;
+   padding: 0 16px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-left: 1px solid var(--permWhite);
+   font-size: 16px;
+   cursor: pointer;
+}
+
+#topnav #navstrip,
+.topnav-iconbutton {
+   display: none;
+}
+
+@media only screen and (max-width: 900px) {
+   #topnav {
+      min-width: unset;
+      max-width: unset;
+      margin-bottom: unset;
+      padding: 0;
+      border-bottom: .5px solid var(--permWhite);
+   }
+
+   .topnav-links,
+   .topnav-textbutton,
+   #topnavline {
+      display: none;
+   }
+
+   #topnav #navstrip,
+   #topnav .topnav-iconbutton {
+      display: flex;
+      height: 100%;
+      align-items: center;
+   }
+
+   #topnav #navstrip {
+      padding-right: 24px;
+   }
+
+}
+
+
 
 
 
@@ -448,15 +453,13 @@ h1 {
 h3 {
    margin: unset;
    margin-right: 8px;
-   font-size: min(4.5vw, 20px);
-   line-height: 1.25em;
+   font: var(--textHero20);
    font-family: var(--fontHero2);
-   font-weight: normal;
    text-transform: uppercase;
    letter-spacing: 3px;
+   color: var(--permWhite);
    height: 336px;
    opacity: .5;
-   white-space: nowrap;
 }
 
 
@@ -466,7 +469,6 @@ h3 .shape {
 
 .hero-img {
    position: absolute;
-   z-index: 140;
    bottom: 0;
    left: 40%;
    left: calc(50% - 150px);
@@ -480,12 +482,12 @@ h3 .shape {
    transition: .5s ease;
    pointer-events: none;
    filter: contrast(.8) saturate(.85) sepia(0);
+   z-index: 200;
 }
 
 .hero-arches {
    position: absolute;
    bottom: 0;
-   /* right: 164px; */
    left: 35%;
    left: calc(45% - 150px);
    display: block;
@@ -520,13 +522,14 @@ h3 .shape {
    transition: .5s ease;
 }
 
-.openmenu #navpanel {
+.openmenu #navpanel,
+#navpanel.openmenu {
    opacity: 1;
-   z-index: 125;
+   z-index: 230;
    pointer-events: unset;
 }
 
-.openmenu .hero-img {
+/* .openmenu .hero-img {
    background-position: 100px bottom;
 }
 
@@ -541,7 +544,7 @@ h3 .shape {
 
 .openmenu .hero-colorfield {
    opacity: 0;
-}
+} */
 
 .hero-texture {
    position: absolute;
@@ -567,30 +570,36 @@ h3 .shape {
 
 #navpanel {
    position: absolute;
-   width: min(calc(100% - 28px), 1012px);
-
-   opacity: 0;
    top: calc(50% - 220px);
    left: 50%;
+   width: min(100%, 1012px);
+   padding: 8px;
    transform: translateX(-50%);
-   z-index: -125;
-   padding: 16px;
    color: var(--bgTertiary);
    border: 1px solid #00000050;
+   opacity: 0;
    pointer-events: none;
    transition: .5s ease;
+
+   position: fixed;
+   width: 720px;
+   top: 160px;
+   /* left: unset;
+   right: 50%;
+   margin-right: -240px;
+   transform: translateX(50%); */
 }
 
 .navpanelinset {
-   background-color: var(--permBlack);
-   backdrop-filter: blur(5px);
-
    padding: 40px 50% 40px 40px;
    height: calc(100% - 68px);
+   background-color: var(--permBlack);
    background-image: radial-gradient(var(--strokePrimary) 1%, transparent 2%),
       radial-gradient(var(--strokePrimary) 1%, transparent 2%);
    background-size: 40px 40px;
    background-position: 0 0, 20px 20px;
+   backdrop-filter: blur(5px);
+   padding: 40px;
 }
 
 
@@ -598,7 +607,7 @@ h3 .shape {
    margin-bottom: 24px;
    gap: 20px !important;
    flex-direction: row-reverse;
-   justify-content: start;
+   justify-content: space-between;
 }
 
 .login-avi {
@@ -622,22 +631,22 @@ h3 .shape {
 
 .navpanel-header h5 {
    margin: unset;
+   margin-bottom: 1em;
    font: var(--textHero14);
+   text-transform: uppercase;
    letter-spacing: 1px;
    color: var(--bgTertiary);
-   margin-bottom: 6px;
-   text-transform: uppercase;
 }
 
 .accountswitchername {
    margin: 0;
    padding: 0;
+   width: 75%;
+   background: transparent;
+   border: unset;
    font: var(--textHero32);
    color: var(--bgTertiary);
    box-shadow: none;
-   background: transparent;
-   border: unset;
-   width: 75%;
 }
 
 .quicklinklabel {
@@ -671,12 +680,13 @@ h3 .shape {
 }
 
 .navpanel-quicklinks a {
-   font: var(--textSerif14);
+   display: block;
+   margin-bottom: 6px;
+   font: var(--textSerif16);
    font-weight: 500;
    letter-spacing: .5px;
    color: var(--bgTertiary);
-   display: block;
-   margin-bottom: 6px;
+   text-decoration: none;
    transition: .5s ease;
 }
 
@@ -2404,19 +2414,19 @@ a.recent-poster::before {
       align-items: center;
    }
 
-   h1,
-   h3 {
+   h1 {
       width: min(100%, 450px);
       color: var(--permBlack);
       text-align: center;
    }
 
+   h3 {
+      width: min(100%, 450px);
+      text-align: center;
+   }
 
 
    /* NAV PANEL */
-   #navpanel {
-      z-index: 100;
-   }
 
    .navpanelinset {
       padding: 40px;
@@ -2442,15 +2452,6 @@ a.recent-poster::before {
 
    input.accountswitchername {
       width: 100%;
-   }
-
-   #navbar,
-   #navbarline {
-      display: none;
-   }
-
-   .mobilenavbar {
-      display: grid;
    }
 
 

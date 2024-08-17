@@ -4,7 +4,6 @@
     <title>Corinthian v2: Home</title>
     <meta name="viewport" content="width=device-width">
 
-    <link href="../css-templates.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
@@ -74,7 +73,7 @@
 
 <body>
 
-    <div class="mobilenavbar">
+    <div id="topnav" class="maxwidth">
         <div id="navstrip" align="left">&nbsp;
             <a href="#">Home</a>
             <!-- macro: nav seperator  -->
@@ -84,30 +83,75 @@
             <!-- macro: nav seperator  -->
             Thread of Really Long Title
         </div>
-        <div class="navstrip-iconbox" onclick="menuFunction()">
+
+        <div class="topnav-links">
+            <a href="#">Home</a>
+            <a href="#">Members</a>
+            <a href="#">UCP</a>
+            <a href="#">Active Topics</a>
+            <a href="#">Search</a>
+            <a href="#">Log out</a>
+        </div>
+
+        <div class="topnav-textbutton" onclick="menuFunction()">Menu
+        </div>
+
+        <div class="topnav-iconbutton" onclick="menuFunction()">
             <i class="ph ph-list"></i>
         </div>
     </div>
+    <div id="topnavline" class="maxwidth"></div>
+
+
 
     <div class="maxwidth">
-        <div id="navbar">
 
-            <div class="navlinks" id="hamburger">
-                <a href="#">Home</a>
-                <a href="#">Active Topics</a>
-                <a href="#">Members</a>
-                <a href="#">Search</a>
-                <a href="#">Inbox (1)</a>
-                <a href="#">Alerts (2)</a>
-            </div>
+        <div id="navpanel">
 
-            <div id="menubutton">
-                <a class="navbar-open">Links</a>
-                <a class="navbar-close" style="display: none">Close</a>
+            <div class="navpanelinset">
+
+                <div class="navpanel-header flexrow">
+                    <div class="login-avi"><img src="https://i.ibb.co/37xVGTx/51.png"></div>
+                    <div class="flexcolumn">
+                        <h5>Welcome back,</h5>
+                        <input class="accountswitchername" value="Name Here"></input>
+                    </div>
+                </div>
+
+                <div class="navpanel-quicklinks flexrow">
+                    <div class="flexcolumn">
+                        <div class="quicklinklabel">Get started</div>
+                        <div class="quicklinkgroup">
+                            <a href="">Rules</a>
+                            <a href="">Premise</a>
+                            <a href="">Magic</a>
+                            <a href="">F.A.Q.</a>
+                        </div>
+
+                    </div>
+
+                    <div class="flexcolumn">
+                        <div class="quicklinklabel">Characters</div>
+                        <div class="quicklinkgroup">
+                            <a href="">Face Claims</a>
+                            <a href="">Canons</a>
+                            <a href="">Subfactions</a>
+                            <a href="">Wanted ads</a>
+                        </div>
+                    </div>
+
+                    <div class="flexcolumn">
+                        <div class="quicklinklabel">Misc.</div>
+                        <div class="quicklinkgroup">
+                            <a href="">Member Directory</a>
+                            <a href="">Development</a>
+                            <a href="">Templates</a>
+                            <a href="">Subfactions</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div id="navbarline"></div>
 
         <div id="header" class="">
             <div class="hero-text">
@@ -124,54 +168,6 @@
             <div class="hero-colorfield"></div>
             <div class="hero-texture"></div>
 
-            <div id="navpanel">
-
-                <div class="navpanelinset">
-
-                    <div class="navpanel-header flexrow">
-                        <div class="login-avi"><img src="https://i.ibb.co/37xVGTx/51.png"></div>
-                        <div class="flexcolumn">
-                            <h5>Welcome back,</h5>
-                            <input class="accountswitchername" value="Name Here"></input>
-                        </div>
-                    </div>
-
-                    <div class="navpanel-quicklinks flexrow">
-                        <div class="flexcolumn">
-                            <div class="quicklinklabel">Get started</div>
-                            <div class="quicklinkgroup">
-                                <a href="">Rules</a>
-                                <a href="">Premise</a>
-                                <a href="">Magic</a>
-                                <a href="">F.A.Q.</a>
-                            </div>
-
-                        </div>
-
-                        <div class="flexcolumn">
-                            <div class="quicklinklabel">Characters</div>
-                            <div class="quicklinkgroup">
-                                <a href="">Face Claims</a>
-                                <a href="">Canons</a>
-                                <a href="">Subfactions</a>
-                                <a href="">Wanted ads</a>
-                            </div>
-                        </div>
-
-                        <div class="flexcolumn">
-                            <div class="quicklinklabel">Misc.</div>
-                            <div class="quicklinkgroup">
-                                <a href="">Member Directory</a>
-                                <a href="">Development</a>
-                                <a href="">Templates</a>
-                                <a href="">Subfactions</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="navpanel-event"><a href=""><img src="https://images-ext-1.discordapp.net/external/PELuw1zsUA8aiS_c6NrgXa6sGBBTiWGUeGyLmEGy6vc/https/we-japan.com/wp-content/uploads/2021/09/Spirited-Away.kaonashi.jpg"></a></div>
-                </div>
-            </div>
         </div>
 
 
@@ -1080,12 +1076,6 @@
 </script>
 
 
-
-
-
-
-
-
 <script>
     // Quartz Slider Tabs 
     // Applies a class to the container of tab content based on active tab. Allows for carousel type transitions
@@ -1144,111 +1134,68 @@
 
     function scrollFunction() {
         if (document.body.scrollTop > 580 || document.documentElement.scrollTop > 580) {
-            document.getElementById("navbarline").style.background = "linear-gradient(to right, var(--htmlbase) 60%, var(--htmlbase) 100%)";
-            // document.getElementById("navbarline").style.background = "var(--htmlbase)";
-            // document.getElementById("navbarline").style.zIndex = "200";
+            document.getElementById("topnavline").style.background = "linear-gradient(to right, var(--htmlbase) 60%, var(--htmlbase) 100%)";
+            // document.getElementById("topnavline").style.background = "var(--htmlbase)";
+            // document.getElementById("topnavline").style.zIndex = "200";
         } else {
-            document.getElementById("navbarline").style.background = "var(--navgradient)";
-            // document.getElementById("navbarline").style.background = "transparent";
-            document.getElementById("navbarline").style.zIndex = "140";
+            document.getElementById("topnavline").style.background = "var(--navgradient)";
+            // document.getElementById("topnavline").style.background = "transparent";
+            document.getElementById("topnavline").style.zIndex = "140";
         }
     }
 </script>
 
 
 <script>
+
+    $(document).ready(function () {
+        $(".topnav-close").hide();
+
+        var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss").attr("onclick", "menuFunction()")
+        $(document.body).append(clicktodismiss);
+    });
+
+
+
     // Hamburger menu on mobile
     function menuFunction() {
-        var x = document.getElementById("hamburger");
-        if (x.className === "navlinks") {
+        var x = document.getElementById("topnav");
+        if (x.className === "maxwidth") {
             x.className += " responsive";
-            $("#clicktodismiss").css({ "opacity": "0.5" }).fadeIn(300);
-            $("#menubutton").fadeTo(300, 0);
+
+            $("#clicktodismiss").css({ "opacity": "0.2" }).fadeIn(300);
+            $('#navpanel').addClass('openmenu');
+
+            // Scroll to top when clicking hero. Wait until window reaches top before animating in the panel
+            // $("html, body").animate({ scrollTop: 0 }, "500");
+            // if (window.scrollY > 0) {
+            //     setTimeout(function () {
+            //         $('#header').addClass('openmenu');
+            //         $('.topnav-textbutton').addClass('menuopened').text('Close');
+            //         $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn(300);
+            //     }, 400);
+            // } else {
+            //     $('#header').addClass('openmenu');
+            //     $('.topnav-textbutton').addClass('menuopened').text('Close');
+            //     $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn(300);
+            // }
+
+
         } else {
-            x.className = "navlinks";
+            x.className = "maxwidth";
+            $('#header').removeClass('openmenu');
+            $('.topnav-textbutton').removeClass('menuopened').text('Menu');
+            $('#navpanel').removeClass('openmenu');
             $("#clicktodismiss").fadeOut(300);
-            $("#menubutton").fadeTo(300, 1);
         }
     }
 
     $(document).on("click", "#clicktodismiss", function () {
         $("#clicktodismiss").fadeOut(300);
-        document.getElementById("hamburger").className = "navlinks";
-        $("#menubutton").fadeTo(300, 1);
-        x.className = "navlinks";
-    });
-</script>
-
-<script>
-    // Adapted from jQuery Modal Popups by Black
-    // http://code.jfbs.net/?showtopic=57
-
-    $(document).ready(function () {
-        $(".navbar-close").hide();
-
-        var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss")
-        $(document.body).append(clicktodismiss);
-
-        $(document).on("click", ".navbar-open", function (e) {
-            $("html, body").animate({ scrollTop: 0 }, "500");
-
-            if (window.scrollY > 0) {
-                setTimeout(function () {
-                    // $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn(300);
-                    $('#header').addClass('openmenu');
-                    $(".navbar-close").show();
-                    $(".navbar-open").hide();
-                }, 400);
-            } else {
-                // $("#clicktodismiss").css({ "opacity": "0.0" }).fadeIn(300);
-                $('#header').addClass('openmenu');
-                $(".navbar-close").show();
-                $(".navbar-open").hide();
-            }
-        });
-
-        $(document).on("click", "#clicktodismiss", function () {
-            $("#clicktodismiss").fadeOut(300);
-            $('#header').removeClass('openmenu');
-            $(".navbar-close").hide();
-            $(".navbar-open").show();
-
-            $("#clicktodismiss").fadeOut(300);
-            document.getElementById("hamburger").className = "navlinks";
-            $("#menubutton").fadeTo(300, 1);
-        });
-
-        $(document).on("click", ".navbar-close", function () {
-            // $("#clicktodismiss").fadeOut(300);
-            $('#header').removeClass('openmenu');
-            $(".navbar-close").hide();
-            $(".navbar-open").show();
-        });
-
-        // Scroll to top when opening navpanel
-        $(window).scroll(function () {
-            var hT = $('#bodywrapper').offset().top,
-                hH = $('#bodywrapper').outerHeight(),
-                wH = $(window).height(),
-                wS = $(this).scrollTop();
-            if (wS > (hT + hH - wH)) {
-                console.log('H1 on the view!');
-            }
-        });
-
     });
 </script>
 
 
-<script>
-    // < !--- BACK TO THE(TOP) FUTURE-- ->
-    var btn = $("#btp");
-
-    btn.on("click", function (e) {
-        e.preventDefault();
-        $("html, body").animate({ scrollTop: 0 }, "300");
-    });
-</script>
 
 <script>
     // https://css-tricks.com/scaled-proportional-blocks-with-css-and-javascript/
@@ -1259,6 +1206,5 @@
 
 <script src="https://assets.codepen.io/2434198/JQueryModalPopups.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+
 <script src="https://files.jcink.net/uploads/vene/site/jquery_style_my_tooltips.js"></script>
