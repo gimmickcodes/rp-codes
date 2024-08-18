@@ -107,51 +107,78 @@
     <div class="maxwidth">
 
         <div id="navpanel">
+            <div class="navpanel-layout">
 
-            <div class="navpanelinset">
+                <div class="navpanel-close" onclick="menuFunction()"><i class="ph ph-x"></i></div>
 
-                <div class="navpanel-header flexrow">
-                    <div class="login-avi"><img src="https://i.ibb.co/37xVGTx/51.png"></div>
-                    <div class="flexcolumn">
-                        <h5>Welcome back,</h5>
-                        <input class="accountswitchername" value="Name Here"></input>
+                <div class="navpanel-left">
+                    <div class="navpanel-header">
+                        <div class="login-avi"><img src="https://i.ibb.co/37xVGTx/51.png"></div>
+                        <div class="flexcolumn">
+                            <h5>Welcome back,</h5>
+                            <input class="accountswitchername" value="Name Here"></input>
+                        </div>
+                    </div>
+
+                    <div class="navpanel-buttons">
+                        <a href="#" class="navpanel-button">2 messages</a>
+                        <a href="#" class="navpanel-button">2 alerts</a>
+                        <a href="#" class="navpanel-button">edit profile</a>
+                    </div>
+
+                    <div class="navpanel-quicklinks">
+
+                        <div class="quicklinkgroup mainlinks">
+                            <a href="#">Home</a>
+                            <a href="#">Members</a>
+                            <a href="#">UCP</a>
+                            <a href="#">Active Topics</a>
+                            <a href="#">Search</a>
+                            <a href="#">Log out</a>
+                        </div>
+
+                        <div class="flexcolumn">
+                            <div class="quicklinklabel">Get started</div>
+                            <div class="quicklinkgroup">
+                                <a href="">Rules</a>
+                                <a href="">Premise</a>
+                                <a href="">Magic</a>
+                                <a href="">F.A.Q.</a>
+                            </div>
+
+                        </div>
+
+                        <div class="flexcolumn">
+                            <div class="quicklinklabel">Characters</div>
+                            <div class="quicklinkgroup">
+                                <a href="">Face Claims</a>
+                                <a href="">Canons</a>
+                                <a href="">Subfactions</a>
+                                <a href="">Wanted ads</a>
+                            </div>
+                        </div>
+
+                        <div class="flexcolumn">
+                            <div class="quicklinklabel">Misc.</div>
+                            <div class="quicklinkgroup">
+                                <a href="">Member Directory</a>
+                                <a href="">Development</a>
+                                <a href="">Templates</a>
+                                <a href="">Subfactions</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="navpanel-quicklinks flexrow">
-                    <div class="flexcolumn">
-                        <div class="quicklinklabel">Get started</div>
-                        <div class="quicklinkgroup">
-                            <a href="">Rules</a>
-                            <a href="">Premise</a>
-                            <a href="">Magic</a>
-                            <a href="">F.A.Q.</a>
-                        </div>
-
-                    </div>
-
-                    <div class="flexcolumn">
-                        <div class="quicklinklabel">Characters</div>
-                        <div class="quicklinkgroup">
-                            <a href="">Face Claims</a>
-                            <a href="">Canons</a>
-                            <a href="">Subfactions</a>
-                            <a href="">Wanted ads</a>
-                        </div>
-                    </div>
-
-                    <div class="flexcolumn">
-                        <div class="quicklinklabel">Misc.</div>
-                        <div class="quicklinkgroup">
-                            <a href="">Member Directory</a>
-                            <a href="">Development</a>
-                            <a href="">Templates</a>
-                            <a href="">Subfactions</a>
-                        </div>
-                    </div>
+                <div class="navpanel-right">
+                    <img src="https://i.ibb.co/34x0GG4/grobin.png" class="navpanel-hover">
                 </div>
+
             </div>
         </div>
+
+
+
 
         <div id="header" class="">
             <div class="hero-text">
@@ -1149,8 +1176,6 @@
 <script>
 
     $(document).ready(function () {
-        $(".topnav-close").hide();
-
         var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss").attr("onclick", "menuFunction()")
         $(document.body).append(clicktodismiss);
     });
@@ -1163,7 +1188,7 @@
         if (x.className === "maxwidth") {
             x.className += " responsive";
 
-            $("#clicktodismiss").css({ "opacity": "0.2" }).fadeIn(300);
+            $("#clicktodismiss").css({ "opacity": "0.6" }).fadeIn(300);
             $('#navpanel').addClass('openmenu');
 
             // Scroll to top when clicking hero. Wait until window reaches top before animating in the panel
@@ -1193,6 +1218,7 @@
     $(document).on("click", "#clicktodismiss", function () {
         $("#clicktodismiss").fadeOut(300);
     });
+
 </script>
 
 
