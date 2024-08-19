@@ -93,7 +93,7 @@
             <a href="#">Log out</a>
         </div>
 
-        <div class="topnav-textbutton" onclick="menuFunction()">Menu
+        <div class="topnav-textbutton" onclick="menuFunction()">Menu <div class="alertbadge"></div>
         </div>
 
         <div class="topnav-iconbutton" onclick="menuFunction()">
@@ -116,14 +116,29 @@
                         <div class="login-avi"><img src="https://i.ibb.co/37xVGTx/51.png"></div>
                         <div class="flexcolumn">
                             <h5>Welcome back,</h5>
-                            <input class="accountswitchername" value="Name Here"></input>
+                            <div class="login-name">Name Here</div>
                         </div>
                     </div>
 
                     <div class="navpanel-buttons">
-                        <a href="#" class="navpanel-button">2 messages</a>
-                        <a href="#" class="navpanel-button">2 alerts</a>
-                        <a href="#" class="navpanel-button">edit profile</a>
+                        <a href="#" class="navpanel-button">
+                            <span class="badgecounter">10</span>&nbsp; messages
+                        </a>
+                        <a href="#" class="navpanel-button">
+                            <span class="badgecounter">0</span>&nbsp; alerts
+                        </a>
+                        <span id="subaccounts_menu">
+                            <form action="#" name="subswitch" method="POST">
+                                <input type="hidden" name="auth_key" value="4ce9e3bd60fcc5427477caed78c2c427">
+                                <input type="hidden" name="UserName" value="subacct">
+                                <input type="hidden" name="PassWord" value="subacct">
+                                <input type="hidden" name="referer" value="">
+                                <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                                    <option value="------------" selected="selected">Switch account</option>
+                                    <option value="31">&nbsp;&nbsp;» andin andilet </option>
+                                </select>
+                            </form>
+                        </span>
                     </div>
 
                     <div class="navpanel-quicklinks">
@@ -171,7 +186,7 @@
                 </div>
 
                 <div class="navpanel-right">
-                    <img src="https://i.ibb.co/34x0GG4/grobin.png" class="navpanel-hover">
+                    <img src="https://64.media.tumblr.com/92d1e65cc9693bf7ff4030dbd55251c9/d80727fd945914bb-e5/s1280x1920/6672f545740c458ea55b439d84e754451ec79ef2.jpg" class="navpanel-hover">
                 </div>
 
             </div>
@@ -213,7 +228,7 @@
                             <div id="welcomecenter-section-tabscontent">
                                 <section class="welcomecenter-section-body">
                                     <div class="welcomecenter-blurb">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </div>
-                                    <div class="welcomecenter-linkbox doubleframe">
+                                    <div class="welcomecenter-linkbox ">
                                         <a href="#">Link One</a>
                                         <a href="#">Link Two</a>
                                         <a href="#">Link Three</a>
@@ -348,7 +363,7 @@
 
 
                 <div class="categoryLabel">
-                    Character
+                    Characters
                 </div>
 
 
@@ -505,7 +520,7 @@
 
                                     <div class="forumrow" id="">
                                         <div class="location_info flexcolumn">
-                                            <div class="forumname"><a href="#">Three</a></div>
+                                            <div class="forumname"><a href="#">Ezrest</a></div>
                                             <div class="forumdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque velit nec neque rutrum, vel sagittis diam sodales. Etiam a enim felis. Suspendisse vel odio eu velit ultricies vulputate venenatis vel leo. Nullam justo est, consequat vel neque eu, sodales luctus nisi. Nunc quis nunc tellus. Nunc quis volutpat ligula. </div>
                                             <div class="lastpost flexrow">
                                                 <div class="lastpost-avi">
@@ -546,7 +561,7 @@
                                                     <use xlink:href='#c' x='100%' y='100%' />
                                                 </mask>
                                                 <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
-                                            </svg>Assembly
+                                            </svg>The Assembly
                                         </div>
                                         <div class="tab scoopedbox">
                                             <svg>
@@ -558,7 +573,7 @@
                                                     <use xlink:href='#c' x='100%' y='100%' />
                                                 </mask>
                                                 <use xlink:href='#r' fill='#ffffff00' mask='url(#scoopedtab)' />
-                                            </svg>Three
+                                            </svg>Ezrest
                                         </div>
                                         <div class="tab scoopedbox">
                                             <svg>
@@ -1081,11 +1096,12 @@
 
 
         <div class="bodybg">
-            <div class="cloudsbg">
+
+            <!-- <div class="cloudsbg">
             </div>
             <div class="cloudstail">
             </div>
-            <div class="clouds"></div>
+            <div class="clouds"></div> -->
         </div>
 
     </div>
@@ -1224,7 +1240,16 @@
 
 
 <script>
-    // https://css-tricks.com/scaled-proportional-blocks-with-css-and-javascript/
+    var alertcheck = document.querySelectorAll('.badgecounter');
+
+    for (var i = 0; i < alertcheck.length; i++) {
+        alerts = alertcheck[i].innerHTML
+
+        if (alerts > 0) {
+            console.log("Yes")
+            document.querySelector('.alertbadge').style.display = 'block'
+        }
+    }
 </script>
 
 
