@@ -166,7 +166,7 @@ body {
    bottom: 0;
    width: 100vw;
    height: 100vh;
-   background: linear-gradient(0deg, hsl(var(--strokeSecondary)), transparent);
+   background: linear-gradient(0deg, hsl(var(--strokeSecondary)), transparent 95%);
    mask: url(assets/final-landscape.png) center / cover;
    z-index: -1;
    /* mix-blend-mode: color-burn; */
@@ -263,6 +263,14 @@ topnavline 140 */
    min-width: 1000px;
    max-width: 1150px;
    padding: 0 16px;
+}
+
+#topnav::before {
+   content: '';
+   position: absolute;
+   width: calc(100% + 60px);
+   height: 48px;
+   background: hsl(var(--htmlbase));
 }
 
 #topnavline {
