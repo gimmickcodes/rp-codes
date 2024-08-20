@@ -2417,11 +2417,6 @@ a.recent-poster::before {
 
    /* HEADER */
 
-   #header {
-      width: calc(100% + 32px);
-      left: -16px;
-   }
-
    .hero-arches {
       left: 0;
       margin: 0 auto;
@@ -2453,14 +2448,13 @@ a.recent-poster::before {
 
    h1 {
       width: min(100%, 450px);
-      color: hsl(var(--permBlack));
+      color: hsl(var(--permWhite));
       text-align: center;
    }
 
    h3 {
       width: min(100%, 450px);
-      color: hsl(var(--permBlack));
-      -webkit-text-stroke: 1px hsl(var(--permBlack));
+      -webkit-text-stroke: 1px hsl(var(--permWhite));
       text-align: center;
       opacity: 1;
    }
