@@ -43,6 +43,8 @@
 
    --strokePrimary: 205 8% 30%;
    --strokeSecondary: 205 8% 42%;
+   --lineart: var(--strokeSecondary);
+
    --textPrimary: 205 8% 30%;
    --textSecondary: 205 8% 42%;
 
@@ -55,12 +57,30 @@
    --permBlack: 207 7% 24%;
    --permWhite: 60 3% 85%;
 
-   --purple: red;
-
-
    --frameoffset: 0px;
    --navgradient: linear-gradient(to right, hsl(var(--htmlbase)) 50%, rgba(0, 0, 0, 0) 80%);
    --navgradient: hsl(var(--htmlbase));
+
+
+   --htmlbase: 146 8% 30%;
+   --accentMain-1: 149 9% 45%;
+   --accentMain-2: 149 12% 65%;
+   --accentCont-1: 207 23% 38%;
+   --accentCont-2: 209 19% 47%;
+
+   --strokePrimary: 146 8% 20%;
+   --strokeSecondary: 146 12% 40%;
+   --textPrimary: 146 8% 20%;
+   --textSecondary: 146 8% 32%;
+
+   --toggleBlack: 146 8% 20%;
+   --toggleWhite: 60 3% 85%;
+   --permBlack: 146 8% 20%;
+   --permWhite: 60 3% 85%;
+
+   --pointed: 250 20% 43%;
+   --brimmed: 14 30% 44%;
+   --unknowing: 122 14% 43%;
 
    /* TYPOGRAPHY */
 
@@ -131,7 +151,7 @@ html {
 }
 
 .grp-pointed {
-   --membercolor: var(--pointed, hsl(var(--accentMain-1)));
+   --membercolor: var(--pointed, var(--accentMain-1));
 }
 
 .grp-brimmed {
@@ -142,19 +162,10 @@ html {
    --membercolor: var(--unknowing, hsl(var(--accentMain-1)));
 }
 
-/* html::after {
-   content: '';
-   position: fixed;
-   width: 100%;
-   height: 100%;
-   background: url('https://media.discordapp.net/attachments/683720444796338317/891394463040147607/textured-background-white-tone.jpg?width=1397&height=931');
-   mix-blend-mode: multiply;
-   filter: brightness(1);
-   top: 0;
-   opacity: .7;
-   z-index: -1;
-} */
-
+* {
+   position: relative;
+   box-sizing: border-box;
+}
 
 body {
    all: unset;
@@ -166,16 +177,10 @@ body {
    bottom: 0;
    width: 100vw;
    height: 100vh;
-   background: linear-gradient(0deg, hsl(var(--strokeSecondary)), transparent 95%);
+   background: linear-gradient(0deg, hsl(var(--lineart)), transparent 95%);
    mask: url(assets/final-landscape.png) center / cover;
    z-index: -1;
-   /* mix-blend-mode: color-burn; */
-   opacity: 1;
-}
-
-* {
-   position: relative;
-   box-sizing: border-box;
+   opacity: .5;
 }
 
 
@@ -215,20 +220,20 @@ a {
 
 /* SCROLLBAR */
 
-#bodywrapper ::-webkit-scrollbar {
+.maxwidth ::-webkit-scrollbar {
    width: 3px !important;
-   height: 1px !important;
-   background: rgba(0, 0, 0, 0);
+   background: hsl(var(--bgTertiary) / 80%);
    border: 0;
 }
 
-#bodywrapper ::-webkit-scrollbar-thumb {
-   background: hsl(var(--bgTertiary));
+.maxwidth ::-webkit-scrollbar-thumb {
+   width: 5px;
+   background: hsl(var(--accentMain-1));
    border: 0;
 }
 
-#bodywrapper ::-webkit-scrollbar-track,
-#bodywrapper ::-webkit-scrollbar-track-piece {
+.maxwidth ::-webkit-scrollbar-track,
+.maxwidth ::-webkit-scrollbar-track-piece {
    background: rgba(0, 0, 0, 0);
    border: 0;
 }
@@ -258,7 +263,6 @@ topnavline 140 */
    white-space: nowrap;
    color: hsl(var(--permWhite));
    z-index: 150;
-
    width: 100%;
 }
 
@@ -293,7 +297,7 @@ topnavline 140 */
    text-transform: uppercase;
    letter-spacing: 2px;
    white-space: nowrap;
-   -webkit-text-stroke: 1px hsl(var(--permWhite));
+   -webkit-text-stroke: .5px hsl(var(--permWhite));
    /* text-shadow: 0 0 2px hsl(var(--htmlbase)), 0 0 2px hsl(var(--htmlbase)), 0 0 2px hsl(var(--htmlbase)), 0 0 2px hsl(var(--htmlbase)), 0 0 3px hsl(var(--htmlbase)), 0 0 3px hsl(var(--htmlbase)), 0 0 3px hsl(var(--htmlbase)), 0 0 3px hsl(var(--htmlbase)); */
 }
 
@@ -405,6 +409,7 @@ topnavline 140 */
    margin-top: -80px;
    height: 700px;
    overflow: hidden;
+   background: radial-gradient(ellipse, hsl(var(--htmlbase)), hsl(var(--htmlbase)) 40%, transparent 75%);
 }
 
 .hero-text {
@@ -752,10 +757,12 @@ h3 .shape {
 
 /* BODY */
 
-/* #bodywrapper {
-   background: hsl(var(--bgTertiary));
+#bodywrapper {
+   /* background: hsl(var(--bgTertiary)); */
+   height: fit-content;
 }
 
+/*
 .bodyinner {
    padding: 24px 48px 40px;
    width: calc(100% - 12px);
@@ -779,11 +786,11 @@ h3 .shape {
    text-decoration: none;
    text-transform: uppercase;
    letter-spacing: 1px;
-   color: hsl(var(--bgOverlay));
+   color: hsl(var(--permWhite));
 }
 
 .breadcrumbs a:first-child {
-   color: hsl(var(--toggleBlack));
+   color: hsl(var(--accentMain-2));
    white-space: nowrap;
 }
 
@@ -793,7 +800,7 @@ h3 .shape {
    width: 1px;
    margin: 0 10px -2px;
    display: inline-block;
-   background: hsl(var(--htmlbase));
+   background: hsl(var(--permWhite));
 }
 
 .breadcrumbs a:not(:first-child)::after {
@@ -856,7 +863,6 @@ a.scoopedbox {
    width: calc(100% - 2px);
    height: calc(100% - 2px);
    background-color: hsl(var(--bgPrimary));
-   background-image: url('https://media.discordapp.net/attachments/683720444796338317/891394463040147607/textured-background-white-tone.jpg?width=1397&height=931');
    background-blend-mode: multiply;
    z-index: -1;
    clip-path: polygon(9.5px 0%, calc(100% - 9.5px) 0%, 100% 7.5px, 100% calc(100% - 7.5px), calc(100% - 9.5px) 100%, 9.5px 100%, 0% calc(100% - 7.5px), 0% 7px);
@@ -999,9 +1005,10 @@ a.scoopedbox:hover::before,
    left: 0;
    width: calc(100% - var(--frameoffset));
    height: calc(100% - var(--frameoffset));
-   background: url('https://img.freepik.com/free-vector/aged-paper-texture-background-design_60389-81.jpg?t=st=1723439402~exp=1723443002~hmac=727cf023a9c566b9de3992af35b601908fd89f31d2944316dd49315a8c68cec9&w=2000');
-   mix-blend-mode: multiply;
-   opacity: .25;
+   background: url(assets/textured-background-white-tone.jpg) center / cover;
+   background: url('https://img.freepik.com/free-photo/black-stained-stucco-wall_1194-7562.jpg?t=st=1724213925~exp=1724217525~hmac=b95d4540ff341a60b8b23723d1e878f0f47f15d6ddf35544a0c10898edacf7d5&w=2000') center / cover;
+   mix-blend-mode: color-dodge;
+   opacity: .15;
    filter: grayscale(1) sepia(.1) contrast(1.2);
    z-index: 0;
    pointer-events: none;
@@ -1331,12 +1338,12 @@ a.scoopedbox:hover::before,
 
 .getstarted-hero-img::before {
    background: hsl(var(--bgSecondary));
-   mask: url(assets/hero-parade-fill.png) center / cover;
+   mask: url(assets/final-parade-fill.png) center / cover;
 }
 
 .getstarted-hero-img::after {
-   background: hsl(var(--strokeSecondary));
-   mask: url(assets/hero-parade-stroke.png) center / cover;
+   background: hsl(var(--lineart));
+   mask: url(assets/final-parade-stroke.png) center / cover;
 }
 
 .cat-getstarted-handbook {
@@ -1490,7 +1497,7 @@ img.cat-character-hero {
 }
 
 .cat-character-imgsizer::after {
-   background: hsl(var(--strokeSecondary));
+   background: hsl(var(--lineart));
    mask: url(assets/final-richeh-custas-stroke.png) right bottom / cover;
 }
 
@@ -1623,14 +1630,13 @@ a:hover [id='scoopplot']+use {
 
 .cat-locations-layout .forumrow {
    grid-area: aboutplace;
-   width: 50%;
    height: fit-content;
 }
 
 
 .location_info {
    grid-area: aboutplace;
-   width: min(40vw, 450px);
+   /* width: min(40vw, 450px); */
    padding: 48px 0 24px;
    opacity: 0;
    z-index: 0;
@@ -1724,7 +1730,7 @@ a:hover [id='scoopplot']+use {
    aspect-ratio: 1;
    border-radius: 100%;
    display: block;
-   background: hsl(var(--strokeSecondary));
+   background: hsl(var(--lineart));
    mask: url(assets/final-windowgate-stroke.png) center / cover;
 }
 
@@ -1743,7 +1749,7 @@ a:hover [id='scoopplot']+use {
    top: 0;
    width: 600px;
    height: 100%;
-   background: hsl(var(--strokeSecondary));
+   background: hsl(var(--lineart));
    mask: url(assets/final-windowgate-bricks.png) bottom right / cover;
 }
 
@@ -1794,6 +1800,32 @@ a:hover [id='scoopplot']+use {
 }
 
 
+/* Start container query test */
+/* If locations board gets too narrow to the point window no longer fits, swap to mobile view */
+
+.cat-locations {
+   container: test / inline-size
+}
+
+@container test (width < 1070px) {
+   .windowframe {
+      top: 50%;
+      right: -3vw;
+      transform: translateY(-50%);
+   }
+
+   .windowframe,
+   .windowframe::after,
+   #windowcontent {
+      width: max(55vw, 540px);
+   }
+
+}
+
+/* End container query test */
+
+
+
 
 
 
@@ -1814,7 +1846,7 @@ a:hover [id='scoopplot']+use {
    left: -20px;
    width: 410px;
    height: 440px;
-   background: hsl(var(--strokeSecondary));
+   background: hsl(var(--lineart));
    mask: url(assets/euni.png) center / cover;
    transform: scaleX(-100%);
    z-index: 5;
@@ -1922,19 +1954,11 @@ a:hover [id='scoopplot']+use {
    right: 0%;
    width: 100%;
    height: 100%;
-   background: url('lintel.svg') right -20px top -5px / auto 180px, url('clouds-low.svg') left 10% bottom -100px / 110%;
-   background: url('lintel.svg') right -20px top -5px / auto 180px;
-   background-repeat: no-repeat;
+   /* background: url('lintel.svg') right -20px top -5px / auto 180px, url('clouds-low.svg') left 10% bottom -100px / 110%;
+   background-repeat: no-repeat; */
+   mask: url('lintel.svg') right -20px top -5px / auto 180px no-repeat;
+   background: hsl(var(--lineart));
    z-index: -1;
-   /* background: url('clouds-low.svg') left top -160px / 600px, hsl(var(--bgPrimary));
-   background-repeat: no-repeat;
-   top: unset;
-   right: unset;
-   bottom: 0;
-   left: 0;
-   height: 100%;
-   z-index: 0;
-   opacity: .5; */
 }
 
 .forum-default-text {
@@ -2117,8 +2141,29 @@ a:hover [id='scoopdefault']+use {
 
 .infocenter-link-icon {
    height: 52px;
-   margin-bottom: 4px;
    display: block;
+   opacity: 0;
+}
+
+[icon] {
+   margin-bottom: 4px;
+   background: hsl(var(--lineart));
+}
+
+[icon='hat'] {
+   mask: url(icon-hat.svg) center / cover no-repeat;
+}
+
+[icon='book'] {
+   mask: url(icon-book.svg) center / cover no-repeat;
+}
+
+[icon='lastclick'] {
+   mask: url(icon-lastclick.svg) center / cover no-repeat;
+}
+
+[icon='brushbug'] {
+   mask: url(icon-brushbug.svg) center / cover no-repeat;
 }
 
 .infocenter-h1 {
@@ -2166,7 +2211,7 @@ a:hover [id='scoopdefault']+use {
 .onlinetodaybox a {
    display: inline-block;
    margin-right: 1ch;
-   color: var(--membercolor);
+   color: hsl(var(--membercolor));
 }
 
 .censusdivider[class*=divider] {
@@ -2188,7 +2233,7 @@ a:hover [id='scoopdefault']+use {
 .infocenter-census {
    flex: 2 1 0px;
    text-align: center;
-   color: hsl(var(--accentMain-1));
+   color: hsl(var(--membercolor));
 }
 
 .censusvertrule {
@@ -2270,19 +2315,14 @@ a:hover [id='scoopdefault']+use {
 }
 
 #bodywrapper .recent-list::-webkit-scrollbar {
-   width: 1px !important;
-   background: hsl(var(--strokePrimary));
+   width: 2px !important;
 }
 
-.recent-list::-webkit-scrollbar-thumb {
-   background: hsl(var(--strokeSecondary)) !important;
-}
 
 .recenttopic {
    margin: 0 10px 0 8px;
    padding-bottom: 12px;
    font: bold 12px var(--fontBodySerif);
-   /* text-transform: uppercase; */
    color: hsl(var(--bgTertiary));
 }
 
@@ -2343,12 +2383,12 @@ a.recent-poster::before {
 
 .infocenter-img::before {
    background: hsl(var(--bgPrimary));
-   mask: url(assets/hero-running-fill.png) center / cover no-repeat;
+   mask: url(assets/final-running-fill.png) center / cover no-repeat;
 }
 
 .infocenter-img::after {
    background: hsl(var(--strokePrimary));
-   mask: url(assets/hero-running-stroke.png) center / cover no-repeat;
+   mask: url(assets/final-running-stroke.png) center / cover no-repeat;
 }
 
 
@@ -2417,6 +2457,10 @@ a.recent-poster::before {
 
    /* HEADER */
 
+   #header {
+      background: linear-gradient(to bottom, hsl(var(--htmlbase)), hsl(var(--htmlbase)) 80%, transparent 95%)
+   }
+
    .hero-arches {
       left: 0;
       margin: 0 auto;
@@ -2448,13 +2492,13 @@ a.recent-poster::before {
 
    h1 {
       width: min(100%, 450px);
-      color: hsl(var(--permWhite));
+      /* color: hsl(var(--bgTertiary) / 90%); */
+      -webkit-text-stroke: .5px hsl(var(--permWhite));
       text-align: center;
    }
 
    h3 {
       width: min(100%, 450px);
-      -webkit-text-stroke: 1px hsl(var(--permWhite));
       text-align: center;
       opacity: 1;
    }
@@ -2510,6 +2554,7 @@ a.recent-poster::before {
 
    .navpanel-right {
       background: unset;
+      border-left: none;
    }
 
    .navpanel-header {
@@ -2782,6 +2827,7 @@ a.recent-poster::before {
       top: 0;
       right: 0;
       height: 200px;
+      transform: none;
    }
 
    .windowframe::after {
@@ -2985,23 +3031,5 @@ a.recent-poster::before {
    .infocenter-link-icon {
       height: 36px;
    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   .cat-outerwrapper:not(:where(.cat-getstarted, .cat-character, .cat-locations, .cat-ooc, .cat-default, .cat-infocenter)) {
-      display: none;
-   }
-
 
 }
