@@ -2555,6 +2555,8 @@ a.recent-poster::before {
       display: block;
       border: none;
       padding: 0;
+      background: unset;
+      border: unset;
    }
 
 
