@@ -1261,7 +1261,7 @@ a.scoopedbox:hover::before,
    font: var(--textSerif16);
    font-weight: 500;
    letter-spacing: .5px;
-   color: hsl(var(--mainColor-1));
+   color: hsl(var(--accentColor-2));
    text-decoration: none;
 }
 
