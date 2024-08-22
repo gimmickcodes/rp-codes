@@ -1207,7 +1207,7 @@ a.scoopedbox:hover::before,
    width: 100%;
    height: 100%;
    mask: url(assets/final-welcome.png) bottom center / cover;
-   background: hsl(var(--bgTertiary)/40%);
+   background: hsl(var(--bgSecondary)/20%);
    opacity: .5;
 }
 
@@ -2357,7 +2357,7 @@ a.recent-poster::before {
 }
 
 .infocenter-img::after {
-   background: hsl(var(--strokePrimary));
+   background: hsl(var(--lineart));
    mask: url(assets/final-running-stroke.png) center / cover no-repeat;
 }
 
