@@ -1196,7 +1196,7 @@ a.scoopedbox:hover::before,
    flex-direction: column;
    gap: 16px;
    padding: 48px 64px;
-   background: hsl(var(--mainColor));
+   background: hsl(var(--accentColor-1));
 }
 
 .welcomecenter-section-tabs::before {
@@ -1207,7 +1207,7 @@ a.scoopedbox:hover::before,
    width: 100%;
    height: 100%;
    mask: url(assets/final-welcome.png) bottom center / cover;
-   background: hsl(var(--strokePrimary));
+   background: hsl(var(--bgTertiary)/40%);
    opacity: .5;
 }
 
