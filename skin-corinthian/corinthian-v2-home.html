@@ -20,17 +20,20 @@
 
 
     <script>
-        function findTheme() {
-            const currentTheme = localStorage.getItem("theme");
-            if (currentTheme == "dark") {
-                document.documentElement.classList.toggle("dark-theme");
-            } else if (currentTheme == "light") {
-                document.documentElement.classList.toggle("light-theme");
-            } else {
-                document.documentElement.classList.toggle('light-theme');
-                localStorage.setItem('theme', 'light-theme');
-            }
+        const currentTheme = localStorage.getItem("theme");
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+        console.log(prefersDarkScheme)
+
+        if (currentTheme == "dark") {
+            document.documentElement.classList.toggle("dark-theme");
+        } else if (currentTheme == "light") {
+            document.documentElement.classList.toggle("light-theme");
+        } else {
+            document.documentElement.classList.toggle('light-theme');
+            localStorage.setItem('theme', 'light-theme');
         }
+
     </script>
 
 

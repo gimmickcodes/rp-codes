@@ -1743,7 +1743,7 @@ a:hover [id='scoopplot']+use {
 }
 
 .locationtabbox .tab:hover {
-   color: hsl(var(--toggleWhite));
+   color: hsl(var(--permWhite));
 }
 
 .tab.tabbedlocations_active {
@@ -1977,7 +1977,7 @@ a:hover [id='scoopplot']+use {
 }
 
 .ooc-forumrow-subs a:hover {
-   color: hsl(var(--toggleWhite));
+   color: hsl(var(--permWhite));
 }
 
 .ooc-forumrow-subs .scoopedbox::before {
@@ -2075,7 +2075,7 @@ a:hover [id='scoopplot']+use {
 }
 
 .twocolcat .forumrow-subs a:hover {
-   color: hsl(var(--toggleWhite));
+   color: hsl(var(--permWhite));
 }
 
 [id='scoopdefault']+use {
@@ -3122,6 +3122,7 @@ a.recent-poster::before {
 .dark-theme .getstarted-hero-img::before,
 .dark-theme .cat-character-imgsizer::before,
 .dark-theme .ooc-hero,
+.dark-theme .forum-default-bg,
 .dark-theme .infocenter-img::before {
    background: hsl(var(--basecolor-3));
 }
@@ -3133,6 +3134,6 @@ a.recent-poster::before {
    background: hsl(var(--bgPrimary));
 }
 
-.bodybg {
+.dark-theme .bodybg {
    background: linear-gradient(0deg, hsl(var(--basecolor-1)/50%), transparent 95%);
 }
