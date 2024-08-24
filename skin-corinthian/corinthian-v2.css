@@ -3153,7 +3153,7 @@ a.recent-poster::before {
 }
 
 .dark-theme .categoryLabel {
-   color: hsl(var(--accent2));
+   color: hsl(var(--permWhite)/.4);
 }
 
 .dark-theme .textured::after {
