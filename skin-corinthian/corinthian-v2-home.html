@@ -97,7 +97,8 @@
 
     <div class="maxwidth">
         <div id="topnav">
-            <div id="navstrip" align="left">&nbsp;
+            <div id="navstrip" align="left">
+                &nbsp;
                 <a href="#">Home</a>
                 <!-- macro: nav seperator  -->
                 <a href="#">Category</a>
@@ -108,6 +109,10 @@
             </div>
 
             <div class="topnav-links">
+                <div class="topnav-themetoggle" onclick="toggleTheme()">
+                    <i class="ph ph-sun"></i>
+                    <i class="ph ph-moon-stars"></i>
+                </div>
                 <a href="#">Home</a>
                 <a href="#">Members</a>
                 <a href="#">UCP</a>
@@ -116,23 +121,27 @@
                 <a href="#">Log out</a>
             </div>
 
-            <div class="topnav-textbutton" onclick="menuFunction()">Menu <div class="alertbadge"></div>
+            <div class="topnav-desktopbutton" onclick="menuFunction()">Menu <div class="alertbadge"></div>
             </div>
-
-            <div class="topnav-iconbutton" onclick="menuFunction()">
+            <div class="topnav-mobilebutton" onclick="menuFunction()">
                 <i class="ph ph-list"></i>
             </div>
+
         </div>
+
+
         <div id="topnavline"></div>
 
+
+
         <div class="floatingui">
-            <div class="floatingui-button">
+            <div class="themetoggle" onclick="toggleTheme()"">
+                <i class=" ph ph-sun"></i>
+                <i class="ph ph-moon-stars"></i>
+            </div>
+            <div class="jumpdown">
                 <a href="#"><i class="ph ph-caret-up"></i></a>
                 <a href="#infocenter"><i class="ph ph-caret-down"></i></a>
-            </div>
-            <div class="floatingui-button">
-                <i class="ph ph-sun" onclick="toggleTheme()"></i>
-                <i class="ph ph-sun-horizon" onclick="toggleTheme()"></i>
             </div>
         </div>
 
@@ -152,12 +161,6 @@
                     </div>
 
                     <div class="navpanel-buttons">
-                        <a href="#" class="navpanel-button">
-                            <span class="badgecounter">10</span> messages
-                        </a>
-                        <a href="#" class="navpanel-button">
-                            <span class="badgecounter">0</span> alerts
-                        </a>
                         <span id="subaccounts_menu">
                             <form action="#" name="subswitch" method="POST">
                                 <input type="hidden" name="auth_key" value="4ce9e3bd60fcc5427477caed78c2c427">
@@ -169,7 +172,12 @@
                                     <option value="31">&nbsp;&nbsp;» Agott </option>
                                 </select>
                             </form>
-                        </span>
+                        </span><a href="#" class="navpanel-button">
+                            <span class="badgecounter">10</span> messages
+                        </a>
+                        <a href="#" class="navpanel-button">
+                            <span class="badgecounter">0</span> alerts
+                        </a>
                     </div>
 
                     <div class="navpanel-quicklinks">
@@ -1233,7 +1241,13 @@
     $(document).ready(function () {
         var clicktodismiss = $(document.createElement("div")).hide().attr("id", "clicktodismiss").attr("onclick", "menuFunction()")
         $(document.body).append(clicktodismiss);
+
+
+
+        $('#navstrip').prepend('<div class="topnav-themetoggle" onclick="toggleTheme()"><i class="ph ph-sun"></i><i class="ph ph-moon-stars"></i></div>');
+
     });
+
 
 
     // Hamburger menu on mobile
