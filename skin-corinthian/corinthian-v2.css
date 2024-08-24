@@ -37,7 +37,7 @@
    --accent1: 195 15% 32%;
    --accent2: 196 16% 42%;
    --contrast1: 40 20% 60%;
-   --contrast2: 40 20% 45%;
+   --contrast2: 40 28% 40%;
 
    --strokePrimary: 196 8% 25%;
    --strokeSecondary: 196 12% 40%;
@@ -103,7 +103,7 @@
    --accent1: 190 25% 36%;
    --accent2: 195 17% 40%;
    --contrast1: 40 20% 59%;
-   --contrast2: 40 20% 45%;
+   --contrast2: 40 20% 40%;
 
    /* lower tier is subtler */
    --strokePrimary: 196 8% 25%;
@@ -251,6 +251,7 @@ floatingui 220 */
 #topnav {
    position: sticky;
    top: 0;
+   width: 100%;
    display: grid;
    align-items: center;
    grid-template: 'linksrow buttonwell' 48px / 1fr auto;
@@ -261,7 +262,7 @@ floatingui 220 */
    white-space: nowrap;
    color: hsl(var(--permWhite));
    z-index: 150;
-   width: 100%;
+   transition: .2s ease;
 }
 
 
@@ -278,7 +279,6 @@ floatingui 220 */
    transition: background .3s ease;
    z-index: 135;
    box-shadow: 45px -1px hsl(var(--main));
-
 }
 
 .topnav-links,
@@ -605,8 +605,27 @@ floatingui 220 */
 }
 
 
+
+
+@media only screen and (max-width: 1200px) {
+
+   .jumpdown,
+   .themetoggle {
+      background-image: linear-gradient(hsl(var(--permBlack)/.7), hsl(var(--permBlack)/.7)), linear-gradient(hsl(var(--accent1)/.4), hsl(var(--accent1)/.4));
+      backdrop-filter: blur(5px);
+      border: 1px solid hsl(var(--strokePrimary));
+      font-size: 20px;
+      text-shadow: none;
+   }
+
+   .themetoggle {
+      display: none;
+      width: 34px;
+      height: 32px;
+   }
+}
+
 @media only screen and (max-width: 900px) {
-   @container test (width < 1070px) {}
 
    #topnav {
       min-width: unset;
@@ -778,36 +797,22 @@ floatingui 220 */
       gap: 8px;
    }
 
-   .jumpdown,
-   .themetoggle {
-      background-image: linear-gradient(hsl(var(--accent1)/.4), hsl(var(--accent1)/.4)), linear-gradient(hsl(var(--permBlack)/.5), hsl(var(--permBlack)/.5));
-      backdrop-filter: blur(5px);
-      border: 1px solid hsl(var(--strokePrimary));
-      font-size: 20px;
-      text-shadow: none;
-   }
-
-   .themetoggle {
-      display: none;
-      width: 34px;
-      height: 32px;
-   }
 
 
-
+   /* If nav goes to bottom of page on mobile */
    #topnav {
       position: fixed;
       top: unset;
       bottom: 0;
       border-bottom: 0;
-      border-top: .5px solid hsl(var(--permWhite));
+      border-top: .5px solid hsl(var(--permWhite)/.5);
    }
 
    #navpanel {
       top: 0;
       bottom: 49px;
       transform-origin: bottom;
-      transform: translateY(100%) scaleY(0);
+      transform: translateY(0) scaleY(0);
    }
 
    #navpanel.openmenu {
@@ -3133,6 +3138,7 @@ a.recent-poster::before {
 }
 
 
+
 .dark-theme .welcomecenter-section-tabs {
    background: hsl(var(--accent1)/.5);
 }
@@ -3178,3 +3184,62 @@ a.recent-poster::before {
    background: linear-gradient(0deg, hsl(var(--accent1)/.5), transparent 95%);
    color: hsl
 }
+
+
+
+
+
+
+
+/* a.scoopedbox:hover::before,
+.tab.scoopedbox:hover::before,
+.handbook-quicklinks a:hover,
+.forum-plottinghub .forumrow-subs a:hover,
+a:hover [id='scoopplot']+use,
+.locationtabbox .tab:hover,
+.locationtabbox .tab:hover [id='scoopedtab']+use,
+.ooc-forumrow-subs a:hover,
+.twocolcat .forumrow-subs a:hover,
+a:hover [id='scoopdefault']+use {
+   background: inherit;
+   color: inherit;
+   fill: inherit;
+} */
+
+
+/* a.scoopedbox:hover::before,
+.tab.scoopedbox:hover::before {
+   background: hsl(var(--strokePrimary));
+}
+
+.handbook-quicklinks a:hover {
+   color: hsl(var(--permWhite));
+}
+
+.forum-plottinghub .forumrow-subs a:hover {
+   color: hsl(var(--permWhite));
+}
+
+a:hover [id='scoopplot']+use {
+   fill: hsl(var(--strokePrimary));
+}
+
+.locationtabbox .tab:hover {
+   color: hsl(var(--permWhite));
+}
+
+.locationtabbox .tab:hover [id='scoopedtab']+use {
+   fill: hsl(var(--strokePrimary));
+}
+
+.ooc-forumrow-subs a:hover {
+   color: hsl(var(--permWhite));
+}
+
+.twocolcat .forumrow-subs a:hover {
+   color: hsl(var(--permWhite));
+}
+
+a:hover [id='scoopdefault']+use {
+   fill: hsl(var(--strokePrimary));
+} */
