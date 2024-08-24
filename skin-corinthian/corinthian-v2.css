@@ -363,7 +363,7 @@ floatingui 220 */
    display: grid;
    grid-template: 'content hover' / 1fr auto;
    justify-content: space-between;
-   background-color: hsl(var(--permBlack)/.9);
+   background-color: hsl(var(--permBlack)/.95);
    background-size: 40px 40px;
    background-position: 0 0, 20px 20px;
    backdrop-filter: blur(5px);
@@ -632,12 +632,13 @@ floatingui 220 */
       max-width: unset;
       margin-bottom: unset;
       padding: 0;
-      border-bottom: .5px solid hsl(var(--permWhite));
+      grid-template-rows: 56px;
+      background: hsl(var(--permBlack)/.95);
+      border-bottom: .5px solid hsl(var(--permWhite)/.5);
       z-index: 230;
    }
 
    #topnav.openmenu {
-      background: hsl(var(--permBlack)/.9);
       border-color: hsl(var(--strokeSecondary));
    }
 
@@ -810,7 +811,7 @@ floatingui 220 */
 
    #navpanel {
       top: 0;
-      bottom: 49px;
+      bottom: 57px;
       transform-origin: bottom;
       transform: translateY(0) scaleY(0);
    }
@@ -821,7 +822,7 @@ floatingui 220 */
 
    .floatingui {
       right: 12px;
-      bottom: 64px;
+      bottom: 72px;
       gap: 8px;
    }
 }
