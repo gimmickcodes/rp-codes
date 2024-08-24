@@ -489,7 +489,7 @@ floatingui 220 */
    font-family: var(--fontHero2);
    letter-spacing: 2px;
    padding: 0 0 6px;
-   color: hsl(var(--titles));
+   color: hsl(var(--contrast1));
 }
 
 .quicklinklabel::after {
@@ -565,8 +565,8 @@ floatingui 220 */
 }
 
 .floatingui i {
-   width: 32px;
-   padding: 5px;
+   width: 40px;
+   padding: 8px 0;
 }
 
 .floatingui .ph {
@@ -669,7 +669,7 @@ floatingui 220 */
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      font-size: 20px;
       cursor: pointer;
    }
 
