@@ -1268,6 +1268,9 @@
             $('#topnav').removeClass('openmenu');
             $("#clicktodismiss").fadeOut(300);
         }
+
+        document.querySelector('.navpanel-layout').scrollTop = 0;
+
     }
 
     $(document).on("click", "#clicktodismiss", function () {
