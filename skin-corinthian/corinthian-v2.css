@@ -174,10 +174,10 @@ body {
    bottom: 0;
    width: 100vw;
    height: 100vh;
-   background: linear-gradient(0deg, hsl(var(--strokeSecondary)), transparent 95%);
+   background: linear-gradient(0deg, hsl(var(--strokePrimary)), transparent 95%);
    mask: url(assets/final-landscape.png) center / cover;
    z-index: -1;
-   opacity: .4;
+   opacity: .3;
 }
 
 
@@ -262,7 +262,6 @@ floatingui 220 */
    white-space: nowrap;
    color: hsl(var(--permWhite));
    z-index: 150;
-   transition: .2s ease;
 }
 
 
@@ -636,6 +635,7 @@ floatingui 220 */
       background: hsl(var(--permBlack)/.92);
       border-bottom: .5px solid hsl(var(--permWhite)/.5);
       z-index: 230;
+      transition: .2s ease;
    }
 
    #topnav.openmenu {
