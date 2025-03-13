@@ -16,7 +16,7 @@
    <div class="carboniteinside">
 
       <div class="carbonitesidebar scrolls">
-         <div class="carbonitetab carbonite_active">
+         <div class="carbonitetab active-tab">
             <div class=" carbonitetab--textarea">
                <div>ONE</div>
                <div>Age</div>
@@ -71,7 +71,7 @@
 
       <div class="carbonitebody">
 
-         <div class="carbonitetabcontent carbonite_active">
+         <div class="carbonitetabcontent active-slide">
             <h1>take the world back from a heart attack</h1>
             Bacon ipsum dolor amet occaecat filet mignon fatback irure id quis velit turducken pastrami salami ad. Voluptate meatball minim tri-tip buffalo do capicola alcatra consequat sint sausage enim. Shank tongue enim esse. Biltong shoulder adipisicing, meatloaf consequat deserunt ut eu andouille drumstick ham hock ground round shank kielbasa nostrud. Cillum do qui chicken.<br><br>
 
@@ -137,54 +137,7 @@
 
 
 
-<script>
-   // Individual Tabs Script
-   // by Quartz
-   // Applies a class to individual tab content slides
-
-   function tabsIndividual(outerWrapper, tabs, tabSlides) {
-      // find tabs within the designated container
-      var tabs = document.querySelector(outerWrapper).querySelectorAll(tabs);
-      for (var i = 0; i < tabs.length; i++) {
-         tabs[i].addEventListener('click', toggleTab);
-         tabs[i].dataset.index = i;
-      }
-
-      // find slides within the designated container
-      var tabContents = document.querySelector(outerWrapper).querySelectorAll(tabSlides);
-      for (var i = 0; i < tabContents.length; i++) {
-         tabContents[i].dataset.index = i;
-      }
-
-      // Apply active class to first tab automatically
-      tabs[0].classList.add('active-tab')
-      tabContents[0].classList.add('active-slide')
-
-      // Create indexable array from tabs and slides
-      const alltabs = Array.from(tabs)
-      const alltabContents = Array.from(tabContents)
-
-      function toggleTab() {
-         removeActive()
-         // Get index of clicked tab
-         activeTabIndex = parseInt(this.dataset.index);
-         // Apply active class to selected tab
-         $(this).addClass('active-tab')
-         // Apply active class to slide with matching index
-         $(alltabContents[activeTabIndex]).addClass('active-slide')
-      }
-
-      function removeActive() {
-         // removes active class from every tab except the one clicked 
-         alltabs.forEach(el => $(el).removeClass('active-tab'))
-         // removes active class from every slide except the one clicked 
-         alltabContents.forEach(el => $(el).removeClass('active-slide'))
-      }
-
-   }
-
-</script>
-
+<script src='../scripts/qtabs.js'></script>
 <script>
    // When naming slide wrapper, it must be an ID
    tabsIndividual('#carbonite', '.carbonitetab', '.carbonitetabcontent')

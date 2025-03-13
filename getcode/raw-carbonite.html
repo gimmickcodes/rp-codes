@@ -47,7 +47,7 @@
 <div class="carboniteinside">
 <div class="carbonitesidebar scrolls">
 
-<div class="carbonitetab carbonite_active">
+<div class="carbonitetab active-tab">
 <div class=" carbonitetab--textarea">
 <div>ONE</div>
 <div>Age</div>
@@ -101,7 +101,7 @@
 </div>
 <div class="carbonitebody">
 
-<div class="carbonitetabcontent carbonite_active">
+<div class="carbonitetabcontent active-slide">
 <h1>one's name or lyrics</h1>
 Text<p>
 
@@ -167,25 +167,30 @@ Text text text
 </style>
 
 
-<script src='https://codepen.io/breezescodes/pen/NWPyXNv.js'></script>
+<script src='../scripts/qtabs.js'></script>
 <script>
-   LOCALT3('carbonite', 'carbonitetab', 'carbonitetabcontent');
+   // When naming slide wrapper, it must be an ID
+   tabsIndividual('#carbonite', '.carbonitetab', '.carbonitetabcontent')
 </script>
 
-
 <script>
+
    document.querySelectorAll('.carboniteinside').forEach(function (elem) {
       var carbonitetab = elem.querySelectorAll('.carbonitetab')
 
       // vertical slide transition for main content
       $(carbonitetab).on('click', function () {
-         var carbonitetabChild = elem.querySelector('.carbonite_active');
+         var carbonitetabChild = elem.querySelector('.active-tab');
          var carbonitetabParent = carbonitetabChild.parentNode;
          var carbonitetabNth = Array.prototype.indexOf.call(carbonitetabParent.children, carbonitetabChild); // Find nth-child number of active carbonitetab. Equivalent of parent.children.indexOf(child)
 
          var increment = carbonitetabNth * $('.carbonitetabcontent').outerHeight(true); // sets how much to move by based on number of preceding carbonitetabcontents
          var carbonitebodyNthChild = '.carbonitebody .carbonitetabcontent.nth-child(' + carbonitetabNth + ')';
          $(this).parent().parent().find('.carbonitebody').css('margin-top', - increment);
+
+         console.log(carbonitetabNth)
+         console.log(carbonitebodyNthChild)
+         console.log('Move up by ' + increment)
       })
 
 
@@ -198,28 +203,48 @@ Text text text
          let divtext = document.createTextNode("Scrolls");
          div.appendChild(divtext);
          elem.querySelector('.carbonitesidebar').appendChild(div);
+
          $('.moreindicator').css('opacity', .75);
       }
+
 
       $(carbonitesidebar).scroll(function () {
          var div = $(this);
          var bottom = div.height() / 2;
          var indicatorHeight = '-' + $('.moreindicator').height() + 'px';
 
+         console.log('indicatorHeight:' + indicatorHeight)
+         console.log('Bottom:' + bottom)
+         console.log('scrollHeight:' + div[0].scrollHeight)
+         console.log('scrollTop:' + div.scrollTop())
+         console.log('divHeight:' + div.height())
+
          // show indicator if at top 
          if (div.scrollTop() == 0) {
+            console.log('Reached the top!');
             $('.moreindicator').css('display', 'flex');
             $('.moreindicator').css('opacity', .5);
          }
 
+         // lighten indicator upon scrolling 
+         if (div.scrollTop() > 0) {
+            console.log('Scrolling...');
+            // $('.moreindicator').css('opacity', .5)
+         }
+
          // hide indicator upon reaching the bottom
          if (div[0].scrollHeight - div.scrollTop() == div.height()) {
+            console.log('Reached bottom');
             $('.moreindicator').css('opacity', 0);
             $('.moreindicator').css('margin-top', indicatorHeight);
          }
 
       });
+
+
+
    })
+
 </script>[/dohtml]</textarea> <!--            END RAW HTML              -->
 
 
