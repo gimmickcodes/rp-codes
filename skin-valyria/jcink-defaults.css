@@ -1,0 +1,63 @@
+#delcookiesrow {
+    margin-top: 1rem;
+    font: var(--chivo-13);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-m);
+}
+
+#delcookiesrow a {
+    color: hsl(var(--accent-secondary));
+}
+
+
+
+/****************************************
+  PAGINATION
+*****************************************/
+
+
+.newstext {
+    display: none;
+}
+
+
+.pagination {
+    display: block;
+    margin-left: -2px;
+    margin-bottom: 30px;
+    font: var(--chivo-12);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-m);
+}
+
+.pagination>* {
+    margin-right: 4px;
+    border-radius: var(--radius-s);
+}
+
+.pagination_pagetxt {
+    display: none;
+}
+
+.pagination_current,
+.pagination_page,
+.pagination_last {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 8px;
+    background: hsl(var(--accent-secondary)/0);
+    border: 1px solid hsl(var(--border-secondary));
+    color: hsl(var(--gray2));
+    transition: .25s;
+}
+
+.pagination_current {
+    color: hsl(var(--permblack));
+    background: hsl(var(--accent-primary)/1);
+}
+
+.pagination_page:hover,
+.pagination_last:hover {
+    border-color: hsl(var(--accent-secondary) / 1);
+}
