@@ -175,6 +175,7 @@ p {
     background: hsl(var(--htmlbase));
     padding: 0;
     font-family: 'Alegreya', san-serif;
+    min-width: 200px;
 }
 
 body {
@@ -200,7 +201,7 @@ a {
     display: grid;
     grid-template: "breadcrumbs links hamburger" auto / 1fr 1fr auto;
     width: 100%;
-    padding: 12px 0 12px 20px;
+    padding: 12px 20px;
     background: hsl(var(--htmloffset));
     border-bottom: 1px solid hsl(var(--permblack));
     z-index: 200;
@@ -214,8 +215,10 @@ a {
 .breadcrumbs {
     grid-area: breadcrumbs;
     align-items: center;
+    width: min(100%, 40vw);
     gap: 1rem;
     font-weight: 700;
+    text-overflow: ellipsis;
 }
 
 .breadcrumbs a {
@@ -240,6 +243,7 @@ a {
     justify-content: center;
     cursor: pointer;
     font-size: 16px;
+    display: none;
 }
 
 .navlinks a,
@@ -280,13 +284,16 @@ a {
 
 .herolinks {
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .heroavi {
     width: 40px;
+    min-width: 40px;
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 .herolinks :where(.abouttoggle, a:not(:first-child)) {
@@ -1245,7 +1252,7 @@ HOME
     display: flex;
     flex-direction: column;
     gap: .25em;
-    padding: .5em 0 1.5em;
+    padding: .5em 0;
     font: var(--alumni-20);
     text-transform: uppercase;
     letter-spacing: var(--ls-xl);
@@ -1345,9 +1352,6 @@ a.statcenter-thread {
 
 
 @media only screen and (max-width: 760px) {
-    .hero-illo {
-        display: none;
-    }
 
     .forums-getstarted {
         grid-template:
@@ -1408,6 +1412,30 @@ a.statcenter-thread {
         border-bottom: 0;
     }
 
+    .plotting-gradient {
+        mask: radial-gradient(circle at 50% -40%, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0) 50%);
+    }
+
+    .forumswrap::before {
+        display: none;
+    }
+
+    .forums-plotting-sidebar .forumrow::before,
+    .forums-ooc .forumrow:not(.forum-archives)::before,
+    .subforumrow .forumrow::before {
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 150%;
+        top: 0;
+        left: 0;
+        background-image: radial-gradient(hsl(var(--gradientaccent)) 1px, transparent 0.5px), radial-gradient(hsl(var(--gradientaccent)) 1px, rgb(0, 0, 0, 0) 0.5px);
+        background-size: 2px 2px;
+        background-position: 0 0, 10px 10px;
+        mask: radial-gradient(circle at 50% -40%, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0) 50%);
+        opacity: .2;
+    }
 
     .forums-world {
         grid-template:
@@ -1478,11 +1506,8 @@ a.statcenter-thread {
     .statcenter-links {
         flex-direction: row;
         gap: 1em;
-    }
-
-    .statcenter-onlinenow {
-        padding-top: 8px;
-        border-top: 0.5px solid hsl(var(--border-primary));
+        margin-bottom: 12px;
+        border-bottom: 0.5px solid hsl(var(--border-primary));
     }
 
     .onlinenowgrid {
@@ -1522,6 +1547,8 @@ a.statcenter-thread {
     .subforumrow {
         grid-template: auto / 1fr;
     }
+
+
 }
 
 
@@ -1578,7 +1605,7 @@ SUBFORUMS & TOPIC ROWS
     overflow: hidden;
 }
 
-.topicrow::after {
+.topicrow::before {
     content: '';
     position: absolute;
     height: 250%;
@@ -1604,7 +1631,7 @@ SUBFORUMS & TOPIC ROWS
 
 .topic-avi {
     grid-area: avi;
-    padding: 20px 0 0 20px;
+    padding: 20px 48px 0 20px;
 }
 
 .topic-avi img {
@@ -1638,7 +1665,6 @@ SUBFORUMS & TOPIC ROWS
 .topic-body {
     grid-area: body;
     margin-top: -8px;
-    padding-left: 48px;
 }
 
 .topic-title {
@@ -1726,6 +1752,22 @@ SUBFORUMS & TOPIC ROWS
     font: var(--chivo-13);
 }
 
+
+
+@media only screen and (max-width: 760px) {
+    .topicrow {
+        grid-template: 'body' / 1fr;
+    }
+
+    .topic-avi {
+        display: none;
+    }
+
+    .topicrow::before {
+        top: -110%;
+        opacity: .15;
+    }
+}
 
 
 
@@ -2117,7 +2159,44 @@ POST ROW & MINI PROFILE
 }
 
 
+@media only screen and (max-width: 760px) {
+    .prwrap {
+        grid-template:
+            'toolbar'
+            'header'
+            'postcontent'
+            'footer' / 1fr;
+        border-radius: var(--radius-s) var(--radius-s) 0 0;
+        border: 0.5px solid hsl(var(--border-primary));
+    }
 
+    .pr-gradient {
+        mask: linear-gradient(30deg, rgb(0, 0, 0, 0) 60%, rgb(0, 0, 0, 1));
+        opacity: .3;
+    }
+
+    .pr-header {
+        width: 100%;
+    }
+
+    .pr-sidebar {
+        display: none;
+    }
+
+    .pr-toolbar,
+    .pr-buttons {
+        flex-direction: row;
+    }
+
+    .pr-buttons::after {
+        height: 1px;
+        width: 40px;
+    }
+
+    .pr-timestamp {
+        writing-mode: unset;
+    }
+}
 
 
 
@@ -2261,13 +2340,6 @@ PROFILE
     display: block;
 }
 
-/* Force sidebar to always show on mobile */
-@media only screen and (max-width: 760px) {
-    .profile-sidebar {
-        display: block !important;
-    }
-}
-
 .profile-hover {
     width: 250px;
     height: 450px;
@@ -2316,13 +2388,14 @@ PROFILE
 .profile-tabs-wrap {
     display: flex;
     flex-wrap: nowrap;
+    margin-top: -24px;
     gap: 16px;
     width: clamp(1px, calc(100% - 300px), 850px);
+    z-index: 2;
 }
 
 .profile-tab {
     cursor: pointer;
-    margin-top: -24px;
     display: inline-flex;
     align-items: center;
     padding: 8px 12px;
@@ -2343,6 +2416,7 @@ PROFILE
 }
 
 #profile-slides-wrap {
+    /* display: grid; */
     position: relative;
     padding: 32px 0;
     height: 460px;
@@ -2351,8 +2425,9 @@ PROFILE
 
 .profile-slide {
     position: absolute;
+    /* grid-area: -1 / 1; */
     width: 100%;
-    height: 100%;
+    height: fit-content;
     opacity: 0;
     transform: translateX(20%);
     transition: var(--transition-fast);
@@ -2368,7 +2443,7 @@ PROFILE
     z-index: 1;
 }
 
-.profile-slide:first-child {
+.profile-slide.basics {
     max-width: calc(100% - 280px);
 }
 
@@ -2413,15 +2488,21 @@ PROFILE
     background: hsl(var(--border-tertiary));
 }
 
-.profile-slide.background,
-.profile-slide.abilities,
-.profile-slide.plotter {
+.profile-slide.background.active-slide,
+.profile-slide.abilities.active-slide,
+.profile-slide.plotter.active-slide {
     display: grid;
-    grid-template: min(100%, 460px) / 1fr min(50%, 370px);
+    grid-template: 'main sidebar' min(100%, 460px) / 1fr min(50%, 370px);
     gap: 0 32px;
 }
 
+.abilities-freeform,
+.profile-textbox:first-child {
+    grid-area: main;
+}
+
 .profile-slide-card {
+    grid-area: sidebar;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -2823,7 +2904,7 @@ pfrumor::before {
 
 .profile-tracker-grid {
     display: grid;
-    grid-template: "active archived"
+    grid-template: "active archived" 400px
         / 1.5fr 1fr;
     gap: 0 32px;
     margin-top: 8px;
@@ -2847,14 +2928,19 @@ pfrumor::before {
 
 #trackercol,
 #archivedcol {
+    height: calc(100% - 36px);
     padding-bottom: 4px;
+    overflow-y: auto;
 }
 
 .tracker-item {
-    padding: 16px 16px 24px;
+    padding: 12px 16px 24px;
     margin: 16px 0;
     /* background: hsl(var(--white)/0.05); */
     border: 0.5px solid hsl(var(--border-tertiary));
+    border-left: 2px solid hsl(var(--grpaccent)/.5);
+    border-top-left-radius: var(--radius-s);
+    border-bottom-left-radius: var(--radius-s);
 }
 
 .tracker-item::before {
@@ -2909,7 +2995,7 @@ pfrumor::before {
 
 .tracker-desc>span {
     display: inline-block;
-    padding: 0.5em 0 0;
+    padding: 0.25em 0 0;
 }
 
 .tracker-location {
@@ -3007,6 +3093,119 @@ pfrumor::before {
     text-decoration-thickness: 0.5px;
     text-decoration-color: hsl(var(--white)/.5);
 }
+
+
+/* Force sidebar to always show on mobile */
+@media only screen and (max-width: 760px) {
+
+    .profile-header {
+        grid-template:
+            'userlinks'
+            'sidebar'
+            'name'
+            /1fr;
+    }
+
+    .profile-user-links {
+        margin: auto;
+    }
+
+    .profile-sidebar {
+        display: block !important;
+        position: relative;
+    }
+
+    .profile-hover {
+        margin: auto;
+    }
+
+    .profile-user-stats {
+        margin: 1em 0 3em;
+    }
+
+    .profile-tabs-wrap {
+        width: calc(100% + var(--mobileinset));
+        margin-left: calc(0px - var(--mobileinset) / 2);
+        padding: 0 calc(var(--mobileinset) / 2);
+        overflow-x: auto;
+    }
+
+    #profile-slides-wrap {
+        margin-top: -24px;
+        padding: 56px 0 0;
+        height: 680px;
+        overflow: auto;
+    }
+
+    .profile-slide {
+        display: none;
+    }
+
+    .profile-slide.basics {
+        max-width: unset;
+    }
+
+    .profile-overview {
+        grid-template: repeat(7, auto) / repeat(2, 1fr);
+    }
+
+    .profile-slide.background.active-slide,
+    .profile-slide.abilities.active-slide,
+    .profile-slide.plotter.active-slide {
+        grid-template:
+            'sidebar'
+            'main' / 1fr;
+        gap: 48px;
+    }
+
+    .abilities-freeform,
+    .profile-dragon,
+    .profile-timeline,
+    .profile-rumors {
+        height: auto;
+    }
+
+    .profile-slide-card {
+        background: hsl(var(--white)/0.05);
+    }
+
+    .profile-tracker-grid {
+        grid-template: 'active' auto
+            'archived' auto / 1fr;
+        gap: 56px;
+        max-height: 400px;
+        overflow: auto;
+    }
+
+    #trackercol,
+    #archivedcol {
+        height: 100%;
+    }
+
+    .profile-tracker-col-title {
+        position: sticky;
+        -webkit-mask-position: sticky;
+        top: 0;
+        background: hsl(var(--black));
+        box-shadow: 0 5px 5px hsl(var(--black));
+        z-index: 2;
+    }
+
+    .profile-ooc {
+        grid-template:
+            'player'
+            'contact'
+            'activity'
+            'credits'
+            / 1fr;
+    }
+
+    .profile-ooc-credits {
+        padding-top: 0;
+        border-top: 0;
+    }
+}
+
 
 
 
@@ -3173,13 +3372,11 @@ MEMBERS PAGE
     transition: var(--transition-fast);
 }
 
-.membercard:hover .membercard-image,
-.membercard:focus .membercard-image {
+.membercard:hover .membercard-image {
     filter: saturate(.25);
 }
 
-.membercard:hover .membercard-content,
-.membercard:focus .membercard-content {
+.membercard:hover .membercard-content {
     opacity: 1;
 }
 
@@ -3189,8 +3386,7 @@ MEMBERS PAGE
     transition: var(--transition-med);
 }
 
-.membercard:hover .membercard-content>div,
-.membercard:focus .membercard-content>div {
+.membercard:hover .membercard-content>div {
     opacity: 1;
     transform: none;
 }
@@ -3259,6 +3455,47 @@ MEMBERS PAGE
 .membercard-insignia {}
 
 
+@media only screen and (max-width: 760px) {
+    .ml-header {
+        width: 100%;
+        grid-template-columns: unset;
+        grid-auto-flow: row;
+        gap: 0;
+    }
+
+    .membercard {
+        width: 100%;
+        /* grid-template:
+            'name'
+            'body' 320px
+            / 1fr; */
+    }
+
+    .membercard-body {
+        display: flex;
+    }
+
+    .membercard-image {
+        position: relative;
+        width: clamp(1px, 50%, 250px);
+    }
+
+    .membercard-content {
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .membercard-content,
+    .membercard-content>div {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* .membercard-header {
+        padding: 4px 12px;
+        writing-mode: unset;
+    } */
+}
 
 
 
@@ -3412,7 +3649,13 @@ GUIDEBOOK
     .guidebook {
         grid-template:
             'gbsidebar' auto
-            'gbcontent' 100vh / 1fr;
+            'gbcontent' 800px / 1fr;
+    }
+
+    .gb-sidebar {
+        padding: 0 0 20px;
+        border-right: 0;
+        border-bottom: 0.5px solid hsl(var(--border-secondary));
     }
 
     .gb-nav {
@@ -3493,6 +3736,15 @@ GUIDEBOOK
 
     .gb-nav-links a {
         margin: 1.5em 0;
+    }
+
+    .gb-page-header {
+        padding: 32px 0 0;
+        border: 0;
+    }
+
+    .gb-page-body {
+        padding-left: 0;
     }
 
 }
@@ -3648,7 +3900,7 @@ HOVER EFFECTS, DESKTOP-ONLY
 
 
 /****************************************
-MOBILE
+MOBILE NAV
 *****************************************/
 
 @media only screen and (max-width: 1200px) {
@@ -3658,5 +3910,40 @@ MOBILE
 
     .hero {
         width: calc(100% - var(--mobileinset));
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #navbar {
+        padding: 0;
+    }
+
+    .breadcrumbs {
+        width: calc(100vw - 48px);
+        padding: 12px 32px 12px 12px;
+        overflow-x: auto;
+        mask: linear-gradient(to left, transparent, black 40px);
+    }
+
+    .hamburger {
+        display: inline-flex;
+        padding: 0 12px;
+    }
+
+    .navlinks {
+        display: none;
+    }
+
+    .hero-illo {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    #navbar {
+        position: fixed;
+        top: unset;
+        bottom: 0;
     }
 }
