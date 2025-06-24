@@ -3934,6 +3934,11 @@ MOBILE NAV
         display: none;
     }
 
+    .herotitle {
+        /* Temp for testing. In practice, shrink text */
+        display: none;
+    }
+
     .hero-illo {
         display: none;
     }
