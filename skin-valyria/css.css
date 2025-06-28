@@ -430,6 +430,9 @@ HOME
     color: hsl(var(--permwhite));
     border-radius: 0px;
     padding: 70px 0;
+}
+
+.bodywrap.idx {
     overflow-x: hidden;
 }
 
@@ -1109,6 +1112,7 @@ HOME
 
 .forum-archives .subforums {
     justify-content: flex-end;
+    flex-wrap: wrap;
     gap: 1.5ch;
     margin: 4px 0 28px;
 }
@@ -1149,6 +1153,8 @@ HOME
     margin: 12px 0 40px;
 }
 
+.forums-ooc .forum-default .forum-lastpost.flexrow,
+.subforumrow .forum-default .forum-lastpost.flexrow {}
 
 .forum-default .forum-lastpost-avi {
     width: 52px;
@@ -1160,7 +1166,7 @@ HOME
 
 .forum-default .subforums {
     gap: 2ch;
-    margin: 40px 0 32px;
+    margin: 32px 0 20px;
 }
 
 .subforums:empty {
@@ -1259,6 +1265,7 @@ HOME
 }
 
 .statcenter-links a {
+    white-space: nowrap;
     color: hsl(var(--accent-secondary));
 }
 
@@ -1478,6 +1485,22 @@ a.statcenter-thread {
             / 1fr;
     }
 
+    .forum-archives {
+        grid-template: 'info' / 1fr;
+    }
+
+    .forum-archives-info {
+        text-align: left;
+    }
+
+    .forum-archives-imgwrap {
+        display: none;
+    }
+
+    .forum-archives .subforums {
+        justify-content: flex-start;
+    }
+
     .forums-ooc .forum-default:not(:last-child),
     .subforumrow .forum-default:not(:last-child),
     .forums-ooc .forum-default,
@@ -1505,7 +1528,8 @@ a.statcenter-thread {
 
     .statcenter-links {
         flex-direction: row;
-        gap: 1em;
+        gap: .25em 1em;
+        flex-wrap: wrap;
         margin-bottom: 12px;
         border-bottom: 0.5px solid hsl(var(--border-primary));
     }
@@ -1535,11 +1559,12 @@ a.statcenter-thread {
         flex-wrap: nowrap;
         padding: 0;
         height: auto;
+        border-radius: var(--radius-s);
     }
 
     .statcenter-active {
-        min-width: calc(100% / 2 - 32px);
-        padding: 12px 20px 16px;
+        min-width: calc(100% / 2 - 16px);
+        padding: 8px 20px 16px;
         border-bottom: 0;
         border-right: 1px solid hsl(var(--permblack) / .25);
     }
@@ -2766,7 +2791,8 @@ pfrumor::before {
     padding-right: clamp(80px, 10%, 100px);
     display: flex;
     align-items: center;
-    gap: 32px;
+    align-content: center;
+    gap: 12px 32px;
 }
 
 .profile-rep-slide:last-child {
@@ -2851,11 +2877,7 @@ pfrumor::before {
 }
 
 .profile-rep-blurb {
-    font-family: 'Etna';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 29px;
-    line-height: 120%;
+    font: italic var(--etna-26);
     color: hsl(var(--white));
     padding-left: clamp(1px, .5em, 40px);
     opacity: 0.5;
@@ -2904,7 +2926,7 @@ pfrumor::before {
 
 .profile-tracker-grid {
     display: grid;
-    grid-template: "active archived" 400px
+    grid-template: "active archived" 520px
         / 1.5fr 1fr;
     gap: 0 32px;
     margin-top: 8px;
@@ -2928,7 +2950,7 @@ pfrumor::before {
 
 #trackercol,
 #archivedcol {
-    height: calc(100% - 36px);
+    height: calc(100% - 24px);
     padding-bottom: 4px;
     overflow-y: auto;
 }
@@ -2969,7 +2991,7 @@ pfrumor::before {
     width: 56px;
     height: 56px;
     position: absolute;
-    top: -16px;
+    top: -12px;
     right: 0;
     font-size: 28px;
     background: hsl(var(--grpaccent));
@@ -3169,11 +3191,25 @@ pfrumor::before {
         background: hsl(var(--white)/0.05);
     }
 
+    .profile-rep-slide {
+        height: 280px;
+        flex-wrap: wrap;
+    }
+
+    .profile-rep-icon {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .profile-rep-icon img {
+        width: 60px;
+    }
+
     .profile-tracker-grid {
         grid-template: 'active' auto
             'archived' auto / 1fr;
-        gap: 56px;
-        max-height: 400px;
+        gap: 28px 56px;
+        max-height: 480px;
         overflow: auto;
     }
 
@@ -3185,7 +3221,7 @@ pfrumor::before {
     .profile-tracker-col-title {
         position: sticky;
         -webkit-mask-position: sticky;
-        top: 0;
+        top: -1px;
         background: hsl(var(--black));
         box-shadow: 0 5px 5px hsl(var(--black));
         z-index: 2;
