@@ -739,7 +739,7 @@ HOME
 }
 
 .ic-news-image:hover img,
-.ic-news-image:focus img {
+.ic-news-image:focus-within img {
     transform: scale(1.1);
 }
 
@@ -1399,6 +1399,7 @@ a.statcenter-thread {
 
     .forum-dev .subforums {
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .forum-lastpost-devbg.glass {
@@ -1448,15 +1449,17 @@ a.statcenter-thread {
         grid-template:
             'tabs' auto
             'imageslider' 200px
-            'foruminfo' 320px
+            'foruminfo' 400px
             / 1fr
     }
 
     .locationtabs {
         display: flex;
-        flex-wrap: wrap;
         gap: 12px;
-        padding: 16px 0;
+        padding: 16px calc(var(--mobileinset)/2);
+        width: calc(100% + var(--mobileinset));
+        margin-left: calc(0px - var(--mobileinset)/2);
+        overflow-x: auto;
     }
 
     .location-tab {
@@ -1471,9 +1474,21 @@ a.statcenter-thread {
             / 1fr
     }
 
+    .locationheader {
+        flex-wrap: wrap;
+    }
+
+    .locationheader .forum-stats {
+        margin-left: 0;
+    }
+
     .forums-world .forum-lastpost-av,
     .forum-lastpost-avi {
         display: none;
+    }
+
+    .forums-world .forum-lastpost-text {
+        flex-wrap: wrap;
     }
 
     .forums-ooc {
@@ -1563,7 +1578,9 @@ a.statcenter-thread {
     }
 
     .statcenter-active {
-        min-width: calc(100% / 2 - 16px);
+        min-width: 280px;
+        width: calc(100% / 2 - 16px);
+        /* width: clamp(200px, 50%, 500px); */
         padding: 8px 20px 16px;
         border-bottom: 0;
         border-right: 1px solid hsl(var(--permblack) / .25);
@@ -2237,6 +2254,7 @@ PROFILE
 #Profile .bodywrap {
     padding-top: 0;
     --border-primary: var(--grpaccent);
+    overflow-x: hidden;
 }
 
 .profile-header {
@@ -3501,14 +3519,15 @@ MEMBERS PAGE
 
     .membercard {
         width: 100%;
-        /* grid-template:
+        grid-template:
             'name'
-            'body' 320px
-            / 1fr; */
+            'body' 280px
+            / 1fr;
     }
 
     .membercard-body {
         display: flex;
+        flex-direction: row-reverse;
     }
 
     .membercard-image {
@@ -3517,7 +3536,7 @@ MEMBERS PAGE
     }
 
     .membercard-content {
-        padding: 20px;
+        padding: 16px 12px;
         overflow-y: auto;
     }
 
@@ -3527,10 +3546,10 @@ MEMBERS PAGE
         transform: none;
     }
 
-    /* .membercard-header {
-        padding: 4px 12px;
+    .membercard-header {
+        padding: 12px 12px 6px;
         writing-mode: unset;
-    } */
+    }
 }
 
 
@@ -3897,7 +3916,7 @@ HOVER EFFECTS, DESKTOP-ONLY
 @media only screen and (min-width: 760px) {
 
     a:not([class*="title"]):not([class*="newest"]):hover,
-    a:not([class*="title"]):not([class*="newest"]):focus {
+    a:not([class*="title"]):not([class*="newest"]):focus-within {
         filter: brightness(130%);
         /* opacity: .8; */
     }
