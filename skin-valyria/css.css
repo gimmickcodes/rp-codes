@@ -390,9 +390,10 @@ a {
     overflow: auto;
 }
 
-.herobannercontent::after {
+.herobannercontent::before {
     content: '';
     position: absolute;
+    display: block;
     width: 100%;
     height: 100%;
     top: 0;
@@ -416,6 +417,25 @@ a {
     letter-spacing: var(--ls-m);
     text-transform: uppercase;
     margin-bottom: 0.5em;
+}
+
+
+
+@media only screen and (max-width: 760px) {
+    .herobannercontent {
+        grid-template: 'abouttext'
+            'staff' / 1fr;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .herobannercontent::before {
+        position: sticky;
+    }
+
+    .herobanner-left {
+        overflow: unset;
+    }
 }
 
 
@@ -738,8 +758,7 @@ HOME
     transition: var(--transition-fast);
 }
 
-.ic-news-image:hover img,
-.ic-news-image:focus-within img {
+.ic-news-image:hover img {
     transform: scale(1.1);
 }
 
@@ -3426,9 +3445,9 @@ MEMBERS PAGE
     transition: var(--transition-fast);
 }
 
-.membercard:hover .membercard-image {
+/* .membercard:hover .membercard-image {
     filter: saturate(.25);
-}
+} */
 
 .membercard:hover .membercard-content {
     opacity: 1;
@@ -3915,8 +3934,7 @@ HOVER EFFECTS, DESKTOP-ONLY
 
 @media only screen and (min-width: 760px) {
 
-    a:not([class*="title"]):not([class*="newest"]):hover,
-    a:not([class*="title"]):not([class*="newest"]):focus-within {
+    a:not([class*="title"]):not([class*="newest"]):hover {
         filter: brightness(130%);
         /* opacity: .8; */
     }
