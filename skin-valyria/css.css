@@ -53,6 +53,7 @@ UTILITIES
     /* MOBILE INSET */
     --mobileinset: 40px;
     --bodywidth: clamp(1px, calc(100% - var(--mobileinset)), 1100px);
+    --mobileinsetnested: 12px;
 
     /* BORDER RADIUS */
     --radius-s: 4px;
@@ -467,10 +468,10 @@ a {
     overflow: auto;
 }
 
-.herobannercontent::before {
+.herobanner::before {
     content: '';
     position: absolute;
-    display: block;
+    display: none;
     width: 100%;
     height: 100%;
     top: 0;
@@ -482,6 +483,10 @@ a {
     transform: matrix(1, 0, 0, -1, 0, 0);
     z-index: 0;
     /* backdrop-filter: blur(20px); */
+}
+
+.showabout .herobanner::before {
+    display: block;
 }
 
 .herobannercontent>div {
@@ -504,10 +509,10 @@ a {
             'staff' / 1fr;
         overflow-y: auto;
         position: relative;
-    }
-
-    .herobannercontent::before {
-        position: sticky;
+        width: var(--bodywidth);
+        height: calc(100% - 40px);
+        padding: 0;
+        margin: 20px auto;
     }
 
     .herobanner-left {
@@ -1742,6 +1747,7 @@ SUBFORUMS & TOPIC ROWS
         / auto 1fr;
     background: hsl(var(--white)/.05);
     border: 0.5px solid hsl(var(--border-tertiary));
+    border-radius: var(--radius-s);
     align-items: stretch;
     padding: 32px 0 32px 32px;
     margin-bottom: 20px;
@@ -1900,6 +1906,8 @@ SUBFORUMS & TOPIC ROWS
 @media only screen and (max-width: 760px) {
     .topicrow {
         grid-template: 'body' / 1fr;
+        padding: var(--mobileinsetnested);
+        padding-right: 0;
     }
 
     .topic-avi {
@@ -1909,6 +1917,22 @@ SUBFORUMS & TOPIC ROWS
     .topicrow::before {
         top: -110%;
         opacity: .15;
+    }
+
+    .topic-title,
+    .topic-meta {
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    .topic-stats {
+        display: none;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .topicrow [type="checkbox"] {
+        right: var(--mobileinsetnested);
     }
 }
 
@@ -2066,7 +2090,9 @@ POST ROW & MINI PROFILE
     width: 180px;
     height: 180px;
     border: 1px solid red;
+    border-radius: 100%;
     transition: var(--transition-med);
+
 }
 
 
@@ -2326,14 +2352,28 @@ POST ROW & MINI PROFILE
         display: none;
     }
 
+    .pr-content {
+        padding: calc(2 * var(--mobileinsetnested)) var(--mobileinsetnested);
+    }
+
+    .pr-footer {
+        padding-left: var(--mobileinsetnested);
+        padding-right: var(--mobileinsetnested);
+    }
+
     .pr-toolbar,
     .pr-buttons {
         flex-direction: row;
     }
 
+    .pr-toolbar {
+        justify-content: space-between;
+    }
+
     .pr-buttons::after {
         height: 1px;
         width: 40px;
+        display: none;
     }
 
     .pr-timestamp {
@@ -3256,6 +3296,12 @@ pfrumor::before {
             /1fr;
     }
 
+    .pr-header-default,
+    .pr-header-rep {
+        padding-left: var(--mobileinsetnested);
+        padding-right: var(--mobileinsetnested);
+    }
+
     .profile-user-links {
         margin: auto;
     }
@@ -3633,7 +3679,7 @@ MEMBERS PAGE
         width: 100%;
         grid-template:
             'name'
-            'body' 280px
+            'body' 240px
             / 1fr;
     }
 
@@ -3728,7 +3774,7 @@ GUIDEBOOK
 .gb-nav-toggle,
 .gb-nav-links {
     counter-reset: item;
-    font: var(--chivo-16);
+    font: 200 var(--chivo-16);
 }
 
 
@@ -3747,8 +3793,13 @@ GUIDEBOOK
 /* .gb-nav-links a:hover {} */
 
 
+.gb-nav-links a.is-selected {
+    font-weight: 400;
+}
+
 .gb-nav-links a.is-selected::before {
     content: '— ';
+    color: hsl(var(--accent-secondary));
 }
 
 .gb-nav-toggle {
