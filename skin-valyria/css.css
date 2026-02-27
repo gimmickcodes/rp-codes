@@ -2611,7 +2611,7 @@ PROFILE
     position: absolute;
     /* grid-area: -1 / 1; */
     width: 100%;
-    height: fit-content;
+    height: 100%;
     opacity: 0;
     transform: translateX(20%);
     transition: var(--transition-fast);
@@ -2932,6 +2932,7 @@ pfrumor::before {
     border: 1px solid hsl(var(--border-tertiary));
     border-width: 1px 0 1px;
     overflow: hidden;
+    z-index: 5
 }
 
 .profile-rep-slides {
@@ -3335,6 +3336,7 @@ pfrumor::before {
 
     .profile-slide {
         display: none;
+        height: fit-content;
         padding-right: 10px;
     }
 
