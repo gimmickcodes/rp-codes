@@ -2808,7 +2808,7 @@ div.prof--group {
 .profile-navbar {
     position: sticky;
     top: 55px;
-    margin: 100px 0 80px;
+    margin: 100px 0 60px;
     padding: 12px 0;
     display: flex;
     background: hsl(var(--backgroundBlack)/.5);
@@ -3427,6 +3427,10 @@ Member List
     margin-bottom: 0.75em;
 }
 
+.membercard:not(.staff, .npc) .membercard-staffname {
+    display: none;
+}
+
 .membercard-links {}
 
 .membercard-front i,
@@ -3493,6 +3497,47 @@ Member List
     filter: blur(0);
 }
 
+.membercard.staff {
+
+    .membercard-image {
+        height: 80%;
+        border-radius: 20px;
+    }
+
+    .membercard-staffname {
+        font: 500 40px / 1.1em var(--mixta);
+        color: hsl(var(--accent-2));
+        margin-bottom: 0.125em;
+        text-align: center;
+    }
+
+    .membercard-name,
+    .membercard-stats,
+    .membercard-footer,
+    .membercard-stability_meter,
+    .membercard-player,
+    .membercard-links {
+        display: none;
+    }
+
+    .membercard-hoverlay {
+        opacity: 1;
+        transform: scaleY(1);
+        filter: blur(0);
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 70%);
+        display: none;
+    }
+
+    .membercard-hover {
+        opacity: 1;
+        filter: blur(0);
+        transition-delay: 150ms;
+    }
+}
+
+.membercard.staff:hover .membercard-image {
+    transform: scale(1);
+}
 
 
 @media only screen and (max-width: 760px) {}
