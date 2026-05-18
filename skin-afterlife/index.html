@@ -1,0 +1,2397 @@
+<!DOCTYPE html>
+
+<head>
+    <title>After We Die</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+    <link href="jcink-defaults.css" rel="stylesheet">
+    <script src="js.js" defer></script>
+
+    <!-- font icons -->
+    <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/zbl1ihd.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <script>
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme == "dark") {
+            document.documentElement.classList.toggle("dark-theme");
+        } else if (currentTheme == "light") {
+            document.documentElement.classList.toggle("light-theme");
+        }
+    </script>
+
+</head>
+
+<body class="userid-{ID} mgroupid-{ID}" id="idx">
+
+
+
+    <div id="navbar">
+        <div class="navbar--menubutton mobile" onclick="menuFunction()"><i class="ph ph-list"></i></div>
+        <div class="navbar--menubutton" onclick="menuFunction()">Menu</div>
+        <div class="navbar--breadcrumbs">
+            <a href="#">After We Die</a>
+            <a href="">Category</a>
+            <a href="">Board</a>
+        </div>
+
+        <div class="navbar--utilities">
+            <i class="ph ph-caret-up"></i>
+            <i class="ph ph-caret-down"></i>
+            <i class="ph ph-sun"></i>
+        </div>
+    </div>
+
+    <div id="navpanel" class="faded">
+        <div class="navpanel-section navpanel-user">
+            <div class="navpanel-user--left">
+                <div class="navpanel--username"><a href="">Santino Ravus</a> <a href="#" title="Switch Account"><i
+                            class="ph ph-arrows-clockwise"></i></a>
+                </div>
+                <div class="navpanel--userlinks">
+                    <a href="#" title="Messages"><i class="ph ph-envelope"></i> 21</a>
+                    <a href="#" title="Alerts"><i class="ph ph-bell"></i> 21</a>
+                    <a href="#" title="Your Inventory"><i class="ph ph-sword"></i>Inventory</a>
+                </div>
+            </div>
+            <a href="" class="navpanel--avi imgfill" style="background-image:var(--placehold-icon)"></a>
+        </div>
+        <div class="navpanel-section">
+            <div class="siteheader-linksbox--mainlinks">
+                <a href="" class="perms-loggedin">UCP</a>
+                <a href="" class="perms-staff">ACP</a>
+                <a href="">Members</a>
+                <a href="">New Topics</a>
+                <a href="">Online</a>
+                <a href="">Search</a>
+                <a href="" class="perms-loggedin">Log Out</a>
+                <a href="" class="perms-loggedout">Log In</a>
+            </div>
+            <div class="siteheader-linksbox--quicklinks">
+                <a href="">Guidebook</a>
+                <a href="" class="perms-loggedin">Shops</a>
+                <a href="">Templates</a>
+                <a href="">Store</a>
+                <a href="">Discord</a>
+            </div>
+        </div>
+        <div class="navpanel-section"></div>
+    </div>
+
+
+    <div id="siteheader">
+        <div class="siteheader-linksbox">
+            <div class="siteheader-linksbox--mainlinks">
+                <a href="" class="perms-loggedin">UCP</a>
+                <a href="" class="perms-staff">ACP</a>
+                <a href="">Members</a>
+                <a href="">New Topics</a>
+                <a href="">Online</a>
+                <a href="">Search</a>
+                <a href="" class="perms-loggedin">Log Out</a>
+                <a href="" class="perms-loggedout">Log In</a>
+            </div>
+            <div class="siteheader-linksbox--quicklinks">
+                <a href="">Guidebook</a>
+                <a href="" class="perms-loggedin">Shops</a>
+                <a href="">Templates</a>
+                <a href="">Store</a>
+                <a href="">Discord</a>
+            </div>
+        </div>
+
+        <div class="hero">
+            <a class="hero-title--one progblur">After</a>
+            <div class="hero-image"><img src="assets-final/board-hero.png"></div>
+            <a class="hero-title--two"><span class="progblur">We</span> <span class="progblur">Die</span></a>
+            <div class="hero-subtitle">An OC Dungeoncrawler Afterlife Roleplay</div>
+        </div>
+
+    </div>
+
+
+
+    <div class="sitebody">
+
+        <!-- <% BOARD %> AKA HOME -->
+        <div class="sitebody--inset PREVIEW-HOME" id="idx" style="display:inherit;">
+            <div class="cat cat-getstarted" id="cat-{ID}">
+                <div class="cat--header glowtext_v2">Get Started</div>
+                <div class="frame">
+                    <div class="frame-inner cat-grid">
+                        <div class="forum-guidebook-bg"></div>
+                        <div class="fr forum-guidebook" id="forum-{ID}">
+                            <div class="forum-guidebook-board">
+                                <a class="fr--forumname" href="#">Resident's Handbook</a>
+                                <div class="fr--desc"><b>Welcome to the monastery.</b> Lorem ipsum dolor sit amet
+                                    consectetur.
+                                    Turpis ultrices eros quis ipsum non cursus netus et. Consectetur lectus massa
+                                    tristique aenean. Nulla facilisis elementum lobortis cras ipsum porta leo
+                                    ullamcorper. Diam morbi eget nam aenean. Ac mi sed commodo mus mauris tempor
+                                    ipsum
+                                    molestie.</div>
+                                <div class="forum-guidebook--links"><a href="#">Premise</a>
+                                    <a href="#">Setting</a>
+                                    <a href="#">Daily Life</a>
+                                    <a href="#">Progression</a>
+                                    <a href="#">Dice</a>
+                                    <a href="#">App Guide</a>
+                                </div>
+                            </div>
+                            <div class="forum-guidebook-userbox">
+                                <a href="" class="userbox--avi imgfill"
+                                    style="background-image:var(--placehold-icon)"></a>
+                                <div class="userbox--kicker">Welcome Back,</div>
+                                <div class="userbox--username">Santino Ravus</div>
+                                <div class="userbox--userlinks">
+                                    <a href="#">Messages</a>
+                                    <a href="#">Alerts</a>
+                                    <a href="#">Switch Account</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fr forum-announcements" id="forum-{ID}">
+                            <a class="fr--forumname" href="#">Announcements</a>
+                            <div class="subforums"><a href="">Old Announcements</a> <a href="">Old
+                                    Announcements</a>
+                            </div>
+                            <div class="fr-lastpost">
+                                <div class="fr-lastpost-text">
+                                    <a href="" class="fr-lastpost-text--threadname">the knife of never letting
+                                        go</a>
+                                    <div class="fr-lastpost-text--metadata forechosen">
+                                        by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a> on
+                                        May 1,
+                                        2026
+                                    </div>
+                                </div>
+                                <div class="fr-lastpost-avi forechosen imgfill"
+                                    style="background-image: var(--placehold-icon)">
+                                </div>
+                            </div>
+                            <div class="fr--boardstats">
+                                <span class="fr--boardstats--posts">64 posts</span> /
+                                <span class="fr--boardstats--topics">64 topics</span>
+
+                            </div>
+                        </div>
+
+                        <div class="fr forum-worldbuilding" id="forum-{ID}">
+                            <a class="fr--forumname" href="#">Worldbuilding</a>
+                            <div class="subforums"> </div>
+                            <div class="fr-lastpost">
+                                <div class="fr-lastpost-text">
+                                    <a href="" class="fr-lastpost-text--threadname">the knife of never letting
+                                        go</a>
+                                    <div class="fr-lastpost-text--metadata forechosen">
+                                        by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a> on
+                                        May 1,
+                                        2026
+                                    </div>
+                                </div>
+                                <div class="fr-lastpost-avi forechosen imgfill"
+                                    style="background-image: var(--placehold-icon)">
+                                </div>
+                            </div>
+                            <div class="fr--boardstats">
+                                <span class="fr--boardstats--posts">64 posts</span> /
+                                <span class="fr--boardstats--topics">64 topics</span>
+
+                            </div>
+                        </div>
+
+                        <div class="newsbar">
+                            <div class="newsbar-header">Happening Now</div>
+                            <a href="" class="newschip"><b>Event</b> Festival of
+                                Light</a>
+                            <a href="" class="newschip"><b>Event</b> Festival of Light</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cat cat-plotting" id="cat-{ID}">
+                <div class="cat--header glowtext_v2">Character</div>
+                <div class="frame">
+                    <div class="frame-inner cat-grid">
+                        <div class="cat-plotting-bg"> </div>
+                        <img class="cat-plotting-imagebox" src="assets-final/board-dev.png">
+                        <div class="fr forum-shops" id="forum-{ID}">
+                            <div class="forum-shops-board">
+                                <a class="fr--forumname" href="#">Shops & Inventories</a>
+                                <div class="fr--desc">Lorem ipsum dolor sit amet
+                                    consectetur.
+                                    Turpis ultrices eros quis ipsum non cursus netus et. Consectetur lectus
+                                    massa
+                                    tristique aenean. Nulla facilisis elementum lobortis cras ipsum porta leo
+                                    ullamcorper. Diam morbi eget nam aenean. Ac mi sed commodo mus mauris tempor
+                                    ipsum
+                                    molestie.</div>
+                                <div class="forum-shops--links">
+                                    <a href="#">
+                                        <i class="ph ph-note-pencil"></i>
+                                        Create Inventory
+                                    </a>
+                                    <a href="#">
+                                        <i class="ph ph-storefront"></i>
+                                        Artifact Shop
+                                    </a>
+                                    <a href="#">
+                                        <i class="ph ph-sword"></i>
+                                        Keepsake Upgrades
+                                    </a>
+                                    <a href="#">
+                                        <i class="ph ph-castle-turret"></i>
+                                        Amenity Upgrades
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fr forum-missives" id="forum-{ID}">
+                            <a class="fr--forumname" href="#">Missives</a>
+                            <div class="subforums"> </div>
+                            <div class="fr-lastpost">
+                                <div class="fr-lastpost-text">
+                                    <a href="" class="fr-lastpost-text--threadname">the knife of never
+                                        letting
+                                        go</a>
+                                    <div class="fr-lastpost-text--metadata forechosen">
+                                        by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a>
+                                        on May 1,
+                                        2026
+                                    </div>
+                                </div>
+                                <div class="fr-lastpost-avi forechosen imgfill"
+                                    style="background-image: var(--placehold-icon)"></div>
+                            </div>
+                            <div class="fr--boardstats">
+                                <span class="fr--boardstats--posts">64 posts</span> /
+                                <span class="fr--boardstats--topics">64 topics</span>
+
+                            </div>
+                        </div>
+
+                        <div class="fr forum-quests" id="forum-{ID}">
+                            <a class="fr--forumname" href="#">Quests</a>
+                            <div class="subforums"> </div>
+                            <div class="fr-lastpost">
+                                <div class="fr-lastpost-text">
+                                    <a href="" class="fr-lastpost-text--threadname">the knife of never
+                                        letting
+                                        go</a>
+                                    <div class="fr-lastpost-text--metadata forechosen">
+                                        by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a>
+                                        on May 1,
+                                        2026
+                                    </div>
+                                </div>
+                                <div class="fr-lastpost-avi forechosen imgfill"
+                                    style="background-image: var(--placehold-icon)"></div>
+                            </div>
+                            <div class="fr--boardstats">
+                                <span class="fr--boardstats--posts">64 posts</span> /
+                                <span class="fr--boardstats--topics">64 topics</span>
+
+                            </div>
+                        </div>
+
+                        <div class="fr forum-dev" id="forum-{ID}">
+                            <div class="fr--forumname">Development</div>
+                            <div class="subforums">
+                                <a href="">Board</a>
+                                <a href="">Board</a>
+                            </div>
+                            <div class="fr-lastpost">
+                                <div class="fr-lastpost-text">
+                                    <a href="" class="fr-lastpost-text--threadname">the knife of never
+                                        letting
+                                        go</a>
+                                    <div class="fr-lastpost-text--metadata forechosen">
+                                        by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a>
+                                        on May 1,
+                                        2026
+                                    </div>
+                                </div>
+                                <div class="fr-lastpost-avi forechosen imgfill"
+                                    style="background-image: var(--placehold-icon)"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cat cat-locations" id="cat-{ID}">
+                <div class="cat--header glowtext_v2">the afterlife</div>
+                <div class="cat-grid">
+                    <div class="forum-monastery frame" id="forum-{ID}">
+                        <div class="frame-inner forum-monastery-grid">
+                            <div class="forum-monastery-board">
+                                <a class="fr--forumname" href="#">The Monastery of St. Divenire</a>
+                                <div class="fr--desc">Lorem ipsum dolor sit amet
+                                    consectetur.
+                                    Turpis ultrices eros quis ipsum non cursus netus et. Consectetur lectus
+                                    massa
+                                    tristique aenean. Nulla facilisis elementum lobortis cras ipsum porta
+                                    leo
+                                    ullamcorper. Diam morbi eget nam aenean. Ac mi sed commodo mus mauris
+                                    tempor
+                                    ipsum
+                                    molestie.</div>
+                                <div class="fr-lastpost">
+                                    <div class="fr-lastpost-text">
+                                        <a href="" class="fr-lastpost-text--threadname">the knife of never
+                                            letting
+                                            go</a>
+                                        <div class="fr-lastpost-text--metadata forechosen">
+                                            by <a href="" class="fr-lastpost-text--poster">Lysandon Alfebrand</a>
+                                            on May 1,
+                                            2026
+                                        </div>
+                                    </div>
+                                    <div class="fr-lastpost-avi forechosen imgfill"
+                                        style="background-image: var(--placehold-icon)"></div>
+                                </div>
+                                <div class="fr--boardstats">
+                                    <span class="fr--boardstats--posts">64 posts</span> /
+                                    <span class="fr--boardstats--topics">64 topics</span>
+
+                                </div>
+                            </div>
+                            <div class="forum-monastery-imagebox">
+                                <div class="forum-monastery-image-overlay"></div>
+                                <div class="subforums">
+                                    <a href="">Main Hall</a>
+                                    <a href="">Dormitories</a>
+                                    <a href="">Library</a>
+                                    <a href="">Cloister Gardens</a>
+                                </div>
+                                <div class="fr-lastpost-avi forechosen imgfill"
+                                    style="background-image: var(--placehold-icon)"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-dungeon frame" id="forum-{ID}">
+                        <div class="frame-inner forum-dungeon-grid">
+
+                            <div class="forum-dungeon-imagebox">
+                                <div class="forum-dungeon-image-overlay"></div>
+                            </div>
+                            <div class="forum-dungeon-board">
+                                <a class="fr--forumname" href="#">Dungeon One</a>
+                                <div class="fr--desc">
+                                    Lorem ipsum dolor sit amet
+                                    consectetur.
+                                    Turpis ultrices eros quis ipsum non cursus netus et. Consectetur
+                                    lectus massa
+                                    tristique aenean. Nulla facilisis elementum lobortis cras ipsum
+                                    porta leo
+                                    ullamcorper. Diam morbi eget nam aenean. Ac mi sed commodo mus
+                                    mauris tempor
+                                    ipsum
+                                    molestie.</div>
+                                <div class="forum-dungeon-lastpostbox">
+                                    <div class="fr-lastpost">
+                                        <div class="fr-lastpost-text">
+                                            <a href="" class="fr-lastpost-text--threadname">the
+                                                knife of never
+                                                letting
+                                                go</a>
+                                            <div class="fr-lastpost-text--metadata forechosen">
+                                                by <a href class="fr-lastpost-text--poster">Lysandon
+                                                    Alfebrand</a>
+                                                on
+                                                May 1,
+                                                2026
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fr--boardstats">
+                                        <span class="fr--boardstats--posts">64 posts</span> /
+                                        <span class="fr--boardstats--topics">64 topics</span>
+                                    </div>
+                                    <div class="fr-lastpost-avi forechosen imgfill"
+                                        style="background-image: var(--placehold-icon)">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cat cat-ooc" id="cat-{ID}">
+                <div class="cat--header glowtext_v2">Out of World</div>
+                <div class="frame">
+                    <div class="frame-inner cat-grid">
+
+                        <div class="fr forum-archive" id="forum-{ID}">
+                            <div class="forum-archive-textoverlay">
+                                <div class="forum-archive--image"></div>
+                                <div class="forum-archive--image-overlay"></div>
+                            </div>
+                            <div class="forum-archive-board">
+                                <a class="fr--forumname" href="#">Archive</a>
+                                <div class="subforums">
+                                    <a href="#">Threads</a>
+                                    <a href="#">Missives</a>
+                                    <a href="#">Events</a>
+                                    <a href="#">OOC</a>
+                                    <a href="#">Inventories</a>
+                                </div>
+                                <div class="fr-lastpost">
+                                    <div class="fr-lastpost-text">
+                                        <a href="" class="fr-lastpost-text--threadname">the knife of
+                                            never letting
+                                            go</a>
+                                        <div class="fr-lastpost-text--metadata forechosen">
+                                            by <a href class="fr-lastpost-text--poster">Lysandon
+                                                Alfebrand</a>
+                                        </div>
+                                    </div>
+                                    <div class="fr-lastpost-avi forechosen imgfill"
+                                        style="background-image: var(--placehold-icon)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forum-ooc-bg"> </div>
+                        <div class="fr forum-lounge" id="forum-{ID}">
+                            <a class="fr--forumname" href="#">Member Lounge</a>
+                            <div class="subforums"> </div>
+                            <div class="fr-lastpost">
+                                <div class="fr-lastpost-text">
+                                    <a href="" class="fr-lastpost-text--threadname">the knife of
+                                        never letting
+                                        go</a>
+                                    <div class="fr-lastpost-text--metadata forechosen">
+                                        by <a href class="fr-lastpost-text--poster">Lysandon
+                                            Alfebrand</a> on May 1,
+                                        2026
+                                    </div>
+                                </div>
+                                <div class="fr-lastpost-avi forechosen imgfill"
+                                    style="background-image: var(--placehold-icon)"></div>
+                            </div>
+                            <div class="fr--boardstats">
+                                <span class="fr--boardstats--posts">64 posts</span> /
+                                <span class="fr--boardstats--topics">64 topics</span>
+
+                            </div>
+                        </div>
+
+                        <div class="fr forum-ads" id="forum-{ID}">
+                            <a class="fr--forumname" href="#">Advertising</a>
+                            <div class="subforums"> </div>
+                            <div class="fr-lastpost">
+                                <div class="fr-lastpost-text">
+                                    <a href="" class="fr-lastpost-text--threadname">the knife of
+                                        never letting
+                                        go</a>
+                                    <div class="fr-lastpost-text--metadata forechosen">
+                                        by <a href class="fr-lastpost-text--poster">Lysandon
+                                            Alfebrand</a> on May 1,
+                                        2026
+                                    </div>
+                                </div>
+                                <!-- <div class="fr-lastpost-avi forechosen imgfill" style="background-image: var(--placehold-icon)"></div> -->
+                            </div>
+                            <div class="fr--boardstats">
+                                <span class="fr--boardstats--posts">64 posts</span> /
+                                <span class="fr--boardstats--topics">64 topics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="boardstats">
+                <div class="cat--header glowtext_v2">Board Stats</div>
+                <div class="frame">
+                    <div class="frame-inner">
+                        <div class="boardstats-bg"></div>
+                        <div class="boardstats-grid">
+                            <div class="boardstats-online">
+                                <div class="boardstats--header">32 members, 2 guests online</div>
+                                <div class="boardstats-online-listbox">
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                    <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
+                                </div>
+                            </div>
+                            <div class="boardstats-onlinetoday">
+                                <div class="boardstats--header">100 online today</div>
+                                <div class="boardstats-onlinetoday-listbox">
+                                    <a href=""><span class="forechosen">forechosen Tom</span></a>,
+                                    <a href=""><span class="faded">Faded Foley</span></a>,
+                                    <a href=""><span class="staff">Staffer Simon</span></a>,
+                                    <a href=""><span class="npc">NPC Natasha</span></a>,
+                                    <a href=""><span class="cryptdweller">Cryptdweller
+                                            Cal</span></a>,
+                                    <a href=""><span class="unsorted">Anonymous Al</span></a>,
+                                    Aquila,
+                                    Archivist,
+                                    Astorre Mesarthim, Augustine De Hart, Barbie N. Heimer, Ephraim
+                                    De Hart, Fuugen
+                                    Kamafune, Iorek Brimstone, Irina Selezneva, Kazimiera Zajec,
+                                    Klemens Volokhov,
+                                    Krzysztof Báthory, Larissa Dodona, Larysa Sileny Piast, Leo
+                                    Toporek, Lev Lieven,
+                                    Luca Bellone, Lyudimila Lievena, Munsorted Cadwallader, Mephisto
+                                    Mordaunt,
+                                    Michasia
+                                    Irzykowska, Nadia Balciunaitė, Nikolai Solovyov, Qing, Senne,
+                                    Serafim Sorokin,
+                                    Sevastyan Volokhov, Severin Rozanski, Sviatoslav Knushevitsky,
+                                    Sylvija
+                                    Selezneva,
+                                    Tadeusz Báthory, Valery Seleznev, Vsevolod Guliang, Xenia
+                                    Svetlova, Yelizaveta
+                                    Volokhova, Yulia Solovyova, Yuri Solovyov, Yuriy Vikentiy Piast,
+                                    , Timekeeper,
+                                    Jairo
+                                    Etxebarria, Jónás Liepiņš, Ryszard Caesarez, Sonya Svetlova,
+                                    Wilhelm Hertz,
+                                    Zhanna
+                                    Lievena
+                                </div>
+                            </div>
+                            <div class="boardstats-members">
+                                <div class="boardstats-members-newest">
+                                    <div class="boardstats-members-newest--label">Newest Resident
+                                    </div>
+                                    <a href="">Roman Torrano</a>
+                                </div>
+                                <div class="boardstats-members-census">
+                                    <div class="census-faction forechosen">
+                                        24 <span>in the cloisters</span>
+                                    </div>
+                                    <div class="census-faction cryptdweller">
+                                        37 <span>in the crypts</span>
+                                    </div>
+                                    <div class="census-faction faded">
+                                        6 <span>faded</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boardstats-links">
+                                <a href="#">Recent Posts</a>
+                                <a href="#">Recent Topics</a>
+                                <a href="#">Last Click</a>
+                                <a href="#">All Members</a>
+                                <a href="#">Search</a>
+                                <a href="#">Discord</a>
+                            </div>
+                            <div class="boardstats-records">
+                                <span>600 posts</span>
+                                <span>95 members</span>
+                                <span>since aug 2026</span>
+                            </div>
+                        </div>
+                        <div class="boardstats-recenttopics">
+                            <div id="recents">
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread One</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread Two</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread Three</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread Four</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread Five</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread Six</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread Seven</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread Eight</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread Nine</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+                                <div class="holdrec">
+                                    <div class="rec-title"><a href="#">Thread Ten</a></div>
+                                    - by <a href="#">Alexei Tolstoy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- END <% BOARD %> AKA HOME -->
+
+            <br>
+            <div style="text-align:right" id="delcookiesrow"><a
+                    href="https://sunstrike.jcink.net/index.php?act=Login&amp;CODE=06">Delete
+                    cookies set by this
+                    board</a> · <a href="https://sunstrike.jcink.net/index.php?act=Login&amp;CODE=05">Mark all
+                    posts
+                    as read</a></div>
+            <div id="skin_selector">
+                <form name="skin"><select name="selector" class="forminput">
+                        <optgroup label="Skin Selector">
+                            <option value="2" selected="">Moss-covered Gravestones</option>
+                            <option value="1">Jcink Forum Hosting Default</option>
+                        </optgroup>
+                    </select></form><br>
+            </div>
+
+        </div>
+
+
+
+        <!-- <% SUBFORUM HEADERS %> -->
+        <div class="sitebody--inset PREVIEW-SUBFORUM" id="SF" style="display: inherit;">
+
+
+            <div class="subforumgrid">
+                <div class="subforum frame" id="forum-{ID}">
+                    <div class="fr frame-inner">
+                        <a class="fr--forumname" href="#">Subboard One</a>
+                        <div class="subforums"> </div>
+                        <div class="fr-lastpost">
+                            <div class="fr-lastpost-text">
+                                <a href="" class="fr-lastpost-text--threadname">the knife of never
+                                    letting go</a>
+                                <div class="fr-lastpost-text--metadata forechosen">
+                                    by <a href class="fr-lastpost-text--poster">Lysandon
+                                        Alfebrand</a> on May 1,
+                                    2026
+                                </div>
+                            </div>
+                            <div class="fr-lastpost-avi forechosen imgfill"
+                                style="background-image: var(--placehold-icon)"></div>
+                        </div>
+                        <div class="fr--boardstats">
+                            <span class="fr--boardstats--posts">64 posts</span> /
+                            <span class="fr--boardstats--topics">64 topics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="subforum frame" id="forum-{ID}">
+                    <div class="fr frame-inner">
+                        <a class="fr--forumname" href="#">Subboard One</a>
+                        <div class="subforums"> </div>
+                        <div class="fr-lastpost">
+                            <div class="fr-lastpost-text">
+                                <a href="" class="fr-lastpost-text--threadname">the knife of never
+                                    letting go</a>
+                                <div class="fr-lastpost-text--metadata forechosen">
+                                    by <a href class="fr-lastpost-text--poster">Lysandon
+                                        Alfebrand</a> on May 1,
+                                    2026
+                                </div>
+                            </div>
+                            <div class="fr-lastpost-avi forechosen imgfill"
+                                style="background-image: var(--placehold-icon)"></div>
+                        </div>
+                        <div class="fr--boardstats">
+                            <span class="fr--boardstats--posts">64 posts</span> /
+                            <span class="fr--boardstats--topics">64 topics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JCINK INSERTED ABOVE TOPIC LIST HEADER -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td align="left" width="20%" nowrap="nowrap"><span class="pagination"><span
+                                    class="pagination_pagetxt"><a title="Jump to page..."
+                                        href="javascript:multi_page_jump('/index.php?showforum=15&amp;prune_day=100&amp;sort_by=Z-A&amp;sort_key=last_post',365,15);">Pages:</a>
+                                    (25)</span>&nbsp;<span class="pagination_current"><b>1</b></span>&nbsp;<a
+                                    href="/index.php?showforum=15&amp;prune_day=100&amp;sort_by=Z-A&amp;sort_key=last_post&amp;st=15"
+                                    class="pagination_page">2</a>&nbsp;<a
+                                    href="/index.php?showforum=15&amp;prune_day=100&amp;sort_by=Z-A&amp;sort_key=last_post&amp;st=30"
+                                    class="pagination_page">3</a>&nbsp;...&nbsp;<a
+                                    href="/index.php?showforum=15&amp;prune_day=100&amp;sort_by=Z-A&amp;sort_key=last_post&amp;st=360"
+                                    title="Page: 25" class="pagination_last">Last »</a></span></td>
+                        <td align="right" width="80%"><a href="/index.php?act=Post&amp;CODE=00&amp;f=15">
+                                <div class="button-large">New Topic</div>
+                            </a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- <% TOPIC LIST HEADER %> -->
+            <div class="tl--header glowtext_v2">Board Name</div>
+
+            <!-- <% TOPIC LIST SUBHEADERS %> -->
+            <div class="tl--subheader">Announcements</div>
+
+            <!-- <% TOPIC ROW %> -->
+            <div class="topicrow frame">
+                <div class="frame-inner">
+                    <input type="checkbox" id="TID_2192" name="TID_2192" value="0" onclick="javascript:check(2192, 0);">
+                    <div class="topic-threadname">
+                        <a href="">the way that it has to be</a>
+                        <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
+                            </a><a href="">...4</a>)</span>
+                    </div>
+                    <div class="topic-threaddesc">you know you'll only last so long, you're only made so
+                        well</div>
+                    <div class="topic-meta-box">
+                        <div class="topic-avi imgfill" style="background-image: var(--placehold-icon)">
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Last</label>
+                            <a href=""><span class="forechosen">Tom Builder</span></a> on date
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Started</label>
+                            <a href=""><span class="cryptdweller">Prior Phillip</span></a> on date
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Replies</label>
+                            6
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Views</label>
+                            54
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END<% TOPIC ROW %> -->
+
+            <!-- <% TOPIC LIST SUBHEADERS %> -->
+            <div class="tl--subheader">Pinned</div>
+
+            <!-- <% TOPIC ROW %> -->
+            <div class="topicrow frame">
+                <div class="frame-inner">
+                    <input type="checkbox" id="TID_2192" name="TID_2192" value="0" onclick="javascript:check(2192, 0);">
+                    <div class="topic-threadname">
+                        <a href="">the way that it has to be</a>
+                        <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
+                            </a><a href="">...4</a>)</span>
+                    </div>
+                    <div class="topic-threaddesc">you know you'll only last so long, you're only
+                        made so well</div>
+                    <div class="topic-meta-box">
+                        <div class="topic-avi imgfill" style="background-image: var(--placehold-icon)">
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Last</label>
+                            <a href=""><span class="forechosen">Tom Builder</span></a> on date
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Started</label>
+                            <a href=""><span class="cryptdweller">Prior Phillip</span></a> on date
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Replies</label>
+                            6
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Views</label>
+                            54
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topicrow frame">
+                <div class="frame-inner">
+                    <input type="checkbox" id="TID_2192" name="TID_2192" value="0" onclick="javascript:check(2192, 0);">
+                    <div class="topic-threadname">
+                        <a href="">the way that it has to be</a>
+                        <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
+                            </a><a href="">...4</a>)</span>
+                    </div>
+                    <div class="topic-threaddesc">you know you'll only last so long, you're only
+                        made so well</div>
+                    <div class="topic-meta-box">
+                        <div class="topic-avi imgfill" style="background-image: var(--placehold-icon)">
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Last</label>
+                            <a href=""><span class="forechosen">Tom Builder</span></a> on date
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Started</label>
+                            <a href=""><span class="cryptdweller">Prior Phillip</span></a> on date
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Replies</label>
+                            6
+                        </div>
+                        <div class="topic-meta-stack">
+                            <label>Views</label>
+                            54
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END<% TOPIC ROW %> -->
+
+            <div class="tl-footer">
+                <!-- / the end of the mod topic form -->
+                <form action="/index.php?act=SF&amp;f=15&amp;st=" method="post">
+                    <div align="center" class="darkrow2" style="padding:4px">Showing 15 of 365
+                        topics sorted by
+                        <select name="sort_key" class="forminput">
+                            <li value="last_post" selected="selected">last post date</li>
+                            <li value="title">topic title</li>
+                            <li value="starter_name">topic starter</li>
+                            <li value="posts">number of replies</li>
+                            <li value="views">number of views</li>
+                            <li value="start_date">topic start date</li>
+                            <li value="last_poster_name">last poster</li>
+                        </select> in <select name="sort_by" class="forminput">
+                            <li value="Z-A" selected="selected">descending order</li>
+                            <li value="A-Z">ascending order</li>
+                        </select> from <select name="prune_day" class="forminput">
+                            <li value="1">today</li>
+                            <li value="5">the last 5 days</li>
+                            <li value="7">the last week</li>
+                            <li value="10">the last 10 days</li>
+                            <li value="15">the last 15 days</li>
+                            <li value="20">the last 20 days</li>
+                            <li value="25">the last 25 days</li>
+                            <li value="30">the last 30 days</li>
+                            <li value="60">the last 60 days</li>
+                            <li value="90">the last 90 days</li>
+                            <li value="100" selected="selected">the beginning</li>
+                        </select>&nbsp;<input type="submit" value="Go!" class="forminput">
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+
+
+
+        <!-- <% POSTROW %> -->
+        <div class="sitebody--inset PREVIEW-POSTROW" id="ST" style="display: inherit;">
+
+
+            <!-- JCINK INSERTED ABOVE POST ROW HEADER -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="threadfunctions">
+                <tbody>
+                    <tr>
+                        <td align="left" width="20%" nowrap="nowrap"><span class="pagination">
+                                <span class="pagination_pagetxt"><a title="Jump to page...">Pages:</a>
+                                    (3)</span>&nbsp;<span class="pagination_current"><b>1</b></span>&nbsp;<a href="#"
+                                    class="pagination_page">2</a>&nbsp;<a href="#"
+                                    class="pagination_page">3</a>&nbsp;</span>&nbsp;<span class="goto-firstunread">(
+                                <a href="#">Go
+                                    to first unread post</a> )</span></td>
+                        <td align="right" width="80%">
+                            <a href="#">
+                                <div class="button-large">Add Reply</div>
+                            </a>
+                            <a href="#" title="Start a new topic">
+                                <div class="button-large">New Topic</div>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tableborder">
+                <div class="maintitle">
+                    <span class="topic-title-space">&nbsp;</span>
+                    <span class="topic-title">what I learned from people</span>
+                    <span class="topic-desc">everything must end eventually</span>
+                </div>
+            </div>
+            <div align="right" class="postlinksbar">
+                <strong><!--{IBF.START_NEW_POLL}--><a href="#">Track This
+                        Topic</a> | <a href="#">Email This
+                        Topic</a> | <a href="#">Print
+                        This Topic</a></strong>
+            </div>
+
+            <!-- <% ONE POST %> -->
+            <div class="v2">
+                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame staff unstable">
+                    <div class="frame-inner postrow-grid">
+
+                        <div class="pr-toolbar">
+                            <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                            </div>
+                            <span>·</span>
+                            <a href="">Edit</a>
+                            <a href="">Quote</a>
+                            <a href="">Delete</a>
+                            <a href="">Flag</a>
+                        </div>
+
+                        <!-- <% MINIPROFILE %> -->
+                        <div class="pr-sidebar">
+                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                                <div class="pr-stability_meter">
+                                    <i class="ph ph-heart"></i>
+                                    <i class="ph ph-heart-break"></i>
+                                    <i class="ph ph-skull"></i>
+                                </div>
+                                <div class="miniprof-hover">
+                                    <div class="miniprof-hover--avatar imgfill"
+                                        style="background-image: var(--placehold-icon)">
+                                    </div>
+                                    <div class="miniprof-hover--bigstat"><label>Soul
+                                            Stability</label> 59%</div>
+                                    <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                    </div>
+                                    <div class="miniprof-hover-smallstat-box">
+                                        <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                            0</div>
+                                        <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                            0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="miniprof-links">
+                                <a href="" title="Inventory">
+                                    Inventory <divider></divider> <i class="ph ph-sword"></i>
+                                </a>
+                                <a href="" title="Dev">
+                                    Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pr-main">
+                            <div class="pr-header">
+                                <div class="pr-header-name glowtext_v2"><a>Staff</a></div>
+                                <div class="pr-header-stats">
+                                    forechosen <span>/</span>occupation <span>/</span>
+                                    he/him <span>/</span>
+                                    22-years old
+                                </div>
+                            </div>
+                            <div class="pr-content">
+
+                                <div class="pr-content-textarea">
+                                    <b>Bold</b>
+                                    <i>Italic</i>
+                                    <em>Emphasize</em>
+                                    <a>Link</a>
+                                    <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit. Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                                    Quam mattis
+                                    auctor
+                                    massa vulputate tellus massa vitae. Lorem cursus sollicitudin
+                                    senectus ultricies
+                                    egestas non. Rhoncus porttitor donec neque laoreet molestie
+                                    purus hendrerit
+                                    cursus
+                                    euismod. Metus adipiscing pharetra quam donec nulla integer et
+                                    in. Quam sed
+                                    quisque
+                                    orci nunc lobortis in sit. Lorem eu ut nulla placerat eget.
+                                    Lobortis in massa
+                                    ullamcorper a sed sed posuere. Aenean quam penatibus proin nisl
+                                    suspendisse
+                                    nullam.
+                                    Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus
+                                    blandit donec
+                                    adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros
+                                    fringilla. Amet
+                                    id
+                                    eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam
+                                    imperdiet. Urna quam
+                                    praesent sed hendrerit libero id. Rhoncus risus placerat
+                                    pharetra elit habitasse
+                                    eu
+                                    tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pr-footer">
+                            <div class="pr-ooc">by quartz</div>
+                            <div class="pr-oocmeta">
+                                <span><label>Thread tags</label> Onsite + Discord</span>
+                                <span><label>Please tag</label> cw, cw, cw</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame forechosen unstable">
+                    <div class="frame-inner postrow-grid">
+                        <div class="pr-toolbar">
+                            <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                            </div>
+                            <span>·</span>
+                            <a href="">Edit</a>
+                            <a href="">Quote</a>
+                            <a href="">Delete</a>
+                            <a href="">Flag</a>
+                        </div>
+                        <div class="pr-sidebar">
+                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                                <div class="pr-stability_meter">
+                                    <i class="ph ph-heart"></i>
+                                    <i class="ph ph-heart-break"></i>
+                                    <i class="ph ph-skull"></i>
+                                </div>
+                                <div class="miniprof-hover">
+                                    <div class="miniprof-hover--avatar imgfill"
+                                        style="background-image: var(--placehold-icon)">
+                                    </div>
+                                    <div class="miniprof-hover--bigstat"><label>Soul
+                                            Stability</label> 59%</div>
+                                    <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                    </div>
+                                    <div class="miniprof-hover-smallstat-box">
+                                        <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                            0</div>
+                                        <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                            0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="miniprof-links">
+                                <a href="" title="Inventory">
+                                    Inventory <divider></divider> <i class="ph ph-sword"></i>
+                                </a>
+                                <a href="" title="Dev">
+                                    Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pr-main">
+                            <div class="pr-header">
+                                <div class="pr-header-name glowtext_v2"><a>Forechosen</a></div>
+                                <div class="pr-header-stats">
+                                    forechosen <span>/</span>occupation <span>/</span>
+                                    he/him <span>/</span>
+                                    22-years old
+                                </div>
+                            </div>
+                            <div class="pr-content">
+                                <div class="pr-content-textarea">
+                                    <b>Bold</b>
+                                    <i>Italic</i>
+                                    <em>Emphasize</em>
+                                    <a>Link</a>
+                                    <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pr-footer">
+                            <div class="pr-ooc">by quartz</div>
+                            <div class="pr-oocmeta">
+                                <span><label>Thread tags</label> Onsite + Discord</span>
+                                <span><label>Please tag</label> cw, cw, cw</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame cryptdweller unstable">
+                    <div class="frame-inner postrow-grid">
+
+                        <div class="pr-toolbar">
+                            <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                            </div>
+                            <span>·</span>
+                            <a href="">Edit</a>
+                            <a href="">Quote</a>
+                            <a href="">Delete</a>
+                            <a href="">Flag</a>
+                        </div>
+
+                        <!-- <% MINIPROFILE %> -->
+                        <div class="pr-sidebar">
+                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                                <div class="pr-stability_meter">
+                                    <i class="ph ph-heart"></i>
+                                    <i class="ph ph-heart-break"></i>
+                                    <i class="ph ph-skull"></i>
+                                </div>
+                                <div class="miniprof-hover">
+                                    <div class="miniprof-hover--avatar imgfill"
+                                        style="background-image: var(--placehold-icon)">
+                                    </div>
+                                    <div class="miniprof-hover--bigstat"><label>Soul
+                                            Stability</label> 59%</div>
+                                    <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                    </div>
+                                    <div class="miniprof-hover-smallstat-box">
+                                        <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                            0</div>
+                                        <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                            0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="miniprof-links">
+                                <a href="" title="Inventory">
+                                    Inventory <divider></divider> <i class="ph ph-sword"></i>
+                                </a>
+                                <a href="" title="Dev">
+                                    Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pr-main">
+                            <div class="pr-header">
+                                <div class="pr-header-name glowtext_v2"><a>Cryptdweller</a></div>
+                                <div class="pr-header-stats">
+                                    forechosen <span>/</span>occupation <span>/</span>
+                                    he/him <span>/</span>
+                                    22-years old
+                                </div>
+                            </div>
+                            <div class="pr-content">
+
+                                <div class="pr-content-textarea">
+                                    <b>Bold</b>
+                                    <i>Italic</i>
+                                    <em>Emphasize</em>
+                                    <a>Link</a>
+                                    <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit. Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                                    Quam mattis
+                                    auctor
+                                    massa vulputate tellus massa vitae. Lorem cursus sollicitudin
+                                    senectus ultricies
+                                    egestas non. Rhoncus porttitor donec neque laoreet molestie
+                                    purus hendrerit
+                                    cursus
+                                    euismod. Metus adipiscing pharetra quam donec nulla integer et
+                                    in. Quam sed
+                                    quisque
+                                    orci nunc lobortis in sit. Lorem eu ut nulla placerat eget.
+                                    Lobortis in massa
+                                    ullamcorper a sed sed posuere. Aenean quam penatibus proin nisl
+                                    suspendisse
+                                    nullam.
+                                    Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus
+                                    blandit donec
+                                    adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros
+                                    fringilla. Amet
+                                    id
+                                    eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam
+                                    imperdiet. Urna quam
+                                    praesent sed hendrerit libero id. Rhoncus risus placerat
+                                    pharetra elit habitasse
+                                    eu
+                                    tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pr-footer">
+                            <div class="pr-ooc">by quartz</div>
+                            <div class="pr-oocmeta">
+                                <span><label>Thread tags</label> Onsite + Discord</span>
+                                <span><label>Please tag</label> cw, cw, cw</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame unsorted unstable">
+                    <div class="frame-inner postrow-grid">
+
+                        <div class="pr-toolbar">
+                            <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                            </div>
+                            <span>·</span>
+                            <a href="">Edit</a>
+                            <a href="">Quote</a>
+                            <a href="">Delete</a>
+                            <a href="">Flag</a>
+                        </div>
+
+                        <!-- <% MINIPROFILE %> -->
+                        <div class="pr-sidebar">
+                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                                <div class="pr-stability_meter">
+                                    <i class="ph ph-heart"></i>
+                                    <i class="ph ph-heart-break"></i>
+                                    <i class="ph ph-skull"></i>
+                                </div>
+                                <div class="miniprof-hover">
+                                    <div class="miniprof-hover--avatar imgfill"
+                                        style="background-image: var(--placehold-icon)">
+                                    </div>
+                                    <div class="miniprof-hover--bigstat"><label>Soul
+                                            Stability</label> 59%</div>
+                                    <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                    </div>
+                                    <div class="miniprof-hover-smallstat-box">
+                                        <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                            0</div>
+                                        <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                            0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="miniprof-links">
+                                <a href="" title="Inventory">
+                                    Inventory <divider></divider> <i class="ph ph-sword"></i>
+                                </a>
+                                <a href="" title="Dev">
+                                    Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pr-main">
+                            <div class="pr-header">
+                                <div class="pr-header-name glowtext_v2"><a>Unsorted</a></div>
+                                <div class="pr-header-stats">
+                                    forechosen <span>/</span>occupation <span>/</span>
+                                    he/him <span>/</span>
+                                    22-years old
+                                </div>
+                            </div>
+                            <div class="pr-content">
+
+                                <div class="pr-content-textarea">
+                                    <b>Bold</b>
+                                    <i>Italic</i>
+                                    <em>Emphasize</em>
+                                    <a>Link</a>
+                                    <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit. Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                                    Quam mattis
+                                    auctor
+                                    massa vulputate tellus massa vitae. Lorem cursus sollicitudin
+                                    senectus ultricies
+                                    egestas non. Rhoncus porttitor donec neque laoreet molestie
+                                    purus hendrerit
+                                    cursus
+                                    euismod. Metus adipiscing pharetra quam donec nulla integer et
+                                    in. Quam sed
+                                    quisque
+                                    orci nunc lobortis in sit. Lorem eu ut nulla placerat eget.
+                                    Lobortis in massa
+                                    ullamcorper a sed sed posuere. Aenean quam penatibus proin nisl
+                                    suspendisse
+                                    nullam.
+                                    Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus
+                                    blandit donec
+                                    adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros
+                                    fringilla. Amet
+                                    id
+                                    eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam
+                                    imperdiet. Urna quam
+                                    praesent sed hendrerit libero id. Rhoncus risus placerat
+                                    pharetra elit habitasse
+                                    eu
+                                    tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pr-footer">
+                            <div class="pr-ooc">by quartz</div>
+                            <div class="pr-oocmeta">
+                                <span><label>Thread tags</label> Onsite + Discord</span>
+                                <span><label>Please tag</label> cw, cw, cw</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame faded unstable">
+                    <div class="frame-inner postrow-grid">
+
+                        <div class="pr-toolbar">
+                            <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                            </div>
+                            <span>·</span>
+                            <a href="">Edit</a>
+                            <a href="">Quote</a>
+                            <a href="">Delete</a>
+                            <a href="">Flag</a>
+                        </div>
+
+                        <!-- <% MINIPROFILE %> -->
+                        <div class="pr-sidebar">
+                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                                <div class="pr-stability_meter">
+                                    <i class="ph ph-heart"></i>
+                                    <i class="ph ph-heart-break"></i>
+                                    <i class="ph ph-skull"></i>
+                                </div>
+                                <div class="miniprof-hover">
+                                    <div class="miniprof-hover--avatar imgfill"
+                                        style="background-image: var(--placehold-icon)">
+                                    </div>
+                                    <div class="miniprof-hover--bigstat"><label>Soul
+                                            Stability</label> 59%</div>
+                                    <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                    </div>
+                                    <div class="miniprof-hover-smallstat-box">
+                                        <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                            0</div>
+                                        <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                            0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="miniprof-links">
+                                <a href="" title="Inventory">
+                                    Inventory <divider></divider> <i class="ph ph-sword"></i>
+                                </a>
+                                <a href="" title="Dev">
+                                    Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pr-main">
+                            <div class="pr-header">
+                                <div class="pr-header-name glowtext_v2"><a>Faded</a></div>
+                                <div class="pr-header-stats">
+                                    forechosen <span>/</span>occupation <span>/</span>
+                                    he/him <span>/</span>
+                                    22-years old
+                                </div>
+                            </div>
+                            <div class="pr-content">
+
+                                <div class="pr-content-textarea">
+                                    <b>Bold</b>
+                                    <i>Italic</i>
+                                    <em>Emphasize</em>
+                                    <a>Link</a>
+                                    <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit. Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                                    Quam mattis
+                                    auctor
+                                    massa vulputate tellus massa vitae. Lorem cursus sollicitudin
+                                    senectus ultricies
+                                    egestas non. Rhoncus porttitor donec neque laoreet molestie
+                                    purus hendrerit
+                                    cursus
+                                    euismod. Metus adipiscing pharetra quam donec nulla integer et
+                                    in. Quam sed
+                                    quisque
+                                    orci nunc lobortis in sit. Lorem eu ut nulla placerat eget.
+                                    Lobortis in massa
+                                    ullamcorper a sed sed posuere. Aenean quam penatibus proin nisl
+                                    suspendisse
+                                    nullam.
+                                    Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus
+                                    blandit donec
+                                    adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros
+                                    fringilla. Amet
+                                    id
+                                    eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam
+                                    imperdiet. Urna quam
+                                    praesent sed hendrerit libero id. Rhoncus risus placerat
+                                    pharetra elit habitasse
+                                    eu
+                                    tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pr-footer">
+                            <div class="pr-ooc">by quartz</div>
+                            <div class="pr-oocmeta">
+                                <span><label>Thread tags</label> Onsite + Discord</span>
+                                <span><label>Please tag</label> cw, cw, cw</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame guest unstable">
+                    <div class="frame-inner postrow-grid">
+
+                        <div class="pr-toolbar">
+                            <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                            </div>
+                            <span>·</span>
+                            <a href="">Edit</a>
+                            <a href="">Quote</a>
+                            <a href="">Delete</a>
+                            <a href="">Flag</a>
+                        </div>
+
+                        <!-- <% MINIPROFILE %> -->
+                        <div class="pr-sidebar">
+                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                                <div class="pr-stability_meter">
+                                    <i class="ph ph-heart"></i>
+                                    <i class="ph ph-heart-break"></i>
+                                    <i class="ph ph-skull"></i>
+                                </div>
+                                <div class="miniprof-hover">
+                                    <div class="miniprof-hover--avatar imgfill"
+                                        style="background-image: var(--placehold-icon)">
+                                    </div>
+                                    <div class="miniprof-hover--bigstat"><label>Soul
+                                            Stability</label> 59%</div>
+                                    <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                    </div>
+                                    <div class="miniprof-hover-smallstat-box">
+                                        <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                            0</div>
+                                        <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                            0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="miniprof-links">
+                                <a href="" title="Inventory">
+                                    Inventory <divider></divider> <i class="ph ph-sword"></i>
+                                </a>
+                                <a href="" title="Dev">
+                                    Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pr-main">
+                            <div class="pr-header">
+                                <div class="pr-header-name glowtext_v2"><a>Guest</a></div>
+                                <div class="pr-header-stats">
+                                    forechosen <span>/</span>occupation <span>/</span>
+                                    he/him <span>/</span>
+                                    22-years old
+                                </div>
+                            </div>
+                            <div class="pr-content">
+
+                                <div class="pr-content-textarea">
+                                    <b>Bold</b>
+                                    <i>Italic</i>
+                                    <em>Emphasize</em>
+                                    <a>Link</a>
+                                    <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit. Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                                    Quam mattis
+                                    auctor
+                                    massa vulputate tellus massa vitae. Lorem cursus sollicitudin
+                                    senectus ultricies
+                                    egestas non. Rhoncus porttitor donec neque laoreet molestie
+                                    purus hendrerit
+                                    cursus
+                                    euismod. Metus adipiscing pharetra quam donec nulla integer et
+                                    in. Quam sed
+                                    quisque
+                                    orci nunc lobortis in sit. Lorem eu ut nulla placerat eget.
+                                    Lobortis in massa
+                                    ullamcorper a sed sed posuere. Aenean quam penatibus proin nisl
+                                    suspendisse
+                                    nullam.
+                                    Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus
+                                    blandit donec
+                                    adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros
+                                    fringilla. Amet
+                                    id
+                                    eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam
+                                    imperdiet. Urna quam
+                                    praesent sed hendrerit libero id. Rhoncus risus placerat
+                                    pharetra elit habitasse
+                                    eu
+                                    tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pr-footer">
+                            <div class="pr-ooc">by quartz</div>
+                            <div class="pr-oocmeta">
+                                <span><label>Thread tags</label> Onsite + Discord</span>
+                                <span><label>Please tag</label> cw, cw, cw</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+            <!--
+            <div class="v1" style="display: inherit;">
+                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame forechosen unstable">
+                    <div class="frame-inner postrow-grid">
+
+                        <div class="pr-sidebar">
+                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                                <div class="miniprof-hover">Text </div>
+                            </div>
+                        </div>
+                        <div class="pr-main">
+                            <div class="pr-header">
+                                <a class="pr-header-name glowtext_v2 progblur">forechosen Tom</a>
+                                <div class="pr-header-stats"><span>occupation</span> /
+                                    <span>he/him</span> /
+                                    <span>22-years old</span>
+                                </div>
+                            </div>
+                            <div class="pr-timestamp"><a href="#"><i class="ph ph-link-simple-horizontal"></i>Sep 26
+                                    2023, 03:21 PM</a></div>
+                            <div class="pr-content">
+                                <div class="pr-content-toolbar">
+                                    <a><i class="ph ph-quotes"></i></a>
+                                    <a><i class="ph ph-pencil"></i></a>
+                                    <a><i class="ph ph-trash"></i></a>
+                                </div>
+                                <div class="pr-content-textarea">
+                                    <b>Bold</b>
+                                    <i>Italic</i>
+                                    <em>Emphasize</em>
+                                    <a>Link</a>
+                                    <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit. Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                                    Quam mattis
+                                    auctor
+                                    massa vulputate tellus massa vitae. Lorem cursus sollicitudin
+                                    senectus ultricies
+                                    egestas non. Rhoncus porttitor donec neque laoreet molestie
+                                    purus hendrerit
+                                    cursus
+                                    euismod. Metus adipiscing pharetra quam donec nulla integer et
+                                    in. Quam sed
+                                    quisque
+                                    orci nunc lobortis in sit. Lorem eu ut nulla placerat eget.
+                                    Lobortis in massa
+                                    ullamcorper a sed sed posuere. Aenean quam penatibus proin nisl
+                                    suspendisse
+                                    nullam.
+                                    Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus
+                                    blandit donec
+                                    adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros
+                                    fringilla. Amet
+                                    id
+                                    eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam
+                                    imperdiet. Urna quam
+                                    praesent sed hendrerit libero id. Rhoncus risus placerat
+                                    pharetra elit habitasse
+                                    eu
+                                    tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pr-footer">
+                            <div class="pr-ooc">by quartz</div>
+                            <div class="pr-oocmeta">
+                                <span><label>Thread tags</label> Onsite + Discord</span>
+                                <span><label>Please tag</label> cw, cw, cw</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+             -->
+        </div>
+
+
+
+
+
+        <!-- <% PROFILE %> -->
+        <div class="sitebody--inset PREVIEW-PROFILE profile cryptdweller stable" id="Profile" style="display: inherit;">
+
+            <anchor id="overview"></anchor>
+
+            <div class="profile-header">
+                <div class="profile-nameplate">
+                    <div class="prof--name glowtext_v2">Santino Ravus</div>
+                    <div class="prof--postcount">500 posts<span> — </span>4500 favor
+                    </div>
+                    <div class="prof--links">
+                        <a href="" title="All Posts"><i class="ph ph-pencil"></i></a>
+                        <a href="" title="All Threads"><i class="ph ph-folders"></i></a>
+                        <a href="" title="Message"><i class="ph ph-envelope"></i></a>
+                        <a href="" title="Inventory"><i class="ph ph-sword"></i></a>
+                        <a href="" title="Development"><i class="ph ph-palette"></i></a>
+                    </div>
+                </div>
+                <div class="prof--hover">
+                    <div class="prof--group">Forechosen</div>
+                    <div class="imgfill" style="background-image: var(--placehold-hover)"></div>
+                </div>
+                <div class="profile-overview">
+                    <div class="prof--group">Forechosen</div>
+
+                    <div><label>Name(s)</label> Santino Ravus</div>
+                    <div><label>Age</label> 24</div>
+                    <div><label>Dead</label> 200 years</div>
+                    <div><label>Gender / Pronouns</label> Male (He/him)</div>
+                    <div><label>Orientation</label> Demisexual</div>
+                    <div><label>Occupation</label> Washerman</div>
+                    <div><label>Height</label> 5'4"</div>
+                    <div><label>Room</label> Upper Cloisters</div>
+                </div>
+            </div>
+            <div class="profile-navbar">
+                <a href="#overview">Overview</a>
+                <a href="#background">Background</a>
+                <a href="#plothooks">Plot Hooks</a>
+                <a href="#deaths">Deaths</a>
+                <a href="#tracker">Threads</a>
+                <a href="#ooc">OOC</a>
+            </div>
+
+            <div class="profile-body">
+                <anchor id="background"></anchor>
+                <div class="profile-section profile-status">
+                    <div class="profile--stat"><label>Times Died</label>0</div>
+                    <div class="profile--stability_meter">
+                        <i class="ph ph-heart"></i>
+                        <i class="ph ph-heart-break"></i>
+                        <i class="ph ph-skull"></i>
+                    </div>
+                    <div class="profile--stat"><label>Stability</label>50%</div>
+                </div>
+                <div class="profile-section">
+                    <h0 class="glowtext_v2">In Memoriam</h0>
+                    <div class="profile-section-content">Bacon ipsum dolor amet chuck picanha ground round strip
+                        steak kielbasa spare ribs cow, pork chop turducken. Rump chuck kevin ball tip meatloaf
+                        brisket short loin frankfurter cow jowl mortadella picanha capicola ham. Doner brisket short
+                        ribs ham bresaola filet mignon ham hock. Boudin burgdoggen porchetta meatball strip steak
+                        pastrami chuck cow beef ribs drumstick. Bacon frankfurter meatloaf cow tenderloin landjaeger
+                        ham hock spare ribs leberkas beef boudin ribeye andouille hamburger buffalo. Pork belly
+                        meatloaf boudin short ribs ribeye leberkas buffalo, pork loin tenderloin tail burgdoggen
+                        landjaeger pork chop beef ribs.
+                        <br>
+                        Alcatra capicola andouille t-bone pancetta ham hock pork belly turkey fatback beef. Shankle
+                        venison buffalo kielbasa burgdoggen t-bone landjaeger bacon. Kevin pork loin jerky, chuck
+                        bacon cupim buffalo. Flank shankle beef ribs ham hock boudin tri-tip chicken, drumstick
+                        chuck meatball chislic shoulder pork.
+                    </div>
+
+                    <div class="profile-subsection-deathinfo">
+                        <div class="deathinfo-block">
+                            <i class="ph ph-globe-hemisphere-east"></i>
+                            <div class="deathinfo--content">
+                                <div class="deathinfo--header">Homeworld</div>
+                                Lorem ipsum dolor sit amet
+                                consectetur. Purus lectus
+                                adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo placerat
+                                velit.
+                                Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                            </div>
+                        </div>
+                        <div class="deathinfo-block">
+                            <i class="ph ph-hand-eye"></i>
+                            <div class="deathinfo--content">
+                                <div class="deathinfo--header">Damnation</div>
+                                Lorem ipsum dolor sit amet
+                                consectetur. Purus lectus
+                                adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo placerat
+                                velit.
+                                Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                            </div>
+                        </div>
+                        <div class="deathinfo-block">
+                            <i class="ph ph-sword"></i>
+                            <div class="deathinfo--content">
+                                <div class="deathinfo--header">Keepsake</div>
+                                Lorem ipsum dolor sit amet
+                                consectetur. Purus lectus
+                                adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo placerat
+                                velit.
+                                Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="profile-section">
+                        <anchor id="plothooks"></anchor>
+                        <h0 class="glowtext_v2">Plot Hooks</h0>
+                        <div class="profile-section-content">Lorem ipsum dolor sit amet consectetur. Purus lectus
+                            adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo placerat
+                            velit.
+                            Mattis sit diam felis suspendisse ac odio in nibh tempus. å</div>
+                    </div>
+
+                    <div class="profile-section profile-subsection-deaths">
+                        <anchor id="deaths"></anchor>
+                        <label>Cause of Death</label>
+                        <div class="profile-subsection-deaths--header glowtext_v2">Crushed by an anvil</div>
+                        <div class="profile-subsection-deaths--content">
+                            <li>Crushed by an anvil in city</li>
+                            <li>Stabbed in the back by a friend</li>
+                            <li>Killed by Lysandon Alfbrand</li>
+                        </div>
+                    </div>
+
+                    <div class="profile-threadtracker">
+                        <anchor id="tracker"></anchor>
+                        <h0 class="glowtext_v2">Threads</h0>
+                        <div class="profile-trackergrid">
+                            <div class="tracker-col">
+                                <div class="tracker-title">Active</div>
+                                <div id="trackerwrap">
+
+                                    <div class="tracker-item">
+                                        <b><span class="status caughtup" aria-described-by="Caught Up"><i
+                                                    class="ph ph-pen-nib"></i></span> <a
+                                                href="https://xmortala.jcink.net/index.php?showtopic=2082&amp;view=getlastpost">Heartlines
+                                                on your hands</a></b>
+                                        <div class="tracker-desc">
+                                            <span class="tracker-location"><b>Dalmond</b></span> <span
+                                                class="tracker-threaddesc"> - ft. nanette</span><br>
+                                            <span class="tracker-lastpost">Last by <span
+                                                    style="text-transform: capitalize">andin andilet</span>, Dec 19
+                                                2022, 10:15 PM</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="tracker-item"><b><span class="status myturn"
+                                                aria-described-by="My Turn"><i class="ph ph-pen-nib"></i></span> <a
+                                                href="https://xmortala.jcink.net/index.php?showtopic=2263&amp;view=getlastpost">hello,
+                                                halcyon days</a></b>
+                                        <div class="tracker-desc">
+                                            <span class="tracker-location"><b>Imperial City</b></span> <span
+                                                class="tracker-threaddesc"> - ft. Yuna | past</span><br>
+                                            <span class="tracker-lastpost">Last by <span
+                                                    style="text-transform: capitalize">mitsumune yuna</span>, Dec 16
+                                                2022, 09:09 PM</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="tracker-item"><b><span class="status myturn"
+                                                aria-described-by="My Turn"><i class="ph ph-pen-nib"></i></span> <a
+                                                href="https://xmortala.jcink.net/index.php?showtopic=1116&amp;view=getlastpost">Window
+                                                Seat</a></b>
+                                        <div class="tracker-desc">
+                                            <span class="tracker-location"><b>Morgrave, College of Magic</b></span>
+                                            <span class="tracker-threaddesc"> </span><br>
+                                            <span class="tracker-lastpost">Last by <span
+                                                    style="text-transform: capitalize">yume hinagiku</span>, Dec 16
+                                                2022, 02:34 PM</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="tracker-item"><b><span class="status myturn"
+                                                aria-described-by="Caught Up"><i class="ph ph-pen-nib"></i></span> <a
+                                                href="https://xmortala.jcink.net/index.php?showtopic=234&amp;view=getlastpost">the
+                                                listening chair</a></b>
+                                        <div class="tracker-desc">
+                                            <span class="tracker-location"><b>Dalmond</b></span> <span
+                                                class="tracker-threaddesc"> - with. rusa?</span><br>
+                                            <span class="tracker-lastpost">Last by <span
+                                                    style="text-transform: capitalize">andin andilet</span>, Nov 20
+                                                2022, 10:22 PM</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="tracker-col">
+                                <div class="tracker-title">Missives</div>
+                                <div id="trackerwrap">
+
+                                    <div class="tracker-item"><b><span class="status locked"
+                                                aria-described-by="Caught Up"><i
+                                                    class="ph ph-pen-nib-straight"></i></span>
+                                            <a
+                                                href="https://xmortala.jcink.net/index.php?showtopic=2082&amp;view=getlastpost">Heartlines
+                                                on your hands</a></b>
+                                        <div class="tracker-desc">
+                                            <span class="tracker-location"><b>Dalmond</b></span> <span
+                                                class="tracker-threaddesc"> - ft. nanette</span><br>
+                                            <span class="tracker-lastpost">Last by <span
+                                                    style="text-transform: capitalize">andin andilet</span>, Dec 19
+                                                2022, 10:15 PM</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="tracker-col">
+                                <div class="tracker-title">Archived</div>
+                                <div id="trackerwrap">
+
+                                    <div class="tracker-item"><b><span class="status locked"
+                                                aria-described-by="Caught Up"><i
+                                                    class="ph ph-pen-nib-straight"></i></span>
+                                            <a
+                                                href="https://xmortala.jcink.net/index.php?showtopic=2082&amp;view=getlastpost">Heartlines
+                                                on your hands</a></b>
+                                        <div class="tracker-desc">
+                                            <span class="tracker-location"><b>Dalmond</b></span> <span
+                                                class="tracker-threaddesc"> - ft. nanette</span><br>
+                                            <span class="tracker-lastpost">Last by <span
+                                                    style="text-transform: capitalize">andin andilet</span>, Dec 19
+                                                2022, 10:15 PM</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="profile-section profile-ooc">
+                        <anchor id="ooc"></anchor>
+                        <div class="profile-avatar imgfill" style="background-image: var(--placehold-icon)"></div>
+                        <h0 class="glowtext_v2">Played by Quartz</h0>
+                        <div class="profile-ooc-layout">
+                            <div><label>Joined</label> May 10, 2026</div>
+                            <div><label>Last Online</label> Yesterday</div>
+                            <div><label>Discord Preferences</label> DMs + Server tags</div>
+                            <div><label>Tag me on</label> Discord + On site</div>
+                            <div><label>Art Credits</label> hover / avatar</div>
+                            <div><label>Character Design</label> kashuu kiyomitsu, touken tanbu</div>
+                            <div><label>Please Tag</label> cw, cw, cw</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <!-- <% MEMBER LIST %> -->
+        <div class="sitebody--inset PREVIEW-MEMBERS" id="Members" style="display:inherit">
+
+            <div class="frame ml-header">
+                <div class="frame-inner">
+                    <div class="ml-header-col">
+                        <div class="ml-header-section">
+                            <div class="ml-header-section-header">Search</div>
+                            <div class="ml-header-section-content">
+                                <input class="forminput ml-namesearch" type="text" name="name" value=""
+                                    placeholder="Search">
+                            </div>
+                        </div>
+                        <div class="ml-header-section">
+                            <div class="ml-header-section-header">Sort by</div>
+                            <div class="ml-header-section-content">
+                                <ul class="ml-filter-list sort-by-button-group">
+                                    <button type="button" data-sort-by="memposts"
+                                        class="filter-reset selected">Posts</button>
+                                    <button type="button" data-filter-value="" data-sort-by="memname">A–Z</button>
+                                    <button type="button" data-sort-by="memnamereverse">Z-A</button>
+                                    <button type="button" data-sort-by="memID">Newest</button>
+                                    <button type="button" data-sort-by="memIDold">Oldest</button>
+                                    <button type="button" data-sort-by="memfavor">Favor</button>
+                                    <button type="button" data-sort-by="memdeaths">Deaths</button>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ml-header-col">
+                        <div class="ml-header-section">
+                            <div class="ml-header-section-header">Type</div>
+                            <div class="ml-header-section-content">
+                                <ul class="ml-filter-list tags option-set" data-filter-group="tags">
+                                    <li data-filter-value=".type-staff">Staff</li>
+                                    <li data-filter-value=".type-forechosen">forechosen</li>
+                                    <li data-filter-value=".type-cryptdweller">Cryptdweller</li>
+                                    <li data-filter-value=".type-faded">Faded</li>
+                                    <li data-filter-value=".stable">Stable</li>
+                                    <li data-filter-value=".unstable">Unstable</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ml-header-section">
+                            <div class="ml-header-section-header">Sort by</div>
+                            <div class="ml-header-section-content">
+                                <ul class="ml-filter-list players filter option-set exclusive"
+                                    data-filter-group="players">
+                                    <li data-filter-value="" class="filter-reset selected">All</li>
+                                    <li value="Akrasia">Akrasia</li>
+                                    <li value="cheno">Cheno</li>
+                                    <li value="elles">Elles</li>
+                                    <li value="Falkyrin">Falkyrin</li>
+                                    <li value="Gmot">Gmot</li>
+                                    <li value="Hekate">Hekate</li>
+                                    <li value="ink">Ink</li>
+                                    <li value="irene">Irene</li>
+                                    <li value="jyujin">Jyujin</li>
+                                    <li value="Lantern">Lantern</li>
+                                    <li value="Nines">Nines</li>
+                                    <li value="Nova">Nova</li>
+                                    <li value="Null">Null</li>
+                                    <li value="paradisi.">Paradisi.</li>
+                                    <li value="Phimbo">Phimbo</li>
+                                    <li value="priestess">Priestess</li>
+                                    <li value="Quartz">Quartz</li>
+                                    <li value="Rin">Rin</li>
+                                    <li value="sena">Sena</li>
+                                    <li value="sheba">Sheba</li>
+                                    <li value="shilo">Shilo</li>
+                                    <li value="Shilo">Shilo</li>
+                                    <li value="Shookle/Kleo">Shookle/kleo</li>
+                                    <li value="skaial">Skaial</li>
+                                    <li value="snow">Snow</li>
+                                    <li value="Sol">Sol</li>
+                                    <li value="Soma">Soma</li>
+                                    <li value="Staff">Staff</li>
+                                    <li value="Utahraptor">Utahraptor</li>
+                                    <li value="Xeno">Xeno</li>
+                                    <li value="Zhen">Zhen</li>
+                                    <li value="Zomb">Zomb</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ml-header-col">
+                        <div class="ml-header-section">
+                            <div class="ml-header-section-header">Status</div>
+                            <div class="ml-header-section-content">
+                                <ul class="ml-filter-list status filter option-set exclusive"
+                                    data-filter-group="players">
+                                    <li data-filter-value="" class="filter-reset selected">All</li>
+                                    <li>Active</li>
+                                    <li>Inactive</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-grid">
+
+                <div
+                    class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} cryptdweller unstable">
+                    <div class="frame-inner membercardlayout">
+                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-stability_meter">
+                            <i class="ph ph-heart"></i>
+                            <i class="ph ph-heart-break"></i>
+                            <i class="ph ph-skull"></i>
+                        </div>
+                        <div class="membercard-front">
+                            <div class="membercard-name">Santino Ravus</div>
+                            <div class="membercard-stats">
+                                <div><i class="ph ph-hourglass"></i> 26</div>
+                                <div><i class="ph ph-gender-neuter"></i> He/him</div>
+                                <div><i class="ph ph-identification-badge"></i> Occupation</div>
+                            </div>
+                            <div class="membercard-footer">
+                                93 posts <span>/</span> 233 favor
+                            </div>
+                        </div>
+                        <div class="membercard-hoverlay"></div>
+                        <div class="membercard-hover">
+                            <div class="membercard-player">Played by Quartz</div>
+                            <div class="membercard-links">
+                                <a><i class="ph ph-arrow-right"></i>Profile</a>
+                                <a><i class="ph ph-arrow-right"></i>Inventory</a>
+                            </div>
+                            <div class="membercard-footer">
+                                Posted May 1 2026, 11:23 AM
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} forechosen stable">
+                    <div class="frame-inner membercardlayout">
+                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-stability_meter">
+                            <i class="ph ph-heart"></i>
+                            <i class="ph ph-heart-break"></i>
+                            <i class="ph ph-skull"></i>
+                        </div>
+                        <div class="membercard-front">
+                            <div class="membercard-name">Santino Ravus</div>
+                            <div class="membercard-stats">
+                                <div><i class="ph ph-hourglass"></i> 26</div>
+                                <div><i class="ph ph-gender-neuter"></i> He/him</div>
+                                <div><i class="ph ph-identification-badge"></i> Occupation</div>
+                            </div>
+                            <div class="membercard-footer">
+                                93 posts <span>/</span> 233 favor
+                            </div>
+                        </div>
+                        <div class="membercard-hoverlay"></div>
+                        <div class="membercard-hover">
+                            <div class="membercard-player">Played by Quartz</div>
+                            <div class="membercard-links">
+                                <a><i class="ph ph-arrow-right"></i>Profile</a>
+                                <a><i class="ph ph-arrow-right"></i>Inventory</a>
+                            </div>
+                            <div class="membercard-footer">
+                                Posted May 1 2026, 11:23 AM
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} faded stable">
+                    <div class="frame-inner membercardlayout">
+                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-stability_meter">
+                            <i class="ph ph-heart"></i>
+                            <i class="ph ph-heart-break"></i>
+                            <i class="ph ph-skull"></i>
+                        </div>
+                        <div class="membercard-front">
+                            <div class="membercard-name">Santino Ravus</div>
+                            <div class="membercard-stats">
+                                <div><i class="ph ph-hourglass"></i> 26</div>
+                                <div><i class="ph ph-gender-neuter"></i> He/him</div>
+                                <div><i class="ph ph-identification-badge"></i> Occupation</div>
+                            </div>
+                            <div class="membercard-footer">
+                                93 posts <span>/</span> 233 favor
+                            </div>
+                        </div>
+                        <div class="membercard-hoverlay"></div>
+                        <div class="membercard-hover">
+                            <div class="membercard-player">Played by Quartz</div>
+                            <div class="membercard-links">
+                                <a><i class="ph ph-arrow-right"></i>Profile</a>
+                                <a><i class="ph ph-arrow-right"></i>Inventory</a>
+                            </div>
+                            <div class="membercard-footer">
+                                Posted May 1 2026, 11:23 AM
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} unsorted stable">
+                    <div class="frame-inner membercardlayout">
+                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-stability_meter">
+                            <i class="ph ph-heart"></i>
+                            <i class="ph ph-heart-break"></i>
+                            <i class="ph ph-skull"></i>
+                        </div>
+                        <div class="membercard-front">
+                            <div class="membercard-name">Santino Ravus</div>
+                            <div class="membercard-stats">
+                                <div><i class="ph ph-hourglass"></i> 26</div>
+                                <div><i class="ph ph-gender-neuter"></i> He/him</div>
+                                <div><i class="ph ph-identification-badge"></i> Occupation</div>
+                            </div>
+                            <div class="membercard-footer">
+                                93 posts <span>/</span> 233 favor
+                            </div>
+                        </div>
+                        <div class="membercard-hoverlay"></div>
+                        <div class="membercard-hover">
+                            <div class="membercard-player">Played by Quartz</div>
+                            <div class="membercard-links">
+                                <a><i class="ph ph-arrow-right"></i>Profile</a>
+                                <a><i class="ph ph-arrow-right"></i>Inventory</a>
+                            </div>
+                            <div class="membercard-footer">
+                                Posted May 1 2026, 11:23 AM
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} staff stable">
+                    <div class="frame-inner membercardlayout">
+                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-stability_meter">
+                            <i class="ph ph-heart"></i>
+                            <i class="ph ph-heart-break"></i>
+                            <i class="ph ph-skull"></i>
+                        </div>
+                        <div class="membercard-front">
+                            <div class="membercard-name">Santino Ravus</div>
+                            <div class="membercard-stats">
+                                <div><i class="ph ph-hourglass"></i> 26</div>
+                                <div><i class="ph ph-gender-neuter"></i> He/him</div>
+                                <div><i class="ph ph-identification-badge"></i> Occupation</div>
+                            </div>
+                            <div class="membercard-footer">
+                                93 posts <span>/</span> 233 favor
+                            </div>
+                        </div>
+                        <div class="membercard-hoverlay"></div>
+                        <div class="membercard-hover">
+                            <div class="membercard-player">Played by Quartz</div>
+                            <div class="membercard-links">
+                                <a><i class="ph ph-arrow-right"></i>Profile</a>
+                                <a><i class="ph ph-arrow-right"></i>Inventory</a>
+                            </div>
+                            <div class="membercard-footer">
+                                Posted May 1 2026, 11:23 AM
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- <% GUIDEBOOK %> -->
+        <div class="sitebody--inset PREVIEW-GUIDEBOOK" style="display:inherit;">
+
+            <div class="frame">
+                <div class="frame-inner guidebook">
+                    <div class="gb-nav-bg"> </div>
+                    <div class="gb-nav">
+                        <div class="gb-nav--title">Resident's <b>Handbook</b></div>
+
+                        <div class="gb-nav-section">
+                            <div class="gb-nav-section--header">Get Started</div>
+                            <a class="selected">Premise</a>
+                            <a>Rules</a>
+                            <a>App Guide</a>
+                        </div>
+                        <div class="gb-nav-section">
+                            <div class="gb-nav-section--header">World</div>
+                            <a>Setting</a>
+                            <a>The Monastery</a>
+                            <a>Daily Life</a>
+                            <a>Death & Resurrection</a>
+                            <a>Builders</a>
+                        </div>
+                        <div class="gb-nav-section">
+                            <div class="gb-nav-section--header">Systems</div>
+                            <a>Progression</a>
+                            <a>Dice</a>
+                            <a>Death Registry</a>
+                            <a>Rifts</a>
+                        </div>
+                        <div class="gb-nav-section">
+                            <div class="gb-nav-section--header">Reference</div>
+                            <a>Member Groups</a>
+                            <a>Storyline</a>
+                            <a>Glossary</a>
+                            <a>Credits</a>
+                        </div>
+
+                    </div>
+
+                    <div class="gb-body">
+
+                        <div class="gb-page">
+                            <div class="gb-page-title">
+                                <div class="gb-page-title--number">01</div>
+                                <h1 class="gb-page-title--name glowtext_v2">Premise</h1>
+                            </div>
+
+                            <p>One moment you were elsewhere, and the next you’re here: an endless wood. A dark
+                                realm,
+                                and
+                                cold, with wolves, you think, or something like them, and you—alone, with no arms
+                                with
+                                which
+                                to fight nor shelter behind which to hide.
+                            <p>
+                                What were you doing? Where were you going? You struggle to remember at first before
+                                it
+                                all
+                                went black, before nothingness. Before your eyes opened here, against still air that
+                                tugged
+                                at your very essence, on ground that felt not meant to hold you. And whichever way
+                                you
+                                stumbled, however long you groped, there was nowhere, nothing else—until you found
+                                the
+                                monastery. Whether this was purgatory or whether this was hell, here, at least, was
+                                a
+                                refuge.
+                            <p>
+                                Inside, no one is surprised by your arrival. Ask, and they confirm your suspicions:
+                                you’d
+                                died—and so had they. They, like you, trickled in from the woods. They, like you,
+                                have
+                                been
+                                here for days, or decades, or centuries, with the caretaker who greeted you playing
+                                deaf
+                                to
+                                further questions, and with the ever-present worry that this bastion will be
+                                breached.
+                            <p>
+                                But now the Builder comes along, and he speaks of Beyond: reach it, and who knows?
+                                You
+                                might
+                                find a path back to a world more familiar, a means of turning death to merely
+                                near-death.
+                                You might find paradise. More likely you’ll die trying, and accelerate your
+                                dissolution.
+                                So yes, you’re dead. Yes, you’re stuck here. But maybe not for long, and, for better
+                                or
+                                for
+                                worse, definitely not forever.
+                            <p>
+                                Welcome to the Monastery of St. Divenire.
+
+
+                            <h3>Note</h3>
+                            <p><b>After We Die</b> is a statless, OC-only afterlife roleplay. The site begins
+                                contained
+                                within
+                                the confines of a single monastery, but the expansion of the setting via multiversal
+                                dungeons and events are a key focus of the plot, with overarching lore for the
+                                nature of
+                                this realm and a defined ending. Characters can die and respawn. They can be
+                                veterans or
+                                newly dead. They can amass items and expand their kit. Above all, they can come from
+                                any
+                                dimension, time period, or previous site. The only requirement is that they’re
+                                human, or
+                                at the very least appear as such.
+                                How much and whether you engage with these elements is up to you, but be forewarned
+                                that
+                                the state of the monastery itself will change based on events.
+                            </p>
+
+                            <h3>Conduct</h3>
+                            <ul>
+                                <li>Be respectful. Members are expected to try resolving disagreements in private
+                                    before escalating to staff, and then only through the proper channels. IC and
+                                    OOC
+                                    behavior should be kept separate, and drama should be kept off-platform.
+                                <li>No NSFW. We are a non-premium Jcink site. NSFW content is therefore forbidden
+                                    onsite
+                                    and
+                                    in the Discord server. Darker topics may arise in the rp, but should be properly
+                                    tagged.
+                                <li>Flag triggering topics. Do not discuss sensitive or potentially triggering
+                                    plotlines
+                                    in
+                                    public channels. Use tags in apps, threads and server tags, and move heavier
+                                    conversations to private chats.
+                                <li>Discord is required. While chatting is optional, you must be in the Discord
+                                    server
+                                    for
+                                    announcements and ease of moderation.
+                                <li>Let staff moderate. Staff reserve the right to ask you to leave at any time if
+                                    you’re a
+                                    poor fit in the community. Complaints about moderation decisions, lore, or site
+                                    direction will not be tolerated.
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- <div id="clicktodismiss" onclick="menuFunction()"></div> -->
+</body>
