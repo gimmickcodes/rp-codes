@@ -26,6 +26,7 @@
     height: 300px;
     mix-blend-mode: multiply;
     opacity: 0.5;
+    pointer-events: none;
 }
 
 .cat-plotting-bg,
@@ -42,6 +43,7 @@
     height: 750px;
     mix-blend-mode: multiply;
     opacity: 0.5;
+    pointer-events: none;
 }
 
 .forum-ooc-bg {
@@ -51,6 +53,7 @@
     width: 360px;
     height: 480px;
     opacity: 0.3;
+    pointer-events: none;
 }
 
 .boardstats-bg {
@@ -123,7 +126,7 @@ UTILITIES
 
     --deviceInset: 40px;
     --bodywidth: clamp(1px, calc(100% - 2 * var(--deviceInset)), 1200px);
-    --boardInsetSides: 32px
+    --boardInsetSides: clamp(12px, 4vw, 32px);
 }
 
 a :is(.npc,
@@ -496,12 +499,12 @@ NAVIGATION
 
 .hero-image {
     /* width: 524px;
-    height: 712px; */
-    /* background: url(assets-final/board-hero.png) top center / cover; */
+    height: 712px;
+    background: url(assets-final/board-hero.png) top center / cover; */
     position: absolute;
     top: -70px;
     right: 20%;
-    pointer-events: none;
+    .hero-image pointer-events: none;
 }
 
 .hero-image img {
@@ -533,6 +536,7 @@ NAVIGATION
     width: var(--bodywidth);
     padding: 90px 0 120px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 @media only screen and (min-width: 760px) {
@@ -580,9 +584,14 @@ NAVIGATION
     }
 
     .hero-image {
+        width: 100%;
         right: unset;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .hero-image img {
+        width: 100%;
     }
 }
 
@@ -927,7 +936,7 @@ a.fr-lastpost-text--poster,
 }
 
 .fr-lastpost-avi {
-    width: 72px;
+    width: clamp(40px, 6vw, 72px);
     aspect-ratio: 1;
     box-shadow: 4px -4px 1rem hsl(var(--accentBase-3)/0.5);
 }
@@ -996,7 +1005,7 @@ a.newschip b {
 
 .cat-plotting-imagebox {
     top: -136px;
-    margin-left: clamp(0px, 3vw, var(--boardInsetSides));
+    margin-left: clamp(0px, 2vw, var(--boardInsetSides));
     width: 580px;
     height: 924px;
     height: calc(100% + 136px);
@@ -1006,7 +1015,6 @@ a.newschip b {
     position: absolute;
     z-index: 0;
     mix-blend-mode: lighten;
-    overflow: visible;
 }
 
 .forum-missives,
@@ -1112,7 +1120,7 @@ a.newschip b {
     }
 
     .fr-lastpost-avi {
-        width: 56px;
+        width: clamp(40px, 6vw, 56px);
     }
 
 }
@@ -1271,7 +1279,7 @@ a.newschip b {
     }
 
     .fr-lastpost-avi {
-        width: 100px;
+        width: clamp(40px, 6vw, 100px);
         border-bottom-right-radius: 16px;
         overflow: hidden;
     }
@@ -1392,7 +1400,7 @@ a.newschip b {
     }
 
     .fr-lastpost-avi {
-        width: 48px;
+        width: clamp(40px, 6vw, 48px);
         margin-top: 4px;
     }
 }
@@ -1695,6 +1703,10 @@ a.newschip b {
         background: linear-gradient(0, hsl(var(--accentBase-2) / 0) 0%, hsl(var(--accentBase-2)) 100%);
     }
 
+    .cat-plotting-bg,
+    .forum-ooc-bg,
+    .boardstats-bg {}
+
     .forum-monastery-grid::before,
     .forum-dungeon-grid::before {
         display: none;
@@ -1756,8 +1768,10 @@ a.newschip b {
 
     .cat-plotting-bg {
         left: unset;
-        left: 50vw;
-        opacity: .125;
+        right: 0;
+        background-position: 60vw top;
+        width: 100%;
+        opacity: .25;
     }
 
     .forum-dev {
@@ -1797,6 +1811,9 @@ a.newschip b {
         .subforums {
             flex-direction: row;
             flex-wrap: wrap;
+            top: unset;
+            right: unset;
+            padding: var(--boardInsetSides);
         }
 
         .subforums a {
@@ -2239,14 +2256,11 @@ POST ROWS & MINI PROFILE
 
 .postrow-grid {
     display: grid;
-    grid-template:
+    /* grid-template:
         'sidebar maincontent'
         'footer footer' / auto 1fr;
     padding: 72px 0 0 48px;
-    gap: 72px;
-}
-
-.v2 .postrow-grid {
+    gap: 72px; */
     grid-template:
         'toolbar toolbar'
         'sidebar maincontent'
@@ -2281,10 +2295,6 @@ POST ROWS & MINI PROFILE
 
 .pr-toolbar span {
     color: hsl(var(--bodytext-2) / 0.5);
-}
-
-.v2 .pr-header {
-    border-bottom: 0.5px solid var(--border-3);
 }
 
 
@@ -2492,6 +2502,7 @@ divider {
 .pr-header {
     padding: 0 calc(2 * var(--boardInsetSides)) 40px 0;
     padding-bottom: 40px;
+    border-bottom: 0.5px solid var(--border-3);
 }
 
 .pr-header-name {
@@ -2579,6 +2590,7 @@ divider {
     grid-area: footer;
     border-top: 0.5px solid var(--border-3);
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     padding: 20px var(--boardInsetSides) 24px 0;
 }
@@ -2588,27 +2600,26 @@ divider {
     white-space: nowrap;
 }
 
-.pr-ooc {
+.pr-ooc--name {
     font: 600 20px/1.1em var(--mixta-small);
     text-transform: lowercase;
     color: hsl(var(--accent-2));
-    width: calc(250px + 72px);
-}
-
-.v2 .pr-ooc {
     width: auto;
     margin-right: 2ch;
 }
 
-.pr-oocmeta {
-    font: 500 14px/1.4em var(--serif);
+.flex-break {
+    flex-basis: 100%;
+    height: 0;
 }
 
-.pr-oocmeta span {
+.pr-ooc--meta {
+    display: inline-block;
+    font: 500 14px/1.4em var(--serif);
     margin-right: 3ch;
 }
 
-.pr-oocmeta label {
+.pr-ooc--meta label {
     font: 600 12px/1.4em var(--serif);
     text-transform: uppercase;
     letter-spacing: 10%;
@@ -2649,7 +2660,7 @@ divider {
 
 
 @media only screen and (max-width: 760px) {
-    .v2 .postrow-grid {
+    .postrow-grid {
         grid-template:
             "toolbar"
             "maincontent"
@@ -2667,15 +2678,13 @@ divider {
         display: none;
     }
 
-    .pr-footer {
-        display: block;
-    }
+    .pr-footer {}
 
-    .v2 .pr-ooc {
+    .pr-ooc--name {
         margin: 0 0 0.5em;
     }
 
-    .pr-oocmeta span {
+    .pr-ooc--meta span {
         display: block;
     }
 }
@@ -3582,6 +3591,7 @@ Guidebook
     background: linear-gradient(180deg, hsl(var(--accent-2)/0) 0%, hsl(var(--accent-2))100%);
     opacity: 0.3;
     border-top-right-radius: 160px;
+    pointer-events: none;
 }
 
 .guidebook li {
