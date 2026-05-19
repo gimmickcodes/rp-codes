@@ -319,19 +319,27 @@ NAVIGATION
     overflow-x: hidden;
     overflow-y: auto;
     z-index: 150;
-    transition: 300ms ease;
     filter: blur(5px);
     transform: translateX(-100%);
-    visibility: hidden;
+    opacity: 0;
     display: none;
+    transition: 300ms ease, display 0.3s ease allow-discrete;
 }
 
 #navpanel.openmenu {
+    opacity: 1;
     visibility: unset;
     filter: blur(0);
     transform: translateX(0);
     box-shadow: 10px 0 10px #00000025;
     display: block;
+}
+
+@starting-style {
+    #navpanel.openmenu {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
 }
 
 .navpanel-section {
@@ -536,7 +544,7 @@ NAVIGATION
     width: var(--bodywidth);
     padding: 90px 0 120px;
     margin: 0 auto;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 @media only screen and (min-width: 760px) {
@@ -1903,6 +1911,7 @@ a.newschip b {
     .boardstats-members-census {
         height: 100px;
         margin-bottom: 24px;
+        justify-content: space-around;
     }
 
     .boardstats-records,
@@ -1912,8 +1921,11 @@ a.newschip b {
     }
 
     #recents {
-
         grid-template-columns: repeat(10, 55%);
+    }
+
+    .boardstats-grid {
+        padding: 20px var(--boardInsetSides);
     }
 }
 
@@ -2080,6 +2092,7 @@ TOPIC ROWS
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: baseline;
+    gap: 0.5em 1em;
 }
 
 .topic-threadname>a {
@@ -2152,6 +2165,10 @@ TOPIC ROWS
 
 
 @media only screen and (max-width: 760px) {
+    .topic-threadname {
+        flex-wrap: wrap;
+    }
+
     .topic-meta-box {
         grid-template: 'last started'
             'replices views' / 1fr 1fr;
@@ -2429,7 +2446,7 @@ divider {
 
 .pr-stability_meter {
     position: absolute;
-    width: 120px;
+    width: 100px;
     bottom: 0;
     right: 0;
 }
@@ -2447,7 +2464,7 @@ divider {
 
 
 .pr-stability_meter .ph {
-    font-size: 120px;
+    font-size: 100px;
     line-height: 100%;
 }
 
@@ -2480,7 +2497,7 @@ divider {
 
 .faded .ph-skull {
     display: block;
-    background: unset;
+    background: unset !important;
     -webkit-text-fill-color: unset !important;
     color: hsl(var(--black)/.5) !important;
 }
@@ -2678,6 +2695,13 @@ divider {
         display: none;
     }
 
+    .pr-toolbar {
+        flex-wrap: wrap;
+        width: calc(100% + var(--boardInsetSides));
+        margin-left: calc(0 - var(--boardInsetSides));
+        border-radius: 0;
+    }
+
     .pr-footer {}
 
     .pr-ooc--name {
@@ -2803,7 +2827,7 @@ Profile
 
 div.prof--group {
     background: hsl(var(--accent-2)/0.5);
-    filter: saturate(2);
+    filter: saturate(1.2);
     padding: 6px 12px 4px;
     width: fit-content;
     font: 500 13px / 1.15em var(--mono);
@@ -2903,7 +2927,7 @@ div.prof--group {
     width: 100%;
     transform: translate(-50%, 10px);
     background: color-mix(in oklab, hsl(var(--accent-2)) 60%, hsl(var(--backgroundBlack)) 40%);
-    filter: saturate(2);
+    filter: saturate(1.2);
     font: 600 14px / 1.25em var(--mono);
     text-transform: uppercase;
     letter-spacing: 5%;
@@ -2980,7 +3004,7 @@ h0::before {
     grid-template: auto auto / 1fr 1fr;
     overflow: hidden; */
     margin: 3em auto 2em;
-    border-top: 1px solid hsl(var(--accent-2)/0.5);
+    border-top: 0.5px solid var(--border-3);
 }
 
 .deathinfo-block {
@@ -3142,6 +3166,7 @@ h0::before {
 .profile-ooc-layout {
     margin: auto;
     width: 75%;
+    padding: 0 clamp(0px, calc(25% / 2), var(--boardInsetSides));
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5em 3em;
@@ -3209,6 +3234,11 @@ h0::before {
             max-height: 300px;
             overflow: auto;
         }
+    }
+
+    .profile-ooc-layout {
+        width: 100%;
+        padding: 0;
     }
 }
 
@@ -3344,7 +3374,7 @@ Member List
     background: hsl(var(--backgroundBlack));
 } */
 
-.membercardlayout::before {
+.membercard:not(.staff) .membercardlayout::before {
     content: '';
     position: absolute;
     width: 276px;
@@ -3510,14 +3540,13 @@ Member List
 
     .membercard-image {
         height: 80%;
-        border-radius: 20px;
+        border-bottom: 1px solid var(--border-3);
     }
 
     .membercard-staffname {
         font: 500 40px / 1.1em var(--mixta);
         color: hsl(var(--accent-2));
         margin-bottom: 0.125em;
-        text-align: center;
     }
 
     .membercard-name,

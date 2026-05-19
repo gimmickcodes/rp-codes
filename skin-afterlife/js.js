@@ -28,16 +28,16 @@ $(document).ready(function () {
 // by Quartz 
 
 function menuFunction() {
-   const x = document.getElementById("navbar");
-   if (x.className === "") {
-      x.className += "responsive";
+   const hamburger = document.getElementById("navbar");
+   if (hamburger.className === "") {
+      hamburger.className += "responsive";
 
       $('#navpanel').addClass('openmenu');
       $('#navbar').addClass('openmenu');
       $("#clicktodismiss").css({ "opacity": "1", "backdrop-filter": "blur(5px)" }).fadeIn(300);
 
    } else {
-      x.className = "";
+      hamburger.className = "";
       $('#navpanel').removeClass('openmenu');
       $('#navbar').removeClass('openmenu');
       $("#clicktodismiss").fadeOut(300);

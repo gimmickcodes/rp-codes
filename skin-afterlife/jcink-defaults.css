@@ -23,3 +23,12 @@
     font: 400 var(--serif);
     color: hsl(var(--white));
 }
+
+.threadfunctions tr {
+    display: block;
+}
+
+.threadfunctions td {
+    width: 100%;
+    display: block;
+}
