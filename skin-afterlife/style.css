@@ -3866,6 +3866,7 @@ MEMBER ROWS
         font: 500 var(--font-mixta-32);
         color: hsl(var(--accent-2));
         padding: 16px 20px;
+        margin-top: auto;
     }
 
     .membercard-name,
@@ -3960,6 +3961,10 @@ MEMBER ROWS
         .membercard-image {
             height: 100%;
             border-bottom: 0;
+        }
+
+        .membercard-staffname {
+            margin-top: unset;
         }
     }
 }
