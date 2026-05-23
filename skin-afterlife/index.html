@@ -36,7 +36,7 @@
 </head>
 
 <body class="userid-{ID} mgroupid-{ID}" id="idx">
-
+    <anchor id="top"></anchor>
 
 
     <div id="navbar">
@@ -49,8 +49,8 @@
         </div>
 
         <div class="navbar--utilities">
-            <i class="ph ph-caret-up"></i>
-            <i class="ph ph-caret-down"></i>
+            <a href="#top"><i class="ph ph-caret-up"></i></a>
+            <a href="#bottom"><i class="ph ph-caret-down"></i></a>
             <i class="ph ph-sun"></i>
         </div>
     </div>
@@ -125,11 +125,10 @@
     </div>
 
 
-
     <div class="sitebody">
 
         <!-- <% BOARD %> AKA HOME -->
-        <div class="sitebody--inset PREVIEW-HOME" id="idx" style="display:inherit;">
+        <div class="sitebody--inset PREVIEW-HOME" id="idx" style="display:none;">
             <div class="cat cat-getstarted" id="cat-{ID}">
                 <div class="cat--header glowtext_v2">Get Started</div>
                 <div class="frame">
@@ -706,7 +705,7 @@
 
 
         <!-- <% SUBFORUM HEADERS %> -->
-        <div class="sitebody--inset PREVIEW-SUBFORUM" id="SF" style="display: inherit;">
+        <div class="sitebody--inset PREVIEW-SUBFORUM" id="SF" style="display: none;">
 
 
             <div class="subforumgrid">
@@ -932,7 +931,7 @@
 
 
         <!-- <% POSTROW %> -->
-        <div class="sitebody--inset PREVIEW-POSTROW" id="ST" style="display: inherit;">
+        <div class="sitebody--inset PREVIEW-POSTROW" id="ST" style="display: none;">
 
 
             <!-- JCINK INSERTED ABOVE POST ROW HEADER -->
@@ -1596,7 +1595,7 @@
             </div>
 
             <!--
-            <div class="v1" style="display: inherit;">
+            <div class="v1" style="display: none;">
                 <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame forechosen unstable">
                     <div class="frame-inner postrow-grid">
 
@@ -1678,9 +1677,8 @@
 
 
         <!-- <% PROFILE %> -->
-        <div class="sitebody--inset PREVIEW-PROFILE profile forechosen stable" id="Profile" style="display: inherit;">
+        <div class="sitebody--inset PREVIEW-PROFILE profile forechosen stable" id="Profile" style="display: none;">
 
-            <anchor id="overview"></anchor>
 
             <div class="profile-header">
                 <div class="profile-nameplate">
@@ -1713,7 +1711,6 @@
                 </div>
             </div>
             <div class="profile-navbar">
-                <a href="#overview">Overview</a>
                 <a href="#background">Background</a>
                 <a href="#plothooks">Plot Hooks</a>
                 <a href="#deaths">Deaths</a>
@@ -2233,7 +2230,7 @@
 
 
         <!-- <% GUIDEBOOK %> -->
-        <div class="sitebody--inset PREVIEW-GUIDEBOOK" style="display:inherit;">
+        <div class="sitebody--inset PREVIEW-GUIDEBOOK" style="display:none;">
 
             <div class="frame">
                 <div class="frame-inner guidebook">
@@ -2402,7 +2399,7 @@
 
 
 
-
+    <anchor id="bottom"></anchor>
 </body>
 
 
@@ -2423,8 +2420,7 @@
         border: 1px solid #262626;
         border-radius: 12px;
         background: #101010;
-        font-size: 16px;
-        line-height: 1.5;
+        font: var(--font-serif-16);
     }
 
     /* Spoiler Wrapper */
@@ -2439,7 +2435,7 @@
     .spoiler-text {
         filter: blur(4px);
         transition: filter 0.5s ease;
-        user-select: inherit;
+        user-select: none;
     }
 
     .threads-spoiler.revealed .spoiler-text {
@@ -2454,7 +2450,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: inherit;
+        pointer-events: none;
         /* Let clicks pass through to the container */
         transition: opacity 0.4s ease;
     }

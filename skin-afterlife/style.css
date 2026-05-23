@@ -1,3 +1,14 @@
+/****************************************
+TOKENS
+*****************************************/
+
+
+:root {
+    --placehold-hover: url(https://i.ibb.co/Lr2bsN0/B1.png);
+    --placehold-icon: url(https://placehold.co/150x150);
+    --bgflowers: url(assets-final/flowers.png);
+}
+
 .forum-monastery {
     --boardimage: url(https://placehold.co/650x650/dd3100/000000/png);
     --boardimage: url(https://i.pinimg.com/1200x/83/5f/f9/835ff96d7f44e3a5c5da8c06b772c5e9.jpg);
@@ -6,12 +17,6 @@
 .forum-dungeon {
     --boardimage: url(https://placehold.co/650x650/00cc66/000000/png);
     --boardimage: url(https://i.pinimg.com/1200x/b6/85/2d/b6852d0db70b951f07464833a4d43513.jpg);
-}
-
-:root {
-    --placehold-hover: url(https://i.ibb.co/Lr2bsN0/B1.png);
-    --placehold-icon: url(https://placehold.co/150x150);
-    --bgflowers: url(assets-final/flowers.png);
 }
 
 .forum-guidebook-bg {
@@ -64,9 +69,6 @@
     opacity: 0.5;
 }
 
-/****************************************
-UTILITIES
-*****************************************/
 :root {
     --backgroundHTML: 95 14% 15%;
     /* #232A20 */
@@ -86,7 +88,6 @@ UTILITIES
     /* #4B5149 */
     --accentContrast: 55 30% 58%;
     /* #C0B169 */
-
 
     --accent-1: var(--accentBase-1);
     --accent-2: var(--accentBase-2);
@@ -122,11 +123,84 @@ UTILITIES
     --mixta-small: mixta-sharp, times;
     --mono: 'IBM Plex Mono', courier;
     --serif: 'IBM Plex Serif', arial;
+    --erotique: erotique;
 
+    --font-serif-12: 12px/1.25em var(--serif);
+    --font-serif-13: 13px/1.25em var(--serif);
+    --font-serif-14: 14px/1.4em var(--serif);
+    --font-serif-15: 15px/1.4em var(--serif);
+    --font-serif-16: 16px/1.5em var(--serif);
+    --font-serif-17: 17px/1.5em var(--serif);
+
+    --font-mono-12: 12px/1.25em var(--mono);
+    --font-mono-13: 13px/1.25em var(--mono);
+    --font-mono-14: 14px/1.25em var(--mono);
+
+    --font-mixta-18: 18px/1.3em var(--mixta);
+    --font-mixta-20: 20px/1.3em var(--mixta);
+    --font-mixta-24: 24px/1.3em var(--mixta);
+    --font-mixta-26: 26px/1.2em var(--mixta);
+    --font-mixta-28: 28px/1.2em var(--mixta);
+    --font-mixta-32: 32px/1.2em var(--mixta);
+    --font-mixta-36: 36px/1.1em var(--mixta);
+    --font-mixta-40: 40px/1.1em var(--mixta);
+    --font-mixta-48: 48px/1.1em var(--mixta);
+    --font-mixta-52: 52px/1.1em var(--mixta);
+    --font-mixta-56: 56px/1.1em var(--mixta);
+    --font-mixta-64: 64px/1.1em var(--mixta);
+    --font-mixta-80: 80px/1.1em var(--mixta), papyrus;
+    --font-mixta-120: 120px/0 var(--mixta);
+
+    --font-mixta-small-16: 16px/1.4em var(--mixta-small);
+    --font-mixta-small-20: 20px/1.3em var(--mixta-small);
+
+    --font-erotique-80: 80px/1em var(--erotique);
+    --font-erotique-140: 140px/1em var(--erotique);
 
     --deviceInset: 40px;
     --bodywidth: clamp(1px, calc(100% - 2 * var(--deviceInset)), 1200px);
     --boardInsetSides: clamp(12px, 4vw, 32px);
+
+}
+
+
+@media only screen and (max-width: 760px) {
+    :root {
+        --boardInsetSides: 16px;
+        --deviceInset: 20px;
+
+        --font-serif-12: 12px/1.25em var(--serif);
+        --font-serif-13: 13px/1.25em var(--serif);
+        --font-serif-14: 14px/1.4em var(--serif);
+        --font-serif-15: 14px/1.4em var(--serif);
+        --font-serif-16: 16px/1.5em var(--serif);
+        --font-serif-17: 17px/1.5em var(--serif);
+
+        --font-mono-12: 12px/1.25em var(--mono);
+        --font-mono-13: 12px/1.25em var(--mono);
+        --font-mono-14: 13px/1.25em var(--mono);
+
+        --font-mixta-18: 18px/1.3em var(--mixta);
+        --font-mixta-20: 20px/1.3em var(--mixta);
+        --font-mixta-24: 24px/1.3em var(--mixta);
+        --font-mixta-26: 24px/1.2em var(--mixta);
+        --font-mixta-28: 26px/1.2em var(--mixta);
+        --font-mixta-32: 28px/1.2em var(--mixta);
+        --font-mixta-36: 28px/1.1em var(--mixta);
+        --font-mixta-40: 32px/1.1em var(--mixta);
+        --font-mixta-48: 36px/1.1em var(--mixta);
+        --font-mixta-52: 40px/1.1em var(--mixta);
+        --font-mixta-56: 40px/1.1em var(--mixta);
+        --font-mixta-64: 48px/1.1em var(--mixta);
+        --font-mixta-80: 56px/1.1em var(--mixta), papyrus;
+        --font-mixta-120: 100px/0 var(--mixta);
+
+        --font-mixta-small-16: 16px/1.4em var(--mixta-small);
+        --font-mixta-small-20: 20px/1.3em var(--mixta-small);
+
+        --font-erotique-80: 64px/1em var(--erotique);
+        --font-erotique-140: 140px/1em var(--erotique);
+    }
 }
 
 a :is(.npc,
@@ -172,20 +246,23 @@ a :is(.npc,
 }
 
 
-
 .postrow:not(.unsorted, .guest),
 .profile :not(.unsorted, .guest),
 .membercard:not(.unsorted, .guest) {
     --border-3: hsl(var(--accent-3));
 }
 
+
+
+
 /****************************************
 GLOBAL
 *****************************************/
+
 :root {
     background-color: hsl(var(--backgroundHTML));
     color: hsl(var(--bodytext-1));
-    font: 17px/1.5em var(--serif);
+    font: var(--font-serif-17);
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
@@ -247,12 +324,12 @@ NAVIGATION
     width: 100%;
     padding: 0 0 0 24px;
     display: grid;
-    grid-template: 56px / auto 1fr auto;
+    grid-template: 56px/auto 1fr auto;
     align-items: center;
     position: fixed;
     top: 0;
     z-index: 100;
-    font: 500 13px/1.25em var(--mono);
+    font: 500 var(--font-mono-13);
     letter-spacing: 5%;
     text-transform: uppercase;
     color: hsl(var(--bodytext-1));
@@ -362,7 +439,7 @@ NAVIGATION
 }
 
 .navpanel--username {
-    font: 500 32px/1.2em var(--mixta);
+    font: 500 var(--font-mixta-32);
     color: hsl(var(--accentBase-2));
     margin-bottom: 0.125em;
 }
@@ -377,7 +454,7 @@ NAVIGATION
 }
 
 .navpanel--userlinks a {
-    font: 13px/1.25em var(--mono);
+    font: var(--font-mono-13);
     color: hsl(var(--bodytext-2));
     /* border: 1px solid hsl(var(--accent-3)); */
     display: flex;
@@ -435,7 +512,7 @@ NAVIGATION
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    font: 500 14px/1.4em var(--serif);
+    font: 500 var(--font-serif-14);
     letter-spacing: 10%;
     text-transform: uppercase;
 }
@@ -468,9 +545,7 @@ NAVIGATION
 .hero-title--one,
 .hero-title--two {
     display: block;
-    font-family: erotique;
-    font-style: normal;
-    font: 400 140px/1em erotique;
+    font: 400 var(--font-erotique-140);
     letter-spacing: 5%;
     font-variant-ligatures: rare-ligatures;
     font-feature-settings: "dlig" 1;
@@ -497,7 +572,7 @@ NAVIGATION
 
 
 .hero-subtitle {
-    font: 600 20px/1.3em var(--mixta);
+    font: 600 var(--font-mixta-20);
     text-transform: uppercase;
     letter-spacing: 30%;
     color: hsl(var(--accentBase-3));
@@ -570,6 +645,11 @@ NAVIGATION
 
 @media only screen and (max-width: 760px) {
 
+    #siteheader {
+        width: 100%;
+        /* height: auto; */
+        padding: 200px 0 100px;
+    }
 
     .siteheader-linksbox {
         display: none;
@@ -604,10 +684,6 @@ NAVIGATION
 }
 
 @media only screen and (max-width: 600px) {
-    :root {
-        --boardInsetSides: 16px;
-        --deviceInset: 20px;
-    }
 
     #navbar {
         top: unset;
@@ -629,7 +705,6 @@ NAVIGATION
         height: calc(100% - 56px);
         width: 100vw;
         bottom: 56px;
-        transform: translateY(100vh);
     }
 
     #navpanel.openmenu {
@@ -722,7 +797,7 @@ HOME
 }
 
 .cat--header {
-    font: 400 80px/1.1em var(--mixta), papyrus;
+    font: 400 var(--font-mixta-80), papyrus;
     text-transform: lowercase;
     letter-spacing: 2%;
     text-align: right;
@@ -767,7 +842,7 @@ HOME
 
 .fr,
 .newsbar {
-    padding: 32px var(--boardInsetSides) 24px;
+    padding: 24px var(--boardInsetSides) 24px;
     display: flex;
     flex-direction: column;
 }
@@ -775,7 +850,7 @@ HOME
 .fr--forumname,
 a.fr--forumname {
     flex: 1;
-    font: 300 40px/1.1em var(--mixta);
+    font: 300 var(--font-mixta-40);
     background: linear-gradient(45deg, hsl(var(--accentBase-2)) 20%, hsl(var(--accentContrast)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -784,6 +859,8 @@ a.fr--forumname {
     text-fill-color: transparent;
     font-variant-ligatures: discretionary-ligatures;
     font-feature-settings: "dlig" 1;
+    display: block;
+    margin-bottom: 12px;
 }
 
 .fr--desc {}
@@ -799,11 +876,11 @@ a.fr--forumname {
 }
 
 :is(.forum-guidebook, .forum-shops, .forum-monastery) .fr--forumname {
-    font: 300 48px/1.1em var(--mixta);
+    font: 300 var(--font-mixta-48);
 }
 
 .forum-guidebook .fr--desc {
-    margin: .75rem 0 1.75rem;
+    margin: 0 0 1.75rem;
 }
 
 .forum-guidebook--links {
@@ -819,7 +896,7 @@ a.fr--forumname {
     justify-content: center;
     padding: 0.5em 1.25ch;
     width: fit-content;
-    font: 600 18px/1.3em var(--mixta);
+    font: 600 var(--font-mixta-18);
     color: hsl(var(--accentBase-2));
     border: 0.5px solid var(--border-3);
 }
@@ -839,14 +916,14 @@ a.fr--forumname {
 }
 
 .userbox--kicker {
-    font: 500 14px/1.4em "IBM Plex Serif";
+    font: 500 var(--font-serif-14);
     text-transform: uppercase;
     letter-spacing: 5%;
     margin-top: 1em;
 }
 
 .userbox--username {
-    font: 500 28px/1.2em var(--mixta);
+    font: 500 var(--font-mixta-28);
     margin: 0.125em 0 0.5em;
 
 }
@@ -858,7 +935,7 @@ a.fr--forumname {
 }
 
 .userbox--userlinks a {
-    font: 500 13px/1.25em var(--mono);
+    font: 500 var(--font-mono-13);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--accentBase-2));
@@ -879,7 +956,7 @@ a.fr--forumname {
 
 .subforums {
     width: 100%;
-    margin: 12px 0 24px;
+    margin: 0;
 }
 
 .subforums a {
@@ -888,7 +965,7 @@ a.fr--forumname {
 }
 
 .fr .subforums a {
-    font: 500 14px/1.4em var(--serif);
+    font: 500 var(--font-serif-14);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--accentBase-3));
@@ -901,7 +978,7 @@ a.fr--forumname {
     align-items: center;
     gap: 1rem;
     padding-left: 40px;
-    margin-bottom: 1.8rem;
+    margin: 24px 0 1.8rem;
 }
 
 .fr-lastpost-text {
@@ -912,7 +989,7 @@ a.fr-lastpost-text--threadname,
 .rec-title {
     display: block;
     margin-bottom: .125em;
-    font: 500 26px/1.2em var(--mixta);
+    font: 500 var(--font-mixta-26);
     color: hsl(var(--accentBase-2));
     text-transform: lowercase;
 }
@@ -922,13 +999,13 @@ a.fr-lastpost-text--threadname::before {
     position: absolute;
     top: 0;
     left: -0.75ch;
-    font: 700 80px/1em erotique;
+    font: 700 var(--font-erotique-80);
     color: hsl(var(--accentBase-2));
 }
 
 .fr-lastpost-text--metadata,
 #recents {
-    font: 500 13px/1.25em var(--mono);
+    font: 500 var(--font-mono-13);
     text-transform: uppercase;
 }
 
@@ -936,11 +1013,11 @@ a.fr-lastpost-text--poster,
 .holdrec>a {
     font-family: var(--serif);
     font-weight: 700;
-    color: inherit;
-    text-decoration: underline;
+    color: hsl(var(--accent-2));
+    /* text-decoration: underline;
     text-decoration-color: hsl(var(--accent-2));
-    text-underline-offset: 8px;
-    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1.5px; */
 }
 
 .fr-lastpost-avi {
@@ -955,7 +1032,7 @@ a.fr-lastpost-text--poster,
     align-items: center;
     gap: 2ch;
     width: 100%;
-    font: 500 13px/1.25em var(--mono);
+    font: 500 var(--font-mono-13);
     text-transform: uppercase;
     white-space: nowrap;
     color: hsl(var(--bodytext-2));
@@ -973,14 +1050,14 @@ a.fr-lastpost-text--poster,
     grid-area: minibar;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
     gap: 0.75rem;
+    overflow: auto;
     padding: 20px var(--boardInsetSides);
 }
 
 .newsbar-header {
-    font: 500 14px/1.25em var(--mono);
+    font: 500 var(--font-mono-14);
     text-transform: uppercase;
     white-space: nowrap;
     margin-right: .5rem;
@@ -988,7 +1065,7 @@ a.fr-lastpost-text--poster,
 
 a.newschip {
     gap: 1ch;
-    font: 500 14px/1.25em var(--mono);
+    font: 500 var(--font-mono-14);
     text-transform: uppercase;
     white-space: nowrap;
     color: inherit;
@@ -1048,12 +1125,12 @@ a.newschip b {
 }
 
 .forum-shops-board .fr--desc {
-    margin: .5rem 0 1.75rem
+    margin: 0 0 1.75rem
 }
 
 .forum-shops--links {
     display: flex;
-    gap: 16px;
+    gap: 0 16px;
 }
 
 .forum-shops--links a {
@@ -1063,7 +1140,7 @@ a.newschip b {
     justify-content: center;
     gap: 8px;
     padding: 12px 0 16px;
-    font: 500 13px/1.25em var(--mono);
+    font: 500 var(--font-mono-13);
     text-transform: uppercase;
     letter-spacing: 10%;
     text-align: center;
@@ -1105,7 +1182,7 @@ a.newschip b {
         gap: 1ch;
         padding: 0.5em 1.25ch;
         border: 0.5px solid var(--border-2);
-        font: 500 14px/1.25em var(--mono);
+        font: 500 var(--font-mono-14);
         text-transform: uppercase;
         color: inherit;
     }
@@ -1120,7 +1197,7 @@ a.newschip b {
     }
 
     a.fr-lastpost-text--threadname {
-        font: 500 24px/1.3em var(--mixta);
+        font: 500 var(--font-mixta-24);
     }
 
     .fr-lastpost-text--threadname::before {
@@ -1149,7 +1226,7 @@ a.newschip b {
 
 .forum-monastery-grid {
     display: grid;
-    grid-template: 'boardcontent boardimage' 625px / 536px 1fr;
+    grid-template: 'boardcontent boardimage' 625px/536px 1fr;
     padding: 0;
     overflow: hidden;
 }
@@ -1225,7 +1302,7 @@ a.newschip b {
 
 .forum-dungeon-grid {
     display: grid;
-    grid-template: 'boardimage boardcontent  ' 420px / 1fr 664px;
+    grid-template: 'boardimage boardcontent  ' 420px/1fr 664px;
     padding: 0;
     overflow: hidden;
 }
@@ -1236,6 +1313,7 @@ a.newschip b {
         'lastpost avi'
         'boardstats avi' / 1fr auto;
     gap: 0 32px;
+    align-items: flex-end;
 }
 
 .forum-dungeon .fr-lastpost-text {
@@ -1263,7 +1341,7 @@ a.newschip b {
 
     .fr--desc {
         flex: 1;
-        margin: .5em 0 1.5em;
+        margin: 0 0 1.5em;
     }
 
     .fr--desc::after {
@@ -1278,18 +1356,26 @@ a.newschip b {
     }
 
     .fr-lastpost {
+        grid-area: lastpost;
+        margin-top: 0;
         align-self: flex-end;
     }
 
 
     a.fr-lastpost-text--threadname {
-        font: 500 28px/1.2em var(--mixta);
+        font: 500 var(--font-mixta-28);
     }
 
     .fr-lastpost-avi {
-        width: clamp(40px, 6vw, 100px);
+        grid-area: avi;
+        width: clamp(40px, 10vw, 100px);
+        width: 100px;
         border-bottom-right-radius: 16px;
         overflow: hidden;
+    }
+
+    .fr--boardstats {
+        grid-area: boardstats;
     }
 
     .subforums {
@@ -1297,7 +1383,7 @@ a.newschip b {
         flex-direction: column;
         align-items: flex-end;
         position: absolute;
-        gap: 1em;
+        gap: 0.5em;
         width: unset;
         margin: unset;
         top: 1.5rem;
@@ -1311,7 +1397,7 @@ a.newschip b {
         gap: 1ch;
         border: 0.5px solid var(--border-2);
         padding: 0.5em 1ch;
-        font: 600 18px/1.3em var(--mixta);
+        font: 600 var(--font-mixta-18);
         text-transform: none;
         letter-spacing: 0;
         text-align: right;
@@ -1322,6 +1408,7 @@ a.newschip b {
     .subforums a:first-child {
         border-top-right-radius: 12px;
     }
+
 }
 
 .forum-monastery-board .fr-lastpost-avi {
@@ -1354,7 +1441,7 @@ a.newschip b {
     text-align: right;
 
     .fr--forumname {
-        font: 300 48px/1.1em var(--mixta);
+        font: 300 var(--font-mixta-48);
         font-variant-ligatures: rare-ligatures;
         font-feature-settings: "dlig" 1;
     }
@@ -1376,7 +1463,7 @@ a.newschip b {
         padding: 0.5em 1.25ch;
         background: hsl(var(--backgroundHTML) / 0.5);
         border: 0.5px solid var(--border-3);
-        font: 500 14px/1.25em var(--mono);
+        font: 500 var(--font-mono-14);
         text-transform: uppercase;
         color: hsl(var(--accentBase-2));
     }
@@ -1403,7 +1490,7 @@ a.newschip b {
         position: absolute;
         top: 0;
         left: -0.75ch;
-        font: 700 80px/1em erotique;
+        font: 700 var(--font-erotique-80);
         color: hsl(var(--accentBase-2));
     }
 
@@ -1555,7 +1642,7 @@ a.newschip b {
     height: 156px;
     overflow: auto;
     margin: 8px 0 40px;
-    font: 600 15px/1.4em var(--serif);
+    font: 600 var(--font-serif-15);
     line-height: 1.6em;
     letter-spacing: 5%;
     color: hsl(var(--unsorted-2));
@@ -1566,7 +1653,7 @@ a.newschip b {
 }
 
 .boardstats--header {
-    font: 500 16px/1.5em var(--serif);
+    font: 600 var(--font-serif-15);
     letter-spacing: 5%;
     text-transform: uppercase;
     color: hsl(var(--accentBase-3));
@@ -1584,7 +1671,7 @@ a.newschip b {
 }
 
 .boardstats-members-newest--label {
-    font: 500 14px/1.4em var(--serif);
+    font: 500 var(--font-serif-14);
     letter-spacing: 5%;
     text-transform: uppercase;
     color: hsl(var(--accentBase-3));
@@ -1600,7 +1687,7 @@ a.newschip b {
 }
 
 .boardstats-members-newest a {
-    font: 500 32px/1.2em var(--mixta);
+    font: 500 var(--font-mixta-32);
     background: linear-gradient(45deg, hsl(var(--accentBase-2)) 20%, hsl(var(--accentContrast)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1619,7 +1706,7 @@ a.newschip b {
 .boardstats-members-census {
     display: flex;
     gap: 0.5ch;
-    font: 400 120px/0 var(--mixta);
+    font: 400 var(--font-mixta-120);
 }
 
 .census-faction {
@@ -1632,7 +1719,7 @@ a.newschip b {
 }
 
 .census-faction span {
-    font: 600 13px/1.25em var(--mono);
+    font: 600 var(--font-mono-13);
     text-transform: uppercase;
     letter-spacing: 5%;
     position: absolute;
@@ -1655,7 +1742,7 @@ a.newschip b {
     padding: 0.5em 1.25ch;
     background: hsl(var(--backgroundHTML) / 0.5);
     border: 0.5px solid var(--border-3);
-    font: 500 13px/1.25em var(--mono);
+    font: 500 var(--font-mono-13);
     text-transform: uppercase;
     color: hsl(var(--accentBase-2));
     white-space: nowrap;
@@ -1668,7 +1755,7 @@ a.newschip b {
     flex-direction: column;
     justify-content: flex-end;
     gap: 0.25em;
-    font: 600 13px/1.25em var(--mono);
+    font: 600 var(--font-mono-13);
     letter-spacing: 10%;
     text-transform: uppercase;
     color: hsl(var(--accentBase-3));
@@ -1718,6 +1805,10 @@ a.newschip b {
     .forum-ooc-bg,
     .boardstats-bg {}
 
+    .fr-lastpost {
+        align-items: flex-start;
+    }
+
     .forum-monastery-grid::before,
     .forum-dungeon-grid::before {
         display: none;
@@ -1730,7 +1821,8 @@ a.newschip b {
     }
 
     .forum-guidebook {
-        grid-template: 'guidebox'
+        grid-template: 'guidebox';
+        padding: 24px var(--boardInsetSides) 8px;
     }
 
     .forum-guidebook-userbox {
@@ -1766,6 +1858,11 @@ a.newschip b {
             'boardcontent' / 1fr;
     }
 
+    .cat-locations .cat--header,
+    .boardstats .cat--header {
+        text-align: right;
+    }
+
     .cat-plotting-imagebox {
         display: none;
         width: 75%;
@@ -1774,7 +1871,7 @@ a.newschip b {
     }
 
     .forum-shops-board {
-        padding: 48px var(--boardInsetSides) 60px;
+        padding: 24px var(--boardInsetSides) 32px;
     }
 
     .cat-plotting-bg {
@@ -1796,13 +1893,18 @@ a.newschip b {
         .subforums {
             border-left: 0;
             padding-left: 0;
-            margin: 24px 0 0;
+            margin: 32px 0 0;
             order: 1;
         }
 
         .fr-lastpost-text {
             text-align: left;
         }
+    }
+
+    .forum-monastery-board,
+    .forum-dungeon-board {
+        padding: 24px var(--boardInsetSides) 24px;
     }
 
     .forum-monastery-grid {
@@ -1824,11 +1926,13 @@ a.newschip b {
             flex-wrap: wrap;
             top: unset;
             right: unset;
+            bottom: 0;
             padding: var(--boardInsetSides);
         }
 
         .subforums a {
-            background: hsl(var(--backgroundHTML) / 0.75);
+            background: hsl(var(--backgroundBlack) / 0.5);
+            border-color: hsl(var(--accentBase-3));
         }
 
         .subforums a:first-child {
@@ -1842,6 +1946,7 @@ a.newschip b {
     }
 
     .forum-monastery-board .fr-lastpost-avi {
+        border-radius: 0;
         display: block;
     }
 
@@ -1854,10 +1959,17 @@ a.newschip b {
         top: unset;
         left: 0;
         bottom: 0;
-        background: linear-gradient(to bottom, hsl(var(--accentBase-4)) 0%, hsl(var(--accentBase-4) / 0) 60%);
+        background: linear-gradient(to bottom, hsl(var(--accentBase-4)/0) 50%, hsl(var(--accentBase-4)) 90%);
         border-radius: 0;
     }
 
+    .forum-dungeon-lastpostbox {
+        grid-template:
+            "lastpost avi"
+            "boardstats boardstats" / 1fr auto;
+        align-items: flex-start;
+        row-gap: 16px;
+    }
 
     .cat-ooc .cat-grid {
         grid-template:
@@ -1869,9 +1981,17 @@ a.newschip b {
     .forum-archive {
         align-items: flex-start;
         text-align: left;
+        background: transparent;
+        z-index: 2;
 
         .subforums {
             justify-content: flex-start;
+            order: 1;
+            margin: 2em 0 0;
+        }
+
+        a.fr-lastpost-text--threadname {
+            white-space: normal;
         }
     }
 
@@ -1880,7 +2000,10 @@ a.newschip b {
     }
 
     .forum-archive-board {
+        padding: 24px var(--boardInsetSides) 32px;
         border-bottom: 0.5px solid var(--border-3);
+        display: flex;
+        flex-direction: column;
     }
 
     .boardstats-grid {
@@ -1903,6 +2026,7 @@ a.newschip b {
 
     .boardstats-members {
         display: block;
+        text-align: center;
     }
 
     .boardstats-members-newest {
@@ -1912,15 +2036,18 @@ a.newschip b {
     }
 
     .boardstats-members-census {
-        height: 100px;
+        line-height: .5em;
         margin-bottom: 24px;
         justify-content: space-around;
+        padding: var(--boardInsetSides) 16px;
+        width: 100%;
+        flex-wrap: wrap;
     }
 
     .boardstats-records,
     .boardstats-records span {
         display: inline-block;
-        text-align: left;
+        text-align: center;
     }
 
     #recents {
@@ -1933,7 +2060,23 @@ a.newschip b {
 }
 
 
+@media only screen and (max-width:600px) {
+    .forum-shops--links {
+        flex-direction: column;
+    }
 
+    .forum-shops--links a {
+        flex-direction: row;
+        justify-content: flex-start;
+        white-space: unset;
+        max-width: unset;
+    }
+
+    .forum-shops--links a:first-child {
+        padding-left: 12px;
+        margin-bottom: 12px;
+    }
+}
 
 
 
@@ -1987,7 +2130,7 @@ TOPIC ROWS
 .pagination>*,
 .goto-firstunread {
     margin-right: 1ch;
-    font: 600 13px/1.25em var(--mono);
+    font: 600 var(--font-mono-13);
     letter-spacing: 1%;
 }
 
@@ -2021,7 +2164,7 @@ TOPIC ROWS
 .button-large {
     display: inline-block;
     margin-left: 1ch;
-    font: 600 20px/1.3em var(--mixta);
+    font: 600 var(--font-mixta-20);
     color: hsl(var(--accentBase-1));
     text-decoration: underline;
     text-decoration-thickness: 1px;
@@ -2035,7 +2178,7 @@ TOPIC ROWS
 
 .tl--header {
     margin: 0.125em 0 0.125em;
-    font: 400 64px/1.1em var(--mixta);
+    font: 400 var(--font-mixta-64);
     text-transform: lowercase;
     letter-spacing: 2%;
     font-variant-ligatures: discretionary-ligatures;
@@ -2049,7 +2192,7 @@ TOPIC ROWS
     display: flex;
     align-items: center;
     gap: 1ch;
-    font: 700 14px/1.4em var(--serif);
+    font: 700 var(--font-serif-14);
     letter-spacing: 5%;
     text-transform: uppercase;
     color: hsl(var(--accentBase-3));
@@ -2068,7 +2211,7 @@ TOPIC ROWS
 }
 
 .topicrow .frame-inner {
-    padding: 48px var(--boardInsetSides) 32px;
+    padding: 36px var(--boardInsetSides) 24px;
 }
 
 .topicrow .frame-inner::before {
@@ -2099,14 +2242,14 @@ TOPIC ROWS
 }
 
 .topic-threadname>a {
-    font: 500 32px/1.2em var(--mixta);
+    font: 500 var(--font-mixta-32);
     color: hsl(var(--accentBase-3));
     text-transform: lowercase;
     margin-right: .5ch;
 }
 
 .topic-threadname .small {
-    font: 500 12px/1.25em var(--mono);
+    font: 500 var(--font-mono-12);
     text-transform: uppercase;
     letter-spacing: 5%;
 }
@@ -2117,7 +2260,7 @@ TOPIC ROWS
 
 .topic-threaddesc {
     margin: 4px 0 32px;
-    font: 500 16px/1.5em var(--serif);
+    font: 500 var(--font-serif-16);
     opacity: 0.8;
     display: flex;
     align-items: baseline;
@@ -2149,7 +2292,7 @@ TOPIC ROWS
 }
 
 .topic-meta-stack {
-    font: 14px/1.25em var(--mono);
+    font: var(--font-mono-14);
     text-transform: uppercase;
 }
 
@@ -2202,7 +2345,7 @@ POST ROWS & MINI PROFILE
 .topic-title {
     display: inline-block;
     margin: 0.75em 0 0.125em;
-    font: 300 40px/1.1em var(--mixta);
+    font: 300 var(--font-mixta-40);
     background: linear-gradient(45deg, hsl(var(--accentBase-2)) 20%, hsl(var(--accentContrast)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -2214,7 +2357,7 @@ POST ROWS & MINI PROFILE
 }
 
 .topic-desc {
-    font: 500 20px/1.3em var(--mixta);
+    font: 500 var(--font-mixta-20);
     letter-spacing: 5%;
     color: hsl(var(--bodytext-2));
     display: flex;
@@ -2231,7 +2374,7 @@ POST ROWS & MINI PROFILE
 }
 
 .postlinksbar {
-    font: 300 13px/1.25em var(--mono);
+    font: 300 var(--font-mono-13);
     color: hsl(var(--accentBase-3));
     gap: 1ch;
     margin: 3em 0 1.5em;
@@ -2265,7 +2408,7 @@ POST ROWS & MINI PROFILE
     height: 300px;
     right: 0;
     top: 0;
-    background: url(assets-final/flowers-guidebook.png) right -300px top -140px / 100% no-repeat;
+    background: url(assets-final/flowers-guidebook.png) right -300px top -140px/100% no-repeat;
     mask-image: linear-gradient(to bottom, #000000 70%, #00000000 100%);
     opacity: 0.1;
     mix-blend-mode: color-burn;
@@ -2302,7 +2445,7 @@ POST ROWS & MINI PROFILE
     border-bottom-left-radius: 10px;
     backdrop-filter: blur(5px);
 
-    font: 600 13px/1.25em var(--mono);
+    font: 600 var(--font-mono-13);
     text-transform: uppercase;
     color: hsl(var(--white));
     z-index: 5;
@@ -2373,13 +2516,13 @@ POST ROWS & MINI PROFILE
 }
 
 .miniprof-hover--bigstat {
-    font: 48px/1.1em var(--mixta);
+    font: var(--font-mixta-48);
 }
 
 .miniprof-hover--bigstat label {
     display: block;
     margin-bottom: 0.25em;
-    font: 700 14px/1.4em var(--serif);
+    font: 700 var(--font-serif-14);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--accent-2));
@@ -2403,7 +2546,7 @@ POST ROWS & MINI PROFILE
 .miniprof-hover--smallstat label {
     display: block;
     margin-bottom: 2px;
-    font: 600 13px/1.25em var(--mono);
+    font: 600 var(--font-mono-13);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--accent-2));
@@ -2415,7 +2558,7 @@ POST ROWS & MINI PROFILE
     flex-direction: column;
     padding: 1.5em 0;
     gap: 1em;
-    font: 600 16px/1.4em var(--mixta-small);
+    font: 600 var(--font-mixta-small-16);
     color: hsl(var(--accent-2));
     text-transform: uppercase;
     letter-spacing: 10%;
@@ -2526,7 +2669,7 @@ divider {
 .pr-header-name {
     display: block;
     margin: -12px 0 12px;
-    font: 400 56px/1.1em var(--mixta);
+    font: 400 var(--font-mixta-56);
     text-transform: capitalize;
     color: color-mix(in oklab, hsl(var(--accent-2)) 30%, hsl(var(--backgroundBlack)) 80%);
 }
@@ -2535,7 +2678,7 @@ divider {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5em 1em;
-    font: 600 13px/1.25em var(--serif);
+    font: 600 var(--font-serif-13);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--bodytext-1) / 0.9);
@@ -2619,7 +2762,7 @@ divider {
 }
 
 .pr-ooc--name {
-    font: 600 20px/1.3em var(--mixta-small);
+    font: 600 var(--font-mixta-small-20);
     text-transform: lowercase;
     color: hsl(var(--accent-2));
     width: auto;
@@ -2628,12 +2771,12 @@ divider {
 
 .pr-ooc--meta {
     display: inline-block;
-    font: 500 14px/1.4em var(--serif);
+    font: 500 var(--font-serif-14);
     margin-right: 3ch;
 }
 
 .pr-ooc--meta label {
-    font: 600 12px/1.25em var(--serif);
+    font: 600 var(--font-serif-12);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--accent-2));
@@ -2740,14 +2883,14 @@ Profile
 }
 
 .prof--name.glowtext_v2 {
-    font: 400 56px/1.1em var(--mixta);
+    font: 400 var(--font-mixta-56);
     text-transform: capitalize;
     /* color: color-mix(in oklab, hsl(var(--accent-1)) 40%, hsl(var(--backgroundBlack)) 60%); */
     background-color: linear-gradient(to bottom, hsl(var(--accent-1)) 0%, hsl(var(--black) / 0) 90%);
 }
 
 .prof--postcount {
-    font: 600 14px/1.4em var(--serif);
+    font: 600 var(--font-serif-14);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--bodytext-2));
@@ -2813,7 +2956,7 @@ Profile
 
 .profile label {
     display: block;
-    font: 500 13px/1.25em var(--mono);
+    font: 500 var(--font-mono-13);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--accent-2));
@@ -2834,7 +2977,7 @@ div.prof--group {
     filter: saturate(1.2);
     padding: 0.5em 1.25ch;
     width: fit-content;
-    font: 500 13px/1.25em var(--mono);
+    font: 500 var(--font-mono-13);
     text-transform: uppercase;
     letter-spacing: 15%;
     color: hsl(var(--bodytext-1));
@@ -2855,7 +2998,7 @@ div.prof--group {
     justify-content: center;
     gap: 1ch 3ch;
 
-    font: 600 15px/1.4em var(--serif);
+    font: 600 var(--font-serif-15);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--accent-2));
@@ -2912,7 +3055,7 @@ div.prof--group {
 
 .profile--stat {
     text-align: center;
-    font: 500 48px/1.1em var(--mixta);
+    font: 500 var(--font-mixta-48);
     margin-top: 24px;
 }
 
@@ -2932,7 +3075,7 @@ div.prof--group {
     transform: translate(-50%, 10px);
     background: color-mix(in oklab, hsl(var(--accent-2)) 60%, hsl(var(--backgroundBlack)) 40%);
     filter: saturate(1.2);
-    font: 600 13px/1.25em var(--mono);
+    font: 600 var(--font-mono-13);
     text-transform: uppercase;
     letter-spacing: 5%;
     color: hsl(var(--white));
@@ -2976,7 +3119,7 @@ div.prof--group {
 .profile h0 {
     display: block;
     margin: 0 0 0.5em;
-    font: 500 36px/1.1em var(--mixta);
+    font: 500 var(--font-mixta-36);
     text-align: center;
     color: hsl(var(--accent-2));
     -webkit-text-stroke-width: 0.5px;
@@ -3043,7 +3186,7 @@ h0::before {
 .deathinfo--content {}
 
 .deathinfo--header {
-    font: 600 24px/1.3em var(--mixta);
+    font: 600 var(--font-mixta-24);
     color: hsl(var(--accent-2));
     margin-bottom: -2px;
     /* -webkit-text-stroke-width: 0.5px;
@@ -3058,13 +3201,13 @@ h0::before {
 }
 
 .profile-subsection-deaths label {
-    font: 700 14px/1.4em var(--serif);
+    font: 700 var(--font-serif-14);
     color: hsl(var(--accent-2)/0.75);
 }
 
 .profile-subsection-deaths--header {
     text-align: center;
-    font: 500 52px/1.1em var(--mixta);
+    font: 500 var(--font-mixta-52);
     color: hsl(var(--accent-2));
     margin-top: 12px;
 }
@@ -3093,11 +3236,11 @@ h0::before {
 .profile-subsection-deaths--content:not(:empty)::before {
     content: 'and...';
     display: block;
-    /* font: 300 52px/1.1em var(--mixta); */
+    /* font: 300 var(--font-mixta-52); */
     /* color: hsl(var(--accent-2)); */
     margin: 1em 0;
 
-    font: 700 14px/1.4em var(--serif);
+    font: 700 var(--font-serif-14);
     color: hsl(var(--accent-2)/0.75);
     text-transform: uppercase;
     letter-spacing: 10%;
@@ -3106,7 +3249,7 @@ h0::before {
 .tracker-title {
     background: hsl(var(--accent-2)/0.5);
     filter: saturate(2);
-    font: 600 14px/1.25em var(--mono);
+    font: 600 var(--font-mono-14);
     text-transform: uppercase;
     letter-spacing: 5%;
     color: hsl(var(--white));
@@ -3244,6 +3387,7 @@ h0::before {
     .profile-ooc-layout {
         width: 100%;
         padding: 0;
+        gap: 1.5em 1em;
     }
 }
 
@@ -3276,7 +3420,7 @@ Member List
     display: flex;
     align-items: center;
     gap: 1.5ch;
-    font: 600 14px/1.4em var(--serif);
+    font: 600 var(--font-serif-14);
     letter-spacing: 5%;
     text-transform: uppercase;
     color: hsl(var(--accentBase-2));
@@ -3293,7 +3437,7 @@ Member List
 }
 
 .ml-header-section-content {
-    font: 500 15px/1.4em var(--serif);
+    font: 500 var(--font-serif-15);
     text-transform: capitalize;
     color: hsl(var(--bodytext-1)/0.625);
     max-height: calc(7.5 * 1.5em);
@@ -3425,7 +3569,7 @@ Member List
 }
 
 .membercard-name {
-    font: 500 32px/1.2em var(--mixta);
+    font: 500 var(--font-mixta-32);
     color: hsl(var(--accent-2));
     margin-bottom: 0.5em;
 }
@@ -3433,7 +3577,7 @@ Member List
 .membercard-stats,
 .membercard-links {
     display: block;
-    font: 600 13px/1.25em var(--serif);
+    font: 600 var(--font-serif-13);
     text-transform: uppercase;
     letter-spacing: 10%;
     margin-bottom: 28px;
@@ -3448,7 +3592,7 @@ Member List
 }
 
 .membercard-footer {
-    font: 600 13px/1.25em var(--mono);
+    font: 600 var(--font-mono-13);
     text-transform: uppercase;
     color: hsl(var(--accent-2));
     display: flex;
@@ -3466,7 +3610,7 @@ Member List
 }
 
 .membercard-player {
-    font: 500 24px/1.3em var(--mixta);
+    font: 500 var(--font-mixta-24);
     color: hsl(var(--accent-2));
     margin-bottom: 0.5em;
 }
@@ -3537,6 +3681,11 @@ Member List
     filter: blur(5px);
 }
 
+.membercard.unsorted .membercard-hoverlay {
+    background:
+        color-mix(in oklab, hsl(var(--accent-3)) 30%, hsl(var(--backgroundBlack)) 70%);
+}
+
 .membercard:hover .membercard-hoverlay {
     opacity: 1;
     transform: scaleY(1);
@@ -3551,7 +3700,7 @@ Member List
     }
 
     .membercard-staffname {
-        font: 500 32px/1.2em var(--mixta);
+        font: 500 var(--font-mixta-32);
         color: hsl(var(--accent-2));
     }
 
@@ -3585,7 +3734,16 @@ Member List
 }
 
 
-@media only screen and (max-width: 760px) {}
+@media only screen and (max-width: 760px) {
+    .ml-header>div {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .ml-header-section {
+        margin-bottom: 32px;
+    }
+}
 
 
 
@@ -3648,7 +3806,7 @@ Guidebook
 
 .gb-nav--title,
 .gb-nav--title * {
-    font: 500 28px/1.2em var(--mixta);
+    font: 500 var(--font-mixta-28);
     background: linear-gradient(45deg, hsl(var(--accentBase-2)) 20%, hsl(var(--accentContrast)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -3666,7 +3824,7 @@ Guidebook
 
 .gb-nav-section {
     margin-bottom: 28px;
-    font: 15px/1.4em var(--serif);
+    font: var(--font-serif-15);
     overflow: auto;
 }
 
@@ -3678,7 +3836,7 @@ Guidebook
     display: flex;
     align-items: center;
     gap: 1.5ch;
-    font: 600 14px/1.4em var(--serif);
+    font: 600 var(--font-serif-14);
     letter-spacing: 5%;
     text-transform: uppercase;
     color: hsl(var(--accentBase-2));
@@ -3768,12 +3926,12 @@ Guidebook
 
 .gb-page-title {
     text-align: center;
-    font: 48px/1.1em var(--mixta);
+    font: var(--font-mixta-48);
     margin-bottom: 1em;
 }
 
 .gb-page-title--number {
-    font: 600 20px/1.3em var(--mixta);
+    font: 600 var(--font-mixta-20);
     color: hsl(var(--accent-2) /0.75);
     letter-spacing: 20%;
 }
@@ -3795,7 +3953,7 @@ Guidebook
 
 .gb-body h3 {
     margin: 2em 0 0.5em;
-    font: 600 24px/1.3em var(--mixta);
+    font: 600 var(--font-mixta-24);
     color: hsl(var(--accent-2));
     color: transparent;
     background: linear-gradient(45deg, hsl(var(--accentBase-2)) 20%, hsl(var(--accentContrast)) 100%);
@@ -3863,7 +4021,7 @@ Guidebook
 
     .gb-nav-toggle:after,
     .gb-nav-toggle.-is-open:after {
-        font: 500 13px / 1.25em var(--mono);
+        font: 500 var(--font-mono-13);
         color: hsl(var(--accentContrast));
     }
 

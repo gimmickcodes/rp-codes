@@ -1,34 +1,34 @@
-#delcookiesrow {
-    display: none;
-    color: hsl(var(--accentBase-3));
-}
+  #delcookiesrow {
+      display: none;
+      color: hsl(var(--accentBase-3));
+  }
 
-.tl-footer .darkrow2 {
-    font: 14px/1.2em var(--mono);
-    text-align: left;
-    margin: 1em 0 0;
-}
+  .tl-footer .darkrow2 {
+      font: var(--font-mono-14);
+      text-align: left;
+      margin: 1em 0 0;
+  }
 
-.forminput,
-.codebuttons,
-.textinput {
-    border-radius: 0;
-    vertical-align: middle;
-    min-height: 32px;
-    padding: 0 .75em;
-    margin: 0;
-    background: hsl(var(--backgroundHTML) / .5);
-    border: 1px solid var(--border-3);
-    border-radius: 2px;
-    font: 400 var(--serif);
-    color: hsl(var(--white));
-}
+  .forminput,
+  .codebuttons,
+  .textinput {
+      border-radius: 0;
+      vertical-align: middle;
+      min-height: 32px;
+      padding: 0 .75em;
+      margin: 0;
+      background: hsl(var(--backgroundHTML) / .5);
+      border: 1px solid var(--border-3);
+      border-radius: 2px;
+      font: 400 var(--serif);
+      color: hsl(var(--white));
+  }
 
-.threadfunctions tr {
-    display: block;
-}
+  .threadfunctions tr {
+      display: block;
+  }
 
-.threadfunctions td {
-    width: 100%;
-    display: block;
-}
+  .threadfunctions td {
+      width: 100%;
+      display: block;
+  }

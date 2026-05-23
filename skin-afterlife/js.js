@@ -62,22 +62,28 @@ document.addEventListener('keydown', function (e) {
 
 // Blur out hero on scroll 
 
-const fadeTarget = document.querySelector('.hero')
-const maxScrollDepth = 800;
+const fadeTarget = document.querySelector('#siteheader');
 
 window.addEventListener('scroll', () => {
    const scrollTop = window.scrollY;
 
-   // Calculate opacity: 1 at top of page, 0 at maxScrollDepth
-   // Math.max guarantees it won't drop below 0
-   const opacity = Math.max(0, 1 - (scrollTop / maxScrollDepth));
-   const blur = Math.max(0, 0 + (scrollTop / maxScrollDepth * 5)) + 'px';
+   // Dynamically get the height of the hero element (or use window.innerHeight)
+   const maxScrollDepth = (fadeTarget.offsetHeight * 1.5) || 800; // Fallback to 800 if 0
 
-   // Update the CSS variable
+   // Calculate ratio (clamped between 0 and 1)
+   const scrollRatio = Math.min(1, Math.max(0, scrollTop / maxScrollDepth));
+
+   // Calculate opacity: 1 at top, 0 at maxScrollDepth
+   const opacity = 1 - scrollRatio;
+
+   // Calculate blur: 0px at top, 5px at maxScrollDepth
+   const blur = (scrollRatio * 5) + 'px';
+
+   // Update the CSS variables
    fadeTarget.style.setProperty('--scroll-opacity', opacity);
    fadeTarget.style.setProperty('--scroll-blur', blur);
 
-}, { passive: true }); // passive: true optimizes scroll performance
+}, { passive: true });
 
 
 
