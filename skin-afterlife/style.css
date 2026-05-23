@@ -172,7 +172,7 @@ TOKENS
         --font-serif-12: 12px/1.25em var(--serif);
         --font-serif-13: 13px/1.25em var(--serif);
         --font-serif-14: 14px/1.4em var(--serif);
-        --font-serif-15: 14px/1.4em var(--serif);
+        --font-serif-15: 15px/1.4em var(--serif);
         --font-serif-16: 16px/1.5em var(--serif);
         --font-serif-17: 17px/1.5em var(--serif);
 
@@ -319,7 +319,7 @@ anchor {
 NAVIGATION
 *****************************************/
 #navbar {
-    background: hsl(var(--backgroundBlack) / 0.25);
+    background: hsl(var(--backgroundBlack) / 0.5);
     border-bottom: 0.5px solid var(--border-3);
     width: 100%;
     padding: 0 0 0 24px;
@@ -669,6 +669,7 @@ NAVIGATION
     .hero-subtitle {
         text-align: center;
         transform: translateY(-10px);
+        padding: 0 var(--boardInsetSides);
     }
 
     .hero-image {
@@ -1597,7 +1598,7 @@ a.newschip b {
         'online links'
         'onlinetoday links'
         'members records' / min(80%, 835px) 1fr;
-    padding: 24px var(--boardInsetSides) 40px;
+    padding: 24px calc(var(--boardInsetSides) / 2) 40px var(--boardInsetSides);
     border-bottom: 0.5px solid var(--border-3);
 }
 
@@ -1731,7 +1732,7 @@ a.newschip b {
     grid-area: links;
     display: flex;
     flex-direction: column;
-    gap: 1ch;
+    gap: 1.5ch 1ch;
     align-items: flex-end;
 }
 
@@ -2019,10 +2020,14 @@ a.newschip b {
         flex-direction: row;
         align-items: flex-start;
         flex-wrap: wrap;
-        margin: 0 0 24px;
+        margin: 0 0 32px;
     }
 
     .boardstats-links a {}
+
+    .boardstats-online-listbox {
+        margin-bottom: 40px
+    }
 
     .boardstats-members {
         display: block;
@@ -2452,7 +2457,7 @@ POST ROWS & MINI PROFILE
 }
 
 .pr-toolbar--timestamp {
-    color: hsl(var(--accent-2));
+    color: hsl(var(--accent-1));
 }
 
 .pr-toolbar span {
@@ -2799,18 +2804,31 @@ divider {
 }
 
 .pr-content-textarea {
+    font-weight: 400;
+
     br {
         height: 0.5rem;
     }
 
     b,
-    em {
-        color: color-mix(in oklab, hsl(var(--accent-1)) 30%, hsl(var(--accent-2)) 70%);
+    em,
+    a {
+        color: color-mix(in oklab, hsl(var(--accent-1)) 40%, hsl(var(--accent-2)) 70%);
         color: hsl(var(--accent-2));
     }
 
-    em {
+    em,
+    i {
         font-size: 500;
+        font-weight: 500;
+    }
+
+    a {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+        text-decoration-color: hsl(var(--accent-3));
     }
 }
 
@@ -2822,6 +2840,12 @@ divider {
             "maincontent"
             "footer" / 1fr;
         padding-left: var(--boardInsetSides);
+    }
+
+    .postrow-grid::before {
+        width: 120%;
+        height: 200px;
+        background: linear-gradient(to bottom, hsl(var(--accent-2)) 30%, hsl(var(--accent-2) / 0) 100%);
     }
 
     .pr-header,
@@ -3402,12 +3426,20 @@ h0::before {
 /****************************************
 Member List
 *****************************************/
+.ml-title {
+    margin: -0.5em 0 0.5em;
+    font: 400 var(--font-mixta-64);
+    text-transform: lowercase;
+    letter-spacing: 2%;
+    font-variant-ligatures: discretionary-ligatures;
+    font-feature-settings: "dlig" 1;
+    color: transparent;
+}
 
-.ml-header>div {
+.ml-header {
     display: grid;
     grid-template: auto / 2fr 3fr 1fr;
     gap: 40px;
-    padding: var(--boardInsetSides);
 }
 
 .ml-header-col {}
@@ -3442,7 +3474,6 @@ Member List
     color: hsl(var(--bodytext-1)/0.625);
     max-height: calc(7.5 * 1.5em);
     overflow: auto;
-    /* padding-bottom: 2px; */
 }
 
 .ml-header-col input {
@@ -3498,12 +3529,132 @@ Member List
     flex-direction: column;
 }
 
+.ml-drawer-toggle,
+.ml-drawer-btn,
+.ml-drawer-close-btn {
+    display: none;
+}
+
+.ml-drawer-btn-wrapper {
+    position: relative;
+    display: block;
+}
+
+@media (max-width: 600px) {
+
+    .ml-drawer-btn {
+        position: sticky;
+        top: var(--boardInsetSides);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.5em 1.25ch;
+        background: color-mix(in oklab, hsl(var(--accent-3)/.9) 10%, hsl(var(--backgroundBlack)/.9) 90%);
+        border: 1px solid var(--border-3);
+        border-radius: 2px;
+        backdrop-filter: blur(5px);
+        font: 600 var(--font-mono-14);
+        color: hsl(var(--accentBase-2));
+        text-transform: uppercase;
+        letter-spacing: 10%;
+        cursor: pointer;
+        user-select: none;
+        transition: 0.3s ease;
+    }
+
+    .ml-drawer-btn.is-sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        margin: 0;
+        padding: 1em var(--boardInsetSides);
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        background: hsl(var(--backgroundBlack) / 0.85);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        z-index: 30;
+    }
+
+    .ml-drawer-btn .ph,
+    .ml-drawer-close-btn {
+        font-size: 20px;
+    }
+
+    .ml-drawer-close-btn {
+        display: flex;
+        align-self: flex-end;
+        cursor: pointer;
+        padding: 5px;
+        color: hsl(var(--bodytext-1)/0.625);
+        margin-bottom: 10px;
+    }
+
+    /* Keep the input checkbox completely invisible */
+    .ml-drawer-toggle {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .ml-header.frame {
+        border: 0;
+    }
+
+    .ml-header {
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        position: fixed;
+        top: 0;
+        left: 100vw;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        background: hsl(var(--backgroundBlack));
+        padding: 20px var(--boardInsetSides) 40px;
+        overflow-y: auto;
+        transition: 0.3s ease;
+        z-index: 20;
+    }
+
+    .ml-header-col:last-child ul {
+        flex-direction: row;
+    }
+
+    .ml-drawer-toggle:checked~.ml-header {
+        left: 0;
+        opacity: 1;
+    }
+
+    .ml-header>div {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .ml-header-section {
+        margin-bottom: 32px;
+    }
+}
+
+
+
+
+
+/****************************************
+MEMBER ROWS
+*****************************************/
 
 .ml-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 48px 32px;
-    margin-top: 48px;
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-3);
 }
 
 .membercard {
@@ -3543,6 +3694,7 @@ Member List
     font-size: 64px;
     top: 8px;
     right: 8px;
+    z-index: 10;
 }
 
 .membercard-stability_meter .ph {
@@ -3560,12 +3712,19 @@ Member List
     opacity: .75;
 }
 
+.membercard-avi {
+    width: 80px;
+    aspect-ratio: 1;
+    margin: 20px;
+    display: none;
+}
+
 .membercard-front,
 .membercard-hover {
     grid-area: content;
     padding: 20px;
     width: 100%;
-    /* transition-delay: 100ms !important; */
+    position: absolute;
 }
 
 .membercard-name {
@@ -3693,6 +3852,9 @@ Member List
 }
 
 .membercard.staff {
+    .membercardlayout {
+        align-items: flex-start;
+    }
 
     .membercard-image {
         height: 84%;
@@ -3700,8 +3862,10 @@ Member List
     }
 
     .membercard-staffname {
+        grid-area: content;
         font: 500 var(--font-mixta-32);
         color: hsl(var(--accent-2));
+        padding: 16px 20px;
     }
 
     .membercard-name,
@@ -3709,7 +3873,8 @@ Member List
     .membercard-footer,
     .membercard-stability_meter,
     .membercard-player,
-    .membercard-links {
+    .membercard-links,
+    .membercard-hover {
         display: none;
     }
 
@@ -3721,12 +3886,6 @@ Member List
         display: none;
     }
 
-    .membercard-hover {
-        opacity: 1;
-        filter: blur(0);
-        transition-delay: 150ms;
-        padding: 16px 20px;
-    }
 }
 
 .membercard.staff:hover .membercard-image {
@@ -3735,13 +3894,73 @@ Member List
 
 
 @media only screen and (max-width: 760px) {
-    .ml-header>div {
-        grid-template-columns: 1fr;
-        gap: 0;
+    .ml-grid {
+        display: block;
     }
 
-    .ml-header-section {
+    .membercard {
         margin-bottom: 32px;
+        width: 100%;
+        height: 200px;
+    }
+
+    .membercardlayout {
+        grid-template: 'content image' / 1fr clamp(100px, 33%, 200px);
+        gap: 24px 0;
+        align-items: center;
+    }
+
+    .membercard-image {
+        grid-area: image;
+        height: 100%;
+        z-index: 2;
+        mix-blend-mode: difference;
+    }
+
+    .membercard:hover .membercard-image {
+        transform: none;
+        height: 100%;
+    }
+
+    /* .membercard-image::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: hsl(var(--accent-3) / 0.75);
+        mix-blend-mode: multiply;
+    } */
+    .membercard-stability_meter {}
+
+    .membercard-stability_meter .ph {
+        background: linear-gradient(to right, hsl(var(--accent-3)) 20%, hsl(var(--white) / 0.8) 20%);
+    }
+
+    .membercard-front,
+    .membercard-hover {
+        padding: 24px var(--boardInsetSides) 16px;
+    }
+
+    .membercard:not(.staff) .membercardlayout::before {
+        width: 100%;
+        transform: scaleX(-100%);
+    }
+
+    .membercard-hover .membercard-footer {
+        flex-basis: 100%;
+        align-self: flex-end;
+    }
+
+    .membercard:hover .membercard-hoverlay {
+        opacity: 0.5;
+    }
+
+    .membercard.staff {
+        .membercard-image {
+            height: 100%;
+            border-bottom: 0;
+        }
     }
 }
 

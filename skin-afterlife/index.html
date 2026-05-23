@@ -128,7 +128,7 @@
     <div class="sitebody">
 
         <!-- <% BOARD %> AKA HOME -->
-        <div class="sitebody--inset PREVIEW-HOME" id="idx" style="display:none;">
+        <div class="sitebody--inset PREVIEW-HOME" id="idx" style="display:inherit;">
             <div class="cat cat-getstarted" id="cat-{ID}">
                 <div class="cat--header glowtext_v2">Get Started</div>
                 <div class="frame">
@@ -705,7 +705,7 @@
 
 
         <!-- <% SUBFORUM HEADERS %> -->
-        <div class="sitebody--inset PREVIEW-SUBFORUM" id="SF" style="display: none;">
+        <div class="sitebody--inset PREVIEW-SUBFORUM" id="SF" style="display: inherit;">
 
 
             <div class="subforumgrid">
@@ -931,7 +931,7 @@
 
 
         <!-- <% POSTROW %> -->
-        <div class="sitebody--inset PREVIEW-POSTROW" id="ST" style="display: none;">
+        <div class="sitebody--inset PREVIEW-POSTROW" id="ST" style="display: inherit;">
 
 
             <!-- JCINK INSERTED ABOVE POST ROW HEADER -->
@@ -1595,7 +1595,7 @@
             </div>
 
             <!--
-            <div class="v1" style="display: none;">
+            <div class="v1" style="display: inherit;">
                 <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame forechosen unstable">
                     <div class="frame-inner postrow-grid">
 
@@ -1677,7 +1677,7 @@
 
 
         <!-- <% PROFILE %> -->
-        <div class="sitebody--inset PREVIEW-PROFILE profile forechosen stable" id="Profile" style="display: none;">
+        <div class="sitebody--inset PREVIEW-PROFILE profile forechosen stable" id="Profile" style="display: inherit;">
 
 
             <div class="profile-header">
@@ -1940,112 +1940,129 @@
         <!-- <% MEMBER LIST %> -->
         <div class="sitebody--inset PREVIEW-MEMBERS" id="Members" style="display:inherit">
 
-            <div class="frame ml-header">
-                <div class="frame-inner">
-                    <div class="ml-header-col">
-                        <div class="ml-header-section">
-                            <div class="ml-header-section-header">Search</div>
-                            <div class="ml-header-section-content">
-                                <input class="forminput ml-namesearch" type="text" name="name" value=""
-                                    placeholder="Search">
-                            </div>
-                        </div>
-                        <div class="ml-header-section">
-                            <div class="ml-header-section-header">Sort by</div>
-                            <div class="ml-header-section-content">
-                                <ul class="ml-filter-list sort-by-button-group">
-                                    <button type="button" data-sort-by="memposts"
-                                        class="filter-reset selected">Posts</button>
-                                    <button type="button" data-filter-value="" data-sort-by="memname">A–Z</button>
-                                    <button type="button" data-sort-by="memnamereverse">Z-A</button>
-                                    <button type="button" data-sort-by="memID">Newest</button>
-                                    <button type="button" data-sort-by="memIDold">Oldest</button>
-                                    <button type="button" data-sort-by="memfavor">Favor</button>
-                                    <button type="button" data-sort-by="memdeaths">Deaths</button>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="ml-title glowtext_v2">Resident Directory</div>
 
-                    </div>
-                    <div class="ml-header-col">
-                        <div class="ml-header-section">
-                            <div class="ml-header-section-header">Type</div>
-                            <div class="ml-header-section-content">
-                                <ul class="ml-filter-list tags option-set" data-filter-group="tags">
-                                    <li data-filter-value=".type-staff">Staff</li>
-                                    <li data-filter-value=".type-forechosen">forechosen</li>
-                                    <li data-filter-value=".type-cryptdweller">Cryptdweller</li>
-                                    <li data-filter-value=".type-faded">Faded</li>
-                                    <li data-filter-value=".stable">Stable</li>
-                                    <li data-filter-value=".unstable">Unstable</li>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="ml-drawer-btn-wrapper">
+                <label for="ml-drawer-toggle" class="ml-drawer-btn">
+                    <i class="ph ph-funnel-simple"></i> <span>Filters</span>
+                </label>
+            </div>
 
-                        <div class="ml-header-section">
-                            <div class="ml-header-section-header">Sort by</div>
-                            <div class="ml-header-section-content">
-                                <ul class="ml-filter-list players filter option-set exclusive"
-                                    data-filter-group="players">
-                                    <li data-filter-value="" class="filter-reset selected">All</li>
-                                    <li value="Akrasia">Akrasia</li>
-                                    <li value="cheno">Cheno</li>
-                                    <li value="elles">Elles</li>
-                                    <li value="Falkyrin">Falkyrin</li>
-                                    <li value="Gmot">Gmot</li>
-                                    <li value="Hekate">Hekate</li>
-                                    <li value="ink">Ink</li>
-                                    <li value="irene">Irene</li>
-                                    <li value="jyujin">Jyujin</li>
-                                    <li value="Lantern">Lantern</li>
-                                    <li value="Nines">Nines</li>
-                                    <li value="Nova">Nova</li>
-                                    <li value="Null">Null</li>
-                                    <li value="paradisi.">Paradisi.</li>
-                                    <li value="Phimbo">Phimbo</li>
-                                    <li value="priestess">Priestess</li>
-                                    <li value="Quartz">Quartz</li>
-                                    <li value="Rin">Rin</li>
-                                    <li value="sena">Sena</li>
-                                    <li value="sheba">Sheba</li>
-                                    <li value="shilo">Shilo</li>
-                                    <li value="Shilo">Shilo</li>
-                                    <li value="Shookle/Kleo">Shookle/kleo</li>
-                                    <li value="skaial">Skaial</li>
-                                    <li value="snow">Snow</li>
-                                    <li value="Sol">Sol</li>
-                                    <li value="Soma">Soma</li>
-                                    <li value="Staff">Staff</li>
-                                    <li value="Utahraptor">Utahraptor</li>
-                                    <li value="Xeno">Xeno</li>
-                                    <li value="Zhen">Zhen</li>
-                                    <li value="Zomb">Zomb</li>
-                                </ul>
-                            </div>
+            <!-- Keep the checkbox input right above the .ml-header container -->
+            <input type="checkbox" id="ml-drawer-toggle" class="ml-drawer-toggle">
+
+            <div class="ml-header">
+                <!-- Close button visible only on mobile full-screen view -->
+                <label for="ml-drawer-toggle" class="ml-drawer-close-btn">
+                    <i class="ph ph-x"></i>
+                </label>
+
+                <div class="ml-header-col">
+                    <div class="ml-header-section">
+                        <div class="ml-header-section-header">Search</div>
+                        <div class="ml-header-section-content">
+                            <input class="forminput ml-namesearch" type="text" name="name" value=""
+                                placeholder="Search">
                         </div>
                     </div>
-                    <div class="ml-header-col">
-                        <div class="ml-header-section">
-                            <div class="ml-header-section-header">Status</div>
-                            <div class="ml-header-section-content">
-                                <ul class="ml-filter-list status filter option-set exclusive"
-                                    data-filter-group="players">
-                                    <li data-filter-value="" class="filter-reset selected">All</li>
-                                    <li>Active</li>
-                                    <li>Inactive</li>
-                                </ul>
-                            </div>
+                    <div class="ml-header-section">
+                        <div class="ml-header-section-header">Sort by</div>
+                        <div class="ml-header-section-content">
+                            <ul class="ml-filter-list sort-by-button-group">
+                                <button type="button" data-sort-by="memposts"
+                                    class="filter-reset selected">Posts</button>
+                                <button type="button" data-filter-value="" data-sort-by="memname">A–Z</button>
+                                <button type="button" data-sort-by="memnamereverse">Z-A</button>
+                                <button type="button" data-sort-by="memID">Newest</button>
+                                <button type="button" data-sort-by="memIDold">Oldest</button>
+                                <button type="button" data-sort-by="memfavor">Favor</button>
+                                <button type="button" data-sort-by="memdeaths">Deaths</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ml-header-col">
+                    <div class="ml-header-section">
+                        <div class="ml-header-section-header">Type</div>
+                        <div class="ml-header-section-content">
+                            <ul class="ml-filter-list tags option-set" data-filter-group="tags">
+                                <li data-filter-value=".type-staff">Staff</li>
+                                <li data-filter-value=".type-forechosen">forechosen</li>
+                                <li data-filter-value=".type-cryptdweller">Cryptdweller</li>
+                                <li data-filter-value=".type-faded">Faded</li>
+                                <li data-filter-value=".stable">Stable</li>
+                                <li data-filter-value=".unstable">Unstable</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ml-header-section">
+                        <div class="ml-header-section-header">Sort by</div>
+                        <div class="ml-header-section-content">
+                            <ul class="ml-filter-list players filter option-set exclusive" data-filter-group="players">
+                                <li data-filter-value="" class="filter-reset selected">All</li>
+                                <li value="Akrasia">Akrasia</li>
+                                <li value="cheno">Cheno</li>
+                                <li value="elles">Elles</li>
+                                <li value="Falkyrin">Falkyrin</li>
+                                <li value="Gmot">Gmot</li>
+                                <li value="Hekate">Hekate</li>
+                                <li value="ink">Ink</li>
+                                <li value="irene">Irene</li>
+                                <li value="jyujin">Jyujin</li>
+                                <li value="Lantern">Lantern</li>
+                                <li value="Nines">Nines</li>
+                                <li value="Nova">Nova</li>
+                                <li value="Null">Null</li>
+                                <li value="paradisi.">Paradisi.</li>
+                                <li value="Phimbo">Phimbo</li>
+                                <li value="priestess">Priestess</li>
+                                <li value="Quartz">Quartz</li>
+                                <li value="Rin">Rin</li>
+                                <li value="sena">Sena</li>
+                                <li value="sheba">Sheba</li>
+                                <li value="shilo">Shilo</li>
+                                <li value="Shilo">Shilo</li>
+                                <li value="Shookle/Kleo">Shookle/kleo</li>
+                                <li value="skaial">Skaial</li>
+                                <li value="snow">Snow</li>
+                                <li value="Sol">Sol</li>
+                                <li value="Soma">Soma</li>
+                                <li value="Staff">Staff</li>
+                                <li value="Utahraptor">Utahraptor</li>
+                                <li value="Xeno">Xeno</li>
+                                <li value="Zhen">Zhen</li>
+                                <li value="Zomb">Zomb</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ml-header-col">
+                    <div class="ml-header-section">
+                        <div class="ml-header-section-header">Status</div>
+                        <div class="ml-header-section-content">
+                            <ul class="ml-filter-list status filter option-set exclusive" data-filter-group="players">
+                                <li data-filter-value="" class="filter-reset selected">All</li>
+                                <li>Active</li>
+                                <li>Inactive</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="ml-grid">
 
                 <div
                     class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} cryptdweller unstable">
                     <div class="frame-inner membercardlayout">
-                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-image" style="background-image: var(--placehold-hover);">
+                            <div class="membercard-avi imgfill" style="background-image: var(--placehold-icon);">
+                            </div>
+                        </div>
                         <div class="membercard-stability_meter">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
@@ -2195,6 +2212,7 @@
                             <i class="ph ph-heart-break"></i>
                             <i class="ph ph-skull"></i>
                         </div>
+                        <div class="membercard-staffname">Merry</div>
                         <div class="membercard-front">
                             <div class="membercard-name">Santino Ravus</div>
                             <div class="membercard-stats">
@@ -2208,7 +2226,6 @@
                         </div>
                         <div class="membercard-hoverlay"></div>
                         <div class="membercard-hover">
-                            <div class="membercard-staffname">Merry</div>
                             <div class="membercard-player">Played by Quartz</div>
                             <div class="membercard-links">
                                 <a><i class="ph ph-arrow-right"></i>Profile</a>
@@ -2230,7 +2247,7 @@
 
 
         <!-- <% GUIDEBOOK %> -->
-        <div class="sitebody--inset PREVIEW-GUIDEBOOK" style="display:none;">
+        <div class="sitebody--inset PREVIEW-GUIDEBOOK" style="display:inherit;">
 
             <div class="frame">
                 <div class="frame-inner guidebook">
@@ -2435,7 +2452,7 @@
     .spoiler-text {
         filter: blur(4px);
         transition: filter 0.5s ease;
-        user-select: none;
+        user-select: inherit;
     }
 
     .threads-spoiler.revealed .spoiler-text {
@@ -2450,7 +2467,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: none;
+        pointer-events: inherit;
         /* Let clicks pass through to the container */
         transition: opacity 0.4s ease;
     }

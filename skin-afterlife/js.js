@@ -169,3 +169,32 @@ for (var i = 0; i < gbNavTabs.length; i++) {
 
    });
 }
+
+
+
+// Member page filters stick on scroll
+
+document.addEventListener("DOMContentLoaded", function () {
+   const wrapper = document.querySelector('.ml-drawer-btn-wrapper');
+   const button = document.querySelector('.ml-drawer-btn');
+
+   if (wrapper && button) {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+            // Get the element's position relative to the viewport
+            const bounding = entry.boundingClientRect;
+
+            // Only stick if it leaves the viewport via scrolling DOWN (top of element went above top of screen)
+            if (!entry.isIntersecting && bounding.top < 0) {
+               button.classList.add('is-sticky');
+            } else {
+               button.classList.remove('is-sticky');
+            }
+         });
+      }, {
+         threshold: 0
+      });
+
+      observer.observe(wrapper);
+   }
+});
