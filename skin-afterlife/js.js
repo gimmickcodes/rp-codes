@@ -146,6 +146,7 @@ var gbNavTabs = document.querySelectorAll('.gb-nav a');
 
 // Populate dropdown toggle with the name of the selected tab
 gbTabsToggleFiller.innerHTML = document.getElementsByClassName('is-selected')[0].innerHTML;
+console.log(gbTabsToggleFiller)
 
 // Open dropdown menu on clicking toggle
 gbTabsToggle.addEventListener('click', function (e) {
@@ -197,4 +198,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
       observer.observe(wrapper);
    }
+});
+
+
+// Account switch toggle
+document.addEventListener('DOMContentLoaded', () => {
+   const navSection = document.querySelector('.navpanel-section');
+   const openToggle = document.querySelector('.accswitch-toggle');
+   const closeToggle = document.querySelector('.accswitch-close');
+
+   // Open the panel
+   if (openToggle && navSection) {
+      openToggle.addEventListener('click', (e) => {
+         e.preventDefault();
+         navSection.classList.add('acc-switch-open');
+      });
+   }
+
+   // Close the panel and return to user details
+   if (closeToggle && navSection) {
+      closeToggle.addEventListener('click', (e) => {
+         e.preventDefault();
+         navSection.classList.remove('acc-switch-open');
+      });
+   }
+
+   // NEW: Close the panel when clicking anywhere outside of it
+   document.addEventListener('click', (e) => {
+      // Only run this logic if the panel is actually open
+      if (navSection && navSection.classList.contains('acc-switch-open')) {
+
+         // Check if the click happened inside the panel, the open button, or the close button
+         const clickedInsidePanel = e.target.closest('.accswitch-panel');
+         const clickedOpenToggle = e.target.closest('.accswitch-toggle');
+
+         // If the click was NOT inside the panel AND NOT on the open toggle, close it
+         if (!clickedInsidePanel && !clickedOpenToggle) {
+            navSection.classList.remove('acc-switch-open');
+         }
+      }
+   });
 });

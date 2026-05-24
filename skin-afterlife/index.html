@@ -36,8 +36,6 @@
 </head>
 
 <body class="userid-{ID} mgroupid-{ID}" id="idx">
-    <anchor id="top"></anchor>
-
 
     <div id="navbar">
         <div class="navbar--menubutton mobile" onclick="menuFunction()"><i class="ph ph-list"></i></div>
@@ -58,14 +56,35 @@
     <div id="navpanel" class="faded">
         <div class="navpanel-section navpanel-user">
             <div class="navpanel-user--left">
-                <div class="navpanel--username"><a href="">Santino Ravus</a> <a href="#" title="Switch Account"><i
-                            class="ph ph-arrows-clockwise"></i></a>
+                <div class="navpanel--username">
+                    <a href="">{Username}</a>
+                    <div type="button" class="accswitch-toggle perms-loggedin" title="Switch accounts"><i
+                            class="ph ph-arrows-clockwise"></i></div>
+
                 </div>
+                <div class=""></div>
                 <div class="navpanel--userlinks">
-                    <a href="#" title="Messages"><i class="ph ph-envelope"></i> 21</a>
-                    <a href="#" title="Alerts"><i class="ph ph-bell"></i> 21</a>
-                    <a href="#" title="Your Inventory"><i class="ph ph-sword"></i>Inventory</a>
+                    <a href="#" title="Messages" class="perms-loggedin"><i class="ph ph-envelope"></i> 21</a>
+                    <a href="#" title="Alerts" class="perms-loggedin"><i class="ph ph-bell"></i> 21</a>
+                    <a href="#" title="Your Inventory" class="perms-loggedin"><i class="ph ph-sword"></i>Inventory</a>
                 </div>
+            </div>
+            <div class="accswitch-panel">
+                <div class="accswitch-close" title="Go back"><i class="ph ph-arrow-left"></i> Go back</div>
+                <span id="subaccounts_menu" class="perms-loggedin">
+                    <form
+                        action="https://jewelsofetheria.jcink.net/index.php?&amp;act=Login&amp;CODE=01&amp;CookieDate=1"
+                        name="subswitch" method="POST">
+                        <input type="hidden" name="auth_key" value="32298511ffb1310bd3bb856bb705b93f">
+                        <input type="hidden" name="UserName" value="subacct">
+                        <input type="hidden" name="PassWord" value="subacct">
+                        <input type="hidden" name="referer" value="">
+                        <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                            <option value="------------" selected="selected">Switch Account</option>
+                            <option value="13">Roman Torrano</option>
+                        </select>
+                    </form>
+                </span>
             </div>
             <a href="" class="navpanel--avi imgfill" style="background-image:var(--placehold-icon)"></a>
         </div>
@@ -90,6 +109,8 @@
         </div>
         <div class="navpanel-section"></div>
     </div>
+
+    <anchor id="top"></anchor>
 
 
     <div id="siteheader">
@@ -156,11 +177,16 @@
                                 <a href="" class="userbox--avi imgfill"
                                     style="background-image:var(--placehold-icon)"></a>
                                 <div class="userbox--kicker">Welcome Back,</div>
-                                <div class="userbox--username">Santino Ravus</div>
-                                <div class="userbox--userlinks">
-                                    <a href="#">Messages</a>
-                                    <a href="#">Alerts</a>
-                                    <a href="#">Switch Account</a>
+                                <div class="userbox--username">
+                                    <a href="">{Username}</a>
+                                </div>
+
+                                <div class="perms-loggedin">
+                                    <div class="userbox--userlinks">
+                                        <a href="#">Messages</a>
+                                        <a href="#">Alerts</a>
+                                        <a href="#">Switch Account</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -788,13 +814,10 @@
             <div class="topicrow frame">
                 <div class="frame-inner">
                     <input type="checkbox" id="TID_2192" name="TID_2192" value="0" onclick="javascript:check(2192, 0);">
-                    <div class="topic-threadname">
-                        <a href="">the way that it has to be</a>
-                        <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
-                            </a><a href="">...4</a>)</span>
-                    </div>
+                    <div class="topic-threadname"> <a href="">the way that it has to be</a> </div>
                     <div class="topic-threaddesc">you know you'll only last so long, you're only made so
-                        well</div>
+                        well <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
+                            </a><a href="">...4</a>)</span></div>
                     <div class="topic-meta-box">
                         <div class="topic-avi imgfill" style="background-image: var(--placehold-icon)">
                         </div>
@@ -827,13 +850,10 @@
             <div class="topicrow frame">
                 <div class="frame-inner">
                     <input type="checkbox" id="TID_2192" name="TID_2192" value="0" onclick="javascript:check(2192, 0);">
-                    <div class="topic-threadname">
-                        <a href="">the way that it has to be</a>
-                        <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
-                            </a><a href="">...4</a>)</span>
-                    </div>
-                    <div class="topic-threaddesc">you know you'll only last so long, you're only
-                        made so well</div>
+                    <div class="topic-threadname"> <a href="">the way that it has to be</a> </div>
+                    <div class="topic-threaddesc">you know you'll only last so long, you're only made so
+                        well <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
+                            </a><a href="">...4</a>)</span></div>
                     <div class="topic-meta-box">
                         <div class="topic-avi imgfill" style="background-image: var(--placehold-icon)">
                         </div>
@@ -860,13 +880,10 @@
             <div class="topicrow frame">
                 <div class="frame-inner">
                     <input type="checkbox" id="TID_2192" name="TID_2192" value="0" onclick="javascript:check(2192, 0);">
-                    <div class="topic-threadname">
-                        <a href="">the way that it has to be</a>
-                        <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
-                            </a><a href="">...4</a>)</span>
-                    </div>
-                    <div class="topic-threaddesc">you know you'll only last so long, you're only
-                        made so well</div>
+                    <div class="topic-threadname"> <a href="">the way that it has to be</a> </div>
+                    <div class="topic-threaddesc">you know you'll only last so long, you're only made so
+                        well <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
+                            </a><a href="">...4</a>)</span></div>
                     <div class="topic-meta-box">
                         <div class="topic-avi imgfill" style="background-image: var(--placehold-icon)">
                         </div>
@@ -889,6 +906,9 @@
                     </div>
                 </div>
             </div>
+
+
+
             <!-- END<% TOPIC ROW %> -->
 
             <div class="tl-footer">
@@ -984,6 +1004,8 @@
                             <a href="">Quote</a>
                             <a href="">Delete</a>
                             <a href="">Flag</a>
+                            <span>·</span>
+                            <input type="checkbox" onclick="select_post(&quot;548&quot;);" value="0">
                         </div>
 
                         <!-- <% MINIPROFILE %> -->
@@ -2256,7 +2278,7 @@
                         <div class="gb-nav--title">Resident's <b>Handbook</b></div>
 
                         <div class="gb-nav-toggle">
-                            <span class="gb-nav-toggle-placehold">Viewing: </span>
+                            <!-- <span class="gb-nav-toggle-placehold">Viewing </span> -->
                             <span class="gb-nav-toggle-placehold-content"></span>
 
                         </div>
