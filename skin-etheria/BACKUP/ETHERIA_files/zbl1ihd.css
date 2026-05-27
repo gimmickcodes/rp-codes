@@ -1,0 +1,76 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * norman-stencil:
+ *   - http://typekit.com/eulas/00000000000000007736d73e
+ *   - http://typekit.com/eulas/00000000000000007736d741
+ * norman-stencil-fat:
+ *   - http://typekit.com/eulas/00000000000000007736d73f
+ *   - http://typekit.com/eulas/00000000000000007736d740
+ * norman-variable:
+ *   - http://typekit.com/eulas/0000000000000000774b9743
+ *
+ * © 2009-2023 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2023-03-14 22:29:45 UTC"}*/
+
+@import url("https://web.archive.org/web/20230611025346cs_/https://p.typekit.net/p.css?s=1&k=zbl1ihd&ht=tk&f=50382.50383.50384.50385.51964&a=780888&app=typekit&e=css");
+
+@font-face {
+font-family:"norman-stencil";
+src:url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/9dbd6a/00000000000000007736d73e/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/9dbd6a/00000000000000007736d73e/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/9dbd6a/00000000000000007736d73e/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"norman-stencil";
+src:url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/d38105/00000000000000007736d741/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff2"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/d38105/00000000000000007736d741/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/d38105/00000000000000007736d741/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
+}
+
+@font-face {
+font-family:"norman-stencil-fat";
+src:url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/ab43bf/00000000000000007736d73f/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3") format("woff2"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/ab43bf/00000000000000007736d73f/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3") format("woff"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/ab43bf/00000000000000007736d73f/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:800;font-stretch:normal;
+}
+
+@font-face {
+font-family:"norman-stencil-fat";
+src:url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/7370c5/00000000000000007736d740/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff2"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/7370c5/00000000000000007736d740/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/7370c5/00000000000000007736d740/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
+}
+
+@font-face {
+font-family:"norman-variable";
+src:url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/081f8f/0000000000000000774b9743/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/081f8f/0000000000000000774b9743/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://web.archive.org/web/20230611025346im_/https://use.typekit.net/af/081f8f/0000000000000000774b9743/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+.tk-norman-stencil { font-family: "norman-stencil",sans-serif; }
+.tk-norman-stencil-fat { font-family: "norman-stencil-fat",sans-serif; }
+.tk-norman-variable { font-family: "norman-variable",sans-serif; }
+
+/*
+     FILE ARCHIVED ON 02:53:46 Jun 11, 2023 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 19:01:40 May 25, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.494
+  captures_list: 0.813
+  exclusion.robots: 0.067
+  exclusion.robots.policy: 0.05
+  esindex: 0.012
+  cdx.remote: 26.71
+  LoadShardBlock: 103.532 (3)
+  PetaboxLoader3.resolve: 142.412 (4)
+  PetaboxLoader3.datanode: 67.341 (4)
+  load_resource: 158.207
+*/

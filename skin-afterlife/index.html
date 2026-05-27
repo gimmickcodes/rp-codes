@@ -7,8 +7,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link href="style.css" rel="stylesheet">
     <link href="jcink-defaults.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="js.js" defer></script>
 
     <!-- font icons -->
@@ -35,42 +35,46 @@
 
 </head>
 
-<body class="userid-{ID} mgroupid-{ID}" id="idx">
+<body class="userid-{ID} grp-{ID}" id="idx">
 
     <div id="navbar">
-        <div class="navbar--menubutton mobile" onclick="menuFunction()"><i class="ph ph-list"></i></div>
+        <div class="navbar--menubutton mobile" onclick="menuFunction()"><i class="ph ph-list"></i><i
+                class="ph ph-x"></i></div>
         <div class="navbar--menubutton" onclick="menuFunction()">Menu</div>
         <div class="navbar--breadcrumbs">
-            <a href="#">After We Die</a>
-            <a href="">Category</a>
-            <a href="">Board</a>
+            <div id="navstrip">
+                <a href="#">After We Die</a><span class="navstrip-separator">·</span>
+                <a href="">Category</a><span class="navstrip-separator">·</span>
+                <a href="">Board</a>
+            </div>
         </div>
 
         <div class="navbar--utilities">
-            <a href="#top"><i class="ph ph-caret-up"></i></a>
+            <a class="scrollButton" data-target="#gotoTop" title="go to top"><i class="ph ph-caret-up"></i></a>
             <a href="#bottom"><i class="ph ph-caret-down"></i></a>
             <i class="ph ph-sun"></i>
         </div>
     </div>
 
     <div id="navpanel" class="faded">
-        <div class="navpanel-section navpanel-user">
+        <div class="navpanel-section navpanel-user accswitch-swap-area">
             <div class="navpanel-user--left">
                 <div class="navpanel--username">
                     <a href="">{Username}</a>
-                    <div type="button" class="accswitch-toggle perms-loggedin" title="Switch accounts"><i
-                            class="ph ph-arrows-clockwise"></i></div>
-
+                    <div class="accswitch-toggle perms-loggedin" title="Switch accounts"><i class="ph ph-swap"></i>
+                    </div>
                 </div>
-                <div class=""></div>
-                <div class="navpanel--userlinks">
-                    <a href="#" title="Messages" class="perms-loggedin"><i class="ph ph-envelope"></i> 21</a>
-                    <a href="#" title="Alerts" class="perms-loggedin"><i class="ph ph-bell"></i> 21</a>
-                    <a href="#" title="Your Inventory" class="perms-loggedin"><i class="ph ph-sword"></i>Inventory</a>
+                <div class="perms-loggedin">
+                    <div class="navpanel--userlinks">
+                        <a href="#" title="Messages" class="perms-loggedin"><i class="ph ph-envelope"></i> 21</a>
+                        <a href="#" title="Alerts" class="perms-loggedin"><i class="ph ph-bell"></i> 21</a>
+                        <a href="#" title="Your Inventory" class="perms-loggedin"><i
+                                class="ph ph-sword"></i>Inventory</a>
+                    </div>
                 </div>
             </div>
             <div class="accswitch-panel">
-                <div class="accswitch-close" title="Go back"><i class="ph ph-arrow-left"></i> Go back</div>
+                <div class="accswitch-close" title="Go back"><i class="ph ph-arrow-left"></i> Switch accounts</div>
                 <span id="subaccounts_menu" class="perms-loggedin">
                     <form
                         action="https://jewelsofetheria.jcink.net/index.php?&amp;act=Login&amp;CODE=01&amp;CookieDate=1"
@@ -86,10 +90,11 @@
                     </form>
                 </span>
             </div>
-            <a href="" class="navpanel--avi imgfill" style="background-image:var(--placehold-icon)"></a>
+            <a href="" class="navpanel--avi imgfill perms-loggedin" style="background-image:var(--placeholderIcon)"></a>
         </div>
         <div class="navpanel-section">
             <div class="siteheader-linksbox--mainlinks">
+                <a href="">Home</a>
                 <a href="" class="perms-loggedin">UCP</a>
                 <a href="" class="perms-staff">ACP</a>
                 <a href="">Members</a>
@@ -110,12 +115,13 @@
         <div class="navpanel-section"></div>
     </div>
 
-    <anchor id="top"></anchor>
+    <anchor id="gotoTop"> </anchor>
 
 
     <div id="siteheader">
         <div class="siteheader-linksbox">
             <div class="siteheader-linksbox--mainlinks">
+                <a href="">Home</a>
                 <a href="" class="perms-loggedin">UCP</a>
                 <a href="" class="perms-staff">ACP</a>
                 <a href="">Members</a>
@@ -135,11 +141,15 @@
         </div>
 
         <div class="hero">
-            <a class="hero-title--one progblur">After</a>
+            <a href="">
+                <div class="hero-title--one progblur">After</div>
+            </a>
             <div class="hero-image">
                 <img src="assets-final/board-hero.png">
             </div>
-            <a class="hero-title--two"><span class="progblur">We</span> <span class="progblur">Die</span></a>
+            <a href="">
+                <div class="hero-title--two"><span class="progblur">We</span> <span class="progblur">Die</span></div>
+            </a>
             <div class="hero-subtitle">A Dungeon-crawler Afterlife Roleplay</div>
         </div>
 
@@ -173,21 +183,53 @@
                                     <a href="#">App Guide</a>
                                 </div>
                             </div>
-                            <div class="forum-guidebook-userbox">
+                            <div class="forum-guidebook-userbox accswitch-swap-area">
+                                <div class="accswitch-toggle perms-loggedin" title="Switch accounts"><i
+                                        class="ph ph-swap"></i></div>
+                                <div class="accswitch-close perms-loggedin" title="Close"><i class="ph ph-x"></i></div>
                                 <a href="" class="userbox--avi imgfill"
-                                    style="background-image:var(--placehold-icon)"></a>
+                                    style="background-image:var(--placeholderIcon)"></a>
                                 <div class="userbox--kicker">Welcome Back,</div>
                                 <div class="userbox--username">
                                     <a href="">{Username}</a>
                                 </div>
-
-                                <div class="perms-loggedin">
-                                    <div class="userbox--userlinks">
-                                        <a href="#">Messages</a>
-                                        <a href="#">Alerts</a>
-                                        <a href="#">Switch Account</a>
-                                    </div>
+                                <div class="userbox--userlinks">
+                                    <a href="#" class="perms-loggedin">Messages</a>
+                                    <a href="#" class="perms-loggedin">Alerts</a>
+                                    <a class="perms-loggedin">Inventory</a>
                                 </div>
+
+                                <div class="accswitch-panel">
+                                    <div class="userbox--kicker">Switch accounts</div>
+                                    <div class="subacct_clip"><span id="subacct_link"><span id="subaccounts_menu">
+                                                <form
+                                                    action="https://afterdeath.jcink.net/index.php?&amp;act=Login&amp;CODE=01&amp;CookieDate=1"
+                                                    name="subswitch" method="POST" style="display: none;">
+                                                    <input type="hidden" name="auth_key"
+                                                        value="eb525c3fda43102bbfd1d483aa2aba6a">
+                                                    <input type="hidden" name="UserName" value="subacct">
+                                                    <input type="hidden" name="PassWord" value="subacct">
+                                                    <input type="hidden" name="referer" value="">
+                                                    <select class="forminput" name="sub_id"
+                                                        onchange="this.form.submit()">
+                                                        <option value="------------" selected="selected">Switch Account
+                                                        </option>
+                                                        <option value="2">Merry</option>
+                                                        <option value="3">Caretaker</option>
+                                                    </select>
+                                                </form>
+                                            </span>
+                                            <div id="u-2" class="subacct-btn"
+                                                style="--avatar-urls: url(https://files.jcink.net/uploads/afterdeath//av-2.png), url(https://files.jcink.net/uploads/afterdeath//av-2.gif), url(https://files.jcink.net/uploads/afterdeath//av-2.jpg), url(DEFAULT_AVATAR_URL)">
+                                                <span class="subacct-name">Merry</span>
+                                            </div>
+                                            <div id="u-3" class="subacct-btn"
+                                                style="--avatar-urls: url(https://files.jcink.net/uploads/afterdeath//av-2.png), url(https://files.jcink.net/uploads/afterdeath//av-2.gif), url(https://files.jcink.net/uploads/afterdeath//av-2.jpg), url(DEFAULT_AVATAR_URL)">
+                                                <span class="subacct-name">Caretaker</span>
+                                            </div>
+                                        </span></div>
+                                </div>
+
                             </div>
                         </div>
 
@@ -196,18 +238,18 @@
                             <div class="subforums"><a href="">Old Announcements</a> <a href="">Old
                                     Announcements</a>
                             </div>
-                            <div class="fr-lastpost">
+                            <div class="fr-lastpost grp-{GID} forechosen">
                                 <div class="fr-lastpost-text">
                                     <a href="" class="fr-lastpost-text--threadname">the knife of never letting
                                         go</a>
-                                    <div class="fr-lastpost-text--metadata forechosen">
+                                    <div class="fr-lastpost-text--metadata">
                                         by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a> on
                                         May 1,
                                         2026
                                     </div>
                                 </div>
-                                <div class="fr-lastpost-avi forechosen imgfill"
-                                    style="background-image: var(--placehold-icon)">
+                                <div class="fr-lastpost-avi imgfill"
+                                    style="--useravatar: url(/assets-final/board-dev.png); background-image:var(--placeholderIcon)">
                                 </div>
                             </div>
                             <div class="fr--boardstats">
@@ -220,18 +262,17 @@
                         <div class="fr forum-worldbuilding" id="forum-{ID}">
                             <a class="fr--forumname" href="#">Worldbuilding</a>
                             <div class="subforums"> </div>
-                            <div class="fr-lastpost">
+                            <div class="fr-lastpost grp-{GID} forechosen">
                                 <div class="fr-lastpost-text">
                                     <a href="" class="fr-lastpost-text--threadname">the knife of never letting
                                         go</a>
-                                    <div class="fr-lastpost-text--metadata forechosen">
+                                    <div class="fr-lastpost-text--metadata">
                                         by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a> on
                                         May 1,
                                         2026
                                     </div>
                                 </div>
-                                <div class="fr-lastpost-avi forechosen imgfill"
-                                    style="background-image: var(--placehold-icon)">
+                                <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
                                 </div>
                             </div>
                             <div class="fr--boardstats">
@@ -294,19 +335,19 @@
                         <div class="fr forum-missives" id="forum-{ID}">
                             <a class="fr--forumname" href="#">Missives</a>
                             <div class="subforums"> </div>
-                            <div class="fr-lastpost">
+                            <div class="fr-lastpost grp-{GID} forechosen">
                                 <div class="fr-lastpost-text">
                                     <a href="" class="fr-lastpost-text--threadname">the knife of never
                                         letting
                                         go</a>
-                                    <div class="fr-lastpost-text--metadata forechosen">
+                                    <div class="fr-lastpost-text--metadata">
                                         by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a>
                                         on May 1,
                                         2026
                                     </div>
                                 </div>
-                                <div class="fr-lastpost-avi forechosen imgfill"
-                                    style="background-image: var(--placehold-icon)"></div>
+                                <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
+                                </div>
                             </div>
                             <div class="fr--boardstats">
                                 <span class="fr--boardstats--posts">64 posts</span> /
@@ -318,19 +359,19 @@
                         <div class="fr forum-quests" id="forum-{ID}">
                             <a class="fr--forumname" href="#">Quests</a>
                             <div class="subforums"> </div>
-                            <div class="fr-lastpost">
+                            <div class="fr-lastpost grp-{GID} forechosen">
                                 <div class="fr-lastpost-text">
                                     <a href="" class="fr-lastpost-text--threadname">the knife of never
                                         letting
                                         go</a>
-                                    <div class="fr-lastpost-text--metadata forechosen">
+                                    <div class="fr-lastpost-text--metadata">
                                         by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a>
                                         on May 1,
                                         2026
                                     </div>
                                 </div>
-                                <div class="fr-lastpost-avi forechosen imgfill"
-                                    style="background-image: var(--placehold-icon)"></div>
+                                <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
+                                </div>
                             </div>
                             <div class="fr--boardstats">
                                 <span class="fr--boardstats--posts">64 posts</span> /
@@ -345,19 +386,19 @@
                                 <a href="">Board</a>
                                 <a href="">Board</a>
                             </div>
-                            <div class="fr-lastpost">
+                            <div class="fr-lastpost grp-{GID} forechosen">
                                 <div class="fr-lastpost-text">
                                     <a href="" class="fr-lastpost-text--threadname">the knife of never
                                         letting
                                         go</a>
-                                    <div class="fr-lastpost-text--metadata forechosen">
+                                    <div class="fr-lastpost-text--metadata">
                                         by <a href class="fr-lastpost-text--poster">Lysandon Alfebrand</a>
                                         on May 1,
                                         2026
                                     </div>
                                 </div>
-                                <div class="fr-lastpost-avi forechosen imgfill"
-                                    style="background-image: var(--placehold-icon)"></div>
+                                <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
+                                </div>
                             </div>
                         </div>
 
@@ -383,19 +424,20 @@
                                     tempor
                                     ipsum
                                     molestie.</div>
-                                <div class="fr-lastpost">
+                                <div class="fr-lastpost grp-{GID} forechosen">
                                     <div class="fr-lastpost-text">
                                         <a href="" class="fr-lastpost-text--threadname">the knife of never
                                             letting
                                             go</a>
-                                        <div class="fr-lastpost-text--metadata forechosen">
+                                        <div class="fr-lastpost-text--metadata">
                                             by <a href="" class="fr-lastpost-text--poster">Lysandon Alfebrand</a>
                                             on May 1,
                                             2026
                                         </div>
                                     </div>
-                                    <div class="fr-lastpost-avi forechosen imgfill"
-                                        style="background-image: var(--placehold-icon)"></div>
+                                    <div class="fr-lastpost-avi imgfill"
+                                        style="background-image:var(--placeholderIcon)">
+                                    </div>
                                 </div>
                                 <div class="fr--boardstats">
                                     <span class="fr--boardstats--posts">64 posts</span> /
@@ -411,8 +453,8 @@
                                     <a href="">Library</a>
                                     <a href="">Cloister Gardens</a>
                                 </div>
-                                <div class="fr-lastpost-avi forechosen imgfill"
-                                    style="background-image: var(--placehold-icon)"></div>
+                                <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -437,13 +479,13 @@
                                     ipsum
                                     molestie.</div>
                                 <div class="forum-dungeon-lastpostbox">
-                                    <div class="fr-lastpost">
+                                    <div class="fr-lastpost grp-{GID} forechosen">
                                         <div class="fr-lastpost-text">
                                             <a href="" class="fr-lastpost-text--threadname">the
                                                 knife of never
                                                 letting
                                                 go</a>
-                                            <div class="fr-lastpost-text--metadata forechosen">
+                                            <div class="fr-lastpost-text--metadata">
                                                 by <a href class="fr-lastpost-text--poster">Lysandon
                                                     Alfebrand</a>
                                                 on
@@ -456,8 +498,8 @@
                                         <span class="fr--boardstats--posts">64 posts</span> /
                                         <span class="fr--boardstats--topics">64 topics</span>
                                     </div>
-                                    <div class="fr-lastpost-avi forechosen imgfill"
-                                        style="background-image: var(--placehold-icon)">
+                                    <div class="fr-lastpost-avi imgfill"
+                                        style="background-image:var(--placeholderIcon)">
                                     </div>
                                 </div>
 
@@ -488,18 +530,18 @@
                                     <a href="#">OOC</a>
                                     <a href="#">Inventories</a>
                                 </div>
-                                <div class="fr-lastpost">
+                                <div class="fr-lastpost grp-{GID} forechosen">
                                     <div class="fr-lastpost-text">
                                         <a href="" class="fr-lastpost-text--threadname">the knife of
                                             never letting
                                             go</a>
-                                        <div class="fr-lastpost-text--metadata forechosen">
+                                        <div class="fr-lastpost-text--metadata">
                                             by <a href class="fr-lastpost-text--poster">Lysandon
                                                 Alfebrand</a>
                                         </div>
                                     </div>
-                                    <div class="fr-lastpost-avi forechosen imgfill"
-                                        style="background-image: var(--placehold-icon)">
+                                    <div class="fr-lastpost-avi imgfill"
+                                        style="background-image:var(--placeholderIcon)">
                                     </div>
                                 </div>
                             </div>
@@ -508,19 +550,19 @@
                         <div class="fr forum-lounge" id="forum-{ID}">
                             <a class="fr--forumname" href="#">Member Lounge</a>
                             <div class="subforums"> </div>
-                            <div class="fr-lastpost">
+                            <div class="fr-lastpost grp-{GID} forechosen">
                                 <div class="fr-lastpost-text">
                                     <a href="" class="fr-lastpost-text--threadname">the knife of
                                         never letting
                                         go</a>
-                                    <div class="fr-lastpost-text--metadata forechosen">
+                                    <div class="fr-lastpost-text--metadata">
                                         by <a href class="fr-lastpost-text--poster">Lysandon
                                             Alfebrand</a> on May 1,
                                         2026
                                     </div>
                                 </div>
-                                <div class="fr-lastpost-avi forechosen imgfill"
-                                    style="background-image: var(--placehold-icon)"></div>
+                                <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
+                                </div>
                             </div>
                             <div class="fr--boardstats">
                                 <span class="fr--boardstats--posts">64 posts</span> /
@@ -532,18 +574,18 @@
                         <div class="fr forum-ads" id="forum-{ID}">
                             <a class="fr--forumname" href="#">Advertising</a>
                             <div class="subforums"> </div>
-                            <div class="fr-lastpost">
+                            <div class="fr-lastpost grp-{GID} forechosen">
                                 <div class="fr-lastpost-text">
                                     <a href="" class="fr-lastpost-text--threadname">the knife of
                                         never letting
                                         go</a>
-                                    <div class="fr-lastpost-text--metadata forechosen">
+                                    <div class="fr-lastpost-text--metadata">
                                         by <a href class="fr-lastpost-text--poster">Lysandon
                                             Alfebrand</a> on May 1,
                                         2026
                                     </div>
                                 </div>
-                                <!-- <div class="fr-lastpost-avi forechosen imgfill" style="background-image: var(--placehold-icon)"></div> -->
+                                <!-- <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)"></div> -->
                             </div>
                             <div class="fr--boardstats">
                                 <span class="fr--boardstats--posts">64 posts</span> /
@@ -659,46 +701,67 @@
                         <div class="boardstats-recenttopics">
                             <div id="recents">
                                 <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread One</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
-                                </div>
-                                <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread Two</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
+                                    <div class="rec-title">
+                                        <a href=""><strong>opal angel</strong></a>
+                                        - by <a href="">Kallinik Rytsarev</a>
+                                        <a href="#"></a>
+                                    </div>
+                                    <div class="rec-date">
+                                        Mar 26 2026, 01:43 PM
+                                    </div>
                                 </div>
 
                                 <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread Three</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
+                                    <div class="rec-title">
+                                        <a href=""><strong>opal angel</strong></a>
+                                        - by <a href="">Kallinik Rytsarev</a>
+                                        <a href="#"></a>
+                                    </div>
+                                    <div class="rec-date">
+                                        Mar 26 2026, 01:43 PM
+                                    </div>
                                 </div>
                                 <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread Four</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
+                                    <div class="rec-title">
+                                        <a href=""><strong>opal angel</strong></a>
+                                        - by <a href="">Kallinik Rytsarev</a>
+                                        <a href="#"></a>
+                                    </div>
+                                    <div class="rec-date">
+                                        Mar 26 2026, 01:43 PM
+                                    </div>
                                 </div>
                                 <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread Five</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
+                                    <div class="rec-title">
+                                        <a href=""><strong>opal angel</strong></a>
+                                        - by <a href="">Kallinik Rytsarev</a>
+                                        <a href="#"></a>
+                                    </div>
+                                    <div class="rec-date">
+                                        Mar 26 2026, 01:43 PM
+                                    </div>
                                 </div>
                                 <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread Six</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
+                                    <div class="rec-title">
+                                        <a href=""><strong>opal angel</strong></a>
+                                        - by <a href="">Kallinik Rytsarev</a>
+                                        <a href="#"></a>
+                                    </div>
+                                    <div class="rec-date">
+                                        Mar 26 2026, 01:43 PM
+                                    </div>
                                 </div>
                                 <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread Seven</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
+                                    <div class="rec-title">
+                                        <a href=""><strong>opal angel</strong></a>
+                                        - by <a href="">Kallinik Rytsarev</a>
+                                        <a href="#"></a>
+                                    </div>
+                                    <div class="rec-date">
+                                        Mar 26 2026, 01:43 PM
+                                    </div>
                                 </div>
-                                <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread Eight</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
-                                </div>
-                                <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread Nine</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
-                                </div>
-                                <div class="holdrec">
-                                    <div class="rec-title"><a href="#">Thread Ten</a></div>
-                                    - by <a href="#">Alexei Tolstoy</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -710,6 +773,8 @@
 
             <!-- END <% BOARD %> AKA HOME -->
 
+
+            <!-- JCINK INSERTED  -->
             <br>
             <div style="text-align:right" id="delcookiesrow"><a
                     href="https://sunstrike.jcink.net/index.php?act=Login&amp;CODE=06">Delete
@@ -725,6 +790,18 @@
                         </optgroup>
                     </select></form><br>
             </div>
+            <!-- Copyright Information -->
+            <div align="center" class="tableborder">
+                <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                    <div align="center" class="copyright">Powered by <a href="https://www.invisionboard.com"
+                            target="_blank">Invision Power Board</a> (<a href="http://jcink.com"
+                            target="_blank">Jcink.com </a> <a href="https://jcink.com" target="_blank">Forum
+                            Hosting</a>) © 2026 &nbsp;<a href="https://www.invisionpower.com" target="_blank">IPS,
+                            Inc.</a> <br>Page creation time: 0.0046 <!-- http://afterdeath.b1.jcink.com --> · <a
+                            href="index.php?act=privacy">Privacy Policy</a></div>
+                </div>
+            </div>
+
 
         </div>
 
@@ -739,18 +816,18 @@
                     <div class="fr frame-inner">
                         <a class="fr--forumname" href="#">Subboard One</a>
                         <div class="subforums"> </div>
-                        <div class="fr-lastpost">
+                        <div class="fr-lastpost grp-{GID} forechosen">
                             <div class="fr-lastpost-text">
                                 <a href="" class="fr-lastpost-text--threadname">the knife of never
                                     letting go</a>
-                                <div class="fr-lastpost-text--metadata forechosen">
+                                <div class="fr-lastpost-text--metadata">
                                     by <a href class="fr-lastpost-text--poster">Lysandon
                                         Alfebrand</a> on May 1,
                                     2026
                                 </div>
                             </div>
-                            <div class="fr-lastpost-avi forechosen imgfill"
-                                style="background-image: var(--placehold-icon)"></div>
+                            <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
+                            </div>
                         </div>
                         <div class="fr--boardstats">
                             <span class="fr--boardstats--posts">64 posts</span> /
@@ -762,18 +839,18 @@
                     <div class="fr frame-inner">
                         <a class="fr--forumname" href="#">Subboard One</a>
                         <div class="subforums"> </div>
-                        <div class="fr-lastpost">
+                        <div class="fr-lastpost grp-{GID} forechosen">
                             <div class="fr-lastpost-text">
                                 <a href="" class="fr-lastpost-text--threadname">the knife of never
                                     letting go</a>
-                                <div class="fr-lastpost-text--metadata forechosen">
+                                <div class="fr-lastpost-text--metadata">
                                     by <a href class="fr-lastpost-text--poster">Lysandon
                                         Alfebrand</a> on May 1,
                                     2026
                                 </div>
                             </div>
-                            <div class="fr-lastpost-avi forechosen imgfill"
-                                style="background-image: var(--placehold-icon)"></div>
+                            <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
+                            </div>
                         </div>
                         <div class="fr--boardstats">
                             <span class="fr--boardstats--posts">64 posts</span> /
@@ -815,11 +892,9 @@
                 <div class="frame-inner">
                     <input type="checkbox" id="TID_2192" name="TID_2192" value="0" onclick="javascript:check(2192, 0);">
                     <div class="topic-threadname"> <a href="">the way that it has to be</a> </div>
-                    <div class="topic-threaddesc">you know you'll only last so long, you're only made so
-                        well <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
-                            </a><a href="">...4</a>)</span></div>
+                    <div class="topic-threaddesc"></div>
                     <div class="topic-meta-box">
-                        <div class="topic-avi imgfill" style="background-image: var(--placehold-icon)">
+                        <div class="topic-avi imgfill" style="background-image:var(--placeholderIcon)">
                         </div>
                         <div class="topic-meta-stack">
                             <label>Last</label>
@@ -855,7 +930,7 @@
                         well <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
                             </a><a href="">...4</a>)</span></div>
                     <div class="topic-meta-box">
-                        <div class="topic-avi imgfill" style="background-image: var(--placehold-icon)">
+                        <div class="topic-avi imgfill" style="background-image:var(--placeholderIcon)">
                         </div>
                         <div class="topic-meta-stack">
                             <label>Last</label>
@@ -885,7 +960,7 @@
                         well <span class="small">(Pages <a href="">1 </a><a href="">2 </a><a href="">3
                             </a><a href="">...4</a>)</span></div>
                     <div class="topic-meta-box">
-                        <div class="topic-avi imgfill" style="background-image: var(--placehold-icon)">
+                        <div class="topic-avi imgfill" style="background-image:var(--placeholderIcon)">
                         </div>
                         <div class="topic-meta-stack">
                             <label>Last</label>
@@ -993,7 +1068,7 @@
 
             <!-- <% ONE POST %> -->
             <div class="v2">
-                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame staff unstable">
+                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame staff unstable">
                     <div class="frame-inner postrow-grid">
 
                         <div class="pr-toolbar">
@@ -1010,7 +1085,7 @@
 
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
-                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                            <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
                                 <div class="pr-stability_meter">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
@@ -1018,7 +1093,7 @@
                                 </div>
                                 <div class="miniprof-hover">
                                     <div class="miniprof-hover--avatar imgfill"
-                                        style="background-image: var(--placehold-icon)">
+                                        style="background-image:var(--placeholderIcon)">
                                     </div>
                                     <div class="miniprof-hover--bigstat"><label>Soul
                                             Stability</label> 59%</div>
@@ -1095,8 +1170,8 @@
                             <div class="pr-ooc--name">by quartz</div>
                             <div class="flex-break"></div>
                             <span class="pr-ooc--meta"><label>Tag</label> Onsite + Discord</span>
-                            <span class="pr-ooc--meta"><label>Please avoid</label> cw, cw, cw</span>
-
+                            <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
+                                    cw</span></span>
                         </div>
                     </div>
                 </div>
@@ -1106,7 +1181,7 @@
 
 
 
-                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame forechosen unstable">
+                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame forechosen unstable">
                     <div class="frame-inner postrow-grid">
                         <div class="pr-toolbar">
                             <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
@@ -1118,7 +1193,7 @@
                             <a href="">Flag</a>
                         </div>
                         <div class="pr-sidebar">
-                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                            <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
                                 <div class="pr-stability_meter">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
@@ -1126,7 +1201,7 @@
                                 </div>
                                 <div class="miniprof-hover">
                                     <div class="miniprof-hover--avatar imgfill"
-                                        style="background-image: var(--placehold-icon)">
+                                        style="background-image:var(--placeholderIcon)">
                                     </div>
                                     <div class="miniprof-hover--bigstat"><label>Soul
                                             Stability</label> 59%</div>
@@ -1182,7 +1257,7 @@
                 </div>
 
 
-                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame cryptdweller unstable">
+                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame cryptdweller unstable">
                     <div class="frame-inner postrow-grid">
 
                         <div class="pr-toolbar">
@@ -1197,7 +1272,7 @@
 
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
-                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                            <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
                                 <div class="pr-stability_meter">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
@@ -1205,7 +1280,7 @@
                                 </div>
                                 <div class="miniprof-hover">
                                     <div class="miniprof-hover--avatar imgfill"
-                                        style="background-image: var(--placehold-icon)">
+                                        style="background-image:var(--placeholderIcon)">
                                     </div>
                                     <div class="miniprof-hover--bigstat"><label>Soul
                                             Stability</label> 59%</div>
@@ -1290,7 +1365,7 @@
 
 
 
-                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame unsorted unstable">
+                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame unsorted unstable">
                     <div class="frame-inner postrow-grid">
 
                         <div class="pr-toolbar">
@@ -1305,7 +1380,7 @@
 
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
-                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                            <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
                                 <div class="pr-stability_meter">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
@@ -1313,7 +1388,7 @@
                                 </div>
                                 <div class="miniprof-hover">
                                     <div class="miniprof-hover--avatar imgfill"
-                                        style="background-image: var(--placehold-icon)">
+                                        style="background-image:var(--placeholderIcon)">
                                     </div>
                                     <div class="miniprof-hover--bigstat"><label>Soul
                                             Stability</label> 59%</div>
@@ -1397,7 +1472,7 @@
                 </div>
 
 
-                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame faded unstable">
+                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame faded unstable">
                     <div class="frame-inner postrow-grid">
 
                         <div class="pr-toolbar">
@@ -1412,7 +1487,7 @@
 
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
-                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                            <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
                                 <div class="pr-stability_meter">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
@@ -1420,7 +1495,7 @@
                                 </div>
                                 <div class="miniprof-hover">
                                     <div class="miniprof-hover--avatar imgfill"
-                                        style="background-image: var(--placehold-icon)">
+                                        style="background-image:var(--placeholderIcon)">
                                     </div>
                                     <div class="miniprof-hover--bigstat"><label>Soul
                                             Stability</label> 59%</div>
@@ -1504,7 +1579,7 @@
                 </div>
 
 
-                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame guest unstable">
+                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame guest unstable">
                     <div class="frame-inner postrow-grid">
 
                         <div class="pr-toolbar">
@@ -1519,7 +1594,7 @@
 
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
-                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                            <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
                                 <div class="pr-stability_meter">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
@@ -1527,7 +1602,7 @@
                                 </div>
                                 <div class="miniprof-hover">
                                     <div class="miniprof-hover--avatar imgfill"
-                                        style="background-image: var(--placehold-icon)">
+                                        style="background-image:var(--placeholderIcon)">
                                     </div>
                                     <div class="miniprof-hover--bigstat"><label>Soul
                                             Stability</label> 59%</div>
@@ -1618,11 +1693,11 @@
 
             <!--
             <div class="v1" style="display: inherit;">
-                <div class="postrow post{pid} {group} mgrp-{groupid} {stability} frame forechosen unstable">
+                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame forechosen unstable">
                     <div class="frame-inner postrow-grid">
 
                         <div class="pr-sidebar">
-                            <div class="miniprof imgfill" style="background-image: var(--placehold-hover);">
+                            <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
                                 <div class="miniprof-hover">Text </div>
                             </div>
                         </div>
@@ -1699,7 +1774,7 @@
 
 
         <!-- <% PROFILE %> -->
-        <div class="sitebody--inset PREVIEW-PROFILE profile forechosen stable" id="Profile" style="display: inherit;">
+        <div class="sitebody--inset PREVIEW-PROFILE profile npc stable" id="Profile" style="display: inherit;">
 
 
             <div class="profile-header">
@@ -1717,11 +1792,10 @@
                 </div>
                 <div class="prof--hover">
                     <div class="prof--group">Forechosen</div>
-                    <div class="imgfill" style="background-image: var(--placehold-hover)"></div>
+                    <div class="imgfill" style="background-image: var(--placeholderHover)"></div>
                 </div>
                 <div class="profile-overview">
                     <div class="prof--group">Forechosen</div>
-
                     <div><label>Name(s)</label> Santino Ravus</div>
                     <div><label>Age</label> 24</div>
                     <div><label>Dead</label> 200 years</div>
@@ -1730,6 +1804,14 @@
                     <div><label>Occupation</label> Washerman</div>
                     <div><label>Height</label> 5'4"</div>
                     <div><label>Room</label> Upper Cloisters</div>
+                </div>
+                <div class="profile-npc-blurb">
+                    <h0>This is an NPC.</h0>
+                    First seen {residency field / the end of
+                    the Prologue}.
+                </div>
+                <div class="profile-staff-blurb">
+                    <h0> This is a staff account.</h0> Open a Discord ticket or post in #front-desk for assistance.
                 </div>
             </div>
             <div class="profile-navbar">
@@ -1841,7 +1923,7 @@
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Dalmond</b></span> <span
                                             class="tracker-threaddesc"> - ft. nanette</span><br>
-                                        <span class="tracker-lastpost">Last by <span
+                                        <span class="tracker-lastpost forechosen">Last by <span
                                                 style="text-transform: capitalize">andin andilet</span>, Dec 19
                                             2022, 10:15 PM</span>
                                     </div>
@@ -1854,7 +1936,7 @@
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Imperial City</b></span> <span
                                             class="tracker-threaddesc"> - ft. Yuna | past</span><br>
-                                        <span class="tracker-lastpost">Last by <span
+                                        <span class="tracker-lastpost forechosen">Last by <span
                                                 style="text-transform: capitalize">mitsumune yuna</span>, Dec 16
                                             2022, 09:09 PM</span>
                                     </div>
@@ -1867,7 +1949,7 @@
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Morgrave, College of Magic</b></span>
                                         <span class="tracker-threaddesc"> </span><br>
-                                        <span class="tracker-lastpost">Last by <span
+                                        <span class="tracker-lastpost forechosen">Last by <span
                                                 style="text-transform: capitalize">yume hinagiku</span>, Dec 16
                                             2022, 02:34 PM</span>
                                     </div>
@@ -1880,7 +1962,7 @@
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Dalmond</b></span> <span
                                             class="tracker-threaddesc"> - with. rusa?</span><br>
-                                        <span class="tracker-lastpost">Last by <span
+                                        <span class="tracker-lastpost forechosen">Last by <span
                                                 style="text-transform: capitalize">andin andilet</span>, Nov 20
                                             2022, 10:22 PM</span>
                                     </div>
@@ -1902,7 +1984,7 @@
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Dalmond</b></span> <span
                                             class="tracker-threaddesc"> - ft. nanette</span><br>
-                                        <span class="tracker-lastpost">Last by <span
+                                        <span class="tracker-lastpost forechosen">Last by <span
                                                 style="text-transform: capitalize">andin andilet</span>, Dec 19
                                             2022, 10:15 PM</span>
                                     </div>
@@ -1924,7 +2006,7 @@
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Dalmond</b></span> <span
                                             class="tracker-threaddesc"> - ft. nanette</span><br>
-                                        <span class="tracker-lastpost">Last by <span
+                                        <span class="tracker-lastpost forechosen">Last by <span
                                                 style="text-transform: capitalize">andin andilet</span>, Dec 19
                                             2022, 10:15 PM</span>
                                     </div>
@@ -1939,7 +2021,7 @@
 
                 <div class="profile-section profile-ooc">
                     <anchor id="ooc"></anchor>
-                    <div class="profile-avatar imgfill" style="background-image: var(--placehold-icon)"></div>
+                    <div class="profile-avatar imgfill" style="background-image:var(--placeholderIcon)"></div>
                     <h0 class="glowtext_v2">Played by Quartz</h0>
                     <div class="profile-ooc-layout">
                         <div><label>Joined</label> May 10, 2026</div>
@@ -2078,11 +2160,10 @@
 
             <div class="ml-grid">
 
-                <div
-                    class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} cryptdweller unstable">
+                <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} cryptdweller unstable">
                     <div class="frame-inner membercardlayout">
-                        <div class="membercard-image" style="background-image: var(--placehold-hover);">
-                            <div class="membercard-avi imgfill" style="background-image: var(--placehold-icon);">
+                        <div class="membercard-image" style="background-image: var(--placeholderHover);">
+                            <div class="membercard-avi imgfill" style="background-image:var(--placeholderIcon);">
                             </div>
                         </div>
                         <div class="membercard-stability_meter">
@@ -2117,9 +2198,9 @@
                 </div>
 
 
-                <div class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} forechosen stable">
+                <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} forechosen stable">
                     <div class="frame-inner membercardlayout">
-                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
                         <div class="membercard-stability_meter">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
@@ -2153,9 +2234,9 @@
 
 
 
-                <div class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} faded stable">
+                <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} faded stable">
                     <div class="frame-inner membercardlayout">
-                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
                         <div class="membercard-stability_meter">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
@@ -2189,9 +2270,9 @@
 
 
 
-                <div class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} unsorted stable">
+                <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} unsorted stable">
                     <div class="frame-inner membercardlayout">
-                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
                         <div class="membercard-stability_meter">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
@@ -2226,9 +2307,9 @@
 
 
 
-                <div class="frame membercard {group} mgrp-{groupid} mem-{id} {player} {stability} staff stable">
+                <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} staff stable">
                     <div class="frame-inner membercardlayout">
-                        <div class="membercard-image" style="background-image: var(--placehold-hover);"> </div>
+                        <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
                         <div class="membercard-stability_meter">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
@@ -2261,6 +2342,40 @@
 
                 </div>
 
+                <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} npc stable">
+                    <div class="frame-inner membercardlayout">
+                        <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
+                        <div class="membercard-stability_meter">
+                            <i class="ph ph-heart"></i>
+                            <i class="ph ph-heart-break"></i>
+                            <i class="ph ph-skull"></i>
+                        </div>
+                        <div class="membercard-staffname">NPC</div>
+                        <div class="membercard-front">
+                            <div class="membercard-name">Santino Ravus</div>
+                            <div class="membercard-stats">
+                                <div><i class="ph ph-hourglass"></i> 26</div>
+                                <div><i class="ph ph-gender-neuter"></i> He/him</div>
+                                <div><i class="ph ph-identification-badge"></i> Occupation</div>
+                            </div>
+                            <div class="membercard-footer">
+                                93 posts <span>/</span> 233 favor
+                            </div>
+                        </div>
+                        <div class="membercard-hoverlay"></div>
+                        <div class="membercard-hover">
+                            <div class="membercard-player">Played by Quartz</div>
+                            <div class="membercard-links">
+                                <a><i class="ph ph-arrow-right"></i>Profile</a>
+                                <a><i class="ph ph-arrow-right"></i>Inventory</a>
+                            </div>
+                            <div class="membercard-footer">
+                                Posted May 1 2026, 11:23 AM
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -2302,7 +2417,7 @@
                                 <div class="gb-nav-section--header">Systems</div>
                                 <a href="#builders">Builders</a>
                                 <a href="#progression">Progression</a>
-                                <a href="#dice">Dice</a>
+                                <a href="#mechanics">Mechanics</a>
                                 <a href="#deathrecords">Death Records</a>
                                 <a href="#rifts">Rifts</a>
                             </div>
