@@ -7,6 +7,7 @@ TOKENS
     --placeholderHover: url(https://i.ibb.co/Lr2bsN0/B1.png);
     --placeholderIcon: url(https://placehold.co/150x150);
     --bgflowers: url(assets-final/flowers.png);
+    --stability-percentage: 50%;
 }
 
 .forum-monastery {
@@ -131,6 +132,7 @@ TOKENS
     --font-serif-15: 15px/1.4em var(--serif);
     --font-serif-16: 16px/1.5em var(--serif);
     --font-serif-17: 17px/1.5em var(--serif);
+    --font-serif-18: 18px/1.5em var(--serif);
 
     --font-mono-12: 12px/1.25em var(--mono);
     --font-mono-13: 13px/1.25em var(--mono);
@@ -204,7 +206,7 @@ TOKENS
 }
 
 a :is(.npc,
-    .staff,
+    .QA,
     .forechosen,
     .cryptdweller,
     .faded,
@@ -220,7 +222,7 @@ a :is(.npc,
     color: hsl(var(--accent-2));
 }
 
-.staff,
+.QA,
 .npc,
 .grp-4,
 .grp-6 {
@@ -275,7 +277,7 @@ a :is(.npc,
 body:not(.gperms-2) .perms-loggedin,
 .gperms-4 .perms-staff,
 .gperms-2 .perms-loggedout {
-    display: initial;
+    display: inline-block;
 }
 
 /****************************************
@@ -403,10 +405,6 @@ NAVIGATION
     cursor: pointer;
 }
 
-.navbar--menubutton.mobile {
-    display: none;
-}
-
 .navbar--menubutton .ph-x,
 .openmenu .navbar--menubutton .ph-list {
     display: none !important;
@@ -491,12 +489,29 @@ NAVIGATION
 
 .navpanel-user {
     display: grid;
-    grid-template: 'userinfo avi' / 1fr auto;
+    grid-template:
+        'userinfo avi' / 1fr auto;
+    gap: 20px 16px;
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.navpanel-user--left {
+body:not(.gperms-2) .navpanel-user-controls {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 0.5px solid var(--border-3);
+}
+
+.navpanel-user-controls .ph {
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 16px;
+    color: hsl(var(--accentBase-2));
+    border-left: 0.5px solid var(--border-3);
+}
+
+.navpanel-user-info {
     grid-area: userinfo;
     flex: 1;
     transition: .3s ease;
@@ -505,7 +520,7 @@ NAVIGATION
 .navpanel--username {
     font: 500 var(--font-mixta-32);
     color: hsl(var(--accentBase-2));
-    margin-bottom: 0.125em;
+    margin-bottom: 4px;
 }
 
 .navpanel--username .ph {
@@ -520,19 +535,45 @@ NAVIGATION
 .navpanel--userlinks a {
     font: 600 var(--font-mono-13);
     color: hsl(var(--bodytext-2));
+    display: flex;
     align-items: center;
     width: fit-content;
     padding: 4px 4px;
     gap: 4px;
 }
 
-.grp-2 .navpanel--userlinks a.perms-loggedin,
-body:not(.grp-2) .navpanel--userlinks a.perms-loggedout {
+.navpanel--userdesc {
+    font: 500 italic var(--font-serif-15);
+    margin: 0.5em 0;
+    color: hsl(var(--bodytext-2));
+}
+
+body:not(.gperms-2) .navpanel--userlinks-big {
+    grid-area: userbuttons;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.navpanel--userlinks-big a {
+    display: none;
+    border: 1px solid var(--border-3);
+    flex: 1;
+    font: 600 var(--font-mono-14);
+    color: hsl(var(--accentBase-2));
+    text-transform: uppercase;
+    letter-spacing: 10%;
+    text-align: center;
+    padding: 8px 16px;
+}
+
+.gperms-2 .navpanel--userlinks.perms-loggedin,
+body:not(.gperms-2) .navpanel--userlinks.perms-loggedout {
     display: none;
 }
 
-.grp-2 .navpanel--userlinks a.perms-loggedout,
-body:not(.grp-2) .navpanel--userlinks a.perms-loggedin {
+.gperms-2 .navpanel--userlinks.perms-loggedout,
+body:not(.gperms-2) .navpanel--userlinks.perms-loggedin {
     display: flex;
 }
 
@@ -545,6 +586,7 @@ body:not(.grp-2) .navpanel--userlinks a.perms-loggedin {
     grid-area: avi;
     width: 80px;
     aspect-ratio: 1;
+    margin-top: 8px;
 }
 
 #navpanel .siteheader-linksbox--quicklinks {
@@ -554,6 +596,10 @@ body:not(.grp-2) .navpanel--userlinks a.perms-loggedin {
 
 .accswitch-toggle {
     cursor: pointer;
+}
+
+#navpanel .accswitch-toggle {
+    margin-left: 0.5ch;
 }
 
 .accswitch-swap-area:not(.acc-switch-open) .accswitch-close,
@@ -572,7 +618,7 @@ body:not(.grp-2) .navpanel--userlinks a.perms-loggedin {
     color: hsl(var(--accentBase-2));
 }
 
-.accswitch-swap-area:not(.acc-switch-open) .navpanel-user--left {
+.accswitch-swap-area:not(.acc-switch-open) .navpanel-user-info {
     opacity: 1;
     transform: translateX(0%);
     transition: .3s ease allow-discrete;
@@ -581,39 +627,39 @@ body:not(.grp-2) .navpanel--userlinks a.perms-loggedin {
 #navpanel .accswitch-panel {
     grid-area: userinfo;
     display: none;
-    /* position: absolute; */
     flex: 1;
+    margin-top: 10px;
     opacity: 0;
     transform: translateX(-50%);
     transition: .3s ease allow-discrete;
 }
 
-#navpanel .acc-switch-open .accswitch-panel {
+#navpanel.acc-switch-open .accswitch-panel {
     display: block;
     opacity: 1;
     transform: translateX(0);
 }
 
-.acc-switch-open .navpanel-user--left {
+.acc-switch-open .navpanel-user-info {
     display: none;
     opacity: 0;
     pointer-events: none;
     transition: .3s ease allow-discrete;
 }
 
-#navpanel {
-    @starting-style {
-        .acc-switch-open .accswitch-panel {
-            opacity: 0;
-            transform: translateX(-50%);
-        }
 
-        .accswitch-swap-area:not(.acc-switch-open) .navpanel-user--left {
-            opacity: 0;
-            transform: translateX(-50%);
-        }
+@starting-style {
+    #navpanel.acc-switch-open .accswitch-panel {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    .accswitch-swap-area:not(.acc-switch-open) .navpanel-user-info {
+        opacity: 0;
+        transform: translateX(-50%);
     }
 }
+
 
 .forum-guidebook-userbox .accswitch-toggle,
 .forum-guidebook-userbox .accswitch-close {
@@ -694,8 +740,8 @@ body:not(.grp-2) .navpanel--userlinks a.perms-loggedin {
     clear: left;
     cursor: pointer;
     font: 500 var(--font-mixta-24);
-    color: hsl(var(--accent-2));
-    margin-bottom: 0.5em;
+    color: hsl(var(--accentBase-2));
+    margin-bottom: 0.25em;
     transition: all 0.2s ease;
 }
 
@@ -944,14 +990,6 @@ body:not(.grp-2) .navpanel--userlinks a.perms-loggedin {
         margin-right: 16px;
     }
 
-    .navbar--menubutton:not(.mobile) {
-        display: none;
-    }
-
-    .navbar--menubutton.mobile {
-        display: flex;
-    }
-
     #navpanel {
         height: calc(100% - 56px);
         width: 100vw;
@@ -960,6 +998,13 @@ body:not(.grp-2) .navpanel--userlinks a.perms-loggedin {
 
     #navpanel.openmenu {
         box-shadow: 0 56px 0 hsl(var(--backgroundBlack));
+    }
+
+    .navpanel-user {
+        grid-template:
+            'avi'
+            'userinfo'
+            'userbuttons';
     }
 
     #siteheader {
@@ -1173,7 +1218,7 @@ HOME
 .userbox--username {
     font: 500 var(--font-mixta-28);
     margin: 0.125em 0 0.25em;
-
+    display: block;
 }
 
 .userbox--userlinks {
@@ -1996,6 +2041,7 @@ a.newschip b {
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+    min-width: 110px;
     color: hsl(var(--accent-2)/ 0.2);
 }
 
@@ -2401,6 +2447,7 @@ SUBFORUMS
     background: linear-gradient(180deg, hsl(var(--accentBase-2)/0) 20%, hsl(var(--accentBase-2)) 100%);
     opacity: 0.3;
     border-radius: 0px 160px 0px 0px;
+    pointer-events: none;
 }
 
 @media only screen and (max-width: 760px) {
@@ -2621,12 +2668,6 @@ POST ROWS & MINI PROFILE
     background: hsl(var(--accentBase-3) / 0.5);
 }
 
-.postlinksbar {
-    font: 300 var(--font-mono-13);
-    color: hsl(var(--accentBase-3));
-    gap: 1ch;
-    margin: 3em 0 1.5em;
-}
 
 
 
@@ -2868,7 +2909,7 @@ divider {
 
 [class*='stability_meter'] .ph {
     display: block;
-    background: linear-gradient(to right, hsl(var(--accent-2)) 20%, hsl(var(--black)/.5) 20%);
+    background: linear-gradient(to right, hsl(var(--accent-2)) var(--stability-percentage), hsl(var(--black)/.5) var(--stability-percentage));
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -2884,7 +2925,7 @@ divider {
     display: block;
     font-size: 100px;
     line-height: 100%;
-    background: linear-gradient(to right, hsl(var(--accent-2)) 20%, hsl(var(--black)/.75) 20%);
+    background: linear-gradient(to right, hsl(var(--accent-2)) var(--stability-percentage), hsl(var(--black)/.75) var(--stability-percentage));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -3055,7 +3096,7 @@ divider {
     opacity: 0;
 }
 
-:is(.staff, .grp-4, .npc, .grp-6) {
+:is(.QA, .grp-4, .npc, .grp-6) {
 
     .pr-stability_meter .ph,
     .miniprof-hover,
@@ -3364,16 +3405,30 @@ div.prof--group {
     text-align: center;
     font: 500 var(--font-mixta-48);
     margin-top: 24px;
+    width: 80px;
+}
+
+.profile--stat>i {
+    display: none;
+}
+
+.profile--stat>i::after {
+    content: '0'
 }
 
 .profile--stability_meter .ph {
     font-size: 150px;
-    background: linear-gradient(to right, hsl(var(--accent-2)) 20%, hsl(var(--white)/.125) 20%);
+    background: linear-gradient(to right, hsl(var(--accent-2)) var(--stability-percentage), hsl(var(--accent-3)/.5) var(--stability-percentage));
 }
 
-.profile--stability_meter::after {
+.profile--stability_meter .ph-skull,
+.profile--stability_meter .ph-question {
+    color: hsl(var(--accent-3)/.5) !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+.profile--stability_status {
     opacity: 0;
-    content: 'Status: Stable';
     display: block;
     position: absolute;
     top: 45%;
@@ -3392,7 +3447,7 @@ div.prof--group {
     transition: 0.2s ease;
 }
 
-.profile--stability_meter:hover::after {
+.profile--stability_meter:hover .profile--stability_status {
     transform: translate(-50%, 0);
     opacity: 1;
 }
@@ -3524,12 +3579,12 @@ h0::before {
 .tracker-title {
     background: hsl(var(--accent-2)/0.5);
     filter: saturate(2);
-    font: 600 var(--font-mono-14);
+    font: 500 var(--font-mono-13);
     text-transform: uppercase;
-    letter-spacing: 5%;
+    letter-spacing: 15%;
     color: hsl(var(--white));
-    margin-bottom: 0.5em;
     display: inline-block;
+    margin-bottom: 16px;
     padding: 2px 6px;
     border-radius: 2px 0 2px 0;
 }
@@ -3547,8 +3602,13 @@ h0::before {
     border-radius: 0;
 
     .tracker-col {
-        padding: 24px 0 36px;
-        height: 500px;
+        padding: 20px 0 0;
+    }
+
+    #trackerwrap,
+    #missiveswrap,
+    #historywrap {
+        height: 400px;
         overflow: auto;
     }
 
@@ -3556,17 +3616,20 @@ h0::before {
         border-right: 0.5px solid var(--border-3);
     }
 
-    .tracker-col:first-child {
-        padding-right: var(--boardInsetSides);
+    .tracker-col:first-child>div:not(.tracker-title) {
+        padding-right: 20px;
     }
 
     .tracker-col:nth-child(even) {
-        padding-right: var(--boardInsetSides);
-        padding-left: var(--boardInsetSides);
+        padding-left: 20px;
+    }
+
+    .tracker-col:nth-child(even)>div:not(.tracker-title) {
+        padding-right: 20px;
     }
 
     .tracker-col:last-child {
-        padding-left: var(--boardInsetSides);
+        padding-left: 20px;
     }
 
     hr {
@@ -3595,7 +3658,7 @@ h0::before {
     gap: 1.5em 3em;
 }
 
-:is(.staff, .npc, .grp-4, .grp-6) {
+:is(.QA, .npc, .grp-4, .grp-6) {
     .prof--name.glowtext_v2 {
         margin-bottom: .5em;
     }
@@ -3625,7 +3688,7 @@ h0::before {
     color: hsl(var(--bodytext-2));
 }
 
-:is(.staff, .grp-4) {
+:is(.QA, .grp-4) {
     .profile-staff-blurb {
         display: block;
     }
@@ -3720,16 +3783,20 @@ h0::before {
 
     .profile-trackergrid {
         display: block;
+        border: 0.5px solid var(--border-3);
 
         .tracker-col,
         .tracker-col:nth-child(even),
         .tracker-col:last-child {
             padding: var(--boardInsetSides);
-            border: 0.5px solid var(--border-3);
+            border: 0 !important;
+            border-bottom: 0.5px solid var(--border-3) !important;
             height: fit-content;
         }
 
-        #trackerwrap {
+        #trackerwrap,
+        #missiveswrap,
+        #historywrap {
             height: fit-content;
             max-height: 300px;
             overflow: auto;
@@ -3828,6 +3895,12 @@ Member List
     position: relative;
     cursor: pointer;
     width: fit-content;
+    transition: 0.s ease;
+}
+
+.ml-header-col li:hover,
+.ml-filter-list button:hover {
+    color: hsl(var(--accentContrast));
 }
 
 .ml-header-col li.selected,
@@ -3845,14 +3918,11 @@ Member List
     bottom: 1px;
     background: black;
     border-bottom: 0.5px solid hsl(var(--accentContrast));
-    transition: 0.6s ease;
     width: 0%;
 }
 
 .ml-header-col li.selected::before,
-.ml-filter-list button.selected::before,
-.ml-header-col li:hover::before,
-.ml-filter-list button:hover::before {
+.ml-filter-list button.selected::before {
     width: 100%;
 }
 
@@ -3973,7 +4043,178 @@ Member List
 
 
 
+/****************************************
+THREAD TRACKERS
+*****************************************/
 
+.tracker-item {
+    margin: 0.5em 0 1.5em;
+}
+
+.tracker-item.empty {}
+
+.tracker-item a {
+    display: inline-block;
+    margin-left: 40px;
+    font: 700 var(--font-serif-18);
+    color: color-mix(in oklab, hsl(var(--accent-2)) 80%, hsl(var(--accent-3)) 20%);
+}
+
+.tracker-desc {
+    margin-top: -2px;
+    margin-left: 40px;
+    color: hsl(var(--bodytext-2));
+}
+
+.tracker-location {
+    font: 700 var(--font-mono-12);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, hsl(var(--accent-2)) 60%, hsl(var(--accent-3)) 40%);
+}
+
+.tracker-threaddesc {
+    font: 500 var(--font-mono-12);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.tracker-lastpost {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tracker-lastpost span {
+    text-transform: capitalize;
+}
+
+.tracker-item hr {
+    display: none;
+}
+
+.tracker-item:last-child hr {
+    display: none;
+}
+
+.status {
+    position: absolute;
+    top: 8px;
+    left: -8px;
+    font-size: 64px;
+    color: color-mix(in oklab, hsl(var(--accent-2)) 60%, hsl(var(--accent-3)) 40%);
+    opacity: .1;
+}
+
+.owing .status {
+    color: hsl(var(--accent-3));
+    animation: wiggle 2s cubic-bezier(.25, .8, .25, 1) infinite;
+    opacity: .5;
+}
+
+.locked .status {}
+
+@keyframes wiggle {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    7% {
+        transform: rotate(-18deg);
+    }
+
+    14% {
+        transform: rotate(18deg);
+    }
+
+    21% {
+        transform: rotate(-10deg);
+    }
+
+    28% {
+        transform: rotate(10deg);
+    }
+
+    35% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#historywrap {
+    .status {
+        display: none;
+    }
+
+    .tracker-item a,
+    .tracker-desc {
+        margin-left: 0;
+    }
+}
+
+#navpanel {
+    .panel-tracker-title {
+        display: inline-block;
+        font: 500 var(--font-serif-14);
+        letter-spacing: 10%;
+        text-transform: uppercase;
+        /* color: hsl(var(--accentBase-2)); */
+        margin-bottom: 8px;
+    }
+
+    .status {
+        font-size: 20px;
+        left: -4px;
+        top: 1px;
+        opacity: .25;
+        color: hsl(var(--white));
+        /* display: none; */
+    }
+
+    .owing .status {
+        color: hsl(var(--accentBase-2));
+        opacity: .75;
+    }
+
+    .tracker-item {
+        margin: 0.75em 0;
+    }
+
+    /* .tracker-item a::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        left: 0px;
+        top: 9px;
+        border: 0.5px solid hsl(var(--accent-2));
+        border-radius: 100%;
+    }
+
+    .owing.tracker-item a::before {
+        background-color: hsl(var(--accent-2));
+    } */
+
+    .tracker-item a {
+        font: 600 var(--font-serif-16);
+        margin-left: 24px;
+        color: hsl(var(--bodytext-1));
+        color: hsl(var(--accentBase-2));
+    }
+
+    .tracker-desc {
+        margin-left: 24px;
+    }
+
+    .tracker-desc br,
+    .tracker-location,
+    .tracker-threaddesc {
+        display: none;
+    }
+}
 
 /****************************************
 MEMBER ROWS
@@ -4005,7 +4246,7 @@ MEMBER ROWS
     background: hsl(var(--backgroundBlack));
 } */
 
-.membercard:not(.staff, .grp-4, .npc, .grp-6) .membercardlayout::before {
+.membercard:not(.QA, .grp-4, .npc, .grp-6) .membercardlayout::before {
     content: '';
     position: absolute;
     width: 276px;
@@ -4029,7 +4270,7 @@ MEMBER ROWS
 }
 
 .membercard-stability_meter .ph {
-    background: linear-gradient(to right, hsl(var(--accent-3)) 20%, hsl(var(--white)/.25) 20%);
+    background: linear-gradient(to right, hsl(var(--accent-3)) var(--stability-percentage), hsl(var(--white)/.25) var(--stability-percentage));
     mix-blend-mode: hard-light;
 }
 
@@ -4106,7 +4347,7 @@ MEMBER ROWS
     margin-bottom: 0.5em;
 }
 
-.membercard:not(.staff, .npc, .grp-4, .grp-6) .membercard-staffname {
+.membercard:not(.QA, .npc, .grp-4, .grp-6) .membercard-staffname {
     display: none;
 }
 
@@ -4180,7 +4421,7 @@ MEMBER ROWS
     filter: blur(0);
 }
 
-.membercard:is(.staff, .grp-4, .npc, .grp-6) {
+.membercard:is(.QA, .grp-4, .npc, .grp-6) {
     .membercardlayout {
         align-items: flex-start;
     }
@@ -4218,7 +4459,7 @@ MEMBER ROWS
 
 }
 
-.membercard:is(.staff, .grp-4, .npc, .grp-6):hover .membercard-image {
+.membercard:is(.QA, .grp-4, .npc, .grp-6):hover .membercard-image {
     transform: scale(1);
 }
 
@@ -4261,7 +4502,7 @@ MEMBER ROWS
         padding: 24px var(--boardInsetSides) 16px;
     }
 
-    .membercard::not(.staff, .grp-4, .npc, .grp-6) .membercardlayout::before {
+    .membercard::not(.QA, .grp-4, .npc, .grp-6) .membercardlayout::before {
         width: 100%;
         transform: scaleX(-100%);
     }
@@ -4275,7 +4516,7 @@ MEMBER ROWS
         opacity: 0.5;
     }
 
-    .membercard:is(.staff, .grp-4, .npc, .grp-6) {
+    .membercard:is(.QA, .grp-4, .npc, .grp-6) {
         .membercard-image {
             height: 100%;
             border-bottom: 0;

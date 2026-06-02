@@ -35,12 +35,10 @@
 
 </head>
 
-<body class="userid-{ID} grp-{ID}" id="idx">
+<body class="userid-{ID} gperms-{ID} forechosen" id="idx">
 
     <div id="navbar">
-        <div class="navbar--menubutton mobile" onclick="menuFunction()"><i class="ph ph-list"></i><i
-                class="ph ph-x"></i></div>
-        <div class="navbar--menubutton" onclick="menuFunction()">Menu</div>
+        <div class="navbar--menubutton" onclick="menuFunction()"><i class="ph ph-list"></i><i class="ph ph-x"></i></div>
         <div class="navbar--breadcrumbs">
             <div id="navstrip">
                 <a href="#">After We Die</a><span class="navstrip-separator">·</span>
@@ -56,25 +54,35 @@
         </div>
     </div>
 
-    <div id="navpanel" class="faded">
-        <div class="navpanel-section navpanel-user accswitch-swap-area">
-            <div class="navpanel-user--left">
+    <div id="navpanel" class="accswitch-swap-area">
+        <div class="navpanel-user-controls perms-loggedin">
+            <a href="#" title="Log Out" class="perms-loggedin"><i class="ph ph-sign-out"></i> </a>
+            <div class="accswitch-toggle perms-loggedin" title="Switch accounts"><i class="ph ph-swap"></i>
+            </div>
+            <div class="accswitch-close perms-loggedin" title="Close"><i class="ph ph-x"></i></div>
+        </div>
+        <div class="navpanel-section navpanel-user">
+            <div class="navpanel-user-info">
                 <div class="navpanel--username">
                     <a href="">{Username}</a>
-                    <div class="accswitch-toggle perms-loggedin" title="Switch accounts"><i class="ph ph-swap"></i>
-                    </div>
                 </div>
-                <div class="perms-loggedin">
-                    <div class="navpanel--userlinks">
-                        <a href="#" title="Messages" class="perms-loggedin"><i class="ph ph-envelope"></i> 21</a>
-                        <a href="#" title="Alerts" class="perms-loggedin"><i class="ph ph-bell"></i> 21</a>
-                        <a href="#" title="Your Inventory" class="perms-loggedin"><i
-                                class="ph ph-sword"></i>Inventory</a>
-                    </div>
+                <div class="navpanel--userlinks perms-loggedin">
+                    <a href="#" title="Messages"><i class="ph ph-envelope"></i> 21</a>
+                    <a href="#" title="Alerts"><i class="ph ph-bell"></i> 21</a>
+                    <a href="#" title="Log Out"><i class="ph ph-sign-out"></i> Log out</a>
+                </div>
+                <div class="navpanel--userdesc perms-loggedin">You have 300 posts, 3,000 favor and 600 EXP.</div>
+                <div class="navpanel--userlinks perms-loggedout">
+                    <a href="#" title="Log In"><i class="ph ph-envelope"></i> Log In</a>
+                    <a href="#" title="Register"><i class="ph ph-bell"></i> Register</a>
                 </div>
             </div>
+            <!-- <div class="navpanel--userlinks-big perms-loggedin">
+                <a href="">Inventory</a>
+                <a href="">Development</a>
+            </div> -->
             <div class="accswitch-panel">
-                <div class="accswitch-close" title="Go back"><i class="ph ph-arrow-left"></i> Switch accounts</div>
+                <div class="accswitch-close" title="Go back">Switch accounts</div>
                 <span id="subaccounts_menu" class="perms-loggedin">
                     <form
                         action="https://jewelsofetheria.jcink.net/index.php?&amp;act=Login&amp;CODE=01&amp;CookieDate=1"
@@ -96,7 +104,7 @@
             <div class="siteheader-linksbox--mainlinks">
                 <a href="">Home</a>
                 <a href="" class="perms-loggedin">UCP</a>
-                <a href="" class="perms-staff">ACP</a>
+                <a href="" class="perms-QA">ACP</a>
                 <a href="">Members</a>
                 <a href="">New Topics</a>
                 <a href="">Online</a>
@@ -112,7 +120,29 @@
                 <a href="">Discord</a>
             </div>
         </div>
-        <div class="navpanel-section"></div>
+        <div class="navpanel-section">
+            <a class="panel-tracker-title" href="#">Your Threads</a>
+            <div class="paneltrackerwrap">
+                <div class="tracker-item owing" aria-described-by="Owing">
+                    <b><span class="status"><i class="ph ph-pen-nib"></i></span>
+                        <a href="https://afterdeath.jcink.net/index.php?showtopic=1&amp;view=getlastpost">Welcome To
+                            Your New Forum</a></b>
+                    <div class="tracker-desc"> <span class="tracker-location">The Monastery of St. Divenire</span> <span
+                            class="tracker-threaddesc"> </span> <br> <span class="tracker-lastpost">Last by <span">
+                                Caretaker</span>, May 30 2026, 04:39 PM</span></div>
+                    <hr>
+                </div>
+                <div class="tracker-item" aria-described-by="Owing">
+                    <b><span class="status"><i class="ph ph-pen-nib"></i></span>
+                        <a href="https://afterdeath.jcink.net/index.php?showtopic=1&amp;view=getlastpost">Welcome To
+                            Your New Forum</a></b>
+                    <div class="tracker-desc"> <span class="tracker-location">The Monastery of St. Divenire</span> <span
+                            class="tracker-threaddesc"> </span> <br> <span class="tracker-lastpost">Last by <span">
+                                Caretaker</span>, May 30 2026, 04:39 PM</span></div>
+                    <hr>
+                </div>
+            </div>
+        </div>
     </div>
 
     <anchor id="gotoTop"> </anchor>
@@ -123,7 +153,7 @@
             <div class="siteheader-linksbox--mainlinks">
                 <a href="">Home</a>
                 <a href="" class="perms-loggedin">UCP</a>
-                <a href="" class="perms-staff">ACP</a>
+                <a href="" class="perms-QA">ACP</a>
                 <a href="">Members</a>
                 <a href="">New Topics</a>
                 <a href="">Online</a>
@@ -194,9 +224,11 @@
                                     <a href="">{Username}</a>
                                 </div>
                                 <div class="userbox--userlinks">
-                                    <a href="#" class="perms-loggedin">Messages</a>
-                                    <a href="#" class="perms-loggedin">Alerts</a>
-                                    <a class="perms-loggedin">Inventory</a>
+                                    <a href="/index.php?act=Msg&amp;CODE=01" class="perms-loggedin">0 Messages</a>
+                                    <a href="/index.php?act=UserCP&amp;CODE=alerts" class="perms-loggedin">0 Alerts</a>
+                                    <a href="/?act=Login&amp;CODE=03" class="perms-loggedin">Log Out</a>
+                                    <a href="/index.php?act=Login&amp;CODE=00" class="perms-loggedout">Log In</a>
+                                    <a href="/index.php?act=Reg&amp;CODE=00" class="perms-loggedout">Register</a>
                                 </div>
 
                                 <div class="accswitch-panel">
@@ -604,7 +636,7 @@
                         <div class="boardstats-bg"></div>
                         <div class="boardstats-grid">
                             <div class="boardstats-online">
-                                <div class="boardstats--header">32 members, 2 guests online</div>
+                                <div class="boardstats--header">32 members, 2 Guests online</div>
                                 <div class="boardstats-online-listbox">
                                     <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
                                     <a href=""><img src="https://placehold.co/200x200/EEE/31343C"></a>
@@ -633,10 +665,10 @@
                                 <div class="boardstats--header">100 online today</div>
                                 <div class="boardstats-onlinetoday-listbox">
                                     <a href=""><span class="forechosen">forechosen Tom</span></a>,
-                                    <a href=""><span class="faded">Faded Foley</span></a>,
-                                    <a href=""><span class="staff">Staffer Simon</span></a>,
-                                    <a href=""><span class="npc">NPC Natasha</span></a>,
-                                    <a href=""><span class="cryptdweller">Cryptdweller
+                                    <a href=""><span class="faded">faded Foley</span></a>,
+                                    <a href=""><span class="QA">Mod Maude</span></a>,
+                                    <a href=""><span class="npc">npc Natasha</span></a>,
+                                    <a href=""><span class="cryptdweller">cryptdweller
                                             Cal</span></a>,
                                     <a href=""><span class="unsorted">Anonymous Al</span></a>,
                                     Aquila,
@@ -1068,7 +1100,7 @@
 
             <!-- <% ONE POST %> -->
             <div class="v2">
-                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame staff unstable">
+                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame QA unstable">
                     <div class="frame-inner postrow-grid">
 
                         <div class="pr-toolbar">
@@ -1086,7 +1118,7 @@
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
                             <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
-                                <div class="pr-stability_meter">
+                                <div class="pr-stability_meter" data-percent="20">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
                                     <i class="ph ph-skull"></i>
@@ -1118,7 +1150,7 @@
                         </div>
                         <div class="pr-main">
                             <div class="pr-header">
-                                <div class="pr-header-name glowtext_v2"><a>Staff</a></div>
+                                <div class="pr-header-name glowtext_v2"><a>QA</a></div>
                                 <div class="pr-header-stats">
                                     forechosen <span>/</span>occupation <span>/</span>
                                     he/him <span>/</span>
@@ -1194,7 +1226,7 @@
                         </div>
                         <div class="pr-sidebar">
                             <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
-                                <div class="pr-stability_meter">
+                                <div class="pr-stability_meter" data-percent="20">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
                                     <i class="ph ph-skull"></i>
@@ -1226,7 +1258,7 @@
                         </div>
                         <div class="pr-main">
                             <div class="pr-header">
-                                <div class="pr-header-name glowtext_v2"><a>Forechosen</a></div>
+                                <div class="pr-header-name glowtext_v2"><a>forechosen</a></div>
                                 <div class="pr-header-stats">
                                     forechosen <span>/</span>occupation <span>/</span>
                                     he/him <span>/</span>
@@ -1273,7 +1305,7 @@
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
                             <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
-                                <div class="pr-stability_meter">
+                                <div class="pr-stability_meter" data-percent="20">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
                                     <i class="ph ph-skull"></i>
@@ -1305,7 +1337,7 @@
                         </div>
                         <div class="pr-main">
                             <div class="pr-header">
-                                <div class="pr-header-name glowtext_v2"><a>Cryptdweller</a></div>
+                                <div class="pr-header-name glowtext_v2"><a>cryptdweller</a></div>
                                 <div class="pr-header-stats">
                                     forechosen <span>/</span>occupation <span>/</span>
                                     he/him <span>/</span>
@@ -1381,7 +1413,7 @@
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
                             <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
-                                <div class="pr-stability_meter">
+                                <div class="pr-stability_meter" data-percent="20">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
                                     <i class="ph ph-skull"></i>
@@ -1413,7 +1445,7 @@
                         </div>
                         <div class="pr-main">
                             <div class="pr-header">
-                                <div class="pr-header-name glowtext_v2"><a>Unsorted</a></div>
+                                <div class="pr-header-name glowtext_v2"><a>unsorted</a></div>
                                 <div class="pr-header-stats">
                                     forechosen <span>/</span>occupation <span>/</span>
                                     he/him <span>/</span>
@@ -1488,7 +1520,7 @@
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
                             <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
-                                <div class="pr-stability_meter">
+                                <div class="pr-stability_meter" data-percent="0">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
                                     <i class="ph ph-skull"></i>
@@ -1520,7 +1552,7 @@
                         </div>
                         <div class="pr-main">
                             <div class="pr-header">
-                                <div class="pr-header-name glowtext_v2"><a>Faded</a></div>
+                                <div class="pr-header-name glowtext_v2"><a>faded</a></div>
                                 <div class="pr-header-stats">
                                     forechosen <span>/</span>occupation <span>/</span>
                                     he/him <span>/</span>
@@ -1579,7 +1611,7 @@
                 </div>
 
 
-                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame guest unstable">
+                <div class="postrow post{pid} {group} grp-{groupid} {stability} frame Guest unstable">
                     <div class="frame-inner postrow-grid">
 
                         <div class="pr-toolbar">
@@ -1595,7 +1627,7 @@
                         <!-- <% MINIPROFILE %> -->
                         <div class="pr-sidebar">
                             <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
-                                <div class="pr-stability_meter">
+                                <div class="pr-stability_meter" data-percent="20">
                                     <i class="ph ph-heart"></i>
                                     <i class="ph ph-heart-break"></i>
                                     <i class="ph ph-skull"></i>
@@ -1774,7 +1806,7 @@
 
 
         <!-- <% PROFILE %> -->
-        <div class="sitebody--inset PREVIEW-PROFILE profile npc stable" id="Profile" style="display: inherit;">
+        <div class="sitebody--inset PREVIEW-PROFILE profile cryptdweller stable" id="Profile" style="display: inherit;">
 
 
             <div class="profile-header">
@@ -1791,11 +1823,11 @@
                     </div>
                 </div>
                 <div class="prof--hover">
-                    <div class="prof--group">Forechosen</div>
+                    <div class="prof--group">forechosen</div>
                     <div class="imgfill" style="background-image: var(--placeholderHover)"></div>
                 </div>
                 <div class="profile-overview">
-                    <div class="prof--group">Forechosen</div>
+                    <div class="prof--group">forechosen</div>
                     <div><label>Name(s)</label> Santino Ravus</div>
                     <div><label>Age</label> 24</div>
                     <div><label>Dead</label> 200 years</div>
@@ -1806,12 +1838,12 @@
                     <div><label>Room</label> Upper Cloisters</div>
                 </div>
                 <div class="profile-npc-blurb">
-                    <h0>This is an NPC.</h0>
+                    <h0>This is an npc.</h0>
                     First seen {residency field / the end of
                     the Prologue}.
                 </div>
-                <div class="profile-staff-blurb">
-                    <h0> This is a staff account.</h0> Open a Discord ticket or post in #front-desk for assistance.
+                <div class="profile-QA-blurb">
+                    <h0> This is a QA account.</h0> Open a Discord ticket or post in #front-desk for assistance.
                 </div>
             </div>
             <div class="profile-navbar">
@@ -1826,10 +1858,11 @@
                 <anchor id="background"></anchor>
                 <div class="profile-section profile-status">
                     <div class="profile--stat"><label>Times Died</label>0</div>
-                    <div class="profile--stability_meter">
+                    <div class="profile--stability_meter" data-percent="20">
                         <i class="ph ph-heart"></i>
                         <i class="ph ph-heart-break"></i>
                         <i class="ph ph-skull"></i>
+                        <div class="profile--stability_status">Status: </div>
                     </div>
                     <div class="profile--stat"><label>Stability</label>50%</div>
                 </div>
@@ -1863,9 +1896,9 @@
                             </div>
                         </div>
                         <div class="deathinfo-block">
-                            <i class="ph ph-hand-eye"></i>
+                            <i class="ph ph-sparkle"></i>
                             <div class="deathinfo--content">
-                                <div class="deathinfo--header">Damnation</div>
+                                <div class="deathinfo--header">Former Skills</div>
                                 Lorem ipsum dolor sit amet
                                 consectetur. Purus lectus
                                 adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo placerat
@@ -1874,9 +1907,9 @@
                             </div>
                         </div>
                         <div class="deathinfo-block">
-                            <i class="ph ph-sword"></i>
+                            <i class="ph ph-hand-eye"></i>
                             <div class="deathinfo--content">
-                                <div class="deathinfo--header">Keepsake</div>
+                                <div class="deathinfo--header">Damnation</div>
                                 Lorem ipsum dolor sit amet
                                 consectetur. Purus lectus
                                 adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo placerat
@@ -1915,55 +1948,54 @@
                             <div class="tracker-title">Active</div>
                             <div id="trackerwrap">
 
-                                <div class="tracker-item">
-                                    <b><span class="status caughtup" aria-described-by="Caught Up"><i
-                                                class="ph ph-pen-nib"></i></span> <a
+                                <div class="tracker-item owing" aria-described-by="Owing">
+                                    <b><span class="status"><i class="ph ph-pen-nib"></i></span> <a
                                             href="https://xmortala.jcink.net/index.php?showtopic=2082&amp;view=getlastpost">Heartlines
                                             on your hands</a></b>
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Dalmond</b></span> <span
                                             class="tracker-threaddesc"> - ft. nanette</span><br>
-                                        <span class="tracker-lastpost forechosen">Last by <span
-                                                style="text-transform: capitalize">andin andilet</span>, Dec 19
+                                        <span class="tracker-lastpost">Last by <span>andin andilet</span>,
+                                            Dec 19
                                             2022, 10:15 PM</span>
                                     </div>
                                     <hr>
                                 </div>
-                                <div class="tracker-item"><b><span class="status myturn" aria-described-by="My Turn"><i
+                                <div class="tracker-item myturn" aria-described-by="My Turn"><b><span class="status"><i
                                                 class="ph ph-pen-nib"></i></span> <a
                                             href="https://xmortala.jcink.net/index.php?showtopic=2263&amp;view=getlastpost">hello,
                                             halcyon days</a></b>
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Imperial City</b></span> <span
                                             class="tracker-threaddesc"> - ft. Yuna | past</span><br>
-                                        <span class="tracker-lastpost forechosen">Last by <span
-                                                style="text-transform: capitalize">mitsumune yuna</span>, Dec 16
+                                        <span class="tracker-lastpost">Last by <span>mitsumune yuna</span>,
+                                            Dec 16
                                             2022, 09:09 PM</span>
                                     </div>
                                     <hr>
                                 </div>
-                                <div class="tracker-item"><b><span class="status myturn" aria-described-by="My Turn"><i
+                                <div class="tracker-item myturn" aria-described-by="My Turn"><b><span class="status"><i
                                                 class="ph ph-pen-nib"></i></span> <a
                                             href="https://xmortala.jcink.net/index.php?showtopic=1116&amp;view=getlastpost">Window
                                             Seat</a></b>
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Morgrave, College of Magic</b></span>
                                         <span class="tracker-threaddesc"> </span><br>
-                                        <span class="tracker-lastpost forechosen">Last by <span
-                                                style="text-transform: capitalize">yume hinagiku</span>, Dec 16
+                                        <span class="tracker-lastpost">Last by <span>yume hinagiku</span>,
+                                            Dec 16
                                             2022, 02:34 PM</span>
                                     </div>
                                     <hr>
                                 </div>
-                                <div class="tracker-item"><b><span class="status myturn"
-                                            aria-described-by="Caught Up"><i class="ph ph-pen-nib"></i></span> <a
+                                <div class="tracker-item myturn" aria-described-by="Caught Up"><b><span
+                                            class="status"><i class="ph ph-pen-nib"></i></span> <a
                                             href="https://xmortala.jcink.net/index.php?showtopic=234&amp;view=getlastpost">the
                                             listening chair</a></b>
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Dalmond</b></span> <span
                                             class="tracker-threaddesc"> - with. rusa?</span><br>
-                                        <span class="tracker-lastpost forechosen">Last by <span
-                                                style="text-transform: capitalize">andin andilet</span>, Nov 20
+                                        <span class="tracker-lastpost">Last by <span>andin andilet</span>,
+                                            Nov 20
                                             2022, 10:22 PM</span>
                                     </div>
                                     <hr>
@@ -1976,16 +2008,16 @@
                             <div class="tracker-title">Missives</div>
                             <div id="trackerwrap">
 
-                                <div class="tracker-item"><b><span class="status locked"
-                                            aria-described-by="Caught Up"><i class="ph ph-pen-nib-straight"></i></span>
+                                <div class="tracker-item locked" aria-described-by="Caught Up"><b><span
+                                            class="status"><i class="ph ph-pen-nib-straight"></i></span>
                                         <a
                                             href="https://xmortala.jcink.net/index.php?showtopic=2082&amp;view=getlastpost">Heartlines
                                             on your hands</a></b>
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Dalmond</b></span> <span
                                             class="tracker-threaddesc"> - ft. nanette</span><br>
-                                        <span class="tracker-lastpost forechosen">Last by <span
-                                                style="text-transform: capitalize">andin andilet</span>, Dec 19
+                                        <span class="tracker-lastpost forechosen">Last by <span>andin andilet</span>,
+                                            Dec 19
                                             2022, 10:15 PM</span>
                                     </div>
                                     <hr>
@@ -1995,24 +2027,23 @@
                         </div>
 
                         <div class="tracker-col">
-                            <div class="tracker-title">Archived</div>
-                            <div id="trackerwrap">
-
-                                <div class="tracker-item"><b><span class="status locked"
-                                            aria-described-by="Caught Up"><i class="ph ph-pen-nib-straight"></i></span>
+                            <div class="tracker-title">Complete</div>
+                            <div id="historywrap">
+                                <div class="tracker-item locked" aria-described-by="Caught Up"><b><span
+                                            class="status"><i class="ph ph-pen-nib-straight"></i></span>
                                         <a
                                             href="https://xmortala.jcink.net/index.php?showtopic=2082&amp;view=getlastpost">Heartlines
                                             on your hands</a></b>
                                     <div class="tracker-desc">
                                         <span class="tracker-location"><b>Dalmond</b></span> <span
                                             class="tracker-threaddesc"> - ft. nanette</span><br>
-                                        <span class="tracker-lastpost forechosen">Last by <span
-                                                style="text-transform: capitalize">andin andilet</span>, Dec 19
+                                        <span class="tracker-lastpost forechosen">Last by <span>andin andilet</span>,
+                                            Dec 19
                                             2022, 10:15 PM</span>
                                     </div>
                                     <hr>
                                 </div>
-
+                                <div class="tracker-item empty">None</div>
                             </div>
                         </div>
 
@@ -2091,10 +2122,10 @@
                         <div class="ml-header-section-header">Type</div>
                         <div class="ml-header-section-content">
                             <ul class="ml-filter-list tags option-set" data-filter-group="tags">
-                                <li data-filter-value=".type-staff">Staff</li>
+                                <li data-filter-value=".type-QA">QA</li>
                                 <li data-filter-value=".type-forechosen">forechosen</li>
-                                <li data-filter-value=".type-cryptdweller">Cryptdweller</li>
-                                <li data-filter-value=".type-faded">Faded</li>
+                                <li data-filter-value=".type-cryptdweller">cryptdweller</li>
+                                <li data-filter-value=".type-faded">faded</li>
                                 <li data-filter-value=".stable">Stable</li>
                                 <li data-filter-value=".unstable">Unstable</li>
                             </ul>
@@ -2133,7 +2164,7 @@
                                 <li value="snow">Snow</li>
                                 <li value="Sol">Sol</li>
                                 <li value="Soma">Soma</li>
-                                <li value="Staff">Staff</li>
+                                <li value="QA">QA</li>
                                 <li value="Utahraptor">Utahraptor</li>
                                 <li value="Xeno">Xeno</li>
                                 <li value="Zhen">Zhen</li>
@@ -2166,7 +2197,7 @@
                             <div class="membercard-avi imgfill" style="background-image:var(--placeholderIcon);">
                             </div>
                         </div>
-                        <div class="membercard-stability_meter">
+                        <div class="membercard-stability_meter" data-percent="20">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
                             <i class="ph ph-skull"></i>
@@ -2201,7 +2232,7 @@
                 <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} forechosen stable">
                     <div class="frame-inner membercardlayout">
                         <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
-                        <div class="membercard-stability_meter">
+                        <div class="membercard-stability_meter" data-percent="20">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
                             <i class="ph ph-skull"></i>
@@ -2237,7 +2268,7 @@
                 <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} faded stable">
                     <div class="frame-inner membercardlayout">
                         <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
-                        <div class="membercard-stability_meter">
+                        <div class="membercard-stability_meter" data-percent="20">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
                             <i class="ph ph-skull"></i>
@@ -2273,7 +2304,7 @@
                 <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} unsorted stable">
                     <div class="frame-inner membercardlayout">
                         <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
-                        <div class="membercard-stability_meter">
+                        <div class="membercard-stability_meter" data-percent="20">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
                             <i class="ph ph-skull"></i>
@@ -2307,10 +2338,10 @@
 
 
 
-                <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} staff stable">
+                <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} QA stable">
                     <div class="frame-inner membercardlayout">
                         <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
-                        <div class="membercard-stability_meter">
+                        <div class="membercard-stability_meter" data-percent="20">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
                             <i class="ph ph-skull"></i>
@@ -2345,12 +2376,12 @@
                 <div class="frame membercard {group} grp-{groupid} mem-{id} {player} {stability} npc stable">
                     <div class="frame-inner membercardlayout">
                         <div class="membercard-image" style="background-image: var(--placeholderHover);"> </div>
-                        <div class="membercard-stability_meter">
+                        <div class="membercard-stability_meter" data-percent="20">
                             <i class="ph ph-heart"></i>
                             <i class="ph ph-heart-break"></i>
                             <i class="ph ph-skull"></i>
                         </div>
-                        <div class="membercard-staffname">NPC</div>
+                        <div class="membercard-staffname">Staff</div>
                         <div class="membercard-front">
                             <div class="membercard-name">Santino Ravus</div>
                             <div class="membercard-stats">
@@ -2517,7 +2548,7 @@
                             <h3>Conduct</h3>
                             <ul>
                                 <li>Be respectful. Members are expected to try resolving disagreements in private
-                                    before escalating to staff, and then only through the proper channels. IC and
+                                    before escalating to QA, and then only through the proper channels. IC and
                                     OOC
                                     behavior should be kept separate, and drama should be kept off-platform.
                                 <li>No NSFW. We are a non-premium Jcink site. NSFW content is therefore forbidden
@@ -2534,7 +2565,7 @@
                                     server
                                     for
                                     announcements and ease of moderation.
-                                <li>Let staff moderate. Staff reserve the right to ask you to leave at any time if
+                                <li>Let QA moderate. QA reserve the right to ask you to leave at any time if
                                     you’re a
                                     poor fit in the community. Complaints about moderation decisions, lore, or site
                                     direction will not be tolerated.

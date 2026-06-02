@@ -1,3 +1,4 @@
+<style>
 /*=============================================== *
  * Jcink.com Forum Hosting Stylesheet
  * ==============================================
@@ -28,9 +29,15 @@ body {
 table,
 tr,
 td {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    color: #222;
+    margin: 20px 0 0;
+    border-collapse: collapse;
+    padding: 0;
+}
+
+
+#SF td[align='right'],
+#ST td[align='right'] {
+    margin: 1em 0 2em;
 }
 
 /****************************************
@@ -50,22 +57,8 @@ td {
     padding: 0 10px;
 }
 
-/****************************************
-   Link colors
-*****************************************/
 
-a:link,
-a:visited,
-a:active {
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    transition: 0.2s ease;
-}
 
-a:hover {
-    filter: brightness(1.1);
-}
 
 
 /****************************************
@@ -96,27 +89,83 @@ a:hover {
 *****************************************/
 
 #ucpmenu {
-    line-height: 150%;
+    /* ucp sidebar */
     width: 22%;
-    border: 1px solid #555;
-    background-color: #EFEFEF;
+    border: 0.5px solid var(--border-3);
 }
 
+
+#ucpmenu .maintitle {
+    /* ucp main headers */
+    font: 700 var(--font-mono-13);
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    border-bottom: 0.5px solid var(--border-3);
+    color: hsl(var(--accentBase-1)/0.5);
+    padding: calc(var(--boardInsetSides) / 2);
+    margin-bottom: 24px;
+}
+
+#ucpcontent .maintitle {
+    /* ucp main headers */
+    font: 700 var(--font-mono-13);
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    padding: 0 var(--boardInsetSides);
+    border: 0.5px solid var(--border-3);
+    padding: calc(var(--boardInsetSides) / 2);
+    color: hsl(var(--accentBase-1)/0.5);
+    width: fit-content;
+    margin-left: 32px;
+}
+
+#ucpmenu .pformstrip {
+    /* ucp menu subheadings */
+
+    display: flex;
+    align-items: center;
+    gap: 1.5ch;
+    font: 600 var(--font-mono-12);
+    letter-spacing: 5%;
+    text-transform: uppercase;
+    color: hsl(var(--accentBase-1)/0.5);
+    padding: 0 calc(var(--boardInsetSides) / 2);
+}
+
+
 #ucpmenu p {
-    padding: 2px 5px 6px 9px;
-    margin: 0px;
+    /* ucp sidebar sections */
+
+    margin: 8px 0 20px;
+    font: 500 var(--font-serif-15);
+    color: hsl(var(--accentBase-3));
+    padding: 0 calc(var(--boardInsetSides) / 2);
+}
+
+#ucpmenu p a {
+    /* ucp sidebar links */
+
+    display: inline-block;
+    margin-bottom: 0.25em;
 }
 
 #ucpcontent {
-    background-color: #EFEFEF;
-    border: 1px solid #545454;
-    line-height: 150%;
     width: auto;
 }
 
 #ucpcontent p {
     padding: 10px;
     margin: 0px;
+}
+
+
+#ucpcontent .pformstrip {
+    /* ucp save button */
+    font: 700 var(--font-mono-13);
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    color: hsl(var(--accentBase-2));
+    background: hsl(var(--accentBase-3) / .25);
 }
 
 /****************************************
@@ -294,9 +343,34 @@ a:hover {
    Topic View styles
 *****************************************/
 
+form[name="mod_topics"]>b {
+    font-weight: 500;
+    font-style: italic;
+    color: hsl(var(--bodytext-2));
+    border: 1px solid hsl(var(--accentBase-4)/.5);
+    padding: 24px clamp(var(--boardInsetSides), 20vw, 300px);
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+
 .activeuserstrip {
-    background-color: #D6D6D6;
-    padding: 6px
+    font: var(--font-mono-14);
+    padding: 8px 0;
+}
+
+.postrow+.activeuserstrip {
+    margin-top: -40px;
+}
+
+.row2+.activeuserstrip {
+    margin: 24px 0;
+}
+
+.activeuserstrip a {
+    color: hsl(var(--accentContrast));
+    opacity: .75;
 }
 
 .normalname {
@@ -327,18 +401,13 @@ a:hover {
     font-size: 10px;
 }
 
-.postcolor {
-    font-size: 12px;
-    line-height: 160%;
-}
+.postcolor {}
 
 .postlinksbar {
-    padding: 1px 5px;
-    background-color: #CCCCCC;
-    padding: 1px;
-    margin-top: 1px;
-    font-size: 10px;
-    background-image: url(//files.jcink.net/themes/default/thin-gray-gradient.png);
+    font: 300 var(--font-mono-13);
+    color: hsl(var(--accentBase-3));
+    gap: 1ch;
+    margin: 3em 0 1.5em;
 }
 
 .signature {
@@ -346,6 +415,13 @@ a:hover {
     color: #339;
     line-height: 150%;
 }
+
+.quick-edit {
+    border: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
 
 
 /*******************************
@@ -400,13 +476,18 @@ a:hover {
    Global general table/div row styles
 *****************************************/
 
+.row4 {
+    all: unset !important;
+}
+
 .row1,
 .row3,
 .row4,
 .row2 {
-    background-color: #EFEFEF;
-    padding: 5px;
+    padding: 0 !important;
+    font: var(--font-mono-14);
 }
+
 
 #boardstats .row2 {
     text-align: center;
@@ -445,23 +526,15 @@ td.darkrow2 {
 *****************************************/
 
 .maintitle {
-    background-color: #800000;
-    background-image: url(//files.jcink.net/themes/default/red-gradient-glass.png);
-    font-weight: bold;
-    padding: 8px;
-    color: #FFF;
+    /* headers for ucp, topics */
 }
+
 
 .maintitle a:link,
 .maintitle a:visited,
-.maintitle a:active {
-    text-decoration: none;
-    color: #FFF !important;
-}
+.maintitle a:active {}
 
-.maintitle a:hover {
-    text-decoration: underline;
-}
+.maintitle a:hover {}
 
 /****************************************
   Bar directly below the maintitles 
@@ -487,21 +560,15 @@ td.darkrow2 {
   Table & Div Borders 
 *****************************************/
 
-.tableborder {
-    background-color: #C0C0C0;
-    border: 1px solid #555;
-    padding: 0px;
-    margin: 0;
-}
+.tableborder {}
 
 .tablefill {
-    background-color: #EFEFEF;
-    border: 1px solid #555;
+    border: 1px solid green;
     padding: 6px;
 }
 
 .tablepad {
-    background-color: #EFEFEF;
+    background-color: yellow;
     padding: 6px;
 }
 
@@ -513,8 +580,7 @@ td.darkrow2 {
 }
 
 .plainborder {
-    border: 1px solid #555;
-    background-color: #EFEFEF;
+    border: 1px solid red;
 }
 
 /****************************************
@@ -551,10 +617,9 @@ td.darkrow2 {
 ***********************************************/
 
 
-
 .button-large {
     display: inline-block;
-    margin-left: 1ch;
+    margin-left: 1.5ch;
     font: 600 var(--font-mixta-20);
     color: hsl(var(--accentBase-1));
     text-decoration: underline;
@@ -566,20 +631,12 @@ td.darkrow2 {
     color: hsl(var(--accentContrast));
 }
 
-
-.button-small {
-    background: #800000 url(//files.jcink.net/themes/default/red-gradient.png);
-    border-radius: 3px;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 11px;
-    margin: 3px;
-    padding: 4px 7px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-    text-decoration: none;
-    min-width: 50px;
-    max-width: 80px;
+td[align="left"] .button-large {
+    margin-right: 1.5ch;
+    margin-left: 0;
 }
+
+.button-small {}
 
 .post-buttons-top {
     margin-top: 3px;
@@ -602,74 +659,57 @@ td.darkrow2 {
 .checkbox {
     border-radius: 0;
     vertical-align: middle;
-    min-height: 32px;
-    padding: 0 1.5em 0 0.5em;
+    min-height: 40px;
+    padding: 8px 12px;
     margin: 0;
-    background: hsl(var(--backgroundHTML) / .5);
-    border: 1px solid var(--border-3);
+    background: hsl(var(--accentBase-3) / .05);
+    border: 1px solid hsl(var(--accentBase-3) / .25);
     border-radius: 2px;
     font: 400 var(--font-mono-13);
     color: hsl(var(--white));
 }
 
+.quick-edit .textinput {
+    font: 400 var(--font-serif-16);
+}
+
+input::placeholder {
+    color: hsl(var(--white)/.75);
+}
 
 input[type=submit],
 input[type=button],
 input[type=reset] {
-    background: #800000 url(//files.jcink.net/themes/default/red-gradient.png);
-    border-radius: 3px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-    color: #FFFFFF;
-    font-size: 11px;
-    font-weight: bold;
-    margin: 3px;
-    padding: 2px 6px;
-    text-decoration: none;
-    border: none;
+    cursor: pointer;
+    padding: 0 2ch;
+    font: 700 var(--font-mono-13);
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    color: hsl(var(--accentBase-2));
 }
 
 .codebuttons {
     font-size: 10px;
 }
 
+.right-buttons {
+    float: right;
+}
 
 /****************************************
   Form table cell styles, left/right/top
 *****************************************/
 
-.pformstrip {
-    background-image: url(//files.jcink.net/themes/default/gray-gradient.png);
-    background-color: #D6D6D6;
-    color: black;
-    font-weight: bold;
-    padding: 2px 5px;
-    margin-top: 1px
-}
-
 .pformleft {
-    background-color: #EFEFEF;
-    padding: 6px;
-    margin-top: 1px;
     width: 25%;
-    border-top: 1px solid #545454;
-    border-right: 1px solid #545454;
 }
 
 .pformleftw {
-    background-color: #EFEFEF;
-    padding: 6px;
-    margin-top: 1px;
     width: 40%;
-    border-top: 1px solid #232323;
-    border-right: 1px solid #232323;
+    background: cyan;
 }
 
-.pformright {
-    background-color: #EFEFEF;
-    padding: 6px;
-    margin-top: 1px;
-    border-top: 1px solid #232323;
-}
+.pformright {}
 
 
 /****************************************
@@ -783,6 +823,7 @@ img.attach {
 
 .wrapmini {
     float: left;
+    display: none;
 }
 
 /* Warning CSS */
@@ -832,14 +873,23 @@ img.attach {
 ************************************/
 
 .copyright {
-    font-size: 10px;
-    line-height: 12px;
+    font: var(--font-serif-14);
+    color: hsl(var(--bodytext-2));
+    margin: 24px 0;
 }
 
 
+/***********************************
+ CUSTOM
+************************************/
 
 
-
+tr#field-birthday,
+tr#field-website,
+tr#field-location,
+tr#field-interests {
+    display: none;
+}
 
 
 
@@ -858,3 +908,213 @@ img.attach {
     width: 100%;
     display: block;
 }
+
+
+
+
+/***********************************
+ UCP
+************************************/
+
+#UserCP :is(table, tr, td) {
+    margin: 0;
+}
+
+#UserCP .sitebody--inset>table {
+    /* ucp outerwrap */
+}
+
+#ucpcontent table {
+    /* ucp main content area */
+    border: 0;
+}
+
+
+#ucpcontent tbody tr {
+    min-width: 0;
+    width: 100%;
+}
+
+tr#field-birthday,
+tr#field-website,
+tr#field-location,
+tr#field-interests,
+#UserCP form>.pformstrip:first-of-type {
+    display: none;
+}
+
+#ucpcontent tbody {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: var(--boardInsetSides) 0 0 var(--boardInsetSides);
+    gap: 36px;
+}
+
+.userCP-section-header td {
+    font: 600 var(--font-mixta-28);
+    color: hsl(var(--accent-2));
+    padding-bottom: 4px;
+    margin-bottom: 1em !important;
+    margin-bottom: -8px !important;
+}
+
+tr[id*="field_"]+.userCP-section-header {
+    margin-top: 32px !important;
+}
+
+tr[id*="field_"] {
+    display: grid;
+    grid-template:
+        'fieldinfo fieldcontent' / 1fr 2fr;
+    grid-template:
+        'fieldinfo' 'fieldcontent' / 1fr;
+    gap: 1em 2em;
+    align-content: space-between;
+    border: 0.5px solid var(--border-3);
+    border-top: 0;
+    padding: 16px calc(var(--boardInsetSides) / 2) calc(var(--boardInsetSides) / 2);
+
+    border: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.pformleft {
+    /* ucp field descriptions */
+    width: 100%;
+    font: 500 var(--font-serif-15);
+    color: hsl(var(--bodytext-1)/.625)
+}
+
+.pformleft label {
+    /* ucp field labels */
+    font: 500 var(--font-serif-15);
+    color: hsl(var(--accentBase-3));
+    display: block;
+    margin-bottom: 0.25em;
+}
+
+.pformleft label+br {
+    display: none;
+}
+
+.pformright {
+    width: 100%;
+}
+
+#UserCP table input.forminput,
+#UserCP table textarea.forminput,
+#UserCP table select.forminput {
+    width: 100%;
+    font: var(--font-serif-17);
+    margin-top: 24px;
+
+    margin-top: 0;
+}
+
+
+tr.userCP-section-header,
+tr#field_1,
+tr#field_10,
+tr#field_19,
+tr#field_20,
+tr#field_24,
+tr#field_25,
+tr#field_26 {
+    grid-column: 1 / -1;
+}
+
+/*
+:where(tr#field_1,
+tr#field_10,
+tr#field_19
+tr#field_20,
+tr#field_24,
+tr#field_25,
+tr#field_26) .pformleft {
+  width: calc(50% - 16px);
+} */
+
+tr[id*="field_"] .forminput {
+    height: 44px;
+}
+
+:where(tr#field_19,
+    tr#field_24) .forminput {
+    height: 200px !important;
+}
+
+input[value="Amend my profile"].forminput {}
+
+
+
+/***********************************
+ UCP: Collapsible headings
+************************************/
+/* Style the header cell layout safely */
+.userCP-section-header td {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    /* Ensures it fills the whole row width */
+}
+
+/* Let the span take up the space and container the line */
+.userCP-section-header span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+/* Your beautifully expanding pseudo dividing line */
+.userCP-section-header span::after {
+    content: '';
+    display: block;
+    flex: 1;
+    border-top: 0.5px solid var(--border-3);
+}
+
+/* ---------------------------------------------
+   FIXED CARET ICON TOGGLES
+--------------------------------------------- */
+
+.userCP-section-header .ph-caret-down {
+    display: none;
+}
+
+.userCP-section-header .ph-caret-up {
+    display: block;
+}
+
+.userCP-section-header.is-collapsed .ph-caret-down {
+    display: block;
+    /* Show down arrow when closed */
+}
+
+.userCP-section-header.is-collapsed .ph-caret-up {
+    display: none;
+    /* Hide up arrow when closed */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>

@@ -1,3 +1,4 @@
+
 // Hamburger menu on mobile
 // by Quartz 
 
@@ -37,9 +38,11 @@ document.addEventListener('keydown', function (e) {
 
 
 
-function goToAnchor() {
 
-   // No URL Change Smooth Scroll by Athena
+
+// No URL Change Smooth Scroll by Athena
+
+function goToAnchor() {
    document.querySelectorAll(".scrollButton").forEach(button => {
       button.addEventListener("click", function () {
          const targetElement = document.querySelector(this.dataset.target);
@@ -53,6 +56,7 @@ function goToAnchor() {
       });
    });
 }
+
 
 
 
@@ -83,6 +87,7 @@ function scrollBlur() {
 
    }, { passive: true });
 }
+
 
 
 
@@ -121,6 +126,7 @@ function accountSwitchButtons() {
    });
 
 }
+
 
 
 
@@ -221,11 +227,13 @@ function guidebookDropdownMobile() {
 }
 
 
+
+
 // Member page filters stick on scroll
 
 function memberFiltersMobile() {
    // check on right page before firing
-   if (!document.querySelector('#Members')) return;
+   if (!document.getElementById('Members')) return;
 
    const wrapper = document.querySelector('.ml-drawer-btn-wrapper');
    const button = document.querySelector('.ml-drawer-btn');
@@ -271,25 +279,105 @@ function pullAvatarURL() {
 
 
 
+// Profile ID everywhere
+
+function pullProfileID() {
+   if (!document.getElementById('idx')) return;
+
+   const userID = document.querySelector(".pullProfileID").innerHTML;
+   const userboxUsername = document.querySelector(".userbox--username");
+   const userboxAvi = document.querySelector(".userbox--avi");
+   userboxUsername.href += userID;
+   userboxAvi.href += userID;
+
+}
+
 
 
 // Messages and alerts everywhere
 
 function pullMessages() {
-   // check on right page before firing
-   if (!document.querySelector('#idx')) return;
+   if (!document.getElementById('idx')) return;
 
    const msgCount = document.querySelector(".pullMsgCount").innerHTML + ' ';
    const userboxMsg = document.querySelector(".userbox--userlinks a[href*='act=Msg']")
-
-   console.log(msgCount + " messages")
    userboxMsg.prepend(msgCount)
 
    const alertCount = document.querySelector(".pullAlertCount").innerHTML + ' ';
    const userboxAlerts = document.querySelector(".userbox--userlinks a[href*='CODE=alerts']")
-
-   console.log(alertCount + " alerts")
    userboxAlerts.prepend(alertCount)
+}
+
+
+
+
+function emptyProfileFields() {
+   if (!document.getElementById('Profile')) return;
+   console.log("Is profile")
+
+   const emptyFields = document.querySelectorAll('i');
+   console.log("Find i")
+
+
+   emptyFields.forEach(el => {
+      if (el.textContent.trim() === 'No information') {
+         console.log("Empty")
+         const newHTML = '<i>—</i>';
+         el.outerHTML = newHTML;
+      }
+   });
+}
+
+
+
+
+
+
+
+// Stability meter progress bars
+
+const toPercentage = (num) => `${num}%`;
+
+const progressBars = document.querySelectorAll('[class*="stability_meter"]');
+
+progressBars.forEach(bar => {
+   const numValue = bar.dataset.percent;
+   bar.style.setProperty('--stability-percentage', toPercentage(numValue));
+});
+
+
+
+
+function stabilityMeterLogic() {
+   const hasProfile = document.getElementById('Profile');
+
+   document.querySelectorAll('[class*="stability_meter"]').forEach(meter => {
+      const pct = meter.dataset.percent;
+      const num = parseFloat(pct);
+
+      // Convert profile field to % and set as variable
+      meter.style.setProperty('--stability-percentage', `${pct}%`);
+
+      // Icon and status label logic
+      const icon = num === 0 ? 'ph-heart-skull' : (num <= 30 ? 'ph-heart-break' : 'ph-heart');
+      const text = num === 0 ? 'Faded' : (num <= 30 ? 'Unstable' : 'Stable');
+
+      // Remove old icons it exists and add new one based on logic
+      meter.querySelectorAll('i').forEach(oldIcon => oldIcon.remove());
+
+      const iconClass = isNaN(num) ? 'ph-ghost' : icon;
+      meter.insertAdjacentHTML('afterbegin', `<i class="ph ${iconClass}"></i>`);
+
+      // Update status text based on %
+      if (hasProfile) {
+         const container = meter.closest('.profile') || meter.parentElement;
+         const status = container.querySelector('.profile--stability_status');
+         if (status) {
+            status.textContent += text;
+            status.style.display = isNaN(num) ? 'none' : '';
+         }
+      }
+   });
 }
 
 
@@ -305,8 +393,116 @@ document.addEventListener('DOMContentLoaded', () => {
 
    guidebookTabs()
    memberFiltersMobile()
+   pullProfileID()
    pullAvatarURL()
    pullMessages()
+
+   emptyProfileFields()
+   stabilityMeterLogic()
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Avatars in online list
+
+import(`https://scripts.jcodesresources.com/board-index/online-user-avatars/script.js?_=${location.host}`).then(mod => mod.default({
+   onlineUserContainer: '.boardstats-online-listbox',
+   avatarImgURL: 'https://placehold.co/150x150',
+   width: 72,
+   height: 72
+}));
+
+
+
+
+// Clip subaccounts 
+
+$(function () {
+   var defaultAvatar = 'DEFAULT_AVATAR_URL';
+   var bName = location.href.split('.jcink.net')[0].split('https://')[1];
+
+   // 1. Clean up native layout
+   var $masterLink = $('#subacct_link');
+   $masterLink.find('a').click().end().find('form').hide().end().html($masterLink.html().replace(' · ', ''));
+
+   // 2. Build the basic HTML structure for the buttons
+   $masterLink.find('option').each(function () {
+      var uID = $(this).val();
+      var uName = $(this).text().replace('»', '').trim();
+
+      if (uID !== '------------') {
+         // We pass the avatar URLs as custom data attributes (data-avatar) 
+         // so the CSS can grab them for the sidebar version, while the clip version ignores them.
+         var avatarPaths = 'url(https://files.jcink.net/uploads/' + bName + '//av-' + uID + '.png), url(https://files.jcink.net/uploads/' + bName + '//av-' + uID + '.gif), url(https://files.jcink.net/uploads/' + bName + '//av-' + uID + '.jpg), url(' + defaultAvatar + ')';
+
+         $masterLink.append('<div id="u-' + uID + '" class="subacct-btn" style="--avatar-urls: ' + avatarPaths + '"><span class="subacct-name">' + uName + '</span></div>');
+      }
+   });
+
+   // 3. Clone to targets (First category clip + sidebar instances)
+   var $targets = $('.subacct_clip').first().add('.subacct_sidebar');
+   $targets.each(function () {
+      var $clone = $masterLink.clone(true);
+      $(this).append($clone);
+   });
+
+   // 4. Global click handler
+   $(document).on('click', '.subacct-btn', function () {
+      var uID = $(this).attr('id').split('u-')[1];
+      $('#subacct_link select').val(uID);
+      $('#subacct_link form').submit();
+   });
+
+   $masterLink.hide();
+});
+
+
+
+
+
+
+
+/* Clip the Recent Topic Activity display to another location */
+$("#recent-topics").appendTo("#recents");
+
+
+//*************** recent topics code by essi ******************//
+var topic = "/index.php?act=idx";
+$.get(topic, function (data) {
+   var str = "";
+   $('#recent-topics tr', data).each(function () {
+      var title = $(this).find('.recent-topics-info').html();
+      var date = $(this).find('.recent-topics-date').html();
+
+      // Use regex to wipe out " - by " regardless of weird spaces or trailing breaks
+      var cleanTitle = title.replace(/\s*-\s*by\s*/i, '');
+
+      str = str + "<div class='holdrec'><div class='rec-title'>" + cleanTitle + "<span class='rec-date'>" + date + "</span></div></div></div>";
+
+   })
+   $('#recents').append(str);
+});
+
+
 
 
