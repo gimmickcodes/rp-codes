@@ -494,6 +494,7 @@ NAVIGATION
     gap: 20px 16px;
     width: 100%;
     align-items: flex-start;
+    margin-bottom: 8px;
 }
 
 body:not(.gperms-2) .navpanel-user-controls {
@@ -508,7 +509,6 @@ body:not(.gperms-2) .navpanel-user-controls {
     cursor: pointer;
     padding: 16px;
     color: hsl(var(--accentBase-2));
-    border-left: 0.5px solid var(--border-3);
 }
 
 .navpanel-user-info {
@@ -641,8 +641,8 @@ body:not(.gperms-2) .navpanel--userlinks.perms-loggedin {
 }
 
 .acc-switch-open .navpanel-user-info {
-    display: none;
     opacity: 0;
+    transform: translateX(-50%);
     pointer-events: none;
     transition: .3s ease allow-discrete;
 }
@@ -727,7 +727,7 @@ body:not(.gperms-2) .navpanel--userlinks.perms-loggedin {
 
 #subaccounts_menu {
     display: block;
-    margin-top: 4px;
+    margin: 4px 0 12px;
 }
 
 #subacct_clip #subaccounts_menu {
@@ -1003,8 +1003,15 @@ body:not(.gperms-2) .navpanel--userlinks.perms-loggedin {
     .navpanel-user {
         grid-template:
             'avi'
-            'userinfo'
-            'userbuttons';
+            'userinfo';
+    }
+
+    .navpanel--avi {
+        margin-top: 0;
+    }
+
+    #navpanel .accswitch-panel {
+        margin-top: 0;
     }
 
     #siteheader {
