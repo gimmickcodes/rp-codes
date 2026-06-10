@@ -1,20 +1,17 @@
-<style>
 /*=============================================== *
- * Jcink.com Forum Hosting Stylesheet
- * ==============================================
- * #Version:	1.0.2
- *=============================================== */
+* Jcink.com Forum Hosting Stylesheet
+* ==============================================
+* #Version:	1.0.2
+*=============================================== */
 
-html {
-    overflow-x: auto;
-}
+
 
 form {
     display: inline;
 }
 
 /****************************************
- Body Background & Text Style
+Body Background & Text Style
 *****************************************/
 
 body {
@@ -23,25 +20,23 @@ body {
 }
 
 /****************************************
-   Table Styles
+Table Styles
 *****************************************/
 
 table,
 tr,
 td {
-    margin: 20px 0 0;
+    margin: 0;
     border-collapse: collapse;
-    padding: 0;
+    padding: 12px 0;
+    box-sizing: border-box;
 }
 
 
-#SF td[align='right'],
-#ST td[align='right'] {
-    margin: 1em 0 2em;
-}
+
 
 /****************************************
-   Board Width
+Board Width
 *****************************************/
 
 #wrapper {
@@ -62,7 +57,7 @@ td {
 
 
 /****************************************
-   Profile styles 
+Profile styles 
 *****************************************/
 
 #profilename {
@@ -85,13 +80,14 @@ td {
 }
 
 /****************************************
-   UserCP/My Controls styles
+UserCP/My Controls styles
 *****************************************/
 
 #ucpmenu {
     /* ucp sidebar */
     width: 22%;
     border: 0.5px solid var(--border-3);
+    padding: 0;
 }
 
 
@@ -100,10 +96,12 @@ td {
     font: 700 var(--font-mono-13);
     letter-spacing: 10%;
     text-transform: uppercase;
+    border: 0;
     border-bottom: 0.5px solid var(--border-3);
-    color: hsl(var(--accentBase-1)/0.5);
-    padding: calc(var(--boardInsetSides) / 2);
+    color: hsl(var(--bodytext-2));
+    padding: 12px calc(var(--boardInsetSides) / 2);
     margin-bottom: 24px;
+    width: 100%;
 }
 
 #ucpcontent .maintitle {
@@ -111,25 +109,24 @@ td {
     font: 700 var(--font-mono-13);
     letter-spacing: 10%;
     text-transform: uppercase;
-    padding: 0 var(--boardInsetSides);
     border: 0.5px solid var(--border-3);
-    padding: calc(var(--boardInsetSides) / 2);
-    color: hsl(var(--accentBase-1)/0.5);
+    padding: 12px calc(var(--boardInsetSides) / 2);
+    color: hsl(var(--bodytext-2));
+    margin-bottom: 12px;
     width: fit-content;
-    margin-left: 32px;
 }
 
 #ucpmenu .pformstrip {
-    /* ucp menu subheadings */
+    padding: 0 calc(var(--boardInsetSides) / 2);
+}
 
-    display: flex;
-    align-items: center;
-    gap: 1.5ch;
-    font: 600 var(--font-mono-12);
+.pformstrip,
+#Msg form[name="REPLIER"] .pformstrip {
+    /* ucp menu subheadings, headings in inbox, subscribed topics, compose message, etc */
+    font: 600 var(--font-mono-13);
     letter-spacing: 5%;
     text-transform: uppercase;
     color: hsl(var(--accentBase-1)/0.5);
-    padding: 0 calc(var(--boardInsetSides) / 2);
 }
 
 
@@ -149,27 +146,42 @@ td {
     margin-bottom: 0.25em;
 }
 
+#ucpmenu+td[style="padding:2px"] {
+    display: none
+}
+
 #ucpcontent {
     width: auto;
+    padding-top: 0;
+    padding-left: var(--boardInsetSides);
+    font: var(--font-serif-15);
+    color: hsl(var(--bodytext-2));
 }
 
 #ucpcontent p {
-    padding: 10px;
-    margin: 0px;
+    margin: 10px 0;
+    padding: 0;
 }
 
 
-#ucpcontent .pformstrip {
+#ucpcontent form>table>tbody>tr:last-child td {
+    /* ucp save button container */
+    padding-top: 24px;
+}
+
+#ucpcontent .pformstrip input[type=submit] {
     /* ucp save button */
     font: 700 var(--font-mono-13);
     letter-spacing: 10%;
     text-transform: uppercase;
     color: hsl(var(--accentBase-2));
-    background: hsl(var(--accentBase-3) / .25);
+    width: fit-content;
+    margin: 20px auto;
 }
 
+
 /****************************************
-  Logo Strip
+Logo Strip
 *****************************************/
 
 #logostrip {
@@ -193,7 +205,7 @@ td {
 }
 
 /****************************************
-  Search Bar 
+Search Bar 
 *****************************************/
 
 #searchbar {
@@ -218,10 +230,8 @@ td {
     background: none repeat scroll 0 0 transparent;
     border: 0;
     color: #808080;
-    font-size: 12px;
     width: 192px;
     height: 26px;
-    font-family: Arial, sans-serif;
     padding: 1px 0 0 8px;
 }
 
@@ -248,7 +258,176 @@ td {
 }
 
 /****************************************
-  Navigation Bar / Submenu
+Search Pages, Last Click, Recent Topics and Posts
+*****************************************/
+
+
+#Search,
+#Online {
+    font: var(--font-serif-15);
+
+    .sitebody {
+        overflow-x: auto;
+    }
+
+    td.maintitle,
+    #active-topics .maintitle,
+    .tableborder:not(.active-posts) .maintitle {
+        all: unset;
+        display: table-cell;
+        font: 400 var(--font-mixta-28);
+        text-align: left;
+        width: 100%;
+        padding: 0 0 16px;
+        color: hsl(var(--accentBase-2));
+        border-bottom: 0.5px solid var(--border-3);
+
+        /* match glowy */
+        color: color-mix(in oklab, hsl(var(--accent-2)) 30%, hsl(var(--backgroundBlack)) 80%);
+        filter: blur(1px);
+        -webkit-text-stroke: 1px hsl(var(--accent-2));
+        color: transparent;
+        background: linear-gradient(to bottom, hsl(var(--accent-2)) 25%, hsl(var(--black) / 0) 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-box-decoration-break: clone;
+        background-clip: text;
+    }
+
+    .pformstrip {
+        padding-top: 24px;
+    }
+
+    td td {
+        padding: 0;
+    }
+
+    .tableborder {
+        margin-top: 24px;
+    }
+
+    .row1 {
+        padding: 16px 0;
+    }
+}
+
+
+
+.tableborder:not(.active-posts) .maintitle {
+    all: unset;
+    display: block;
+}
+
+
+#active-topics .maintitle {
+    border: 0 !important;
+}
+
+#active-topics .tablebasic>tbody>tr:first-child {
+    border-top: 0.5px solid var(--border-3);
+}
+
+#active-topics .tablebasic>tbody>tr:not(:first-child) {
+    border-bottom: 0.5px solid var(--border-3);
+}
+
+
+#active-topics a {
+    color: hsl(var(--accentBase-2));
+}
+
+.active-posts .maintitle {
+    all: unset;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: baseline;
+}
+
+
+.active-posts .maintitle .linkthru {
+    display: inline-block;
+    padding: 0 0 16px;
+    margin-left: 4px;
+    filter: blur(0);
+    -webkit-text-stroke: 0;
+
+    /* match topic titles */
+    font: 500 var(--font-mixta-28);
+    background: linear-gradient(45deg, hsl(var(--accentBase-2)) 20%, hsl(var(--accentContrast)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-variant-ligatures: discretionary-ligatures;
+    font-feature-settings: "dlig" 1;
+}
+
+
+.active-posts a,
+#topic-summary a {
+    color: hsl(var(--accentBase-2));
+}
+
+.active-posts .tablebasic {
+    border: 0.5px solid var(--border-3);
+}
+
+#topic-summary table {
+    border: 0.5px solid var(--border-3);
+    margin: 20px 0;
+}
+
+.active-posts .tablebasic tr:first-child,
+#topic-summary .post2 {
+    padding: 1em 2ch;
+    border-bottom: 0.5px solid var(--border-3);
+    background: color-mix(in oklab, hsl(var(--accent-3) / .9) 10%, hsl(var(--backgroundBlack) / .9) 90%);
+}
+
+.active-posts .tablebasic tr:last-child {
+    border-top: 0.5px solid var(--border-3);
+}
+
+
+.active-posts .row4,
+.active-posts .post1,
+#topic-summary .post2 {
+    padding: 8px !important;
+}
+
+
+#topic-summary .post1 {
+    padding: 16px 8px 32px;
+    border-bottom: 0.5px solid var(--border-3);
+}
+
+.active-posts .row4 a {
+    font-weight: 600;
+}
+
+#topic-summary .post2 b {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.post1:first-child img,
+.post1:first-child img+br {
+    display: none
+}
+
+.post1:first-child {
+    font: var(--font-mono-13);
+}
+
+#post-preview .postcolor {
+    font: var(--font-serif-17);
+    border-top: 0.5px solid var(--border-3);
+    padding: 24px 0;
+}
+
+/****************************************
+Navigation Bar / Submenu
 *****************************************/
 
 #submenu {
@@ -286,7 +465,7 @@ td {
 #navstrip {}
 
 /****************************************
-   Calendar styling
+Calendar styling
 *****************************************/
 
 .caldate {
@@ -313,7 +492,7 @@ td {
 
 
 /**************************************************
- User Links Menu (Messages / View new posts / etc )
+User Links Menu (Messages / View new posts / etc )
 ***************************************************/
 
 #userlinks {
@@ -340,7 +519,7 @@ td {
 
 
 /****************************************
-   Topic View styles
+Topic View styles
 *****************************************/
 
 form[name="mod_topics"]>b {
@@ -365,7 +544,9 @@ form[name="mod_topics"]>b {
 }
 
 .row2+.activeuserstrip {
-    margin: 24px 0;
+    margin: 24px 0 0;
+    padding: 16px 0;
+    border: 0.5px solid var(--border-3);
 }
 
 .activeuserstrip a {
@@ -374,13 +555,12 @@ form[name="mod_topics"]>b {
 }
 
 .normalname {
-    font-size: 12px;
-    font-weight: bold;
-    color: #003;
+    /* search results username */
+    text-transform: capitalize;
 }
 
 .normalname a {
-    font-size: 12px;
+    color: hsl(var(--accentBase-2));
 }
 
 .unreg {
@@ -390,16 +570,14 @@ form[name="mod_topics"]>b {
 }
 
 .post1 {
-    background-color: #F2F2F2;
+    /* search results */
 }
 
 .post2 {
     background-color: #F2F2F2;
 }
 
-.postdetails {
-    font-size: 10px;
-}
+.postdetails {}
 
 .postcolor {}
 
@@ -425,7 +603,7 @@ form[name="mod_topics"]>b {
 
 
 /*******************************
- Pagination e.g. [1],2,3 ...
+Pagination e.g. [1],2,3 ...
 *******************************/
 
 .pagination {
@@ -467,24 +645,34 @@ form[name="mod_topics"]>b {
     color: hsl(var(--accentBase-3));
 }
 
-#SF td[align='right'],
-#ST td[align='right'] {
-    margin: 1em 0 2em;
-}
-
 /****************************************
-   Global general table/div row styles
+Global general table/div row styles
 *****************************************/
 
 .row4 {
-    all: unset !important;
+    /* copyright, alert settings */
 }
 
 .row1,
 .row3,
 .row4,
 .row2 {
-    padding: 0 !important;
+    text-align: left;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.row1 {
+    /* Inbox message list */
+    padding: 8px 0;
+}
+
+.row2 {
+    /* username change */
+}
+
+#ST .row2 {
+    /* Post viewers */
     font: var(--font-mono-14);
 }
 
@@ -494,8 +682,7 @@ form[name="mod_topics"]>b {
 }
 
 .darkrow1 {
-    background-color: #D6D6D6;
-    color: black;
+    /* online list */
 }
 
 .darkrow2 {
@@ -518,15 +705,22 @@ td.darkrow2 {
 }
 
 .dlight {
-    background-color: #EFEFEF;
+    /* inbox message rows */
 }
 
 /****************************************
-   Top table bars / gradient holders 
+Top table bars / gradient holders 
 *****************************************/
 
 .maintitle {
-    /* headers for ucp, topics */
+    /* headers for ucp, thread titles, topic options, fast reply, moving topics */
+    font: 700 var(--font-mono-13);
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    border: 0.5px solid var(--border-3);
+    color: hsl(var(--bodytext-2));
+    padding: 12px calc(var(--boardInsetSides) / 2);
+    margin-bottom: 24px;
 }
 
 
@@ -536,28 +730,42 @@ td.darkrow2 {
 
 .maintitle a:hover {}
 
+#Mod .maintitle {
+    width: fit-content;
+}
+
 /****************************************
-  Bar directly below the maintitles 
+Bar directly below the maintitles 
 *****************************************/
 
 .titlemedium {
-    font-weight: bold;
-    color: #222;
-    padding: 2px 6px;
+    font: 600 var(--font-mono-12);
+    letter-spacing: 5%;
+    text-transform: uppercase;
+    color: hsl(var(--accentBase-1) / 0.5);
     margin: 0px;
-    background-color: #D8D8D8;
-    background-image: url(//files.jcink.net/themes/default/gray-gradient.png);
+    padding: 8px 8px 8px 0;
+    text-align: left;
+}
+
+tr:not(:last-child) .titlemedium {
+    border-bottom: 0.5px solid var(--border-3);
+}
+
+tbody tr:last-child>.titlemedium {
+    border-top: 0.5px solid var(--border-3);
 }
 
 .titlemedium a:link,
 .titlemedium a:visited,
 .titlemedium a:active {
     text-decoration: none;
-    color: #222;
 }
 
+
+
 /****************************************
-  Table & Div Borders 
+Table & Div Borders 
 *****************************************/
 
 .tableborder {}
@@ -568,8 +776,10 @@ td.darkrow2 {
 }
 
 .tablepad {
-    background-color: yellow;
-    padding: 6px;
+    /* topic options */
+    margin: 16px 0 24px;
+    padding: 0 0 0 14px;
+    border-left: 0.5px solid var(--border-3);
 }
 
 .tablebasic {
@@ -583,8 +793,56 @@ td.darkrow2 {
     border: 1px solid red;
 }
 
+
 /****************************************
-  QUOTE and CODE BBCode boxes
+Thread options
+*****************************************/
+
+
+.threadfunctions {
+    margin: 1em 0 2em;
+}
+
+
+#ST td {
+    padding: 0;
+    display: block;
+    width: fit-content;
+}
+
+
+.bar {
+    /* thread moderation options */
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.threadfunctions tr {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.threadfunctions td {
+    width: 100%;
+    display: block;
+}
+
+#topic_open .maintitle a {
+    font-weight: 700;
+    color: hsl(var(--accentContrast));
+    margin-left: -0.25ch;
+}
+
+.tablepad a {
+    color: hsl(var(--accentContrast));
+}
+
+/****************************************
+QUOTE and CODE BBCode boxes
 *****************************************/
 
 #QUOTE {
@@ -613,9 +871,18 @@ td.darkrow2 {
 
 
 /**********************************************
-  Input buttons, e.g. submit, text input, etc
+Input buttons, e.g. submit, text input, etc
 ***********************************************/
 
+
+.pagelinks+div[align="right"] {
+    width: 50vw !important;
+}
+
+fieldset.search {
+    border-color: var(--border-3);
+    border-width: 0.5px;
+}
 
 .button-large {
     display: inline-block;
@@ -654,9 +921,7 @@ td[align="left"] .button-large {
 
 .forminput,
 .codebuttons,
-.textinput,
-.radiobutton,
-.checkbox {
+.textinput {
     border-radius: 0;
     vertical-align: middle;
     min-height: 40px;
@@ -667,6 +932,15 @@ td[align="left"] .button-large {
     border-radius: 2px;
     font: 400 var(--font-mono-13);
     color: hsl(var(--white));
+}
+
+input[type=checkbox].forminput {
+    min-height: unset;
+}
+
+.radiobutton,
+checkbox {
+    margin: 8px 4px;
 }
 
 .quick-edit .textinput {
@@ -689,7 +963,7 @@ input[type=reset] {
 }
 
 .codebuttons {
-    font-size: 10px;
+    /* posting form buttons */
 }
 
 .right-buttons {
@@ -697,23 +971,20 @@ input[type=reset] {
 }
 
 /****************************************
-  Form table cell styles, left/right/top
+Form table cell styles, left/right/top
 *****************************************/
 
-.pformleft {
-    width: 25%;
-}
+.pformleft {}
 
 .pformleftw {
-    width: 40%;
-    background: cyan;
+    /* topic moderation */
 }
 
 .pformright {}
 
 
 /****************************************
- Tabs on the portal profiles + sections
+Tabs on the portal profiles + sections
 *****************************************/
 
 .opentab {
@@ -750,7 +1021,7 @@ input[type=reset] {
 }
 
 /****************************************
-   Delete all cookies / mark read
+Delete all cookies / mark read
 *****************************************/
 
 #delcookiesrow,
@@ -766,7 +1037,7 @@ input[type=reset] {
 
 
 /*******************************
-     Board Statistics Links
+    Board Statistics Links
 *******************************/
 
 .toplinks a {
@@ -782,7 +1053,7 @@ input[type=reset] {
 }
 
 /*******************************
- Mini Profile Seperators
+Mini Profile Seperators
 *******************************/
 
 .postbit {
@@ -794,7 +1065,7 @@ input[type=reset] {
 }
 
 /********************************
-	Miscellaneous
+Miscellaneous
 ********************************/
 
 /* image tag styles */
@@ -808,11 +1079,9 @@ img.attach {
     padding: 2px
 }
 
-/* Forum Descriptions */
-.desc {
-    font-size: 11px;
-    color: #000;
-}
+
+/* Forum Descriptions, topic options descs */
+.desc {}
 
 /* Edited by text */
 .edit {
@@ -861,7 +1130,7 @@ img.attach {
 }
 
 /****************************************
- Mobile-specific Styles
+Mobile-specific Styles
 *****************************************/
 
 #mobile {
@@ -869,18 +1138,21 @@ img.attach {
 }
 
 /***********************************
- Copyright: Removal is against Terms
+Copyright: Removal is against Terms
 ************************************/
 
 .copyright {
     font: var(--font-serif-14);
     color: hsl(var(--bodytext-2));
-    margin: 24px 0;
+    margin-top: 64px;
+    padding: 16px 0;
+    border-top: 0.5px solid var(--border-3);
+    text-align: right;
 }
 
 
 /***********************************
- CUSTOM
+CUSTOM
 ************************************/
 
 
@@ -892,181 +1164,86 @@ tr#field-interests {
 }
 
 
-
-
 .tl-footer .darkrow2 {
     font: var(--font-mono-14);
     text-align: left;
     margin: 1em 0 0;
 }
 
-.threadfunctions tr {
-    display: block;
+
+
+#field-birthday~tr,
+#field-birthday~tr td {
+    padding: 0;
 }
 
-.threadfunctions td {
-    width: 100%;
-    display: block;
+#ucpcontent table,
+#ucpcontent tr,
+#ucpcontent td {}
+
+#UserCP pformstrip+table>tbody {
+    display: grid;
 }
 
-
-
-
-/***********************************
- UCP
-************************************/
-
-#UserCP :is(table, tr, td) {
-    margin: 0;
-}
-
-#UserCP .sitebody--inset>table {
-    /* ucp outerwrap */
-}
-
-#ucpcontent table {
-    /* ucp main content area */
-    border: 0;
-}
-
-
-#ucpcontent tbody tr {
-    min-width: 0;
-    width: 100%;
-}
-
-tr#field-birthday,
-tr#field-website,
-tr#field-location,
-tr#field-interests,
 #UserCP form>.pformstrip:first-of-type {
     display: none;
 }
 
-#ucpcontent tbody {
+
+#ucpcontent table {
+    /*    width: 100% !important;
+max-width: 100% !important;
+table-layout: fixed !important; */
+    border: 0;
+}
+
+.userCP-section-header+tr>td {
+    display: block;
+}
+
+div.ucp-section-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 36px 16px;
+    padding: 0 0 var(--boardInsetSides);
+    width: 100% !important;
+}
+
+div.ucp-section-container.is-collapsed {
+    display: none !important;
+}
+
+
+div.ucp-section-container tr[id*="field_"] {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-    padding: var(--boardInsetSides) 0 0 var(--boardInsetSides);
-    gap: 36px;
+    grid-template:
+        'fieldinfo' 'fieldcontent' / 1fr;
+    gap: 1em 2em;
+    align-content: space-between;
+
+    padding: 0;
+    border: 0;
+    /* grid-column: span 2; */
+}
+
+tr.userCP-section-header {
+    width: 100% !important;
+    cursor: pointer;
+    user-select: none;
+    display: block;
 }
 
 .userCP-section-header td {
     font: 600 var(--font-mixta-28);
     color: hsl(var(--accent-2));
-    padding-bottom: 4px;
-    margin-bottom: 1em !important;
-    margin-bottom: -8px !important;
-}
-
-tr[id*="field_"]+.userCP-section-header {
-    margin-top: 32px !important;
-}
-
-tr[id*="field_"] {
-    display: grid;
-    grid-template:
-        'fieldinfo fieldcontent' / 1fr 2fr;
-    grid-template:
-        'fieldinfo' 'fieldcontent' / 1fr;
-    gap: 1em 2em;
-    align-content: space-between;
-    border: 0.5px solid var(--border-3);
-    border-top: 0;
-    padding: 16px calc(var(--boardInsetSides) / 2) calc(var(--boardInsetSides) / 2);
-
-    border: 0;
-    padding: 0;
-    gap: 8px;
-}
-
-.pformleft {
-    /* ucp field descriptions */
     width: 100%;
-    font: 500 var(--font-serif-15);
-    color: hsl(var(--bodytext-1)/.625)
-}
-
-.pformleft label {
-    /* ucp field labels */
-    font: 500 var(--font-serif-15);
-    color: hsl(var(--accentBase-3));
-    display: block;
-    margin-bottom: 0.25em;
-}
-
-.pformleft label+br {
-    display: none;
-}
-
-.pformright {
-    width: 100%;
-}
-
-#UserCP table input.forminput,
-#UserCP table textarea.forminput,
-#UserCP table select.forminput {
-    width: 100%;
-    font: var(--font-serif-17);
-    margin-top: 24px;
-
-    margin-top: 0;
-}
-
-
-tr.userCP-section-header,
-tr#field_1,
-tr#field_10,
-tr#field_19,
-tr#field_20,
-tr#field_24,
-tr#field_25,
-tr#field_26 {
-    grid-column: 1 / -1;
-}
-
-/*
-:where(tr#field_1,
-tr#field_10,
-tr#field_19
-tr#field_20,
-tr#field_24,
-tr#field_25,
-tr#field_26) .pformleft {
-  width: calc(50% - 16px);
-} */
-
-tr[id*="field_"] .forminput {
-    height: 44px;
-}
-
-:where(tr#field_19,
-    tr#field_24) .forminput {
-    height: 200px !important;
-}
-
-input[value="Amend my profile"].forminput {}
-
-
-
-/***********************************
- UCP: Collapsible headings
-************************************/
-/* Style the header cell layout safely */
-.userCP-section-header td {
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    width: 100%;
-    /* Ensures it fills the whole row width */
+    margin: 16px 0 !important;
 }
 
-/* Let the span take up the space and container the line */
 .userCP-section-header span {
     display: flex;
     align-items: center;
@@ -1074,7 +1251,6 @@ input[value="Amend my profile"].forminput {}
     flex: 1;
 }
 
-/* Your beautifully expanding pseudo dividing line */
 .userCP-section-header span::after {
     content: '';
     display: block;
@@ -1082,9 +1258,142 @@ input[value="Amend my profile"].forminput {}
     border-top: 0.5px solid var(--border-3);
 }
 
-/* ---------------------------------------------
-   FIXED CARET ICON TOGGLES
---------------------------------------------- */
+div.ucp-section-container tr#field_1,
+div.ucp-section-container tr#field_10,
+div.ucp-section-container tr#field_19,
+div.ucp-section-container tr#field_20,
+div.ucp-section-container tr#field_24,
+div.ucp-section-container tr#field_25,
+div.ucp-section-container tr#field_26 {
+    grid-column: 1 / -1 !important;
+}
+
+.death_counter-container {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+div.ucp-section-container tr#field_27 .pformright {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stability_preview-number,
+.death_counter-value {
+    font-size: 32px;
+    font-weight: 400;
+    color: hsl(var(--accent-2));
+    min-width: 4ch;
+    text-align: left;
+}
+
+.death_counter-value {
+    min-width: 2ch;
+    text-align: center;
+}
+
+.death_counter-value::before {
+    content: "Died "
+}
+
+.death_counter-value::after {
+    content: " time(s)"
+}
+
+.death_counter-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 40px;
+    background: hsl(var(--accentBase-3) / .05);
+    border: 1px solid hsl(var(--accentBase-3) / .25);
+    border-radius: 2px;
+    color: hsl(var(--accentBase-2));
+}
+
+.stability_preview .ph {
+    font-size: 56px;
+    display: block;
+    background: linear-gradient(to right, hsl(var(--accent-2)) var(--stability-percentage), hsl(var(--white)/.25) var(--stability-percentage));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+
+.stability_preview~input[type="range"] {
+    /*  -webkit-appearance: none; 
+  appearance: none; */
+    width: 100%;
+    max-width: 250px;
+    height: 8px;
+    background: var(--border-3);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+/*
+.stability_preview ~ input[type="range"]::-webkit-slider-thumb,
+.stability_preview ~ input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;            
+  height: 8px;            
+  background: hsl(var(--accentContrast));    
+  border-radius: 50%;      
+  border: 2px solid hsl(var(--accentContrast));  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+*/
+
+.stability_preview~input[type="range"]:disabled,
+.disabled .death_counter-btn {
+    cursor: not-allowed;
+    display: none;
+}
+
+
+#ucpcontent #field-birthday~tr .pformleft {
+    width: 100%;
+    font: 500 var(--font-serif-15);
+    color: hsl(var(--bodytext-1)/.625);
+}
+
+#ucpcontent .pformleft label {
+    font: 500 var(--font-serif-15);
+    color: hsl(var(--accentBase-3));
+    display: block;
+    margin-bottom: 0.25em;
+}
+
+#ucpcontent .pformleft label+br {
+    display: none;
+}
+
+#field-birthday~tr .forminput,
+#field-birthday~tr textarea.forminput,
+#field-birthday~tr select.forminput {
+    width: 100%;
+    font: var(--font-serif-16);
+    margin-top: 0;
+}
+
+tr[id*="field_"] .forminput {
+    height: 44px;
+}
+
+:where(tr#field_19, tr#field_24) .forminput {
+    height: 200px !important;
+}
 
 .userCP-section-header .ph-caret-down {
     display: none;
@@ -1096,12 +1405,65 @@ input[value="Amend my profile"].forminput {}
 
 .userCP-section-header.is-collapsed .ph-caret-down {
     display: block;
-    /* Show down arrow when closed */
 }
 
 .userCP-section-header.is-collapsed .ph-caret-up {
     display: none;
-    /* Hide up arrow when closed */
+}
+
+
+
+
+
+@media only screen and (max-width: 760px) {
+
+    #UserCP .sitebody--inset>table>tbody>tr {
+        display: grid;
+        grid-template:
+            'header' auto
+            'body' / 1fr;
+    }
+
+    #ucpmenu .maintitle {
+        grid-column: span 8;
+        display: none;
+    }
+
+    #ucpmenu {
+        grid-area: header;
+        width: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 0 32px;
+        overflow: auto;
+        grid-template-rows: auto auto;
+        grid-auto-columns: 200px;
+        padding: var(--boardInsetSides);
+    }
+
+    #ucpmenu p {
+        margin-bottom: 0;
+    }
+
+    #ucpcontent {
+        grid-area: body;
+        padding: 32px 0 0;
+    }
+
+    div.ucp-section-container {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+        padding-bottom: 32px;
+    }
+
+    div.ucp-section-container tr[id*="field_"] {}
+
+    #UserCP .pformstrip+table td {
+        display: block;
+    }
+
+
+
 }
 
 
@@ -1117,4 +1479,265 @@ input[value="Amend my profile"].forminput {}
 
 
 
-</style>
+
+
+
+
+
+
+
+
+/****************************************
+Posting Form
+*****************************************/
+
+#Post .maintitle {
+    all: unset;
+    display: table-cell;
+    padding: calc(var(--boardInsetSides) / 2);
+    font: 600 var(--font-mixta-28);
+    color: hsl(var(--accent-2));
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 16px 0 0 !important;
+}
+
+#Msg .tableborder,
+#ucpcontent form .tableborder,
+.pformstrip+br+.tableborder,
+.pformstrip+p+div .tableborder {
+    border: 0.5px solid var(--border-3);
+    margin-top: 8px;
+}
+
+
+#ucpcontent .maintitle+script+.pformstrip,
+#ucpcontent .pformstrip:first-of-type,
+#ucpcontent .maintitle+.pformstrip {
+    /* headings of various ucp subpages */
+    font: 600 var(--font-mixta-28);
+    color: hsl(var(--accent-2));
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 16px 0 0 !important;
+}
+
+.maintitle+script+.pformstrip span {
+    font: var(--font-serif-16);
+    color: hsl(var(--bodytext-1));
+}
+
+.ucptable td[align="right"] a,
+.maintitle+script+.pformstrip span a {
+    color: hsl(var(--accentContrast));
+    font-weight: 500;
+}
+
+
+
+#topic-settings-header .pformstrip,
+#enter-your-post-header .pformstrip,
+#code-buttons-header .pformstrip,
+#upload-files .pformstrip,
+#post-as-header .pformstrip,
+#post-as .pformstrip {}
+
+
+
+#posting-form {
+    border: 0.5px solid var(--border-3);
+    background: linear-gradient(to bottom, hsl(var(--accent-2) / .2) 0%, hsl(var(--accent-2)/0) 30%);
+}
+
+
+#posting-form tr[id*="header"]:not(#code-buttons-header) {
+    border-top: 0.5px solid var(--border-3);
+}
+
+#posting-form .pformstrip {
+    padding-top: 16px;
+    padding-bottom: 2px;
+}
+
+#posting-form tr:last-child .pformstrip {
+    padding-bottom: 24px;
+}
+
+#posting-form td {
+    padding: 0 calc(var(--boardInsetSides) / 2) 16px;
+}
+
+#posting-form .pformleft {
+    width: 25%;
+}
+
+#posting-form a {
+    color: hsl(var(--accent-2));
+}
+
+#enter-your-post .textinput {
+    font: var(--font-serif-17);
+}
+
+#bbcode-buttons {
+    display: block;
+    margin-bottom: 0px;
+}
+
+#bbcode-buttons+br {
+    display: none;
+}
+
+#post-icon-options {
+    display: none;
+}
+
+#upload-files br {
+    display: none;
+}
+
+#bbcode-buttons input,
+#bbcode-buttons select,
+form[name="REPLIER"] input[name="button"] {
+    min-height: unset;
+    height: 28px;
+    padding: 0 4px;
+    margin-bottom: 8px;
+    margin-right: 6px;
+}
+
+#bbcode-buttons select {}
+
+
+input {
+    background: hsl(var(--backgroundBlack)/0.5);
+    color: hsl(var(--bodytext-2));
+}
+
+input[name="tagcount"],
+input[name="helpbox"] {
+    font-size: 12px !important;
+    padding: .5em .75em !important;
+}
+
+td.right a {
+    display: inline-block;
+}
+
+#smilies-table {
+    display: none;
+}
+
+#editpost_custombuttons {
+    text-align: left;
+}
+
+#enter-your-post .desc {
+    text-align: left;
+}
+
+#topic_open+br+.bar>div:first-child {
+    z-index: 5;
+}
+
+input[type=button].formatbuttons {
+    min-height: unset;
+    height: 24px;
+    padding: 0 6px;
+}
+
+@media only screen and (max-width: 760px) {
+
+    .bar {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #Msg table,
+    #Msg :where(thead, tbody, tr),
+    #posting-form,
+    #posting-form :where(thead, tbody, tr),
+    #store table,
+    #store :where(thead, tbody, tr),
+    .threadfunctions,
+    .threadfunctions :where(td) {
+        display: block;
+    }
+
+
+    #posting-form td {
+        display: block;
+    }
+
+    #store #ucpcontent td {
+        display: table-cell;
+    }
+
+    .pformleft {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #ucpcontent input[type="text" i],
+    #ucpcontent textarea,
+    #posting-form input[type="text" i],
+    #posting-form textarea,
+    #qr_open textarea {
+        width: 100%;
+    }
+
+    #posting-form .pformleft {
+        width: 100%;
+    }
+
+    .store-menu>.row4 {
+        display: none;
+    }
+
+    .threadfunctions td {
+        width: calc(100vw - 24px) !important;
+    }
+
+    .threadfunctions td:first-of-type {
+        margin-bottom: 20px;
+    }
+
+    /* Registration page styling for mobile */
+    #Reg .tablepad {
+        padding: 0;
+    }
+
+    #Reg tbody tr {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        line-height: 150%;
+    }
+
+    #Reg fieldset table tr {
+        flex-flow: row nowrap;
+    }
+
+    #Reg fieldset table tr td {
+        display: flex;
+    }
+
+    #Reg fieldset table tr td input {
+        width: 100%;
+    }
+
+    #Reg td,
+    #Reg select {
+        width: 100% !important;
+    }
+
+    #Reg fieldset {
+        box-sizing: border-box;
+        border: 0px;
+        border-bottom: 1px solid;
+    }
+
+    #Reg td[width='12'] {
+        display: none;
+    }
+}

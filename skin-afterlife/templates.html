@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+<head>
+    <title>After We Die</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link href="jcink-defaults.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- font icons -->
+    <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/zbl1ihd.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <script>
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme == "dark") {
+            document.documentElement.classList.toggle("dark-theme");
+        } else if (currentTheme == "light") {
+            document.documentElement.classList.toggle("light-theme");
+        }
+    </script>
+
+</head>
+
+<body class="userid-{ID} gperms-{ID}" id="ST">
+
+    <div id="navbar">
+        <div class="navbar--menubutton" onclick="menuFunction()"><i class="ph ph-list"></i><i class="ph ph-x"></i></div>
+        <div class="navbar--breadcrumbs">
+            <div id="navstrip">
+                <a href="#">After We Die</a><span class="navstrip-separator">·</span>
+                <a href="">Category</a><span class="navstrip-separator">·</span>
+                <a href="">Board</a>
+            </div>
+        </div>
+
+        <div class="navbar--utilities">
+            <a class="scrollButton" data-target="#gotoTop" title="go to top"><i class="ph ph-caret-up"></i></a>
+            <a href="#bottom"><i class="ph ph-caret-down"></i></a>
+            <i class="ph ph-sun"></i>
+        </div>
+    </div>
+
+    <div id="navpanel" class="accswitch-swap-area">
+        <div class="navpanel-user-controls perms-loggedin">
+            <a href="#" title="Log Out" class="perms-loggedin"><i class="ph ph-sign-out"></i> </a>
+            <div class="accswitch-toggle perms-loggedin" title="Switch accounts"><i class="ph ph-swap"></i>
+            </div>
+            <div class="accswitch-close perms-loggedin" title="Close"><i class="ph ph-x"></i></div>
+        </div>
+        <div class="navpanel-section navpanel-user">
+            <div class="navpanel-user-info">
+                <div class="navpanel--username">
+                    <a href="">{Username}</a>
+                </div>
+                <div class="navpanel--userlinks perms-loggedin">
+                    <a href="#" title="Messages"><i class="ph ph-envelope"></i> 21</a>
+                    <a href="#" title="Alerts"><i class="ph ph-bell"></i> 21</a>
+                    <a href="#" title="Log Out"><i class="ph ph-sign-out"></i> Log out</a>
+                </div>
+                <div class="navpanel--userdesc perms-loggedin">You have 300 posts and 3,000 favor.</div>
+                <div class="navpanel--userlinks perms-loggedout">
+                    <a href="#" title="Log In"><i class="ph ph-envelope"></i> Log In</a>
+                    <a href="#" title="Register"><i class="ph ph-bell"></i> Register</a>
+                </div>
+            </div>
+            <!-- <div class="navpanel--userlinks-big perms-loggedin">
+                <a href="">Inventory</a>
+                <a href="">Development</a>
+            </div> -->
+            <div class="accswitch-panel">
+                <div class="accswitch-close" title="Go back">Switch accounts</div>
+                <span id="subaccounts_menu" class="perms-loggedin">
+                    <form
+                        action="https://jewelsofetheria.jcink.net/index.php?&amp;act=Login&amp;CODE=01&amp;CookieDate=1"
+                        name="subswitch" method="POST">
+                        <input type="hidden" name="auth_key" value="32298511ffb1310bd3bb856bb705b93f">
+                        <input type="hidden" name="UserName" value="subacct">
+                        <input type="hidden" name="PassWord" value="subacct">
+                        <input type="hidden" name="referer" value="">
+                        <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                            <option value="------------" selected="selected">Switch Account</option>
+                            <option value="13">Roman Torrano</option>
+                        </select>
+                    </form>
+                </span>
+            </div>
+            <a href="" class="navpanel--avi imgfill perms-loggedin" style="background-image:var(--placeholderIcon)"></a>
+        </div>
+        <div class="navpanel-section">
+            <div class="siteheader-linksbox--mainlinks">
+                <a href="">Home</a>
+                <a href="" class="perms-loggedin">UCP</a>
+                <a href="" class="perms-QA">ACP</a>
+                <a href="">Members</a>
+                <a href="">New Topics</a>
+                <a href="">Online</a>
+                <a href="">Search</a>
+                <a href="" class="perms-loggedin">Log Out</a>
+                <a href="" class="perms-loggedout">Log In</a>
+            </div>
+            <div class="siteheader-linksbox--quicklinks">
+                <a href="">Guidebook</a>
+                <a href="" class="perms-loggedin">Shops</a>
+                <a href="">Templates</a>
+                <a href="">Store</a>
+                <a href="">Discord</a>
+            </div>
+        </div>
+        <div class="navpanel-section">
+            <a class="panel-tracker-title" href="#">Your Current Threads</a>
+            <div class="paneltrackerwrap">
+                <div class="tracker-item owing" aria-described-by="Owing">
+                    <b><span class="status"><i class="ph ph-pen-nib"></i></span>
+                        <a href="https://afterdeath.jcink.net/index.php?showtopic=1&amp;view=getlastpost">Welcome To
+                            Your New Forum</a></b>
+                    <div class="tracker-desc"> <span class="tracker-location">The Monastery of St. Divenire</span> <span
+                            class="tracker-threaddesc"> </span> <br> <span class="tracker-lastpost">Last by <span">
+                                Caretaker</span>, May 30 2026, 04:39 PM</span></div>
+                    <hr>
+                </div>
+                <div class="tracker-item" aria-described-by="Owing">
+                    <b><span class="status"><i class="ph ph-pen-nib"></i></span>
+                        <a href="https://afterdeath.jcink.net/index.php?showtopic=1&amp;view=getlastpost">Welcome To
+                            Your New Forum</a></b>
+                    <div class="tracker-desc"> <span class="tracker-location">The Monastery of St. Divenire</span> <span
+                            class="tracker-threaddesc"> </span> <br> <span class="tracker-lastpost">Last by <span">
+                                Caretaker</span>, May 30 2026, 04:39 PM</span></div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <anchor id="gotoTop"> </anchor>
+
+
+    <div id="siteheader">
+        <div class="siteheader-linksbox">
+            <div class="siteheader-linksbox--mainlinks">
+                <a href="">Home</a>
+                <a href="" class="perms-loggedin">UCP</a>
+                <a href="" class="perms-QA">ACP</a>
+                <a href="">Members</a>
+                <a href="">New Topics</a>
+                <a href="">Online</a>
+                <a href="">Search</a>
+                <a href="" class="perms-loggedin">Log Out</a>
+                <a href="" class="perms-loggedout">Log In</a>
+            </div>
+            <div class="siteheader-linksbox--quicklinks">
+                <a href="">Guidebook</a>
+                <a href="" class="perms-loggedin">Shops</a>
+                <a href="">Templates</a>
+                <a href="">Store</a>
+                <a href="">Discord</a>
+            </div>
+        </div>
+
+        <div class="hero">
+            <div class="hero-image">
+                <img src="assets-final/board-hero.png">
+            </div>
+            <a href="">
+                <div class="hero-title--one progblur">After</div>
+                <div class="hero-title--two"><span class="progblur">We</span> <span class="progblur">Die</span></div>
+            </a>
+            <div class="hero-subtitle">A Dungeon-crawler Afterlife Roleplay</div>
+        </div>
+
+    </div>
+
+
+    <div class="sitebody">
+
+        <!-- <% POSTROW %> -->
+        <div class="sitebody--inset PREVIEW-POSTROW" id="ST" style="display: inherit;">
+
+
+            <!-- JCINK INSERTED ABOVE POST ROW HEADER -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="threadfunctions">
+                <tbody>
+                    <tr>
+                        <td align="left" width="20%" nowrap="nowrap"><span class="pagination">
+                                <span class="pagination_pagetxt"><a title="Jump to page...">Pages:</a>
+                                    (3)</span>&nbsp;<span class="pagination_current"><b>1</b></span>&nbsp;<a href="#"
+                                    class="pagination_page">2</a>&nbsp;<a href="#"
+                                    class="pagination_page">3</a>&nbsp;</span>&nbsp;<span class="goto-firstunread">(
+                                <a href="#">Go
+                                    to first unread post</a> )</span></td>
+                        <td align="right" width="80%">
+                            <a href="#">
+                                <div class="button-large">Add Reply</div>
+                            </a>
+                            <a href="#" title="Start a new topic">
+                                <div class="button-large">New Topic</div>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tableborder">
+                <div class="maintitle">
+                    <span class="topic-title-space">&nbsp;</span>
+                    <span class="topic-title">what I learned from people</span>
+                    <span class="topic-desc">everything must end eventually</span>
+                </div>
+            </div>
+            <div align="right" class="postlinksbar">
+                <strong><!--{IBF.START_NEW_POLL}--><a href="#">Track This
+                        Topic</a> | <a href="#">Email This
+                        Topic</a> | <a href="#">Print
+                        This Topic</a></strong>
+            </div>
+
+            <!-- <% ONE POST %> -->
+            <div class="postrow post{pid} {group} grp-{groupid} {stability} frame QA unstable">
+                <div class="frame-inner postrow-grid">
+
+                    <div class="pr-toolbar">
+                        <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                        </div>
+                        <span>·</span>
+                        <a href="">Edit</a>
+                        <a href="">Quote</a>
+                        <a href="">Delete</a>
+                        <a href="">Flag</a>
+                        <span>·</span>
+                        <input type="checkbox" onclick="select_post(&quot;548&quot;);" value="0">
+                    </div>
+
+                    <!-- <% MINIPROFILE %> -->
+                    <div class="pr-sidebar">
+                        <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
+                            <div class="pr-stability_meter" data-percent="20">
+                                <i class="ph ph-heart"></i>
+                                <i class="ph ph-heart-break"></i>
+                                <i class="ph ph-skull"></i>
+                            </div>
+                            <div class="miniprof-hover">
+                                <div class="miniprof-hover--avatar imgfill"
+                                    style="background-image:var(--placeholderIcon)">
+                                </div>
+                                <div class="miniprof-hover--bigstat"><label>Soul
+                                        Stability</label> 59%</div>
+                                <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                </div>
+                                <div class="miniprof-hover-smallstat-box">
+                                    <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                        0</div>
+                                    <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                        0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="miniprof-links">
+                            <a href="" title="Inventory">
+                                Inventory <divider></divider> <i class="ph ph-sword"></i>
+                            </a>
+                            <a href="" title="Dev">
+                                Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pr-main">
+                        <div class="pr-header">
+                            <div class="pr-header-name glowtext_v2"><a>QA</a></div>
+                            <div class="pr-header-stats">
+                                forechosen <span>/</span>occupation <span>/</span>
+                                he/him <span>/</span>
+                                22-years old
+                            </div>
+                        </div>
+                        <div class="pr-content">
+
+                            <div class="pr-content-textarea">
+
+                                Hi
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pr-footer">
+                        <div class="pr-ooc--name">by quartz</div>
+                        <div class="flex-break"></div>
+                        <span class="pr-ooc--meta"><label>Tag</label> Onsite + Discord</span>
+                        <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
+                                cw</span></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="postrow post{pid} {group} grp-{groupid} {stability} frame forechosen unstable">
+                <div class="frame-inner postrow-grid">
+                    <div class="pr-toolbar">
+                        <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                        </div>
+                        <span>·</span>
+                        <a href="">Edit</a>
+                        <a href="">Quote</a>
+                        <a href="">Delete</a>
+                        <a href="">Flag</a>
+                    </div>
+                    <div class="pr-sidebar">
+                        <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
+                            <div class="pr-stability_meter" data-percent="20">
+                                <i class="ph ph-heart"></i>
+                                <i class="ph ph-heart-break"></i>
+                                <i class="ph ph-skull"></i>
+                            </div>
+                            <div class="miniprof-hover">
+                                <div class="miniprof-hover--avatar imgfill"
+                                    style="background-image:var(--placeholderIcon)">
+                                </div>
+                                <div class="miniprof-hover--bigstat"><label>Soul
+                                        Stability</label> 59%</div>
+                                <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                </div>
+                                <div class="miniprof-hover-smallstat-box">
+                                    <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                        0</div>
+                                    <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                        0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="miniprof-links">
+                            <a href="" title="Inventory">
+                                Inventory <divider></divider> <i class="ph ph-sword"></i>
+                            </a>
+                            <a href="" title="Dev">
+                                Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pr-main">
+                        <div class="pr-header">
+                            <div class="pr-header-name glowtext_v2"><a>forechosen</a></div>
+                            <div class="pr-header-stats">
+                                forechosen <span>/</span>occupation <span>/</span>
+                                he/him <span>/</span>
+                                22-years old
+                            </div>
+                        </div>
+                        <div class="pr-content">
+                            <div class="pr-content-textarea">
+                                <inventory>
+                                    <div class="inventory-menu">
+                                        <div class="invtab">Keepsakes</div>
+                                        <div class="invtab">Artifacts</div>
+                                        <div class="invtab">Feats</div>
+                                    </div>
+
+                                    <div class="inventory-body">
+                                        <div class="invtab-content">
+                                            <div class="keepsake-about">
+                                                <div class="keepsake-icon"><i class="ph ph-sword"></i></div>
+                                                <div class="keepsake-desc">Lorem ipsum dolor sit amet consectetur. Purus
+                                                    lectus adipiscing cursus dapibus. Posuere aliquet tortor sapien
+                                                    mattis laoreet leo placerat velit. </div>
+                                            </div>
+
+                                            <div class="keepsake-skill">
+                                                <h2>Skill Name <span>Lvl 2</span></h2>
+                                                <div class="keepsake-skill-desc">
+                                                    <span>Level 1</span>
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                        cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                        placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                        nibh
+                                                        tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                                <div class="keepsake-skill-desc">
+                                                    <span>Level 2</span>
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                        cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                        placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                        nibh
+                                                        tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                            </div>
+
+                                            <div class="keepsake-skill">
+                                                <h2>Skill Name <span>Lvl 2</span></h2>
+                                                <div class="keepsake-skill-desc">
+                                                    <span>Level 1</span>
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                        cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                        placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                        nibh
+                                                        tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                                <div class="keepsake-skill-desc">
+                                                    <span>Level 2</span>
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                        cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                        placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                        nibh
+                                                        tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="invtab-content">
+                                            <div class="artifact">
+                                                <h2>Artifact Name <span>Lvl 2</span></h2>
+                                                <div class="artifact-desc">Lorem ipsum dolor sit amet
+                                                    consectetur. Purus lectus adipiscing
+                                                    cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                    placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                    nibh
+                                                    tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="invtab-content">
+                                            <!-- from oldest to newest -->
+                                            <div class="feat feat-reward">Completed Catch a Horse (+100 EXP) </div>
+                                            <div class="feat feat-cost">Upgraded Fireball (-120 EXP) </div>
+                                        </div>
+                                    </div>
+                                    <div class="exptracker">Available Experience:<b>560</b></div>
+                                </inventory>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pr-footer">
+                        <div class="pr-ooc--name">by quartz</div>
+                        <div class="flex-break"></div>
+                        <span class="pr-ooc--meta"><label>Tag</label> Onsite + Discord</span>
+                        <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
+                                cw</span></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="postrow post{pid} {group} grp-{groupid} {stability} frame cryptdweller unstable">
+                <div class="frame-inner postrow-grid">
+
+                    <div class="pr-toolbar">
+                        <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                        </div>
+                        <span>·</span>
+                        <a href="">Edit</a>
+                        <a href="">Quote</a>
+                        <a href="">Delete</a>
+                        <a href="">Flag</a>
+                    </div>
+
+                    <!-- <% MINIPROFILE %> -->
+                    <div class="pr-sidebar">
+                        <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
+                            <div class="pr-stability_meter" data-percent="20">
+                                <i class="ph ph-heart"></i>
+                                <i class="ph ph-heart-break"></i>
+                                <i class="ph ph-skull"></i>
+                            </div>
+                            <div class="miniprof-hover">
+                                <div class="miniprof-hover--avatar imgfill"
+                                    style="background-image:var(--placeholderIcon)">
+                                </div>
+                                <div class="miniprof-hover--bigstat"><label>Soul
+                                        Stability</label> 59%</div>
+                                <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                </div>
+                                <div class="miniprof-hover-smallstat-box">
+                                    <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                        0</div>
+                                    <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                        0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="miniprof-links">
+                            <a href="" title="Inventory">
+                                Inventory <divider></divider> <i class="ph ph-sword"></i>
+                            </a>
+                            <a href="" title="Dev">
+                                Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pr-main">
+                        <div class="pr-header">
+                            <div class="pr-header-name glowtext_v2"><a>cryptdweller</a></div>
+                            <div class="pr-header-stats">
+                                forechosen <span>/</span>occupation <span>/</span>
+                                he/him <span>/</span>
+                                22-years old
+                            </div>
+                        </div>
+                        <div class="pr-content">
+
+                            <div class="pr-content-textarea">
+                                <inventory>
+                                    <div class="inventory-menu">
+                                        <div class="invtab">Keepsakes</div>
+                                        <div class="invtab">Artifacts</div>
+                                        <div class="invtab">Feats</div>
+                                    </div>
+
+                                    <div class="inventory-body">
+                                        <div class="invtab-content">
+                                            <div class="keepsake-about">
+                                                <div class="keepsake-icon"><i class="ph ph-sword"></i></div>
+                                                <div class="keepsake-desc">Lorem ipsum dolor sit amet consectetur. Purus
+                                                    lectus adipiscing cursus dapibus. Posuere aliquet tortor sapien
+                                                    mattis laoreet leo placerat velit. </div>
+                                            </div>
+
+                                            <div class="keepsake-skill">
+                                                <h2>Skill Name <span>Lvl 2</span></h2>
+                                                <div class="keepsake-skill-desc">
+                                                    <span>Level 1</span>
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                        cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                        placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                        nibh
+                                                        tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                                <div class="keepsake-skill-desc">
+                                                    <span>Level 2</span>
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                        cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                        placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                        nibh
+                                                        tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                            </div>
+
+                                            <div class="keepsake-skill">
+                                                <h2>Skill Name <span>Lvl 2</span></h2>
+                                                <div class="keepsake-skill-desc">
+                                                    <span>Level 1</span>
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                        cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                        placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                        nibh
+                                                        tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                                <div class="keepsake-skill-desc">
+                                                    <span>Level 2</span>
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                        cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                        placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                        nibh
+                                                        tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="invtab-content">
+                                            <div class="artifact placeholder">
+                                                <h2>Artifact Name <span>Lvl 2</span></h2>
+                                                <div class="artifact-desc">Lorem ipsum dolor sit amet
+                                                    consectetur. Purus lectus adipiscing
+                                                    cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                    placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                    nibh
+                                                    tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                            </div>
+
+                                            <div class="artifact">
+                                                <h2>Artifact Name <span>Lvl 2</span></h2>
+                                                <div class="artifact-desc">Lorem ipsum dolor sit amet
+                                                    consectetur. Purus lectus adipiscing
+                                                    cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                    placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                    nibh
+                                                    tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="invtab-content">
+                                            <!-- from oldest to newest -->
+                                            <div class="feat placeholder"> </div>
+                                            <div class="feat">Completed Catch a Horse (+100 EXP) </div>
+                                            <div class="feat deducted">Upgraded Fireball (-120 EXP) </div>
+                                        </div>
+                                    </div>
+                                    <div class="exptracker">Available Experience:<b>560</b></div>
+                                </inventory>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pr-footer">
+                        <div class="pr-ooc--name">by quartz</div>
+                        <div class="flex-break"></div>
+                        <span class="pr-ooc--meta"><label>Tag</label> Onsite + Discord</span>
+                        <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
+                                cw</span></span>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="postrow post{pid} {group} grp-{groupid} {stability} frame unsorted unstable">
+                <div class="frame-inner postrow-grid">
+
+                    <div class="pr-toolbar">
+                        <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                        </div>
+                        <span>·</span>
+                        <a href="">Edit</a>
+                        <a href="">Quote</a>
+                        <a href="">Delete</a>
+                        <a href="">Flag</a>
+                    </div>
+
+                    <!-- <% MINIPROFILE %> -->
+                    <div class="pr-sidebar">
+                        <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
+                            <div class="pr-stability_meter" data-percent="20">
+                                <i class="ph ph-heart"></i>
+                                <i class="ph ph-heart-break"></i>
+                                <i class="ph ph-skull"></i>
+                            </div>
+                            <div class="miniprof-hover">
+                                <div class="miniprof-hover--avatar imgfill"
+                                    style="background-image:var(--placeholderIcon)">
+                                </div>
+                                <div class="miniprof-hover--bigstat"><label>Soul
+                                        Stability</label> 59%</div>
+                                <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                </div>
+                                <div class="miniprof-hover-smallstat-box">
+                                    <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                        0</div>
+                                    <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                        0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="miniprof-links">
+                            <a href="" title="Inventory">
+                                Inventory <divider></divider> <i class="ph ph-sword"></i>
+                            </a>
+                            <a href="" title="Dev">
+                                Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pr-main">
+                        <div class="pr-header">
+                            <div class="pr-header-name glowtext_v2"><a>unsorted</a></div>
+                            <div class="pr-header-stats">
+                                forechosen <span>/</span>occupation <span>/</span>
+                                he/him <span>/</span>
+                                22-years old
+                            </div>
+                        </div>
+                        <div class="pr-content">
+
+                            <div class="pr-content-textarea">
+                                <b>Bold</b>
+                                <i>Italic</i>
+                                <em>Emphasize</em>
+                                <a>Link</a>
+                                <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                laoreet leo
+                                placerat
+                                velit. Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                                Quam mattis
+                                auctor
+                                massa vulputate tellus massa vitae. Lorem cursus sollicitudin
+                                senectus ultricies
+                                egestas non. Rhoncus porttitor donec neque laoreet molestie
+                                purus hendrerit
+                                cursus
+                                euismod. Metus adipiscing pharetra quam donec nulla integer et
+                                in. Quam sed
+                                quisque
+                                orci nunc lobortis in sit. Lorem eu ut nulla placerat eget.
+                                Lobortis in massa
+                                ullamcorper a sed sed posuere. Aenean quam penatibus proin nisl
+                                suspendisse
+                                nullam.
+                                Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus
+                                blandit donec
+                                adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros
+                                fringilla. Amet
+                                id
+                                eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam
+                                imperdiet. Urna quam
+                                praesent sed hendrerit libero id. Rhoncus risus placerat
+                                pharetra elit habitasse
+                                eu
+                                tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pr-footer">
+                        <div class="pr-ooc--name">by quartz</div>
+                        <div class="flex-break"></div>
+                        <span class="pr-ooc--meta"><label>Tag</label> Onsite + Discord</span>
+                        <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
+                                cw</span></span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="postrow post{pid} {group} grp-{groupid} {stability} frame faded unstable">
+                <div class="frame-inner postrow-grid">
+
+                    <div class="pr-toolbar">
+                        <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                        </div>
+                        <span>·</span>
+                        <a href="">Edit</a>
+                        <a href="">Quote</a>
+                        <a href="">Delete</a>
+                        <a href="">Flag</a>
+                    </div>
+
+                    <!-- <% MINIPROFILE %> -->
+                    <div class="pr-sidebar">
+                        <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
+                            <div class="pr-stability_meter" data-percent="0">
+                                <i class="ph ph-heart"></i>
+                                <i class="ph ph-heart-break"></i>
+                                <i class="ph ph-skull"></i>
+                            </div>
+                            <div class="miniprof-hover">
+                                <div class="miniprof-hover--avatar imgfill"
+                                    style="background-image:var(--placeholderIcon)">
+                                </div>
+                                <div class="miniprof-hover--bigstat"><label>Soul
+                                        Stability</label> 59%</div>
+                                <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                </div>
+                                <div class="miniprof-hover-smallstat-box">
+                                    <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                        0</div>
+                                    <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                        0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="miniprof-links">
+                            <a href="" title="Inventory">
+                                Inventory <divider></divider> <i class="ph ph-sword"></i>
+                            </a>
+                            <a href="" title="Dev">
+                                Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pr-main">
+                        <div class="pr-header">
+                            <div class="pr-header-name glowtext_v2"><a>faded</a></div>
+                            <div class="pr-header-stats">
+                                forechosen <span>/</span>occupation <span>/</span>
+                                he/him <span>/</span>
+                                22-years old
+                            </div>
+                        </div>
+                        <div class="pr-content">
+
+                            <div class="pr-content-textarea">
+                                <b>Bold</b>
+                                <i>Italic</i>
+                                <em>Emphasize</em>
+                                <a>Link</a>
+                                <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                laoreet leo
+                                placerat
+                                velit. Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                                Quam mattis
+                                auctor
+                                massa vulputate tellus massa vitae. Lorem cursus sollicitudin
+                                senectus ultricies
+                                egestas non. Rhoncus porttitor donec neque laoreet molestie
+                                purus hendrerit
+                                cursus
+                                euismod. Metus adipiscing pharetra quam donec nulla integer et
+                                in. Quam sed
+                                quisque
+                                orci nunc lobortis in sit. Lorem eu ut nulla placerat eget.
+                                Lobortis in massa
+                                ullamcorper a sed sed posuere. Aenean quam penatibus proin nisl
+                                suspendisse
+                                nullam.
+                                Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus
+                                blandit donec
+                                adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros
+                                fringilla. Amet
+                                id
+                                eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam
+                                imperdiet. Urna quam
+                                praesent sed hendrerit libero id. Rhoncus risus placerat
+                                pharetra elit habitasse
+                                eu
+                                tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pr-footer">
+                        <div class="pr-ooc--name">by quartz</div>
+                        <div class="flex-break"></div>
+                        <span class="pr-ooc--meta"><label>Tag</label> Onsite + Discord</span>
+                        <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
+                                cw</span></span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="postrow post{pid} {group} grp-{groupid} {stability} frame  guest unstable">
+                <div class="frame-inner postrow-grid">
+
+                    <div class="pr-toolbar">
+                        <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                        </div>
+                        <span>·</span>
+                        <a href="">Edit</a>
+                        <a href="">Quote</a>
+                        <a href="">Delete</a>
+                        <a href="">Flag</a>
+                    </div>
+
+                    <!-- <% MINIPROFILE %> -->
+                    <div class="pr-sidebar">
+                        <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
+                            <div class="pr-stability_meter" data-percent="20">
+                                <i class="ph ph-heart"></i>
+                                <i class="ph ph-heart-break"></i>
+                                <i class="ph ph-skull"></i>
+                            </div>
+                            <div class="miniprof-hover">
+                                <div class="miniprof-hover--avatar imgfill"
+                                    style="background-image:var(--placeholderIcon)">
+                                </div>
+                                <div class="miniprof-hover--bigstat"><label>Soul
+                                        Stability</label> 59%</div>
+                                <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                </div>
+                                <div class="miniprof-hover-smallstat-box">
+                                    <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                        0</div>
+                                    <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                        0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="miniprof-links">
+                            <a href="" title="Inventory">
+                                Inventory <divider></divider> <i class="ph ph-sword"></i>
+                            </a>
+                            <a href="" title="Dev">
+                                Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pr-main">
+                        <div class="pr-header">
+                            <div class="pr-header-name glowtext_v2"><a> guest</a></div>
+                            <div class="pr-header-stats">
+                                forechosen <span>/</span>occupation <span>/</span>
+                                he/him <span>/</span>
+                                22-years old
+                            </div>
+                        </div>
+                        <div class="pr-content">
+
+                            <div class="pr-content-textarea">
+                                <b>Bold</b>
+                                <i>Italic</i>
+                                <em>Emphasize</em>
+                                <a>Link</a>
+                                <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                laoreet leo
+                                placerat
+                                velit. Mattis sit diam felis suspendisse ac odio in nibh tempus.
+                                Quam mattis
+                                auctor
+                                massa vulputate tellus massa vitae. Lorem cursus sollicitudin
+                                senectus ultricies
+                                egestas non. Rhoncus porttitor donec neque laoreet molestie
+                                purus hendrerit
+                                cursus
+                                euismod. Metus adipiscing pharetra quam donec nulla integer et
+                                in. Quam sed
+                                quisque
+                                orci nunc lobortis in sit. Lorem eu ut nulla placerat eget.
+                                Lobortis in massa
+                                ullamcorper a sed sed posuere. Aenean quam penatibus proin nisl
+                                suspendisse
+                                nullam.
+                                Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus
+                                blandit donec
+                                adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros
+                                fringilla. Amet
+                                id
+                                eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam
+                                imperdiet. Urna quam
+                                praesent sed hendrerit libero id. Rhoncus risus placerat
+                                pharetra elit habitasse
+                                eu
+                                tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pr-footer">
+                        <div class="pr-ooc--name">by quartz</div>
+                        <div class="flex-break"></div>
+                        <span class="pr-ooc--meta"><label>Tag</label> Onsite + Discord</span>
+                        <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
+                                cw</span></span>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <anchor id="bottom"></anchor>
+    <script src="js.js"></script>
+
+
+    <script>setupTabs({
+            outerwrap: 'inventory',
+            button: '.invtab',
+            contentwrap: '.inventory-body',
+            content: '.invtab-content'
+        });
+    </script>
+
+
+</body>
