@@ -2835,9 +2835,9 @@ POST ROWS & MINI PROFILE
     top: 56px;
     display: flex;
     align-items: center;
-    gap: 1.5ch;
+    gap: 1.25ch;
     width: fit-content;
-    padding: 1em 2ch;
+    padding: 0.75em 2ch;
     background: hsl(var(--accent-2)/.3);
     border: 0.5px solid var(--border-3);
     border-bottom-left-radius: 10px;
@@ -3362,7 +3362,8 @@ divider {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+    row-gap: 8px;
 }
 
 .pr-missive-header-name {
@@ -3390,7 +3391,6 @@ divider {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-self: flex-end;
     background: hsl(var(--accent-2)/0.36);
     color: hsl(var(--white));
     width: 28px;
@@ -3413,9 +3413,11 @@ divider {
 
 .postrow.missive .pr-footer {
     grid-area: oocfooter;
-    padding: 16px var(--missiveInset) 20px;
+    padding: 12px var(--missiveInset) 16px;
     gap: 1ch 3ch;
     border-top: 0.5px solid var(--border-3);
+
+    background: hsl(var(--accent-2) / 0.3);
 }
 
 .postrow.missive .pr-ooc--meta {
