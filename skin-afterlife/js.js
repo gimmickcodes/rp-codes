@@ -3,16 +3,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-   if (window.location.href.indexOf("UserCP") > -1 || window.location.href.indexOf("Msg") > -1) {
-      $('.sitebody--inset > table').addClass('ucptable')
+   if (document.getElementById("UserCP") || document.getElementById("Msg")) {
+      const tables = document.querySelectorAll('.sitebody--inset > table');
+      tables.forEach(table => table.classList.add('ucptable'));
    }
 
-   if (window.location.href.indexOf("showtopic") > -1) {
-      $('.sitebody--inset > table').addClass('threadfunctions')
+   if (document.getElementById("ST")) {
+      const tables = document.querySelectorAll('.sitebody--inset > table');
+      tables.forEach(table => table.classList.add('threadfunctions'));
    }
 
-   if (window.location.href.indexOf("Search&CODE=show") > -1) {
-      $('.sitebody--inset > .tableborder').addClass('active-posts')
+   if (document.getElementById("Search")) {
+      const elements = document.querySelectorAll('.sitebody--inset > .tableborder');
+      elements.forEach(el => el.classList.add('active-posts'));
    }
 
 });
@@ -246,6 +249,8 @@ function subboardImages() {
 // Adapted from https://codepen.io/ciprian/pen/WEwPop
 
 function guidebookTabs() {
+   console.log("Guidebook check")
+
    // Check that we are on the correct page before firing
    if (!document.querySelector('.guidebook')) return;
 
@@ -389,6 +394,7 @@ function stabilityMeterLogic() {
    const hasProfile = document.getElementById('Profile');
    const hasMembers = document.getElementById('Members'); // Added global check for #Members
 
+
    document.querySelectorAll('[class*="stability_meter"]').forEach(meter => {
       const pct = meter.dataset.percent;
       const num = parseFloat(pct);
@@ -402,6 +408,7 @@ function stabilityMeterLogic() {
 
       // Remove old icons it exists and add new one based on logic
       meter.querySelectorAll('i').forEach(oldIcon => oldIcon.remove());
+      console.log("Hi heart")
 
       const iconClass = isNaN(num) ? 'ph-question-mark' : icon;
       meter.insertAdjacentHTML('afterbegin', `<i class="ph ${iconClass}"></i>`);
@@ -710,22 +717,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// Custom inventory post row
+function inventoryHTMLFormat() {
+   document.querySelectorAll('.postrow').forEach(row => {
+      if (row.querySelector('.inventory')) {
+         row.classList.add('inventory');
+      }
+   });
+}
+
+// Custom missive post row
+function missiveHTMLFormat() {
+   if (!document.querySelector('#ST .missive')) return;
+   document.querySelector('.sitebody--inset').classList.add('missive-html');
+}
+
+
+
 // Run all scripts
 
 document.addEventListener('DOMContentLoaded', () => {
+   guidebookTabs()
+
    goToAnchor()
    scrollBlur()
    accountSwitchButtons()
-   pullAvatarURL()
-   pullProfileID()
-   pullMessages()
+   // pullAvatarURL()
+   // pullProfileID()
+   // pullMessages()
    subboardImages()
 
-   guidebookTabs()
    memberFiltersMobile()
    emptyProfileFields()
    stabilityMeterLogic()
 
+   inventoryHTMLFormat()
+   missiveHTMLFormat()
    // customUCPTitle()
 });
 
@@ -941,29 +968,13 @@ $(function () {
 
 
 
+// Reusable tabs
 
-function inventoryHTMLFormat() {
-   document.querySelectorAll('.postrow').forEach(row => {
-      if (row.querySelector('inventory')) {
-         row.classList.add('inventory');
-      }
-   });
-}
-document.addEventListener('DOMContentLoaded', () => {
-   inventoryHTMLFormat()
-});
-
-
-
-/**
- * Streamlined Tabs Initializer
- * Automatically activates the first tab if no tab is hardcoded as active.
- */
 const setupTabs = ({
-   outerwrap = '.tab-outerwrap',
-   button = '.tab-btn',
-   contentwrap = '.tab-contentwrap',
-   content = '.tab-content'
+   outerwrap = '.tabbedsection',
+   button = '.tab',
+   contentwrap = '.tabcontentwrap',
+   content = '.tabcontent'
 } = {}) => {
 
    const outerwraps = document.querySelectorAll(outerwrap);

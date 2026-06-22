@@ -2,44 +2,61 @@
 TOKENS
 *****************************************/
 
-
 :root {
-    --stability-percentage: 50%;
+    --heromask: url(assets-final/board-hero-mask.png);
+    --board-archive: url(assets-final/board-archive.png);
+    --board-dev: url(assets-final/board-dev.png);
+    --bgtexture: url(assets-final/texture.png);
     --bgflowers: url(assets-final/flowers.png);
+    --bgflowers-gb: url(assets-final/flowers-guidebook.png);
+
     --placeholderHover: url(https://i.ibb.co/Lr2bsN0/B1.png);
     --placeholderIcon: url(https://placehold.co/150x150);
+    --stability-percentage: 50%;
 }
 
 .forum-monastery-image--default {
-    --boardimage: url(https://i.pinimg.com/1200x/83/5f/f9/835ff96d7f44e3a5c5da8c06b772c5e9.jpg);
+    --boardimage: url(assets-final/location-monastery.png);
 }
 
 .forum-monastery-image--subboard1 {
-    --boardimage: url(https://placehold.co/650x650/dd3100/000000/png);
+    /* great hall */
+    --boardimage: url(assets-final/location-greathall.png);
 }
 
 .forum-monastery-image--subboard2 {
-    --boardimage: url(https://placehold.co/650x650/00cc00/000000/png);
+    /* cloisters */
+    --boardimage: url(/assets-final/);
 }
 
 .forum-monastery-image--subboard3 {
-    --boardimage: url(https://placehold.co/650x650/0099cc/000000/png);
+    /* crypts */
+    --boardimage: url(assets-final/location-crypts.png);
 }
 
 .forum-monastery-image--subboard4 {
-    --boardimage: url(https://placehold.co/650x650/aaff12/000000/png);
+    /* library */
+    --boardimage: url(assets-final/location-library.png);
 }
 
-.forum-dungeon {
-    --boardimage: url(https://i.pinimg.com/1200x/b6/85/2d/b6852d0db70b951f07464833a4d43513.jpg);
+.forum-monastery-image--subboard5 {
+    /* gardens */
+    --boardimage: url(assets-final/location-garden.png);
 }
 
+.forum-location-small.woods {
+    --boardimage: url(assets-final/location-forest.png);
+}
+
+.forum-location-small.pastlives {
+    --boardimage: url(assets-final/location-pastlives.png);
+}
 
 .forum-guidebook-bg {
     position: absolute;
     top: 0;
     right: 0;
-    background-image: url(assets-final/flowers-guidebook.png);
+    background-image: var(--bgflowers-gb);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 80px top;
@@ -56,7 +73,7 @@ TOKENS
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url(assets-final/flowers.png);
+    background-image: var(--bgflowers);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center -100px;
@@ -100,19 +117,28 @@ TOKENS
     /* #D5F6C9 */
     --accentBase-2: 115 20% 67%;
     /* #9CBD93 */
-    --accentBase-3: 105 10% 61%;
+    --accentBase-3: 109 10% 40%;
     /* #9BA694 */
     --accentBase-4: 112 7% 30%;
     /* #4B5149 */
     --accentContrast: 55 30% 58%;
     /* #C0B169 */
 
+    --bodytext-1: 90 5% 76%;
+    /* #C5C7BD */
+    --bodytext-2: 88 8% 60%;
+    --bodytext-3: 102 8% 61%;
+    /* #9CA18F */
+
+    --border-1: hsl(var(--bodytext-3));
+    --border-2: hsl(var(--accentBase-4));
+
     --accent-1: var(--accentBase-1);
     --accent-2: var(--accentBase-2);
     --accent-3: var(--accentBase-3);
 
     --staff-1: 38 84% 88%;
-    --staff-2: 42 37% 66%;
+    --staff-2: 40 25% 55%;
     --staff-3: 41 18% 30%;
 
     --crypt-1: 238 97% 88%;
@@ -127,15 +153,6 @@ TOKENS
     --faded-2: 0 0% 66%;
     --faded-3: 0 0% 30%;
 
-    --border-1: hsl(var(--accentBase-2) / 0.6);
-    --border-2: hsl(var(--bodytext-2));
-    --border-3: hsl(var(--accentBase-4));
-
-
-    --bodytext-1: 90 5% 76%;
-    /* #C5C7BD */
-    --bodytext-2: 88 8% 60%;
-    /* #9CA18F */
 
     --mixta: mixta-pro, times;
     --mixta-small: mixta-sharp, times;
@@ -151,6 +168,8 @@ TOKENS
     --font-serif-17: 17px/1.6 var(--serif);
     --font-serif-18: 18px/1.6 var(--serif);
     --font-serif-20: 20px/1.6 var(--serif);
+    --font-serif-28: 24px/1.6 var(--serif);
+
 
     --font-mono-12: 12px/1.25 var(--mono);
     --font-mono-13: 13px/1.25 var(--mono);
@@ -230,47 +249,59 @@ a :is(.npc,
 .QA,
 .npc,
 .grp-4,
-.grp-6 {
+.grp-6,
+.mgroup-4,
+.mgroup-6,
+:where(.gperms-4, .gperms-6) #post-preview .postcolor {
     --accent-1: var(--staff-1);
     --accent-2: var(--staff-2);
     --accent-3: var(--staff-3);
 }
 
 .forechosen,
-.grp-7 {
+.grp-7,
+.mgroup-7,
+.gperms-7 #post-preview .postcolor {
     --accent-1: var(--forechosen-1, var(--accentBase-1));
     --accent-2: var(--forechosen-2, var(--accentBase-2));
-    --accent-3: var(--forechosen-3, var(--accentBase-3));
+    --accent-3: var(--forechosen-3, var(--bodytext-3));
 }
 
 .cryptdweller,
-.grp-8 {
+.grp-8,
+.mgroup-8,
+.gperms-8 #post-preview .postcolor {
     --accent-1: var(--crypt-1, var(--accentBase-1));
     --accent-2: var(--crypt-2, var(--accentBase-2));
-    --accent-3: var(--crypt-3, var(--accentBase-3));
+    --accent-3: var(--crypt-3, var(--bodytext-3));
 }
 
 .faded,
 .grp-9,
+.mgroup-9,
 .guest,
-.grp-2 {
+.grp-2,
+.mgroup-2,
+:where(.gperms-2, .gperms-9) #post-preview .postcolor {
     --accent-1: var(--faded-1, var(--accentBase-1));
     --accent-2: var(--faded-2, var(--accentBase-2));
-    --accent-3: var(--faded-3, var(--accentBase-3));
+    --accent-3: var(--faded-3, var(--bodytext-3));
 }
 
 .unsorted,
-.grp-3 {
+.grp-3,
+.mgroup-3,
+.gperms-3 #post-preview .postcolor {
     --accent-1: var(--unsorted-1, var(--accentBase-1));
     --accent-2: var(--unsorted-2, var(--accentBase-2));
-    --accent-3: var(--unsorted-3, var(--accentBase-3));
+    --accent-3: var(--unsorted-3, var(--bodytext-3));
 }
 
 
 .postrow:not(.unsorted, .guest, .grp-3, .grp-2),
 .profile :not(.unsorted, .guest, .grp-3, .grp-2),
 .membercard:not(.unsorted, .guest, .grp-3, .grp-2) {
-    --border-3: hsl(var(--accent-3));
+    --border-2: hsl(var(--accent-3));
 }
 
 .perms-loggedin,
@@ -293,6 +324,7 @@ html {
     background-color: hsl(var(--base1));
     color: hsl(var(--bodytext-2));
     font: var(--font-serif-16);
+    letter-spacing: 0.2px;
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
@@ -308,28 +340,39 @@ html {
     width: 8px;
     height: 2px;
 
-    background: hsl(var(--base2)/1);
-    border-left: 0.5px solid var(--border-3);
+    background: hsl(var(--base2));
+    border-left: 0.5px solid var(--border-2);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--border-3);
+    background: hsl(var(--accentBase-3));
+}
+
+::-webkit-resizer {
+    display: none;
+}
+
+::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
 }
 
 div::-webkit-scrollbar {
     width: 2px;
-    /* background: var(--border-3);
-    border: 0.5px solid hsl(var(--base2)); */
     background: hsl(var(--base2) / 0);
     border: 0;
 }
 
 div::-webkit-scrollbar-thumb {
-    background: var(--border-3);
+    background: hsl(var(--accentBase-3));
 }
 
 :focus-visible {
-    outline: hsl(var(--accentBase-3)) 2px solid;
+    outline: hsl(var(--bodytext-3)) 2px solid;
+}
+
+::selection {
+    background: hsl(var(--accentBase-4));
+    color: white
 }
 
 body {
@@ -358,7 +401,10 @@ anchor {
 .frame,
 .profile,
 .gb-body,
-.postrow {
+.postrow,
+.missive,
+.stafftemp,
+[class*=posttemp] {
     font: var(--font-serif-17);
     color: hsl(var(--bodytext-1));
 }
@@ -368,7 +414,10 @@ anchor {
     .frame,
     .profile,
     .gb-body,
-    .missive {
+    .postrow,
+    .missive,
+    .stafftemp,
+    [class*=posttemp] {
         font: var(--font-serif-16);
         color: hsl(var(--bodytext-1));
     }
@@ -379,7 +428,7 @@ NAVIGATION
 *****************************************/
 #navbar {
     background: hsl(var(--base2) / 0.25);
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
     width: 100%;
     padding: 0;
     display: grid;
@@ -413,7 +462,7 @@ NAVIGATION
     margin-right: calc(var(--boardInsetSides) - 2ch);
     margin-right: 24px;
     color: hsl(var(--accentBase-2));
-    border-right: 0.5px solid var(--border-3);
+    border-right: 0.5px solid var(--border-2);
     transition: 0.3s ease;
 }
 
@@ -456,7 +505,7 @@ NAVIGATION
 }
 
 .navbar--utilities {
-    border-left: 0.5px solid var(--border-3);
+    border-left: 0.5px solid var(--border-2);
     height: 100%;
     padding: 0 16px;
     gap: 2ch;
@@ -473,7 +522,7 @@ NAVIGATION
     position: fixed;
     top: 0;
     background: hsl(var(--base2));
-    border-right: 0.5px solid var(--border-3);
+    border-right: 0.5px solid var(--border-2);
     width: min(100%, 390px);
     height: 100vh;
     overflow-x: hidden;
@@ -507,7 +556,7 @@ NAVIGATION
 }
 
 .navpanel-section:not(:last-child) {
-    border-bottom: 0.5px solid var(--border-3)
+    border-bottom: 0.5px solid var(--border-2)
 }
 
 .navpanel-user {
@@ -523,7 +572,7 @@ NAVIGATION
 body:not(.gperms-2) .navpanel-user-controls {
     display: flex;
     justify-content: flex-end;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 .navpanel-user-controls .ph {
@@ -580,7 +629,7 @@ body:not(.gperms-2) .navpanel--userlinks-big {
 
 .navpanel--userlinks-big a {
     display: none;
-    border: 1px solid var(--border-3);
+    border: 1px solid var(--border-2);
     flex: 1;
     font: 600 var(--font-mono-14);
     color: hsl(var(--accentBase-2));
@@ -690,11 +739,11 @@ body:not(.gperms-2) .navpanel--userlinks.perms-loggedin {
     position: absolute;
     top: 0;
     right: 0;
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     width: 40px;
     height: 40px;
     text-align: center;
-    padding-top: 8px;
+    padding-top: 5px;
     font-size: 20px;
     color: hsl(var(--accentBase-2));
 }
@@ -823,7 +872,7 @@ body:not(.gperms-2) .navpanel--userlinks.perms-loggedin {
 }
 
 .siteheader-linksbox--quicklinks {
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
     width: fit-content;
     padding-top: 1.125rem;
     margin-top: 1.125rem;
@@ -852,8 +901,11 @@ body:not(.gperms-2) .navpanel--userlinks.perms-loggedin {
     margin-top: 90px;
 }
 
-.hero a:hover {
+.hero a:hover,
+.glowtext_v2 a:hover,
+.glowtext_v2 a {
     filter: none;
+    will-change: unset;
 }
 
 .hero-title--one,
@@ -889,7 +941,7 @@ body:not(.gperms-2) .navpanel--userlinks.perms-loggedin {
     font: 600 var(--font-mixta-20);
     text-transform: uppercase;
     letter-spacing: 30%;
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
     text-align: justify;
     z-index: 3;
 }
@@ -914,18 +966,19 @@ body:not(.gperms-2) .navpanel--userlinks.perms-loggedin {
     width: 100%;
     height: 100%;
     display: block;
-    mask: url(assets-final/board-hero-mask.png) center / cover;
+    mask: var(--heromask) center / cover;
     background: hsl(var(--base1));
     mix-blend-mode: lighten;
 }
 
 .sitebody {
     background-color: hsl(var(--base2));
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
     height: auto;
     display: block;
     z-index: 20;
     overflow-x: clip;
+    position: relative;
 }
 
 body::before {
@@ -936,7 +989,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(/assets-final/texture.png) center bottom repeat-x;
+    background: var(--bgtexture) center bottom repeat-x;
     mix-blend-mode: soft-light;
     opacity: 30%;
 }
@@ -948,14 +1001,20 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/assets-final/texture.png);
+    background-image: var(--bgtexture);
     background-attachment: fixed;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-position: center bottom;
     opacity: 30%;
     mix-blend-mode: soft-light;
     z-index: 0;
     pointer-events: none;
+
+    position: sticky;
+    float: left;
+    margin-right: -100%;
+    height: 100vh;
+    z-index: -1;
 }
 
 .sitebody--inset {
@@ -1038,14 +1097,17 @@ body::before {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) and (pointer: coarse) and (hover: none) {
+    :root * {
+        border-width: 1px !important;
+    }
 
     #navbar {
         grid-template-rows: 48px;
         top: unset;
         bottom: 0;
         border-bottom: unset;
-        border-top: 0.5px solid var(--border-3);
+        border-top: 0.5px solid var(--border-2);
         z-index: 200;
         background: hsl(var(--base2) / 0.5);
     }
@@ -1098,6 +1160,14 @@ body::before {
     .hero-title--two {
         font-size: 23vw;
     }
+
+    .profile-editbutton {
+        top: 16px;
+    }
+
+    .profile-navbar {
+        top: 0;
+    }
 }
 
 /****************************************
@@ -1130,12 +1200,12 @@ HOME
 .glowtext_v2 {
     filter: blur(1px);
     -webkit-text-stroke: 1px hsl(var(--accent-2));
-    color: transparent;
     background: linear-gradient(to bottom, hsl(var(--accent-2)) 25%, hsl(var(--black)/0) 90%);
-    -webkit-background-clip: text;
+    color: transparent;
     -webkit-text-fill-color: transparent;
-    -webkit-box-decoration-break: clone;
+    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-box-decoration-break: clone;
     text-fill-color: transparent;
 }
 
@@ -1178,19 +1248,19 @@ HOME
 }
 
 .frame {
-    background: var(--border-3);
-    border: 0.5px solid var(--border-3);
+    background: var(--border-2);
+    border: 0.5px solid var(--border-2);
 }
 
 .frame-inner {
     background: hsl(var(--base2));
     border-radius: 20px;
-    outline: 0.5px solid var(--border-3);
+    outline: 0.5px solid var(--border-2);
 }
 
 :is(.cat-getstarted, .cat-plotting, .cat-ooc) .frame-inner::before,
 .forum-monastery-grid::before,
-.forum-dungeon-grid::before {
+.forum-location-small-grid::before {
     position: absolute;
     display: block;
     content: '';
@@ -1237,7 +1307,7 @@ HOME
 
 .forum-guidebook {
     grid-area: double_col;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
     display: grid;
     grid-template: 'guidebox userbox' / 1fr 228px;
     gap: 56px;
@@ -1268,12 +1338,12 @@ HOME
     width: fit-content;
     font: 600 var(--font-mixta-18);
     color: hsl(var(--accentBase-2));
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
 }
 
 .forum-guidebook-userbox {
     background: hsl(var(--accentBase-4)/ 0.2);
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     backdrop-filter: blur(5px);
     padding: 24px 20px 20px;
     margin-bottom: 32px;
@@ -1316,8 +1386,8 @@ HOME
 .cat-getstarted #forum-1,
 .cat-plotting #forum-5 {
     grid-area: left_col;
-    border-bottom: 0.5px solid var(--border-3);
-    border-right: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
+    border-right: 0.5px solid var(--border-2);
 }
 
 .forum-worldbuilding,
@@ -1326,7 +1396,7 @@ HOME
 .cat-plotting #forum-6 {
     grid-area: right_col;
     border: 0;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 .subforums {
@@ -1349,7 +1419,7 @@ HOME
     font: 500 var(--font-serif-14);
     text-transform: uppercase;
     letter-spacing: 10%;
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
 }
 
 .fr-lastpost {
@@ -1417,7 +1487,7 @@ a.fr-lastpost-text--poster,
 .fr-lastpost-avi {
     width: clamp(40px, 6vw, 72px);
     aspect-ratio: 1;
-    box-shadow: 8px -8px 4px hsl(var(--accentBase-3)/0.125);
+    box-shadow: 8px -8px 4px hsl(var(--bodytext-3) / 0.125);
     background-position: center;
     background-size: cover;
     border-bottom-right-radius: 10px;
@@ -1440,7 +1510,7 @@ a.fr-lastpost-text--poster,
     content: '';
     width: 100%;
     height: 0;
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
 }
 
 .newsbar {
@@ -1466,7 +1536,7 @@ a.newschip {
     text-transform: uppercase;
     white-space: nowrap;
     color: inherit;
-    border: 0.5px solid var(--border-2);
+    border: 0.5px solid hsl(var(--accentBase-3));
     padding: 0.5em 1.25ch;
 }
 
@@ -1478,7 +1548,7 @@ a.newschip b {
 
 .forum-shops {
     grid-area: double_col;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
     display: grid;
     grid-template: 'boardimage boardcontent' / 1fr min(50%, 568px);
     gap: 56px;
@@ -1491,7 +1561,7 @@ a.newschip b {
     width: 580px;
     height: 924px;
     height: calc(100% + 136px);
-    background: url(assets-final/board-dev.png) top center / cover;
+    background: var(--board-dev) top center / cover;
     object-fit: cover;
     object-position: top center;
     position: absolute;
@@ -1529,14 +1599,14 @@ a.newschip b {
 
 .forum-shops--links {
     display: flex;
-    gap: 0 16px;
+    gap: 0 24px;
 }
 
 .forum-shops--links a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
     padding: 12px 0 16px;
     font: 500 var(--font-mono-13);
@@ -1544,7 +1614,7 @@ a.newschip b {
     letter-spacing: 10%;
     text-align: center;
     white-space: prewrap;
-    max-width: 100px;
+    max-width: 80px;
     color: hsl(var(--accentBase-2));
 }
 
@@ -1556,6 +1626,7 @@ a.newschip b {
     background: hsl(var(--accentBase-2));
     border-radius: 4px;
     color: hsl(var(--black));
+    max-width: 100px;
 }
 
 
@@ -1570,7 +1641,7 @@ a.newschip b {
         margin: unset;
         margin-left: 0.75em;
         padding-left: 1em;
-        border-left: 0.5px solid var(--border-2);
+        border-left: 0.5px solid var(--border-1);
         display: flex;
         flex: 1;
         flex-wrap: nowrap;
@@ -1581,7 +1652,7 @@ a.newschip b {
         display: inline-flex;
         gap: 1ch;
         padding: 0.5em 1.25ch;
-        border: 0.5px solid var(--border-2);
+        border: 0.5px solid hsl(var(--accentBase-3));
         font: 500 var(--font-mono-14);
         text-transform: uppercase;
         color: inherit;
@@ -1637,7 +1708,7 @@ a.newschip b {
 }
 
 .forum-monastery-board,
-.forum-dungeon-board {
+.forum-location-small-board {
     grid-area: boardcontent;
     padding: 40px var(--boardInsetSides) 24px;
     display: flex;
@@ -1645,7 +1716,7 @@ a.newschip b {
 }
 
 .forum-monastery-imagebox,
-.forum-dungeon-imagebox {
+.forum-location-small-imagebox {
     grid-area: boardimage;
     width: 100%;
     height: 100%;
@@ -1660,8 +1731,8 @@ a.newschip b {
 
 [class*="forum-monastery-image--"]::before,
 [class*="forum-monastery-image--"]::after,
-.forum-dungeon-imagebox::before,
-.forum-dungeon-imagebox::after {
+.forum-location-small-imagebox::before,
+.forum-location-small-imagebox::after {
     content: '';
     top: 0;
     left: 0;
@@ -1675,7 +1746,7 @@ a.newschip b {
 }
 
 [class*="forum-monastery-image--"]::before,
-.forum-dungeon-imagebox::before {
+.forum-location-small-imagebox::before {
     border-radius: 25%;
     filter: blur(80px);
     z-index: -2;
@@ -1698,13 +1769,14 @@ a.newschip b {
 .show-subboard1 .forum-monastery-image--subboard1,
 .show-subboard2 .forum-monastery-image--subboard2,
 .show-subboard3 .forum-monastery-image--subboard3,
-.show-subboard4 .forum-monastery-image--subboard4 {
+.show-subboard4 .forum-monastery-image--subboard4,
+.show-subboard5 .forum-monastery-image--subboard5 {
     filter: blur(0);
     opacity: 1;
 }
 
 
-.forum-dungeon-imagebox::before {
+.forum-location-small-imagebox::before {
     left: -20px;
 }
 
@@ -1713,52 +1785,54 @@ a.newschip b {
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    right: -25%;
-    top: -10%;
+    right: -50%;
+    top: -40%;
     background: radial-gradient(200% 150% at 100% 0%, hsl(var(--accentBase-4)) 25%, hsl(var(--accentBase-4) / 0) 100%);
+    mix-blend-mode: multiply;
 }
 
-.forum-dungeon-image-overlay {
-    position: absolute;
+.forum-location-small-image-overlay {
+    osition: absolute;
     width: 100%;
     height: 100%;
-    left: -25%;
-    top: 0;
-    background: radial-gradient(100% 200% at 0% 50%, hsl(var(--accentBase-4)) 25%, hsl(var(--accentBase-4) / 0) 100%);
+    right: 0;
+    top: 0px;
+    background: radial-gradient(200% 200% at 100% 150%, hsl(var(--accentBase-4)) 0%, hsl(var(--accentBase-4) / 0) 100%);
+    background: linear-gradient(to top, hsl(var(--accentBase-4)) 0%, hsl(var(--accentBase-4) / 0) 100%);
+    opacity: .5;
 }
 
-.forum-dungeon-grid {
+.forum-location-small-grid {
     display: grid;
-    grid-template: 'boardimage boardcontent  ' 420px/1fr 664px;
+    grid-template: 'boardcontent boardimage' 420px/536px 1fr;
     padding: 0;
     overflow: hidden;
 }
 
-.forum-dungeon-lastpostbox {
+.forum-location-small-lastpostbox {
     display: grid;
-    grid-template: 'lastpost avi'
-        'boardstats avi' / 1fr auto;
+    grid-template: 'lastpost'
+        'boardstats' / 1fr;
     gap: 0 32px;
     align-items: flex-end;
 }
 
-.forum-dungeon .fr-lastpost-text {
+.forum-location-small .fr-lastpost-text {
     grid-area: lastpost;
 }
 
-.forum-dungeon .fr-boardstats {
+.forum-location-small .fr-boardstats {
     grid-area: boardstats;
 }
 
-.forum-dungeon .fr-lastpost-avi {
-    position: relative !important;
+.forum-location-small .fr-lastpost-avi {
     grid-area: avi;
     right: unset;
     bottom: unset;
 }
 
 .forum-monastery,
-.forum-dungeon {
+.forum-location-small {
 
     .fr--forumname,
     a.fr--forumname {
@@ -1774,7 +1848,7 @@ a.newschip b {
         content: '';
         position: absolute;
         display: block;
-        border-top: 0.5px solid var(--border-3);
+        border-top: 0.5px solid var(--border-2);
         width: calc(100% + 2*var(--boardInsetSides));
         height: 1px;
         left: 0;
@@ -1794,8 +1868,7 @@ a.newschip b {
 
     .fr-lastpost-avi {
         grid-area: avi;
-        width: clamp(60px, 10vw, 100px);
-        width: 100px;
+        width: clamp(60px, 15vw, 100px);
         border-bottom-right-radius: 16px;
         overflow: hidden;
     }
@@ -1836,20 +1909,22 @@ a.newschip b {
     }
 
     .subforums a:hover {
-        color: hsl(var(--black));
-        background: hsl(var(--accentBase-2)/0.5);
+        color: hsl(var(--accentBase-1));
+        background: hsl(var(--accentBase-3)/0.5);
     }
 }
 
-.forum-monastery-board .fr-lastpost-avi {
+.forum-monastery-board .fr-lastpost-avi,
+.forum-location-small-board .fr-lastpost-avi {
     display: none;
 }
 
-.forum-monastery-imagebox .fr-lastpost-avi {
+.forum-monastery-imagebox .fr-lastpost-avi,
+.forum-location-small-imagebox .fr-lastpost-avi {
     position: absolute;
     right: 1.5rem;
     bottom: 1.5rem;
-    box-shadow: 12px -12px 24px hsl(var(--accentBase-3)/0.75);
+    box-shadow: 12px -12px 24px hsl(var(--accentBase-3) / 0.75);
 }
 
 .cat-ooc .cat-grid {
@@ -1861,7 +1936,7 @@ a.newschip b {
 .forum-archive {
     grid-area: archive;
     background: hsl(var(--base2));
-    border-right: 0.5px solid var(--border-3);
+    border-right: 0.5px solid var(--border-2);
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -1890,7 +1965,7 @@ a.newschip b {
         gap: 1ch;
         padding: 0.5em 1.25ch;
         background: hsl(var(--base1) / 0.5);
-        border: 0.5px solid var(--border-3);
+        border: 0.5px solid var(--border-2);
         font: 500 var(--font-mono-14);
         text-transform: uppercase;
         color: hsl(var(--accentBase-2));
@@ -1946,7 +2021,7 @@ a.newschip b {
     height: calc(100% + 0px + 115px);
     right: 0;
     bottom: 0;
-    background: url(assets-final/board-archive.png) 109px top / cover no-repeat;
+    background: var(--board-archive) 109px top / cover no-repeat;
 }
 
 .forum-archive--image-overlay {
@@ -2012,7 +2087,7 @@ a.newschip b {
 .forum-lounge,
 #forum-9 {
     grid-area: lounge;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 .forum-ads,
@@ -2031,7 +2106,7 @@ a.newschip b {
         'onlinetoday links'
         'members records' / min(80%, 835px) 1fr;
     padding: 24px calc(var(--boardInsetSides) / 2) 40px var(--boardInsetSides);
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 .boardstats-grid::before {
@@ -2090,7 +2165,7 @@ a.newschip b {
     font: 600 var(--font-serif-15);
     letter-spacing: 5%;
     text-transform: uppercase;
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
     display: flex;
     align-items: center;
     gap: 1.5ch;
@@ -2101,14 +2176,14 @@ a.newschip b {
     display: block;
     flex: 1;
     height: 1px;
-    background: var(--border-3);
+    background: var(--border-2);
 }
 
 .boardstats-members-newest--label {
     font: 500 var(--font-serif-14);
     letter-spacing: 5%;
     text-transform: uppercase;
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
     margin-bottom: 0.25em;
 }
 
@@ -2134,7 +2209,7 @@ a.newschip b {
 
 .boardstats-members-newest {
     padding-bottom: 1rem;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 .boardstats-members-census {
@@ -2176,7 +2251,7 @@ a.newschip b {
     gap: 1ch;
     padding: 0.5em 1.25ch;
     background: hsl(var(--base1) / 0.5);
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     font: 500 var(--font-mono-13);
     text-transform: uppercase;
     letter-spacing: 5%;
@@ -2194,7 +2269,7 @@ a.newschip b {
     font: 600 var(--font-mono-13);
     letter-spacing: 10%;
     text-transform: uppercase;
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
 }
 
 .boardstats-records span {
@@ -2202,7 +2277,7 @@ a.newschip b {
 }
 
 .boardstats-recenttopics {
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 #recents {
@@ -2220,17 +2295,19 @@ a.newschip b {
 
 
 @media only screen and (max-width: 760px) {
-    :root * {
-        border-width: 1px !important;
-    }
+
 
     :is(.cat-getstarted, .cat-plotting, .cat-ooc) .frame-inner::before,
     .forum-monastery-grid::before,
-    .forum-dungeon-grid::before {
+    .forum-location-small-grid::before {
         width: 100%;
         bottom: 0;
         background: linear-gradient(180deg, hsl(var(--accentBase-2) / 0) 0%, hsl(var(--accentBase-2)) 100%);
         border-radius: 0;
+    }
+
+    .forum-guidebook-bg {
+        width: 100%;
     }
 
     .cat-plotting .frame-inner::before {
@@ -2250,12 +2327,12 @@ a.newschip b {
         align-items: flex-start;
     }
 
-    .frame:not(.forum-monastery, .forum-dungeon) .fr-lastpost-avi {
+    .frame:not(.forum-monastery, .forum-location-small) .fr-lastpost-avi {
         display: none;
     }
 
     .forum-monastery-grid::before,
-    .forum-dungeon-grid::before {
+    .forum-location-small-grid::before {
         display: none;
     }
 
@@ -2296,7 +2373,7 @@ a.newschip b {
     .forum-missives,
     .forum-quests,
     .forum-dev,
-    .cat-getstarted #forum-5,
+    .cat-plotting #forum-5,
     .cat-plotting #forum-6,
     .cat-plotting #forum-7 {
         background: unset;
@@ -2352,7 +2429,7 @@ a.newschip b {
     }
 
     .forum-monastery-board,
-    .forum-dungeon-board {
+    .forum-location-small-board {
         padding: 24px var(--boardInsetSides) 24px;
     }
 
@@ -2361,13 +2438,13 @@ a.newschip b {
             'boardcontent' auto / 1fr;
     }
 
-    .forum-dungeon-grid {
+    .forum-location-small-grid {
         grid-template: 'boardimage' 300px
             'boardcontent' auto / 1fr;
     }
 
     .forum-monastery,
-    .forum-dungeon {
+    .forum-location-small {
         .subforums {
             flex-direction: row;
             flex-wrap: wrap;
@@ -2379,7 +2456,7 @@ a.newschip b {
 
         .subforums a {
             background: hsl(var(--base2) / 0.5);
-            border-color: var(--border-3);
+            border-color: var(--border-2);
         }
 
         .subforums a:first-child {
@@ -2392,17 +2469,19 @@ a.newschip b {
         }
     }
 
-    .forum-monastery-board .fr-lastpost-avi {
+    .forum-monastery-board .fr-lastpost-avi,
+    .forum-location-small-board .fr-lastpost-avi {
         border-radius: 0;
         display: block;
     }
 
-    .forum-monastery-imagebox .fr-lastpost-avi {
+    .forum-monastery-imagebox .fr-lastpost-avi,
+    .forum-location-small-imagebox .fr-lastpost-avi {
         display: none;
     }
 
     .forum-monastery-image-overlay,
-    .forum-dungeon-image-overlay {
+    .forum-location-small-image-overlay {
         top: unset;
         left: 0;
         bottom: 0;
@@ -2410,7 +2489,7 @@ a.newschip b {
         border-radius: 0;
     }
 
-    .forum-dungeon-lastpostbox {
+    .forum-location-small-lastpostbox {
         grid-template: "lastpost avi"
             "boardstats boardstats" / 1fr auto;
         align-items: flex-start;
@@ -2446,7 +2525,7 @@ a.newschip b {
 
     .forum-archive-board {
         padding: 32px var(--boardInsetSides) 32px;
-        border-bottom: 0.5px solid var(--border-3);
+        border-bottom: 0.5px solid var(--border-2);
         display: flex;
         flex-direction: column;
     }
@@ -2483,7 +2562,7 @@ a.newschip b {
     .boardstats-members-newest {
         padding-top: 1rem;
         border-bottom: 0;
-        border-top: 0.5px solid var(--border-3);
+        border-top: 0.5px solid var(--border-2);
     }
 
     .boardstats-members-census {
@@ -2501,6 +2580,10 @@ a.newschip b {
         text-align: center;
     }
 
+    .boardstats-records span:first-child::after {
+        content: ' &'
+    }
+
     #recents {
         grid-template-columns: repeat(10, 55%);
     }
@@ -2513,14 +2596,16 @@ a.newschip b {
 
 @media only screen and (max-width:600px) {
     .forum-shops--links {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .forum-shops--links a {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: flex-start;
         justify-content: flex-start;
-        white-space: unset;
         max-width: unset;
+        text-align: left;
     }
 
     .forum-shops--links a:first-child {
@@ -2598,7 +2683,11 @@ TOPIC ROWS
     display: block;
     flex: 1;
     height: 0.5px;
-    background: var(--border-3);
+    background: var(--border-2);
+}
+
+.tl--header+.topicrow {
+    margin-top: 1.5em;
 }
 
 .topicrow {
@@ -2638,7 +2727,7 @@ TOPIC ROWS
 
 .topic-threadname>a {
     font: 500 var(--font-mixta-32);
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
     text-transform: lowercase;
     margin-right: .5ch;
 }
@@ -2651,14 +2740,14 @@ TOPIC ROWS
 }
 
 .topicrow .small a {
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
 }
 
 .topic-threaddesc {
     margin: 4px 0 24px;
     font: 500 italic var(--font-serif-15);
     letter-spacing: 5%;
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
     display: flex;
     align-items: baseline;
     gap: 1ch;
@@ -2669,7 +2758,7 @@ TOPIC ROWS
     display: block;
     flex: 1;
     height: 1px;
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
 }
 
 /* .topic-threaddesc:empty {
@@ -2690,7 +2779,7 @@ TOPIC ROWS
 .topic-avi {
     width: 60px;
     aspect-ratio: 1;
-    border: 2px solid var(--border-3);
+    border: 2px solid var(--border-2);
     background-position: center;
     background-size: cover;
     border-bottom-left-radius: 10px;
@@ -2775,7 +2864,7 @@ POST ROWS & MINI PROFILE
     display: block;
     flex: 1;
     height: 0.5px;
-    background: hsl(var(--accentBase-3) / 0.5);
+    background: hsl(var(--bodytext-3) / 0.5);
 }
 
 
@@ -2807,7 +2896,7 @@ POST ROWS & MINI PROFILE
     height: 300px;
     right: 0;
     top: 0;
-    background: url(assets-final/flowers-guidebook.png) right -300px top -140px/100% no-repeat;
+    background: var(--bgflowers-gb) right -300px top -140px/100% no-repeat;
     mask-image: linear-gradient(to bottom, #000000 70%, #00000000 100%);
     opacity: 0.1;
     mix-blend-mode: color-burn;
@@ -2823,7 +2912,7 @@ POST ROWS & MINI PROFILE
     gap: 72px; */
     grid-template: 'toolbar toolbar'
         'sidebar maincontent'
-        '. footer' / auto 1fr;
+        'footer footer' / auto 1fr;
     padding: 0 0 0 48px;
     gap: 32px 5vw;
 }
@@ -2839,7 +2928,7 @@ POST ROWS & MINI PROFILE
     width: fit-content;
     padding: 0.75em 2ch;
     background: hsl(var(--accent-2)/.3);
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     border-bottom-left-radius: 10px;
     backdrop-filter: blur(5px);
 
@@ -2875,7 +2964,7 @@ POST ROWS & MINI PROFILE
     position: sticky;
     top: 90px;
     height: fit-content;
-    padding-bottom: 2em;
+    padding-bottom: 40px;
 }
 
 
@@ -2886,7 +2975,8 @@ POST ROWS & MINI PROFILE
     background-size: cover;
     border-radius: 10px 0 0 10px;
     overflow: hidden;
-    scrollbar-gutter: initial
+    scrollbar-gutter: initial;
+    background-color: color-mix(in oklab, hsl(var(--accent-3)/.9) 30%, hsl(var(--black)/.9) 80%);
 }
 
 .miniprof-hover {
@@ -2952,7 +3042,7 @@ POST ROWS & MINI PROFILE
 .miniprof-hover--smallstat {
     width: 50%;
     padding-top: 0.5em;
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
 }
 
 .miniprof-hover--smallstat label {
@@ -2974,6 +3064,7 @@ POST ROWS & MINI PROFILE
     color: hsl(var(--accent-2));
     text-transform: uppercase;
     letter-spacing: 10%;
+    padding-bottom: 80px;
 }
 
 .miniprof-links a {
@@ -2993,11 +3084,12 @@ POST ROWS & MINI PROFILE
 divider {
     width: 100%;
     height: 1px;
-    background: var(--border-3);
+    background: var(--border-2);
 }
 
 .pr-main {
     grid-area: maincontent;
+    min-width: 0;
 }
 
 .pr-stability_meter {
@@ -3079,15 +3171,20 @@ divider {
 .pr-header {
     padding: 0 calc(2 * var(--boardInsetSides)) 40px 0;
     padding-bottom: 32px;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 .pr-header-name {
-    display: block;
     margin: -12px 0 12px;
     font: 400 var(--font-mixta-56);
     text-transform: capitalize;
-    color: color-mix(in oklab, hsl(var(--accent-2)) 30%, hsl(var(--base2)) 80%);
+    color: color-mix(in oklab, hsl(var(--accent-1)) 30%, hsl(var(--base2)) 80%);
+    background-color: linear-gradient(to bottom, hsl(var(--accent-1)) 0%, hsl(var(--black) / 0) 90%);
+}
+
+.pr-header-name span {
+    /* to make glowy text consistent */
+    all: unset;
 }
 
 .pr-header-stats {
@@ -3120,7 +3217,7 @@ divider {
     display: block;
     flex: 1;
     height: 1px;
-    background: var(--border-3);
+    background: var(--border-2);
 }
 
 .pr-content {
@@ -3141,7 +3238,7 @@ divider {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     border-radius: 2px;
     width: 32px;
     aspect-ratio: 1;
@@ -3151,7 +3248,7 @@ divider {
 
 .pr-footer {
     grid-area: footer;
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -3168,8 +3265,7 @@ divider {
     font: 600 var(--font-mixta-20);
     text-transform: lowercase;
     color: hsl(var(--accent-2));
-    width: auto;
-    margin-right: 2ch;
+    width: calc(250px + 5vw);
 }
 
 .pr-ooc--meta {
@@ -3276,7 +3372,7 @@ divider {
 
     .pr-toolbar input[type=checkbox] {
         order: -1;
-        margin-left: calc(100% - var(--boardInsetSides));
+        margin-left: calc(100% - var(--boardInsetSides)/2);
     }
 
     .pr-toolbar>span:last-of-type {
@@ -3300,23 +3396,61 @@ divider {
 }
 
 
-.PREVIEW-MISSIVE.sitebody--inset {
+.missive-html.sitebody--inset {
     width: clamp(1px, calc(100% - 2 * var(--deviceInset)), 920px);
 }
 
-.postrow.missive {
+
+#post-preview .missive {
     max-width: 920px;
+    margin: auto;
+    padding: 60px var(--missiveInset) 40px;
+    border: 0.5px solid var(--border-2);
 }
 
+/* For 'missive' tag to preview missive template in missive board */
+/* no longer needed since handled with js */
+/*
+#post-preview .missive::before {
+    content: '<Post will appear in missive template once posted.>';
+    font: italic var(--font-mono-16);
+    color: hsl(var(--accentContrast));
+    text-align: center;
+    display: block;
+    margin: -1em 0 3em;
+}
+*/
 .postrow.missive::before,
-.postrow.missive::after {
+.postrow.missive::after,
+#post-preview .missive::before,
+#post-preview .missive::after {
     content: '';
     display: block;
     margin-left: calc(0px - var(--deviceInset) / 2);
     width: calc(100% + var(--deviceInset));
     height: 20px;
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     border-radius: 20px 20px 0 0;
+}
+
+.postrow.missive::after,
+#post-preview .missive::after {
+    border-radius: 0 0 20px 20px;
+    background: linear-gradient(to top, hsl(var(--accent-2)/0.1) 0%, hsl(var(--accent-2)/0) 64px);
+}
+
+#post-preview .missive::before {
+    position: absolute;
+    top: -21px;
+    left: calc(0px - var(--deviceInset) / 2);
+    margin-left: 0;
+}
+
+#post-preview .missive::after {
+    position: absolute;
+    bottom: -21px;
+    left: calc(0px - var(--deviceInset) / 2);
+    margin-left: 0;
 }
 
 .postrow-missive-grid {
@@ -3327,15 +3461,9 @@ divider {
         'mainfooter'
         'oocfooter'
         'bottomfurl' / 1fr;
-    border-left: 0.5px solid var(--border-3);
-    border-right: 0.5px solid var(--border-3);
+    border-left: 0.5px solid var(--border-2);
+    border-right: 0.5px solid var(--border-2);
     background: linear-gradient(to bottom, hsl(var(--accent-2)/0.1) 0%, hsl(var(--accent-2)/0) 64px);
-}
-
-.postrow.missive::after {
-    border-radius: 0 0 20px 20px;
-    background: linear-gradient(to top, hsl(var(--accent-2)/0.1) 0%, hsl(var(--accent-2)/0) 64px);
-
 }
 
 .postrow.missive .pr-main {
@@ -3347,61 +3475,141 @@ divider {
     padding: 0 0 100px;
 }
 
-.pr-missive-header {
+.pr-missive-bottom {
     grid-area: mainfooter;
     padding-top: 28px;
-}
-
-.pr-missive-header {
-    display: flex;
+    display: grid;
+    grid-template:
+        'info toggle avatar' / 1fr auto auto;
     justify-content: space-between;
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
 }
 
-.pr-missive-header-info {
+.pr-missive-bottom-info {
+    grid-area: info;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     row-gap: 8px;
+    z-index: 10;
+    transition: 0.3s ease;
 }
 
-.pr-missive-header-name {
-    margin: -8px 0 0;
-    font: 400 var(--font-mixta-48);
-    text-transform: capitalize;
-    color: color-mix(in oklab, hsl(var(--accent-2)) 30%, hsl(var(--base2)) 80%);
+.pr-missive-bottom-overlay {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    transition: 0.3s ease;
 }
 
-.pr-missive-header-stats {
+.missive-bottom--stability_meter .ph {
+    font-size: 70px;
+    margin-right: -0.5ch;
+    margin-top: -8px;
+    background: linear-gradient(to right, hsl(var(--accent-2)) var(--stability-percentage), hsl(var(--accent-3) / .5) var(--stability-percentage));
+}
+
+.missive-bottom--bigstats {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5em 1em;
+    gap: 1em;
+    font: 500 var(--font-mixta-36);
+    margin-bottom: 12px;
+}
 
-    font: 600 var(--font-serif-14);
+.missive-bottom--bigstats label {
+    display: block;
+    margin-bottom: 0.25em;
+    font: 700 var(--font-serif-14);
     text-transform: uppercase;
     letter-spacing: 10%;
     color: hsl(var(--accent-2));
     opacity: .75;
 }
 
+.pr-missive-bottom-overlay .pr-header-stats {
+    opacity: .75;
+}
 
+.pr-missive-bottom-name {
+    margin: -8px 0 0;
+    font: 400 var(--font-mixta-48);
+    text-transform: capitalize;
+    color: color-mix(in oklab, hsl(var(--accent-2)) 30%, hsl(var(--base2)) 80%);
+}
 
-.pr-missive-header-toggle {
+.pr-missive-bottom-name span {
+    /* to make glowy text consistent */
+    all: unset;
+}
+
+.pr-missive-bottom-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 1em;
+    font: 600 var(--font-serif-14);
+    text-transform: uppercase;
+    letter-spacing: 10%;
+    opacity: .75;
+}
+
+.pr-missive-bottom-meta a {
+    color: hsl(var(--accent-2));
+}
+
+.pr-missive-bottom-meta a::before {
+    content: '';
+    display: inline-block;
+    margin: 0 1ch 4px 0;
+    width: 2ch;
+    height: 1px;
+    background: var(--border-2);
+}
+
+.pr-missive-bottom-toggle {
+    grid-area: toggle;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: hsl(var(--accent-2)/0.36);
-    color: hsl(var(--white));
+    border: 0.5px solid hsl(var(--accent-2)/0.36);
+    color: hsl(var(--accent-2));
     width: 28px;
     height: 28px;
     font-size: 16px;
     border-radius: 2px 0 0 2px;
-    margin-right: 14px;
+    margin-right: 8px;
     cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.pr-missive-bottom-toggle i:last-child,
+.pr-missive-bottom-toggle:hover i:first-child {
+    display: none;
+}
+
+.pr-missive-bottom-toggle:hover {
+    background: hsl(var(--accent-2)/0.36);
+    color: hsl(var(--white));
+}
+
+.pr-missive-bottom-toggle:hover i:last-child {
+    display: block;
+}
+
+.pr-missive-bottom-toggle:hover~.pr-missive-bottom-info {
+    opacity: 0;
+}
+
+.pr-missive-bottom-toggle:hover~.pr-missive-bottom-overlay {
+    opacity: 1;
+    z-index: 10;
 }
 
 .missive--avatar {
+    grid-area: avatar;
     width: 90px;
     aspect-ratio: 1;
     border-bottom-right-radius: 10px;
@@ -3414,31 +3622,28 @@ divider {
 .postrow.missive .pr-footer {
     grid-area: oocfooter;
     padding: 12px var(--missiveInset) 16px;
-    gap: 1ch 3ch;
-    border-top: 0.5px solid var(--border-3);
-
+    gap: 1ch 2ch;
+    border-top: 0.5px solid var(--border-2);
     background: hsl(var(--accent-2) / 0.3);
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .postrow.missive .pr-ooc--meta {
     margin: 0;
-
-    /* padding: 4px 8px;
-    background: hsl(var(--accent-2) / 0.3);
-    border-radius: 0 4px 4px 0; */
 }
 
 :is(.QA, .grp-4, .npc, .grp-6) {
-    .pr-missive-header-info {
+    .pr-missive-bottom-info {
         justify-content: flex-end;
     }
 
-    .pr-missive-header-name {
+    .pr-missive-bottom-name {
         font: var(--font-mixta-52);
     }
 
-    .pr-missive-header-stats,
-    .pr-missive-header-toggle {
+    .pr-missive-bottom-meta,
+    .pr-missive-bottom-toggle {
         display: none;
     }
 }
@@ -3456,12 +3661,50 @@ divider {
     .postrow.missive .pr-toolbar {
         width: 100%;
     }
+
+    .missive--avatar {
+        width: clamp(40px, 25vw, 90px);
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .pr-missive-bottom-toggle,
+    .pr-missive-bottom-overlay {
+        display: none;
+    }
 }
 
 
 /****************************************
 Profile
 *****************************************/
+
+.profile-editbutton {
+    position: sticky;
+    top: 50%;
+    margin-right: clamp(-32px, 30%, 50px);
+    float: right;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+
+.profile-editbutton a {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2px;
+    gap: 4px;
+    z-index: 5;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--border-2);
+    border-radius: 100%;
+    color: hsl(var(--accent-2));
+}
 
 .profile-header {
     display: grid;
@@ -3470,6 +3713,7 @@ Profile
     gap: 24px;
     margin-top: 20px;
 }
+
 
 .profile-nameplate {
     grid-area: nameplate;
@@ -3758,7 +4002,7 @@ h0::before {
 
 .profile-subsection-deathinfo {
     margin: 3em auto 2em;
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
 }
 
 .deathinfo-block {
@@ -3861,7 +4105,7 @@ h0::before {
     }
 
     .tracker-col:not(:last-child) {
-        border-right: 0.5px solid var(--border-3);
+        border-right: 0.5px solid var(--border-2);
     }
 
     .tracker-col:first-child>div:not(.tracker-title) {
@@ -3925,7 +4169,7 @@ h0::before {
 }
 
 .profile-npc-blurb,
-.profile-staff-blurb {
+.profile-QA-blurb {
     display: none;
     grid-area: overview;
     margin-left: 48px;
@@ -3937,12 +4181,11 @@ h0::before {
 }
 
 :is(.QA, .grp-4) {
-    .profile-staff-blurb {
+    .profile-QA-blurb {
         display: block;
     }
 
-    .profile-threadtracker,
-    .prof--links {
+    .profile-threadtracker {
         display: none;
     }
 }
@@ -3961,6 +4204,13 @@ h0::before {
 }
 
 @media only screen and (max-width: 760px) {
+
+    .profile-editbutton {
+        position: sticky;
+        top: 72px;
+        margin-right: calc(48px + var(--deviceInset));
+    }
+
     .profile-header {
         grid-template: 'hover'
             'nameplate'
@@ -4031,14 +4281,14 @@ h0::before {
 
     .profile-trackergrid {
         display: block;
-        border: 0.5px solid var(--border-3);
+        border: 0.5px solid var(--border-2);
 
         .tracker-col,
         .tracker-col:nth-child(even),
         .tracker-col:last-child {
             padding: var(--boardInsetSides);
             border: 0 !important;
-            border-bottom: 0.5px solid var(--border-3) !important;
+            border-bottom: 0.5px solid var(--border-2) !important;
             height: fit-content;
         }
 
@@ -4058,18 +4308,12 @@ h0::before {
     }
 
     .profile-npc-blurb,
-    .profile-staff-blurb {
+    .profile-QA-blurb {
         margin: 24px 0 0;
     }
 }
 
 
-@media only screen and (max-width: 600px) {
-    .profile-navbar {
-        top: 0;
-    }
-
-}
 
 /****************************************
 Member List
@@ -4110,7 +4354,7 @@ Member List
     display: block;
     flex: 1;
     height: 1px;
-    border-top: 1px dotted var(--border-3);
+    border-top: 1px dotted var(--border-2);
     opacity: 0.5;
 }
 
@@ -4199,7 +4443,7 @@ Member List
         gap: 10px;
         padding: 0.5em 1.25ch;
         background: color-mix(in oklab, hsl(var(--accent-3)/.9) 10%, hsl(var(--base2)/.9) 90%);
-        border: 1px solid var(--border-3);
+        border: 1px solid var(--border-2);
         border-radius: 2px;
         backdrop-filter: blur(5px);
         font: 600 var(--font-mono-14);
@@ -4346,7 +4590,7 @@ THREAD TRACKERS
 
 .status {
     position: absolute;
-    top: 8px;
+    top: -10px;
     left: -8px;
     font-size: 64px;
     color: color-mix(in oklab, hsl(var(--accent-2)) 60%, hsl(var(--accent-3)) 40%);
@@ -4412,6 +4656,10 @@ THREAD TRACKERS
         margin-bottom: 8px;
     }
 
+    .panelmissiveswrap .empty {
+        display: none;
+    }
+
     .status {
         font-size: 20px;
         left: -4px;
@@ -4474,7 +4722,7 @@ MEMBER ROWS
     gap: 48px 32px;
     margin-top: 36px;
     padding-top: 32px;
-    border-top: 1px solid var(--border-3);
+    border-top: 1px solid var(--border-2);
 }
 
 .membercard {
@@ -4586,7 +4834,7 @@ MEMBER ROWS
     width: 100%;
     flex: 1;
     height: 1px;
-    background: var(--border-3);
+    background: var(--border-2);
 }
 
 .membercard-player {
@@ -4676,7 +4924,7 @@ MEMBER ROWS
 
     .membercard-image {
         height: 84%;
-        border-bottom: 1px solid var(--border-3);
+        border-bottom: 1px solid var(--border-2);
     }
 
     .membercard-staffname {
@@ -4793,7 +5041,7 @@ Guidebook
 .gb-nav {
     grid-area: guidenav;
     padding: var(--boardInsetSides);
-    border-right: 0.5px solid var(--border-3);
+    border-right: 0.5px solid var(--border-2);
     overflow: auto;
 }
 
@@ -4855,7 +5103,7 @@ Guidebook
     display: block;
     flex: 1;
     height: 1px;
-    border-top: 1px dotted var(--border-3);
+    border-top: 1px dotted var(--border-2);
 }
 
 .gb-nav-toggle {
@@ -4877,7 +5125,7 @@ Guidebook
     content: counter(item, decimal-leading-zero) ' ';
     margin-right: .25em;
     font-weight: 600;
-    color: hsl(var(--accentBase-3)/0.75);
+    color: hsl(var(--bodytext-3) / 0.75);
     transition: 0.3s ease;
 }
 
@@ -4886,6 +5134,10 @@ Guidebook
     filter: none;
     color: hsl(var(--accentContrast));
     font-weight: 500;
+}
+
+.gb-nav-section a.is-selected {
+    margin-left: 1ch;
 }
 
 .gb-nav-section a.is-selected::before {
@@ -4922,14 +5174,12 @@ Guidebook
 .gb-body::-webkit-scrollbar {
     width: 2px;
     height: 2px;
-    /* background: var(--border-3);
-    border: 0.5px solid hsl(var(--base2)); */
     background: hsl(var(--base2) / 0);
     border: 0;
 }
 
 .gb-body::-webkit-scrollbar-thumb {
-    background: var(--border-3);
+    background: var(--border-2);
 }
 
 .gb-page-title {
@@ -4949,31 +5199,69 @@ Guidebook
     display: block;
     width: 2ch;
     height: 1px;
-    background: var(--border-3);
+    background: var(--border-2);
     margin: 12px auto 24px;
 }
 
-.gb-body h3 {
-    margin: 2.5rem 0 0.5rem;
-    font: 600 var(--font-mixta-24);
-    color: hsl(var(--accent-2));
+.gb-npclist {
+    margin-top: 4rem;
+}
+
+.gb-npc {
+    margin: 32px 0 48px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px
+}
+
+.gb-npc--name {
+    font: 600 italic var(--font-mixta-24);
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+
     color: transparent;
     background: linear-gradient(45deg, hsl(var(--accentBase-2)) 20%, hsl(var(--accentContrast)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-box-decoration-break: clone;
     background-clip: text;
+    margin-bottom: 8px;
 }
 
-.gb-body h4 {
-    font: 700 var(--font-mono-13);
-    letter-spacing: 10%;
-    text-transform: uppercase;
-    border: 0.5px solid var(--border-3);
-    padding: 12px calc(var(--boardInsetSides) / 2);
-    color: hsl(var(--bodytext-2));
-    margin-bottom: 12px;
-    display: inline-block;
+.gb-npc--stats {
+    font: 500 var(--font-mono-13);
+    color: hsl(var(--bodytext-3));
+    margin: 1rem 0 0;
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+}
+
+.gb-npc--name::after,
+.gb-npc--stats::before {
+    content: '';
+    display: block;
+    height: 0.5px;
+    width: 3ch;
+    background: hsl(var(--bodytext-3));
+    opacity: .5;
+}
+
+.gb-npc--name::after {
+    flex: 1;
+}
+
+.gb-npc--icon {
+    display: block;
+    width: 100px;
+    min-width: 80px;
+    aspect-ratio: 1;
+    border-bottom-right-radius: 10px;
+}
+
+.gb-npc a:has(.gb-npc--name) {
+    text-decoration: none !important;
 }
 
 @media only screen and (max-width: 760px) {
@@ -4984,7 +5272,7 @@ Guidebook
         grid-template: 'guidenav'
             'guidecontent' 1fr / 1fr;
         height: 840px;
-        border: 0.5px solid var(--border-3);
+        border: 0.5px solid var(--border-2);
         border-radius: 20px;
     }
 
@@ -4992,7 +5280,7 @@ Guidebook
         overflow-x: auto;
         padding: 32px var(--boardInsetSides) 0;
         border: 0;
-        border-bottom: 0.5px solid var(--border-3);
+        border-bottom: 0.5px solid var(--border-2);
     }
 
     .gb-nav-bg {
@@ -5011,7 +5299,7 @@ Guidebook
         height: 300px;
         right: 0;
         top: 0;
-        background: url(assets-final/flowers-guidebook.png) right -40vw top -50px /100% no-repeat;
+        background: var(--bgflowers-gb) right -40vw top -50px /100% no-repeat;
         mask-image: linear-gradient(to bottom, #000000 70%, #00000000 100%);
         opacity: 0.1;
         mix-blend-mode: color-burn;
@@ -5049,6 +5337,10 @@ Guidebook
         padding-bottom: 24px;
     }
 
+    .gb-npc--icon {
+        width: 20vw;
+    }
+
     /*
     .gb-nav-toggle {
         z-index: 10;
@@ -5057,7 +5349,7 @@ Guidebook
         align-items: center;
         cursor: pointer;
     margin: 12px 0;
-    border: 1px solid var(--border-3);
+    border: 1px solid var(--border-2);
 }
 
 .gb-nav-toggle:after,
@@ -5114,7 +5406,7 @@ Guidebook
     padding: var(--boardInsetSides);
     overflow: hidden;
     background: hsl(var(--base2)/0.9);
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     box-shadow: 0 8px 16px hsl(var(--base2)/0.9);
     backdrop-filter: blur(5px);
 
@@ -5147,7 +5439,6 @@ Guidebook
 .gb-nav-links.-is-open>* {
     opacity: 1;
 }
-
 */
 }
 
@@ -5160,21 +5451,62 @@ Guidebook
 }
 
 
+
+
+
 /****************************************
 TYPOGRAPHY
 *****************************************/
 
-.pr-content,
-.gb-body {
+vr {
+    display: block;
+    width: 1px;
+    height: 160px;
+    background: var(--border-2);
+    margin: 60px auto;
+}
+
+vr.small {
+    height: 80px;
+}
+
+hr {
+    margin: 3rem 4rem;
+    border: 0;
+    height: 0.5px;
+    background: var(--border-2);
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    justify-content: space-between;
+}
+
+hr::before,
+hr::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 21px;
+    clip-path: path('M1.91157e-08 0C1.91163e-08 10.5001 16 10.5 16 10.5C16 10.5 0.000388096 10.5 1.91157e-08 21C-2.38946e-08 21.0012 1.91157e-08 0 1.91157e-08 0Z');
+    background: var(--border-2);
+}
+
+hr::after {
+    transform: scaleX(-100%);
+}
+
+.gb-body,
+.profile-section-content,
+.postcolor,
+.post1:last-child,
+.stafftemp-body,
+[class*=posttemp] {
     font-weight: 400;
 
     br {
-        height: 0.5rem;
-    }
-
-    :where(p, h1, h2, h3, h4, h5, h6) {
-        font: unset;
-        margin: unset;
+        display: block;
+        content: "";
+        margin-top: 1rem;
     }
 
     p,
@@ -5199,15 +5531,24 @@ TYPOGRAPHY
         text-decoration-style: dotted;
         text-decoration-thickness: 2px;
         text-underline-offset: 4px;
-        text-decoration-color: hsl(var(--accent-3));
+        text-decoration-color: hsl(var(--accent-2)/0.75);
     }
 
-    li {
+
+    p:first-child {
+        margin-top: 0;
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    ul li {
         list-style: none;
         margin: 1rem 0;
     }
 
-    li::before {
+    ul li::before {
         content: "";
         position: absolute;
         left: -1.5ch;
@@ -5216,6 +5557,194 @@ TYPOGRAPHY
         height: 4px;
         background: hsl(var(--accentBase-4));
     }
+
+    boxquote {
+        display: block;
+        margin: calc(1rem + 12px) 40px;
+        padding: 1.5em;
+        background: hsl(var(--accent-3)/0.5);
+        border: 3px solid hsl(var(--base2));
+        box-shadow: 0 0 0 0.5px hsl(var(--accent-2)/0.5)
+    }
+
+    borderquote {
+        display: block;
+        margin: calc(1rem + 12px) 40px;
+        border-left: 3px solid hsl(var(--accent-2)/0.5);
+        padding: 0 1.5em;
+    }
+
+    .tight {
+        margin-bottom: 0 !important;
+    }
+}
+
+.gb-body {
+    h1 {
+        font: 400 var(--font-mixta-36);
+        filter: blur(1px);
+        margin: 2rem 0 1rem;
+        -webkit-text-stroke: 0.5px hsl(var(--accent-2) / 0.5);
+        background: linear-gradient(to bottom, hsl(var(--accent-2)) 25%, hsl(var(--black) / 0) 110%);
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-box-decoration-break: clone;
+        text-fill-color: transparent;
+
+        background-color: linear-gradient(to bottom, hsl(var(--accent-1)) 0%, hsl(var(--black) / 0) 90%);
+        text-shadow: 0 -4px 30px hsl(var(--accent-2) / 0.5), 0 0 3px hsl(var(--accent-2) / 1);
+        color:
+            color-mix(in oklab, hsl(var(--accent-1)) 30%, hsl(var(--base2)) 80%);
+    }
+
+    h2 {
+        font: 600 var(--font-mixta-24);
+        margin: 2.5rem 0 -0.125rem;
+        color: transparent;
+        background: linear-gradient(45deg, hsl(var(--accentBase-2)) 20%, hsl(var(--accentContrast)) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-box-decoration-break: clone;
+        background-clip: text;
+
+        width: fit-content;
+        border-bottom: 2px solid hsl(var(--accentBase-4) / 0.5);
+        padding-bottom: 8px;
+    }
+
+    h3 {
+        font: 600 var(--font-mixta-20);
+        color: hsl(var(--accent-2));
+        margin: 2rem 0 0;
+    }
+
+    h4 {
+        font: 600 var(--font-serif-14);
+        letter-spacing: 10%;
+        text-transform: uppercase;
+        color: hsl(var(--accentBase-2));
+        width: fit-content;
+    }
+
+    h5 {
+        font: 700 var(--font-mono-13);
+        letter-spacing: 10%;
+        text-transform: uppercase;
+        color: hsl(var(--accent-2));
+        margin: 1.5rem 0 12px;
+        opacity: .75;
+    }
+
+    boxquote {
+        background: hsl(var(--accent-3) / 0.25) !important;
+    }
+
+    blockquote :where(h1, h2, h3, h4, h5):first-child,
+    boxquote :where(h1, h2, h3, h4, h5):first-child,
+    h5+p,
+    h5+ul,
+    h5+ul li:first-child {
+        margin-top: 0;
+    }
+}
+
+.postcolor,
+.post1:last-child,
+.stafftemp,
+[class*=posttemp] {
+
+    h1 {
+        filter: none;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        column-gap: 20px;
+
+        font: 400 var(--font-mixta-36);
+        margin: 2rem 0 1rem;
+        -webkit-text-stroke: 0.5px hsl(var(--accent-2) / 0.5);
+        background: linear-gradient(to bottom, hsl(var(--accent-2)) 25%, hsl(var(--black) / 0) 110%);
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-box-decoration-break: clone;
+        text-fill-color: transparent;
+
+        background-color: linear-gradient(to bottom, hsl(var(--accent-1)) 0%, hsl(var(--black) / 0) 90%);
+        text-shadow: 0 -4px 30px hsl(var(--accent-2) / 0.5), 0 0 3px hsl(var(--accent-2) / 1);
+        color:
+            color-mix(in oklab, hsl(var(--accent-1)) 30%, hsl(var(--base2)) 80%);
+    }
+
+    h1::after {
+        content: '';
+        flex: 1;
+        display: block;
+        height: 0.5px;
+        background-color: var(--border-2);
+    }
+
+    /* h2 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        column-gap: 20px;
+
+        font: 500 var(--font-mixta-28);
+        color: hsl(var(--accent-1));
+        -webkit-text-stroke: 0.5px hsl(var(--accent-2) / 0.5);
+        -webkit-text-fill-color: hsl(var(--accent-2) / 0.75);
+        text-shadow: 0 -4px 20px hsl(var(--accent-1) / 0.5);
+    } */
+
+    h2 {
+        font: 600 var(--font-mixta-24);
+        color: hsl(var(--accent-2)/0.75);
+        margin: 2.5rem 0 -0.125rem;
+        border-bottom: 2px solid hsl(var(--accent-3)/0.5);
+        padding-bottom: 8px;
+        width: fit-content;
+    }
+
+    h3 {
+        font: 600 var(--font-mixta-20);
+        color: hsl(var(--accent-2));
+        opacity: .75;
+    }
+
+    h4 {
+        font: 600 var(--font-serif-14);
+        letter-spacing: 10%;
+        text-transform: uppercase;
+        color: hsl(var(--accent-2));
+        width: fit-content;
+    }
+
+    h5 {
+        font: 700 var(--font-mono-13);
+        letter-spacing: 10%;
+        text-transform: uppercase;
+        color: hsl(var(--accent-2));
+        margin: 1.5rem 0 12px;
+        opacity: .75;
+    }
+
+    li {
+        margin: 0.25rem 0;
+    }
+
+    blockquote :where(h1, h2, h3, h4, h5):first-child,
+    boxquote :where(h1, h2, h3, h4, h5):first-child,
+    borderquote :where(h1, h2, h3, h4, h5):first-child {
+        margin-top: 0
+    }
+
+    :where(h1, h2, h3, h4, h5, blockquote, boxquote, borderquote, hr)+br {
+        display: none;
+    }
 }
 
 
@@ -5223,56 +5752,65 @@ TYPOGRAPHY
 TEMPLATES
 *****************************************/
 
-.postrow.inventory .pr-header {
+
+
+.inventory .pr-header {
     border: 0;
     padding-bottom: 48px;
 }
 
-.postrow.inventory .pr-content {
+.inventory .pr-content {
     padding: 0;
 }
 
-inventory {}
-
-.inventory-menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2ch;
-    padding: 0 calc(2 * var(--boardInsetSides)) 16px 0;
-    border-bottom: 0.5px solid var(--border-3);
+.tabbedsection {
+    margin: 2rem 0;
+    border-bottom: 0.5px solid var(--border-2);
 }
 
-.invtab {
+.postcolor .tabsmenu,
+.post1 .tabsmenu {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 2ch;
+    padding: 0 calc(2 * var(--boardInsetSides)) 12px 0;
+    border-bottom: 0.5px solid var(--border-2);
+}
+
+.postcolor .tab,
+.post1 .tab {
     cursor: pointer;
-    font: var(--font-mono-16);
-    text-transform: uppercase;
-    letter-spacing: 10%;
+    font: 500 var(--font-mixta-24);
     color: hsl(var(--bodytext-1) / 0.9);
     opacity: 0.5;
 }
 
-.invtab:hover {
+.postcolor .tab:hover,
+.post1 .tab:hover {
     color: hsl(var(--accent-2));
     opacity: 1;
 }
 
-.invtab.active {
+.postcolor .tab.active,
+.post1 .tab:active {
     font-weight: 600;
     color: hsl(var(--accent-2));
     opacity: 1;
     text-decoration: underline;
     text-decoration-thickness: 4px;
-    text-underline-offset: 16px;
+    text-underline-offset: 17px;
     -moz-text-decoration-color: hsl(var(--accent-2));
 }
 
-.inventory-body {
+.postcolor .tabscontentwrap,
+.post1 .tabscontentwrap {
     position: relative;
     transition: 0.3s ease-in-out;
 }
 
-.invtab-content {
-    padding: 32px calc(2 * var(--boardInsetSides)) 0 0;
+.postcolor .tabcontent,
+.post1 .tabcontent {
     position: absolute;
     top: 0;
     left: 0;
@@ -5282,9 +5820,16 @@ inventory {}
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    padding: 24px calc(2 * var(--boardInsetSides)) 24px 0;
 }
 
-.invtab-content.active {
+.inventory .tabcontent {
+    padding: 32px calc(2 * var(--boardInsetSides)) 0 0;
+}
+
+.postcolor .tabcontent.active,
+.post1 .tabcontent.active {
     position: relative;
     opacity: 1;
     visibility: visible;
@@ -5306,7 +5851,7 @@ inventory {}
     display: block;
     flex: 1;
     height: 1px;
-    background: var(--border-3);
+    background: var(--border-2);
 }
 
 .exptracker b {
@@ -5351,16 +5896,18 @@ inventory {}
     margin-top: 0;
 }
 
-.keepsake-skill h2,
-.artifact h2 {
+.keepsake-skill-name,
+.artifact-name {
     font: 600 italic var(--font-serif-20);
     color: hsl(var(--accent-2));
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 }
 
-.keepsake-skill h2 span,
-.artifact h2 span {
+.keepsake-skill-name::after,
+.artifact-name::after {
+    content: "Lvl " var(--skill-level);
     margin-left: 0.5ch;
+    font-weight: 400;
     color: hsl(var(--bodytext-2) / 0.5);
 }
 
@@ -5388,8 +5935,14 @@ inventory {}
     display: inline;
 }
 
+.keepsake-skill.placeholder :where(h2, .keepsake-skill-desc),
 .artifact.placeholder :where(h2, .artifact-desc) {
     display: none;
+}
+
+.keepsake-skill.placeholder::after {
+    content: 'No skills yet.';
+    font-style: italic;
 }
 
 .artifact.placeholder::after {
@@ -5436,7 +5989,83 @@ inventory {}
     font-style: italic;
 }
 
+.stafftemp {
+    border: 0.5px solid var(--border-2);
+}
+
+.stafftemp-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 0.5px solid hsl(var(--accent-3)/0.5);
+    padding: 40px 48px;
+}
+
+.stafftemp-header--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    color: hsl(var(--black));
+    background: hsl(var(--accent-2) / 0.75);
+    border-radius: 4px;
+    font-size: 28px;
+    border: 4px solid hsl(var(--base2));
+    box-shadow: 0 0 2px 0.5px hsl(var(--accent-2)/0.5)
+}
+
+.stafftemp-header h1 {
+    margin: 0 !important;
+}
+
+.stafftemp-body {
+    background: hsl(var(--black));
+    padding: 48px;
+    border-bottom-right-radius: 20px;
+}
+
+[class*=posttemp],
+.post1 .missive {
+    padding: 48px;
+    border: 0.5px solid var(--border-2);
+}
+
+
+.stafftemp,
+[class*=posttemp],
+.post1 .missive {
+    max-width: 820px;
+    margin: auto;
+}
+
+.claimsection {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1ch 3ch;
+    align-items: flex-start;
+    margin: 1rem 0;
+}
+
+.claimsection h3 {
+    margin: 0;
+}
+
+.claims-list {
+    margin: 0 0 1rem;
+    padding-left: 2ch;
+    border-left: 1px solid var(--border-2);
+}
+
+.claim-item:not(:last-of-type) {
+    margin-bottom: .5em;
+}
+
 @media only screen and (max-width: 760px) {
+    .inventory .tabcontent {
+        padding-right: 16px;
+    }
+
     .keepsake-about {
         flex-wrap: wrap;
     }
@@ -5457,4 +6086,16 @@ inventory {}
         font-size: 16px;
     }
 
+    .stafftemp-header {
+        padding: 40px 16px;
+    }
+
+    .stafftemp-body,
+    [class*=posttemp] {
+        padding: 16px;
+    }
+
+    .claimsection {
+        grid-template-columns: 1fr;
+    }
 }

@@ -186,7 +186,7 @@
 
 
         <!-- <% POSTROW MISSIVE %> -->
-        <div class="sitebody--inset PREVIEW-MISSIVE" id="ST" style="display: inherit;">
+        <div class="sitebody--inset  PREVIEW-MISSIVE" id="ST" style="display: inherit;">
 
 
             <!-- JCINK INSERTED ABOVE POST ROW HEADER -->
@@ -244,27 +244,45 @@
                     </div>
 
                     <div class="pr-main">
-                        <div class="pr-content">
+                        <div class="pr-content postcontent postcolor">
                             Bacon ipsum dolor amet polony t-bone short ribs, brisket shank rump pork belly picanha. Pork
                             rump biltong porchetta tongue. Kielbasa mortadella chislic cow cupim rump bacon drumstick
                             tri-tip. Ground round drumstick tenderloin, hamburger frankfurter t-bone doner pancetta.
                             Chuck spare ribs short loin hamburger tail ground round.
                         </div>
 
-                        <div class="pr-missive-header">
-                            <div class="pr-missive-header-info">
-                                <div class="pr-missive-header-name glowtext_v2"><a>Unsorted</a></div>
-                                <div class="pr-missive-header-stats">
+                        <!-- MINIPROFILE -->
+                        <div class="pr-missive-bottom">
+                            <div class="pr-missive-bottom-toggle">
+                                <i class="ph ph-arrow-bend-down-left"></i>
+                                <i class="ph ph-arrow-bend-up-right"></i>
+                            </div>
+                            <div class="pr-missive-bottom-info">
+                                <div class="pr-missive-bottom-name glowtext_v2"><a>Unsorted</a></div>
+                                <div class="pr-missive-bottom-meta">
                                     <a href=""><span>See inventory</span></a>
                                     <span>50 favor</span>
                                     <span>500 posts</span>
                                 </div>
                             </div>
-                            <div class="pr-missive-header-toggle"><i class="ph ph-arrow-bend-down-left"></i>
+                            <div class="pr-missive-bottom-overlay">
+                                <div class="missive-bottom--bigstats">
+                                    <div class="missive-bottom--stability_meter" data-percent="20"
+                                        style="--stability-percentage: 20%;"> </div>
+                                    <div><label>Soul Stability</label> 59%</div>
+                                    <div><label>Times Died</label> 0 </div>
+                                </div>
+                                <div class="pr-header-stats">
+                                    <span>forechosen</span>
+                                    <span>occupation</span>
+                                    <span>he/him</span>
+                                    <span>22-years old</span>
+                                </div>
                             </div>
                             <div class="missive--avatar imgfill" style="background-image:var(--placeholderIcon)">
                             </div>
                         </div>
+                        <!-- END MINIPROFILE -->
                     </div>
 
                     <div class="pr-footer">
@@ -294,27 +312,46 @@
                     </div>
 
                     <div class="pr-main">
-                        <div class="pr-content">
+                        <div class="pr-content postcontent postcolor">
                             Bacon ipsum dolor amet polony t-bone short ribs, brisket shank rump pork belly picanha. Pork
                             rump biltong porchetta tongue. Kielbasa mortadella chislic cow cupim rump bacon drumstick
                             tri-tip. Ground round drumstick tenderloin, hamburger frankfurter t-bone doner pancetta.
                             Chuck spare ribs short loin hamburger tail ground round.
                         </div>
 
-                        <div class="pr-missive-header">
-                            <div class="pr-missive-header-info">
-                                <div class="pr-missive-header-name glowtext_v2"><a>QA</a></div>
-                                <div class="pr-missive-header-stats">
+                        <!-- MINIPROFILE -->
+                        <div class="pr-missive-bottom">
+                            <div class="pr-missive-bottom-toggle">
+                                <i class="ph ph-arrow-bend-down-left"></i>
+                                <i class="ph ph-arrow-bend-up-right"></i>
+                            </div>
+                            <div class="pr-missive-bottom-info">
+                                <div class="pr-missive-bottom-name glowtext_v2"><a>QA</a></div>
+                                <div class="pr-missive-bottom-meta">
                                     <a href=""><span>See inventory</span></a>
                                     <span>50 favor</span>
                                     <span>500 posts</span>
                                 </div>
                             </div>
-                            <div class="pr-missive-header-toggle"><i class="ph ph-arrow-bend-down-left"></i>
+                            <div class="pr-missive-bottom-overlay">
+                                <div class="missive-bottom--bigstats">
+                                    <div class="missive-bottom--stability_meter" data-percent="20"
+                                        style="--stability-percentage: 20%;"> </div>
+                                    <div><label>Soul Stability</label> 59%</div>
+                                    <div><label>Times Died</label> 0 </div>
+                                </div>
+                                <div class="pr-header-stats">
+                                    <span>forechosen</span>
+                                    <span>occupation</span>
+                                    <span>he/him</span>
+                                    <span>22-years old</span>
+                                </div>
                             </div>
                             <div class="missive--avatar imgfill" style="background-image:var(--placeholderIcon)">
                             </div>
                         </div>
+                        <!-- END MINIPROFILE -->
+
                     </div>
 
                     <div class="pr-footer">
@@ -434,7 +471,7 @@
                                 <span>22-years old</span>
                             </div>
                         </div>
-                        <div class="pr-content">
+                        <div class="pr-content postcontent postcolor">
 
                             Hi
 
@@ -450,7 +487,7 @@
                 </div>
             </div>
 
-
+            <!-- INVENTORY TEMPLATE -->
             <div class="postrow post{pid} {group} grp-{groupid} {stability} frame cryptdweller unstable">
                 <div class="frame-inner postrow-grid">
 
@@ -507,17 +544,17 @@
                                 <span>22-years old</span>
                             </div>
                         </div>
-                        <div class="pr-content">
+                        <div class="pr-content postcontent postcolor">
 
-                            <inventory>
-                                <div class="inventory-menu">
-                                    <div class="invtab">Keepsakes</div>
-                                    <div class="invtab">Artifacts</div>
-                                    <div class="invtab">Feats</div>
+                            <div class="inventory">
+                                <div class="tabsmenu">
+                                    <div class="tab">Keepsakes</div>
+                                    <div class="tab">Artifacts</div>
+                                    <div class="tab">Feats</div>
                                 </div>
 
-                                <div class="inventory-body">
-                                    <div class="invtab-content">
+                                <div class="tabscontentwrap">
+                                    <div class="tabcontent">
                                         <div class="keepsake-about">
                                             <div class="keepsake-icon"><i class="ph ph-sword"></i></div>
                                             <div class="keepsake-desc">Lorem ipsum dolor sit amet consectetur. Purus
@@ -525,8 +562,8 @@
                                                 mattis laoreet leo placerat velit. </div>
                                         </div>
 
-                                        <div class="keepsake-skill">
-                                            <h2>Skill Name <span>Lvl 2</span></h2>
+                                        <div class="keepsake-skill" style="--skill-level: '0';">
+                                            <div class="keepsake-skill-name">Skill Name</div>
                                             <div class="keepsake-skill-desc">
                                                 <span>Level 1</span>
                                                 <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
@@ -545,8 +582,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="keepsake-skill">
-                                            <h2>Skill Name <span>Lvl 2</span></h2>
+                                        <div class="keepsake-skill" style="--skill-level: '2';">
+                                            <div class="keepsake-skill-name">Skill Name</div>
                                             <div class="keepsake-skill-desc">
                                                 <span>Level 1</span>
                                                 <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
@@ -565,9 +602,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="invtab-content">
-                                        <div class="artifact placeholder">
-                                            <h2>Artifact Name <span>Lvl 2</span></h2>
+                                    <div class="tabcontent">
+                                        <div class="artifact placeholder" style="--skill-level: '0';">
+                                            <div class="artifact-name">Artifact Name</div>
                                             <div class="artifact-desc">Lorem ipsum dolor sit amet
                                                 consectetur. Purus lectus adipiscing
                                                 cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
@@ -577,8 +614,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="artifact">
-                                            <h2>Artifact Name <span>Lvl 2</span></h2>
+                                        <div class="artifact" style="--skill-level: '4';">
+                                            <div class="artifact-name">Artifact Name</div>
                                             <div class="artifact-desc">Lorem ipsum dolor sit amet
                                                 consectetur. Purus lectus adipiscing
                                                 cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
@@ -588,7 +625,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="invtab-content">
+                                    <div class="tabcontent">
                                         <!-- from oldest to newest -->
                                         <div class="feat placeholder"> </div>
                                         <div class="feat">Completed Catch a Horse (+100 EXP) </div>
@@ -596,7 +633,7 @@
                                     </div>
                                 </div>
                                 <div class="exptracker">Available Experience:<b>560</b></div>
-                            </inventory>
+                            </div>
                         </div>
                     </div>
                     <div class="pr-footer">
@@ -606,6 +643,280 @@
                         <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
                                 cw</span></span>
 
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- STAFF TEMPLATE -->
+            <div class="postrow post{pid} {group} grp-{groupid} {stability} frame QA unstable">
+                <div class="frame-inner postrow-grid">
+
+                    <div class="pr-toolbar">
+                        <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                        </div>
+                        <span>·</span>
+                        <a href="">Edit</a>
+                        <a href="">Quote</a>
+                        <a href="">Delete</a>
+                        <a href="">Flag</a>
+                        <span>·</span>
+                        <input type="checkbox" onclick="select_post(&quot;548&quot;);" value="0">
+                    </div>
+
+                    <!-- <% MINIPROFILE %> -->
+                    <div class="pr-sidebar">
+                        <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
+                            <div class="pr-stability_meter" data-percent="20">
+                                <i class="ph ph-heart"></i>
+                                <i class="ph ph-heart-break"></i>
+                                <i class="ph ph-skull"></i>
+                            </div>
+                            <div class="miniprof-hover">
+                                <div class="miniprof-hover--avatar imgfill"
+                                    style="background-image:var(--placeholderIcon)">
+                                </div>
+                                <div class="miniprof-hover--bigstat"><label>Soul
+                                        Stability</label> 59%</div>
+                                <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                </div>
+                                <div class="miniprof-hover-smallstat-box">
+                                    <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                        0</div>
+                                    <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                        0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="miniprof-links">
+                            <a href="" title="Inventory">
+                                Inventory <divider></divider> <i class="ph ph-sword"></i>
+                            </a>
+                            <a href="" title="Dev">
+                                Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pr-main">
+                        <div class="pr-header">
+                            <div class="pr-header-name glowtext_v2"><a>QA</a></div>
+                            <div class="pr-header-stats">
+                                <span>forechosen</span>
+                                <span>occupation</span>
+                                <span>he/him</span>
+                                <span>22-years old</span>
+                            </div>
+                        </div>
+                        <div class="pr-content postcontent postcolor">
+
+                            <div class="stafftemp">
+                                <div class="stafftemp-header">
+                                    <div class="stafftemp-header--icon"><i class="ph-bold ph-exclamation-mark"></i>
+                                    </div>
+                                    <h1>Grand Opening</h1>
+                                </div>
+                                <div class="stafftemp-body">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing cursus dapibus.
+                                        Posuere aliquet tortor sapien mattis laoreet leo placerat velit. Mattis sit diam
+                                        felis suspendisse ac odio in nibh tempus. Quam mattis auctor massa vulputate
+                                        tellus
+                                        massa vitae. Lorem cursus sollicitudin senectus ultricies egestas non. Rhoncus
+                                        porttitor donec neque laoreet molestie purus hendrerit cursus euismod. Metus
+                                        adipiscing pharetra quam donec nulla integer et in. Quam sed quisque orci nunc
+                                        lobortis in sit. Lorem eu ut nulla placerat eget. Lobortis in massa ullamcorper
+                                        a
+                                        sed sed posuere. Aenean quam penatibus proin nisl suspendisse nullam.
+                                    <p>Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus blandit donec
+                                        adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros fringilla. Amet
+                                        id
+                                        eu a libero.
+                                    <h1>Heading 1</h1>
+                                    <h2>Heading 2</h2>
+                                    <h3>Heading 3</h3>
+                                    <h4>Heading 4</h4>
+
+                                    <p>Id elit et adipiscing sit. Mauris nibh ut nam imperdiet. Urna quam
+                                        praesent sed hendrerit libero id. Rhoncus risus placerat pharetra elit habitasse
+                                        eu
+                                        tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+
+                                    <p>Phasellus vitae ultricies faucibus sit. Phasellus ornare tellus blandit donec
+                                        adipiscing tristique pharetra laoreet facilisis. Nisl ut id eros fringilla. Amet
+                                        id
+                                        eu a libero. Id elit et adipiscing sit. Mauris nibh ut nam imperdiet. Urna quam
+                                        praesent sed hendrerit libero id. Rhoncus risus placerat pharetra elit habitasse
+                                        eu
+                                        tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
+                                    <h5>Listings</h5>
+                                    <div class="claimsection">
+                                        <h3>General</h3>
+                                        <div class="claims-list">
+                                            <div class="claim-item">@[architect], job</div>
+                                            <div class="claim-item">Name, job</div>
+                                            <div class="claim-item">Name, job</div>
+                                            <div class="claim-item">Name, job</div>
+                                        </div>
+                                    </div>
+                                    <div class="claimsection">
+                                        <h3>General</h3>
+                                        <div class="claims-list">
+                                            <div class="claim-item">@[architect], job</div>
+                                            <div class="claim-item">Name, job</div>
+                                            <div class="claim-item">Name, job</div>
+                                            <div class="claim-item">Name, job</div>
+                                        </div>
+                                    </div>
+                                    <b>Bold</b>
+                                    <i>Italic</i>
+                                    <em>Emphasize</em>
+                                    <a>Link</a>
+                                    <br><br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit.
+                                    <blockquote>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                        adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                        laoreet leo
+                                        placerat
+                                        velit.</blockquote>
+                                    <boxquote>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                        adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                        laoreet leo
+                                        placerat
+                                        velit.</boxquote>
+                                    <borderquote>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                        adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                        laoreet leo
+                                        placerat
+                                        velit.</borderquote>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="pr-footer">
+                        <div class="pr-ooc--name">by quartz</div>
+                        <div class="flex-break"></div>
+                        <span class="pr-ooc--meta"><label>Tag</label> Onsite + Discord</span>
+                        <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
+                                cw</span></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- POST TEMPLATE -->
+            <div class="postrow post{pid} {group} grp-{groupid} {stability} frame forechosen unstable">
+                <div class="frame-inner postrow-grid">
+
+                    <div class="pr-toolbar">
+                        <div class="pr-toolbar--timestamp"><a href="#">Sep 26 2023, 03:21 PM</a>
+                        </div>
+                        <span>·</span>
+                        <a href="">Edit</a>
+                        <a href="">Quote</a>
+                        <a href="">Delete</a>
+                        <a href="">Flag</a>
+                        <span>·</span>
+                        <input type="checkbox" onclick="select_post(&quot;548&quot;);" value="0">
+                    </div>
+
+                    <!-- <% MINIPROFILE %> -->
+                    <div class="pr-sidebar">
+                        <div class="miniprof imgfill" style="background-image: var(--placeholderHover);">
+                            <div class="pr-stability_meter" data-percent="20">
+                                <i class="ph ph-heart"></i>
+                                <i class="ph ph-heart-break"></i>
+                                <i class="ph ph-skull"></i>
+                            </div>
+                            <div class="miniprof-hover">
+                                <div class="miniprof-hover--avatar imgfill"
+                                    style="background-image:var(--placeholderIcon)">
+                                </div>
+                                <div class="miniprof-hover--bigstat"><label>Soul
+                                        Stability</label> 59%</div>
+                                <div class="miniprof-hover--bigstat"><label>Times Died</label> 0
+                                </div>
+                                <div class="miniprof-hover-smallstat-box">
+                                    <div class="miniprof-hover--smallstat"><label>Posts</label>
+                                        0</div>
+                                    <div class="miniprof-hover--smallstat"><label>Favor</label>
+                                        0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="miniprof-links">
+                            <a href="" title="Inventory">
+                                Inventory <divider></divider> <i class="ph ph-sword"></i>
+                            </a>
+                            <a href="" title="Dev">
+                                Dev <divider></divider> <i class="ph ph-binoculars"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pr-main">
+                        <div class="pr-header">
+                            <div class="pr-header-name glowtext_v2"><a>Forechosen</a></div>
+                            <div class="pr-header-stats">
+                                <span>forechosen</span>
+                                <span>occupation</span>
+                                <span>he/him</span>
+                                <span>22-years old</span>
+                            </div>
+                        </div>
+                        <div class="pr-content postcontent postcolor">
+
+                            <table border="0" align="center" width="95%" cellpadding="3" cellspacing="1" id="CODE-WRAP">
+                                <tbody>
+                                    <tr>
+                                        <td><b>CODE</b> </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="CODE"><!--ec1-->sfosjfosdf<!--c2--></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="posttemp">
+                                <h1>Heading 1</h1>
+                                <h2>Heading 2</h2>
+                                <h3>Heading 3</h3>
+                                <h4>Heading 4</h4>
+                                <h5>Heading 5</h5>
+                                <b>Bold</b>
+                                <i>Italic</i>
+                                <em>Emphasize</em>
+                                <a>Link</a>
+                                <br>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                laoreet leo
+                                <hr>
+                                Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                laoreet leo
+                                placerat
+                                velit.
+                                <blockquote>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit.</blockquote>
+                                <boxquote>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                                    adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                                    laoreet leo
+                                    placerat
+                                    velit.</boxquote>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="pr-footer">
+                        <div class="pr-ooc--name">by quartz</div>
+                        <div class="flex-break"></div>
+                        <span class="pr-ooc--meta"><label>Tag</label> Onsite + Discord</span>
+                        <span class="pr-ooc--meta"><label>Please avoid</label> <span class="cwredacted">cw, cw,
+                                cw</span></span>
                     </div>
                 </div>
             </div>
@@ -623,10 +934,10 @@
 
 
     <script>setupTabs({
-            outerwrap: 'inventory',
-            button: '.invtab',
-            contentwrap: '.inventory-body',
-            content: '.invtab-content'
+            outerwrap: '.inventory',
+            button: '.tab',
+            contentwrap: '.tabscontentwrap',
+            content: '.tabcontent'
         });
     </script>
 

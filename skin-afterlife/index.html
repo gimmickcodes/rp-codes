@@ -8,6 +8,8 @@
 
     <link href="jcink-defaults.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     <!-- font icons -->
     <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
@@ -55,8 +57,9 @@
     <div id="navpanel" class="accswitch-swap-area">
         <div class="navpanel-user-controls perms-loggedin">
             <a href="#" title="Log Out" class="perms-loggedin"><i class="ph ph-sign-out"></i> </a>
-            <div class="accswitch-toggle perms-loggedin" title="Switch accounts"><i class="ph ph-swap"></i>
-            </div>
+            <div class="accswitch-toggle perms-loggedin" title="Switch accounts"><i class="ph ph-swap"></i> </div>
+            <a href="/index.php?act=UserCP&CODE=01" title="Edit Profile" class="perms-loggedin"><i
+                    class="ph ph-pencil-simple"></i> </a>
             <div class="accswitch-close perms-loggedin" title="Close"><i class="ph ph-x"></i></div>
         </div>
         <div class="navpanel-section navpanel-user">
@@ -75,10 +78,6 @@
                     <a href="#" title="Register"><i class="ph ph-bell"></i> Register</a>
                 </div>
             </div>
-            <!-- <div class="navpanel--userlinks-big perms-loggedin">
-                <a href="">Inventory</a>
-                <a href="">Development</a>
-            </div> -->
             <div class="accswitch-panel">
                 <div class="accswitch-close" title="Go back">Switch accounts</div>
                 <span id="subaccounts_menu" class="perms-loggedin">
@@ -100,15 +99,12 @@
         </div>
         <div class="navpanel-section">
             <div class="siteheader-linksbox--mainlinks">
-                <a href="">Home</a>
-                <a href="" class="perms-loggedin">UCP</a>
-                <a href="" class="perms-QA">ACP</a>
+                <a href="" class="perms-QA">Admin</a>
+                <a href="" class="perms-loggedin">Profile</a>
                 <a href="">Members</a>
                 <a href="">New Topics</a>
                 <a href="">Online</a>
                 <a href="">Search</a>
-                <a href="" class="perms-loggedin">Log Out</a>
-                <a href="" class="perms-loggedout">Log In</a>
             </div>
             <div class="siteheader-linksbox--quicklinks">
                 <a href="">Guidebook</a>
@@ -149,15 +145,12 @@
     <div id="siteheader">
         <div class="siteheader-linksbox">
             <div class="siteheader-linksbox--mainlinks">
-                <a href="">Home</a>
-                <a href="" class="perms-loggedin">UCP</a>
-                <a href="" class="perms-QA">ACP</a>
+                <a href="" class="perms-QA">Admin</a>
+                <a href="" class="perms-loggedin">Profile</a>
                 <a href="">Members</a>
                 <a href="">New Topics</a>
                 <a href="">Online</a>
                 <a href="">Search</a>
-                <a href="" class="perms-loggedin">Log Out</a>
-                <a href="" class="perms-loggedout">Log In</a>
             </div>
             <div class="siteheader-linksbox--quicklinks">
                 <a href="">Guidebook</a>
@@ -185,7 +178,7 @@
     <div class="sitebody">
 
         <!-- <% BOARD %> AKA HOME -->
-        <div class="sitebody--inset PREVIEW-HOME" id="idx" style="display:inherit;">
+        <div class="sitebody--inset PREVIEW-HOME" id="idx" style="display: inherit;">
             <div class="cat cat-getstarted" id="cat-{ID}">
                 <div class="cat--header glowtext_v2">Get Started</div>
                 <div class="frame">
@@ -232,7 +225,7 @@
                                     <div class="subacct_clip"><span id="subacct_link"><span id="subaccounts_menu">
                                                 <form
                                                     action="https://afterdeath.jcink.net/index.php?&amp;act=Login&amp;CODE=01&amp;CookieDate=1"
-                                                    name="subswitch" method="POST" style="display: none;">
+                                                    name="subswitch" method="POST" style="display: inherit;">
                                                     <input type="hidden" name="auth_key"
                                                         value="eb525c3fda43102bbfd1d483aa2aba6a">
                                                     <input type="hidden" name="UserName" value="subacct">
@@ -473,10 +466,11 @@
                                 </div>
                             </div>
                             <div class="subforums">
-                                <a href="">Main Hall</a>
-                                <a href="">Dormitories</a>
+                                <a href="">Great Hall</a>
+                                <a href="">Upper Cloisters</a>
+                                <a href="">The Crypts</a>
                                 <a href="">Library</a>
-                                <a href="">Cloister Gardens</a>
+                                <a href="">Gardens</a>
                             </div>
                             <div class="forum-monastery-imagebox">
                                 <div class="forum-monastery-image--default"> </div>
@@ -484,6 +478,7 @@
                                 <div class="forum-monastery-image--subboard2"> </div>
                                 <div class="forum-monastery-image--subboard3"> </div>
                                 <div class="forum-monastery-image--subboard4"> </div>
+                                <div class="forum-monastery-image--subboard5"> </div>
 
                                 <div class="forum-monastery-image-overlay"></div>
                                 <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
@@ -492,14 +487,10 @@
                         </div>
                     </div>
 
-                    <div class="forum-dungeon frame" id="forum-{ID}">
-                        <div class="frame-inner forum-dungeon-grid">
-
-                            <div class="forum-dungeon-imagebox">
-                                <div class="forum-dungeon-image-overlay"></div>
-                            </div>
-                            <div class="forum-dungeon-board">
-                                <a class="fr--forumname" href="#">Dungeon One</a>
+                    <div class="forum-location-small frame woods" id="forum-{ID}">
+                        <div class="frame-inner forum-location-small-grid">
+                            <div class="forum-location-small-board">
+                                <a class="fr--forumname" href="#">The Woods</a>
                                 <div class="fr--desc">
                                     Lorem ipsum dolor sit amet
                                     consectetur.
@@ -511,7 +502,7 @@
                                     mauris tempor
                                     ipsum
                                     molestie.</div>
-                                <div class="forum-dungeon-lastpostbox">
+                                <div class="forum-location-small-lastpostbox">
                                     <div class="fr-lastpost grp-{GID} forechosen">
                                         <div class="fr-lastpost-text">
                                             <a href="" class="fr-lastpost-text--threadname">the
@@ -536,10 +527,66 @@
                                     </div>
                                 </div>
 
-
                             </div>
+                            <div class="forum-location-small-imagebox">
+                                <div class="forum-location-small-image-overlay"></div>
+                                <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+
+                    <div class="forum-location-small frame pastlives" id="forum-{ID}">
+                        <div class="frame-inner forum-location-small-grid">
+                            <div class="forum-location-small-board">
+                                <a class="fr--forumname" href="#">The Woods</a>
+                                <div class="fr--desc">
+                                    Lorem ipsum dolor sit amet
+                                    consectetur.
+                                    Turpis ultrices eros quis ipsum non cursus netus et. Consectetur
+                                    lectus massa
+                                    tristique aenean. Nulla facilisis elementum lobortis cras ipsum
+                                    porta leo
+                                    ullamcorper. Diam morbi eget nam aenean. Ac mi sed commodo mus
+                                    mauris tempor
+                                    ipsum
+                                    molestie.</div>
+                                <div class="forum-location-small-lastpostbox">
+                                    <div class="fr-lastpost grp-{GID} forechosen">
+                                        <div class="fr-lastpost-text">
+                                            <a href="" class="fr-lastpost-text--threadname">the
+                                                knife of never
+                                                letting
+                                                go</a>
+                                            <div class="fr-lastpost-text--metadata">
+                                                by <a href class="fr-lastpost-text--poster">Lysandon
+                                                    Alfebrand</a>
+                                                on
+                                                May 1,
+                                                2026
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fr--boardstats">
+                                        <span class="fr--boardstats--posts">64 posts</span> /
+                                        <span class="fr--boardstats--topics">64 topics</span>
+                                    </div>
+                                    <div class="fr-lastpost-avi imgfill"
+                                        style="background-image:var(--placeholderIcon)">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="forum-location-small-imagebox">
+                                <div class="forum-location-small-image-overlay"></div>
+                                <div class="fr-lastpost-avi imgfill" style="background-image:var(--placeholderIcon)">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -1149,6 +1196,8 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- <% END MINIPROFILE %> -->
+
                         <div class="pr-main">
                             <div class="pr-header">
                                 <div class="pr-header-name glowtext_v2"><a>QA</a></div>
@@ -1159,7 +1208,7 @@
                                     <span>22-years old</span>
                                 </div>
                             </div>
-                            <div class="pr-content">
+                            <div class="pr-content postcontent postcolor">
 
                                 <b>Bold</b>
                                 <i>Italic</i>
@@ -1266,7 +1315,7 @@
                                     <span>22-years old</span>
                                 </div>
                             </div>
-                            <div class="pr-content">
+                            <div class="pr-content postcontent postcolor">
                                 <b>Bold</b>
                                 <i>Italic</i>
                                 <em>Emphasize</em>
@@ -1345,7 +1394,7 @@
                                     <span>22-years old</span>
                                 </div>
                             </div>
-                            <div class="pr-content">
+                            <div class="pr-content postcontent postcolor">
 
                                 <b>Bold</b>
                                 <i>Italic</i>
@@ -1453,7 +1502,7 @@
                                     <span>22-years old</span>
                                 </div>
                             </div>
-                            <div class="pr-content">
+                            <div class="pr-content postcontent postcolor">
 
                                 <b>Bold</b>
                                 <i>Italic</i>
@@ -1560,7 +1609,7 @@
                                     <span>22-years old</span>
                                 </div>
                             </div>
-                            <div class="pr-content">
+                            <div class="pr-content postcontent postcolor">
 
                                 <b>Bold</b>
                                 <i>Italic</i>
@@ -1667,7 +1716,7 @@
                                     <span>22-years old</span>
                                 </div>
                             </div>
-                            <div class="pr-content">
+                            <div class="pr-content postcontent postcolor">
 
                                 <b>Bold</b>
                                 <i>Italic</i>
@@ -1743,13 +1792,13 @@
                             </div>
                             <div class="pr-timestamp"><a href="#"><i class="ph ph-link-simple-horizontal"></i>Sep 26
                                     2023, 03:21 PM</a></div>
-                            <div class="pr-content">
-                                <div class="pr-content-toolbar">
+                            <div class="pr-content postcontent postcolor">
+                                <div class="pr-content postcontent postcolor-toolbar">
                                     <a><i class="ph ph-quotes"></i></a>
                                     <a><i class="ph ph-pencil"></i></a>
                                     <a><i class="ph ph-trash"></i></a>
                                 </div>
-                                <div class="pr-content-textarea">
+                                <div class="pr-content postcontent postcolor-textarea">
                                     <b>Bold</b>
                                     <i>Italic</i>
                                     <em>Emphasize</em>
@@ -1806,10 +1855,12 @@
 
 
         <!-- <% PROFILE %> -->
-        <div class="sitebody--inset PREVIEW-PROFILE profile cryptdweller stable" id="Profile" style="display: inherit;">
+        <div class="sitebody--inset PREVIEW-PROFILE profile cryptdweller" id="Profile" style="display: inherit;">
 
-
+            <div class="profile-editbutton"><a href="" title="Edit profile"><i class="ph ph-pencil-simple"></i>
+                </a></div>
             <div class="profile-header">
+
                 <div class="profile-nameplate">
                     <div class="prof--name glowtext_v2">Santino Ravus</div>
                     <div class="prof--postcount"><span>500 posts</span><span>4500 favor</span>
@@ -1857,13 +1908,13 @@
             <div class="profile-body">
                 <div class="profile-section profile-status">
                     <div class="profile--stat"><label>Times Died</label>0</div>
-                    <div class="profile--stability_meter" data-percent="20">
+                    <div class="profile--stability_meter" data-percent="20" style="--stability-percentage: 21%;">
                         <i class="ph ph-heart"></i>
                         <i class="ph ph-heart-break"></i>
                         <i class="ph ph-skull"></i>
                         <div class="profile--stability_status">Status: </div>
                     </div>
-                    <div class="profile--stat"><label>Stability</label>50%</div>
+                    <div class="profile--stat"><label>Stability</label>21%</div>
                 </div>
                 <div class="profile-section">
                     <anchor id="background"></anchor>
@@ -2073,7 +2124,7 @@
 
 
         <!-- <% MEMBER LIST %> -->
-        <div class="sitebody--inset PREVIEW-MEMBERS" id="Members" style="display:inherit">
+        <div class="sitebody--inset PREVIEW-MEMBERS" id="Members" style="display: inherit">
 
             <div class="ml-title glowtext_v2">Resident Directory</div>
 
@@ -2415,7 +2466,7 @@
 
 
         <!-- <% GUIDEBOOK %> -->
-        <div class="sitebody--inset PREVIEW-GUIDEBOOK" style="display:inherit;">
+        <div class="sitebody--inset PREVIEW-GUIDEBOOK" style="display: inherit;">
 
             <div class="frame">
                 <div class="frame-inner guidebook">
@@ -2470,6 +2521,49 @@
                                 <h1 class="gb-page-title--name glowtext_v2">Premise</h1>
                             </div>
 
+                            <vr class="small"></vr>
+                            <h4>Our Cast</h4>
+                            <div class="gb-npclist">
+                                <div class="gb-npc">
+                                    <div class="gb-npc--icon imgfill" style="background-image:var(--placeholderHover)">
+                                    </div>
+                                    <div class="gb-npc-text">
+                                        <a href="">
+                                            <div class="gb-npc--name">Caretaker</div>
+                                        </a>
+                                        A distant figure who only ever showed themself to greet new residents
+                                        and show them to their room. They spoke little and explained less, giving
+                                        the
+                                        distinct impression that the building could collapse and they would simply
+                                        carry
+                                        on with their day…whatever they spend it doing. Their real name, if they
+                                        have
+                                        one, is a mystery, “caretaker” being a moniker used by gossiping residents.
+                                        <div class="gb-npc--stats">Arrived before
+                                            living memory</div>
+
+                                    </div>
+                                </div>
+
+                                <div class="gb-npc">
+                                    <div class="gb-npc--icon imgfill" style="background-image:var(--placeholderHover)">
+                                    </div>
+                                    <div class="gb-npc-text">
+                                        <a href="">
+                                            <div class="gb-npc--name">???</div>
+                                        </a>
+
+                                        <!-- <div class="gb-npc--stats"><b>Present since:</b> All of
+                                            living memory</div> -->
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <hr>
+                            FAQ
+
                             <p>One moment you were elsewhere, and the next you’re here: an endless wood. A dark
                                 realm,
                                 and
@@ -2517,7 +2611,7 @@
                                 Welcome to the Monastery of St. Divenire.
 
 
-                            <h3>Note</h3>
+                            <h2>Note</h2>
                             <p><b>After We Die</b> is a statless, OC-only afterlife roleplay. The site begins
                                 contained
                                 within
@@ -2536,6 +2630,9 @@
                                 the state of the monastery itself will change based on events.
                             </p>
 
+                            <h2>Cast So Far</h2>
+
+
                         </div>
 
 
@@ -2545,7 +2642,7 @@
                                 <h1 class="gb-page-title--name glowtext_v2">Rules</h1>
                             </div>
 
-                            <h3>Conduct</h3>
+                            <h2>Conduct</h2>
                             <ul>
                                 <li>Be respectful. Members are expected to try resolving disagreements in private
                                     before escalating to QA, and then only through the proper channels. IC and
@@ -2585,7 +2682,7 @@
 
 
     <anchor id="bottom"></anchor>
-    <script src="js.js"></script>
+    <script src="js.js" defer></script>
 
 </body>
 

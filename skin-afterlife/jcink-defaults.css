@@ -4,8 +4,6 @@
 * #Version:	1.0.2
 *=============================================== */
 
-
-
 form {
     display: inline;
 }
@@ -28,10 +26,12 @@ tr,
 td {
     margin: 0;
     border-collapse: collapse;
-    padding: 12px 0;
     box-sizing: border-box;
 }
 
+tbody>tr {
+    padding: 12px 0;
+}
 
 
 
@@ -86,8 +86,9 @@ UserCP/My Controls styles
 #ucpmenu {
     /* ucp sidebar */
     width: 22%;
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     padding: 0;
+
 }
 
 
@@ -97,7 +98,7 @@ UserCP/My Controls styles
     letter-spacing: 10%;
     text-transform: uppercase;
     border: 0;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
     color: hsl(var(--bodytext-2));
     padding: 12px calc(var(--boardInsetSides) / 2);
     margin-bottom: 24px;
@@ -109,7 +110,7 @@ UserCP/My Controls styles
     font: 700 var(--font-mono-13);
     letter-spacing: 10%;
     text-transform: uppercase;
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     padding: 12px calc(var(--boardInsetSides) / 2);
     color: hsl(var(--bodytext-2));
     margin-bottom: 12px;
@@ -135,7 +136,7 @@ UserCP/My Controls styles
 
     margin: 8px 0 20px;
     font: 500 var(--font-serif-15);
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
     padding: 0 calc(var(--boardInsetSides) / 2);
 }
 
@@ -280,7 +281,7 @@ Search Pages, Last Click, Recent Topics and Posts
         width: 100%;
         padding: 0 0 16px;
         color: hsl(var(--accentBase-2));
-        border-bottom: 0.5px solid var(--border-3);
+        border-bottom: 0.5px solid var(--border-2);
 
         /* match glowy */
         color: color-mix(in oklab, hsl(var(--accent-2)) 30%, hsl(var(--backgroundBlack)) 80%);
@@ -324,11 +325,11 @@ Search Pages, Last Click, Recent Topics and Posts
 }
 
 #active-topics .tablebasic>tbody>tr:first-child {
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
 }
 
 #active-topics .tablebasic>tbody>tr:not(:first-child) {
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 
@@ -370,36 +371,39 @@ Search Pages, Last Click, Recent Topics and Posts
 }
 
 .active-posts .tablebasic {
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
 }
 
 #topic-summary table {
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     margin: 20px 0;
 }
 
 .active-posts .tablebasic tr:first-child,
 #topic-summary .post2 {
     padding: 1em 2ch;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
     background: color-mix(in oklab, hsl(var(--accent-3) / .9) 10%, hsl(var(--backgroundBlack) / .9) 90%);
 }
 
 .active-posts .tablebasic tr:last-child {
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
 }
 
 
 .active-posts .row4,
 .active-posts .post1,
 #topic-summary .post2 {
+    font: var(--font-serif-17);
+    color: hsl(var(--bodytext-1));
     padding: 8px !important;
 }
 
 
 #topic-summary .post1 {
+    display: table-cell;
     padding: 16px 8px 32px;
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 .active-posts .row4 a {
@@ -417,14 +421,19 @@ Search Pages, Last Click, Recent Topics and Posts
 }
 
 .post1:first-child {
+    /* search results views replies column */
     font: var(--font-mono-13);
+    width: 120px;
+    display: block;
 }
 
 #post-preview .postcolor {
     font: var(--font-serif-17);
-    border-top: 0.5px solid var(--border-3);
-    padding: 24px 0;
+    border-top: 0.5px solid var(--border-2);
+    padding: 32px 0;
 }
+
+
 
 /****************************************
 Navigation Bar / Submenu
@@ -546,7 +555,7 @@ form[name="mod_topics"]>b {
 .row2+.activeuserstrip {
     margin: 24px 0 0;
     padding: 16px 0;
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
 }
 
 .activeuserstrip a {
@@ -583,7 +592,7 @@ form[name="mod_topics"]>b {
 
 .postlinksbar {
     font: 300 var(--font-mono-13);
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
     gap: 1ch;
     margin: 3em 0 1.5em;
 }
@@ -600,6 +609,31 @@ form[name="mod_topics"]>b {
     margin-bottom: 1rem;
 }
 
+.quick-edit .editor {
+    margin-bottom: 1rem !important;
+}
+
+.quick-edit .buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.quick-edit .right-buttons input {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 40px !important;
+    background: hsl(var(--bodytext-3) / .05);
+    border: 1px solid hsl(var(--bodytext-3) / .25);
+    border-radius: 2px;
+    color: hsl(var(--accent-2));
+}
+
+.edit {
+    font-size: 14px !important;
+}
 
 
 /*******************************
@@ -608,7 +642,7 @@ Pagination e.g. [1],2,3 ...
 
 .pagination {
     font-size: 0;
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
 }
 
 .pagination_pagetxt {
@@ -633,7 +667,7 @@ Pagination e.g. [1],2,3 ...
 
 .pagination_current {
     background: hsl(var(--backgroundHTML) / 1);
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     color: hsl(var(--accentBase-1));
 }
 
@@ -642,7 +676,7 @@ Pagination e.g. [1],2,3 ...
 }
 
 .goto-firstunread {
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
 }
 
 /****************************************
@@ -717,7 +751,7 @@ Top table bars / gradient holders
     font: 700 var(--font-mono-13);
     letter-spacing: 10%;
     text-transform: uppercase;
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     color: hsl(var(--bodytext-2));
     padding: 12px calc(var(--boardInsetSides) / 2);
     margin-bottom: 24px;
@@ -749,11 +783,11 @@ Bar directly below the maintitles
 }
 
 tr:not(:last-child) .titlemedium {
-    border-bottom: 0.5px solid var(--border-3);
+    border-bottom: 0.5px solid var(--border-2);
 }
 
 tbody tr:last-child>.titlemedium {
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
 }
 
 .titlemedium a:link,
@@ -779,7 +813,7 @@ Table & Div Borders
     /* topic options */
     margin: 16px 0 24px;
     padding: 0 0 0 14px;
-    border-left: 0.5px solid var(--border-3);
+    border-left: 0.5px solid var(--border-2);
 }
 
 .tablebasic {
@@ -847,28 +881,64 @@ QUOTE and CODE BBCode boxes
 
 #QUOTE {
     white-space: normal;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    color: #333;
-    background-color: #EFEFEF;
-    border: 0px;
-    padding: 2px;
-    border: 1px solid #555;
-    margin-top: 2px;
+    width: calc(100% - 4 * (var(--boardInsetSides)));
+    margin: 2rem auto !important;
+    border: 0.5px solid var(--border-2);
 }
 
-#CODE {
-    white-space: normal;
-    font-family: Courier, Courier New, Verdana, Arial;
-    font-size: 11px;
-    color: #333;
-    background-color: #EFEFEF;
-    border: 0px;
-    padding: 2px;
-    border: 1px solid #555;
-    margin-top: 2px;
+#QUOTE-WRAP tr:first-child {
+    font: 500 var(--font-mono-14);
 }
 
+#QUOTE-WRAP tr:first-child b {
+    font: 700 var(--font-serif-14);
+    text-transform: uppercase;
+    letter-spacing: 10%;
+    color: hsl(var(--accent-2));
+}
+
+#CODE-WRAP {
+    width: calc(100% - 4*(var(--boardInsetSides)));
+    margin: 2rem auto !important;
+    border: 0.5px solid var(--border-2);
+}
+
+#CODE-WRAP td {
+    width: 100%;
+    padding: 0;
+}
+
+.code-top {
+    background: hsl(var(--accent-3) / 0.5);
+    border: 3px solid hsl(var(--base2));
+    box-shadow: 0 0 0 0.5px var(--border-2);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 1em calc(var(--boardInsetSides)/2);
+    font: 700 var(--font-serif-14);
+    text-transform: uppercase;
+    letter-spacing: 10%;
+    color: hsl(var(--accent-2));
+}
+
+.code-highlight {
+    cursor: pointer;
+    font: var(--font-mono-12);
+    color: hsl(var(--accent-2)/0.75);
+}
+
+td#CODE {
+    padding: 1.5em calc(var(--boardInsetSides)/2);
+    font: var(--font-mono-14);
+    line-height: 1.75;
+}
+
+.code-scroll {
+    white-space: pre-line;
+    max-height: 100px;
+    overflow: auto;
+}
 
 /**********************************************
 Input buttons, e.g. submit, text input, etc
@@ -880,7 +950,7 @@ Input buttons, e.g. submit, text input, etc
 }
 
 fieldset.search {
-    border-color: var(--border-3);
+    border-color: var(--border-2);
     border-width: 0.5px;
 }
 
@@ -892,7 +962,7 @@ fieldset.search {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.5em;
-    text-decoration-color: var(--border-3);
+    text-decoration-color: var(--border-2);
     width: fit-content;
     z-index: 1;
     color: hsl(var(--accentContrast));
@@ -910,28 +980,32 @@ td[align="left"] .button-large {
 }
 
 .button-large.closed {
-    background: url(//files.jcink.net/themes/default/white-gradient.png);
-    padding: 7px 12px;
-    text-align: center;
-    margin: 0px 5px 0px 5px;
-    border: 1px solid #d8d8d8;
-    color: #660000;
-    font-weight: bold;
+    text-decoration: none;
 }
 
 .forminput,
 .codebuttons,
-.textinput {
+.textinput,
+.formatbuttons {
     border-radius: 0;
     vertical-align: middle;
     min-height: 40px;
     padding: 8px 12px;
     margin: 0;
-    background: hsl(var(--accentBase-3) / .05);
-    border: 1px solid hsl(var(--accentBase-3) / .25);
+    background: hsl(var(--bodytext-3) / .05);
+    border: 1px solid hsl(var(--bodytext-3) / .25);
     border-radius: 2px;
     font: 400 var(--font-mono-13);
     color: hsl(var(--white));
+}
+
+.forminput {
+    white-space: nowrap;
+}
+
+.forminput::webkit-scrollbar {
+    display;
+    none;
 }
 
 input[type=checkbox].forminput {
@@ -959,15 +1033,22 @@ input[type=reset] {
     font: 700 var(--font-mono-13);
     letter-spacing: 10%;
     text-transform: uppercase;
-    color: hsl(var(--accentBase-2));
+    color: hsl(var(--accent-2));
 }
 
 .codebuttons {
     /* posting form buttons */
 }
 
+.codebuttons input.row1 {
+    width: unset;
+}
+
 .right-buttons {
     float: right;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 /****************************************
@@ -1027,7 +1108,7 @@ Delete all cookies / mark read
 #delcookiesrow,
 #mark-as-read-subto {
     display: none;
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
 }
 
 #mark-as-read-subto {
@@ -1146,7 +1227,7 @@ Copyright: Removal is against Terms
     color: hsl(var(--bodytext-2));
     margin-top: 64px;
     padding: 16px 0;
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
     text-align: right;
 }
 
@@ -1255,7 +1336,7 @@ tr.userCP-section-header {
     content: '';
     display: block;
     flex: 1;
-    border-top: 0.5px solid var(--border-3);
+    border-top: 0.5px solid var(--border-2);
 }
 
 div.ucp-section-container tr#field_1,
@@ -1273,6 +1354,7 @@ div.ucp-section-container tr#field_26 {
     display: flex;
     align-items: center;
     gap: 16px;
+    padding-bottom: 16px;
 }
 
 div.ucp-section-container tr#field_27 .pformright {
@@ -1310,8 +1392,8 @@ div.ucp-section-container tr#field_27 .pformright {
     justify-content: center;
     height: 32px;
     width: 40px;
-    background: hsl(var(--accentBase-3) / .05);
-    border: 1px solid hsl(var(--accentBase-3) / .25);
+    background: hsl(var(--bodytext-3) / .05);
+    border: 1px solid hsl(var(--bodytext-3) / .25);
     border-radius: 2px;
     color: hsl(var(--accentBase-2));
 }
@@ -1326,34 +1408,10 @@ div.ucp-section-container tr#field_27 .pformright {
     text-fill-color: transparent;
 }
 
-
-.stability_preview~input[type="range"] {
-    /*  -webkit-appearance: none; 
-  appearance: none; */
-    width: 100%;
-    max-width: 250px;
-    height: 8px;
-    background: var(--border-3);
-    border-radius: 4px;
-    outline: none;
-    cursor: pointer;
+.forminput#field_27_input {
+    border: 0;
+    padding: 0;
 }
-
-/*
-.stability_preview ~ input[type="range"]::-webkit-slider-thumb,
-.stability_preview ~ input[type="range"]::-moz-range-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 8px;            
-  height: 8px;            
-  background: hsl(var(--accentContrast));    
-  border-radius: 50%;      
-  border: 2px solid hsl(var(--accentContrast));  
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: transform 0.1s ease, background 0.1s ease;
-}
-
-*/
 
 .stability_preview~input[type="range"]:disabled,
 .disabled .death_counter-btn {
@@ -1370,7 +1428,7 @@ div.ucp-section-container tr#field_27 .pformright {
 
 #ucpcontent .pformleft label {
     font: 500 var(--font-serif-15);
-    color: hsl(var(--accentBase-3));
+    color: hsl(var(--bodytext-3));
     display: block;
     margin-bottom: 0.25em;
 }
@@ -1383,7 +1441,7 @@ div.ucp-section-container tr#field_27 .pformright {
 #field-birthday~tr textarea.forminput,
 #field-birthday~tr select.forminput {
     width: 100%;
-    font: var(--font-serif-16);
+    font: var(--font-serif-15);
     margin-top: 0;
 }
 
@@ -1463,15 +1521,11 @@ tr[id*="field_"] .forminput {
     }
 
 
+    .death_counter-container {
+        padding-bottom: 0;
+    }
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -1494,19 +1548,19 @@ Posting Form
 #Post .maintitle {
     all: unset;
     display: table-cell;
-    padding: calc(var(--boardInsetSides) / 2);
+    padding: 0 calc(var(--boardInsetSides) / 2);
     font: 600 var(--font-mixta-28);
     color: hsl(var(--accent-2));
     text-transform: none;
     letter-spacing: 0;
-    margin: 16px 0 0 !important;
+    grid-column: 1 / -1 !important;
 }
 
 #Msg .tableborder,
 #ucpcontent form .tableborder,
 .pformstrip+br+.tableborder,
 .pformstrip+p+div .tableborder {
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     margin-top: 8px;
 }
 
@@ -1545,18 +1599,26 @@ Posting Form
 
 
 #posting-form {
-    border: 0.5px solid var(--border-3);
+    border: 0.5px solid var(--border-2);
     background: linear-gradient(to bottom, hsl(var(--accent-2) / .2) 0%, hsl(var(--accent-2)/0) 30%);
 }
 
+#posting-form tr {
+    display: grid;
+    grid-template-columns: 25% 2fr;
+    align-items: flex-start;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+}
 
-#posting-form tr[id*="header"]:not(#code-buttons-header) {
-    border-top: 0.5px solid var(--border-3);
+
+
+#posting-form tr[id*="header"] {
+    border-top: 0.5px solid var(--border-2);
 }
 
 #posting-form .pformstrip {
-    padding-top: 16px;
-    padding-bottom: 2px;
+    grid-column: 1 / -1;
 }
 
 #posting-form tr:last-child .pformstrip {
@@ -1564,24 +1626,32 @@ Posting Form
 }
 
 #posting-form td {
-    padding: 0 calc(var(--boardInsetSides) / 2) 16px;
-}
-
-#posting-form .pformleft {
-    width: 25%;
+    padding: 0 calc(var(--boardInsetSides) / 2);
 }
 
 #posting-form a {
     color: hsl(var(--accent-2));
 }
 
+#enter-your-post .desc {
+    font: var(--font-serif-14);
+    text-align: left;
+    padding-top: 1rem;
+}
+
 #enter-your-post .textinput {
+    width: clamp(100px, calc(100% - 30px), 700px);
     font: var(--font-serif-17);
 }
 
+#enter-your-post br {
+    display: none;
+}
+
 #bbcode-buttons {
-    display: block;
-    margin-bottom: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 14px 0;
 }
 
 #bbcode-buttons+br {
@@ -1589,6 +1659,10 @@ Posting Form
 }
 
 #post-icon-options {
+    display: none !important;
+}
+
+#emoji-table {
     display: none;
 }
 
@@ -1598,7 +1672,8 @@ Posting Form
 
 #bbcode-buttons input,
 #bbcode-buttons select,
-form[name="REPLIER"] input[name="button"] {
+form[name="REPLIER"] input[name="button"],
+.formatbuttons {
     min-height: unset;
     height: 28px;
     padding: 0 4px;
@@ -1609,7 +1684,7 @@ form[name="REPLIER"] input[name="button"] {
 #bbcode-buttons select {}
 
 
-input {
+input:not[type="range"] {
     background: hsl(var(--backgroundBlack)/0.5);
     color: hsl(var(--bodytext-2));
 }
@@ -1629,10 +1704,7 @@ td.right a {
 }
 
 #editpost_custombuttons {
-    text-align: left;
-}
-
-#enter-your-post .desc {
+    font: var(--font-serif-14);
     text-align: left;
 }
 
@@ -1656,7 +1728,6 @@ input[type=button].formatbuttons {
     #Msg table,
     #Msg :where(thead, tbody, tr),
     #posting-form,
-    #posting-form :where(thead, tbody, tr),
     #store table,
     #store :where(thead, tbody, tr),
     .threadfunctions,
@@ -1664,6 +1735,9 @@ input[type=button].formatbuttons {
         display: block;
     }
 
+    #posting-form tr {
+        grid-template-columns: 1fr;
+    }
 
     #posting-form td {
         display: block;
@@ -1684,6 +1758,11 @@ input[type=button].formatbuttons {
     #posting-form textarea,
     #qr_open textarea {
         width: 100%;
+    }
+
+    #enter-your-post .textinput {
+        width: 100%;
+        margin-top: 20px;
     }
 
     #posting-form .pformleft {
