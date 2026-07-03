@@ -6,6 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <script src="https://unpkg.com/htmx.org@2.0.0"></script>
+    <!-- <script>
+        // Only enable if swapping from js to HTMX for artifact insertion
+        // HTMX engine: Automatically updates your neutral tags on the fly
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.itemslot').forEach(slot => {
+                const itemId = slot.getAttribute('data-item-id');
+
+                // Dynamically add HTMX attributes to the neutral wrapper
+                slot.setAttribute('hx-get', 'artifacts.html');
+                slot.setAttribute('hx-select', `#item-${itemId}`);
+                slot.setAttribute('hx-trigger', 'load');
+                slot.setAttribute('hx-swap', 'innerHTML');
+
+                // Tell HTMX to look at this newly upgraded element
+                htmx.process(slot);
+            });
+        });
+        </script> -->
+
+
     <link href="jcink-defaults.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 
@@ -48,7 +69,7 @@
         <div class="navbar--utilities">
             <a class="scrollButton" data-target="#gotoTop" title="go to top"><i class="ph ph-caret-up"></i></a>
             <a href="#bottom"><i class="ph ph-caret-down"></i></a>
-            <i class="ph ph-sun"></i>
+            <div class="theme-toggle" onclick="toggleTheme()"><i class="ph ph-sun"></i><i class="ph ph-moon"></i></div>
         </div>
     </div>
 
@@ -183,6 +204,14 @@
 
 
     <div class="sitebody">
+
+
+
+
+
+
+
+
 
 
         <!-- <% POSTROW MISSIVE %> -->
@@ -554,58 +583,58 @@
                                 </div>
 
                                 <div class="tabscontentwrap">
-                                    <div class="tabcontent">
+                                    <div class="tabcontent keepsakes">
                                         <div class="keepsake-about">
                                             <div class="keepsake-icon"><i class="ph ph-sword"></i></div>
-                                            <div class="keepsake-desc">Lorem ipsum dolor sit amet consectetur. Purus
+                                            <div class="invslot-desc">Lorem ipsum dolor sit amet consectetur. Purus
                                                 lectus adipiscing cursus dapibus. Posuere aliquet tortor sapien
                                                 mattis laoreet leo placerat velit. </div>
                                         </div>
 
-                                        <div class="keepsake-skill" style="--skill-level: '0';">
-                                            <div class="keepsake-skill-name">Skill Name</div>
-                                            <div class="keepsake-skill-desc">
+                                        <div class="invslot" style="--skill-level: '0';">
+                                            <div class="invslot-name">Skill Name</div>
+                                            <div class="invslot-desc">
                                                 <span>Level 1</span>
-                                                <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
-                                                    cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
-                                                    placerat velit. Mattis sit diam felis suspendisse ac odio in
-                                                    nibh
-                                                    tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                nibh
+                                                tempus. Quam mattis auctor massa vulputate tellus massa vitae.
                                             </div>
-                                            <div class="keepsake-skill-desc">
+                                            <div class="invslot-desc">
                                                 <span>Level 2</span>
-                                                <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
-                                                    cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
-                                                    placerat velit. Mattis sit diam felis suspendisse ac odio in
-                                                    nibh
-                                                    tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                nibh
+                                                tempus. Quam mattis auctor massa vulputate tellus massa vitae.
                                             </div>
                                         </div>
 
-                                        <div class="keepsake-skill" style="--skill-level: '2';">
-                                            <div class="keepsake-skill-name">Skill Name</div>
-                                            <div class="keepsake-skill-desc">
+                                        <div class="invslot" style="--skill-level: '2';">
+                                            <div class="invslot-name">Skill Name</div>
+                                            <div class="invslot-desc">
                                                 <span>Level 1</span>
-                                                <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
-                                                    cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
-                                                    placerat velit. Mattis sit diam felis suspendisse ac odio in
-                                                    nibh
-                                                    tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                nibh
+                                                tempus. Quam mattis auctor massa vulputate tellus massa vitae.
                                             </div>
-                                            <div class="keepsake-skill-desc">
+                                            <div class="invslot-desc">
                                                 <span>Level 2</span>
-                                                <p>Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
-                                                    cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
-                                                    placerat velit. Mattis sit diam felis suspendisse ac odio in
-                                                    nibh
-                                                    tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                                Lorem ipsum dolor sit amet consectetur. Purus lectus adipiscing
+                                                cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                                placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                                nibh
+                                                tempus. Quam mattis auctor massa vulputate tellus massa vitae.
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tabcontent">
-                                        <div class="artifact placeholder" style="--skill-level: '0';">
-                                            <div class="artifact-name">Artifact Name</div>
-                                            <div class="artifact-desc">Lorem ipsum dolor sit amet
+                                    <div class="tabcontent artifacts">
+                                        <div class="invslot placeholder" style="--skill-level: '0';">
+                                            <div class="invslot-name">Artifact Name</div>
+                                            <div class="invslot-desc">Lorem ipsum dolor sit amet
                                                 consectetur. Purus lectus adipiscing
                                                 cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
                                                 placerat velit. Mattis sit diam felis suspendisse ac odio in
@@ -614,9 +643,9 @@
                                             </div>
                                         </div>
 
-                                        <div class="artifact" style="--skill-level: '4';">
-                                            <div class="artifact-name">Artifact Name</div>
-                                            <div class="artifact-desc">Lorem ipsum dolor sit amet
+                                        <div class="invslot" style="--skill-level: '4';">
+                                            <div class="invslot-name">Artifact Name</div>
+                                            <div class="invslot-desc">Lorem ipsum dolor sit amet
                                                 consectetur. Purus lectus adipiscing
                                                 cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
                                                 placerat velit. Mattis sit diam felis suspendisse ac odio in
@@ -624,6 +653,21 @@
                                                 tempus. Quam mattis auctor massa vulputate tellus massa vitae.
                                             </div>
                                         </div>
+
+                                        <p>TEST ARTIFACT PULLING WITH HTMX
+                                        <div class="invslot">
+                                            <div hx-get="artifacts.html" hx-select="#item-excalibur" hx-trigger="load"
+                                                hx-swap="outerHTML">
+                                                Loading Item...
+                                            </div>
+                                        </div>
+
+                                        <p>TEST ARTIFACT PULLING WITH FINAL SCRIPT
+                                        <div class="invslot itemslot" data-item-id="excalibur"> </div>
+
+                                        <div class="invslot itemslot" data-item-id="mjolnir"> </div>
+
+
                                     </div>
                                     <div class="tabcontent">
                                         <!-- from oldest to newest -->
@@ -734,6 +778,7 @@
                                     <h2>Heading 2</h2>
                                     <h3>Heading 3</h3>
                                     <h4>Heading 4</h4>
+                                    <h5>Heading 5</h5>
 
                                     <p>Id elit et adipiscing sit. Mauris nibh ut nam imperdiet. Urna quam
                                         praesent sed hendrerit libero id. Rhoncus risus placerat pharetra elit habitasse
@@ -747,7 +792,6 @@
                                         praesent sed hendrerit libero id. Rhoncus risus placerat pharetra elit habitasse
                                         eu
                                         tincidunt amet. Amet at tellus cursus et risus amet viverra ac.
-                                    <h5>Listings</h5>
                                     <div class="claimsection">
                                         <h3>General</h3>
                                         <div class="claims-list">
@@ -792,6 +836,128 @@
                                         velit.</borderquote>
                                 </div>
                             </div>
+
+
+                            <div class="stafftemp">
+                                <div class="stafftemp-header">
+                                    <div class="stafftemp-header--icon"><i class="ph ph-push-pin"></i></div>
+                                    <h1>Living Worlds</h1>
+                                </div>
+                                <div class="stafftemp-body">
+
+                                    <p>Death afflicts infinitely varied universes, and those who arrive in the afterlife
+                                        similarly hail from infinitely varied settings. Members are encouraged to submit
+                                        realms for others to source characters from. Keep in mind that not all those
+                                        from the same world need to come from the same exact timeline—we follow
+                                        multiverse rules.
+
+                                    </p>
+                                    <p>Settings should only be submitted if you're writing a characters from that world.
+                                        For questions about a particular setting, reach out to the member who submitted
+                                        it.
+
+                                    </p>
+                                    <div class="tabbedsection">
+                                        <div class="tabsmenu">
+                                            <div class="tab active">Worlds</div>
+                                            <div class="tab">Roster</div>
+                                        </div>
+
+                                        <div class="tabscontentwrap">
+                                            <div class="tabcontent active">
+
+                                                <div class="worldwrap">
+                                                    <div class="world-header">
+                                                        <h2>World Name</h2>
+                                                        <div class="world--tags"><span>Tag</span> <span>Tag</span></div>
+                                                    </div>
+                                                    <p>A brief description about the setting</p>
+                                                    <div class="claims-list">
+                                                        <div class="claim-item">Name</div>
+                                                        <div class="claim-item">Name</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="tabcontent">
+                                                <h3>Modern</h3>
+                                                <div class="claims-list">
+                                                    <div class="claim-item">Name</div>
+                                                    <div class="claim-item">Name</div>
+                                                </div>
+
+                                                <h3>Historical</h3>
+                                                <div class="claims-list">
+                                                    <div class="claim-item">Name</div>
+                                                    <div class="claim-item">Name</div>
+                                                </div>
+
+                                                <h3>Fantasy</h3>
+                                                <div class="claims-list">
+                                                    <div class="claim-item">Name</div>
+                                                    <div class="claim-item">Name</div>
+                                                </div>
+
+                                                <h3>Sci-Fi</h3>
+                                                <div class="claims-list">
+                                                    <div class="claim-item">Name</div>
+                                                    <div class="claim-item">Name</div>
+                                                </div>
+
+                                                <h3>Other</h3>
+                                                <div class="claims-list">
+                                                    <div class="claim-item">Name</div>
+                                                    <div class="claim-item">Name</div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <h5>Add Character</h5>
+                                    <!--c1-->
+                                    <table border="0" align="center" width="95%" cellpadding="3" cellspacing="1"
+                                        id="CODE-WRAP">
+                                        <tbody>
+                                            <tr>
+                                                <td><b>CODE</b> </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="CODE"><!--ec1-->[POST][b]Time Period or World:[/b]
+                                                    [CODE ] &lt;div class="claim-item"&gt;@[Name]&lt;/div&gt;[/CODE ]
+                                                    <!--c2-->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table><!--ec2-->
+
+                                    <h5>Add World</h5>
+                                    <!--c1-->
+                                    <table border="0" align="center" width="95%" cellpadding="3" cellspacing="1"
+                                        id="CODE-WRAP">
+                                        <tbody>
+                                            <tr>
+                                                <td><b>CODE</b> </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="CODE"><!--ec1-->[POST][b]World Name:[/b]
+                                                    [b]Time Period/Genre:[/b] List all that apply
+                                                    [b]Description:[/b] [/POST]
+                                                    [CODE ]&lt;div class="claim-item"&gt;@[Name]&lt;/div&gt;[/CODE ]
+                                                    <!--c2-->
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table><!--ec2-->
+
+                                </div>
+                            </div>
+
+
+
 
                         </div>
                     </div>
@@ -940,6 +1106,12 @@
             content: '.tabcontent'
         });
     </script>
-
+    <script>setupTabs({
+            outerwrap: '.tabbedsection',
+            button: '.tab',
+            contentwrap: '.tabscontentwrap',
+            content: '.tabcontent'
+        });
+    </script>
 
 </body>

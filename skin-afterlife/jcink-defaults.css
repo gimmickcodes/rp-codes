@@ -92,31 +92,6 @@ UserCP/My Controls styles
 }
 
 
-#ucpmenu .maintitle {
-    /* ucp main headers */
-    font: 700 var(--font-mono-13);
-    letter-spacing: 10%;
-    text-transform: uppercase;
-    border: 0;
-    border-bottom: 0.5px solid var(--border-2);
-    color: hsl(var(--bodytext-2));
-    padding: 12px calc(var(--boardInsetSides) / 2);
-    margin-bottom: 24px;
-    width: 100%;
-}
-
-#ucpcontent .maintitle {
-    /* ucp main headers */
-    font: 700 var(--font-mono-13);
-    letter-spacing: 10%;
-    text-transform: uppercase;
-    border: 0.5px solid var(--border-2);
-    padding: 12px calc(var(--boardInsetSides) / 2);
-    color: hsl(var(--bodytext-2));
-    margin-bottom: 12px;
-    width: fit-content;
-}
-
 #ucpmenu .pformstrip {
     padding: 0 calc(var(--boardInsetSides) / 2);
 }
@@ -273,7 +248,7 @@ Search Pages, Last Click, Recent Topics and Posts
 
     td.maintitle,
     #active-topics .maintitle,
-    .tableborder:not(.active-posts) .maintitle {
+    .tableborder:not(.active-posts, #registration-form) .maintitle {
         all: unset;
         display: table-cell;
         font: 400 var(--font-mixta-28);
@@ -314,7 +289,7 @@ Search Pages, Last Click, Recent Topics and Posts
 
 
 
-.tableborder:not(.active-posts) .maintitle {
+:where(#Search, #Online) .tableborder:not(.active-posts, #registration-form) .maintitle {
     all: unset;
     display: block;
 }
@@ -660,15 +635,20 @@ Pagination e.g. [1],2,3 ...
 .pagination_page {
     display: inline-block;
     padding: 0.5em 1ch;
-    background: hsl(var(--black));
+    background: hsl(var(--base1));
     border: 0.5px solid hsl(var(--accentBase-4)/ 0.75);
     border-radius: 2px;
+    color: hsl(var(--bodytext-2));
+}
+
+.light-theme .pagination_page {
+    color: hsl(var(--accentBase-2));
 }
 
 .pagination_current {
-    background: hsl(var(--backgroundHTML) / 1);
+    background: hsl(var(--accentBase-3) / 1);
     border: 0.5px solid var(--border-2);
-    color: hsl(var(--accentBase-1));
+    color: hsl(var(--permwhite));
 }
 
 .pagination_last {
@@ -757,6 +737,51 @@ Top table bars / gradient holders
     margin-bottom: 24px;
 }
 
+#ST .maintitle {
+    all: unset;
+}
+
+#Post .maintitle {
+    all: unset;
+    display: table-cell;
+    padding: 0 calc(var(--boardInsetSides) / 2);
+    font: 600 var(--font-mixta-28);
+    color: hsl(var(--accent-2));
+    text-transform: none;
+    letter-spacing: 0;
+    grid-column: 1 / -1 !important;
+}
+
+#Mod .maintitle {
+    width: fit-content;
+}
+
+
+
+#ucpmenu .maintitle {
+    /* ucp main headers */
+    font: 700 var(--font-mono-13);
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    border: 0;
+    border-bottom: 0.5px solid var(--border-2);
+    color: hsl(var(--bodytext-2));
+    padding: 12px calc(var(--boardInsetSides) / 2);
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+#ucpcontent .maintitle {
+    /* ucp main headers */
+    font: 700 var(--font-mono-13);
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    border: 0.5px solid var(--border-2);
+    padding: 12px calc(var(--boardInsetSides) / 2);
+    color: hsl(var(--bodytext-2));
+    margin-bottom: 12px;
+    width: fit-content;
+}
 
 .maintitle a:link,
 .maintitle a:visited,
@@ -764,9 +789,6 @@ Top table bars / gradient holders
 
 .maintitle a:hover {}
 
-#Mod .maintitle {
-    width: fit-content;
-}
 
 /****************************************
 Bar directly below the maintitles 
@@ -928,6 +950,15 @@ QUOTE and CODE BBCode boxes
     color: hsl(var(--accent-2)/0.75);
 }
 
+
+.light-theme .code-top {
+    color: hsl(var(--accent-1));
+}
+
+.light-theme .code-highlight {
+    color: hsl(var(--permwhite));
+}
+
 td#CODE {
     padding: 1.5em calc(var(--boardInsetSides)/2);
     font: var(--font-mono-14);
@@ -949,7 +980,8 @@ Input buttons, e.g. submit, text input, etc
     width: 50vw !important;
 }
 
-fieldset.search {
+fieldset.search,
+fieldset {
     border-color: var(--border-2);
     border-width: 0.5px;
 }
@@ -1177,6 +1209,16 @@ img.attach {
 }
 
 /* Warning CSS */
+
+.warning {
+    background-color: transparent !important;
+    margin: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    color: hsl(var(--accentContrast));
+    font-weight: bold;
+}
+
 .warngood {
     color: green
 }
@@ -1545,16 +1587,7 @@ tr[id*="field_"] .forminput {
 Posting Form
 *****************************************/
 
-#Post .maintitle {
-    all: unset;
-    display: table-cell;
-    padding: 0 calc(var(--boardInsetSides) / 2);
-    font: 600 var(--font-mixta-28);
-    color: hsl(var(--accent-2));
-    text-transform: none;
-    letter-spacing: 0;
-    grid-column: 1 / -1 !important;
-}
+
 
 #Msg .tableborder,
 #ucpcontent form .tableborder,
@@ -1789,6 +1822,7 @@ input[type=button].formatbuttons {
     #Reg tbody tr {
         display: flex;
         flex-flow: column nowrap;
+        gap: 1ch;
         width: 100%;
         line-height: 150%;
     }
@@ -1813,10 +1847,11 @@ input[type=button].formatbuttons {
     #Reg fieldset {
         box-sizing: border-box;
         border: 0px;
-        border-bottom: 1px solid;
+        border-bottom: 1px solid var(--border-2);
     }
 
     #Reg td[width='12'] {
         display: none;
     }
+
 }

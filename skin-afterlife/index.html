@@ -9,7 +9,7 @@
     <link href="jcink-defaults.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script src="https://unpkg.com/htmx.org@2.0.0"></script>
 
     <!-- font icons -->
     <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
@@ -33,6 +33,7 @@
         }
     </script>
 
+
 </head>
 
 <body class="userid-{ID} gperms-{ID}" id="idx">
@@ -50,7 +51,7 @@
         <div class="navbar--utilities">
             <a class="scrollButton" data-target="#gotoTop" title="go to top"><i class="ph ph-caret-up"></i></a>
             <a href="#bottom"><i class="ph ph-caret-down"></i></a>
-            <i class="ph ph-sun"></i>
+            <div class="theme-toggle" onclick="toggleTheme()"><i class="ph ph-sun"></i><i class="ph ph-moon"></i></div>
         </div>
     </div>
 
@@ -163,11 +164,11 @@
 
         <div class="hero">
             <div class="hero-image">
-                <img src="assets-final/board-hero.png">
+                <!-- <img src="assets-final/board-hero.png"> -->
             </div>
             <a href="">
                 <div class="hero-title--one progblur">After</div>
-                <div class="hero-title--two"><span class="progblur">We</span> <span class="progblur">Die</span></div>
+                <div class="hero-title--two"><span class="progblur">We</span> <span class="progblur">Die</span> </div>
             </a>
             <div class="hero-subtitle">A Dungeon-crawler Afterlife Roleplay</div>
         </div>
@@ -176,6 +177,7 @@
 
 
     <div class="sitebody">
+
 
         <!-- <% BOARD %> AKA HOME -->
         <div class="sitebody--inset PREVIEW-HOME" id="idx" style="display: inherit;">
@@ -225,7 +227,7 @@
                                     <div class="subacct_clip"><span id="subacct_link"><span id="subaccounts_menu">
                                                 <form
                                                     action="https://afterdeath.jcink.net/index.php?&amp;act=Login&amp;CODE=01&amp;CookieDate=1"
-                                                    name="subswitch" method="POST" style="display: inherit;">
+                                                    name="subswitch" method="POST" style="display: none;">
                                                     <input type="hidden" name="auth_key"
                                                         value="eb525c3fda43102bbfd1d483aa2aba6a">
                                                     <input type="hidden" name="UserName" value="subacct">
@@ -888,7 +890,7 @@
 
 
         <!-- <% SUBFORUM HEADERS %> -->
-        <div class="sitebody--inset PREVIEW-SUBFORUM" id="SF" style="display: inherit;">
+        <div class="sitebody--inset PREVIEW-SUBFORUM" id="SF" style="display: none;">
 
 
             <div class="subforumgrid">
@@ -1106,7 +1108,7 @@
 
 
         <!-- <% POSTROW %> -->
-        <div class="sitebody--inset PREVIEW-POSTROW" id="ST" style="display: inherit;">
+        <div class="sitebody--inset PREVIEW-POSTROW" id="ST" style="display: none;">
 
 
             <!-- JCINK INSERTED ABOVE POST ROW HEADER -->
@@ -1773,7 +1775,7 @@
             </div>
 
             <!--
-            <div class="v1" style="display: inherit;">
+            <div class="v1" style="display: none;">
                 <div class="postrow post{pid} {group} grp-{groupid} {stability} frame forechosen unstable">
                     <div class="frame-inner postrow-grid">
 
@@ -1928,6 +1930,34 @@
                         meatloaf boudin short ribs ribeye leberkas buffalo, pork loin tenderloin tail burgdoggen
                         landjaeger pork chop beef ribs.
                         <br>
+                        <hr>
+                        <h1>Heading 1</h1>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h3>
+                        <h4>Heading 4</h4>
+                        <h5>Heading 5</h5>
+                        <b>Bold</b>
+                        <i>Italic</i>
+                        <em>Emphasize</em>
+                        <a>Link</a>
+                        <ul>
+                            <li>HII</li>
+                        </ul>
+                        <blockquote>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                            adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                            laoreet leo
+                            placerat
+                            velit.</blockquote>
+                        <boxquote>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                            adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                            laoreet leo
+                            placerat
+                            velit.</boxquote>
+                        <borderquote>Lorem ipsum dolor sit amet consectetur. Purus lectus
+                            adipiscing cursus dapibus. Posuere aliquet tortor sapien mattis
+                            laoreet leo
+                            placerat
+                            velit.</borderquote>
                         Alcatra capicola andouille t-bone pancetta ham hock pork belly turkey fatback beef. Shankle
                         venison buffalo kielbasa burgdoggen t-bone landjaeger bacon. Kevin pork loin jerky, chuck
                         bacon cupim buffalo. Flank shankle beef ribs ham hock boudin tri-tip chicken, drumstick
@@ -2124,7 +2154,7 @@
 
 
         <!-- <% MEMBER LIST %> -->
-        <div class="sitebody--inset PREVIEW-MEMBERS" id="Members" style="display: inherit">
+        <div class="sitebody--inset PREVIEW-MEMBERS" id="Members" style="display: none;">
 
             <div class="ml-title glowtext_v2">Resident Directory</div>
 
@@ -2466,7 +2496,7 @@
 
 
         <!-- <% GUIDEBOOK %> -->
-        <div class="sitebody--inset PREVIEW-GUIDEBOOK" style="display: inherit;">
+        <div class="sitebody--inset PREVIEW-GUIDEBOOK" style="display: none;">
 
             <div class="frame">
                 <div class="frame-inner guidebook">
@@ -2719,7 +2749,7 @@
     .spoiler-text {
         filter: blur(4px);
         transition: filter 0.5s ease;
-        user-select: inherit;
+        user-select: none;
     }
 
     .threads-spoiler.revealed .spoiler-text {
@@ -2734,7 +2764,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: inherit;
+        pointer-events: none;
         /* Let clicks pass through to the container */
         transition: opacity 0.4s ease;
     }

@@ -83,6 +83,17 @@ function goToAnchor() {
 
 
 
+function toggleTheme() {
+   // Upon clicking element, swap theme and save it as their new preset
+   document.documentElement.classList.toggle("light-theme");
+   document.documentElement.classList.toggle("dark-theme");
+   var theme = document.documentElement.classList.contains("dark-theme")
+      ? "dark"
+      : "light";
+   localStorage.setItem("theme", theme);
+   console.log("Theme set to " + theme + "mode")
+}
+
 
 
 
@@ -90,12 +101,14 @@ function goToAnchor() {
 
 function scrollBlur() {
    const fadeTarget = document.querySelector('#siteheader');
+   if (!fadeTarget) return; // Safety check in case element isn't in DOM yet
 
-   window.addEventListener('scroll', () => {
+   // 1. Define the update function so it can be called independently
+   function updateStyles() {
       const scrollTop = window.scrollY;
 
-      // Dynamically get the height of the hero element (or use window.innerHeight)
-      const maxScrollDepth = (fadeTarget.offsetHeight * 1.5) || 800; // Fallback to 800 if 0
+      // Dynamically get the height of the hero element
+      const maxScrollDepth = (fadeTarget.offsetHeight * 1.5) || 800;
 
       // Calculate ratio (clamped between 0 and 1)
       const scrollRatio = Math.min(1, Math.max(0, scrollTop / maxScrollDepth));
@@ -109,8 +122,13 @@ function scrollBlur() {
       // Update the CSS variables
       fadeTarget.style.setProperty('--scroll-opacity', opacity);
       fadeTarget.style.setProperty('--scroll-blur', blur);
+   }
 
-   }, { passive: true });
+   // 2. Run immediately on page load to set the initial crisp state
+   updateStyles();
+
+   // 3. Run on every scroll event
+   window.addEventListener('scroll', updateStyles, { passive: true });
 }
 
 
@@ -249,7 +267,6 @@ function subboardImages() {
 // Adapted from https://codepen.io/ciprian/pen/WEwPop
 
 function guidebookTabs() {
-   console.log("Guidebook check")
 
    // Check that we are on the correct page before firing
    if (!document.querySelector('.guidebook')) return;
@@ -408,7 +425,6 @@ function stabilityMeterLogic() {
 
       // Remove old icons it exists and add new one based on logic
       meter.querySelectorAll('i').forEach(oldIcon => oldIcon.remove());
-      console.log("Hi heart")
 
       const iconClass = isNaN(num) ? 'ph-question-mark' : icon;
       meter.insertAdjacentHTML('afterbegin', `<i class="ph ${iconClass}"></i>`);
@@ -1025,3 +1041,69 @@ const setupTabs = ({
       updateHeight();
    });
 };
+
+
+
+// Artifact insertion
+
+document.addEventListener('DOMContentLoaded', async () => {
+   // 1. Find all item placeholders on the current forum thread/page
+   const slots = document.querySelectorAll('.itemslot');
+   if (!slots.length) return; // Exit early if no items are on this page
+
+   try {
+      // 2. Fetch your database page (Change pid=1 if yours is different)
+      const response = await fetch('artifacts.html');
+      if (!response.ok) throw new Error('Database fetch failed');
+      const text = await response.text();
+
+      // 3. Parse the page into a background DOM structure
+      const dbDoc = new DOMParser().parseFromString(text, 'text/html');
+
+      // 4. Match placeholders to database IDs and inject content
+      slots.forEach(slot => {
+         const itemId = slot.getAttribute('data-item-id');
+         // Targets the prefixed ID (e.g., #item-excalibur)
+         const sourceItem = dbDoc.getElementById(`item-${itemId}`);
+
+         if (sourceItem) {
+            // 1. Clone the entire database element (including its style="--level: X")
+            const clonedItem = sourceItem.cloneNode(true);
+
+            // 2. Clear out the "Loading..." text from the BBCode placeholder
+            slot.innerHTML = '';
+
+            // 3. Drop the cloned item directly inside the placeholder wrapper
+            slot.appendChild(clonedItem);
+            slot.classList.add('item-loaded');
+         } else {
+            slot.innerHTML = `<span class="item-error">Item "${itemId}" not found</span>`;
+         }
+      });
+   } catch (error) {
+      console.error('Error loading RPG items:', error);
+      slots.forEach(slot => slot.innerHTML = `<span class="item-error">Failed to load item database</span>`);
+   }
+});
+
+
+
+
+function accordion(header) {
+   const parent = header.closest('.accordion');
+   if (!parent) return;
+
+   header.classList.toggle('is-collapsed');
+   parent.classList.toggle('is-collapsed');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+   if (!document.querySelector('.accordion')) return;
+
+   document.addEventListener('click', function (event) {
+      const header = event.target.closest('.accordion-toggle');
+      if (header) {
+         accordion(header);
+      }
+   });
+});

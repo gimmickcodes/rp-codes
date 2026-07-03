@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<head>
+    <title>After We Die</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/htmx.org@2.0.0"></script>
+    <!-- <script>
+        // Only enable if swapping from js to HTMX for artifact insertion
+        // HTMX engine: Automatically updates your neutral tags on the fly
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.itemslot').forEach(slot => {
+                const itemId = slot.getAttribute('data-item-id');
+
+                // Dynamically add HTMX attributes to the neutral wrapper
+                slot.setAttribute('hx-get', 'artifacts.html');
+                slot.setAttribute('hx-select', `#item-${itemId}`);
+                slot.setAttribute('hx-trigger', 'load');
+                slot.setAttribute('hx-swap', 'innerHTML');
+
+                // Tell HTMX to look at this newly upgraded element
+                htmx.process(slot);
+            });
+        });
+        </script> -->
+
+
+    <link href="jcink-defaults.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- font icons -->
+    <script src="https://kit.fontawesome.com/1fd11fd820.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/zbl1ihd.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <script>
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme == "dark") {
+            document.documentElement.classList.toggle("dark-theme");
+        } else if (currentTheme == "light") {
+            document.documentElement.classList.toggle("light-theme");
+        }
+    </script>
+
+</head>
+
+<body class="userid-{ID} gperms-{ID}" id="ST">
+
+    <div id="navbar">
+        <div class="navbar--menubutton" onclick="menuFunction()"><i class="ph ph-list"></i><i class="ph ph-x"></i></div>
+        <div class="navbar--breadcrumbs">
+            <div id="navstrip">
+                <a href="#">After We Die</a><span class="navstrip-separator">·</span>
+                <a href="">Category</a><span class="navstrip-separator">·</span>
+                <a href="">Board</a>
+            </div>
+        </div>
+
+        <div class="navbar--utilities">
+            <a class="scrollButton" data-target="#gotoTop" title="go to top"><i class="ph ph-caret-up"></i></a>
+            <a href="#bottom"><i class="ph ph-caret-down"></i></a>
+            <div class="theme-toggle" onclick="toggleTheme()"><i class="ph ph-sun"></i><i class="ph ph-moon"></i></div>
+        </div>
+    </div>
+
+    <div id="navpanel" class="accswitch-swap-area">
+        <div class="navpanel-user-controls perms-loggedin">
+            <a href="#" title="Log Out" class="perms-loggedin"><i class="ph ph-sign-out"></i> </a>
+            <div class="accswitch-toggle perms-loggedin" title="Switch accounts"><i class="ph ph-swap"></i>
+            </div>
+            <div class="accswitch-close perms-loggedin" title="Close"><i class="ph ph-x"></i></div>
+        </div>
+        <div class="navpanel-section navpanel-user">
+            <div class="navpanel-user-info">
+                <div class="navpanel--username">
+                    <a href="">{Username}</a>
+                </div>
+                <div class="navpanel--userlinks perms-loggedin">
+                    <a href="#" title="Messages"><i class="ph ph-envelope"></i> 21</a>
+                    <a href="#" title="Alerts"><i class="ph ph-bell"></i> 21</a>
+                    <a href="#" title="Log Out"><i class="ph ph-sign-out"></i> Log out</a>
+                </div>
+                <div class="navpanel--userdesc perms-loggedin">You have 300 posts and 3,000 favor.</div>
+                <div class="navpanel--userlinks perms-loggedout">
+                    <a href="#" title="Log In"><i class="ph ph-envelope"></i> Log In</a>
+                    <a href="#" title="Register"><i class="ph ph-bell"></i> Register</a>
+                </div>
+            </div>
+            <!-- <div class="navpanel--userlinks-big perms-loggedin">
+                <a href="">Inventory</a>
+                <a href="">Development</a>
+            </div> -->
+            <div class="accswitch-panel">
+                <div class="accswitch-close" title="Go back">Switch accounts</div>
+                <span id="subaccounts_menu" class="perms-loggedin">
+                    <form
+                        action="https://jewelsofetheria.jcink.net/index.php?&amp;act=Login&amp;CODE=01&amp;CookieDate=1"
+                        name="subswitch" method="POST">
+                        <input type="hidden" name="auth_key" value="32298511ffb1310bd3bb856bb705b93f">
+                        <input type="hidden" name="UserName" value="subacct">
+                        <input type="hidden" name="PassWord" value="subacct">
+                        <input type="hidden" name="referer" value="">
+                        <select class="forminput" name="sub_id" onchange="this.form.submit()">
+                            <option value="------------" selected="selected">Switch Account</option>
+                            <option value="13">Roman Torrano</option>
+                        </select>
+                    </form>
+                </span>
+            </div>
+            <a href="" class="navpanel--avi imgfill perms-loggedin" style="background-image:var(--placeholderIcon)"></a>
+        </div>
+        <div class="navpanel-section">
+            <div class="siteheader-linksbox--mainlinks">
+                <a href="">Home</a>
+                <a href="" class="perms-loggedin">UCP</a>
+                <a href="" class="perms-QA">ACP</a>
+                <a href="">Members</a>
+                <a href="">New Topics</a>
+                <a href="">Online</a>
+                <a href="">Search</a>
+                <a href="" class="perms-loggedin">Log Out</a>
+                <a href="" class="perms-loggedout">Log In</a>
+            </div>
+            <div class="siteheader-linksbox--quicklinks">
+                <a href="">Guidebook</a>
+                <a href="" class="perms-loggedin">Shops</a>
+                <a href="">Templates</a>
+                <a href="">Store</a>
+                <a href="">Discord</a>
+            </div>
+        </div>
+        <div class="navpanel-section">
+            <a class="panel-tracker-title" href="#">Your Current Threads</a>
+            <div class="paneltrackerwrap">
+                <div class="tracker-item owing" aria-described-by="Owing">
+                    <b><span class="status"><i class="ph ph-pen-nib"></i></span>
+                        <a href="https://afterdeath.jcink.net/index.php?showtopic=1&amp;view=getlastpost">Welcome To
+                            Your New Forum</a></b>
+                    <div class="tracker-desc"> <span class="tracker-location">The Monastery of St. Divenire</span> <span
+                            class="tracker-threaddesc"> </span> <br> <span class="tracker-lastpost">Last by <span">
+                                Caretaker</span>, May 30 2026, 04:39 PM</span></div>
+                    <hr>
+                </div>
+                <div class="tracker-item" aria-described-by="Owing">
+                    <b><span class="status"><i class="ph ph-pen-nib"></i></span>
+                        <a href="https://afterdeath.jcink.net/index.php?showtopic=1&amp;view=getlastpost">Welcome To
+                            Your New Forum</a></b>
+                    <div class="tracker-desc"> <span class="tracker-location">The Monastery of St. Divenire</span> <span
+                            class="tracker-threaddesc"> </span> <br> <span class="tracker-lastpost">Last by <span">
+                                Caretaker</span>, May 30 2026, 04:39 PM</span></div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <anchor id="gotoTop"> </anchor>
+
+
+    <div id="siteheader">
+        <div class="siteheader-linksbox">
+            <div class="siteheader-linksbox--mainlinks">
+                <a href="">Home</a>
+                <a href="" class="perms-loggedin">UCP</a>
+                <a href="" class="perms-QA">ACP</a>
+                <a href="">Members</a>
+                <a href="">New Topics</a>
+                <a href="">Online</a>
+                <a href="">Search</a>
+                <a href="" class="perms-loggedin">Log Out</a>
+                <a href="" class="perms-loggedout">Log In</a>
+            </div>
+            <div class="siteheader-linksbox--quicklinks">
+                <a href="">Guidebook</a>
+                <a href="" class="perms-loggedin">Shops</a>
+                <a href="">Templates</a>
+                <a href="">Store</a>
+                <a href="">Discord</a>
+            </div>
+        </div>
+
+        <div class="hero">
+            <div class="hero-image">
+                <img src="assets-final/board-hero.png">
+            </div>
+            <a href="">
+                <div class="hero-title--one progblur">After</div>
+                <div class="hero-title--two"><span class="progblur">We</span> <span class="progblur">Die</span></div>
+            </a>
+            <div class="hero-subtitle">A Dungeon-crawler Afterlife Roleplay</div>
+        </div>
+
+    </div>
+
+
+    <div class="sitebody">
+
+
+
+        <!-- ARTIFACTS COMPENDIUM -->
+        <div class="sitebody--inset PREVIEW-ARTIFACTS" id="idx" style="display: inherit;">
+            <div class="reliquary-title glowtext_v2">Known Artifacts</div>
+
+            <div class="reliquary-subhead">Some artifacts are considered rare. These have limited stock and are
+                distributed via raffle.
+                Owners of rare items are expected to be more active and have <b>2 non-missive posts a month</b>, lest
+                their
+                fellow residents decide to requisition it for someone less idle.</div>
+
+
+            <div class="reliquary-section accordion">
+                <div class="reliquary-section-topper accordion-toggle">
+                    <i class="ph ph-minus"></i>
+                    <i class="ph ph-plus"></i>
+                    Dungeon One
+                </div>
+                <div class="reliquary-section-main">
+
+                    <div class="artifactbox">
+                        <div id="item-excalibur" style="--skill-level: '0';">
+                            <div class="artifact-tag">limited edition</div>
+                            <div class="invslot-icon"><img
+                                    src="https://i.pinimg.com/1200x/74/10/79/741079e7ba7480d519ffa6a13eeca94b.jpg">
+                            </div>
+                            <div class="invslot-text">
+                                <div class="invslot-name">Excalibur</div>
+                                <div class="invslot-desc">Lorem ipsum dolor sit amet
+                                    consectetur. Purus lectus adipiscing
+                                    cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                    placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                    nibh
+                                    tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="artifact-claims"><b>Availability (3/5):</b> <a href="#">Caretaker</a>, <a
+                                href="#">Stranger</a></div>
+                    </div>
+                    <div class="artifactbox">
+                        <div id="item-mjolnir" style="--skill-level: '0';">
+                            <div class="artifact-tag">limited edition</div>
+                            <div class="invslot-icon"><img
+                                    src="https://i.pinimg.com/1200x/74/10/79/741079e7ba7480d519ffa6a13eeca94b.jpg">
+                            </div>
+                            <div class="invslot-text">
+                                <div class="invslot-name">Mjolnir</div>
+                                <div class="invslot-desc">Lorem ipsum dolor sit amet
+                                    consectetur. Purus lectus adipiscing
+                                    cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                                    placerat velit. Mattis sit diam felis suspendisse ac odio in
+                                    nibh
+                                    tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="artifact-claims"><b>Availability (3/5):</b> <a href="#">Caretaker</a></div>
+                    </div>
+
+                    <div id="item-test3" style="--skill-level: '0';">
+                        <div class="invslot-name">Shadowfax</div>
+                        <div class="invslot-desc">Lorem ipsum dolor sit amet
+                            consectetur. Purus lectus adipiscing
+                            cursus dapibus. Posuere aliquet tortor sapien mattis laoreet leo
+                            placerat velit. Mattis sit diam felis suspendisse ac odio in
+                            nibh
+                            tempus. Quam mattis auctor massa vulputate tellus massa vitae.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reliquary-section accordion">
+                <div class="reliquary-section-topper accordion-toggle">
+                    <i class="ph ph-minus"></i>
+                    <i class="ph ph-plus"></i>
+                    Dungeon Two
+                </div>
+
+                <div class="reliquary-section-main">
+                    <div class="artifactbox">
+                        <div class="artifact-tag">Rare</div>
+                        <div id="item-test4" style="--skill-level: '0';">
+                            Four
+                        </div>
+                        <div class="artifact-meta">Availability (3/5): <a href="#">Caretaker</a></div>
+                    </div>
+
+                    <div id="item-test5" style="--skill-level: '0';">
+                        Five
+                    </div>
+
+                    <div id="item-test6" style="--skill-level: '0';">
+                        Six
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+
+    <script src="js.js" defer></script>
+
+</body>
