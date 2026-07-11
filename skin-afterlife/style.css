@@ -16,47 +16,86 @@ TOKENS
 }
 
 .forum-monastery-image--default {
-    --boardimage: url(assets-final/location-monastery.png);
-}
-
-.forum-monastery-image--default::before,
-.forum-monastery-image--default::after {
-    /* background-position: right !important; */
+    /* monastery */
+    --boardimage: url(assets-final/location-sq-monastery.png);
 }
 
 .forum-monastery-image--subboard1 {
     /* great hall */
-    --boardimage: url(assets-final/location-greathall.png);
+    --boardimage: url(assets-final/location-sq-greathall.png);
 }
 
 .forum-monastery-image--subboard2 {
     /* cloisters */
-    --boardimage: url(/assets-final/location-uppercloisters.png);
+    --boardimage: url(/assets-final/location-sq-cloisters.png);
 }
 
 .forum-monastery-image--subboard3 {
     /* crypts */
-    --boardimage: url(assets-final/location-crypts.png);
+    --boardimage: url(assets-final/location-sq-crypts.png);
 }
 
 .forum-monastery-image--subboard4 {
     /* library */
-    --boardimage: url(assets-final/location-library.png);
+    --boardimage: url(assets-final/location-sq-library.png);
 }
 
 .forum-monastery-image--subboard5 {
     /* gardens */
-    --boardimage: url(assets-final/location-garden.png);
+    --boardimage: url(assets-final/location-sq-garden.png);
 }
 
 .forum-location-small.woods {
     /* woods */
-    --boardimage: url(assets-final/location-forest.png);
+    --boardimage: url(assets-final/location-sq-woods.png);
 }
 
 .forum-location-small.pastlives {
     /* au */
     --boardimage: url(assets-final/location-pastlives.png);
+}
+
+@media only screen and (max-width: 760px) {
+
+    .forum-monastery-image--default {
+        /* monastery */
+        --boardimage: url(assets-final/location-monastery.png);
+    }
+
+    .forum-monastery-image--subboard1 {
+        /* great hall */
+        --boardimage: url(assets-final/location-greathall.png);
+    }
+
+    .forum-monastery-image--subboard2 {
+        /* cloisters */
+        --boardimage: url(/assets-final/location-cloisters.png);
+    }
+
+    .forum-monastery-image--subboard3 {
+        /* crypts */
+        --boardimage: url(assets-final/location-crypts.png);
+    }
+
+    .forum-monastery-image--subboard4 {
+        /* library */
+        --boardimage: url(assets-final/location-library.png);
+    }
+
+    .forum-monastery-image--subboard5 {
+        /* gardens */
+        --boardimage: url(assets-final/location-garden.png);
+    }
+
+    .forum-location-small.woods {
+        /* woods */
+        --boardimage: url(assets-final/location-woods.png);
+    }
+
+    .forum-location-small.pastlives {
+        /* au */
+        --boardimage: url(assets-final/location-pastlives.png);
+    }
 }
 
 .forum-guidebook-bg {
@@ -1895,18 +1934,17 @@ a.newschip b {
 
     .fr--desc {
         flex: 1;
-        margin: 0 0 1.5em;
+        max-height: 70%;
+        overflow-y: auto;
     }
 
-    .fr--desc::after {
-        content: '';
-        position: absolute;
+    .fr--desc-border {
         display: block;
         border-top: 0.5px solid var(--border-2);
-        width: calc(100% + 2*var(--boardInsetSides));
+        width: calc(100% + 1*var(--boardInsetSides));
         height: 1px;
-        left: 0;
-        bottom: 0;
+        margin-top: 1.5em;
+        padding-bottom: 1.5em;
     }
 
     .fr-lastpost {
@@ -1967,6 +2005,7 @@ a.newschip b {
         background: hsl(var(--accentBase-3)/.5);
     }
 }
+
 
 .forum-monastery-board .fr-lastpost-avi,
 .forum-location-small-board .fr-lastpost-avi {
@@ -2978,7 +3017,7 @@ POST ROWS & MINI PROFILE
     top: 56px;
     display: flex;
     align-items: center;
-    gap: 1.25ch;
+    gap: .5em 1ch;
     width: fit-content;
     padding: 0.75em 2ch;
     background: hsl(var(--accent-2)/.3);
@@ -2988,7 +3027,7 @@ POST ROWS & MINI PROFILE
 
     font: 600 var(--font-mono-13);
     text-transform: uppercase;
-    color: hsl(var(--permwhite));
+    color: hsl(var(--white));
     z-index: 5;
 }
 
@@ -3419,7 +3458,7 @@ divider {
 
     .pr-toolbar {
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: flex-start;
         width: calc(100% + var(--boardInsetSides));
         margin-left: calc(0 - var(--boardInsetSides));
         border-radius: 0;
@@ -3450,7 +3489,7 @@ divider {
 
 @media only screen and (max-width:600px) {
     .pr-toolbar {
-        top: 0;
+        top: 56px;
     }
 }
 
@@ -5941,10 +5980,9 @@ hr::after {
 
     h2 {
         font: 600 var(--font-mixta-24);
-        margin: 2.5rem 0 -0.125rem;
+        margin: 2.5rem 0 1rem;
         color: transparent;
         background: var(--gradienttext);
-        ;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-box-decoration-break: clone;
@@ -5997,6 +6035,14 @@ hr::after {
 .stafftemp,
 [class*=posttemp] {
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin: 0 0 1rem;
+    }
+
     h1 {
         filter: none;
         display: flex;
@@ -6005,7 +6051,7 @@ hr::after {
         column-gap: 20px;
 
         font: 400 var(--font-mixta-36);
-        margin: 2rem 0 1rem;
+        margin: 3rem 0 1rem;
         -webkit-text-stroke: 0.5px hsl(var(--accent-2)/.5);
         background: linear-gradient(to bottom, hsl(var(--accent-2)) 25%, hsl(var(--black)/0) 110%);
         color: transparent;
@@ -6044,7 +6090,7 @@ hr::after {
     h2 {
         font: 600 var(--font-mixta-24);
         color: hsl(var(--accent-2)/.75);
-        margin: 2.5rem 0 -0.125rem;
+        margin: 2.5rem 0 1rem;
         border-bottom: 2px solid hsl(var(--accent-3)/.5);
         padding-bottom: 8px;
         width: fit-content;
@@ -6079,20 +6125,51 @@ hr::after {
     .tabcontent :where(h1, h2, h3, h4, h5):first-child,
     blockquote :where(h1, h2, h3, h4, h5):first-child,
     boxquote :where(h1, h2, h3, h4, h5):first-child,
-    borderquote :where(h1, h2, h3, h4, h5):first-child {
+    borderquote :where(h1, h2, h3, h4, h5):first-child,
+    .stafftemp-body> :where(h1, h2, h3, h4, h5):first-child {
         margin-top: 0
     }
 
-    :where(h1, h2, h3, h4, h5, blockquote, boxquote, borderquote, hr)+br {
+    :where(h1, h2, h3, h4, h5, blockquote, boxquote, borderquote, hr, p)+br {
         display: none;
+    }
+
+    p+:where(h1, h2, h3, h4, h5, blockquote, boxquote, borderquote, hr),
+    ul+:where(h1, h2, h3, h4, h5, blockquote, boxquote, borderquote, hr),
+    ol+:where(h1, h2, h3, h4, h5, blockquote, boxquote, borderquote, hr),
+    p:has(br)+ :where(h1, h2, h3, h4, h5, blockquote, boxquote, borderquote, hr) {
+        margin-top: 2.5rem
+    }
+
+    .dice-roll {
+        border: none !important;
+        font: var(--font-mono-16);
+        background: hsl(var(--accent-2)/.25);
+        padding: 8px;
+    }
+
+    .dice-roll b {
+        display: none;
+    }
+
+    .dice-roll::before {
+        content: "Roll ";
+        font-weight: 700;
+        color: hsl(var(--accent-2));
     }
 }
 
+@media only screen and (max-width: 600px) {
+
+    ul,
+    ol {
+        padding-left: 2ch;
+    }
+}
 
 /****************************************
 TEMPLATES
 *****************************************/
-
 
 
 .inventory .pr-header {
@@ -6296,15 +6373,11 @@ TEMPLATES
     display: none;
 }
 
-.keepsakes .placeholder::after {
-    content: 'No skills yet.';
+.placeholder::after {
+    content: 'None.';
     font-style: italic;
 }
 
-.artifacts .placeholder::after {
-    content: 'No artifacts yet.';
-    font-style: italic;
-}
 
 .invslot:empty {
     display: none;
@@ -6315,7 +6388,28 @@ TEMPLATES
     font-style: italic;
 } */
 
-.feat {
+.inventory-alerts {
+    margin-bottom: calc(1rem + 12px);
+    padding: 1.5em;
+    background: hsl(var(--accent-2)/.75);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font: 600 var(--font-mono-14);
+    color: hsl(var(--white));
+}
+
+.inventory-alerts .ph {
+    font-size: 24px;
+}
+
+.inventory-alerts.none {
+    display: none;
+}
+
+.feat,
+.misc {
     display: flex;
     align-items: baseline;
     gap: 1.25ch;
@@ -6323,7 +6417,8 @@ TEMPLATES
     margin-bottom: 1em;
 }
 
-.feat::before {
+.feat::before,
+.misc::before {
     content: '+';
     display: flex;
     align-items: center;
@@ -6338,6 +6433,13 @@ TEMPLATES
     border-radius: 1px;
 }
 
+.misc::before {
+    content: '✓';
+    background: transparent;
+    border: 1px solid hsl(var(--accent-3));
+    color: hsl(var(--accent-2));
+}
+
 .feat.deducted::before {
     content: '−';
     background: transparent;
@@ -6345,14 +6447,11 @@ TEMPLATES
     color: hsl(var(--accent-2));
 }
 
-.feat.placeholder::before {
+.feat.placeholder::before,
+.misc.placeholder::before {
     display: none;
 }
 
-.feat.placeholder::after {
-    content: 'No feats yet';
-    font-style: italic;
-}
 
 .stafftemp {
     border: 0.5px solid var(--border-2);
@@ -6362,7 +6461,6 @@ TEMPLATES
     display: flex;
     align-items: center;
     gap: 20px;
-    border-bottom: 0.5px solid hsl(var(--accent-3)/.5);
     padding: 40px 48px;
 }
 
@@ -6375,7 +6473,7 @@ TEMPLATES
     color: hsl(var(--black));
     background: hsl(var(--accent-2)/.75);
     border-radius: 4px;
-    font-size: 28px;
+    font-size: 24px;
     border: 4px solid hsl(var(--base2));
     box-shadow: 0 0 2px 0.5px hsl(var(--accent-2)/.5)
 }
@@ -6387,6 +6485,7 @@ TEMPLATES
 .stafftemp-body {
     background: hsl(var(--black));
     padding: 48px;
+    border-top: 0.5px solid hsl(var(--accent-3)/.5);
     border-bottom-right-radius: 20px;
 }
 
@@ -6488,7 +6587,13 @@ TEMPLATES
     }
 
     .stafftemp-header {
-        padding: 40px 16px;
+        padding: 20px 16px;
+    }
+
+    .stafftemp-header--icon {
+        min-width: 40px;
+        height: 40px;
+        font-size: 20px;
     }
 
     .stafftemp-body,
@@ -6599,5 +6704,9 @@ TEMPLATES
 
     .profile-editbutton {
         top: calc(100% - 56px - 64px);
+    }
+
+    .pr-toolbar {
+        top: 0;
     }
 }

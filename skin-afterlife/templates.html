@@ -577,13 +577,19 @@
 
                             <div class="inventory">
                                 <div class="tabsmenu">
-                                    <div class="tab">Keepsakes</div>
+                                    <div class="tab">Keepsake</div>
                                     <div class="tab">Artifacts</div>
+                                    <div class="tab">Misc.</div>
                                     <div class="tab">Feats</div>
                                 </div>
 
                                 <div class="tabscontentwrap">
                                     <div class="tabcontent keepsakes">
+
+                                        <div class="inventory-alerts none">
+                                            <i class="ph ph-warning"></i>
+                                        </div>
+
                                         <div class="keepsake-about">
                                             <div class="keepsake-icon"><i class="ph ph-sword"></i></div>
                                             <div class="invslot-desc">Lorem ipsum dolor sit amet consectetur. Purus
@@ -632,6 +638,10 @@
                                         </div>
                                     </div>
                                     <div class="tabcontent artifacts">
+                                        <div class="inventory-alerts">
+                                            <i class="ph ph-warning"></i> {Artifact name} is currently broken
+                                        </div>
+
                                         <div class="invslot placeholder" style="--skill-level: '0';">
                                             <div class="invslot-name">Artifact Name</div>
                                             <div class="invslot-desc">Lorem ipsum dolor sit amet
@@ -669,7 +679,14 @@
 
 
                                     </div>
-                                    <div class="tabcontent">
+
+                                    <div class="tabcontent miscs">
+                                        <!-- from oldest to newest -->
+                                        <div class="misc placeholder"> </div>
+                                        <div class="misc">Room has wifi</div>
+                                    </div>
+
+                                    <div class="tabcontent feats">
                                         <!-- from oldest to newest -->
                                         <div class="feat placeholder"> </div>
                                         <div class="feat">Completed Catch a Horse (+100 EXP) </div>
@@ -775,9 +792,14 @@
                                         id
                                         eu a libero.
                                     <h1>Heading 1</h1>
+                                    <p>Id elit et adipiscing sit.
                                     <h2>Heading 2</h2>
+                                    <p>Id elit et adipiscing sit.
                                     <h3>Heading 3</h3>
+                                    <p>Id elit et adipiscing sit.
+                                        <br>
                                     <h4>Heading 4</h4>
+                                    <p>Id elit et adipiscing sit.</p><br>
                                     <h5>Heading 5</h5>
 
                                     <p>Id elit et adipiscing sit. Mauris nibh ut nam imperdiet. Urna quam
@@ -837,6 +859,7 @@
                                 </div>
                             </div>
 
+                            <br>
 
                             <div class="stafftemp">
                                 <div class="stafftemp-header">
@@ -1073,6 +1096,9 @@
                                     laoreet leo
                                     placerat
                                     velit.</boxquote>
+
+                                <span style="border:red solid 3px;" class="dice-roll"> <b>Dice Roll:</b> 1d20: 8 =
+                                    8</span>
                             </div>
 
                         </div>

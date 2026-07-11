@@ -744,8 +744,13 @@ function inventoryHTMLFormat() {
 
 // Custom missive post row
 function missiveHTMLFormat() {
-   if (!document.querySelector('#ST .missive')) return;
-   document.querySelector('.sitebody--inset').classList.add('missive-html');
+   // Checks if the original selector is missing AND no link contains "&act=SF&f=5"
+   if (document.querySelector('#navbar a[href*="&act=SF&f=5"]') || document.querySelector('#navbar a[href*="showforum=5')) {
+      const element = document.querySelector('.sitebody--inset:not(#SF .sitebody--inset)');
+      if (element) {
+         element.classList.add('missive-html');
+      }
+   }
 }
 
 
