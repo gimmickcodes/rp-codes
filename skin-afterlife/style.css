@@ -134,9 +134,9 @@ TOKENS
     left: unset;
     right: 0;
     background-position: 140px bottom;
-    width: 360px;
+    width: 550px;
     height: 480px;
-    opacity: 0.3;
+    opacity: 0.15;
     pointer-events: none;
 }
 
@@ -387,6 +387,7 @@ a :is(.npc,
 
 body:not(.gperms-2) .perms-loggedin,
 .gperms-4 .perms-staff,
+.gperms-6 .perms-staff,
 .gperms-2 .perms-loggedout {
     display: inline-block;
 }
@@ -396,7 +397,7 @@ GLOBAL
 *****************************************/
 
 html {
-    background-color: hsl(var(--base1));
+    background-color: hsl(var(--base2));
     color: hsl(var(--bodytext-2));
     font: var(--font-serif-16);
     letter-spacing: 0.2px;
@@ -452,6 +453,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 body {
+    background: linear-gradient(to bottom, hsl(var(--base1)) 10%, hsl(var(--black)) 150vh);
     margin: 0;
     padding: 0;
     scrollbar-color: hsl(var(--accentBase-4)) transparent;
@@ -1123,10 +1125,10 @@ body::before {
     content: '';
     display: block;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: var(--bgtexture) center bottom repeat-x;
     mix-blend-mode: soft-light;
     opacity: 30%;
@@ -1579,7 +1581,7 @@ a.fr-lastpost-text--poster,
 .fr-lastpost-avi {
     width: clamp(40px, 6vw, 72px);
     aspect-ratio: 1;
-    box-shadow: 8px -8px 4px hsl(var(--bodytext-3)/.125);
+    box-shadow: 8px -8px 24px hsl(var(--bodytext-3)/.125);
     background-position: center;
     background-size: cover;
     border-bottom-right-radius: 10px;
@@ -2017,7 +2019,7 @@ a.newschip b {
     position: absolute;
     right: 1.5rem;
     bottom: 1.5rem;
-    box-shadow: 12px -12px 16px hsl(var(--accentBase-3)/.75);
+    box-shadow: 8px -8px 32px hsl(var(--permblack)/.75);
 }
 
 .cat-ooc .cat-grid {
@@ -4807,6 +4809,11 @@ THREAD TRACKERS
 /****************************************
 MEMBER ROWS
 *****************************************/
+.ml-divider {
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-2);
+}
 
 .ml-grid {
     display: flex;
@@ -4815,6 +4822,7 @@ MEMBER ROWS
     margin-top: 36px;
     padding-top: 32px;
     border-top: 1px solid var(--border-2);
+    width: calc(100% + 32px);
 }
 
 .membercard {
@@ -4980,7 +4988,7 @@ MEMBER ROWS
 }
 
 .membercard:hover .membercard-image {
-    height: 80%;
+    height: 80% !important;
     transform: scale(1.1);
     filter: brightness(1.125);
     border-radius: 0 0 10px 10px;
@@ -5015,7 +5023,7 @@ MEMBER ROWS
     }
 
     .membercard-image {
-        height: 84%;
+        height: 84% !important;
         border-bottom: 1px solid var(--border-2);
     }
 
@@ -5025,6 +5033,9 @@ MEMBER ROWS
         color: hsl(var(--accent-2));
         padding: 16px 20px;
         margin-top: auto;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
     }
 
     .membercard-name,
@@ -5051,10 +5062,20 @@ MEMBER ROWS
     transform: scale(1);
 }
 
+.membercard-staffname--label {
+    display: none;
+    font: var(--font-mixta-20);
+    color: hsl(var(--white) / .75);
+}
+
+.NPC .membercard-staffname--label {
+    display: block;
+}
 
 @media only screen and (max-width: 760px) {
     .ml-grid {
         display: block;
+        width: 100%;
     }
 
     .membercard {
@@ -5112,6 +5133,15 @@ MEMBER ROWS
 
         .membercard-staffname {
             margin-top: unset;
+            display: block;
+        }
+
+        .membercard-staffname--label::before {
+            content: "This is an ";
+        }
+
+        .membercard-staffname--label::after {
+            content: " account.";
         }
     }
 }

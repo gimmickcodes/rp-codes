@@ -384,6 +384,16 @@ function memberFiltersMobile() {
 
 
 
+function memberListImageResize() {
+   // Resize member card to fit name length
+   const membercard = document.querySelectorAll('.membercard:not(.QA,.Staff,.NPC,.npc)');
+   for (var i = 0; i < membercard.length; i++) {
+      const memInfoHeight = membercard[i].querySelector('.membercard-front').offsetHeight
+      const test = ''
+      const str = test.concat('calc(100% - ', memInfoHeight, 'px)')
+      membercard[i].querySelector('.membercard-image').style.height = str;
+   }
+}
 
 
 
@@ -769,6 +779,7 @@ document.addEventListener('DOMContentLoaded', () => {
    subboardImages()
 
    memberFiltersMobile()
+   memberListImageResize()
    emptyProfileFields()
    stabilityMeterLogic()
 
@@ -1112,3 +1123,5 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    });
 });
+
+
